@@ -1,0 +1,5 @@
+ArtExports/StageSchoolB2/master_meshes.json filter=lfs diff=lfs merge=lfs -text
+CC5/SilverScreenMaleCandidate/SS_Male_01_HeadshotCheckpoint.ccProject filter=lfs diff=lfs merge=lfs -text
+CC5/character1.ccProject filter=lfs diff=lfs merge=lfs -text
+GeneratedAssets/AnimationAuditCache/scan.json filter=lfs diff=lfs merge=lfs -text
+ArtExports/StageSchoolB/master_meshes.json filter=lfs diff=lfs merge=lfs -text
