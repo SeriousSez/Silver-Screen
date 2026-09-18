@@ -1,0 +1,157 @@
+{
+  "asset": "Silver Screen Casting Office",
+  "generator": "Blender Python 5.x",
+  "coordinate_convention": "Metres, Z-up in Blender, front faces -Y, origin at base centre",
+  "scene_fit_reference": {
+    "placeholder_position_unity": [
+      15.0,
+      0.0,
+      9.0
+    ],
+    "placeholder_bounds_size_unity_xyz_metres": [
+      7.9,
+      4.3,
+      8.15
+    ],
+    "entrance_local_unity": [
+      0.0,
+      0.05,
+      -4.2
+    ],
+    "gameplay_camera_pitch_degrees": 52.0,
+    "gameplay_camera_position_unity": [
+      0.0,
+      18.0,
+      -15.0
+    ],
+    "gameplay_camera_fov_degrees": 60.0,
+    "road_width_metres": 6.0,
+    "hq_dimensions_xyz_metres": [
+      9.38,
+      7.87,
+      8.81
+    ]
+  },
+  "bounds_min_xyz_metres": [
+    -4.075,
+    -4.23,
+    0.0
+  ],
+  "bounds_max_xyz_metres": [
+    4.225,
+    3.1,
+    4.91
+  ],
+  "dimensions_xyz_metres": [
+    8.3,
+    7.33,
+    4.91
+  ],
+  "mesh_totals": {
+    "vertices": 3200,
+    "polygons": 3054,
+    "triangles": 6144
+  },
+  "object_stats": {
+    "Casting_Body": {
+      "vertices": 304,
+      "polygons": 288,
+      "triangles": 588
+    },
+    "Casting_Roof": {
+      "vertices": 392,
+      "polygons": 378,
+      "triangles": 756
+    },
+    "Casting_Trim": {
+      "vertices": 1496,
+      "polygons": 1416,
+      "triangles": 2856
+    },
+    "Casting_Windows": {
+      "vertices": 672,
+      "polygons": 648,
+      "triangles": 1296
+    },
+    "Casting_Doors": {
+      "vertices": 112,
+      "polygons": 108,
+      "triangles": 216
+    },
+    "Casting_Sign": {
+      "vertices": 224,
+      "polygons": 216,
+      "triangles": 432
+    }
+  },
+  "materials": [
+    "Cream Stucco",
+    "Terracotta Accent",
+    "Smoked Glass",
+    "Dark Bronze",
+    "Warm Gold",
+    "Roof Charcoal"
+  ],
+  "dynamic_signage": {
+    "modeled_lettering": false,
+    "intended_text": "CASTING",
+    "export_component": "Casting_Sign",
+    "generated_surface_part": "Sign_BlankDisplaySurface",
+    "display_surface_dimensions_metres": [
+      3.7,
+      0.18,
+      0.68
+    ],
+    "front_surface_center_blender_xyz_metres": [
+      0.25,
+      -3.43,
+      3.7
+    ],
+    "front_facing": "-Y"
+  },
+  "entrance": {
+    "door_center_blender_xyz_metres": [
+      0.25,
+      -3.39,
+      1.42
+    ],
+    "navigation_target_blender_xyz_metres": [
+      0.0,
+      -4.2,
+      0.05
+    ],
+    "front_facing": "-Y"
+  },
+  "refinement": {
+    "terracotta_feature_wall": "Three shallow boolean-cut vertical grooves; no added material or lettering",
+    "canopy_projection_increase_metres": 0.12,
+    "preserved_canopy_width_metres": 3.35
+  },
+  "shared_generation": {
+    "utility": "ArtSource/Shared/silver_screen_art_utils.py",
+    "reused_concepts": [
+      "palette",
+      "beveled primitives",
+      "camera aiming",
+      "mesh statistics",
+      "FBX export",
+      "neutral preview lighting"
+    ]
+  },
+  "exports": {
+    "fbx": {
+      "forward": "-Z",
+      "up": "Y",
+      "units": "metres",
+      "animations": false,
+      "embedded_textures": false
+    }
+  },
+  "preview_files": [
+    "01_front.png",
+    "02_rear_side.png",
+    "03_elevated_three_quarter.png",
+    "04_gameplay_camera.png",
+    "05_scale_comparison.png"
+  ]
+}
