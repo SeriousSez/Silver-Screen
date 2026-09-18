@@ -187,5 +187,14 @@ namespace SilverScreen.Presentation.UI
                 BindTimeService(_timeDriver.TimeService);
             }
         }
+
+        public void SetDisplayVisible(bool visible)
+        {
+            if (_dateTimeText != null) _dateTimeText.gameObject.SetActive(visible);
+            if (_pauseButton != null) _pauseButton.gameObject.SetActive(visible);
+            if (_speed1XButton != null) _speed1XButton.gameObject.SetActive(visible);
+            if (_speed2XButton != null) _speed2XButton.gameObject.SetActive(visible);
+            if (_speed3XButton != null) _speed3XButton.gameObject.SetActive(visible);
+        }
     }
 }

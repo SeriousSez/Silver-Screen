@@ -54,6 +54,10 @@ namespace SilverScreen.Presentation.UI
         private Vector2 _statusDefaultSize;
         private float _statusDefaultFontSize;
         private bool _statusDefaultsCaptured;
+        private bool _viewVisible = true;
+        private MovieProject _pinnedMovie;
+
+        public MovieProject DisplayedProject => _observedMovie;
 
         private void Start()
         {
@@ -63,17 +67,20 @@ namespace SilverScreen.Presentation.UI
 
             if (_emptyCreateButton != null)
             {
+                _emptyCreateButton.onClick.RemoveAllListeners();
                 _emptyCreateButton.onClick.AddListener(OpenCreationDialog);
             }
 
             if (_assignDirectorButton != null)
             {
+                _assignDirectorButton.onClick.RemoveAllListeners();
                 _assignDirectorButton.onClick.AddListener(HandleAssignDirectorClicked);
             }
 
             if (_candidatePicker != null)
             {
-                _candidatePicker.OnAssignmentCompleted += () => RefreshUI(_productionDriver?.ProductionService?.ActiveMovie);
+                _candidatePicker.OnAssignmentCompleted -= HandleAssignmentCompleted;
+                _candidatePicker.OnAssignmentCompleted += HandleAssignmentCompleted;
             }
 
             if (_productionDriver != null && _productionDriver.ProductionService != null)
@@ -96,6 +103,11 @@ namespace SilverScreen.Presentation.UI
         private void OnDestroy()
         {
             ObserveMovie(null);
+
+            if (_candidatePicker != null)
+            {
+                _candidatePicker.OnAssignmentCompleted -= HandleAssignmentCompleted;
+            }
 
             if (_productionDriver != null && _productionDriver.ProductionService != null)
             {
@@ -122,6 +134,12 @@ namespace SilverScreen.Presentation.UI
 
         private void HandleMovieChanged(MovieProject movie)
         {
+            if (_pinnedMovie != null)
+            {
+                if (movie == _pinnedMovie) RefreshUI(_pinnedMovie);
+                return;
+            }
+
             ObserveMovie(movie);
             RefreshUI(movie);
         }
@@ -132,6 +150,11 @@ namespace SilverScreen.Presentation.UI
             {
                 RefreshUI(movie);
             }
+        }
+
+        private void HandleAssignmentCompleted()
+        {
+            RefreshUI(_observedMovie);
         }
 
 
@@ -188,7 +211,7 @@ namespace SilverScreen.Presentation.UI
 
         private void HandleReleaseClicked()
         {
-            var movie = _productionDriver?.ProductionService?.ActiveMovie;
+            var movie = _observedMovie;
             MovieReleaseResult result = _productionDriver?.ReleaseService?.ReleaseMovie(movie);
             if (result == null || !result.Succeeded)
             {
@@ -212,13 +235,13 @@ namespace SilverScreen.Presentation.UI
         {
             if (movie == null)
             {
-                if (_emptyStateRoot != null) _emptyStateRoot.SetActive(true);
+                if (_emptyStateRoot != null) _emptyStateRoot.SetActive(_viewVisible);
                 if (_activeCardRoot != null) _activeCardRoot.SetActive(false);
                 return;
             }
 
             if (_emptyStateRoot != null) _emptyStateRoot.SetActive(false);
-            if (_activeCardRoot != null) _activeCardRoot.SetActive(true);
+            if (_activeCardRoot != null) _activeCardRoot.SetActive(_viewVisible);
 
             if (_titleText != null) _titleText.text = movie.Title;
             if (_genreBudgetText != null) _genreBudgetText.text = $"{movie.GenreDisplayName}  •  ${movie.Budget:N0}";
@@ -338,13 +361,12 @@ namespace SilverScreen.Presentation.UI
             if (_newMovieButton != null)
             {
                 bool completed = movie.CurrentState == MovieProductionState.Completed;
-                bool released = movie.CurrentState == MovieProductionState.Released;
-                _newMovieButton.gameObject.SetActive(completed || released);
+                _newMovieButton.gameObject.SetActive(completed);
                 _newMovieButton.onClick.RemoveAllListeners();
-                _newMovieButton.onClick.AddListener(completed ? HandleReleaseClicked : OpenCreationDialog);
+                if (completed) _newMovieButton.onClick.AddListener(HandleReleaseClicked);
 
                 var label = _newMovieButton.GetComponentInChildren<TextMeshProUGUI>(true);
-                if (label != null) label.text = completed ? "RELEASE MOVIE" : "NEW MOVIE";
+                if (label != null) label.text = "RELEASE MOVIE";
             }
         }
 
@@ -354,6 +376,47 @@ namespace SilverScreen.Presentation.UI
             _statusDefaultSize = _statusText.rectTransform.sizeDelta;
             _statusDefaultFontSize = _statusText.fontSize;
             _statusDefaultsCaptured = true;
+        }
+
+        public void ShowProject(MovieProject movie)
+        {
+            _pinnedMovie = movie;
+            ObserveMovie(movie);
+            SetViewVisible(true);
+            RefreshUI(movie);
+        }
+
+        public void ShowActiveProject()
+        {
+            _pinnedMovie = null;
+            var movie = _productionDriver?.ProductionService?.ActiveMovie;
+            ObserveMovie(movie);
+            RefreshUI(movie);
+        }
+
+        public void SetViewVisible(bool visible)
+        {
+            _viewVisible = visible;
+            if (_emptyStateRoot != null)
+            {
+                _emptyStateRoot.SetActive(visible && _observedMovie == null);
+            }
+            if (_activeCardRoot != null)
+            {
+                _activeCardRoot.SetActive(visible && _observedMovie != null);
+            }
+        }
+
+        public void AttachToHost(Transform host)
+        {
+            if (host == null || _activeCardRoot == null) return;
+            var rect = _activeCardRoot.GetComponent<RectTransform>();
+            rect.SetParent(host, false);
+            rect.anchorMin = new Vector2(0f, 1f);
+            rect.anchorMax = new Vector2(0f, 1f);
+            rect.pivot = new Vector2(0f, 1f);
+            rect.anchoredPosition = new Vector2(28f, -76f);
+            rect.sizeDelta = new Vector2(560f, 580f);
         }
 
 
@@ -622,7 +685,8 @@ namespace SilverScreen.Presentation.UI
 
             if (_candidatePicker != null)
             {
-                _candidatePicker.OnAssignmentCompleted += () => RefreshUI(_productionDriver?.ProductionService?.ActiveMovie);
+                _candidatePicker.OnAssignmentCompleted -= HandleAssignmentCompleted;
+                _candidatePicker.OnAssignmentCompleted += HandleAssignmentCompleted;
             }
 
             if (_productionDriver != null && _productionDriver.ProductionService != null)

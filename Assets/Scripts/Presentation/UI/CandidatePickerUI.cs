@@ -46,7 +46,11 @@ namespace SilverScreen.Presentation.UI
 
             PopulateCandidates();
 
-            if (_dialogRoot != null) _dialogRoot.SetActive(true);
+            if (_dialogRoot != null)
+            {
+                _dialogRoot.SetActive(true);
+                _dialogRoot.transform.SetAsLastSibling();
+            }
         }
 
         public void OpenForDirector(MovieProject movie)
@@ -62,7 +66,11 @@ namespace SilverScreen.Presentation.UI
 
             PopulateCandidates();
 
-            if (_dialogRoot != null) _dialogRoot.SetActive(true);
+            if (_dialogRoot != null)
+            {
+                _dialogRoot.SetActive(true);
+                _dialogRoot.transform.SetAsLastSibling();
+            }
         }
 
         public void Close()

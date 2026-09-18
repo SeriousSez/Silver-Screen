@@ -5,6 +5,7 @@ using SilverScreen.Domain;
 using SilverScreen.Presentation.Employees;
 using SilverScreen.Presentation.Finance;
 using SilverScreen.Presentation.SimulationTime;
+using SilverScreen.Presentation.UI;
 
 namespace SilverScreen.Presentation.Bootstrap
 {
@@ -86,6 +87,11 @@ namespace SilverScreen.Presentation.Bootstrap
             }
 
             economyDriver.Initialize(_timeDriver, _employeeManager);
+
+            if (GetComponent<StudioHud>() == null)
+            {
+                gameObject.AddComponent<StudioHud>();
+            }
         }
 
         public void SetInitialEmployees(List<InitialEmployeeConfig> configs)
