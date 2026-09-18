@@ -1,0 +1,242 @@
+{
+  "asset": "Silver Screen Sound Stage 1",
+  "generator": "Blender Python 5.x",
+  "coordinate_convention": "Metres, Z-up in Blender, front/personnel facade faces -Y, origin at base centre",
+  "scene_fit_reference": {
+    "placeholder_position_unity": [
+      0.0,
+      0.0,
+      -12.0
+    ],
+    "placeholder_renderer_bounds_xyz_metres": [
+      16.4,
+      7.3,
+      13.15
+    ],
+    "placeholder_collider_bounds_xyz_metres": [
+      16.4,
+      7.3,
+      11.4
+    ],
+    "entrance_local_unity": [
+      0.0,
+      -6.7,
+      0.05
+    ],
+    "entrance_world_unity": [
+      0.0,
+      0.05,
+      -18.7
+    ],
+    "gameplay_camera_pitch_degrees": 52.0,
+    "gameplay_camera_position_unity": [
+      0.0,
+      18.0,
+      -15.0
+    ],
+    "gameplay_camera_fov_degrees": 60.0,
+    "road_width_metres": 6.0,
+    "hq_dimensions_xyz_metres": [
+      9.38,
+      7.87,
+      8.81
+    ],
+    "casting_dimensions_xyz_metres": [
+      8.3,
+      7.33,
+      4.91
+    ]
+  },
+  "bounds_min_xyz_metres": [
+    -8.17,
+    -6.83,
+    0.0
+  ],
+  "bounds_max_xyz_metres": [
+    8.37,
+    5.775,
+    8.57
+  ],
+  "dimensions_xyz_metres": [
+    16.54,
+    12.605,
+    8.57
+  ],
+  "mesh_totals": {
+    "vertices": 3736,
+    "polygons": 3574,
+    "triangles": 7180
+  },
+  "object_stats": {
+    "Stage1_Body": {
+      "vertices": 280,
+      "polygons": 270,
+      "triangles": 540
+    },
+    "Stage1_Roof": {
+      "vertices": 560,
+      "polygons": 540,
+      "triangles": 1080
+    },
+    "Stage1_Trim": {
+      "vertices": 2000,
+      "polygons": 1900,
+      "triangles": 3832
+    },
+    "Stage1_Windows": {
+      "vertices": 448,
+      "polygons": 432,
+      "triangles": 864
+    },
+    "Stage1_Doors": {
+      "vertices": 168,
+      "polygons": 162,
+      "triangles": 324
+    },
+    "Stage1_Sign": {
+      "vertices": 280,
+      "polygons": 270,
+      "triangles": 540
+    }
+  },
+  "components": [
+    "Stage1_Body",
+    "Stage1_Roof",
+    "Stage1_Trim",
+    "Stage1_Windows",
+    "Stage1_Doors",
+    "Stage1_Sign"
+  ],
+  "materials": [
+    "Cream Stucco",
+    "Terracotta Accent",
+    "Smoked Glass",
+    "Dark Bronze",
+    "Warm Gold",
+    "Roof Charcoal"
+  ],
+  "material_direction": {
+    "primary_mass": [
+      "Roof Charcoal",
+      "Dark Bronze",
+      "Cream Stucco"
+    ],
+    "structural_accents": "Terracotta Accent",
+    "sparse_glazing": "Smoked Glass",
+    "gold_usage": "Personnel door mullion, canopy edge, and thin sign underline only"
+  },
+  "personnel_entrance": {
+    "door_center_blender_xyz_metres": [
+      0.0,
+      -6.05,
+      1.45
+    ],
+    "navigation_target_blender_xyz_metres": [
+      0.0,
+      -6.7,
+      0.05
+    ],
+    "front_facing": "-Y",
+    "purpose": "Gameplay employee entrance; intentionally separate from loading doors"
+  },
+  "loading_stage_door": {
+    "center_blender_xyz_metres": [
+      8.14,
+      -0.65,
+      2.85
+    ],
+    "dimensions_xyz_metres": [
+      0.2,
+      5.1,
+      5.15
+    ],
+    "front_facing": "+X"
+  },
+  "dynamic_signage": {
+    "modeled_lettering": false,
+    "intended_text": "STAGE 1",
+    "export_component": "Stage1_Sign",
+    "generated_surface_part": "Sign_BlankDisplaySurface",
+    "display_surface_dimensions_xyz_metres": [
+      5.15,
+      0.2,
+      1.0
+    ],
+    "front_surface_center_blender_xyz_metres": [
+      0.0,
+      -6.08,
+      4.55
+    ],
+    "front_facing": "-Y"
+  },
+  "shared_generation": {
+    "utility": "ArtSource/Shared/silver_screen_art_utils.py",
+    "utility_modified": false,
+    "reused_concepts": [
+      "six-material palette",
+      "beveled primitives",
+      "camera aiming",
+      "mesh statistics",
+      "FBX export",
+      "neutral preview lighting"
+    ]
+  },
+  "exports": {
+    "fbx": {
+      "forward": "-Z",
+      "up": "Y",
+      "units": "metres",
+      "animations": false,
+      "embedded_textures": false,
+      "mesh_modifiers": true,
+      "smoothing": "Face"
+    }
+  },
+  "preview_files": [
+    "01_front_personnel_entrance.png",
+    "02_stage_door_service_side.png",
+    "03_rear_side.png",
+    "04_elevated_three_quarter.png",
+    "05_gameplay_camera.png",
+    "06_scale_comparison.png"
+  ],
+  "validation": {
+    "blend_reopened": true,
+    "expected_components": [
+      "Stage1_Body",
+      "Stage1_Doors",
+      "Stage1_Roof",
+      "Stage1_Sign",
+      "Stage1_Trim",
+      "Stage1_Windows"
+    ],
+    "actual_components": [
+      "Stage1_Body",
+      "Stage1_Doors",
+      "Stage1_Roof",
+      "Stage1_Sign",
+      "Stage1_Trim",
+      "Stage1_Windows"
+    ],
+    "component_check_passed": true,
+    "font_or_text_geometry_present": false,
+    "metadata_check_passed": true,
+    "fbx_reimported": true,
+    "fbx_component_check_passed": true,
+    "fbx_bounds_xyz_metres": [
+      16.54,
+      12.605,
+      8.57
+    ],
+    "fbx_orientation_check_passed": true,
+    "fbx_materials": [
+      "STAGE1_CreamStucco.001",
+      "STAGE1_DarkBronze.001",
+      "STAGE1_RoofCharcoal.001",
+      "STAGE1_SmokedGlass.001",
+      "STAGE1_TerracottaAccent.001",
+      "STAGE1_WarmGold.001"
+    ],
+    "material_assignment_check_passed": true
+  }
+}
