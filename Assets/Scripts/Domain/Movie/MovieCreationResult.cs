@@ -3,7 +3,8 @@ namespace SilverScreen.Domain.Movie
     public enum MovieCreationFailure
     {
         None,
-        ActiveProductionInProgress
+        ActiveProductionInProgress,
+        InsufficientFunds
     }
 
     public sealed class MovieCreationResult

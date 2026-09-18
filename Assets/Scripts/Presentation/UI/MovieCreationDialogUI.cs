@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using SilverScreen.Domain.Finance;
 using SilverScreen.Domain.Movie;
+using SilverScreen.Presentation.Finance;
 using SilverScreen.Presentation.Movie;
 
 namespace SilverScreen.Presentation.UI
@@ -38,6 +40,10 @@ namespace SilverScreen.Presentation.UI
         private bool _usableLayoutBuilt;
         private GameObject _runtimeSupporting1Row;
         private GameObject _runtimeSupporting2Row;
+        private StudioEconomyDriver _economyDriver;
+        private IStudioFinanceService _finances;
+        private TextMeshProUGUI _studioCashText;
+        private TextMeshProUGUI _budgetStatusText;
 
         public bool IsOpen => _dialogRoot != null && _dialogRoot.activeSelf;
         public event Action<MovieProject> OnMovieCreated;
@@ -49,6 +55,15 @@ namespace SilverScreen.Presentation.UI
             if (_cancelButton != null) _cancelButton.onClick.AddListener(Close);
             if (_addSupportingButton != null) _addSupportingButton.onClick.AddListener(AddSupportingRole);
             if (_removeSupportingButton != null) _removeSupportingButton.onClick.AddListener(RemoveSupportingRole);
+            if (_budgetDropdown != null) _budgetDropdown.onValueChanged.AddListener(_ => RefreshAffordability());
+        }
+
+        private void OnDestroy()
+        {
+            if (_finances != null)
+            {
+                _finances.OnFinancesChanged -= RefreshAffordability;
+            }
         }
 
         public void Open()
@@ -59,6 +74,7 @@ namespace SilverScreen.Presentation.UI
                 _productionDriver = FindAnyObjectByType<MovieProductionDriver>();
             }
 
+            BindFinances();
             PopulateDropdowns();
 
             // Default values
@@ -69,6 +85,7 @@ namespace SilverScreen.Presentation.UI
 
             _supportingCount = 1;
             UpdateRoleContainersVisibility();
+            RefreshAffordability();
 
             if (_dialogRoot != null)
             {
@@ -127,7 +144,81 @@ namespace SilverScreen.Presentation.UI
 
                 _budgetDropdown.AddOptions(options);
                 _budgetDropdown.value = 1; // Default to Standard ($50,000)
+                _budgetDropdown.RefreshShownValue();
             }
+        }
+
+        private void BindFinances()
+        {
+            if (_economyDriver == null)
+            {
+                _economyDriver = FindAnyObjectByType<StudioEconomyDriver>();
+            }
+
+            var financeService = _economyDriver?.FinanceService;
+            if (ReferenceEquals(_finances, financeService)) return;
+
+            if (_finances != null)
+            {
+                _finances.OnFinancesChanged -= RefreshAffordability;
+            }
+
+            _finances = financeService;
+            if (_finances != null)
+            {
+                _finances.OnFinancesChanged += RefreshAffordability;
+            }
+        }
+
+        private void RefreshAffordability()
+        {
+            if (_finances == null)
+            {
+                if (_createButton != null) _createButton.interactable = true;
+                return;
+            }
+
+            int selectedBudget = GetSelectedBudget();
+            bool canAfford = _finances.CanAfford(Money.FromDollars(selectedBudget));
+            string cash = FormatMoney(_finances.CurrentCash);
+
+            if (_studioCashText != null)
+            {
+                _studioCashText.text = $"Studio Cash: <b>{cash}</b>";
+            }
+
+            if (_budgetStatusText != null)
+            {
+                _budgetStatusText.text = canAfford
+                    ? "Selected cost: $" + selectedBudget.ToString("N0")
+                    : "INSUFFICIENT FUNDS — $" + selectedBudget.ToString("N0") + " required";
+                _budgetStatusText.color = canAfford
+                    ? new Color(0.78f, 0.8f, 0.82f)
+                    : new Color(0.95f, 0.38f, 0.3f);
+            }
+
+            if (_createButton != null)
+            {
+                _createButton.interactable = canAfford;
+            }
+        }
+
+        private int GetSelectedBudget()
+        {
+            if (_budgetDropdown != null &&
+                _budgetDropdown.value >= 0 &&
+                _budgetDropdown.value < _budgetTiers.Count)
+            {
+                return _budgetTiers[_budgetDropdown.value].Amount;
+            }
+
+            return 50000;
+        }
+
+        private static string FormatMoney(Money value)
+        {
+            long dollars = value.Cents / 100;
+            return dollars < 0 ? "-$" + (-dollars).ToString("N0") : "$" + dollars.ToString("N0");
         }
 
         private void AddSupportingRole()
@@ -190,7 +281,7 @@ namespace SilverScreen.Presentation.UI
             outline.effectDistance = new Vector2(2f, -2f);
 
             CreateLabel(panel, "NEW MOVIE PRODUCTION", new Vector2(0f, 318f), new Vector2(740f, 44f), 29f, TextAlignmentOptions.Center, true);
-            CreateLabel(panel, "Develop a picture for your studio slate", new Vector2(0f, 285f), new Vector2(740f, 24f), 15f, TextAlignmentOptions.Center, false);
+            _studioCashText = CreateLabel(panel, "Studio Cash: $250,000", new Vector2(0f, 285f), new Vector2(740f, 24f), 15f, TextAlignmentOptions.Center, false);
             CreateLabel(panel, "MOVIE TITLE", new Vector2(0f, 244f), new Vector2(740f, 20f), 14f, TextAlignmentOptions.MidlineLeft, false);
             MoveControl(_titleInput, panel, new Vector2(0f, 212f), new Vector2(740f, 42f));
 
@@ -200,6 +291,7 @@ namespace SilverScreen.Presentation.UI
             CreateLabel(panel, "PRODUCTION BUDGET", new Vector2(190f, 157f), new Vector2(360f, 20f), 14f, TextAlignmentOptions.MidlineLeft, false);
             EnsureDropdownTemplate(_budgetDropdown);
             MoveControl(_budgetDropdown, panel, new Vector2(190f, 125f), new Vector2(360f, 42f));
+            _budgetStatusText = CreateLabel(panel, string.Empty, new Vector2(190f, 96f), new Vector2(360f, 20f), 13f, TextAlignmentOptions.MidlineLeft, false);
 
             var divider = CreateRect("CastDivider", panel, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 78f), new Vector2(740f, 30f));
             divider.gameObject.AddComponent<Image>().color = new Color(0.11f, 0.13f, 0.15f, 1f);
@@ -232,7 +324,7 @@ namespace SilverScreen.Presentation.UI
             return rect;
         }
 
-        private static void CreateLabel(Transform parent, string value, Vector2 position, Vector2 size, float fontSize, TextAlignmentOptions alignment, bool gold)
+        private static TextMeshProUGUI CreateLabel(Transform parent, string value, Vector2 position, Vector2 size, float fontSize, TextAlignmentOptions alignment, bool gold)
         {
             var rect = CreateRect(value.Replace(" ", string.Empty) + "Label", parent, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), position, size);
             var text = rect.gameObject.AddComponent<TextMeshProUGUI>();
@@ -241,6 +333,7 @@ namespace SilverScreen.Presentation.UI
             text.fontStyle = FontStyles.Bold;
             text.alignment = alignment;
             text.color = gold ? new Color(0.98f, 0.72f, 0.18f) : new Color(0.78f, 0.8f, 0.82f);
+            return text;
         }
 
         private static GameObject CreateFieldGroup(Transform parent, string label, TMP_InputField input, float y)
@@ -355,11 +448,7 @@ namespace SilverScreen.Presentation.UI
             string title = _titleInput != null ? _titleInput.text : "Untitled";
             string genre = (_genreDropdown != null && _genreDropdown.value < _genreIds.Count) ? _genreIds[_genreDropdown.value] : "Drama";
 
-            int budget = 50000;
-            if (_budgetDropdown != null && _budgetDropdown.value < _budgetTiers.Count)
-            {
-                budget = _budgetTiers[_budgetDropdown.value].Amount;
-            }
+            int budget = GetSelectedBudget();
 
             string protName = _protagonistNameInput != null ? _protagonistNameInput.text : "Lead";
             var supportingNames = new List<string>();
@@ -379,6 +468,11 @@ namespace SilverScreen.Presentation.UI
             if (!result.Succeeded)
             {
                 Debug.LogWarning($"[MovieCreationDialogUI] {result.Message}");
+                if (_budgetStatusText != null)
+                {
+                    _budgetStatusText.text = result.Message;
+                    _budgetStatusText.color = new Color(0.95f, 0.38f, 0.3f);
+                }
                 return;
             }
 
@@ -436,6 +530,11 @@ namespace SilverScreen.Presentation.UI
             {
                 _removeSupportingButton.onClick.RemoveAllListeners();
                 _removeSupportingButton.onClick.AddListener(RemoveSupportingRole);
+            }
+            if (_budgetDropdown != null)
+            {
+                _budgetDropdown.onValueChanged.RemoveAllListeners();
+                _budgetDropdown.onValueChanged.AddListener(_ => RefreshAffordability());
             }
         }
     }

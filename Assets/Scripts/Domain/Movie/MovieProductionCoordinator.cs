@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using SilverScreen.Domain.Finance;
 using SilverScreen.Domain.Time;
 
 namespace SilverScreen.Domain.Movie
@@ -9,6 +10,7 @@ namespace SilverScreen.Domain.Movie
         private readonly ISimulationTimeService _timeService;
         private readonly IStudioWorldRouter _router;
         private readonly StudioProductionSlate _slate;
+        private readonly IStudioFinanceService _finances;
         private readonly List<GenreDefinition> _genres = new List<GenreDefinition>();
 
         private string _statusMessage = "No active project";
@@ -29,10 +31,12 @@ namespace SilverScreen.Domain.Movie
         public MovieProductionCoordinator(
             ISimulationTimeService timeService,
             IStudioWorldRouter router,
-            IEnumerable<GenreDefinition> genres = null)
+            IEnumerable<GenreDefinition> genres = null,
+            IStudioFinanceService finances = null)
         {
             _timeService = timeService ?? throw new ArgumentNullException(nameof(timeService));
             _router = router ?? throw new ArgumentNullException(nameof(router));
+            _finances = finances ?? new StudioFinances(_timeService.CurrentTime);
             _slate = new StudioProductionSlate();
 
             if (genres != null)
@@ -92,6 +96,14 @@ namespace SilverScreen.Domain.Movie
             var genreDefinition = _genres.Find(g => g != null && string.Equals(g.Id, movieGenreId, StringComparison.OrdinalIgnoreCase));
             string movieGenreDisplayName = genreDefinition != null ? genreDefinition.DisplayName : FormatGenreDisplayName(movieGenreId);
             int movieBudget = budget > 0 ? budget : 50000;
+            Money budgetCost = Money.FromDollars(movieBudget);
+
+            if (!_finances.CanAfford(budgetCost))
+            {
+                return MovieCreationResult.Failed(
+                    MovieCreationFailure.InsufficientFunds,
+                    $"Insufficient studio funds. {budgetCost} is required, but only {_finances.CurrentCash} is available.");
+            }
 
             var movie = new MovieProject(
                 id: Guid.NewGuid().ToString(),
@@ -115,6 +127,18 @@ namespace SilverScreen.Domain.Movie
                     string suppName = string.IsNullOrWhiteSpace(supportingNames[i]) ? $"Supporting Character {i + 1}" : supportingNames[i].Trim();
                     movie.AddRole(new MovieRole(Guid.NewGuid().ToString(), MovieRoleType.Supporting, suppName));
                 }
+            }
+
+            if (!_finances.TryRecordExpense(
+                    budgetCost,
+                    FinancialTransactionCategory.ProductionBudget,
+                    _timeService.CurrentTime,
+                    $"Production: {movie.Title}",
+                    movie.Id))
+            {
+                return MovieCreationResult.Failed(
+                    MovieCreationFailure.InsufficientFunds,
+                    $"Insufficient studio funds. {budgetCost} is required, but only {_finances.CurrentCash} is available.");
             }
 
             _slate.AddProject(movie, setAsActive: true);
@@ -540,4 +564,3 @@ namespace SilverScreen.Domain.Movie
         }
     }
 }
-
