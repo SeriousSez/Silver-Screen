@@ -1,0 +1,122 @@
+{
+  "asset": "Silver Screen Studios Headquarters",
+  "generator": "Blender Python 5.x",
+  "coordinate_convention": "Metres, Z-up in Blender, front faces -Y, origin at base centre",
+  "scene_fit_reference": {
+    "placeholder_body_metres": [
+      9.0,
+      6.5,
+      4.5
+    ],
+    "placeholder_with_trim_metres": [
+      9.4,
+      6.9,
+      4.8
+    ],
+    "entrance_local_unity": [
+      0.0,
+      0.05,
+      -4.45
+    ],
+    "gameplay_camera_pitch_degrees": 52.0,
+    "road_width_metres": 6.0
+  },
+  "bounds_min_xyz_metres": [
+    -4.69,
+    -4.43,
+    0.0
+  ],
+  "bounds_max_xyz_metres": [
+    4.69,
+    3.44,
+    8.81
+  ],
+  "dimensions_xyz_metres": [
+    9.38,
+    7.87,
+    8.81
+  ],
+  "mesh_totals": {
+    "vertices": 4912,
+    "polygons": 4672,
+    "triangles": 9376
+  },
+  "object_stats": {
+    "HQ_Body": {
+      "vertices": 336,
+      "polygons": 324,
+      "triangles": 648
+    },
+    "HQ_Roof": {
+      "vertices": 504,
+      "polygons": 486,
+      "triangles": 972
+    },
+    "HQ_Trim": {
+      "vertices": 1800,
+      "polygons": 1686,
+      "triangles": 3372
+    },
+    "HQ_Windows": {
+      "vertices": 1624,
+      "polygons": 1566,
+      "triangles": 3132
+    },
+    "HQ_Doors": {
+      "vertices": 112,
+      "polygons": 108,
+      "triangles": 216
+    },
+    "HQ_Sign": {
+      "vertices": 536,
+      "polygons": 502,
+      "triangles": 1036
+    }
+  },
+  "materials": [
+    "Cream Stucco",
+    "Terracotta Accent",
+    "Smoked Glass",
+    "Dark Bronze",
+    "Warm Gold",
+    "Roof Charcoal"
+  ],
+  "dynamic_signage": {
+    "modeled_lettering": false,
+    "export_component": "HQ_Sign",
+    "generated_surface_part": "Sign_BlankDisplaySurface",
+    "display_surface_dimensions_metres": [
+      5.7,
+      0.18,
+      0.86
+    ],
+    "front_surface_center_blender_xyz_metres": [
+      0.0,
+      -3.67,
+      4.98
+    ],
+    "front_facing": "-Y",
+    "intended_use": "Dynamic Unity studio-name text after asset approval"
+  },
+  "exports": {
+    "fbx": {
+      "forward": "-Z",
+      "up": "Y",
+      "units": "metres",
+      "animations": false,
+      "embedded_textures": false
+    },
+    "glb": {
+      "format": "GLB 2.0",
+      "y_up": true,
+      "materials": true,
+      "animations": false
+    }
+  },
+  "preview_files": [
+    "01_front.png",
+    "02_rear_side.png",
+    "03_elevated_three_quarter.png",
+    "04_gameplay_camera.png"
+  ]
+}
