@@ -1,19 +1,10 @@
 using SilverScreen.Domain;
-using TMPro;
-using UnityEngine;
 
 namespace SilverScreen.Presentation.Buildings
 {
-    public sealed class StudioNameSign : MonoBehaviour
+    public sealed class StudioNameSign : BuildingSign
     {
-        [SerializeField] private TextMeshPro _label;
-
         private StudioIdentity _identity;
-
-        public void Configure(TextMeshPro label)
-        {
-            _label = label;
-        }
 
         public void Initialize(StudioIdentity identity)
         {
@@ -48,15 +39,12 @@ namespace SilverScreen.Presentation.Buildings
 
         private void HandleNameChanged(string studioName)
         {
-            if (_label != null) _label.text = studioName;
+            SetText(studioName);
         }
 
         private void Refresh()
         {
-            if (_label != null)
-            {
-                _label.text = _identity?.Name ?? string.Empty;
-            }
+            SetText(_identity?.Name);
         }
     }
 }
