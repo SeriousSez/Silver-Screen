@@ -11,6 +11,7 @@ namespace SilverScreen.Domain.Movie
         private readonly IStudioWorldRouter _router;
         private readonly StudioProductionSlate _slate;
         private readonly IStudioFinanceService _finances;
+        private readonly IMovieQualityCalculator _qualityCalculator;
         private readonly List<GenreDefinition> _genres = new List<GenreDefinition>();
 
         private string _statusMessage = "No active project";
@@ -32,11 +33,13 @@ namespace SilverScreen.Domain.Movie
             ISimulationTimeService timeService,
             IStudioWorldRouter router,
             IEnumerable<GenreDefinition> genres = null,
-            IStudioFinanceService finances = null)
+            IStudioFinanceService finances = null,
+            IMovieQualityCalculator qualityCalculator = null)
         {
             _timeService = timeService ?? throw new ArgumentNullException(nameof(timeService));
             _router = router ?? throw new ArgumentNullException(nameof(router));
             _finances = finances ?? new StudioFinances(_timeService.CurrentTime);
+            _qualityCalculator = qualityCalculator ?? new MovieQualityCalculator();
             _slate = new StudioProductionSlate();
 
             if (genres != null)
@@ -111,7 +114,8 @@ namespace SilverScreen.Domain.Movie
                 genreId: movieGenreId,
                 genreDisplayName: movieGenreDisplayName,
                 budget: movieBudget,
-                createdDate: _timeService.CurrentTime
+                createdDate: _timeService.CurrentTime,
+                budgetTierId: BudgetTier.GetIdForAmount(movieBudget)
             );
 
             // Add required Protagonist role
@@ -448,6 +452,7 @@ namespace SilverScreen.Domain.Movie
         {
             _filmingActive = false;
             movie.SetProgress(1.0f);
+            movie.TrySetProductionResult(_qualityCalculator.Calculate(movie));
             movie.SetState(MovieProductionState.Completed);
 
             if (movie.AssignedDirector != null)
@@ -470,7 +475,9 @@ namespace SilverScreen.Domain.Movie
             UpdateStatus();
             OnActiveMovieChanged?.Invoke(movie);
 
-            OnProductionNotification?.Invoke($"\"{movie.Title}\" has finished filming!");
+            OnProductionNotification?.Invoke(
+                $"{movie.Title} has finished filming!{Environment.NewLine}" +
+                $"Production Quality: {movie.ProductionResult.OverallQuality}/100");
         }
 
         private void UpdateStatus()

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -50,6 +51,9 @@ namespace SilverScreen.Presentation.UI
 
         private float _notificationTimer;
         private MovieProject _observedMovie;
+        private Vector2 _statusDefaultSize;
+        private float _statusDefaultFontSize;
+        private bool _statusDefaultsCaptured;
 
         private void Start()
         {
@@ -202,7 +206,25 @@ namespace SilverScreen.Presentation.UI
             // Status message
             if (_statusText != null && _productionDriver != null)
             {
-                _statusText.text = _productionDriver.ProductionService.StatusMessage;
+                CaptureStatusDefaults();
+                if (movie.CurrentState == MovieProductionState.Completed && movie.ProductionResult != null)
+                {
+                    var result = movie.ProductionResult;
+                    _statusText.text =
+                        $"<b>Quality: {result.OverallQuality}/100</b>{Environment.NewLine}" +
+                        $"Cast Performance — {result.CastPerformance}{Environment.NewLine}" +
+                        $"Direction — {result.Direction}{Environment.NewLine}" +
+                        $"Production Value — {result.ProductionValue}";
+                    _statusText.fontSize = 14f;
+                    _statusText.textWrappingMode = TextWrappingModes.Normal;
+                    _statusText.rectTransform.sizeDelta = new Vector2(_statusDefaultSize.x, 94f);
+                }
+                else
+                {
+                    _statusText.text = _productionDriver.ProductionService.StatusMessage;
+                    _statusText.fontSize = _statusDefaultFontSize;
+                    _statusText.rectTransform.sizeDelta = _statusDefaultSize;
+                }
             }
 
             // Director row
@@ -231,12 +253,29 @@ namespace SilverScreen.Presentation.UI
             int pct = Mathf.RoundToInt(displayedProgress * 100f);
             if (_progressBarFill != null) _progressBarFill.fillAmount = displayedProgress;
             if (_progressPercentText != null) _progressPercentText.text = $"{pct}%";
+            if (movie.CurrentState == MovieProductionState.Completed && movie.ProductionResult != null)
+            {
+                float qualityProgress = movie.ProductionResult.OverallQuality / 100f;
+                if (_progressBarFill != null) _progressBarFill.fillAmount = qualityProgress;
+                if (_progressPercentText != null)
+                {
+                    _progressPercentText.text = $"QUALITY {movie.ProductionResult.OverallQuality}/100";
+                }
+            }
 
             // Completed button
             if (_newMovieButton != null)
             {
                 _newMovieButton.gameObject.SetActive(movie.CurrentState == MovieProductionState.Completed);
             }
+        }
+
+        private void CaptureStatusDefaults()
+        {
+            if (_statusDefaultsCaptured || _statusText == null) return;
+            _statusDefaultSize = _statusText.rectTransform.sizeDelta;
+            _statusDefaultFontSize = _statusText.fontSize;
+            _statusDefaultsCaptured = true;
         }
 
 
@@ -413,7 +452,7 @@ namespace SilverScreen.Presentation.UI
                 MovieProductionState.Casting => "CASTING",
                 MovieProductionState.ReadyToFilm => "READY TO FILM",
                 MovieProductionState.Filming => "FILMING",
-                MovieProductionState.Completed => "COMPLETED",
+                MovieProductionState.Completed => "PRODUCTION COMPLETE",
                 _ => state.ToString().ToUpper()
             };
         }

@@ -23,6 +23,16 @@ namespace SilverScreen.Domain.Movie
 
         public static IReadOnlyList<BudgetTier> DefaultTiers => new[] { Low, Standard, High };
 
+        public static string GetIdForAmount(int amount)
+        {
+            foreach (var tier in DefaultTiers)
+            {
+                if (tier.Amount == amount) return tier.Id;
+            }
+
+            return Standard.Id;
+        }
+
         public bool Equals(BudgetTier other) => Id == other.Id && Amount == other.Amount;
         public override bool Equals(object obj) => obj is BudgetTier other && Equals(other);
         public override int GetHashCode() => HashCode.Combine(Id, Amount);
