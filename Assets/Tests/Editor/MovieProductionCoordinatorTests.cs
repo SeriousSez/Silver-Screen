@@ -135,6 +135,39 @@ namespace SilverScreen.Tests.EditMode
         }
 
         [Test]
+        public void Completion_StoresProductionResultOnMovie()
+        {
+            var setup = PrepareSingleRoleMovieForFilming();
+
+            _time.PassMinutes(480);
+
+            Assert.That(setup.Movie.ProductionResult, Is.Not.Null);
+            Assert.That(setup.Movie.ProductionResult.OverallQuality, Is.InRange(0, 100));
+            Assert.That(setup.Movie.ProductionResult.CastPerformance, Is.EqualTo(setup.Actor.Skill));
+            Assert.That(setup.Movie.ProductionResult.Direction, Is.EqualTo(setup.Director.Skill));
+            Assert.That(setup.Movie.ProductionResult.ProductionValue, Is.EqualTo(90));
+        }
+
+        [Test]
+        public void CompletionResult_DoesNotChangeWhenEmployeeSkillChangesLater()
+        {
+            var setup = PrepareSingleRoleMovieForFilming();
+            _time.PassMinutes(480);
+            var storedResult = setup.Movie.ProductionResult;
+            int storedOverall = storedResult.OverallQuality;
+            int storedCast = storedResult.CastPerformance;
+            int storedDirection = storedResult.Direction;
+
+            setup.Actor.UpdateDetails(setup.Actor.Name, 1, setup.Actor.Salary, setup.Actor.Morale);
+            setup.Director.UpdateDetails(setup.Director.Name, 100, setup.Director.Salary, setup.Director.Morale);
+
+            Assert.That(setup.Movie.ProductionResult, Is.SameAs(storedResult));
+            Assert.That(setup.Movie.ProductionResult.OverallQuality, Is.EqualTo(storedOverall));
+            Assert.That(setup.Movie.ProductionResult.CastPerformance, Is.EqualTo(storedCast));
+            Assert.That(setup.Movie.ProductionResult.Direction, Is.EqualTo(storedDirection));
+        }
+
+        [Test]
         public void CreateMovie_DoesNotReplaceInProgressActiveProduction()
         {
             var first = _coordinator.CreateMovie("First", "drama", 25000, "Lead", new List<string>());
@@ -297,6 +330,120 @@ namespace SilverScreen.Tests.EditMode
                     OnMinutePassed?.Invoke(CurrentTime);
                 }
             }
+        }
+    }
+}
+
+namespace SilverScreen.Tests.EditMode
+{
+    public sealed class MovieQualityCalculatorTests
+    {
+        private MovieQualityCalculator _calculator;
+
+        [SetUp]
+        public void SetUp()
+        {
+            _calculator = new MovieQualityCalculator();
+        }
+
+        [Test]
+        public void CastPerformance_WeightsProtagonistTwiceSupportingRole()
+        {
+            var movie = CreateMovie(BudgetTier.Standard);
+            AddActor(movie, "lead", MovieRoleType.Protagonist, 80);
+            AddActor(movie, "support", MovieRoleType.Supporting, 50);
+
+            Assert.That(_calculator.Calculate(movie).CastPerformance, Is.EqualTo(70));
+        }
+
+        [Test]
+        public void CastPerformance_HandlesMultipleSupportingActors()
+        {
+            var movie = CreateMovie(BudgetTier.Standard);
+            AddActor(movie, "lead", MovieRoleType.Protagonist, 80);
+            AddActor(movie, "support-1", MovieRoleType.Supporting, 50);
+            AddActor(movie, "support-2", MovieRoleType.Supporting, 20);
+
+            Assert.That(_calculator.Calculate(movie).CastPerformance, Is.EqualTo(58));
+        }
+
+        [Test]
+        public void Direction_EqualsAssignedDirectorSkill()
+        {
+            var movie = CreateMovie(BudgetTier.Standard);
+            movie.AssignDirector(new Employee("director", "Director", EmployeeRole.Director, 82, 3000));
+
+            Assert.That(_calculator.Calculate(movie).Direction, Is.EqualTo(82));
+        }
+
+        [Test]
+        public void LowBudget_HasProductionValueForty()
+        {
+            Assert.That(_calculator.Calculate(CreateMovie(BudgetTier.Low)).ProductionValue, Is.EqualTo(40));
+        }
+
+        [Test]
+        public void StandardBudget_HasProductionValueSixtyFive()
+        {
+            Assert.That(_calculator.Calculate(CreateMovie(BudgetTier.Standard)).ProductionValue, Is.EqualTo(65));
+        }
+
+        [Test]
+        public void HighBudget_HasProductionValueNinety()
+        {
+            Assert.That(_calculator.Calculate(CreateMovie(BudgetTier.High)).ProductionValue, Is.EqualTo(90));
+        }
+
+        [Test]
+        public void OverallQuality_UsesConfiguredIntegerWeightsAndRounding()
+        {
+            var movie = CreateMovie(BudgetTier.Standard);
+            AddActor(movie, "lead", MovieRoleType.Protagonist, 80);
+            AddActor(movie, "support", MovieRoleType.Supporting, 50);
+            movie.AssignDirector(new Employee("director", "Director", EmployeeRole.Director, 82, 3000));
+
+            var result = _calculator.Calculate(movie);
+
+            Assert.That(result.CastPerformance, Is.EqualTo(70));
+            Assert.That(result.Direction, Is.EqualTo(82));
+            Assert.That(result.ProductionValue, Is.EqualTo(65));
+            Assert.That(result.OverallQuality, Is.EqualTo(73));
+        }
+
+        [Test]
+        public void Scores_AreClampedToZeroThroughOneHundred()
+        {
+            var movie = CreateMovie(BudgetTier.High);
+            AddActor(movie, "lead", MovieRoleType.Protagonist, 150);
+            movie.AssignDirector(new Employee("director", "Director", EmployeeRole.Director, -20, 3000));
+
+            var result = _calculator.Calculate(movie);
+
+            Assert.That(result.CastPerformance, Is.EqualTo(100));
+            Assert.That(result.Direction, Is.EqualTo(0));
+            Assert.That(result.ProductionValue, Is.EqualTo(90));
+            Assert.That(result.OverallQuality, Is.InRange(0, 100));
+        }
+
+        private static MovieProject CreateMovie(BudgetTier tier)
+        {
+            return new MovieProject(
+                "movie",
+                "Test Film",
+                "drama",
+                "Drama",
+                tier.Amount,
+                new SimulationDateTime(1930, 1, 1, 8, 0),
+                tier.Id);
+        }
+
+        private static void AddActor(MovieProject movie, string id, MovieRoleType roleType, int skill)
+        {
+            var role = new MovieRole(id + "-role", roleType, id);
+            movie.AddRole(role);
+            movie.AssignActorToRole(
+                role.Id,
+                new Employee(id, id, EmployeeRole.Actor, skill, 2500));
         }
     }
 }

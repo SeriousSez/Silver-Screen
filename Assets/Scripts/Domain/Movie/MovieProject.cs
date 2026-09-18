@@ -12,6 +12,8 @@ namespace SilverScreen.Domain.Movie
         public string GenreDisplayName { get; }
         public string Genre => GenreDisplayName;
         public int Budget { get; set; }
+        public string BudgetTierId { get; }
+        public MovieProductionResult ProductionResult { get; private set; }
 
         public MovieProductionState CurrentState { get; private set; }
         public Employee AssignedDirector { get; private set; }
@@ -33,17 +35,28 @@ namespace SilverScreen.Domain.Movie
         public event Action<MovieProject, MovieProductionState> OnStateChanged;
         public event Action<MovieProject, float> OnProgressChanged;
 
-        public MovieProject(string id, string title, string genreId, string genreDisplayName, int budget, SimulationDateTime createdDate)
+        public MovieProject(
+            string id,
+            string title,
+            string genreId,
+            string genreDisplayName,
+            int budget,
+            SimulationDateTime createdDate,
+            string budgetTierId = null)
         {
             Id = id ?? Guid.NewGuid().ToString();
             Title = title;
             GenreId = string.IsNullOrWhiteSpace(genreId) ? "drama" : genreId.Trim();
             GenreDisplayName = string.IsNullOrWhiteSpace(genreDisplayName) ? GenreId : genreDisplayName.Trim();
             Budget = budget;
+            BudgetTierId = string.IsNullOrWhiteSpace(budgetTierId)
+                ? BudgetTier.GetIdForAmount(budget)
+                : budgetTierId.Trim();
             CreatedDate = createdDate;
             CurrentState = MovieProductionState.Draft;
             ProductionProgress = 0f;
             DirectorArrivedAtStage = false;
+            ProductionResult = null;
         }
 
         public void AddRole(MovieRole role)
@@ -120,6 +133,14 @@ namespace SilverScreen.Domain.Movie
             ProductionProgress = clamped;
             OnProgressChanged?.Invoke(this, ProductionProgress);
             OnProjectUpdated?.Invoke(this);
+        }
+
+        public bool TrySetProductionResult(MovieProductionResult result)
+        {
+            if (result == null || ProductionResult != null) return false;
+            ProductionResult = result;
+            OnProjectUpdated?.Invoke(this);
+            return true;
         }
 
         private void HandleRoleUpdated(MovieRole role)
