@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using SilverScreen.Domain;
 using SilverScreen.Presentation.Employees;
+using SilverScreen.Presentation.Finance;
 using SilverScreen.Presentation.SimulationTime;
 
 namespace SilverScreen.Presentation.Bootstrap
@@ -45,6 +46,7 @@ namespace SilverScreen.Presentation.Bootstrap
             }
 
             InitializeEmployees();
+            InitializeEconomy();
         }
 
         private void InitializeEmployees()
@@ -75,6 +77,17 @@ namespace SilverScreen.Presentation.Bootstrap
             }
         }
 
+        private void InitializeEconomy()
+        {
+            var economyDriver = GetComponent<StudioEconomyDriver>();
+            if (economyDriver == null)
+            {
+                economyDriver = gameObject.AddComponent<StudioEconomyDriver>();
+            }
+
+            economyDriver.Initialize(_timeDriver, _employeeManager);
+        }
+
         public void SetInitialEmployees(List<InitialEmployeeConfig> configs)
         {
             _initialEmployees = configs;
@@ -86,4 +99,3 @@ namespace SilverScreen.Presentation.Bootstrap
         }
     }
 }
-

@@ -125,7 +125,7 @@ namespace SilverScreen.Presentation.UI
             if (_roleBadgeText != null) _roleBadgeText.text = _boundEmployee.Role.ToString().ToUpper();
             if (_skillText != null) _skillText.text = $"{_boundEmployee.Skill} / 100";
             if (_moraleText != null) _moraleText.text = $"{_boundEmployee.Morale}%";
-            if (_salaryText != null) _salaryText.text = $"${_boundEmployee.Salary} / day";
+            if (_salaryText != null) _salaryText.text = "Salary: $" + _boundEmployee.Salary.ToString("N0") + "/month";
             if (_stateText != null) _stateText.text = _boundEmployee.CurrentState.ToString();
 
             if (_actionText != null)
@@ -259,4 +259,3 @@ namespace SilverScreen.Presentation.UI
         }
     }
 }
-
