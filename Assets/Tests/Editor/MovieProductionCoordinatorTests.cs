@@ -189,6 +189,37 @@ namespace SilverScreen.Tests.EditMode
             Assert.That(_coordinator.Slate.AllProjects, Has.Count.EqualTo(2));
         }
 
+        [Test]
+        public void CreateMovie_AllowsNextProductionWhilePreviousMovieIsInTheaters()
+        {
+            var first = _coordinator.CreateMovie(
+                "First",
+                BudgetTier.Low.Id,
+                BudgetTier.Low.Amount,
+                "Lead",
+                new List<string>());
+            first.Project.TrySetProductionResult(new MovieProductionResult(70, 70, 70, 70));
+            first.Project.SetState(MovieProductionState.Completed);
+            var run = new MovieTheatricalRun(
+                first.Project.Id,
+                _time.CurrentTime,
+                70,
+                Money.FromDollars(100000));
+            Assert.That(first.Project.TryRelease(_time.CurrentTime, run), Is.True);
+
+            var second = _coordinator.CreateMovie(
+                "Second",
+                BudgetTier.Standard.Id,
+                BudgetTier.Standard.Amount,
+                "Lead",
+                new List<string>());
+
+            Assert.That(second.Succeeded, Is.True);
+            Assert.That(_coordinator.ActiveMovie, Is.SameAs(second.Project));
+            Assert.That(first.Project.TheatricalRun.IsCompleted, Is.False);
+            Assert.That(_coordinator.Slate.AllProjects, Has.Count.EqualTo(2));
+        }
+
         private MovieProject CreateMovieWithTwoActorsRequired()
         {
             return _coordinator.CreateMovie(

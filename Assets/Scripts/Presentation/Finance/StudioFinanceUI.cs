@@ -1,3 +1,4 @@
+using System;
 using System.Text;
 using SilverScreen.Domain.Finance;
 using TMPro;
@@ -14,6 +15,10 @@ namespace SilverScreen.Presentation.Finance
         private GameObject _panel;
         private TextMeshProUGUI _summaryText;
         private TextMeshProUGUI _transactionsText;
+        private bool _uiBuilt;
+
+        public bool IsPanelVisible => _panel != null && _panel.activeSelf;
+        public event Action<bool> OnPanelVisibilityChanged;
 
         private static readonly Color PanelColor = new Color(0.055f, 0.065f, 0.075f, 0.98f);
         private static readonly Color Gold = new Color(0.95f, 0.70f, 0.18f, 1f);
@@ -23,7 +28,7 @@ namespace SilverScreen.Presentation.Finance
             _driver = GetComponent<StudioEconomyDriver>();
             if (_driver == null || _driver.FinanceService == null) return;
 
-            BuildUI();
+            EnsureUIBuilt();
             _driver.FinanceService.OnFinancesChanged += Refresh;
             Refresh();
         }
@@ -38,8 +43,10 @@ namespace SilverScreen.Presentation.Finance
 
         private void BuildUI()
         {
+            if (_uiBuilt) return;
             var canvas = FindAnyObjectByType<Canvas>();
             if (canvas == null) return;
+            _uiBuilt = true;
 
             var buttonRect = CreateRect(
                 "StudioCashButton",
@@ -94,7 +101,7 @@ namespace SilverScreen.Presentation.Finance
             closeImage.color = Gold;
             var closeButton = closeRect.gameObject.AddComponent<Button>();
             closeButton.targetGraphic = closeImage;
-            closeButton.onClick.AddListener(() => _panel.SetActive(false));
+            closeButton.onClick.AddListener(() => SetPanelVisible(false));
             CreateText(closeRect, "CLOSE", Vector2.zero, new Vector2(180f, 44f), 17f, TextAlignmentOptions.Center, new Color(0.08f, 0.07f, 0.05f));
 
             _panel.SetActive(false);
@@ -102,9 +109,27 @@ namespace SilverScreen.Presentation.Finance
 
         private void TogglePanel()
         {
-            if (_panel == null) return;
-            _panel.SetActive(!_panel.activeSelf);
-            if (_panel.activeSelf) Refresh();
+            SetPanelVisible(!IsPanelVisible);
+        }
+
+        public void SetPanelVisible(bool visible)
+        {
+            EnsureUIBuilt();
+            if (_panel == null || _panel.activeSelf == visible) return;
+            _panel.SetActive(visible);
+            if (visible) Refresh();
+            OnPanelVisibilityChanged?.Invoke(visible);
+        }
+
+        public void SetStandaloneCashButtonVisible(bool visible)
+        {
+            EnsureUIBuilt();
+            if (_cashButton != null) _cashButton.gameObject.SetActive(visible);
+        }
+
+        private void EnsureUIBuilt()
+        {
+            if (!_uiBuilt) BuildUI();
         }
 
         private void Refresh()

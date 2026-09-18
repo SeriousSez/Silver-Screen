@@ -90,6 +90,7 @@ namespace SilverScreen.Presentation.UI
             if (_dialogRoot != null)
             {
                 _dialogRoot.SetActive(true);
+                _dialogRoot.transform.SetAsLastSibling();
             }
         }
 

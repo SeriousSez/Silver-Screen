@@ -1,5 +1,7 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using TMPro;
 
 namespace SilverScreen.Presentation.Camera
 {
@@ -71,6 +73,8 @@ namespace SilverScreen.Presentation.Camera
 
         private void HandlePanInput()
         {
+            if (IsTypingIntoUI()) return;
+
             Vector2 panInput = Vector2.zero;
 
             var keyboard = Keyboard.current;
@@ -117,6 +121,11 @@ namespace SilverScreen.Presentation.Camera
             {
                 if (mouse.rightButton.wasPressedThisFrame)
                 {
+                    if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+                    {
+                        return;
+                    }
+
                     _isRightDragging = true;
                     _lastMousePosition = mouse.position.ReadValue();
                 }
@@ -141,6 +150,11 @@ namespace SilverScreen.Presentation.Camera
             var mouse = Mouse.current;
             if (mouse != null)
             {
+                if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+                {
+                    return;
+                }
+
                 float scroll = mouse.scroll.ReadValue().y;
                 if (Mathf.Abs(scroll) > 0.01f)
                 {
@@ -181,6 +195,12 @@ namespace SilverScreen.Presentation.Camera
         public void FocusOn(Vector3 worldPosition)
         {
             _targetPosition = new Vector3(worldPosition.x, 0f, worldPosition.z);
+        }
+
+        private static bool IsTypingIntoUI()
+        {
+            var selected = EventSystem.current?.currentSelectedGameObject;
+            return selected != null && selected.GetComponentInParent<TMP_InputField>() != null;
         }
     }
 }
