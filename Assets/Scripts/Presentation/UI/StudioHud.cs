@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using SilverScreen.Domain;
 using SilverScreen.Domain.Finance;
 using SilverScreen.Domain.Movie;
 using SilverScreen.Domain.Time;
@@ -35,11 +36,24 @@ namespace SilverScreen.Presentation.UI
         private GameObject _detailRoot;
         private TextMeshProUGUI _dateText;
         private TextMeshProUGUI _cashText;
+        private TextMeshProUGUI _studioNameText;
+        private StudioIdentity _studioIdentity;
         private readonly Dictionary<SimulationSpeed, Button> _speedButtons =
             new Dictionary<SimulationSpeed, Button>();
         private ManagementPanel _activePanel;
         private bool _changingPanel;
 
+        public void Initialize(StudioIdentity studioIdentity)
+        {
+            if (ReferenceEquals(_studioIdentity, studioIdentity)) return;
+            if (_studioIdentity != null) _studioIdentity.OnNameChanged -= HandleStudioNameChanged;
+            _studioIdentity = studioIdentity;
+            if (_studioIdentity != null)
+            {
+                _studioIdentity.OnNameChanged += HandleStudioNameChanged;
+                HandleStudioNameChanged(_studioIdentity.Name);
+            }
+        }
         private void Start()
         {
             ResolveReferences();
@@ -83,6 +97,10 @@ namespace SilverScreen.Presentation.UI
             if (_staffPanel != null)
             {
                 _staffPanel.OnEmployeeSelected -= HandleEmployeeSelected;
+            }
+            if (_studioIdentity != null)
+            {
+                _studioIdentity.OnNameChanged -= HandleStudioNameChanged;
             }
         }
 
@@ -135,14 +153,14 @@ namespace SilverScreen.Presentation.UI
                 Vector2.zero,
                 Vector2.zero);
             ManagementUIFactory.SetOffsets(studioRect, 22f, 0f, 8f, 0f);
-            var studioText = ManagementUIFactory.Text(
+            _studioNameText = ManagementUIFactory.Text(
                 "Text",
                 studioRect,
-                "SILVER SCREEN STUDIOS",
+                _studioIdentity?.Name ?? string.Empty,
                 18f,
                 TextAlignmentOptions.MidlineLeft,
                 ManagementUIFactory.Gold);
-            studioText.fontStyle = FontStyles.Bold;
+            _studioNameText.fontStyle = FontStyles.Bold;
 
             var timeRect = ManagementUIFactory.Rect(
                 "Time",
@@ -237,7 +255,7 @@ namespace SilverScreen.Presentation.UI
 
             _studioRoot = CreatePanelRoot("StudioPanel", content);
             _studioOverview = _studioRoot.AddComponent<StudioOverviewUI>();
-            _studioOverview.Initialize(_timeDriver, _economyDriver, _employeeManager, _productionDriver);
+            _studioOverview.Initialize(_timeDriver, _economyDriver, _employeeManager, _productionDriver, _studioIdentity);
 
             _productionsRoot = CreatePanelRoot("ProductionsPanel", content);
             _productionSlate = _productionsRoot.AddComponent<ProductionSlateUI>();
@@ -397,6 +415,10 @@ namespace SilverScreen.Presentation.UI
                 _cashText.text = "CASH  " +
                     StudioFinanceUI.FormatMoney(_economyDriver.FinanceService.CurrentCash);
             }
+        }
+        private void HandleStudioNameChanged(string studioName)
+        {
+            if (_studioNameText != null) _studioNameText.text = studioName;
         }
     }
 }

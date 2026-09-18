@@ -76,6 +76,47 @@ namespace SilverScreen.Presentation.UI
             return button;
         }
 
+        internal static TMP_InputField InputField(
+            string name,
+            Transform parent,
+            string placeholderValue,
+            int characterLimit)
+        {
+            var root = Stretch(name, parent);
+            var image = Background(root, new Color(0.035f, 0.045f, 0.055f, 1f));
+            var input = root.gameObject.AddComponent<TMP_InputField>();
+            input.targetGraphic = image;
+            input.lineType = TMP_InputField.LineType.SingleLine;
+            input.characterLimit = characterLimit;
+
+            var textArea = Stretch("Text Area", root);
+            SetOffsets(textArea, 12f, 4f, 12f, 4f);
+            textArea.gameObject.AddComponent<RectMask2D>();
+
+            var placeholder = Text(
+                "Placeholder",
+                textArea,
+                placeholderValue,
+                15f,
+                TextAlignmentOptions.MidlineLeft,
+                Muted);
+            placeholder.fontStyle = FontStyles.Italic;
+
+            var value = Text(
+                "Text",
+                textArea,
+                string.Empty,
+                15f,
+                TextAlignmentOptions.MidlineLeft,
+                Color.white);
+            value.textWrappingMode = TextWrappingModes.NoWrap;
+            value.overflowMode = TextOverflowModes.Ellipsis;
+
+            input.textViewport = textArea;
+            input.textComponent = value;
+            input.placeholder = placeholder;
+            return input;
+        }
         internal static void SetOffsets(RectTransform rect, float left, float bottom, float right, float top)
         {
             rect.offsetMin = new Vector2(left, bottom);

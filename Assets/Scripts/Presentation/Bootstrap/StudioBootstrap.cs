@@ -4,6 +4,7 @@ using UnityEngine;
 using SilverScreen.Domain;
 using SilverScreen.Presentation.Employees;
 using SilverScreen.Presentation.Finance;
+using SilverScreen.Presentation.Buildings;
 using SilverScreen.Presentation.SimulationTime;
 using SilverScreen.Presentation.UI;
 
@@ -26,8 +27,11 @@ namespace SilverScreen.Presentation.Bootstrap
         [SerializeField] private SimulationTimeDriver _timeDriver;
         [SerializeField] private List<InitialEmployeeConfig> _initialEmployees = new List<InitialEmployeeConfig>();
 
+        public StudioIdentity StudioIdentity { get; private set; }
+
         private void Awake()
         {
+            StudioIdentity = new StudioIdentity();
             if (_employeeManager == null)
             {
                 _employeeManager = GetComponent<StudioEmployeeManager>();
@@ -48,6 +52,7 @@ namespace SilverScreen.Presentation.Bootstrap
 
             InitializeEmployees();
             InitializeEconomy();
+            InitializeStudioIdentityPresentation();
         }
 
         private void InitializeEmployees()
@@ -88,9 +93,20 @@ namespace SilverScreen.Presentation.Bootstrap
 
             economyDriver.Initialize(_timeDriver, _employeeManager);
 
-            if (GetComponent<StudioHud>() == null)
+            var hud = GetComponent<StudioHud>();
+            if (hud == null)
             {
-                gameObject.AddComponent<StudioHud>();
+                hud = gameObject.AddComponent<StudioHud>();
+            }
+            hud.Initialize(StudioIdentity);
+        }
+
+        private void InitializeStudioIdentityPresentation()
+        {
+            var signs = FindObjectsByType<StudioNameSign>(FindObjectsInactive.Include);
+            foreach (var sign in signs)
+            {
+                sign.Initialize(StudioIdentity);
             }
         }
 
