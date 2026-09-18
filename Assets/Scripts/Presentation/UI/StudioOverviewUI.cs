@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using SilverScreen.Domain;
 using SilverScreen.Domain.Finance;
 using SilverScreen.Domain.Movie;
 using SilverScreen.Domain.Time;
@@ -8,6 +9,7 @@ using SilverScreen.Presentation.Movie;
 using SilverScreen.Presentation.SimulationTime;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace SilverScreen.Presentation.UI
 {
@@ -25,17 +27,23 @@ namespace SilverScreen.Presentation.UI
         private TextMeshProUGUI _theatersText;
         private TextMeshProUGUI _boxOfficeText;
         private TextMeshProUGUI _operatingCostText;
+        private TextMeshProUGUI _studioNameText;
+        private TextMeshProUGUI _renameStatusText;
+        private TMP_InputField _renameInput;
+        private StudioIdentity _studioIdentity;
 
         public void Initialize(
             SimulationTimeDriver timeDriver,
             StudioEconomyDriver economyDriver,
             StudioEmployeeManager employeeManager,
-            MovieProductionDriver productionDriver)
+            MovieProductionDriver productionDriver,
+            StudioIdentity studioIdentity)
         {
             _timeDriver = timeDriver;
             _economyDriver = economyDriver;
             _employeeManager = employeeManager;
             _productionDriver = productionDriver;
+            _studioIdentity = studioIdentity;
             Build();
             Bind();
             Refresh();
@@ -64,6 +72,10 @@ namespace SilverScreen.Presentation.UI
             {
                 _productionDriver.ReleaseService.OnMovieReleaseUpdated += HandleMovieUpdated;
             }
+            if (_studioIdentity != null)
+            {
+                _studioIdentity.OnNameChanged += HandleStudioNameChanged;
+            }
         }
 
         private void OnDestroy()
@@ -88,6 +100,10 @@ namespace SilverScreen.Presentation.UI
             {
                 _productionDriver.ReleaseService.OnMovieReleaseUpdated -= HandleMovieUpdated;
             }
+            if (_studioIdentity != null)
+            {
+                _studioIdentity.OnNameChanged -= HandleStudioNameChanged;
+            }
 
             foreach (var project in _observedProjects)
             {
@@ -109,14 +125,14 @@ namespace SilverScreen.Presentation.UI
                 new Vector2(1f, 1f),
                 new Vector2(0f, -56f),
                 new Vector2(-80f, 76f));
-            var title = ManagementUIFactory.Text(
+            _studioNameText = ManagementUIFactory.Text(
                 "Text",
                 titleRect,
-                "SILVER SCREEN STUDIOS",
+                _studioIdentity?.Name ?? string.Empty,
                 34f,
                 TextAlignmentOptions.Center,
                 ManagementUIFactory.Gold);
-            title.fontStyle = FontStyles.Bold;
+            _studioNameText.fontStyle = FontStyles.Bold;
 
             var subtitleRect = ManagementUIFactory.Rect(
                 "Subtitle",
@@ -139,8 +155,75 @@ namespace SilverScreen.Presentation.UI
             _theatersText = CreateMetric("Theaters", "IN THEATERS", 0, 1);
             _boxOfficeText = CreateMetric("BoxOffice", "LIFETIME BOX OFFICE", 1, 1);
             _operatingCostText = CreateMetric("Costs", "MONTHLY OPERATING COST", 2, 1);
+            BuildRenameControls();
         }
 
+        private void BuildRenameControls()
+        {
+            var root = ManagementUIFactory.Rect(
+                "RenameStudio",
+                transform,
+                new Vector2(0.22f, 0.06f),
+                new Vector2(0.78f, 0.15f),
+                Vector2.zero,
+                Vector2.zero);
+            var layout = root.gameObject.AddComponent<HorizontalLayoutGroup>();
+            layout.spacing = 8f;
+            layout.childControlHeight = true;
+            layout.childControlWidth = true;
+            layout.childForceExpandHeight = true;
+            layout.childForceExpandWidth = false;
+
+            _renameInput = ManagementUIFactory.InputField(
+                "NameInput",
+                root,
+                "Studio name",
+                StudioIdentity.MaximumNameLength);
+            var inputLayout = _renameInput.gameObject.AddComponent<LayoutElement>();
+            inputLayout.flexibleWidth = 1f;
+            inputLayout.preferredWidth = 360f;
+
+            var renameButton = ManagementUIFactory.Button(
+                "RenameButton",
+                root,
+                "RENAME",
+                ManagementUIFactory.Gold,
+                new Color(0.08f, 0.07f, 0.05f));
+            renameButton.gameObject.AddComponent<LayoutElement>().preferredWidth = 112f;
+            renameButton.onClick.AddListener(HandleRenameRequested);
+
+            var statusRect = ManagementUIFactory.Rect(
+                "RenameStatus",
+                transform,
+                new Vector2(0.22f, 0.015f),
+                new Vector2(0.78f, 0.055f),
+                Vector2.zero,
+                Vector2.zero);
+            _renameStatusText = ManagementUIFactory.Text(
+                "Text",
+                statusRect,
+                string.Empty,
+                12f,
+                TextAlignmentOptions.Center,
+                ManagementUIFactory.Muted);
+        }
+
+        private void HandleRenameRequested()
+        {
+            if (_studioIdentity == null || _renameInput == null) return;
+            if (!_studioIdentity.TryRename(_renameInput.text))
+            {
+                _renameStatusText.text = $"Enter 1–{StudioIdentity.MaximumNameLength} characters.";
+                return;
+            }
+            _renameInput.text = string.Empty;
+            _renameStatusText.text = "Studio name updated.";
+        }
+
+        private void HandleStudioNameChanged(string studioName)
+        {
+            if (_studioNameText != null) _studioNameText.text = studioName;
+        }
         private TextMeshProUGUI CreateMetric(string name, string label, int column, int row)
         {
             const float width = 0.27f;
