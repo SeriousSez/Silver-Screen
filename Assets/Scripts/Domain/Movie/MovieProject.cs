@@ -14,6 +14,9 @@ namespace SilverScreen.Domain.Movie
         public int Budget { get; set; }
         public string BudgetTierId { get; }
         public MovieProductionResult ProductionResult { get; private set; }
+        public SimulationDateTime? ReleaseDate { get; private set; }
+        public MovieTheatricalRun TheatricalRun { get; private set; }
+        public MovieCommercialResult CommercialResult { get; private set; }
 
         public MovieProductionState CurrentState { get; private set; }
         public Employee AssignedDirector { get; private set; }
@@ -57,6 +60,9 @@ namespace SilverScreen.Domain.Movie
             ProductionProgress = 0f;
             DirectorArrivedAtStage = false;
             ProductionResult = null;
+            ReleaseDate = null;
+            TheatricalRun = null;
+            CommercialResult = null;
         }
 
         public void AddRole(MovieRole role)
@@ -139,6 +145,33 @@ namespace SilverScreen.Domain.Movie
         {
             if (result == null || ProductionResult != null) return false;
             ProductionResult = result;
+            OnProjectUpdated?.Invoke(this);
+            return true;
+        }
+
+        public bool TryRelease(SimulationDateTime releaseDate, MovieTheatricalRun theatricalRun)
+        {
+            if (CurrentState != MovieProductionState.Completed ||
+                ReleaseDate.HasValue ||
+                theatricalRun == null)
+            {
+                return false;
+            }
+
+            ReleaseDate = releaseDate;
+            TheatricalRun = theatricalRun;
+            SetState(MovieProductionState.Released);
+            return true;
+        }
+
+        public bool TrySetCommercialResult(MovieCommercialResult result)
+        {
+            if (result == null || CommercialResult != null || TheatricalRun == null || !TheatricalRun.IsCompleted)
+            {
+                return false;
+            }
+
+            CommercialResult = result;
             OnProjectUpdated?.Invoke(this);
             return true;
         }

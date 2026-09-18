@@ -66,11 +66,6 @@ namespace SilverScreen.Presentation.UI
                 _emptyCreateButton.onClick.AddListener(OpenCreationDialog);
             }
 
-            if (_newMovieButton != null)
-            {
-                _newMovieButton.onClick.AddListener(OpenCreationDialog);
-            }
-
             if (_assignDirectorButton != null)
             {
                 _assignDirectorButton.onClick.AddListener(HandleAssignDirectorClicked);
@@ -85,6 +80,10 @@ namespace SilverScreen.Presentation.UI
             {
                 _productionDriver.ProductionService.OnActiveMovieChanged += HandleMovieChanged;
                 _productionDriver.ProductionService.OnProductionNotification += HandleNotification;
+                if (_productionDriver.ReleaseService != null)
+                {
+                    _productionDriver.ReleaseService.OnMovieReleaseUpdated += HandleReleaseUpdated;
+                }
                 HandleMovieChanged(_productionDriver.ProductionService.ActiveMovie);
             }
 
@@ -102,6 +101,10 @@ namespace SilverScreen.Presentation.UI
             {
                 _productionDriver.ProductionService.OnActiveMovieChanged -= HandleMovieChanged;
                 _productionDriver.ProductionService.OnProductionNotification -= HandleNotification;
+                if (_productionDriver.ReleaseService != null)
+                {
+                    _productionDriver.ReleaseService.OnMovieReleaseUpdated -= HandleReleaseUpdated;
+                }
             }
         }
 
@@ -121,6 +124,14 @@ namespace SilverScreen.Presentation.UI
         {
             ObserveMovie(movie);
             RefreshUI(movie);
+        }
+
+        private void HandleReleaseUpdated(MovieProject movie)
+        {
+            if (movie == _observedMovie)
+            {
+                RefreshUI(movie);
+            }
         }
 
 
@@ -175,6 +186,19 @@ namespace SilverScreen.Presentation.UI
             }
         }
 
+        private void HandleReleaseClicked()
+        {
+            var movie = _productionDriver?.ProductionService?.ActiveMovie;
+            MovieReleaseResult result = _productionDriver?.ReleaseService?.ReleaseMovie(movie);
+            if (result == null || !result.Succeeded)
+            {
+                HandleNotification(result?.Message ?? "Movie release service is unavailable.");
+                return;
+            }
+
+            RefreshUI(movie);
+        }
+
         private void HandleAssignDirectorClicked()
         {
             var movie = _productionDriver?.ProductionService?.ActiveMovie;
@@ -200,7 +224,14 @@ namespace SilverScreen.Presentation.UI
             if (_genreBudgetText != null) _genreBudgetText.text = $"{movie.GenreDisplayName}  •  ${movie.Budget:N0}";
 
             // Badge text & color
-            if (_stateBadgeText != null) _stateBadgeText.text = FormatStateBadge(movie.CurrentState);
+            if (_stateBadgeText != null)
+            {
+                _stateBadgeText.text = movie.CurrentState == MovieProductionState.Released
+                    ? movie.TheatricalRun != null && movie.TheatricalRun.IsCompleted
+                        ? "THEATRICAL RUN COMPLETE"
+                        : "NOW PLAYING"
+                    : FormatStateBadge(movie.CurrentState);
+            }
             if (_stateBadgeBg != null) _stateBadgeBg.color = GetStateBadgeColor(movie.CurrentState);
 
             // Status message
@@ -218,6 +249,34 @@ namespace SilverScreen.Presentation.UI
                     _statusText.fontSize = 14f;
                     _statusText.textWrappingMode = TextWrappingModes.Normal;
                     _statusText.rectTransform.sizeDelta = new Vector2(_statusDefaultSize.x, 94f);
+                }
+                else if (movie.CurrentState == MovieProductionState.Released && movie.TheatricalRun != null)
+                {
+                    var production = movie.ProductionResult;
+                    var run = movie.TheatricalRun;
+                    if (run.IsCompleted && movie.CommercialResult != null)
+                    {
+                        var result = movie.CommercialResult;
+                        _statusText.text =
+                            $"<b>Final Quality: {production?.OverallQuality ?? 0}/100</b>  •  Audience {result.AudienceReception}/100{Environment.NewLine}" +
+                            $"Box Office Gross — {FormatMoney(result.TotalBoxOfficeGross)}{Environment.NewLine}" +
+                            $"Studio Revenue — {FormatMoney(result.TotalStudioRevenue)}{Environment.NewLine}" +
+                            $"Production Budget — {FormatMoney(result.ProductionBudget)}{Environment.NewLine}" +
+                            $"<b>Profit / Loss — {FormatSignedMoney(result.CommercialProfitLoss)}</b>";
+                    }
+                    else
+                    {
+                        _statusText.text =
+                            $"<b>Now Playing — Day {run.CurrentDay} of {TheatricalMarketConfiguration.TheatricalRunDays}</b>{Environment.NewLine}" +
+                            $"Quality {production?.OverallQuality ?? 0}/100  •  Audience {run.AudienceReception}/100{Environment.NewLine}" +
+                            $"Week {run.CurrentWeek} of 4 — {FormatMoney(run.CurrentWeekGross)}{Environment.NewLine}" +
+                            $"Total Gross — {FormatMoney(run.TotalBoxOfficeGross)}{Environment.NewLine}" +
+                            $"Studio Revenue — {FormatMoney(run.TotalStudioRevenue)}";
+                    }
+
+                    _statusText.fontSize = 13f;
+                    _statusText.textWrappingMode = TextWrappingModes.Normal;
+                    _statusText.rectTransform.sizeDelta = new Vector2(_statusDefaultSize.x, 122f);
                 }
                 else
                 {
@@ -262,11 +321,30 @@ namespace SilverScreen.Presentation.UI
                     _progressPercentText.text = $"QUALITY {movie.ProductionResult.OverallQuality}/100";
                 }
             }
+            else if (movie.CurrentState == MovieProductionState.Released && movie.TheatricalRun != null)
+            {
+                float runProgress = movie.TheatricalRun.CurrentDay /
+                    (float)TheatricalMarketConfiguration.TheatricalRunDays;
+                if (_progressBarFill != null) _progressBarFill.fillAmount = runProgress;
+                if (_progressPercentText != null)
+                {
+                    _progressPercentText.text = movie.TheatricalRun.IsCompleted
+                        ? "RUN COMPLETE"
+                        : $"WEEK {movie.TheatricalRun.CurrentWeek} OF 4";
+                }
+            }
 
-            // Completed button
+            // Lifecycle action button
             if (_newMovieButton != null)
             {
-                _newMovieButton.gameObject.SetActive(movie.CurrentState == MovieProductionState.Completed);
+                bool completed = movie.CurrentState == MovieProductionState.Completed;
+                bool released = movie.CurrentState == MovieProductionState.Released;
+                _newMovieButton.gameObject.SetActive(completed || released);
+                _newMovieButton.onClick.RemoveAllListeners();
+                _newMovieButton.onClick.AddListener(completed ? HandleReleaseClicked : OpenCreationDialog);
+
+                var label = _newMovieButton.GetComponentInChildren<TextMeshProUGUI>(true);
+                if (label != null) label.text = completed ? "RELEASE MOVIE" : "NEW MOVIE";
             }
         }
 
@@ -303,6 +381,19 @@ namespace SilverScreen.Presentation.UI
             }
 
             return movie.ProductionProgress;
+        }
+
+        private static string FormatMoney(Domain.Finance.Money money)
+        {
+            return string.Format("${0:N0}", money.WholeDollars);
+        }
+
+        private static string FormatSignedMoney(Domain.Finance.Money money)
+        {
+            long dollars = money.WholeDollars;
+            return dollars < 0
+                ? string.Format("-${0:N0}", Math.Abs(dollars))
+                : string.Format("${0:N0}", dollars);
         }
 
         private void PopulateRoleRows(MovieProject movie)
@@ -466,6 +557,7 @@ namespace SilverScreen.Presentation.UI
                 MovieProductionState.ReadyToFilm => new Color(0.20f, 0.55f, 0.75f, 1f), // Blue
                 MovieProductionState.Filming => new Color(0.92f, 0.72f, 0.20f, 1f), // Gold
                 MovieProductionState.Completed => new Color(0.24f, 0.70f, 0.44f, 1f), // Green
+                MovieProductionState.Released => new Color(0.46f, 0.36f, 0.68f, 1f), // Premiere purple
                 _ => new Color(0.3f, 0.3f, 0.3f, 1f)
             };
         }
@@ -520,7 +612,6 @@ namespace SilverScreen.Presentation.UI
             if (_newMovieButton != null)
             {
                 _newMovieButton.onClick.RemoveAllListeners();
-                _newMovieButton.onClick.AddListener(OpenCreationDialog);
             }
 
             if (_assignDirectorButton != null)

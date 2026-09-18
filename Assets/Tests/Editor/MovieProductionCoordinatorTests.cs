@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using NUnit.Framework;
 using SilverScreen.Domain;
+using SilverScreen.Domain.Finance;
 using SilverScreen.Domain.Movie;
 using SilverScreen.Domain.Time;
 
@@ -329,6 +331,270 @@ namespace SilverScreen.Tests.EditMode
                     CurrentTime = current;
                     OnMinutePassed?.Invoke(CurrentTime);
                 }
+            }
+        }
+    }
+}
+
+namespace SilverScreen.Tests.EditMode
+{
+    public sealed class MovieReleaseServiceTests
+    {
+        private ReleaseTimeService _time;
+        private StudioFinances _finances;
+        private MovieReleaseService _service;
+
+        [SetUp]
+        public void SetUp()
+        {
+            _time = new ReleaseTimeService();
+            _finances = new StudioFinances(_time.CurrentTime);
+            _service = new MovieReleaseService(_time, _finances);
+        }
+
+        [TearDown]
+        public void TearDown()
+        {
+            _service.Dispose();
+        }
+
+        [Test]
+        public void Release_RequiresCompletedProduction()
+        {
+            var movie = CreateMovie("draft", BudgetTier.Standard, 60, completed: false);
+
+            var result = _service.ReleaseMovie(movie);
+
+            Assert.That(result.Succeeded, Is.False);
+            Assert.That(result.Failure, Is.EqualTo(MovieReleaseFailure.ProductionNotCompleted));
+            Assert.That(movie.CurrentState, Is.EqualTo(MovieProductionState.Draft));
+        }
+
+        [Test]
+        public void Release_CannotOccurTwice()
+        {
+            var movie = CreateMovie("once", BudgetTier.Standard, 60);
+
+            Assert.That(_service.ReleaseMovie(movie).Succeeded, Is.True);
+            var second = _service.ReleaseMovie(movie);
+
+            Assert.That(second.Succeeded, Is.False);
+            Assert.That(second.Failure, Is.EqualTo(MovieReleaseFailure.AlreadyReleased));
+        }
+
+        [Test]
+        public void Release_StoresSimulationDateAndAudienceReception()
+        {
+            var movie = CreateMovie("dated", BudgetTier.Standard, 73);
+
+            var result = _service.ReleaseMovie(movie);
+
+            Assert.That(movie.ReleaseDate, Is.EqualTo(_time.CurrentTime));
+            Assert.That(result.Run.ReleaseDate, Is.EqualTo(_time.CurrentTime));
+            Assert.That(result.Run.AudienceReception, Is.EqualTo(73));
+            Assert.That(movie.ProductionResult.OverallQuality, Is.EqualTo(73));
+        }
+
+        [Test]
+        public void Release_TransitionsImmediatelyWithoutCreditingRevenue()
+        {
+            var movie = CreateMovie("opening-day", BudgetTier.Standard, 60);
+
+            var result = _service.ReleaseMovie(movie);
+
+            Assert.That(result.Succeeded, Is.True);
+            Assert.That(movie.CurrentState, Is.EqualTo(MovieProductionState.Released));
+            Assert.That(movie.TheatricalRun.CurrentDay, Is.EqualTo(0));
+            Assert.That(movie.TheatricalRun.TotalStudioRevenue, Is.EqualTo(Money.Zero));
+            Assert.That(_finances.Transactions.Count(t => t.Category == FinancialTransactionCategory.BoxOfficeRevenue), Is.EqualTo(0));
+        }
+
+        [Test]
+        public void MarketBases_MatchEachBudgetTier()
+        {
+            Assert.That(TheatricalMarketConfiguration.GetMarketBase(BudgetTier.Low.Id), Is.EqualTo(Money.FromDollars(75000)));
+            Assert.That(TheatricalMarketConfiguration.GetMarketBase(BudgetTier.Standard.Id), Is.EqualTo(Money.FromDollars(175000)));
+            Assert.That(TheatricalMarketConfiguration.GetMarketBase(BudgetTier.High.Id), Is.EqualTo(Money.FromDollars(350000)));
+        }
+
+        [Test]
+        public void TargetGross_UsesAudienceReceptionFormula()
+        {
+            Assert.That(TheatricalMarketConfiguration.CalculateTargetGross(BudgetTier.Standard.Id, 0), Is.EqualTo(Money.FromDollars(43750)));
+            Assert.That(TheatricalMarketConfiguration.CalculateTargetGross(BudgetTier.Standard.Id, 60), Is.EqualTo(Money.FromDollars(175000)));
+            Assert.That(TheatricalMarketConfiguration.CalculateTargetGross(BudgetTier.Standard.Id, 100), Is.EqualTo(Money.FromDollars(262500)));
+        }
+
+        [Test]
+        public void WeeklyGrosses_UseConfiguredDistribution()
+        {
+            var weeks = TheatricalMarketConfiguration.CalculateWeeklyGrosses(Money.FromDollars(100000));
+
+            Assert.That(weeks[0], Is.EqualTo(Money.FromDollars(45000)));
+            Assert.That(weeks[1], Is.EqualTo(Money.FromDollars(30000)));
+            Assert.That(weeks[2], Is.EqualTo(Money.FromDollars(17000)));
+            Assert.That(weeks[3], Is.EqualTo(Money.FromDollars(8000)));
+        }
+
+        [Test]
+        public void WeeklyGrosses_AssignRemainderDeterministicallyAndSumExactly()
+        {
+            Money target = Money.FromCents(101);
+            var weeks = TheatricalMarketConfiguration.CalculateWeeklyGrosses(target);
+
+            Assert.That(weeks[3], Is.EqualTo(Money.FromCents(9)));
+            Assert.That(weeks.Aggregate(Money.Zero, (sum, week) => sum + week), Is.EqualTo(target));
+        }
+
+        [Test]
+        public void WeeklyRevenue_IsCreditedExactlyOncePerCalendarBoundary()
+        {
+            var movie = CreateMovie("exactly-once", BudgetTier.Standard, 60);
+            _service.ReleaseMovie(movie);
+
+            _time.PassDays(7);
+            _time.RepeatCurrentDayEvent();
+
+            var boxOffice = _finances.Transactions
+                .Where(t => t.Category == FinancialTransactionCategory.BoxOfficeRevenue)
+                .ToList();
+            Assert.That(boxOffice, Has.Count.EqualTo(1));
+            Assert.That(boxOffice[0].Amount, Is.EqualTo(movie.TheatricalRun.WeeklyGrosses[0]));
+            Assert.That(boxOffice[0].ReferenceId, Is.EqualTo(movie.Id));
+        }
+
+        [Test]
+        public void PausedSimulation_DoesNotAdvanceTheatricalRun()
+        {
+            var movie = CreateMovie("paused", BudgetTier.Standard, 60);
+            _service.ReleaseMovie(movie);
+            _time.SetSpeed(SimulationSpeed.Paused);
+
+            _time.PassDays(7);
+
+            Assert.That(movie.TheatricalRun.CurrentDay, Is.EqualTo(0));
+            Assert.That(_finances.Transactions.Count(t => t.Category == FinancialTransactionCategory.BoxOfficeRevenue), Is.EqualTo(0));
+        }
+
+        [Test]
+        public void TheatricalRun_CompletesAfterFourWeeks()
+        {
+            var movie = CreateMovie("four-weeks", BudgetTier.Standard, 60);
+            _service.ReleaseMovie(movie);
+
+            _time.PassDays(27);
+            Assert.That(movie.TheatricalRun.IsCompleted, Is.False);
+
+            _time.PassDays(1);
+            Assert.That(movie.TheatricalRun.IsCompleted, Is.True);
+            Assert.That(movie.TheatricalRun.CurrentDay, Is.EqualTo(28));
+            Assert.That(movie.TheatricalRun.WeeksPaid, Is.EqualTo(4));
+        }
+
+        [Test]
+        public void Completion_StoresImmutableCommercialTotals()
+        {
+            var movie = CreateMovie("result", BudgetTier.High, 80);
+            _service.ReleaseMovie(movie);
+            _time.PassDays(28);
+
+            Assert.That(movie.CommercialResult, Is.Not.Null);
+            Assert.That(movie.CommercialResult.AudienceReception, Is.EqualTo(80));
+            Assert.That(movie.CommercialResult.TotalBoxOfficeGross, Is.EqualTo(movie.TheatricalRun.TargetGross));
+            Assert.That(movie.CommercialResult.TotalStudioRevenue, Is.EqualTo(movie.TheatricalRun.TargetGross));
+            Assert.That(movie.CommercialResult.ProductionBudget, Is.EqualTo(Money.FromDollars(BudgetTier.High.Amount)));
+        }
+
+        [Test]
+        public void CommercialProfitLoss_ExcludesUnrelatedStudioTransactions()
+        {
+            var movie = CreateMovie("profit", BudgetTier.Low, 60);
+            _finances.RecordObligation(Money.FromDollars(9999), FinancialTransactionCategory.EmployeeSalary, _time.CurrentTime, "Unrelated payroll");
+            _service.ReleaseMovie(movie);
+            _time.PassDays(28);
+
+            Money expected = movie.CommercialResult.TotalStudioRevenue - Money.FromDollars(BudgetTier.Low.Amount);
+            Assert.That(movie.CommercialResult.CommercialProfitLoss, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void ReleaseService_AdvancesMultipleRunsByMovieIdentity()
+        {
+            var first = CreateMovie("first", BudgetTier.Low, 40);
+            var second = CreateMovie("second", BudgetTier.High, 90);
+            _service.ReleaseMovie(first);
+            _service.ReleaseMovie(second);
+
+            _time.PassDays(7);
+
+            Assert.That(_service.GetTheatricalRun(first.Id), Is.SameAs(first.TheatricalRun));
+            Assert.That(_service.GetTheatricalRun(second.Id), Is.SameAs(second.TheatricalRun));
+            Assert.That(first.TheatricalRun.WeeksPaid, Is.EqualTo(1));
+            Assert.That(second.TheatricalRun.WeeksPaid, Is.EqualTo(1));
+            Assert.That(_finances.Transactions.Count(t => t.Category == FinancialTransactionCategory.BoxOfficeRevenue), Is.EqualTo(2));
+        }
+
+        private static MovieProject CreateMovie(string id, BudgetTier tier, int quality, bool completed = true)
+        {
+            var movie = new MovieProject(
+                id,
+                "Test Film " + id,
+                "drama",
+                "Drama",
+                tier.Amount,
+                new SimulationDateTime(1930, 1, 1, 8, 0),
+                tier.Id);
+            movie.TrySetProductionResult(new MovieProductionResult(quality, quality, quality, quality));
+            if (completed) movie.SetState(MovieProductionState.Completed);
+            return movie;
+        }
+
+        private sealed class ReleaseTimeService : ISimulationTimeService
+        {
+            public SimulationDateTime CurrentTime { get; private set; } = new SimulationDateTime(1930, 1, 1, 8, 0);
+            public SimulationSpeed CurrentSpeed { get; private set; } = SimulationSpeed.Normal;
+            public bool IsPaused => CurrentSpeed == SimulationSpeed.Paused;
+            public float TimeScaleMultiplier => IsPaused ? 0f : (float)CurrentSpeed;
+            public float RealSecondsPerSimulatedMinute { get; set; } = 1f;
+
+            public event Action<SimulationDateTime> OnMinutePassed { add { } remove { } }
+            public event Action<SimulationDateTime> OnHourPassed { add { } remove { } }
+            public event Action<SimulationDateTime> OnDayPassed;
+            public event Action<SimulationDateTime> OnMonthPassed { add { } remove { } }
+            public event Action<SimulationDateTime> OnYearPassed { add { } remove { } }
+            public event Action<SimulationSpeed> OnSpeedChanged;
+
+            public void SetSpeed(SimulationSpeed speed)
+            {
+                CurrentSpeed = speed;
+                OnSpeedChanged?.Invoke(speed);
+            }
+
+            public void TogglePause()
+            {
+                SetSpeed(IsPaused ? SimulationSpeed.Normal : SimulationSpeed.Paused);
+            }
+
+            public void PassDays(int count)
+            {
+                if (IsPaused) return;
+
+                for (int day = 0; day < count; day++)
+                {
+                    for (int minute = 0; minute < 1440; minute++)
+                    {
+                        var current = CurrentTime;
+                        current.AdvanceMinute(out _, out _, out _, out _);
+                        CurrentTime = current;
+                    }
+
+                    OnDayPassed?.Invoke(CurrentTime);
+                }
+            }
+
+            public void RepeatCurrentDayEvent()
+            {
+                OnDayPassed?.Invoke(CurrentTime);
             }
         }
     }
