@@ -22,6 +22,7 @@ namespace SilverScreen.Presentation.Buildings
         private StudioEmployeeManager _employeeManager;
         private ISimulationTimeService _timeService;
         private SetBlockingPointLayout _blockingPointLayout;
+        private BeatPerformanceGenerator _performanceGenerator;
         private MovieProject _activeMovie;
         private MovieScene _activeScene;
         private MovieTake _activeTake;
@@ -32,6 +33,7 @@ namespace SilverScreen.Presentation.Buildings
         private bool _awaitingBlockingMovement;
         private EmployeeAgent _movingPerformer;
         private ScreenplayBeat _movingBeat;
+        private BeatPerformanceResult _movingPerformance;
         private Action _onCompleted;
         private Action<StudioRouteResult> _onFailed;
 
@@ -44,11 +46,13 @@ namespace SilverScreen.Presentation.Buildings
         public void Initialize(
             StudioEmployeeManager employeeManager,
             ISimulationTimeService timeService,
-            SetBlockingPointLayout blockingPointLayout)
+            SetBlockingPointLayout blockingPointLayout,
+            BeatPerformanceGenerator performanceGenerator)
         {
             _employeeManager = employeeManager;
             _timeService = timeService;
             _blockingPointLayout = blockingPointLayout;
+            _performanceGenerator = performanceGenerator;
         }
 
         public StudioRouteResult TryBegin(
@@ -113,6 +117,15 @@ namespace SilverScreen.Presentation.Buildings
                 return StudioRouteResult.AgentMissing;
             }
 
+            if (_performanceGenerator == null) return StudioRouteResult.PerformanceMissing;
+            BeatPerformanceResult performance = _performanceGenerator.Generate(
+                beat,
+                performer.Employee,
+                _activeMovie.AssignedDirector,
+                _activeMovie.GenreId);
+            if (!_activeTake.RecordPerformanceResult(performance))
+                return StudioRouteResult.PerformanceMissing;
+
             Transform target = null;
             if (beat.TargetCharacterId != null)
             {
@@ -126,15 +139,16 @@ namespace SilverScreen.Presentation.Buildings
             if (beat.BeatType == ScreenplayBeatType.Action &&
                 !string.IsNullOrWhiteSpace(beat.BlockingTargetId))
             {
-                return BeginBlockingAction(performer, beat, target);
+                return BeginBlockingAction(performer, beat, performance, target);
             }
 
-            return BeginBeatPresentation(performer, beat, target);
+            return BeginBeatPresentation(performer, beat, performance, target);
         }
 
         private StudioRouteResult BeginBlockingAction(
             EmployeeAgent performer,
             ScreenplayBeat beat,
+            BeatPerformanceResult performance,
             Transform target)
         {
             if (_blockingPointLayout == null ||
@@ -142,13 +156,14 @@ namespace SilverScreen.Presentation.Buildings
             {
                 Debug.LogWarning(
                     $"[PrototypeScreenplayBeatSequence] Blocking point '{beat.BlockingTargetId}' was not found; using the Action gesture fallback.");
-                return BeginBeatPresentation(performer, beat, target);
+                return BeginBeatPresentation(performer, beat, performance, target);
             }
 
             _beatExecuting = true;
             _awaitingBlockingMovement = true;
             _movingPerformer = performer;
             _movingBeat = beat;
+            _movingPerformance = performance;
             _beatElapsed = 0f;
             _beatTimeout = MovementTimeoutSeconds;
             var intent = new EmployeeIntent(
@@ -158,7 +173,7 @@ namespace SilverScreen.Presentation.Buildings
             bool started = performer.TryAssignTaskDestination(
                 destination,
                 intent,
-                () => HandleBlockingArrival(performer, beat, target));
+                () => HandleBlockingArrival(performer, beat, performance, target));
             if (started) return StudioRouteResult.Started;
 
             Debug.LogWarning(
@@ -166,12 +181,14 @@ namespace SilverScreen.Presentation.Buildings
             _awaitingBlockingMovement = false;
             _movingPerformer = null;
             _movingBeat = null;
-            return BeginBeatPresentation(performer, beat, target);
+            _movingPerformance = null;
+            return BeginBeatPresentation(performer, beat, performance, target);
         }
 
         private void HandleBlockingArrival(
             EmployeeAgent performer,
             ScreenplayBeat beat,
+            BeatPerformanceResult performance,
             Transform target)
         {
             if (!IsRunning || !_awaitingBlockingMovement) return;
@@ -179,12 +196,13 @@ namespace SilverScreen.Presentation.Buildings
             _awaitingBlockingMovement = false;
             _movingPerformer = null;
             _movingBeat = null;
+            _movingPerformance = null;
             performer.Employee.SetState(EmployeeState.Filming);
             performer.Employee.SetIntent(new EmployeeIntent(
                 EmployeeIntentPurpose.PerformTask,
                 "Performing screenplay action",
                 "SoundStage"));
-            StudioRouteResult result = BeginBeatPresentation(performer, beat, target);
+            StudioRouteResult result = BeginBeatPresentation(performer, beat, performance, target);
             if (result != StudioRouteResult.Started)
                 Fail(result);
         }
@@ -192,6 +210,7 @@ namespace SilverScreen.Presentation.Buildings
         private StudioRouteResult BeginBeatPresentation(
             EmployeeAgent performer,
             ScreenplayBeat beat,
+            BeatPerformanceResult performance,
             Transform target)
         {
             float duration = GetDuration(beat.BeatType);
@@ -200,7 +219,7 @@ namespace SilverScreen.Presentation.Buildings
             _beatTimeout = duration + CompletionGraceSeconds;
             if (!performer.TryBeginBeatPerformance(
                     beat.BeatType,
-                    beat.EmotionalIntention,
+                    performance,
                     target,
                     duration,
                     HandleBeatCompleted))
@@ -234,10 +253,12 @@ namespace SilverScreen.Presentation.Buildings
         {
             EmployeeAgent performer = _movingPerformer;
             ScreenplayBeat beat = _movingBeat;
+            BeatPerformanceResult performance = _movingPerformance;
             _awaitingBlockingMovement = false;
             _movingPerformer = null;
             _movingBeat = null;
-            if (performer == null || beat == null)
+            _movingPerformance = null;
+            if (performer == null || beat == null || performance == null)
             {
                 Fail(StudioRouteResult.PerformanceMissing);
                 return;
@@ -251,7 +272,7 @@ namespace SilverScreen.Presentation.Buildings
                 EmployeeIntentPurpose.PerformTask,
                 "Performing screenplay action",
                 "SoundStage"));
-            StudioRouteResult result = BeginBeatPresentation(performer, beat, null);
+            StudioRouteResult result = BeginBeatPresentation(performer, beat, performance, null);
             if (result != StudioRouteResult.Started)
                 Fail(result);
         }
@@ -320,6 +341,7 @@ namespace SilverScreen.Presentation.Buildings
             _awaitingBlockingMovement = false;
             _movingPerformer = null;
             _movingBeat = null;
+            _movingPerformance = null;
             _beatElapsed = 0f;
             _beatTimeout = 0f;
             _onCompleted = null;

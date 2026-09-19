@@ -38,6 +38,10 @@ namespace SilverScreen.Presentation.Employees
         private bool _beatPerformanceActive;
         private ScreenplayBeatType _beatType;
         private ScreenplayEmotion _beatEmotion;
+        private float _performanceIntensity = 0.6f;
+        private float _performanceConfidence = 0.6f;
+        private float _performanceExpressiveness = 0.6f;
+        private float _performanceTiming = 0.6f;
         private Transform _beatTarget;
         private float _beatDuration;
         private Action _onBeatCompleted;
@@ -226,7 +230,7 @@ namespace SilverScreen.Presentation.Employees
 
         public bool TryBeginBeatPerformance(
             ScreenplayBeatType beatType,
-            ScreenplayEmotion? emotion,
+            BeatPerformanceResult performance,
             Transform target,
             float duration,
             Action onCompleted)
@@ -235,6 +239,7 @@ namespace SilverScreen.Presentation.Employees
                 Employee == null ||
                 Employee.Role != EmployeeRole.Actor ||
                 Employee.CurrentState != EmployeeState.Filming ||
+                performance == null ||
                 duration <= 0f)
             {
                 return false;
@@ -244,7 +249,11 @@ namespace SilverScreen.Presentation.Employees
             _performanceVisual.SetActive(true);
             _beatPerformanceActive = true;
             _beatType = beatType;
-            _beatEmotion = emotion ?? ScreenplayEmotion.Neutral;
+            _beatEmotion = performance.DeliveredEmotion;
+            _performanceIntensity = (float)performance.DeliveredIntensity;
+            _performanceConfidence = (float)performance.Confidence;
+            _performanceExpressiveness = (float)performance.Expressiveness;
+            _performanceTiming = (float)performance.Timing;
             _beatTarget = target;
             _beatDuration = duration;
             _performanceElapsed = 0f;
@@ -263,28 +272,35 @@ namespace SilverScreen.Presentation.Employees
         private void UpdateBeatPerformance()
         {
             float normalized = Mathf.Clamp01(_performanceElapsed / _beatDuration);
-            float pulse = Mathf.Sin(normalized * Mathf.PI * 4f);
+            float hesitation = Mathf.Lerp(0.16f, 0f, _performanceConfidence);
+            float performedTime = Mathf.Clamp01((normalized - hesitation) / Mathf.Max(0.01f, 1f - hesitation));
+            float tempo = Mathf.Lerp(0.82f, 1.18f, _performanceTiming);
+            float pulse = Mathf.Sin(performedTime * Mathf.PI * 4f * tempo);
+            float amplitude = Mathf.Lerp(
+                0.42f,
+                1.35f,
+                _performanceIntensity * 0.4f + _performanceConfidence * 0.2f + _performanceExpressiveness * 0.4f);
 
             switch (_beatType)
             {
                 case ScreenplayBeatType.Dialogue:
                     FaceBeatTarget();
-                    _performanceLeftArm.localRotation = Quaternion.Euler(0f, 0f, -28f + pulse * 18f);
-                    _performanceRightArm.localRotation = Quaternion.Euler(0f, 0f, 18f - pulse * 30f);
+                    _performanceLeftArm.localRotation = Quaternion.Euler(0f, 0f, -28f + pulse * 18f * amplitude);
+                    _performanceRightArm.localRotation = Quaternion.Euler(0f, 0f, 18f - pulse * 30f * amplitude);
                     _performanceVisual.transform.localRotation =
-                        Quaternion.Euler(0f, pulse * 4f, 0f);
+                        Quaternion.Euler(0f, pulse * 4f * amplitude, 0f);
                     break;
 
                 case ScreenplayBeatType.Reaction:
-                    UpdateReactionGesture(pulse);
+                    UpdateReactionGesture(pulse, amplitude);
                     break;
 
                 default:
-                    float sweep = Mathf.Sin(normalized * Mathf.PI);
-                    _performanceLeftArm.localRotation = Quaternion.Euler(0f, 0f, -35f - sweep * 45f);
-                    _performanceRightArm.localRotation = Quaternion.Euler(0f, 0f, 35f + sweep * 45f);
+                    float sweep = Mathf.Sin(performedTime * Mathf.PI);
+                    _performanceLeftArm.localRotation = Quaternion.Euler(0f, 0f, -35f - sweep * 45f * amplitude);
+                    _performanceRightArm.localRotation = Quaternion.Euler(0f, 0f, 35f + sweep * 45f * amplitude);
                     _performanceVisual.transform.localRotation =
-                        Quaternion.Euler(0f, pulse * 14f, sweep * 5f);
+                        Quaternion.Euler(0f, pulse * 14f * amplitude, sweep * 5f * amplitude);
                     break;
             }
 
@@ -292,7 +308,7 @@ namespace SilverScreen.Presentation.Employees
                 CompleteBeatPerformance();
         }
 
-        private void UpdateReactionGesture(float pulse)
+        private void UpdateReactionGesture(float pulse, float amplitude)
         {
             float armSpread = 28f;
             float bodyPitch = 0f;
@@ -329,10 +345,11 @@ namespace SilverScreen.Presentation.Employees
                     break;
             }
 
+            armSpread *= amplitude;
             _performanceLeftArm.localRotation = Quaternion.Euler(0f, 0f, -armSpread);
             _performanceRightArm.localRotation = Quaternion.Euler(0f, 0f, armSpread);
             _performanceVisual.transform.localRotation =
-                Quaternion.Euler(bodyPitch, bodyTurn, 0f);
+                Quaternion.Euler(bodyPitch * amplitude, bodyTurn * amplitude, 0f);
         }
 
         private void FaceBeatTarget()
@@ -359,6 +376,10 @@ namespace SilverScreen.Presentation.Employees
             _beatDuration = 0f;
             _onBeatCompleted = null;
             _performanceElapsed = 0f;
+            _performanceIntensity = 0.6f;
+            _performanceConfidence = 0.6f;
+            _performanceExpressiveness = 0.6f;
+            _performanceTiming = 0.6f;
             if (_performanceVisual != null)
             {
                 _performanceVisual.transform.localPosition = Vector3.zero;

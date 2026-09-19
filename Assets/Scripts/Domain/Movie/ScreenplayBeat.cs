@@ -31,6 +31,7 @@ namespace SilverScreen.Domain.Movie
         public string Content { get; }
         public ScreenplayEmotion? EmotionalIntention { get; }
         public string BlockingTargetId { get; }
+        public double IntendedIntensity { get; }
 
         public ScreenplayBeat(
             string id,
@@ -40,7 +41,8 @@ namespace SilverScreen.Domain.Movie
             string performingCharacterId = null,
             string targetCharacterId = null,
             ScreenplayEmotion? emotionalIntention = null,
-            string blockingTargetId = null)
+            string blockingTargetId = null,
+            double intendedIntensity = 0.6d)
         {
             if (order < 1) throw new ArgumentOutOfRangeException(nameof(order));
             if (string.IsNullOrWhiteSpace(content))
@@ -54,6 +56,7 @@ namespace SilverScreen.Domain.Movie
             Content = content.Trim();
             EmotionalIntention = emotionalIntention;
             BlockingTargetId = NormalizeOptionalId(blockingTargetId);
+            IntendedIntensity = Math.Clamp(intendedIntensity, 0d, 1d);
         }
 
         internal void SetOrder(int order)
