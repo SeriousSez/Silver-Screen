@@ -154,6 +154,14 @@ namespace SilverScreen.Domain.Movie
             return scene.AddBeat(beat);
         }
 
+        public bool AddShotToScene(string sceneId, SceneShot shot)
+        {
+            var scene = GetScene(sceneId);
+            if (scene == null || shot == null) return false;
+            if (!ReferencesOwnedCastRole(shot.SubjectCharacterId)) return false;
+            return scene.AddShot(shot);
+        }
+
         private void RenumberScenes()
         {
             for (int index = 0; index < _scenes.Count; index++)

@@ -2,8 +2,10 @@ using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using SilverScreen.Domain;
 using SilverScreen.Presentation.Employees;
 using SilverScreen.Presentation.Recruitment;
+using SilverScreen.Presentation.Buildings;
 
 namespace SilverScreen.Presentation.Selection
 {
@@ -26,6 +28,9 @@ namespace SilverScreen.Presentation.Selection
         private Vector2 _mouseDownPosition;
         private bool _isMouseDown;
         private UnityEngine.Camera _mainCamera;
+        private StudioBuildingView _lastClickedBuilding;
+        private float _lastBuildingClickTime = float.NegativeInfinity;
+        private const float DoubleClickSeconds = 0.35f;
 
         private void Awake()
         {
@@ -91,7 +96,31 @@ namespace SilverScreen.Presentation.Selection
                 return;
             }
 
+            var building = hit.collider.GetComponentInParent<StudioBuildingView>();
+            if (building != null)
+            {
+                HandleBuildingClick(building);
+                return;
+            }
+
             Deselect();
+        }
+
+        private void HandleBuildingClick(StudioBuildingView building)
+        {
+            float now = UnityEngine.Time.unscaledTime;
+            bool isDoubleClick = building == _lastClickedBuilding &&
+                                 now - _lastBuildingClickTime <= DoubleClickSeconds;
+            _lastClickedBuilding = building;
+            _lastBuildingClickTime = now;
+            Deselect();
+
+            if (isDoubleClick && building.BuildingType == BuildingType.SoundStage)
+            {
+                building.GetComponent<LiveFilmingPlayback>()?.TryEnter();
+                _lastClickedBuilding = null;
+                _lastBuildingClickTime = float.NegativeInfinity;
+            }
         }
 
         public void Select(EmployeeAgent agent)

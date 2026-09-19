@@ -17,6 +17,7 @@ namespace SilverScreen.Domain.Movie
         private readonly HashSet<string> _participatingCharacterIds = new HashSet<string>();
         private readonly List<MovieTake> _takes = new List<MovieTake>();
         private readonly List<ScreenplayBeat> _beats = new List<ScreenplayBeat>();
+        private readonly List<SceneShot> _shots = new List<SceneShot>();
 
         public string Id { get; }
         public int SceneNumber { get; private set; }
@@ -30,6 +31,7 @@ namespace SilverScreen.Domain.Movie
         public IReadOnlyCollection<string> ParticipatingRoleIds => _participatingCharacterIds;
         public IReadOnlyList<MovieTake> Takes => _takes;
         public IReadOnlyList<ScreenplayBeat> Beats => _beats;
+        public IReadOnlyList<SceneShot> Shots => _shots;
         public MovieTake SelectedTake => _takes.Find(take => take.IsSelectedForFinalCut);
 
         public event Action<MovieScene> OnSceneUpdated;
@@ -77,7 +79,8 @@ namespace SilverScreen.Domain.Movie
             if (normalizedId == null ||
                 _beats.Exists(beat =>
                     beat.PerformingCharacterId == normalizedId ||
-                    beat.TargetCharacterId == normalizedId))
+                    beat.TargetCharacterId == normalizedId) ||
+                _shots.Exists(shot => shot.SubjectCharacterId == normalizedId))
             {
                 return false;
             }
@@ -110,7 +113,7 @@ namespace SilverScreen.Domain.Movie
         public bool RemoveBeat(string beatId)
         {
             var beat = GetBeat(beatId);
-            if (beat == null) return false;
+            if (beat == null || _shots.Exists(shot => shot.ScreenplayBeatId == beat.Id)) return false;
 
             _beats.Remove(beat);
             RenumberBeats();
@@ -136,6 +139,58 @@ namespace SilverScreen.Domain.Movie
 
         public ScreenplayBeat GetBeat(string beatId) =>
             string.IsNullOrWhiteSpace(beatId) ? null : _beats.Find(beat => beat.Id == beatId);
+
+        public bool AddShot(SceneShot shot)
+        {
+            if (shot == null ||
+                _shots.Exists(existing => existing.Id == shot.Id) ||
+                (shot.SubjectCharacterId != null && !HasCharacter(shot.SubjectCharacterId)) ||
+                (shot.ScreenplayBeatId != null && GetBeat(shot.ScreenplayBeatId) == null))
+            {
+                return false;
+            }
+
+            int insertionIndex = Math.Clamp(shot.Order - 1, 0, _shots.Count);
+            _shots.Insert(insertionIndex, shot);
+            RenumberShots();
+            OnSceneUpdated?.Invoke(this);
+            return true;
+        }
+
+        public bool RemoveShot(string shotId)
+        {
+            var shot = GetShot(shotId);
+            if (shot == null) return false;
+
+            _shots.Remove(shot);
+            RenumberShots();
+            OnSceneUpdated?.Invoke(this);
+            return true;
+        }
+
+        public bool ReorderShot(string shotId, int newOrder)
+        {
+            var shot = GetShot(shotId);
+            if (shot == null || newOrder < 1 || newOrder > _shots.Count) return false;
+
+            int currentIndex = _shots.IndexOf(shot);
+            int newIndex = newOrder - 1;
+            if (currentIndex == newIndex) return true;
+
+            _shots.RemoveAt(currentIndex);
+            _shots.Insert(newIndex, shot);
+            RenumberShots();
+            OnSceneUpdated?.Invoke(this);
+            return true;
+        }
+
+        public SceneShot GetShot(string shotId) =>
+            string.IsNullOrWhiteSpace(shotId) ? null : _shots.Find(shot => shot.Id == shotId);
+
+        public SceneShot GetShotForBeat(string beatId) =>
+            string.IsNullOrWhiteSpace(beatId)
+                ? null
+                : _shots.Find(shot => shot.ScreenplayBeatId == beatId);
 
         public bool AddParticipant(string personId, string roleId = null)
         {
@@ -231,6 +286,12 @@ namespace SilverScreen.Domain.Movie
         {
             for (int index = 0; index < _beats.Count; index++)
                 _beats[index].SetOrder(index + 1);
+        }
+
+        private void RenumberShots()
+        {
+            for (int index = 0; index < _shots.Count; index++)
+                _shots[index].SetOrder(index + 1);
         }
 
         private bool TrySetStatus(MovieSceneStatus expected, MovieSceneStatus next)

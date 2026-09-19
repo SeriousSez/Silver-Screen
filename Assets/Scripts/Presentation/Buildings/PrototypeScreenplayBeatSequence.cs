@@ -19,10 +19,12 @@ namespace SilverScreen.Presentation.Buildings
 
         private readonly List<ScreenplayBeat> _beats = new List<ScreenplayBeat>();
         private readonly HashSet<EmployeeAgent> _participantAgents = new HashSet<EmployeeAgent>();
+        private readonly Dictionary<string, BeatPerformanceResult> _performances = new Dictionary<string, BeatPerformanceResult>();
         private StudioEmployeeManager _employeeManager;
         private ISimulationTimeService _timeService;
         private SetBlockingPointLayout _blockingPointLayout;
         private BeatPerformanceGenerator _performanceGenerator;
+        private PrototypeProductionCamera _productionCamera;
         private MovieProject _activeMovie;
         private MovieScene _activeScene;
         private MovieTake _activeTake;
@@ -47,12 +49,14 @@ namespace SilverScreen.Presentation.Buildings
             StudioEmployeeManager employeeManager,
             ISimulationTimeService timeService,
             SetBlockingPointLayout blockingPointLayout,
-            BeatPerformanceGenerator performanceGenerator)
+            BeatPerformanceGenerator performanceGenerator,
+            PrototypeProductionCamera productionCamera)
         {
             _employeeManager = employeeManager;
             _timeService = timeService;
             _blockingPointLayout = blockingPointLayout;
             _performanceGenerator = performanceGenerator;
+            _productionCamera = productionCamera;
         }
 
         public StudioRouteResult TryBegin(
@@ -90,6 +94,24 @@ namespace SilverScreen.Presentation.Buildings
                     }
                     _participantAgents.Add(target);
                 }
+
+                if (_performanceGenerator == null)
+                {
+                    ResetSequence();
+                    return StudioRouteResult.PerformanceMissing;
+                }
+
+                BeatPerformanceResult performance = _performanceGenerator.Generate(
+                    beat,
+                    performer.Employee,
+                    movie.AssignedDirector,
+                    movie.GenreId);
+                if (!take.RecordPerformanceResult(performance))
+                {
+                    ResetSequence();
+                    return StudioRouteResult.PerformanceMissing;
+                }
+                _performances[beat.Id] = performance;
             }
 
             foreach (var participant in _participantAgents)
@@ -117,14 +139,10 @@ namespace SilverScreen.Presentation.Buildings
                 return StudioRouteResult.AgentMissing;
             }
 
-            if (_performanceGenerator == null) return StudioRouteResult.PerformanceMissing;
-            BeatPerformanceResult performance = _performanceGenerator.Generate(
-                beat,
-                performer.Employee,
-                _activeMovie.AssignedDirector,
-                _activeMovie.GenreId);
-            if (!_activeTake.RecordPerformanceResult(performance))
+            if (!_performances.TryGetValue(beat.Id, out BeatPerformanceResult performance))
                 return StudioRouteResult.PerformanceMissing;
+
+            PresentShotForBeat(beat);
 
             Transform target = null;
             if (beat.TargetCharacterId != null)
@@ -300,6 +318,30 @@ namespace SilverScreen.Presentation.Buildings
             return agent != null;
         }
 
+        private void PresentShotForBeat(ScreenplayBeat beat)
+        {
+            if (_productionCamera == null || !_productionCamera.IsActive) return;
+
+            SceneShot shot = _activeScene.GetShotForBeat(beat.Id);
+            if (shot == null) return;
+
+            Transform subject = null;
+            if (shot.SubjectCharacterId != null)
+            {
+                if (TryResolveAgent(shot.SubjectCharacterId, out EmployeeAgent subjectAgent))
+                {
+                    subject = subjectAgent.transform;
+                }
+                else
+                {
+                    Debug.LogWarning(
+                        $"[PrototypeScreenplayBeatSequence] Shot subject '{shot.SubjectCharacterId}' could not be resolved; using Wide framing.");
+                }
+            }
+
+            _productionCamera.Present(shot, subject);
+        }
+
         private static float GetDuration(ScreenplayBeatType type)
         {
             return type switch
@@ -336,6 +378,7 @@ namespace SilverScreen.Presentation.Buildings
             _activeScene = null;
             _activeTake = null;
             _beats.Clear();
+            _performances.Clear();
             _currentBeatIndex = 0;
             _beatExecuting = false;
             _awaitingBlockingMovement = false;
