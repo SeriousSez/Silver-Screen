@@ -1,6 +1,7 @@
 using System;
 using SilverScreen.Domain;
 using SilverScreen.Domain.Time;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -27,6 +28,7 @@ namespace SilverScreen.Presentation.Buildings
         private GameObject _operatorRoot;
         private NavMeshAgent _navAgent;
         private Transform _clapTop;
+        private TextMeshPro _slateText;
         private Vector3 _stagingPosition;
         private SequenceState _state;
         private float _stateElapsed;
@@ -40,7 +42,12 @@ namespace SilverScreen.Presentation.Buildings
             EnsurePrototypeOperator();
         }
 
-        public StudioRouteResult TryBegin(Action onCompleted, Action<StudioRouteResult> onFailed)
+        public StudioRouteResult TryBegin(
+            string movieTitle,
+            int? sceneNumber,
+            int? takeNumber,
+            Action onCompleted,
+            Action<StudioRouteResult> onFailed)
         {
             if (_state != SequenceState.Idle) return StudioRouteResult.SequenceInProgress;
             if (_layout == null ||
@@ -51,6 +58,7 @@ namespace SilverScreen.Presentation.Buildings
             }
 
             EnsurePrototypeOperator();
+            SetSlateText(movieTitle, sceneNumber, takeNumber);
             if (!NavMesh.SamplePosition(staging, out NavMeshHit stagingHit, 2f, NavMesh.AllAreas) ||
                 !NavMesh.SamplePosition(mark, out NavMeshHit markHit, 2f, NavMesh.AllAreas))
             {
@@ -207,6 +215,22 @@ namespace SilverScreen.Presentation.Buildings
             board.transform.localScale = new Vector3(0.75f, 0.48f, 0.08f);
             Destroy(board.GetComponent<Collider>());
 
+            var textObject = new GameObject("SlateText");
+            textObject.transform.SetParent(_operatorRoot.transform, false);
+            textObject.transform.localPosition = new Vector3(0f, 1.25f, 0.425f);
+            textObject.transform.localRotation = Quaternion.identity;
+            textObject.transform.localScale = Vector3.one * 0.01f;
+            _slateText = textObject.AddComponent<TextMeshPro>();
+            _slateText.rectTransform.sizeDelta = new Vector2(68f, 40f);
+            _slateText.alignment = TextAlignmentOptions.Center;
+            _slateText.color = Color.white;
+            _slateText.textWrappingMode = TextWrappingModes.Normal;
+            _slateText.enableAutoSizing = true;
+            _slateText.fontSizeMin = 6f;
+            _slateText.fontSizeMax = 16f;
+            _slateText.overflowMode = TextOverflowModes.Ellipsis;
+            _slateText.raycastTarget = false;
+
             var topPivot = new GameObject("ClapTop");
             topPivot.transform.SetParent(_operatorRoot.transform, false);
             topPivot.transform.localPosition = new Vector3(-0.34f, 1.52f, 0.38f);
@@ -221,6 +245,21 @@ namespace SilverScreen.Presentation.Buildings
 
             _clapTop.localRotation = Quaternion.Euler(0f, 0f, 28f);
             _operatorRoot.SetActive(false);
+        }
+
+        private void SetSlateText(string movieTitle, int? sceneNumber, int? takeNumber)
+        {
+            if (_slateText == null) return;
+            if (string.IsNullOrWhiteSpace(movieTitle) || !sceneNumber.HasValue || !takeNumber.HasValue)
+            {
+                _slateText.text = string.Empty;
+                return;
+            }
+
+            _slateText.text =
+                $"{movieTitle.Trim().ToUpperInvariant()}\n" +
+                $"SCENE {sceneNumber.Value}\n" +
+                $"TAKE {takeNumber.Value}";
         }
 
         private void OnDestroy()
