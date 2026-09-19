@@ -19,9 +19,16 @@ namespace SilverScreen.Domain.Movie
         private int _filmingMinutesElapsed;
         private string _routingFailureMessage;
         private readonly HashSet<string> _actorsAtWaitingStations = new HashSet<string>();
+        private MovieScene _activeScene;
+        private MovieTake _activeTake;
 
         public StudioProductionSlate Slate => _slate;
         public MovieProject ActiveMovie => _slate.ActiveMovie;
+        public MovieScene ActiveScene => _activeScene;
+        public MovieTake ActiveTake => _activeTake;
+        public string ActiveSlateMovieTitle => ActiveMovie?.Title;
+        public int? ActiveSlateSceneNumber => _activeScene?.SceneNumber;
+        public int? ActiveSlateTakeNumber => _activeTake?.TakeNumber;
         public string StatusMessage => _statusMessage;
         public ProductionPhase CurrentProductionPhase { get; private set; } = ProductionPhase.Inactive;
         public IReadOnlyList<GenreDefinition> AvailableGenres => _genres;
@@ -76,6 +83,7 @@ namespace SilverScreen.Domain.Movie
 
         private void HandleSlateActiveMovieChanged(MovieProject movie)
         {
+            ClearActiveSceneAndTake();
             SetProductionPhase(ProductionPhase.Inactive);
             _filmingMinutesElapsed = 0;
             UpdateStatus();
@@ -321,6 +329,12 @@ namespace SilverScreen.Domain.Movie
                 role.ResetForProduction();
             }
 
+            if (!TryActivateScene(movie))
+            {
+                FailProduction(movie, "No eligible movie scene is available for filming.");
+                return;
+            }
+
             var stageIntent = new EmployeeIntent(
                 EmployeeIntentPurpose.ReportToStage,
                 $"Walking to Sound Stage 1 ({movie.Title})",
@@ -520,6 +534,7 @@ namespace SilverScreen.Domain.Movie
         {
             _routingFailureMessage = message;
             _actorsAtWaitingStations.Clear();
+            DiscardActiveTake();
             SetProductionPhase(ProductionPhase.Failed);
 
             if (movie.AssignedDirector != null)
@@ -553,6 +568,13 @@ namespace SilverScreen.Domain.Movie
                 CurrentProductionPhase == ProductionPhase.Blocking)
             {
                 SetProductionPhase(ProductionPhase.ReadyForTake);
+                _activeTake = _activeScene?.PrepareTake();
+                if (_activeTake == null)
+                {
+                    FailProduction(movie, "A take could not be prepared for the active scene.");
+                    return;
+                }
+
                 BeginSlateSequence(movie);
             }
             else
@@ -564,6 +586,14 @@ namespace SilverScreen.Domain.Movie
 
         private void BeginSlateSequence(MovieProject movie)
         {
+            if (_activeScene == null ||
+                _activeTake == null ||
+                !_activeScene.BeginRecording(_activeTake.Id))
+            {
+                FailProduction(movie, "The active take could not begin recording.");
+                return;
+            }
+
             SetProductionPhase(ProductionPhase.Slating);
             var routeResult = _router.StartSlateSequence(
                 BuildingType.SoundStage,
@@ -586,6 +616,12 @@ namespace SilverScreen.Domain.Movie
 
         private void BeginFilming(MovieProject movie)
         {
+            if (_activeScene == null || !_activeScene.BeginFilming())
+            {
+                FailProduction(movie, "The active scene could not begin filming.");
+                return;
+            }
+
             movie.SetState(MovieProductionState.Filming);
             SetProductionPhase(ProductionPhase.Filming);
             _filmingMinutesElapsed = 0;
@@ -617,6 +653,15 @@ namespace SilverScreen.Domain.Movie
 
         private void CompleteFilming(MovieProject movie)
         {
+            if (_activeScene == null ||
+                _activeTake == null ||
+                !_activeScene.CompleteTake(_activeTake.Id, TimeSpan.FromMinutes(_filmingMinutesElapsed)) ||
+                !_activeScene.CompleteFilming())
+            {
+                FailProduction(movie, "The active scene or take could not be completed.");
+                return;
+            }
+
             SetProductionPhase(ProductionPhase.Completed);
             movie.SetProgress(1.0f);
             movie.TrySetProductionResult(_qualityCalculator.Calculate(movie));
@@ -645,6 +690,58 @@ namespace SilverScreen.Domain.Movie
             OnProductionNotification?.Invoke(
                 $"{movie.Title} has finished filming!{Environment.NewLine}" +
                 $"Production Quality: {movie.ProductionResult.OverallQuality}/100");
+
+            ClearActiveSceneAndTake();
+        }
+
+        private bool TryActivateScene(MovieProject movie)
+        {
+            ClearActiveSceneAndTake();
+
+            foreach (var scene in movie.Scenes)
+            {
+                if (scene.Status == MovieSceneStatus.Planned || scene.Status == MovieSceneStatus.Ready)
+                {
+                    _activeScene = scene;
+                    break;
+                }
+            }
+
+            if (_activeScene == null && movie.Scenes.Count == 0)
+            {
+                var defaultScene = new MovieScene(
+                    Guid.NewGuid().ToString(),
+                    1,
+                    "sound-stage-1",
+                    "Scene 1");
+                if (movie.AddScene(defaultScene))
+                {
+                    _activeScene = defaultScene;
+                }
+            }
+
+            if (_activeScene == null) return false;
+            if (_activeScene.Status == MovieSceneStatus.Planned && !_activeScene.MarkReady()) return false;
+            return _activeScene.Status == MovieSceneStatus.Ready;
+        }
+
+        private void DiscardActiveTake()
+        {
+            if (_activeScene != null &&
+                _activeTake != null &&
+                _activeTake.Status != MovieTakeStatus.Completed &&
+                _activeTake.Status != MovieTakeStatus.Discarded)
+            {
+                _activeScene.DiscardTake(_activeTake.Id);
+            }
+
+            ClearActiveSceneAndTake();
+        }
+
+        private void ClearActiveSceneAndTake()
+        {
+            _activeScene = null;
+            _activeTake = null;
         }
 
         private void SetProductionPhase(ProductionPhase phase)

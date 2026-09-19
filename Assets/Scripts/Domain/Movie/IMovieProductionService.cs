@@ -7,6 +7,11 @@ namespace SilverScreen.Domain.Movie
     {
         StudioProductionSlate Slate { get; }
         MovieProject ActiveMovie { get; }
+        MovieScene ActiveScene { get; }
+        MovieTake ActiveTake { get; }
+        string ActiveSlateMovieTitle { get; }
+        int? ActiveSlateSceneNumber { get; }
+        int? ActiveSlateTakeNumber { get; }
         string StatusMessage { get; }
 
         IReadOnlyList<GenreDefinition> AvailableGenres { get; }
