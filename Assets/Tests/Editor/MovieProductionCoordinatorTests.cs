@@ -317,6 +317,14 @@ namespace SilverScreen.Tests.EditMode
                 onArrival?.Invoke();
                 return StudioRouteResult.Started;
             }
+            public StudioRouteResult StartSlateSequence(
+                BuildingType buildingType,
+                Action onCompleted,
+                Action<StudioRouteResult> onFailed)
+            {
+                onCompleted?.Invoke();
+                return StudioRouteResult.Started;
+            }
             public void ReleaseEmployee(Employee employee)
             {
                 if (employee == null) return;

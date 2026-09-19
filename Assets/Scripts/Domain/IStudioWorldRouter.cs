@@ -10,7 +10,9 @@ namespace SilverScreen.Domain
         BuildingMissing,
         NavigationRejected,
         StationMissing,
-        MarkMissing
+        MarkMissing,
+        SlateMissing,
+        SequenceInProgress
     }
 
     public enum ProductionStationType
@@ -30,11 +32,18 @@ namespace SilverScreen.Domain
         ActorMarkC
     }
 
+    public enum SlatePositionType
+    {
+        SlateStaging,
+        SlateMark
+    }
+
     public interface IStudioWorldRouter
     {
         StudioRouteResult SendEmployeeToBuilding(Employee employee, BuildingType buildingType, EmployeeIntent intent, Action onArrival);
         StudioRouteResult SendEmployeeToProductionStation(Employee employee, BuildingType buildingType, ProductionStationType stationType, EmployeeIntent intent, Action onArrival);
         StudioRouteResult SendEmployeeToSceneMark(Employee employee, BuildingType buildingType, ActorSceneMarkType markType, EmployeeIntent intent, Action onArrival);
+        StudioRouteResult StartSlateSequence(BuildingType buildingType, Action onCompleted, Action<StudioRouteResult> onFailed);
         void ReleaseEmployee(Employee employee);
     }
 }

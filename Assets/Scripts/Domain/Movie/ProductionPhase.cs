@@ -7,6 +7,7 @@ namespace SilverScreen.Domain.Movie
         AtStations,
         Blocking,
         ReadyForTake,
+        Slating,
         Filming,
         Completed,
         Failed
