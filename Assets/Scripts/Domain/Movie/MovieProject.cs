@@ -101,11 +101,35 @@ namespace SilverScreen.Domain.Movie
         public MovieScene GetScene(string sceneId) =>
             string.IsNullOrWhiteSpace(sceneId) ? null : _scenes.Find(scene => scene.Id == sceneId);
 
+        public bool AddCharacterToScene(string sceneId, string castRoleId)
+        {
+            var scene = GetScene(sceneId);
+            var castRole = GetCastRole(castRoleId);
+            return scene != null && castRole != null && scene.AddCharacter(castRole.Id);
+        }
+
+        public bool AddBeatToScene(string sceneId, ScreenplayBeat beat)
+        {
+            var scene = GetScene(sceneId);
+            if (scene == null || beat == null) return false;
+            if (!ReferencesOwnedCastRole(beat.PerformingCharacterId) ||
+                !ReferencesOwnedCastRole(beat.TargetCharacterId))
+            {
+                return false;
+            }
+
+            return scene.AddBeat(beat);
+        }
+
         private void RenumberScenes()
         {
             for (int index = 0; index < _scenes.Count; index++)
                 _scenes[index].SetSceneNumber(index + 1);
         }
+
+        private bool ReferencesOwnedCastRole(string castRoleId) =>
+            castRoleId == null || GetCastRole(castRoleId) != null;
+
         public bool AddCastRole(MovieRole role)
         {
             if (role == null || _roles.Exists(existing => existing.Id == role.Id)) return false;
