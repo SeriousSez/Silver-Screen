@@ -25,6 +25,9 @@ namespace SilverScreen.Domain.Movie
         private readonly List<MovieRole> _roles = new List<MovieRole>();
         public IReadOnlyList<MovieRole> Roles => _roles;
 
+        private readonly List<MovieScene> _scenes = new List<MovieScene>();
+        public IReadOnlyList<MovieScene> Scenes => _scenes;
+
         public float ProductionProgress { get; private set; }
         public SimulationDateTime CreatedDate { get; }
 
@@ -65,6 +68,42 @@ namespace SilverScreen.Domain.Movie
             CommercialResult = null;
         }
 
+        public bool AddScene(MovieScene scene)
+        {
+            if (scene == null || _scenes.Exists(existing => existing.Id == scene.Id)) return false;
+
+            int insertionIndex = Math.Clamp(scene.SceneNumber - 1, 0, _scenes.Count);
+            _scenes.Insert(insertionIndex, scene);
+            scene.OnSceneUpdated += HandleSceneUpdated;
+            RenumberScenes();
+            OnProjectUpdated?.Invoke(this);
+            return true;
+        }
+
+        public bool ReorderScene(string sceneId, int newSceneNumber)
+        {
+            var scene = GetScene(sceneId);
+            if (scene == null || newSceneNumber < 1 || newSceneNumber > _scenes.Count) return false;
+
+            int currentIndex = _scenes.IndexOf(scene);
+            int newIndex = newSceneNumber - 1;
+            if (currentIndex == newIndex) return true;
+
+            _scenes.RemoveAt(currentIndex);
+            _scenes.Insert(newIndex, scene);
+            RenumberScenes();
+            OnProjectUpdated?.Invoke(this);
+            return true;
+        }
+
+        public MovieScene GetScene(string sceneId) =>
+            string.IsNullOrWhiteSpace(sceneId) ? null : _scenes.Find(scene => scene.Id == sceneId);
+
+        private void RenumberScenes()
+        {
+            for (int index = 0; index < _scenes.Count; index++)
+                _scenes[index].SetSceneNumber(index + 1);
+        }
         public void AddRole(MovieRole role)
         {
             if (role == null || _roles.Contains(role)) return;
@@ -176,6 +215,10 @@ namespace SilverScreen.Domain.Movie
             return true;
         }
 
+        private void HandleSceneUpdated(MovieScene scene)
+        {
+            OnProjectUpdated?.Invoke(this);
+        }
         private void HandleRoleUpdated(MovieRole role)
         {
             OnProjectUpdated?.Invoke(this);
