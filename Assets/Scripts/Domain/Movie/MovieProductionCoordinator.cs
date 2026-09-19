@@ -23,6 +23,7 @@ namespace SilverScreen.Domain.Movie
         private readonly List<RequiredActor> _requiredActors = new List<RequiredActor>();
         private MovieScene _activeScene;
         private MovieTake _activeTake;
+        private bool _beatSequenceActive;
 
         public StudioProductionSlate Slate => _slate;
         public MovieProject ActiveMovie => _slate.ActiveMovie;
@@ -334,6 +335,8 @@ namespace SilverScreen.Domain.Movie
             }
             else if (CurrentProductionPhase == ProductionPhase.Filming && movie.CurrentState == MovieProductionState.Filming)
             {
+                if (_beatSequenceActive) return;
+
                 _filmingMinutesElapsed++;
                 movie.SetProgress(CalculateProductionProgress(movie));
 
@@ -441,6 +444,39 @@ namespace SilverScreen.Domain.Movie
 
             UpdateStatus();
             OnActiveMovieChanged?.Invoke(movie);
+        }
+
+        private void BeginBeatSequence(MovieProject movie)
+        {
+            _beatSequenceActive = true;
+            var routeResult = _router.StartBeatSequence(
+                movie,
+                _activeScene,
+                _activeTake,
+                () =>
+                {
+                    if (movie == ActiveMovie &&
+                        CurrentProductionPhase == ProductionPhase.Filming &&
+                        _activeScene != null &&
+                        _activeTake != null)
+                    {
+                        _beatSequenceActive = false;
+                        _filmingMinutesElapsed = FilmingDurationMinutes;
+                        movie.SetProgress(CalculateProductionProgress(movie));
+                        CompleteFilming(movie);
+                    }
+                },
+                failure =>
+                {
+                    _beatSequenceActive = false;
+                    FailProduction(movie, $"The screenplay performance could not complete ({failure}).");
+                });
+
+            if (routeResult != StudioRouteResult.Started)
+            {
+                _beatSequenceActive = false;
+                FailProduction(movie, $"The screenplay performance could not start ({routeResult}).");
+            }
         }
 
         private void RouteToProductionStation(
@@ -683,10 +719,16 @@ namespace SilverScreen.Domain.Movie
 
             UpdateStatus();
             OnActiveMovieChanged?.Invoke(movie);
+
+            if (_activeScene.Beats.Count > 0)
+            {
+                BeginBeatSequence(movie);
+            }
         }
 
         private void CompleteFilming(MovieProject movie)
         {
+            _beatSequenceActive = false;
             if (_activeScene == null ||
                 _activeTake == null ||
                 !_activeScene.CompleteTake(_activeTake.Id, TimeSpan.FromMinutes(_filmingMinutesElapsed)))
@@ -931,6 +973,7 @@ namespace SilverScreen.Domain.Movie
                         defaultScene.AddCharacter(castRole.Id);
                     }
 
+                    AddPrototypeBeats(movie, defaultScene);
                     _activeScene = defaultScene;
                 }
             }
@@ -938,6 +981,41 @@ namespace SilverScreen.Domain.Movie
             if (_activeScene == null) return false;
             if (_activeScene.Status == MovieSceneStatus.Planned && !_activeScene.MarkReady()) return false;
             return _activeScene.Status == MovieSceneStatus.Ready;
+        }
+
+        private static void AddPrototypeBeats(MovieProject movie, MovieScene scene)
+        {
+            if (movie.CastRoles.Count == 0) return;
+
+            MovieRole performer = movie.CastRoles[0];
+            MovieRole target = movie.CastRoles.Count > 1 ? movie.CastRoles[1] : null;
+            movie.AddBeatToScene(
+                scene.Id,
+                new ScreenplayBeat(
+                    Guid.NewGuid().ToString(),
+                    1,
+                    ScreenplayBeatType.Action,
+                    "Performs a simple action.",
+                    performer.Id));
+            movie.AddBeatToScene(
+                scene.Id,
+                new ScreenplayBeat(
+                    Guid.NewGuid().ToString(),
+                    2,
+                    ScreenplayBeatType.Dialogue,
+                    target != null ? "Addresses the other character." : "Delivers a short line.",
+                    performer.Id,
+                    target?.Id));
+            movie.AddBeatToScene(
+                scene.Id,
+                new ScreenplayBeat(
+                    Guid.NewGuid().ToString(),
+                    3,
+                    ScreenplayBeatType.Reaction,
+                    "Reacts to the moment.",
+                    target?.Id ?? performer.Id,
+                    target != null ? performer.Id : null,
+                    target != null ? ScreenplayEmotion.Nervous : ScreenplayEmotion.Confident));
         }
 
         private void DiscardActiveTake()
@@ -955,6 +1033,7 @@ namespace SilverScreen.Domain.Movie
 
         private void ClearActiveSceneAndTake()
         {
+            _beatSequenceActive = false;
             _activeScene = null;
             _activeTake = null;
         }

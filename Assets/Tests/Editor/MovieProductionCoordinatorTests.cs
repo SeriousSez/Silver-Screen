@@ -332,6 +332,16 @@ namespace SilverScreen.Tests.EditMode
                 onCompleted?.Invoke();
                 return StudioRouteResult.Started;
             }
+            public StudioRouteResult StartBeatSequence(
+                MovieProject movie,
+                MovieScene scene,
+                MovieTake take,
+                Action onCompleted,
+                Action<StudioRouteResult> onFailed)
+            {
+                onCompleted?.Invoke();
+                return StudioRouteResult.Started;
+            }
             public void ReleaseEmployee(Employee employee)
             {
                 if (employee == null) return;

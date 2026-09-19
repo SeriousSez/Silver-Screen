@@ -61,6 +61,9 @@ namespace SilverScreen.Presentation.Buildings
                     if (slateSequence == null) slateSequence = b.gameObject.AddComponent<PrototypeSlateSequence>();
                     var timeDriver = FindAnyObjectByType<SimulationTimeDriver>();
                     slateSequence.Initialize(slatePositions, timeDriver != null ? timeDriver.TimeService : null);
+                    var beatSequence = b.GetComponent<PrototypeScreenplayBeatSequence>();
+                    if (beatSequence == null) beatSequence = b.gameObject.AddComponent<PrototypeScreenplayBeatSequence>();
+                    beatSequence.Initialize(_employeeManager, timeDriver != null ? timeDriver.TimeService : null);
                 }
             }
         }
@@ -207,6 +210,27 @@ namespace SilverScreen.Presentation.Buildings
                 _productionService?.ActiveSlateTakeNumber,
                 onCompleted,
                 onFailed);
+        }
+
+        public StudioRouteResult StartBeatSequence(
+            MovieProject movie,
+            MovieScene scene,
+            MovieTake take,
+            Action onCompleted,
+            Action<StudioRouteResult> onFailed)
+        {
+            if (_buildingCache.Count == 0) CacheBuildings();
+            if (!_buildingCache.TryGetValue(BuildingType.SoundStage, out var building) || building == null)
+                return StudioRouteResult.BuildingMissing;
+
+            var sequence = building.GetComponent<PrototypeScreenplayBeatSequence>();
+            if (sequence == null)
+            {
+                Debug.LogWarning($"[StudioWorldRouter] No screenplay beat sequence found at {building.DisplayName}");
+                return StudioRouteResult.PerformanceMissing;
+            }
+
+            return sequence.TryBegin(movie, scene, take, onCompleted, onFailed);
         }
 
         public void ReleaseEmployee(Employee employee)

@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.AI;
 using SilverScreen.Domain;
+using SilverScreen.Domain.Movie;
 using SilverScreen.Domain.Time;
 
 namespace SilverScreen.Presentation.Employees
@@ -34,6 +35,14 @@ namespace SilverScreen.Presentation.Employees
         private Transform _performanceLeftArm;
         private Transform _performanceRightArm;
         private float _performanceElapsed;
+        private bool _beatPerformanceActive;
+        private ScreenplayBeatType _beatType;
+        private ScreenplayEmotion _beatEmotion;
+        private Transform _beatTarget;
+        private float _beatDuration;
+        private Action _onBeatCompleted;
+        private Quaternion _beatStartRotation;
+        private bool _genericFilmingPresentationEnabled = true;
 
         private void Awake()
         {
@@ -186,8 +195,7 @@ namespace SilverScreen.Presentation.Employees
                               Employee.Role == EmployeeRole.Actor;
             if (!performing)
             {
-                _performanceElapsed = 0f;
-                if (_performanceVisual != null) _performanceVisual.SetActive(false);
+                ResetPerformancePresentation();
                 return;
             }
 
@@ -196,11 +204,167 @@ namespace SilverScreen.Presentation.Employees
 
             float speedMultiplier = _timeService != null ? _timeService.TimeScaleMultiplier : 1f;
             _performanceElapsed += UnityEngine.Time.deltaTime * speedMultiplier;
+            if (_beatPerformanceActive)
+            {
+                UpdateBeatPerformance();
+                return;
+            }
+
+            if (!_genericFilmingPresentationEnabled)
+            {
+                _performanceElapsed = 0f;
+                _performanceVisual.SetActive(false);
+                return;
+            }
+
             float gesture = Mathf.Sin(_performanceElapsed * 4f);
             _performanceLeftArm.localRotation = Quaternion.Euler(0f, 0f, -35f + gesture * 28f);
             _performanceRightArm.localRotation = Quaternion.Euler(0f, 0f, 35f - gesture * 28f);
             _performanceVisual.transform.localRotation =
                 Quaternion.Euler(0f, Mathf.Sin(_performanceElapsed * 2f) * 8f, 0f);
+        }
+
+        public bool TryBeginBeatPerformance(
+            ScreenplayBeatType beatType,
+            ScreenplayEmotion? emotion,
+            Transform target,
+            float duration,
+            Action onCompleted)
+        {
+            if (_beatPerformanceActive ||
+                Employee == null ||
+                Employee.Role != EmployeeRole.Actor ||
+                Employee.CurrentState != EmployeeState.Filming ||
+                duration <= 0f)
+            {
+                return false;
+            }
+
+            EnsurePerformanceVisual();
+            _performanceVisual.SetActive(true);
+            _beatPerformanceActive = true;
+            _beatType = beatType;
+            _beatEmotion = emotion ?? ScreenplayEmotion.Neutral;
+            _beatTarget = target;
+            _beatDuration = duration;
+            _performanceElapsed = 0f;
+            _onBeatCompleted = onCompleted;
+            _beatStartRotation = transform.rotation;
+            return true;
+        }
+
+        public void SetGenericFilmingPresentationEnabled(bool enabled)
+        {
+            _genericFilmingPresentationEnabled = enabled;
+            if (!enabled && !_beatPerformanceActive && _performanceVisual != null)
+                _performanceVisual.SetActive(false);
+        }
+
+        private void UpdateBeatPerformance()
+        {
+            float normalized = Mathf.Clamp01(_performanceElapsed / _beatDuration);
+            float pulse = Mathf.Sin(normalized * Mathf.PI * 4f);
+
+            switch (_beatType)
+            {
+                case ScreenplayBeatType.Dialogue:
+                    FaceBeatTarget();
+                    _performanceLeftArm.localRotation = Quaternion.Euler(0f, 0f, -28f + pulse * 18f);
+                    _performanceRightArm.localRotation = Quaternion.Euler(0f, 0f, 18f - pulse * 30f);
+                    _performanceVisual.transform.localRotation =
+                        Quaternion.Euler(0f, pulse * 4f, 0f);
+                    break;
+
+                case ScreenplayBeatType.Reaction:
+                    UpdateReactionGesture(pulse);
+                    break;
+
+                default:
+                    float sweep = Mathf.Sin(normalized * Mathf.PI);
+                    _performanceLeftArm.localRotation = Quaternion.Euler(0f, 0f, -35f - sweep * 45f);
+                    _performanceRightArm.localRotation = Quaternion.Euler(0f, 0f, 35f + sweep * 45f);
+                    _performanceVisual.transform.localRotation =
+                        Quaternion.Euler(0f, pulse * 14f, sweep * 5f);
+                    break;
+            }
+
+            if (_performanceElapsed >= _beatDuration)
+                CompleteBeatPerformance();
+        }
+
+        private void UpdateReactionGesture(float pulse)
+        {
+            float armSpread = 28f;
+            float bodyPitch = 0f;
+            float bodyTurn = pulse * 5f;
+            switch (_beatEmotion)
+            {
+                case ScreenplayEmotion.Happy:
+                    armSpread = 65f;
+                    bodyPitch = -6f;
+                    break;
+                case ScreenplayEmotion.Sad:
+                    armSpread = 8f;
+                    bodyPitch = 14f;
+                    break;
+                case ScreenplayEmotion.Angry:
+                    armSpread = 50f;
+                    bodyTurn = pulse * 18f;
+                    break;
+                case ScreenplayEmotion.Afraid:
+                    armSpread = 42f;
+                    bodyPitch = -18f * Mathf.Abs(pulse);
+                    break;
+                case ScreenplayEmotion.Romantic:
+                    armSpread = 38f;
+                    bodyTurn = pulse * 3f;
+                    break;
+                case ScreenplayEmotion.Confident:
+                    armSpread = 58f;
+                    bodyPitch = -4f;
+                    break;
+                case ScreenplayEmotion.Nervous:
+                    armSpread = 18f + Mathf.Abs(pulse) * 12f;
+                    bodyTurn = pulse * 10f;
+                    break;
+            }
+
+            _performanceLeftArm.localRotation = Quaternion.Euler(0f, 0f, -armSpread);
+            _performanceRightArm.localRotation = Quaternion.Euler(0f, 0f, armSpread);
+            _performanceVisual.transform.localRotation =
+                Quaternion.Euler(bodyPitch, bodyTurn, 0f);
+        }
+
+        private void FaceBeatTarget()
+        {
+            if (_beatTarget == null) return;
+            Vector3 direction = _beatTarget.position - transform.position;
+            direction.y = 0f;
+            if (direction.sqrMagnitude > 0.001f)
+                transform.rotation = Quaternion.LookRotation(direction.normalized, Vector3.up);
+        }
+
+        private void CompleteBeatPerformance()
+        {
+            var callback = _onBeatCompleted;
+            ResetPerformancePresentation();
+            callback?.Invoke();
+        }
+
+        private void ResetPerformancePresentation()
+        {
+            if (_beatPerformanceActive) transform.rotation = _beatStartRotation;
+            _beatPerformanceActive = false;
+            _beatTarget = null;
+            _beatDuration = 0f;
+            _onBeatCompleted = null;
+            _performanceElapsed = 0f;
+            if (_performanceVisual != null)
+            {
+                _performanceVisual.transform.localPosition = Vector3.zero;
+                _performanceVisual.transform.localRotation = Quaternion.identity;
+                _performanceVisual.SetActive(false);
+            }
         }
 
         private void EnsurePerformanceVisual()

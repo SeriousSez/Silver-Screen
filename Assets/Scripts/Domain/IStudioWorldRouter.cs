@@ -12,6 +12,7 @@ namespace SilverScreen.Domain
         StationMissing,
         MarkMissing,
         SlateMissing,
+        PerformanceMissing,
         SequenceInProgress
     }
 
@@ -45,6 +46,7 @@ namespace SilverScreen.Domain
         StudioRouteResult SendEmployeeToProductionStation(Employee employee, BuildingType buildingType, ProductionStationType stationType, EmployeeIntent intent, Action onArrival);
         StudioRouteResult SendEmployeeToSceneMark(Employee employee, BuildingType buildingType, ActorSceneMarkType markType, EmployeeIntent intent, Action onArrival);
         StudioRouteResult StartSlateSequence(BuildingType buildingType, Action onCompleted, Action<StudioRouteResult> onFailed);
+        StudioRouteResult StartBeatSequence(Movie.MovieProject movie, Movie.MovieScene scene, Movie.MovieTake take, Action onCompleted, Action<StudioRouteResult> onFailed);
         void ReleaseEmployee(Employee employee);
     }
 }
