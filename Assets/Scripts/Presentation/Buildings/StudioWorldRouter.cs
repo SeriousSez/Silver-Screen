@@ -19,6 +19,11 @@ namespace SilverScreen.Presentation.Buildings
         public void BindProductionService(IMovieProductionService productionService)
         {
             _productionService = productionService;
+            foreach (var building in _buildingCache.Values)
+            {
+                if (building != null && building.BuildingType == BuildingType.SoundStage)
+                    building.GetComponent<LiveFilmingPlayback>()?.BindProductionService(productionService);
+            }
         }
 
         private void Awake()
@@ -65,6 +70,18 @@ namespace SilverScreen.Presentation.Buildings
                     var blockingPoints = b.GetComponent<SetBlockingPointLayout>();
                     if (blockingPoints == null) blockingPoints = b.gameObject.AddComponent<SetBlockingPointLayout>();
                     blockingPoints.EnsurePrototypePoints();
+                    var productionCamera = b.GetComponent<PrototypeProductionCamera>();
+                    if (productionCamera == null) productionCamera = b.gameObject.AddComponent<PrototypeProductionCamera>();
+                    productionCamera.EnsureCamera();
+                    var livePlayback = b.GetComponent<LiveFilmingPlayback>();
+                    if (livePlayback == null) livePlayback = b.gameObject.AddComponent<LiveFilmingPlayback>();
+                    livePlayback.Initialize(
+                        timeDriver != null ? timeDriver.TimeService : null,
+                        _employeeManager,
+                        marks,
+                        blockingPoints,
+                        productionCamera);
+                    livePlayback.BindProductionService(_productionService);
                     var beatSequence = b.GetComponent<PrototypeScreenplayBeatSequence>();
                     if (beatSequence == null) beatSequence = b.gameObject.AddComponent<PrototypeScreenplayBeatSequence>();
                     _performanceGenerator ??= new BeatPerformanceGenerator(new SystemPerformanceRandomSource());
@@ -72,7 +89,8 @@ namespace SilverScreen.Presentation.Buildings
                         _employeeManager,
                         timeDriver != null ? timeDriver.TimeService : null,
                         blockingPoints,
-                        _performanceGenerator);
+                        _performanceGenerator,
+                        productionCamera);
                 }
             }
         }

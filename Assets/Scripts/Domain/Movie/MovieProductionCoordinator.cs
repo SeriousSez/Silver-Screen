@@ -1041,34 +1041,46 @@ namespace SilverScreen.Domain.Movie
 
             MovieRole performer = movie.CastRoles[0];
             MovieRole target = movie.CastRoles.Count > 1 ? movie.CastRoles[1] : null;
-            movie.AddBeatToScene(
+            var action = new ScreenplayBeat(
+                Guid.NewGuid().ToString(),
+                1,
+                ScreenplayBeatType.Action,
+                "Performs a simple action.",
+                performer.Id,
+                blockingTargetId: SceneBlockingPointIds.StageLeft);
+            var dialogue = new ScreenplayBeat(
+                Guid.NewGuid().ToString(),
+                2,
+                ScreenplayBeatType.Dialogue,
+                target != null ? "Addresses the other character." : "Delivers a short line.",
+                performer.Id,
+                target?.Id);
+            var reaction = new ScreenplayBeat(
+                Guid.NewGuid().ToString(),
+                3,
+                ScreenplayBeatType.Reaction,
+                "Reacts to the moment.",
+                target?.Id ?? performer.Id,
+                target != null ? performer.Id : null,
+                target != null ? ScreenplayEmotion.Nervous : ScreenplayEmotion.Confident);
+
+            movie.AddBeatToScene(scene.Id, action);
+            movie.AddBeatToScene(scene.Id, dialogue);
+            movie.AddBeatToScene(scene.Id, reaction);
+            movie.AddShotToScene(
                 scene.Id,
-                new ScreenplayBeat(
-                    Guid.NewGuid().ToString(),
-                    1,
-                    ScreenplayBeatType.Action,
-                    "Performs a simple action.",
-                    performer.Id,
-                    blockingTargetId: SceneBlockingPointIds.StageLeft));
-            movie.AddBeatToScene(
+                new SceneShot(Guid.NewGuid().ToString(), 1, ShotType.Wide, screenplayBeatId: action.Id));
+            movie.AddShotToScene(
                 scene.Id,
-                new ScreenplayBeat(
-                    Guid.NewGuid().ToString(),
-                    2,
-                    ScreenplayBeatType.Dialogue,
-                    target != null ? "Addresses the other character." : "Delivers a short line.",
-                    performer.Id,
-                    target?.Id));
-            movie.AddBeatToScene(
+                new SceneShot(Guid.NewGuid().ToString(), 2, ShotType.Medium, performer.Id, dialogue.Id));
+            movie.AddShotToScene(
                 scene.Id,
-                new ScreenplayBeat(
+                new SceneShot(
                     Guid.NewGuid().ToString(),
                     3,
-                    ScreenplayBeatType.Reaction,
-                    "Reacts to the moment.",
+                    ShotType.CloseUp,
                     target?.Id ?? performer.Id,
-                    target != null ? performer.Id : null,
-                    target != null ? ScreenplayEmotion.Nervous : ScreenplayEmotion.Confident));
+                    reaction.Id));
         }
 
         private void DiscardActiveTake()
