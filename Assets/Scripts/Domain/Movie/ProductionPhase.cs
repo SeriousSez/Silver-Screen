@@ -9,6 +9,7 @@ namespace SilverScreen.Domain.Movie
         ReadyForTake,
         Slating,
         Filming,
+        AwaitingNextScene,
         Completed,
         Failed
     }

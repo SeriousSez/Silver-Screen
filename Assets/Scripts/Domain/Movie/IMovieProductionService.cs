@@ -9,6 +9,8 @@ namespace SilverScreen.Domain.Movie
         MovieProject ActiveMovie { get; }
         MovieScene ActiveScene { get; }
         MovieTake ActiveTake { get; }
+        MovieScene NextFilmableScene { get; }
+        bool HasRemainingScenes { get; }
         string ActiveSlateMovieTitle { get; }
         int? ActiveSlateSceneNumber { get; }
         int? ActiveSlateTakeNumber { get; }
