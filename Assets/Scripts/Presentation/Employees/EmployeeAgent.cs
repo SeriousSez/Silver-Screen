@@ -30,6 +30,10 @@ namespace SilverScreen.Presentation.Employees
 
         private float _baseSpeed = 3.5f;
         private float _baseAcceleration = 14f;
+        private GameObject _performanceVisual;
+        private Transform _performanceLeftArm;
+        private Transform _performanceRightArm;
+        private float _performanceElapsed;
 
         private void Awake()
         {
@@ -160,6 +164,8 @@ namespace SilverScreen.Presentation.Employees
                 return;
             }
 
+            UpdatePerformancePresentation();
+
             if (_hasExplicitTask)
             {
                 CheckExplicitArrival();
@@ -172,6 +178,60 @@ namespace SilverScreen.Presentation.Employees
             {
                 CheckWanderArrival();
             }
+        }
+
+        private void UpdatePerformancePresentation()
+        {
+            bool performing = Employee.CurrentState == EmployeeState.Filming &&
+                              Employee.Role == EmployeeRole.Actor;
+            if (!performing)
+            {
+                _performanceElapsed = 0f;
+                if (_performanceVisual != null) _performanceVisual.SetActive(false);
+                return;
+            }
+
+            EnsurePerformanceVisual();
+            _performanceVisual.SetActive(true);
+
+            float speedMultiplier = _timeService != null ? _timeService.TimeScaleMultiplier : 1f;
+            _performanceElapsed += UnityEngine.Time.deltaTime * speedMultiplier;
+            float gesture = Mathf.Sin(_performanceElapsed * 4f);
+            _performanceLeftArm.localRotation = Quaternion.Euler(0f, 0f, -35f + gesture * 28f);
+            _performanceRightArm.localRotation = Quaternion.Euler(0f, 0f, 35f - gesture * 28f);
+            _performanceVisual.transform.localRotation =
+                Quaternion.Euler(0f, Mathf.Sin(_performanceElapsed * 2f) * 8f, 0f);
+        }
+
+        private void EnsurePerformanceVisual()
+        {
+            if (_performanceVisual != null) return;
+
+            _performanceVisual = new GameObject("PrototypePerformanceGesture");
+            _performanceVisual.transform.SetParent(transform, false);
+
+            _performanceLeftArm = CreateGestureArm("LeftArm", new Vector3(-0.38f, 0.32f, 0f));
+            _performanceRightArm = CreateGestureArm("RightArm", new Vector3(0.38f, 0.32f, 0f));
+            _performanceVisual.SetActive(false);
+        }
+
+        private Transform CreateGestureArm(string objectName, Vector3 localPosition)
+        {
+            var arm = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            arm.name = objectName;
+            arm.transform.SetParent(_performanceVisual.transform, false);
+            arm.transform.localPosition = localPosition;
+            arm.transform.localScale = new Vector3(0.14f, 0.58f, 0.14f);
+            Destroy(arm.GetComponent<Collider>());
+
+            var sourceRenderer = GetComponent<Renderer>();
+            var armRenderer = arm.GetComponent<Renderer>();
+            if (sourceRenderer != null && armRenderer != null)
+            {
+                armRenderer.sharedMaterial = sourceRenderer.sharedMaterial;
+            }
+
+            return arm.transform;
         }
 
         private void UpdateIdleWander()
