@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using SilverScreen.Domain;
 using SilverScreen.Domain.Time;
 using SilverScreen.Domain.Writing;
+using SilverScreen.Domain.Recruitment;
 using SilverScreen.Presentation.Employees;
 using SilverScreen.Presentation.Buildings;
 using SilverScreen.Presentation.SimulationTime;
+using SilverScreen.Presentation.Recruitment;
 using UnityEngine;
 
 namespace SilverScreen.Presentation.Writing
@@ -83,7 +85,8 @@ namespace SilverScreen.Presentation.Writing
             var office = FindAnyObjectByType<ScriptOfficeStationLayout>() ?? CreatePrototypeOffice();
             var world = GetComponent<ScreenplayWritingWorldRouter>() ?? gameObject.AddComponent<ScreenplayWritingWorldRouter>();
             world.Initialize(_employees, office);
-            Coordinator = new ScreenplayWritingCoordinator(_employees.AllEmployees, _time.TimeService, world);
+            Coordinator = new ScreenplayWritingCoordinator(_employees.AllEmployees, _time.TimeService, world,
+                new ScreenplayTitleGenerator(new SeededScreenplayTitleRandomSource(1930)));
         }
 
         private void OnDestroy() => Coordinator?.Dispose();
@@ -108,6 +111,13 @@ namespace SilverScreen.Presentation.Writing
                 stations.Add(Marker($"WritingStation{i + 1:00}", new Vector3(-.3f + i * .2f, -.5f, -.82f)));
             var layout = root.AddComponent<ScriptOfficeStationLayout>();
             layout.Configure(entrance, stations);
+            var candidateArrival = Marker("CandidateArrival", new Vector3(-.42f, -.5f, -1.28f));
+            var candidateExit = Marker("CandidateExit", new Vector3(.42f, -.5f, -1.28f));
+            var candidateWaiting = new List<Transform>();
+            for (int i = 0; i < 4; i++)
+                candidateWaiting.Add(Marker($"CandidateWaiting{i + 1:00}", new Vector3(-.3f + i * .2f, -.5f, -1.05f)));
+            var recruitmentArea = root.AddComponent<CandidateWaitingAreaView>();
+            recruitmentArea.Configure(RecruitmentDestination.ScriptOffice, entrance, candidateArrival, candidateExit, candidateWaiting);
             return layout;
         }
     }

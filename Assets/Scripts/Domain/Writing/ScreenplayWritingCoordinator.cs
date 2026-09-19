@@ -4,6 +4,59 @@ using SilverScreen.Domain.Time;
 
 namespace SilverScreen.Domain.Writing
 {
+    public interface IScreenplayTitleRandomSource
+    {
+        int Next(int minimumInclusive, int maximumExclusive);
+    }
+
+    public sealed class SeededScreenplayTitleRandomSource : IScreenplayTitleRandomSource
+    {
+        private readonly Random _random;
+        public SeededScreenplayTitleRandomSource(int seed) => _random = new Random(seed);
+        public int Next(int minimumInclusive, int maximumExclusive) => _random.Next(minimumInclusive, maximumExclusive);
+    }
+
+    public sealed class ScreenplayTitleGenerator
+    {
+        private const int MaximumDuplicateRetries = 12;
+        private readonly IScreenplayTitleRandomSource _random;
+        private static readonly Dictionary<string, string[][]> Components = new Dictionary<string, string[][]>(StringComparer.OrdinalIgnoreCase)
+        {
+            ["action"] = new[] { new[] { "Final", "Last", "Broken", "Hidden", "Burning" }, new[] { "Pursuit", "Stand", "Line", "Target", "Frontier" } },
+            ["comedy"] = new[] { new[] { "One Bad", "Almost", "Perfectly", "Unexpected", "Another" }, new[] { "Weekend", "Perfect", "Trouble", "Mix-Up", "Situation" } },
+            ["drama"] = new[] { new[] { "The Long", "A Quiet", "Distant", "Fading", "The Empty" }, new[] { "Road", "Promise", "Season", "House", "Hour" } },
+            ["horror"] = new[] { new[] { "Beneath the", "The Hollow", "After", "Beyond the", "Inside the" }, new[] { "Floor", "House", "Midnight", "Walls", "Dark" } },
+            ["romance"] = new[] { new[] { "Summer", "Until", "A Place for", "Borrowed", "The Last" }, new[] { "Letters", "Tomorrow", "Two", "Hearts", "Dance" } },
+            ["thriller"] = new[] { new[] { "The Silent", "Unknown", "Midnight", "False", "Vanishing" }, new[] { "Witness", "Signal", "Alibi", "Passenger", "Evidence" } },
+            ["sci-fi"] = new[] { new[] { "Beyond", "Signal", "The Last", "Distant", "Return to" }, new[] { "Orion", "Unknown", "Horizon", "Earth", "Tomorrow" } }
+        };
+
+        public ScreenplayTitleGenerator(IScreenplayTitleRandomSource random) =>
+            _random = random ?? throw new ArgumentNullException(nameof(random));
+
+        public string GenerateUnique(string genreId, IEnumerable<string> existingTitles)
+        {
+            var existing = new HashSet<string>(existingTitles ?? Array.Empty<string>(), StringComparer.OrdinalIgnoreCase);
+            string candidate = null;
+            for (int attempt = 0; attempt < MaximumDuplicateRetries; attempt++)
+            {
+                candidate = Generate(genreId);
+                if (!existing.Contains(candidate)) return candidate;
+            }
+            int suffix = 2;
+            string fallback;
+            do fallback = $"{candidate ?? "Untitled Screenplay"} {suffix++}";
+            while (existing.Contains(fallback));
+            return fallback;
+        }
+
+        private string Generate(string genreId)
+        {
+            if (!Components.TryGetValue(genreId ?? string.Empty, out var parts)) parts = Components["drama"];
+            return $"{parts[0][_random.Next(0, parts[0].Length)]} {parts[1][_random.Next(0, parts[1].Length)]}";
+        }
+    }
+
     public enum WritingRouteResult { Started, EmployeeMissing, AgentMissing, OfficeMissing, StationMissing, NavigationRejected }
 
     public interface IScreenplayWritingWorldRouter
@@ -20,19 +73,35 @@ namespace SilverScreen.Domain.Writing
         private readonly IReadOnlyList<Employee> _employees;
         private readonly ISimulationTimeService _time;
         private readonly IScreenplayWritingWorldRouter _world;
+        private readonly ScreenplayTitleGenerator _titleGenerator;
         public IReadOnlyList<ScreenplayProject> Library => _library;
         public event Action<ScreenplayProject> ScreenplayAdded;
         public event Action<ScreenplayProject> ScreenplayChanged;
 
-        public ScreenplayWritingCoordinator(IReadOnlyList<Employee> employees, ISimulationTimeService time, IScreenplayWritingWorldRouter world)
+        public bool CanAssignWriter(string writerId)
+        {
+            var writer = FindWriter(writerId);
+            bool hasNoConflictingIntent = writer != null &&
+                (writer.CurrentIntent == null ||
+                 writer.CurrentIntent.Purpose == EmployeeIntentPurpose.None ||
+                 writer.CurrentIntent.Purpose == EmployeeIntentPurpose.IdleWander);
+            return writer != null && hasNoConflictingIntent &&
+                   (writer.CurrentState == EmployeeState.Idle ||
+                    (writer.CurrentState == EmployeeState.Walking &&
+                     writer.CurrentIntent?.Purpose == EmployeeIntentPurpose.IdleWander));
+        }
+
+        public ScreenplayWritingCoordinator(IReadOnlyList<Employee> employees, ISimulationTimeService time,
+            IScreenplayWritingWorldRouter world, ScreenplayTitleGenerator titleGenerator)
         {
             _employees = employees ?? throw new ArgumentNullException(nameof(employees));
             _time = time ?? throw new ArgumentNullException(nameof(time));
             _world = world ?? throw new ArgumentNullException(nameof(world));
+            _titleGenerator = titleGenerator ?? throw new ArgumentNullException(nameof(titleGenerator));
             _time.OnMinutePassed += HandleMinutePassed;
         }
 
-        public ScreenplayProject Create(string title, IEnumerable<string> writerIds)
+        public ScreenplayProject CreateCommissioned(string genreId, IEnumerable<string> writerIds)
         {
             var ids = new List<string>();
             if (writerIds != null) foreach (string id in writerIds) if (!ids.Contains(id)) ids.Add(id);
@@ -40,10 +109,14 @@ namespace SilverScreen.Domain.Writing
             foreach (string id in ids)
             {
                 var writer = FindWriter(id);
-                if (writer == null || writer.CurrentState != EmployeeState.Idle) return null;
+                if (writer == null || !CanAssignWriter(id)) return null;
             }
 
-            var screenplay = new ScreenplayProject(Guid.NewGuid().ToString(), title, ids);
+            var existingTitles = new List<string>();
+            foreach (var existing in _library) existingTitles.Add(existing.Title);
+            string title = _titleGenerator.GenerateUnique(genreId, existingTitles);
+            var screenplay = new ScreenplayProject(Guid.NewGuid().ToString(), title, ids, new[] { genreId },
+                ScreenplayAcquisitionSource.Commissioned);
             screenplay.Changed += HandleScreenplayChanged;
             _library.Add(screenplay);
             ScreenplayAdded?.Invoke(screenplay);
