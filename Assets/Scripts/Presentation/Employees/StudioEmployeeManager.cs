@@ -36,6 +36,12 @@ namespace SilverScreen.Presentation.Employees
             return agent;
         }
 
+        public Employee GetEmployee(string employeeId)
+        {
+            if (string.IsNullOrWhiteSpace(employeeId)) return null;
+            return _employees.Find(employee => employee.Id == employeeId);
+        }
+
         public EmployeeAgent GetAgent(Employee employee)
         {
             if (employee == null) return null;
