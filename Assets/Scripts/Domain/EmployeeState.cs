@@ -19,6 +19,7 @@ namespace SilverScreen.Domain
         IdleWander,
         ReportToCasting,
         ReportToStage,
+        MovingToMark,
         PerformTask
     }
 
