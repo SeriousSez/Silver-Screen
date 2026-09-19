@@ -12,7 +12,8 @@ namespace SilverScreen.Presentation.UI
         Studio,
         Productions,
         Staff,
-        Finances
+        Finances,
+        Screenplays
     }
 
     public sealed class ManagementNavigation : MonoBehaviour
@@ -29,6 +30,7 @@ namespace SilverScreen.Presentation.UI
             CreateButton(ManagementPanel.Productions, "PRODUCTIONS");
             CreateButton(ManagementPanel.Staff, "STAFF");
             CreateButton(ManagementPanel.Finances, "FINANCES");
+            CreateButton(ManagementPanel.Screenplays, "SCREENPLAYS");
 
             var layout = gameObject.AddComponent<VerticalLayoutGroup>();
             layout.padding = new RectOffset(8, 8, 8, 8);

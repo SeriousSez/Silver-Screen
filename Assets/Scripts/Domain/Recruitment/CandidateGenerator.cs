@@ -13,11 +13,11 @@ namespace SilverScreen.Domain.Recruitment
   private readonly IRandomSource _random; public CandidateGenerator(IRandomSource random)=>_random=random??throw new ArgumentNullException(nameof(random));
   public virtual Candidate Generate(SimulationDateTime now)
   {
-   var role=(ProfessionalRole)_random.Next(0,3);int age=_random.Next(role==ProfessionalRole.Director?24:18,61);int background=_random.Next(0,4);int basis=Math.Clamp(24+background*14+_random.Next(-8,10),10,92);int acting=role==ProfessionalRole.Director?_random.Next(10,46):basis;int directing=role==ProfessionalRole.Director?basis:_random.Next(8,42);if(role==ProfessionalRole.Extra)acting=Math.Min(acting,58);
+   var role=(ProfessionalRole)_random.Next(0,5);int age=_random.Next(role==ProfessionalRole.Director?24:18,61);int background=_random.Next(0,4);int basis=Math.Clamp(24+background*14+_random.Next(-8,10),10,92);int acting=role==ProfessionalRole.Director||role==ProfessionalRole.Writer?_random.Next(10,46):basis;int directing=role==ProfessionalRole.Director?basis:_random.Next(8,42);int writing=role==ProfessionalRole.Writer?basis:_random.Next(8,42);if(role==ProfessionalRole.Extra)acting=Math.Min(acting,58);
    int month=_random.Next(1,13),year=now.Year-age,day=_random.Next(1,SimulationDateTime.GetDaysInMonth(year,month)+1);var experience=new List<GenreExperience>();foreach(var genre in Genres)experience.Add(new GenreExperience(genre,Math.Clamp(background*12+_random.Next(0,19),0,80)));
    int traitCount=_random.Next(1,4);var traits=new List<string>();while(traits.Count<traitCount){var trait=PersonTraitIds.All[_random.Next(0,PersonTraitIds.All.Length)];if(!traits.Contains(trait))traits.Add(trait);}
-   string name=First[_random.Next(0,First.Length)]+" "+Last[_random.Next(0,Last.Length)];string id=$"talent-{now.Year}-{now.Month:D2}-{now.Day:D2}-{_random.Next(100000,999999)}";var person=new PersonProfile(id,name,new SimulationDateTime(year,month,day,0,0),role,new TalentProfile(acting,directing,experience),traits);
-   int primary=role==ProfessionalRole.Director?directing:acting;int salary=Math.Max(500,500+primary*35+background*250);if(role==ProfessionalRole.Extra)salary=Math.Min(salary,1800);return new Candidate(person,salary);
+   string name=First[_random.Next(0,First.Length)]+" "+Last[_random.Next(0,Last.Length)];string id=$"talent-{now.Year}-{now.Month:D2}-{now.Day:D2}-{_random.Next(100000,999999)}";var person=new PersonProfile(id,name,new SimulationDateTime(year,month,day,0,0),role,new TalentProfile(acting,directing,experience,writing),traits);
+   int primary=role==ProfessionalRole.Director?directing:role==ProfessionalRole.Writer?writing:acting;int salary=Math.Max(500,500+primary*35+background*250);if(role==ProfessionalRole.Extra)salary=Math.Min(salary,1800);return new Candidate(person,salary);
   }
  }
 }

@@ -20,8 +20,9 @@ namespace SilverScreen.Domain
 
         public Employee(string id, string name, EmployeeRole role, int skill, int salary, int morale = 80)
             : this(new PersonProfile(id, name, new Time.SimulationDateTime(1900, 1, 1, 0, 0),
-                ToProfessionalRole(role), new TalentProfile(role == EmployeeRole.Director ? 25 : skill,
-                    role == EmployeeRole.Director ? skill : 25)), role, salary, morale)
+                ToProfessionalRole(role), new TalentProfile(role == EmployeeRole.Actor ? skill : 25,
+                    role == EmployeeRole.Director ? skill : 25, null,
+                    role == EmployeeRole.Writer ? skill : 25)), role, salary, morale)
         {
         }
 
@@ -29,7 +30,8 @@ namespace SilverScreen.Domain
         {
             Person = person ?? throw new ArgumentNullException(nameof(person));
             Role = role;
-            Skill = role == EmployeeRole.Director ? person.Talent.DirectingAbility : person.Talent.ActingAbility;
+            Skill = role == EmployeeRole.Director ? person.Talent.DirectingAbility :
+                role == EmployeeRole.Writer ? person.Talent.WritingAbility : person.Talent.ActingAbility;
             Salary = salary;
             Morale = morale;
             CurrentState = EmployeeState.Idle;
@@ -43,6 +45,7 @@ namespace SilverScreen.Domain
                 EmployeeRole.Director => ProfessionalRole.Director,
                 EmployeeRole.Extra => ProfessionalRole.Extra,
                 EmployeeRole.Crew => ProfessionalRole.Crew,
+                EmployeeRole.Writer => ProfessionalRole.Writer,
                 _ => ProfessionalRole.Actor
             };
         }
