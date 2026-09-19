@@ -14,6 +14,7 @@ namespace SilverScreen.Presentation.Buildings
 
         private readonly Dictionary<BuildingType, StudioBuildingView> _buildingCache = new Dictionary<BuildingType, StudioBuildingView>();
         private IMovieProductionService _productionService;
+        private BeatPerformanceGenerator _performanceGenerator;
 
         public void BindProductionService(IMovieProductionService productionService)
         {
@@ -66,10 +67,12 @@ namespace SilverScreen.Presentation.Buildings
                     blockingPoints.EnsurePrototypePoints();
                     var beatSequence = b.GetComponent<PrototypeScreenplayBeatSequence>();
                     if (beatSequence == null) beatSequence = b.gameObject.AddComponent<PrototypeScreenplayBeatSequence>();
+                    _performanceGenerator ??= new BeatPerformanceGenerator(new SystemPerformanceRandomSource());
                     beatSequence.Initialize(
                         _employeeManager,
                         timeDriver != null ? timeDriver.TimeService : null,
-                        blockingPoints);
+                        blockingPoints,
+                        _performanceGenerator);
                 }
             }
         }
