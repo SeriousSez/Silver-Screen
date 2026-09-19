@@ -179,6 +179,12 @@ namespace SilverScreen.Presentation.Buildings
             return StudioRouteResult.Started;
         }
 
+        public Employee ResolveEmployee(string employeeId, Employee compatibilityReference)
+        {
+            if (_employeeManager == null) _employeeManager = FindAnyObjectByType<StudioEmployeeManager>();
+            return _employeeManager != null ? _employeeManager.GetEmployee(employeeId) : null;
+        }
+
         public StudioRouteResult StartSlateSequence(
             BuildingType buildingType,
             Action onCompleted,

@@ -280,6 +280,13 @@ namespace SilverScreen.Tests.EditMode
             public List<Employee> ReleasedEmployees { get; } = new List<Employee>();
             public StudioRouteResult NextRouteResult { get; set; } = StudioRouteResult.Started;
 
+            public Employee ResolveEmployee(string employeeId, Employee compatibilityReference)
+            {
+                return compatibilityReference != null && compatibilityReference.Id == employeeId
+                    ? compatibilityReference
+                    : null;
+            }
+
             public StudioRouteResult SendEmployeeToBuilding(
                 Employee employee,
                 BuildingType buildingType,

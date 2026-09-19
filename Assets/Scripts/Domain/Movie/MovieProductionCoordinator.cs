@@ -19,6 +19,8 @@ namespace SilverScreen.Domain.Movie
         private int _filmingMinutesElapsed;
         private string _routingFailureMessage;
         private readonly HashSet<string> _actorsAtWaitingStations = new HashSet<string>();
+        private readonly HashSet<string> _actorsAtSceneMarks = new HashSet<string>();
+        private readonly List<RequiredActor> _requiredActors = new List<RequiredActor>();
         private MovieScene _activeScene;
         private MovieTake _activeTake;
 
@@ -84,6 +86,9 @@ namespace SilverScreen.Domain.Movie
         private void HandleSlateActiveMovieChanged(MovieProject movie)
         {
             ClearActiveSceneAndTake();
+            _requiredActors.Clear();
+            _actorsAtWaitingStations.Clear();
+            _actorsAtSceneMarks.Clear();
             SetProductionPhase(ProductionPhase.Inactive);
             _filmingMinutesElapsed = 0;
             UpdateStatus();
@@ -320,6 +325,8 @@ namespace SilverScreen.Domain.Movie
         {
             _routingFailureMessage = null;
             _actorsAtWaitingStations.Clear();
+            _actorsAtSceneMarks.Clear();
+            _requiredActors.Clear();
             SetProductionPhase(ProductionPhase.MovingToStations);
             movie.SetState(MovieProductionState.ReadyToFilm);
             movie.SetDirectorArrivedAtStage(false);
@@ -332,6 +339,12 @@ namespace SilverScreen.Domain.Movie
             if (!TryActivateScene(movie))
             {
                 FailProduction(movie, "No eligible movie scene is available for filming.");
+                return;
+            }
+
+            if (!TryResolveRequiredActors(movie, out string actorResolutionFailure))
+            {
+                FailProduction(movie, actorResolutionFailure);
                 return;
             }
 
@@ -370,12 +383,10 @@ namespace SilverScreen.Domain.Movie
             }
 
             int actorStationIndex = 0;
-            foreach (var role in movie.Roles)
+            foreach (var participant in _requiredActors)
             {
-                if (role.AssignedActor == null) continue;
-
-                var capturedRole = role;
-                var actor = role.AssignedActor;
+                var capturedParticipant = participant;
+                var actor = participant.Actor;
                 var stationType = GetActorStation(actorStationIndex++);
                 var routeResult = _router.SendEmployeeToBuilding(
                     actor,
@@ -391,7 +402,7 @@ namespace SilverScreen.Domain.Movie
                             actor.SetState(EmployeeState.Working);
                             actor.SetIntent(new EmployeeIntent(
                                 EmployeeIntentPurpose.PerformTask,
-                                $"Waiting at {stationType} — {movie.Title} ({capturedRole.CharacterName})",
+                                $"Waiting at {stationType} — {movie.Title} ({capturedParticipant.CharacterNames})",
                                 "SoundStage"));
                             CheckProductionStationsReady(movie);
                         }));
@@ -438,9 +449,9 @@ namespace SilverScreen.Domain.Movie
 
             bool directorReady = movie.AssignedDirector == null || movie.DirectorArrivedAtStage;
             bool actorsReady = true;
-            foreach (var role in movie.Roles)
+            foreach (var participant in _requiredActors)
             {
-                if (role.AssignedActor != null && !_actorsAtWaitingStations.Contains(role.AssignedActor.Id))
+                if (!_actorsAtWaitingStations.Contains(participant.Actor.Id))
                 {
                     actorsReady = false;
                     break;
@@ -462,16 +473,14 @@ namespace SilverScreen.Domain.Movie
         private void RouteActorsToSceneMarks(MovieProject movie)
         {
             int actorMarkIndex = 0;
-            foreach (var role in movie.Roles)
+            foreach (var participant in _requiredActors)
             {
-                if (role.AssignedActor == null) continue;
-
-                var capturedRole = role;
-                var actor = role.AssignedActor;
+                var capturedParticipant = participant;
+                var actor = participant.Actor;
                 var markType = GetActorMark(actorMarkIndex++);
                 var markIntent = new EmployeeIntent(
                     EmployeeIntentPurpose.MovingToMark,
-                    $"Moving to {markType} — {movie.Title} ({capturedRole.CharacterName})",
+                    $"Moving to {markType} — {movie.Title} ({capturedParticipant.CharacterNames})",
                     $"SoundStage:{markType}");
 
                 var routeResult = _router.SendEmployeeToSceneMark(
@@ -481,11 +490,12 @@ namespace SilverScreen.Domain.Movie
                     markIntent,
                     () =>
                     {
-                        capturedRole.SetArrivedAtStage(true);
+                        _actorsAtSceneMarks.Add(actor.Id);
+                        foreach (var role in capturedParticipant.Roles) role.SetArrivedAtStage(true);
                         actor.SetState(EmployeeState.Working);
                         actor.SetIntent(new EmployeeIntent(
                             EmployeeIntentPurpose.PerformTask,
-                            $"On {markType} — {movie.Title} ({capturedRole.CharacterName})",
+                            $"On {markType} — {movie.Title} ({capturedParticipant.CharacterNames})",
                             "SoundStage"));
                         CheckFilmingReadiness(movie);
                     });
@@ -534,6 +544,7 @@ namespace SilverScreen.Domain.Movie
         {
             _routingFailureMessage = message;
             _actorsAtWaitingStations.Clear();
+            _actorsAtSceneMarks.Clear();
             DiscardActiveTake();
             SetProductionPhase(ProductionPhase.Failed);
 
@@ -545,16 +556,14 @@ namespace SilverScreen.Domain.Movie
                 movie.SetDirectorArrivedAtStage(false);
             }
 
-            foreach (var role in movie.Roles)
+            foreach (var participant in _requiredActors)
             {
-                if (role.AssignedActor != null)
-                {
-                    _router.ReleaseEmployee(role.AssignedActor);
-                    role.AssignedActor.SetState(EmployeeState.Idle);
-                    role.AssignedActor.SetIntent(EmployeeIntent.None);
-                    role.SetArrivedAtStage(false);
-                }
+                _router.ReleaseEmployee(participant.Actor);
+                participant.Actor.SetState(EmployeeState.Idle);
+                participant.Actor.SetIntent(EmployeeIntent.None);
+                foreach (var role in participant.Roles) role.SetArrivedAtStage(false);
             }
+            _requiredActors.Clear();
 
             UpdateStatus();
             OnActiveMovieChanged?.Invoke(movie);
@@ -563,7 +572,9 @@ namespace SilverScreen.Domain.Movie
 
         private void CheckFilmingReadiness(MovieProject movie)
         {
-            if (movie.AllParticipantsAtStage &&
+            bool actorsReady = _requiredActors.TrueForAll(
+                participant => _actorsAtSceneMarks.Contains(participant.Actor.Id));
+            if ((movie.AssignedDirector == null || movie.DirectorArrivedAtStage) && actorsReady &&
                 movie.CurrentState == MovieProductionState.ReadyToFilm &&
                 CurrentProductionPhase == ProductionPhase.Blocking)
             {
@@ -635,16 +646,13 @@ namespace SilverScreen.Domain.Movie
                     "SoundStage"));
             }
 
-            foreach (var role in movie.Roles)
+            foreach (var participant in _requiredActors)
             {
-                if (role.AssignedActor != null)
-                {
-                    role.AssignedActor.SetState(EmployeeState.Filming);
-                    role.AssignedActor.SetIntent(new EmployeeIntent(
-                        EmployeeIntentPurpose.PerformTask,
-                        $"Filming — {movie.Title} ({role.CharacterName})",
-                        "SoundStage"));
-                }
+                participant.Actor.SetState(EmployeeState.Filming);
+                participant.Actor.SetIntent(new EmployeeIntent(
+                    EmployeeIntentPurpose.PerformTask,
+                    $"Filming — {movie.Title} ({participant.CharacterNames})",
+                    "SoundStage"));
             }
 
             UpdateStatus();
@@ -674,14 +682,11 @@ namespace SilverScreen.Domain.Movie
                 movie.AssignedDirector.SetIntent(EmployeeIntent.None);
             }
 
-            foreach (var role in movie.Roles)
+            foreach (var participant in _requiredActors)
             {
-                if (role.AssignedActor != null)
-                {
-                    _router.ReleaseEmployee(role.AssignedActor);
-                    role.AssignedActor.SetState(EmployeeState.Idle);
-                    role.AssignedActor.SetIntent(EmployeeIntent.None);
-                }
+                _router.ReleaseEmployee(participant.Actor);
+                participant.Actor.SetState(EmployeeState.Idle);
+                participant.Actor.SetIntent(EmployeeIntent.None);
             }
 
             UpdateStatus();
@@ -692,6 +697,76 @@ namespace SilverScreen.Domain.Movie
                 $"Production Quality: {movie.ProductionResult.OverallQuality}/100");
 
             ClearActiveSceneAndTake();
+            _requiredActors.Clear();
+            _actorsAtWaitingStations.Clear();
+            _actorsAtSceneMarks.Clear();
+        }
+
+        private bool TryResolveRequiredActors(MovieProject movie, out string failureMessage)
+        {
+            var resolved = new List<RequiredActor>();
+            var byActorId = new Dictionary<string, RequiredActor>();
+            bool hasExplicitCharacters = _activeScene.ParticipatingCharacterIds.Count > 0;
+
+            if (hasExplicitCharacters)
+            {
+                foreach (string characterId in _activeScene.ParticipatingCharacterIds)
+                {
+                    if (movie.GetCastRole(characterId) == null)
+                    {
+                        failureMessage = $"Scene {_activeScene.SceneNumber} references a character that is no longer in the movie cast.";
+                        return false;
+                    }
+                }
+            }
+
+            foreach (var role in movie.CastRoles)
+            {
+                if (hasExplicitCharacters && !_activeScene.HasCharacter(role.Id)) continue;
+                if (string.IsNullOrWhiteSpace(role.AssignedActorId))
+                {
+                    failureMessage = $"{role.CharacterName} requires an assigned actor before filming can begin.";
+                    return false;
+                }
+
+                var actor = _router.ResolveEmployee(role.AssignedActorId, role.AssignedActor);
+                if (actor == null)
+                {
+                    failureMessage = $"The actor assigned to {role.CharacterName} is no longer employed by the studio.";
+                    return false;
+                }
+                if (actor.Role != EmployeeRole.Actor)
+                {
+                    failureMessage = $"{actor.Name} is no longer eligible to perform {role.CharacterName}.";
+                    return false;
+                }
+
+                if (!byActorId.TryGetValue(actor.Id, out var participant))
+                {
+                    participant = new RequiredActor(actor);
+                    byActorId.Add(actor.Id, participant);
+                    resolved.Add(participant);
+                }
+                participant.Roles.Add(role);
+            }
+
+            if (resolved.Count > 3)
+            {
+                failureMessage = $"Scene {_activeScene.SceneNumber} requires {resolved.Count} actors, but the current Sound Stage supports only 3.";
+                return false;
+            }
+
+            _requiredActors.AddRange(resolved);
+            failureMessage = null;
+            return true;
+        }
+
+        private sealed class RequiredActor
+        {
+            public RequiredActor(Employee actor) => Actor = actor;
+            public Employee Actor { get; }
+            public List<MovieRole> Roles { get; } = new List<MovieRole>();
+            public string CharacterNames => string.Join(", ", Roles.ConvertAll(role => role.CharacterName));
         }
 
         private bool TryActivateScene(MovieProject movie)
@@ -821,9 +896,12 @@ namespace SilverScreen.Domain.Movie
                 case MovieProductionState.ReadyToFilm:
                     int unarrived = 0;
                     if (!movie.DirectorArrivedAtStage) unarrived++;
-                    foreach (var role in movie.Roles)
+                    foreach (var participant in _requiredActors)
                     {
-                        if (!role.ArrivedAtStage) unarrived++;
+                        bool arrived = CurrentProductionPhase == ProductionPhase.Blocking
+                            ? _actorsAtSceneMarks.Contains(participant.Actor.Id)
+                            : _actorsAtWaitingStations.Contains(participant.Actor.Id);
+                        if (!arrived) unarrived++;
                     }
 
                     if (CurrentProductionPhase == ProductionPhase.Blocking && unarrived > 0)

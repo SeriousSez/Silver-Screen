@@ -40,6 +40,7 @@ namespace SilverScreen.Domain
 
     public interface IStudioWorldRouter
     {
+        Employee ResolveEmployee(string employeeId, Employee compatibilityReference);
         StudioRouteResult SendEmployeeToBuilding(Employee employee, BuildingType buildingType, EmployeeIntent intent, Action onArrival);
         StudioRouteResult SendEmployeeToProductionStation(Employee employee, BuildingType buildingType, ProductionStationType stationType, EmployeeIntent intent, Action onArrival);
         StudioRouteResult SendEmployeeToSceneMark(Employee employee, BuildingType buildingType, ActorSceneMarkType markType, EmployeeIntent intent, Action onArrival);

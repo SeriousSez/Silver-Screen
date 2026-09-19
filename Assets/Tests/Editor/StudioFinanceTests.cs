@@ -233,6 +233,13 @@ namespace SilverScreen.Tests.EditMode
 
         private sealed class ImmediateRouter : IStudioWorldRouter
         {
+            public Employee ResolveEmployee(string employeeId, Employee compatibilityReference)
+            {
+                return compatibilityReference != null && compatibilityReference.Id == employeeId
+                    ? compatibilityReference
+                    : null;
+            }
+
             public StudioRouteResult SendEmployeeToBuilding(
                 Employee employee,
                 BuildingType buildingType,
