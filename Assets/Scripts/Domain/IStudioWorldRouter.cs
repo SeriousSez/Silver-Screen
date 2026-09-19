@@ -9,7 +9,8 @@ namespace SilverScreen.Domain
         AgentMissing,
         BuildingMissing,
         NavigationRejected,
-        StationMissing
+        StationMissing,
+        MarkMissing
     }
 
     public enum ProductionStationType
@@ -22,11 +23,18 @@ namespace SilverScreen.Domain
         Sound,
         CrewWaiting
     }
+    public enum ActorSceneMarkType
+    {
+        ActorMarkA,
+        ActorMarkB,
+        ActorMarkC
+    }
 
     public interface IStudioWorldRouter
     {
         StudioRouteResult SendEmployeeToBuilding(Employee employee, BuildingType buildingType, EmployeeIntent intent, Action onArrival);
         StudioRouteResult SendEmployeeToProductionStation(Employee employee, BuildingType buildingType, ProductionStationType stationType, EmployeeIntent intent, Action onArrival);
+        StudioRouteResult SendEmployeeToSceneMark(Employee employee, BuildingType buildingType, ActorSceneMarkType markType, EmployeeIntent intent, Action onArrival);
         void ReleaseEmployee(Employee employee);
     }
 }

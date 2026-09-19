@@ -19,6 +19,8 @@ namespace SilverScreen.Domain.Movie
         private bool _filmingActive;
         private int _filmingMinutesElapsed;
         private string _routingFailureMessage;
+        private readonly HashSet<string> _actorsAtWaitingStations = new HashSet<string>();
+        private bool _actorMarkRoutingStarted;
 
         public StudioProductionSlate Slate => _slate;
         public MovieProject ActiveMovie => _slate.ActiveMovie;
@@ -309,6 +311,8 @@ namespace SilverScreen.Domain.Movie
         private void TransitionToReadyToFilm(MovieProject movie)
         {
             _routingFailureMessage = null;
+            _actorsAtWaitingStations.Clear();
+            _actorMarkRoutingStarted = false;
             movie.SetState(MovieProductionState.ReadyToFilm);
             movie.SetDirectorArrivedAtStage(false);
 
@@ -339,9 +343,9 @@ namespace SilverScreen.Domain.Movie
                             director.SetState(EmployeeState.Working);
                             director.SetIntent(new EmployeeIntent(
                                 EmployeeIntentPurpose.PerformTask,
-                                $"Preparing to film — {movie.Title}",
+                                $"At director station — {movie.Title}",
                                 "SoundStage"));
-                            CheckFilmingReadiness(movie);
+                            CheckProductionStationsReady(movie);
                         }));
 
                 if (routeResult != StudioRouteResult.Started)
@@ -369,13 +373,13 @@ namespace SilverScreen.Domain.Movie
                         stationType,
                         () =>
                         {
-                            capturedRole.SetArrivedAtStage(true);
+                            _actorsAtWaitingStations.Add(actor.Id);
                             actor.SetState(EmployeeState.Working);
                             actor.SetIntent(new EmployeeIntent(
                                 EmployeeIntentPurpose.PerformTask,
-                                $"Preparing to film — {movie.Title} ({capturedRole.CharacterName})",
+                                $"Waiting at {stationType} — {movie.Title} ({capturedRole.CharacterName})",
                                 "SoundStage"));
-                            CheckFilmingReadiness(movie);
+                            CheckProductionStationsReady(movie);
                         }));
 
                 if (routeResult != StudioRouteResult.Started)
@@ -413,6 +417,74 @@ namespace SilverScreen.Domain.Movie
             }
         }
 
+        private void CheckProductionStationsReady(MovieProject movie)
+        {
+            if (movie.CurrentState != MovieProductionState.ReadyToFilm || _actorMarkRoutingStarted) return;
+
+            bool directorReady = movie.AssignedDirector == null || movie.DirectorArrivedAtStage;
+            bool actorsReady = true;
+            foreach (var role in movie.Roles)
+            {
+                if (role.AssignedActor != null && !_actorsAtWaitingStations.Contains(role.AssignedActor.Id))
+                {
+                    actorsReady = false;
+                    break;
+                }
+            }
+
+            if (!directorReady || !actorsReady)
+            {
+                UpdateStatus();
+                OnActiveMovieChanged?.Invoke(movie);
+                return;
+            }
+
+            _actorMarkRoutingStarted = true;
+            RouteActorsToSceneMarks(movie);
+        }
+
+        private void RouteActorsToSceneMarks(MovieProject movie)
+        {
+            int actorMarkIndex = 0;
+            foreach (var role in movie.Roles)
+            {
+                if (role.AssignedActor == null) continue;
+
+                var capturedRole = role;
+                var actor = role.AssignedActor;
+                var markType = GetActorMark(actorMarkIndex++);
+                var markIntent = new EmployeeIntent(
+                    EmployeeIntentPurpose.MovingToMark,
+                    $"Moving to {markType} — {movie.Title} ({capturedRole.CharacterName})",
+                    $"SoundStage:{markType}");
+
+                var routeResult = _router.SendEmployeeToSceneMark(
+                    actor,
+                    BuildingType.SoundStage,
+                    markType,
+                    markIntent,
+                    () =>
+                    {
+                        capturedRole.SetArrivedAtStage(true);
+                        actor.SetState(EmployeeState.Working);
+                        actor.SetIntent(new EmployeeIntent(
+                            EmployeeIntentPurpose.PerformTask,
+                            $"On {markType} — {movie.Title} ({capturedRole.CharacterName})",
+                            "SoundStage"));
+                        CheckFilmingReadiness(movie);
+                    });
+
+                if (routeResult != StudioRouteResult.Started)
+                {
+                    HandleStageRoutingFailure(movie, actor, routeResult);
+                    return;
+                }
+            }
+
+            UpdateStatus();
+            OnActiveMovieChanged?.Invoke(movie);
+        }
+
         private static ProductionStationType GetActorStation(int actorIndex)
         {
             return actorIndex switch
@@ -423,9 +495,20 @@ namespace SilverScreen.Domain.Movie
             };
         }
 
+        private static ActorSceneMarkType GetActorMark(int actorIndex)
+        {
+            return actorIndex switch
+            {
+                0 => ActorSceneMarkType.ActorMarkA,
+                1 => ActorSceneMarkType.ActorMarkB,
+                _ => ActorSceneMarkType.ActorMarkC
+            };
+        }
         private void HandleStageRoutingFailure(MovieProject movie, Employee employee, StudioRouteResult routeResult)
         {
-            _routingFailureMessage = $"Could not send {employee.Name} to Sound Stage 1 ({routeResult}).";
+            _routingFailureMessage = $"Could not position {employee.Name} for filming ({routeResult}).";
+            _actorsAtWaitingStations.Clear();
+            _actorMarkRoutingStarted = false;
 
             if (movie.AssignedDirector != null)
             {
@@ -597,9 +680,12 @@ namespace SilverScreen.Domain.Movie
                         if (!role.ArrivedAtStage) unarrived++;
                     }
 
-                    _statusMessage = unarrived > 0
-                        ? $"Cast & crew walking to Sound Stage 1 ({unarrived} remaining)"
-                        : "Ready to film";
+                    if (_actorMarkRoutingStarted && unarrived > 0)
+                        _statusMessage = $"Actors moving to scene marks ({unarrived} remaining)";
+                    else
+                        _statusMessage = unarrived > 0
+                            ? $"Cast & crew moving to production stations ({unarrived} remaining)"
+                            : "Ready to film";
                     break;
 
                 case MovieProductionState.Filming:

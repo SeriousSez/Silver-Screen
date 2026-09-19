@@ -43,6 +43,9 @@ namespace SilverScreen.Presentation.Buildings
                     var stations = b.GetComponent<ProductionStationLayout>();
                     if (stations == null) stations = b.gameObject.AddComponent<ProductionStationLayout>();
                     stations.EnsurePrototypeStations();
+                    var marks = b.GetComponent<ActorSceneMarkLayout>();
+                    if (marks == null) marks = b.gameObject.AddComponent<ActorSceneMarkLayout>();
+                    marks.EnsurePrototypeMarks();
                 }
             }
         }
@@ -122,6 +125,39 @@ namespace SilverScreen.Presentation.Buildings
             if (!agent.TryAssignTaskDestination(targetPosition, intent, onArrival))
             {
                 Debug.LogWarning($"[StudioWorldRouter] Navigation to {stationType} could not start for {employee.Name}");
+                return StudioRouteResult.NavigationRejected;
+            }
+
+            return StudioRouteResult.Started;
+        }
+        public StudioRouteResult SendEmployeeToSceneMark(
+            Employee employee,
+            BuildingType buildingType,
+            ActorSceneMarkType markType,
+            EmployeeIntent intent,
+            Action onArrival)
+        {
+            if (employee == null) return StudioRouteResult.EmployeeMissing;
+            if (_employeeManager == null) _employeeManager = FindAnyObjectByType<StudioEmployeeManager>();
+            if (_employeeManager == null) return StudioRouteResult.AgentMissing;
+
+            var agent = _employeeManager.GetAgent(employee);
+            if (agent == null) return StudioRouteResult.AgentMissing;
+
+            if (_buildingCache.Count == 0) CacheBuildings();
+            if (!_buildingCache.TryGetValue(buildingType, out var building) || building == null)
+                return StudioRouteResult.BuildingMissing;
+
+            var marks = building.GetComponent<ActorSceneMarkLayout>();
+            if (marks == null || !marks.TryGetPosition(markType, out Vector3 targetPosition))
+            {
+                Debug.LogWarning($"[StudioWorldRouter] No {markType} mark found at {building.DisplayName}");
+                return StudioRouteResult.MarkMissing;
+            }
+
+            if (!agent.TryAssignTaskDestination(targetPosition, intent, onArrival))
+            {
+                Debug.LogWarning($"[StudioWorldRouter] Navigation to {markType} could not start for {employee.Name}");
                 return StudioRouteResult.NavigationRejected;
             }
 
