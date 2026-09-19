@@ -782,8 +782,60 @@ namespace SilverScreen.Domain.Movie
             }
 
             SetProductionPhase(ProductionPhase.ReadyForTake);
-            BeginSlateSequence(movie);
+            ResetActorsForRetake(movie);
             return CurrentProductionPhase != ProductionPhase.Failed;
+        }
+
+        private void ResetActorsForRetake(MovieProject movie)
+        {
+            _actorsAtSceneMarks.Clear();
+            if (_requiredActors.Count == 0)
+            {
+                BeginSlateSequence(movie);
+                return;
+            }
+
+            for (int index = 0; index < _requiredActors.Count; index++)
+            {
+                var participant = _requiredActors[index];
+                var actor = participant.Actor;
+                ActorSceneMarkType markType = GetActorMark(index);
+                var intent = new EmployeeIntent(
+                    EmployeeIntentPurpose.ReportToStage,
+                    $"Returning to {markType} for retake — {movie.Title}",
+                    $"SoundStage:{markType}");
+                StudioRouteResult routeResult = _router.SendEmployeeToSceneMark(
+                    actor,
+                    BuildingType.SoundStage,
+                    markType,
+                    intent,
+                    () =>
+                    {
+                        if (movie != ActiveMovie ||
+                            CurrentProductionPhase != ProductionPhase.ReadyForTake)
+                        {
+                            return;
+                        }
+
+                        _actorsAtSceneMarks.Add(actor.Id);
+                        actor.SetState(EmployeeState.Working);
+                        actor.SetIntent(new EmployeeIntent(
+                            EmployeeIntentPurpose.PerformTask,
+                            $"Ready at {markType} for retake — {movie.Title}",
+                            "SoundStage"));
+                        if (_actorsAtSceneMarks.Count == _requiredActors.Count)
+                            BeginSlateSequence(movie);
+                    });
+
+                if (routeResult != StudioRouteResult.Started)
+                {
+                    HandleStageRoutingFailure(movie, actor, routeResult);
+                    return;
+                }
+            }
+
+            UpdateStatus();
+            OnActiveMovieChanged?.Invoke(movie);
         }
 
         private void AwaitTakeDecision(MovieProject movie)
@@ -996,7 +1048,8 @@ namespace SilverScreen.Domain.Movie
                     1,
                     ScreenplayBeatType.Action,
                     "Performs a simple action.",
-                    performer.Id));
+                    performer.Id,
+                    blockingTargetId: SceneBlockingPointIds.StageLeft));
             movie.AddBeatToScene(
                 scene.Id,
                 new ScreenplayBeat(
