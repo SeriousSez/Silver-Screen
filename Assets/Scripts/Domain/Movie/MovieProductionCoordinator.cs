@@ -322,58 +322,105 @@ namespace SilverScreen.Domain.Movie
                 $"Walking to Sound Stage 1 ({movie.Title})",
                 "SoundStage");
 
-            // Dispatch Director
             if (movie.AssignedDirector != null)
             {
-                var dir = movie.AssignedDirector;
-                var routeResult = _router.SendEmployeeToBuilding(dir, BuildingType.SoundStage, stageIntent, () =>
-                {
-                    movie.SetDirectorArrivedAtStage(true);
-                    dir.SetState(EmployeeState.Working);
-                    dir.SetIntent(new EmployeeIntent(
-                        EmployeeIntentPurpose.PerformTask,
-                        $"Preparing to film — {movie.Title}",
-                        "SoundStage"));
+                var director = movie.AssignedDirector;
+                var routeResult = _router.SendEmployeeToBuilding(
+                    director,
+                    BuildingType.SoundStage,
+                    stageIntent,
+                    () => RouteToProductionStation(
+                        movie,
+                        director,
+                        ProductionStationType.Director,
+                        () =>
+                        {
+                            movie.SetDirectorArrivedAtStage(true);
+                            director.SetState(EmployeeState.Working);
+                            director.SetIntent(new EmployeeIntent(
+                                EmployeeIntentPurpose.PerformTask,
+                                $"Preparing to film — {movie.Title}",
+                                "SoundStage"));
+                            CheckFilmingReadiness(movie);
+                        }));
 
-                    CheckFilmingReadiness(movie);
-                });
                 if (routeResult != StudioRouteResult.Started)
                 {
-                    HandleStageRoutingFailure(movie, dir, routeResult);
+                    HandleStageRoutingFailure(movie, director, routeResult);
                     return;
                 }
-
             }
 
-            // Dispatch each Actor
+            int actorStationIndex = 0;
             foreach (var role in movie.Roles)
             {
-                if (role.AssignedActor != null)
+                if (role.AssignedActor == null) continue;
+
+                var capturedRole = role;
+                var actor = role.AssignedActor;
+                var stationType = GetActorStation(actorStationIndex++);
+                var routeResult = _router.SendEmployeeToBuilding(
+                    actor,
+                    BuildingType.SoundStage,
+                    stageIntent,
+                    () => RouteToProductionStation(
+                        movie,
+                        actor,
+                        stationType,
+                        () =>
+                        {
+                            capturedRole.SetArrivedAtStage(true);
+                            actor.SetState(EmployeeState.Working);
+                            actor.SetIntent(new EmployeeIntent(
+                                EmployeeIntentPurpose.PerformTask,
+                                $"Preparing to film — {movie.Title} ({capturedRole.CharacterName})",
+                                "SoundStage"));
+                            CheckFilmingReadiness(movie);
+                        }));
+
+                if (routeResult != StudioRouteResult.Started)
                 {
-                    var capturedRole = role;
-                    var actor = role.AssignedActor;
-                    var routeResult = _router.SendEmployeeToBuilding(actor, BuildingType.SoundStage, stageIntent, () =>
-                    {
-                        capturedRole.SetArrivedAtStage(true);
-                        actor.SetState(EmployeeState.Working);
-                        actor.SetIntent(new EmployeeIntent(
-                            EmployeeIntentPurpose.PerformTask,
-                            $"Preparing to film — {movie.Title} ({capturedRole.CharacterName})",
-                            "SoundStage"));
-
-                        CheckFilmingReadiness(movie);
-                    });
-                    if (routeResult != StudioRouteResult.Started)
-                    {
-                        HandleStageRoutingFailure(movie, actor, routeResult);
-                        return;
-                    }
-
+                    HandleStageRoutingFailure(movie, actor, routeResult);
+                    return;
                 }
             }
 
             UpdateStatus();
             OnActiveMovieChanged?.Invoke(movie);
+        }
+
+        private void RouteToProductionStation(
+            MovieProject movie,
+            Employee employee,
+            ProductionStationType stationType,
+            Action onArrival)
+        {
+            var stationIntent = new EmployeeIntent(
+                EmployeeIntentPurpose.ReportToStage,
+                $"Moving to {stationType} — {movie.Title}",
+                $"SoundStage:{stationType}");
+
+            var routeResult = _router.SendEmployeeToProductionStation(
+                employee,
+                BuildingType.SoundStage,
+                stationType,
+                stationIntent,
+                onArrival);
+
+            if (routeResult != StudioRouteResult.Started)
+            {
+                HandleStageRoutingFailure(movie, employee, routeResult);
+            }
+        }
+
+        private static ProductionStationType GetActorStation(int actorIndex)
+        {
+            return actorIndex switch
+            {
+                0 => ProductionStationType.ActorWaitingA,
+                1 => ProductionStationType.ActorWaitingB,
+                _ => ProductionStationType.ActorWaitingC
+            };
         }
 
         private void HandleStageRoutingFailure(MovieProject movie, Employee employee, StudioRouteResult routeResult)

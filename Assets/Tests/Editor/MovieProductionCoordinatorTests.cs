@@ -296,6 +296,17 @@ namespace SilverScreen.Tests.EditMode
                 return result;
             }
 
+            public StudioRouteResult SendEmployeeToProductionStation(
+                Employee employee,
+                BuildingType buildingType,
+                ProductionStationType stationType,
+                EmployeeIntent intent,
+                Action onArrival)
+            {
+                onArrival?.Invoke();
+                return StudioRouteResult.Started;
+            }
+
             public void ReleaseEmployee(Employee employee)
             {
                 if (employee == null) return;
