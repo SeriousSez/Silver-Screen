@@ -10,7 +10,8 @@ namespace SilverScreen.Domain
         Filming,
         Eating,
         Socializing,
-        Resting
+        Resting,
+        Writing
     }
 
     public enum EmployeeIntentPurpose
@@ -20,7 +21,10 @@ namespace SilverScreen.Domain
         ReportToCasting,
         ReportToStage,
         MovingToMark,
-        PerformTask
+        PerformTask,
+        ReportToScriptOffice,
+        MovingToWritingStation,
+        WriteScreenplay
     }
 
     public class EmployeeIntent

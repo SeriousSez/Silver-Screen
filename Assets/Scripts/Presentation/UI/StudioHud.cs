@@ -11,6 +11,7 @@ using SilverScreen.Presentation.SimulationTime;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using SilverScreen.Presentation.Writing;
 
 namespace SilverScreen.Presentation.UI
 {
@@ -34,6 +35,9 @@ namespace SilverScreen.Presentation.UI
         private GameObject _staffRoot;
         private GameObject _studioRoot;
         private GameObject _detailRoot;
+        private GameObject _screenplaysRoot;
+        private ScreenplayWritingUI _screenplayWritingUI;
+        private ScreenplayWritingDriver _writingDriver;
         private TextMeshProUGUI _dateText;
         private TextMeshProUGUI _cashText;
         private TextMeshProUGUI _studioNameText;
@@ -115,6 +119,7 @@ namespace SilverScreen.Presentation.UI
             _movieProjectUI = FindAnyObjectByType<MovieProjectUI>(FindObjectsInactive.Include);
             _creationDialog = FindAnyObjectByType<MovieCreationDialogUI>(FindObjectsInactive.Include);
             _legacyClockUI = FindAnyObjectByType<SimulationClockUI>(FindObjectsInactive.Include);
+            _writingDriver = FindAnyObjectByType<ScreenplayWritingDriver>();
         }
 
         private void Build()
@@ -265,6 +270,10 @@ namespace SilverScreen.Presentation.UI
             _staffPanel = _staffRoot.AddComponent<StaffPanelUI>();
             _staffPanel.Initialize(_employeeManager, _selectionController);
 
+            _screenplaysRoot = CreatePanelRoot("ScreenplaysPanel", content);
+            _screenplayWritingUI = _screenplaysRoot.AddComponent<ScreenplayWritingUI>();
+            _screenplayWritingUI.Initialize(_employeeManager, _writingDriver);
+
             _detailRoot = CreatePanelRoot("MovieDetailPanel", content);
             ManagementUIFactory.Background(
                 _detailRoot.GetComponent<RectTransform>(),
@@ -288,6 +297,7 @@ namespace SilverScreen.Presentation.UI
             _studioRoot.SetActive(false);
             _productionsRoot.SetActive(false);
             _staffRoot.SetActive(false);
+            _screenplaysRoot.SetActive(false);
             _detailRoot.SetActive(false);
         }
 
@@ -336,12 +346,14 @@ namespace SilverScreen.Presentation.UI
             if (_studioRoot != null) _studioRoot.SetActive(panel == ManagementPanel.Studio);
             if (_productionsRoot != null) _productionsRoot.SetActive(panel == ManagementPanel.Productions);
             if (_staffRoot != null) _staffRoot.SetActive(panel == ManagementPanel.Staff);
+            if (_screenplaysRoot != null) _screenplaysRoot.SetActive(panel == ManagementPanel.Screenplays);
             _financeUI?.SetPanelVisible(panel == ManagementPanel.Finances);
             _navigation?.SetActive(panel);
 
             if (panel == ManagementPanel.Studio) _studioOverview?.Refresh();
             if (panel == ManagementPanel.Productions) _productionSlate?.Refresh();
             if (panel == ManagementPanel.Staff) _staffPanel?.Refresh();
+            if (panel == ManagementPanel.Screenplays) _screenplayWritingUI?.Refresh();
             _changingPanel = false;
         }
 
@@ -352,6 +364,7 @@ namespace SilverScreen.Presentation.UI
             _productionsRoot.SetActive(false);
             _studioRoot.SetActive(false);
             _staffRoot.SetActive(false);
+            _screenplaysRoot.SetActive(false);
             _financeUI?.SetPanelVisible(false);
             _detailRoot.SetActive(true);
             _detailRoot.transform.SetAsLastSibling();

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using SilverScreen.Domain.Time;
 namespace SilverScreen.Domain
 {
- public enum ProfessionalRole { Actor, Director, Extra, Crew }
+ public enum ProfessionalRole { Actor, Director, Extra, Crew, Writer }
  [Serializable] public sealed class GenreExperience
  {
   public string GenreId { get; }
@@ -15,10 +15,11 @@ namespace SilverScreen.Domain
   private readonly List<GenreExperience> _genreExperience;
   public int ActingAbility { get; private set; }
   public int DirectingAbility { get; private set; }
+  public int WritingAbility { get; private set; }
   public IReadOnlyList<GenreExperience> GenreExperience=>_genreExperience;
-  public TalentProfile(int actingAbility,int directingAbility,IEnumerable<GenreExperience> genreExperience=null){ActingAbility=Math.Clamp(actingAbility,0,100);DirectingAbility=Math.Clamp(directingAbility,0,100);_genreExperience=genreExperience!=null?new List<GenreExperience>(genreExperience):new List<GenreExperience>();}
+  public TalentProfile(int actingAbility,int directingAbility,IEnumerable<GenreExperience> genreExperience=null,int writingAbility=25){ActingAbility=Math.Clamp(actingAbility,0,100);DirectingAbility=Math.Clamp(directingAbility,0,100);WritingAbility=Math.Clamp(writingAbility,0,100);_genreExperience=genreExperience!=null?new List<GenreExperience>(genreExperience):new List<GenreExperience>();}
   public int GetGenreExperience(string genreId){foreach(var entry in _genreExperience)if(string.Equals(entry.GenreId,genreId,StringComparison.OrdinalIgnoreCase))return entry.Experience;return 0;}
-  public void SetPrimaryAbility(ProfessionalRole role,int value){if(role==ProfessionalRole.Director)DirectingAbility=Math.Clamp(value,0,100);else ActingAbility=Math.Clamp(value,0,100);}
+  public void SetPrimaryAbility(ProfessionalRole role,int value){if(role==ProfessionalRole.Director)DirectingAbility=Math.Clamp(value,0,100);else if(role==ProfessionalRole.Writer)WritingAbility=Math.Clamp(value,0,100);else ActingAbility=Math.Clamp(value,0,100);}
  }
  public static class PersonTraitIds
  {

@@ -8,6 +8,7 @@ using SilverScreen.Presentation.Buildings;
 using SilverScreen.Presentation.SimulationTime;
 using SilverScreen.Presentation.UI;
 using SilverScreen.Presentation.Recruitment;
+using SilverScreen.Presentation.Writing;
 
 namespace SilverScreen.Presentation.Bootstrap
 {
@@ -104,6 +105,10 @@ namespace SilverScreen.Presentation.Bootstrap
             if (GetComponent<RecruitmentDriver>() == null)
             {
                 gameObject.AddComponent<RecruitmentDriver>();
+            }
+            if (GetComponent<ScreenplayWritingDriver>() == null)
+            {
+                gameObject.AddComponent<ScreenplayWritingDriver>();
             }
         }
 

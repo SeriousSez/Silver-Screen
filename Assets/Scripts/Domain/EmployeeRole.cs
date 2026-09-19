@@ -5,6 +5,7 @@ namespace SilverScreen.Domain
         Actor,
         Director,
         Extra,
-        Crew
+        Crew,
+        Writer
     }
 }
