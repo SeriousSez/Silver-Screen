@@ -129,7 +129,7 @@ namespace SilverScreen.Domain.Movie
             );
 
             // Add required Protagonist role
-            string protName = string.IsNullOrWhiteSpace(protagonistName) ? "Lead" : protagonistName.Trim();
+            string protName = string.IsNullOrWhiteSpace(protagonistName) ? "Lead Character" : protagonistName.Trim();
             movie.AddRole(new MovieRole(Guid.NewGuid().ToString(), MovieRoleType.Protagonist, protName));
 
             // Add optional Supporting roles (0 to 2)
@@ -716,6 +716,11 @@ namespace SilverScreen.Domain.Movie
                     "Scene 1");
                 if (movie.AddScene(defaultScene))
                 {
+                    foreach (var castRole in movie.CastRoles)
+                    {
+                        defaultScene.AddCharacter(castRole.Id);
+                    }
+
                     _activeScene = defaultScene;
                 }
             }

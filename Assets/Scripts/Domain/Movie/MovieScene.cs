@@ -14,7 +14,7 @@ namespace SilverScreen.Domain.Movie
     public sealed class MovieScene
     {
         private readonly HashSet<string> _participatingPersonIds = new HashSet<string>();
-        private readonly HashSet<string> _participatingRoleIds = new HashSet<string>();
+        private readonly HashSet<string> _participatingCharacterIds = new HashSet<string>();
         private readonly List<MovieTake> _takes = new List<MovieTake>();
 
         public string Id { get; }
@@ -24,7 +24,9 @@ namespace SilverScreen.Domain.Movie
         public string SetLocationId { get; private set; }
         public MovieSceneStatus Status { get; private set; }
         public IReadOnlyCollection<string> ParticipatingPersonIds => _participatingPersonIds;
-        public IReadOnlyCollection<string> ParticipatingRoleIds => _participatingRoleIds;
+        public IReadOnlyCollection<string> ParticipatingCharacterIds => _participatingCharacterIds;
+        // Compatibility alias for scenes created before fictional cast roles were explicit.
+        public IReadOnlyCollection<string> ParticipatingRoleIds => _participatingCharacterIds;
         public IReadOnlyList<MovieTake> Takes => _takes;
         public MovieTake SelectedTake => _takes.Find(take => take.IsSelectedForFinalCut);
 
@@ -60,10 +62,24 @@ namespace SilverScreen.Domain.Movie
             OnSceneUpdated?.Invoke(this);
         }
 
+        public bool AddCharacter(string characterId)
+        {
+            bool changed = AddIdentifier(_participatingCharacterIds, characterId);
+            if (changed) OnSceneUpdated?.Invoke(this);
+            return changed;
+        }
+
+        public bool RemoveCharacter(string characterId)
+        {
+            bool changed = RemoveIdentifier(_participatingCharacterIds, characterId);
+            if (changed) OnSceneUpdated?.Invoke(this);
+            return changed;
+        }
+
         public bool AddParticipant(string personId, string roleId = null)
         {
             bool changed = AddIdentifier(_participatingPersonIds, personId);
-            changed |= AddIdentifier(_participatingRoleIds, roleId);
+            changed |= AddIdentifier(_participatingCharacterIds, roleId);
             if (changed) OnSceneUpdated?.Invoke(this);
             return changed;
         }
@@ -71,7 +87,7 @@ namespace SilverScreen.Domain.Movie
         public bool RemoveParticipant(string personId, string roleId = null)
         {
             bool changed = RemoveIdentifier(_participatingPersonIds, personId);
-            changed |= RemoveIdentifier(_participatingRoleIds, roleId);
+            changed |= RemoveIdentifier(_participatingCharacterIds, roleId);
             if (changed) OnSceneUpdated?.Invoke(this);
             return changed;
         }
