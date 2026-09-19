@@ -61,9 +61,15 @@ namespace SilverScreen.Presentation.Buildings
                     if (slateSequence == null) slateSequence = b.gameObject.AddComponent<PrototypeSlateSequence>();
                     var timeDriver = FindAnyObjectByType<SimulationTimeDriver>();
                     slateSequence.Initialize(slatePositions, timeDriver != null ? timeDriver.TimeService : null);
+                    var blockingPoints = b.GetComponent<SetBlockingPointLayout>();
+                    if (blockingPoints == null) blockingPoints = b.gameObject.AddComponent<SetBlockingPointLayout>();
+                    blockingPoints.EnsurePrototypePoints();
                     var beatSequence = b.GetComponent<PrototypeScreenplayBeatSequence>();
                     if (beatSequence == null) beatSequence = b.gameObject.AddComponent<PrototypeScreenplayBeatSequence>();
-                    beatSequence.Initialize(_employeeManager, timeDriver != null ? timeDriver.TimeService : null);
+                    beatSequence.Initialize(
+                        _employeeManager,
+                        timeDriver != null ? timeDriver.TimeService : null,
+                        blockingPoints);
                 }
             }
         }
