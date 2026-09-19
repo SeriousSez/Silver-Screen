@@ -49,6 +49,7 @@ namespace SilverScreen.Presentation.Movie
                         _worldRouter,
                         _genres,
                         _financeService);
+                    _worldRouter.BindProductionService(_coordinator);
                 }
             }
             return _coordinator;

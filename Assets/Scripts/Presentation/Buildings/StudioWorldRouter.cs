@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using SilverScreen.Domain;
+using SilverScreen.Domain.Movie;
 using SilverScreen.Presentation.Employees;
 using SilverScreen.Presentation.SimulationTime;
 
@@ -12,6 +13,12 @@ namespace SilverScreen.Presentation.Buildings
         [SerializeField] private StudioEmployeeManager _employeeManager;
 
         private readonly Dictionary<BuildingType, StudioBuildingView> _buildingCache = new Dictionary<BuildingType, StudioBuildingView>();
+        private IMovieProductionService _productionService;
+
+        public void BindProductionService(IMovieProductionService productionService)
+        {
+            _productionService = productionService;
+        }
 
         private void Awake()
         {
@@ -188,7 +195,12 @@ namespace SilverScreen.Presentation.Buildings
                 return StudioRouteResult.SlateMissing;
             }
 
-            return slateSequence.TryBegin(onCompleted, onFailed);
+            return slateSequence.TryBegin(
+                _productionService?.ActiveSlateMovieTitle,
+                _productionService?.ActiveSlateSceneNumber,
+                _productionService?.ActiveSlateTakeNumber,
+                onCompleted,
+                onFailed);
         }
 
         public void ReleaseEmployee(Employee employee)
