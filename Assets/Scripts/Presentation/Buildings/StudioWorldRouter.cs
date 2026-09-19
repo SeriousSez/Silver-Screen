@@ -38,6 +38,12 @@ namespace SilverScreen.Presentation.Buildings
             foreach (var b in buildings)
             {
                 _buildingCache[b.BuildingType] = b;
+                if (b.BuildingType == BuildingType.SoundStage)
+                {
+                    var stations = b.GetComponent<ProductionStationLayout>();
+                    if (stations == null) stations = b.gameObject.AddComponent<ProductionStationLayout>();
+                    stations.EnsurePrototypeStations();
+                }
             }
         }
 
@@ -88,6 +94,39 @@ namespace SilverScreen.Presentation.Buildings
             return StudioRouteResult.BuildingMissing;
         }
 
+        public StudioRouteResult SendEmployeeToProductionStation(
+            Employee employee,
+            BuildingType buildingType,
+            ProductionStationType stationType,
+            EmployeeIntent intent,
+            Action onArrival)
+        {
+            if (employee == null) return StudioRouteResult.EmployeeMissing;
+            if (_employeeManager == null) _employeeManager = FindAnyObjectByType<StudioEmployeeManager>();
+            if (_employeeManager == null) return StudioRouteResult.AgentMissing;
+
+            var agent = _employeeManager.GetAgent(employee);
+            if (agent == null) return StudioRouteResult.AgentMissing;
+
+            if (_buildingCache.Count == 0) CacheBuildings();
+            if (!_buildingCache.TryGetValue(buildingType, out var building) || building == null)
+                return StudioRouteResult.BuildingMissing;
+
+            var stations = building.GetComponent<ProductionStationLayout>();
+            if (stations == null || !stations.TryGetPosition(stationType, out Vector3 targetPosition))
+            {
+                Debug.LogWarning($"[StudioWorldRouter] No {stationType} station found at {building.DisplayName}");
+                return StudioRouteResult.StationMissing;
+            }
+
+            if (!agent.TryAssignTaskDestination(targetPosition, intent, onArrival))
+            {
+                Debug.LogWarning($"[StudioWorldRouter] Navigation to {stationType} could not start for {employee.Name}");
+                return StudioRouteResult.NavigationRejected;
+            }
+
+            return StudioRouteResult.Started;
+        }
         public void ReleaseEmployee(Employee employee)
         {
             if (_employeeManager == null)

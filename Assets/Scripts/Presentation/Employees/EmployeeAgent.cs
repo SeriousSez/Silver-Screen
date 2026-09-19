@@ -210,8 +210,13 @@ namespace SilverScreen.Presentation.Employees
             {
                 return false;
             }
-
-            if (!_navAgent.SetDestination(destination)) return false;
+            var path = new NavMeshPath();
+            if (!_navAgent.CalculatePath(destination, path) ||
+                path.status != NavMeshPathStatus.PathComplete ||
+                !_navAgent.SetPath(path))
+            {
+                return false;
+            }
 
             _hasExplicitTask = true;
             _onArrivalCallback = onArrival;
