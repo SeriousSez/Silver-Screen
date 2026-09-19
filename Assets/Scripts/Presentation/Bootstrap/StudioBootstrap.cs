@@ -7,6 +7,7 @@ using SilverScreen.Presentation.Finance;
 using SilverScreen.Presentation.Buildings;
 using SilverScreen.Presentation.SimulationTime;
 using SilverScreen.Presentation.UI;
+using SilverScreen.Presentation.Recruitment;
 
 namespace SilverScreen.Presentation.Bootstrap
 {
@@ -99,6 +100,11 @@ namespace SilverScreen.Presentation.Bootstrap
                 hud = gameObject.AddComponent<StudioHud>();
             }
             hud.Initialize(StudioIdentity);
+
+            if (GetComponent<RecruitmentDriver>() == null)
+            {
+                gameObject.AddComponent<RecruitmentDriver>();
+            }
         }
 
         private void InitializeStudioIdentityPresentation()

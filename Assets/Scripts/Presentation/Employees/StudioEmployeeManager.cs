@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using SilverScreen.Domain;
@@ -12,13 +13,12 @@ namespace SilverScreen.Presentation.Employees
 
         public IReadOnlyList<Employee> AllEmployees => _employees;
         public IReadOnlyList<EmployeeAgent> AllAgents => _agents;
+        public event Action<Employee> OnEmployeeAdded;
 
         public void RegisterEmployee(Employee employee, EmployeeAgent agent)
         {
-            if (!_employees.Contains(employee))
-            {
-                _employees.Add(employee);
-            }
+            bool added = !_employees.Contains(employee);
+            if (added) _employees.Add(employee);
 
             if (!_agents.Contains(agent))
             {
@@ -27,6 +27,7 @@ namespace SilverScreen.Presentation.Employees
 
             _agentByEmployeeId[employee.Id] = agent;
             agent.BindDomain(employee);
+            if (added) OnEmployeeAdded?.Invoke(employee);
         }
 
         public EmployeeAgent GetAgent(string employeeId)
