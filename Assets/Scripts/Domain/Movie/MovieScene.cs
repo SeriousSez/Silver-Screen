@@ -16,6 +16,7 @@ namespace SilverScreen.Domain.Movie
         private readonly HashSet<string> _participatingPersonIds = new HashSet<string>();
         private readonly HashSet<string> _participatingCharacterIds = new HashSet<string>();
         private readonly List<MovieTake> _takes = new List<MovieTake>();
+        private readonly List<ScreenplayBeat> _beats = new List<ScreenplayBeat>();
 
         public string Id { get; }
         public int SceneNumber { get; private set; }
@@ -28,6 +29,7 @@ namespace SilverScreen.Domain.Movie
         // Compatibility alias for scenes created before fictional cast roles were explicit.
         public IReadOnlyCollection<string> ParticipatingRoleIds => _participatingCharacterIds;
         public IReadOnlyList<MovieTake> Takes => _takes;
+        public IReadOnlyList<ScreenplayBeat> Beats => _beats;
         public MovieTake SelectedTake => _takes.Find(take => take.IsSelectedForFinalCut);
 
         public event Action<MovieScene> OnSceneUpdated;
@@ -71,10 +73,69 @@ namespace SilverScreen.Domain.Movie
 
         public bool RemoveCharacter(string characterId)
         {
-            bool changed = RemoveIdentifier(_participatingCharacterIds, characterId);
+            string normalizedId = string.IsNullOrWhiteSpace(characterId) ? null : characterId.Trim();
+            if (normalizedId == null ||
+                _beats.Exists(beat =>
+                    beat.PerformingCharacterId == normalizedId ||
+                    beat.TargetCharacterId == normalizedId))
+            {
+                return false;
+            }
+
+            bool changed = RemoveIdentifier(_participatingCharacterIds, normalizedId);
             if (changed) OnSceneUpdated?.Invoke(this);
             return changed;
         }
+
+        public bool HasCharacter(string characterId) =>
+            !string.IsNullOrWhiteSpace(characterId) &&
+            _participatingCharacterIds.Contains(characterId.Trim());
+
+        public bool AddBeat(ScreenplayBeat beat)
+        {
+            if (beat == null ||
+                _beats.Exists(existing => existing.Id == beat.Id) ||
+                !ReferencesParticipatingCharacters(beat))
+            {
+                return false;
+            }
+
+            int insertionIndex = Math.Clamp(beat.Order - 1, 0, _beats.Count);
+            _beats.Insert(insertionIndex, beat);
+            RenumberBeats();
+            OnSceneUpdated?.Invoke(this);
+            return true;
+        }
+
+        public bool RemoveBeat(string beatId)
+        {
+            var beat = GetBeat(beatId);
+            if (beat == null) return false;
+
+            _beats.Remove(beat);
+            RenumberBeats();
+            OnSceneUpdated?.Invoke(this);
+            return true;
+        }
+
+        public bool ReorderBeat(string beatId, int newOrder)
+        {
+            var beat = GetBeat(beatId);
+            if (beat == null || newOrder < 1 || newOrder > _beats.Count) return false;
+
+            int currentIndex = _beats.IndexOf(beat);
+            int newIndex = newOrder - 1;
+            if (currentIndex == newIndex) return true;
+
+            _beats.RemoveAt(currentIndex);
+            _beats.Insert(newIndex, beat);
+            RenumberBeats();
+            OnSceneUpdated?.Invoke(this);
+            return true;
+        }
+
+        public ScreenplayBeat GetBeat(string beatId) =>
+            string.IsNullOrWhiteSpace(beatId) ? null : _beats.Find(beat => beat.Id == beatId);
 
         public bool AddParticipant(string personId, string roleId = null)
         {
@@ -156,6 +217,18 @@ namespace SilverScreen.Domain.Movie
         internal void SetSceneNumber(int sceneNumber)
         {
             SceneNumber = sceneNumber;
+        }
+
+        private bool ReferencesParticipatingCharacters(ScreenplayBeat beat)
+        {
+            return (beat.PerformingCharacterId == null || HasCharacter(beat.PerformingCharacterId)) &&
+                   (beat.TargetCharacterId == null || HasCharacter(beat.TargetCharacterId));
+        }
+
+        private void RenumberBeats()
+        {
+            for (int index = 0; index < _beats.Count; index++)
+                _beats[index].SetOrder(index + 1);
         }
 
         private bool TrySetStatus(MovieSceneStatus expected, MovieSceneStatus next)
