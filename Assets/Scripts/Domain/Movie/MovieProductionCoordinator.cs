@@ -16,20 +16,20 @@ namespace SilverScreen.Domain.Movie
 
         private string _statusMessage = "No active project";
         private const int FilmingDurationMinutes = 480; // 8 hours
-        private bool _filmingActive;
         private int _filmingMinutesElapsed;
         private string _routingFailureMessage;
         private readonly HashSet<string> _actorsAtWaitingStations = new HashSet<string>();
-        private bool _actorMarkRoutingStarted;
 
         public StudioProductionSlate Slate => _slate;
         public MovieProject ActiveMovie => _slate.ActiveMovie;
         public string StatusMessage => _statusMessage;
+        public ProductionPhase CurrentProductionPhase { get; private set; } = ProductionPhase.Inactive;
         public IReadOnlyList<GenreDefinition> AvailableGenres => _genres;
         public IReadOnlyList<BudgetTier> AvailableBudgets => BudgetTier.DefaultTiers;
 
         public event Action<MovieProject> OnActiveMovieChanged;
         public event Action<string> OnProductionNotification;
+        public event Action<ProductionPhase> OnProductionPhaseChanged;
 
         public MovieProductionCoordinator(
             ISimulationTimeService timeService,
@@ -76,7 +76,7 @@ namespace SilverScreen.Domain.Movie
 
         private void HandleSlateActiveMovieChanged(MovieProject movie)
         {
-            _filmingActive = false;
+            SetProductionPhase(ProductionPhase.Inactive);
             _filmingMinutesElapsed = 0;
             UpdateStatus();
             OnActiveMovieChanged?.Invoke(movie);
@@ -293,7 +293,7 @@ namespace SilverScreen.Domain.Movie
                     OnActiveMovieChanged?.Invoke(movie);
                 }
             }
-            else if (_filmingActive && movie.CurrentState == MovieProductionState.Filming)
+            else if (CurrentProductionPhase == ProductionPhase.Filming && movie.CurrentState == MovieProductionState.Filming)
             {
                 _filmingMinutesElapsed++;
                 float progress = Math.Clamp((float)_filmingMinutesElapsed / FilmingDurationMinutes, 0f, 1f);
@@ -312,7 +312,7 @@ namespace SilverScreen.Domain.Movie
         {
             _routingFailureMessage = null;
             _actorsAtWaitingStations.Clear();
-            _actorMarkRoutingStarted = false;
+            SetProductionPhase(ProductionPhase.MovingToStations);
             movie.SetState(MovieProductionState.ReadyToFilm);
             movie.SetDirectorArrivedAtStage(false);
 
@@ -419,7 +419,8 @@ namespace SilverScreen.Domain.Movie
 
         private void CheckProductionStationsReady(MovieProject movie)
         {
-            if (movie.CurrentState != MovieProductionState.ReadyToFilm || _actorMarkRoutingStarted) return;
+            if (movie.CurrentState != MovieProductionState.ReadyToFilm ||
+                CurrentProductionPhase != ProductionPhase.MovingToStations) return;
 
             bool directorReady = movie.AssignedDirector == null || movie.DirectorArrivedAtStage;
             bool actorsReady = true;
@@ -439,7 +440,8 @@ namespace SilverScreen.Domain.Movie
                 return;
             }
 
-            _actorMarkRoutingStarted = true;
+            SetProductionPhase(ProductionPhase.AtStations);
+            SetProductionPhase(ProductionPhase.Blocking);
             RouteActorsToSceneMarks(movie);
         }
 
@@ -508,7 +510,7 @@ namespace SilverScreen.Domain.Movie
         {
             _routingFailureMessage = $"Could not position {employee.Name} for filming ({routeResult}).";
             _actorsAtWaitingStations.Clear();
-            _actorMarkRoutingStarted = false;
+            SetProductionPhase(ProductionPhase.Failed);
 
             if (movie.AssignedDirector != null)
             {
@@ -536,8 +538,11 @@ namespace SilverScreen.Domain.Movie
 
         private void CheckFilmingReadiness(MovieProject movie)
         {
-            if (movie.AllParticipantsAtStage && movie.CurrentState == MovieProductionState.ReadyToFilm)
+            if (movie.AllParticipantsAtStage &&
+                movie.CurrentState == MovieProductionState.ReadyToFilm &&
+                CurrentProductionPhase == ProductionPhase.Blocking)
             {
+                SetProductionPhase(ProductionPhase.ReadyForTake);
                 BeginFilming(movie);
             }
             else
@@ -546,11 +551,10 @@ namespace SilverScreen.Domain.Movie
                 OnActiveMovieChanged?.Invoke(movie);
             }
         }
-
         private void BeginFilming(MovieProject movie)
         {
             movie.SetState(MovieProductionState.Filming);
-            _filmingActive = true;
+            SetProductionPhase(ProductionPhase.Filming);
             _filmingMinutesElapsed = 0;
 
             if (movie.AssignedDirector != null)
@@ -580,7 +584,7 @@ namespace SilverScreen.Domain.Movie
 
         private void CompleteFilming(MovieProject movie)
         {
-            _filmingActive = false;
+            SetProductionPhase(ProductionPhase.Completed);
             movie.SetProgress(1.0f);
             movie.TrySetProductionResult(_qualityCalculator.Calculate(movie));
             movie.SetState(MovieProductionState.Completed);
@@ -608,6 +612,13 @@ namespace SilverScreen.Domain.Movie
             OnProductionNotification?.Invoke(
                 $"{movie.Title} has finished filming!{Environment.NewLine}" +
                 $"Production Quality: {movie.ProductionResult.OverallQuality}/100");
+        }
+
+        private void SetProductionPhase(ProductionPhase phase)
+        {
+            if (CurrentProductionPhase == phase) return;
+            CurrentProductionPhase = phase;
+            OnProductionPhaseChanged?.Invoke(phase);
         }
 
         private void UpdateStatus()
@@ -680,7 +691,7 @@ namespace SilverScreen.Domain.Movie
                         if (!role.ArrivedAtStage) unarrived++;
                     }
 
-                    if (_actorMarkRoutingStarted && unarrived > 0)
+                    if (CurrentProductionPhase == ProductionPhase.Blocking && unarrived > 0)
                         _statusMessage = $"Actors moving to scene marks ({unarrived} remaining)";
                     else
                         _statusMessage = unarrived > 0
