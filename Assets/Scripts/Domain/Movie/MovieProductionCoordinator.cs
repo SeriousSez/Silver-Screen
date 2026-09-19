@@ -943,18 +943,20 @@ namespace SilverScreen.Domain.Movie
                     }
 
                     if (CurrentProductionPhase == ProductionPhase.Blocking && unarrived > 0)
-                        _statusMessage = $"Actors moving to scene marks ({unarrived} remaining)";
+                        _statusMessage = FormatActiveSceneStatus(
+                            $"Actors moving to scene marks ({unarrived} remaining)");
                     else if (CurrentProductionPhase == ProductionPhase.Slating)
-                        _statusMessage = "Slating - preparing the shot";
+                        _statusMessage = FormatActiveSceneStatus("Slating");
                     else
-                        _statusMessage = unarrived > 0
-                            ? $"Cast & crew moving to production stations ({unarrived} remaining)"
-                            : "Ready to film";
+                        _statusMessage = FormatActiveSceneStatus(
+                            unarrived > 0
+                                ? $"Cast & crew moving to production stations ({unarrived} remaining)"
+                                : "Ready to film");
                     break;
 
                 case MovieProductionState.Filming:
                     int pct = (int)Math.Round(movie.ProductionProgress * 100f);
-                    _statusMessage = $"Filming — {pct}%";
+                    _statusMessage = FormatActiveSceneStatus($"Filming — {pct}%");
                     break;
 
                 case MovieProductionState.Completed:
@@ -965,6 +967,16 @@ namespace SilverScreen.Domain.Movie
                     _statusMessage = movie.CurrentState.ToString();
                     break;
             }
+        }
+
+        private string FormatActiveSceneStatus(string phase)
+        {
+            if (_activeScene == null) return phase;
+
+            string sceneLabel = string.IsNullOrWhiteSpace(_activeScene.Title)
+                ? $"Scene {_activeScene.SceneNumber}"
+                : $"Scene {_activeScene.SceneNumber} — {_activeScene.Title}";
+            return $"{sceneLabel}{Environment.NewLine}{phase}";
         }
     }
 }
