@@ -5,6 +5,7 @@ namespace SilverScreen.Domain.Writing
 {
     public enum ScreenplayStatus { Assigned, Writing, Completed }
     public enum WriterParticipationStatus { Assigned, Traveling, Writing, Unavailable, Credited }
+    public enum ScreenplayAcquisitionSource { Commissioned, Purchased, PlayerCreated }
 
     [Serializable]
     public sealed class ScreenplayWriterContributor
@@ -31,19 +32,34 @@ namespace SilverScreen.Domain.Writing
     {
         private readonly List<ScreenplayWriterContributor> _contributors = new List<ScreenplayWriterContributor>();
         private readonly List<string> _creditedWriterIds = new List<string>();
+        private readonly List<string> _genreIds = new List<string>();
 
         public string Id { get; }
         public string Title { get; }
+        public IReadOnlyList<string> GenreIds => _genreIds;
+        public string PrimaryGenreId => _genreIds[0];
+        public ScreenplayAcquisitionSource AcquisitionSource { get; }
         public ScreenplayStatus Status { get; private set; }
         public double Progress { get; private set; }
         public IReadOnlyList<ScreenplayWriterContributor> Contributors => _contributors;
         public IReadOnlyList<string> CreditedWriterIds => _creditedWriterIds;
         public event Action<ScreenplayProject> Changed;
 
-        public ScreenplayProject(string id, string title, IEnumerable<string> writerIds)
+        public ScreenplayProject(string id, string title, IEnumerable<string> writerIds,
+            IEnumerable<string> genreIds, ScreenplayAcquisitionSource acquisitionSource = ScreenplayAcquisitionSource.Commissioned)
         {
             Id = string.IsNullOrWhiteSpace(id) ? Guid.NewGuid().ToString() : id.Trim();
             Title = string.IsNullOrWhiteSpace(title) ? "Untitled Screenplay" : title.Trim();
+            AcquisitionSource = acquisitionSource;
+            if (genreIds == null) throw new ArgumentNullException(nameof(genreIds));
+            foreach (string genreId in genreIds)
+            {
+                if (string.IsNullOrWhiteSpace(genreId)) throw new ArgumentException("Genre IDs cannot be empty.", nameof(genreIds));
+                string normalized = genreId.Trim().ToLowerInvariant();
+                if (_genreIds.Contains(normalized)) throw new ArgumentException("Duplicate genre IDs are not allowed.", nameof(genreIds));
+                _genreIds.Add(normalized);
+            }
+            if (_genreIds.Count == 0) throw new ArgumentException("A screenplay requires at least one genre.", nameof(genreIds));
             if (writerIds == null) throw new ArgumentNullException(nameof(writerIds));
             foreach (string writerId in writerIds)
             {
@@ -52,6 +68,16 @@ namespace SilverScreen.Domain.Writing
             }
             if (_contributors.Count == 0) throw new ArgumentException("A screenplay requires at least one writer.", nameof(writerIds));
             Status = ScreenplayStatus.Assigned;
+        }
+
+        public bool TryAddGenre(string genreId)
+        {
+            if (string.IsNullOrWhiteSpace(genreId)) return false;
+            string normalized = genreId.Trim().ToLowerInvariant();
+            if (_genreIds.Contains(normalized)) return false;
+            _genreIds.Add(normalized);
+            Changed?.Invoke(this);
+            return true;
         }
 
         public ScreenplayWriterContributor GetContributor(string writerId) =>
