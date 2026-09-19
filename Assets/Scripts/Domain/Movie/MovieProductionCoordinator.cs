@@ -28,6 +28,8 @@ namespace SilverScreen.Domain.Movie
         public MovieProject ActiveMovie => _slate.ActiveMovie;
         public MovieScene ActiveScene => _activeScene;
         public MovieTake ActiveTake => _activeTake;
+        public MovieScene NextFilmableScene => ActiveMovie?.GetNextFilmableScene();
+        public bool HasRemainingScenes => ActiveMovie?.HasUnfinishedScenes ?? false;
         public string ActiveSlateMovieTitle => ActiveMovie?.Title;
         public int? ActiveSlateSceneNumber => _activeScene?.SceneNumber;
         public int? ActiveSlateTakeNumber => _activeTake?.TakeNumber;
@@ -309,8 +311,7 @@ namespace SilverScreen.Domain.Movie
             else if (CurrentProductionPhase == ProductionPhase.Filming && movie.CurrentState == MovieProductionState.Filming)
             {
                 _filmingMinutesElapsed++;
-                float progress = Math.Clamp((float)_filmingMinutesElapsed / FilmingDurationMinutes, 0f, 1f);
-                movie.SetProgress(progress);
+                movie.SetProgress(CalculateProductionProgress(movie));
 
                 UpdateStatus();
 
@@ -670,10 +671,7 @@ namespace SilverScreen.Domain.Movie
                 return;
             }
 
-            SetProductionPhase(ProductionPhase.Completed);
-            movie.SetProgress(1.0f);
-            movie.TrySetProductionResult(_qualityCalculator.Calculate(movie));
-            movie.SetState(MovieProductionState.Completed);
+            int completedSceneNumber = _activeScene.SceneNumber;
 
             if (movie.AssignedDirector != null)
             {
@@ -687,19 +685,57 @@ namespace SilverScreen.Domain.Movie
                 _router.ReleaseEmployee(participant.Actor);
                 participant.Actor.SetState(EmployeeState.Idle);
                 participant.Actor.SetIntent(EmployeeIntent.None);
+                foreach (var role in participant.Roles) role.SetArrivedAtStage(false);
             }
 
-            UpdateStatus();
-            OnActiveMovieChanged?.Invoke(movie);
-
-            OnProductionNotification?.Invoke(
-                $"{movie.Title} has finished filming!{Environment.NewLine}" +
-                $"Production Quality: {movie.ProductionResult.OverallQuality}/100");
-
+            movie.SetDirectorArrivedAtStage(false);
+            movie.SetProgress(CalculateProductionProgress(movie));
             ClearActiveSceneAndTake();
             _requiredActors.Clear();
             _actorsAtWaitingStations.Clear();
             _actorsAtSceneMarks.Clear();
+
+            if (movie.AllScenesCompleted)
+            {
+                SetProductionPhase(ProductionPhase.Completed);
+                movie.SetProgress(1.0f);
+                movie.TrySetProductionResult(_qualityCalculator.Calculate(movie));
+                movie.SetState(MovieProductionState.Completed);
+                OnProductionNotification?.Invoke(
+                    $"{movie.Title} has finished filming!{Environment.NewLine}" +
+                    $"Production Quality: {movie.ProductionResult.OverallQuality}/100");
+            }
+            else
+            {
+                SetProductionPhase(ProductionPhase.AwaitingNextScene);
+                movie.SetState(MovieProductionState.ReadyToFilm);
+                var nextScene = movie.GetNextFilmableScene();
+                string nextDescription = nextScene != null
+                    ? $"Scene {nextScene.SceneNumber} is next."
+                    : "Another unfinished scene remains.";
+                OnProductionNotification?.Invoke(
+                    $"Scene {completedSceneNumber} of {movie.Title} is complete. {nextDescription}");
+            }
+
+            UpdateStatus();
+            OnActiveMovieChanged?.Invoke(movie);
+        }
+
+        private float CalculateProductionProgress(MovieProject movie)
+        {
+            if (movie.Scenes.Count == 0) return 0f;
+
+            int completedScenes = 0;
+            foreach (var scene in movie.Scenes)
+            {
+                if (scene.Status == MovieSceneStatus.Completed) completedScenes++;
+            }
+
+            float activeSceneProgress = _activeScene != null &&
+                                        _activeScene.Status == MovieSceneStatus.Filming
+                ? Math.Clamp((float)_filmingMinutesElapsed / FilmingDurationMinutes, 0f, 1f)
+                : 0f;
+            return Math.Clamp((completedScenes + activeSceneProgress) / movie.Scenes.Count, 0f, 1f);
         }
 
         private bool TryResolveRequiredActors(MovieProject movie, out string failureMessage)
@@ -773,14 +809,7 @@ namespace SilverScreen.Domain.Movie
         {
             ClearActiveSceneAndTake();
 
-            foreach (var scene in movie.Scenes)
-            {
-                if (scene.Status == MovieSceneStatus.Planned || scene.Status == MovieSceneStatus.Ready)
-                {
-                    _activeScene = scene;
-                    break;
-                }
-            }
+            _activeScene = movie.GetNextFilmableScene();
 
             if (_activeScene == null && movie.Scenes.Count == 0)
             {
@@ -894,6 +923,15 @@ namespace SilverScreen.Domain.Movie
                     break;
 
                 case MovieProductionState.ReadyToFilm:
+                    if (CurrentProductionPhase == ProductionPhase.AwaitingNextScene)
+                    {
+                        var nextScene = movie.GetNextFilmableScene();
+                        _statusMessage = nextScene != null
+                            ? $"Scene {nextScene.SceneNumber} awaiting production"
+                            : "Another unfinished scene remains";
+                        break;
+                    }
+
                     int unarrived = 0;
                     if (!movie.DirectorArrivedAtStage) unarrived++;
                     foreach (var participant in _requiredActors)

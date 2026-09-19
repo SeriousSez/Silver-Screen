@@ -38,6 +38,9 @@ namespace SilverScreen.Domain.Movie
         public bool AllCastingComplete => _roles.Count > 0 && _roles.TrueForAll(r => r.CastingCompleted);
         public bool ReadyForFilming => HasDirector && AllRolesCast && AllCastingComplete;
         public bool AllParticipantsAtStage => DirectorArrivedAtStage && (_roles.Count == 0 || _roles.TrueForAll(r => r.ArrivedAtStage));
+        public bool HasUnfinishedScenes => _scenes.Exists(scene => scene.Status != MovieSceneStatus.Completed);
+        public bool AllScenesCompleted =>
+            _scenes.Count > 0 && _scenes.TrueForAll(scene => scene.Status == MovieSceneStatus.Completed);
 
         public event Action<MovieProject> OnProjectUpdated;
         public event Action<MovieProject, MovieProductionState> OnStateChanged;
@@ -100,6 +103,20 @@ namespace SilverScreen.Domain.Movie
 
         public MovieScene GetScene(string sceneId) =>
             string.IsNullOrWhiteSpace(sceneId) ? null : _scenes.Find(scene => scene.Id == sceneId);
+
+        public MovieScene GetNextFilmableScene()
+        {
+            foreach (var scene in _scenes)
+            {
+                if (scene.Status == MovieSceneStatus.Planned ||
+                    scene.Status == MovieSceneStatus.Ready)
+                {
+                    return scene;
+                }
+            }
+
+            return null;
+        }
 
         public bool AddCharacterToScene(string sceneId, string castRoleId)
         {
