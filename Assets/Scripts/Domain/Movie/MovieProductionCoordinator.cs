@@ -508,7 +508,17 @@ namespace SilverScreen.Domain.Movie
         }
         private void HandleStageRoutingFailure(MovieProject movie, Employee employee, StudioRouteResult routeResult)
         {
-            _routingFailureMessage = $"Could not position {employee.Name} for filming ({routeResult}).";
+            FailProduction(movie, $"Could not position {employee.Name} for filming ({routeResult}).");
+        }
+
+        private void HandleSlateFailure(MovieProject movie, StudioRouteResult routeResult)
+        {
+            FailProduction(movie, $"The slate sequence could not complete ({routeResult}).");
+        }
+
+        private void FailProduction(MovieProject movie, string message)
+        {
+            _routingFailureMessage = message;
             _actorsAtWaitingStations.Clear();
             SetProductionPhase(ProductionPhase.Failed);
 
@@ -543,7 +553,7 @@ namespace SilverScreen.Domain.Movie
                 CurrentProductionPhase == ProductionPhase.Blocking)
             {
                 SetProductionPhase(ProductionPhase.ReadyForTake);
-                BeginFilming(movie);
+                BeginSlateSequence(movie);
             }
             else
             {
@@ -551,6 +561,29 @@ namespace SilverScreen.Domain.Movie
                 OnActiveMovieChanged?.Invoke(movie);
             }
         }
+
+        private void BeginSlateSequence(MovieProject movie)
+        {
+            SetProductionPhase(ProductionPhase.Slating);
+            var routeResult = _router.StartSlateSequence(
+                BuildingType.SoundStage,
+                () =>
+                {
+                    if (movie == ActiveMovie &&
+                        movie.CurrentState == MovieProductionState.ReadyToFilm &&
+                        CurrentProductionPhase == ProductionPhase.Slating)
+                    {
+                        BeginFilming(movie);
+                    }
+                },
+                failure => HandleSlateFailure(movie, failure));
+
+            if (routeResult != StudioRouteResult.Started)
+            {
+                HandleSlateFailure(movie, routeResult);
+            }
+        }
+
         private void BeginFilming(MovieProject movie)
         {
             movie.SetState(MovieProductionState.Filming);
@@ -693,6 +726,8 @@ namespace SilverScreen.Domain.Movie
 
                     if (CurrentProductionPhase == ProductionPhase.Blocking && unarrived > 0)
                         _statusMessage = $"Actors moving to scene marks ({unarrived} remaining)";
+                    else if (CurrentProductionPhase == ProductionPhase.Slating)
+                        _statusMessage = "Slating - preparing the shot";
                     else
                         _statusMessage = unarrived > 0
                             ? $"Cast & crew moving to production stations ({unarrived} remaining)"

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using SilverScreen.Domain;
 using SilverScreen.Presentation.Employees;
+using SilverScreen.Presentation.SimulationTime;
 
 namespace SilverScreen.Presentation.Buildings
 {
@@ -46,6 +47,13 @@ namespace SilverScreen.Presentation.Buildings
                     var marks = b.GetComponent<ActorSceneMarkLayout>();
                     if (marks == null) marks = b.gameObject.AddComponent<ActorSceneMarkLayout>();
                     marks.EnsurePrototypeMarks();
+                    var slatePositions = b.GetComponent<SlatePositionLayout>();
+                    if (slatePositions == null) slatePositions = b.gameObject.AddComponent<SlatePositionLayout>();
+                    slatePositions.EnsurePrototypePositions();
+                    var slateSequence = b.GetComponent<PrototypeSlateSequence>();
+                    if (slateSequence == null) slateSequence = b.gameObject.AddComponent<PrototypeSlateSequence>();
+                    var timeDriver = FindAnyObjectByType<SimulationTimeDriver>();
+                    slateSequence.Initialize(slatePositions, timeDriver != null ? timeDriver.TimeService : null);
                 }
             }
         }
@@ -163,6 +171,26 @@ namespace SilverScreen.Presentation.Buildings
 
             return StudioRouteResult.Started;
         }
+
+        public StudioRouteResult StartSlateSequence(
+            BuildingType buildingType,
+            Action onCompleted,
+            Action<StudioRouteResult> onFailed)
+        {
+            if (_buildingCache.Count == 0) CacheBuildings();
+            if (!_buildingCache.TryGetValue(buildingType, out var building) || building == null)
+                return StudioRouteResult.BuildingMissing;
+
+            var slateSequence = building.GetComponent<PrototypeSlateSequence>();
+            if (slateSequence == null)
+            {
+                Debug.LogWarning($"[StudioWorldRouter] No slate sequence found at {building.DisplayName}");
+                return StudioRouteResult.SlateMissing;
+            }
+
+            return slateSequence.TryBegin(onCompleted, onFailed);
+        }
+
         public void ReleaseEmployee(Employee employee)
         {
             if (_employeeManager == null)
