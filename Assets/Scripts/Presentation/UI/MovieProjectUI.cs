@@ -56,6 +56,14 @@ namespace SilverScreen.Presentation.UI
         private bool _statusDefaultsCaptured;
         private bool _viewVisible = true;
         private MovieProject _pinnedMovie;
+        private GameObject _takeControlRoot;
+        private GameObject _takeDecisionRoot;
+        private Button _automaticModeButton;
+        private Button _manualModeButton;
+        private Button _keepTakeButton;
+        private Button _shootAgainButton;
+        private Transform _takeButtonsRoot;
+        private string _selectedTakeId;
 
         public MovieProject DisplayedProject => _observedMovie;
 
@@ -85,6 +93,7 @@ namespace SilverScreen.Presentation.UI
 
             if (_productionDriver != null && _productionDriver.ProductionService != null)
             {
+                EnsureTakeControlUI();
                 _productionDriver.ProductionService.OnActiveMovieChanged += HandleMovieChanged;
                 _productionDriver.ProductionService.OnProductionNotification += HandleNotification;
                 if (_productionDriver.ReleaseService != null)
@@ -242,6 +251,8 @@ namespace SilverScreen.Presentation.UI
 
             if (_emptyStateRoot != null) _emptyStateRoot.SetActive(false);
             if (_activeCardRoot != null) _activeCardRoot.SetActive(_viewVisible);
+            EnsureTakeControlUI();
+            RefreshTakeControlUI(movie);
 
             if (_titleText != null) _titleText.text = movie.Title;
             if (_genreBudgetText != null) _genreBudgetText.text = $"{movie.GenreDisplayName}  •  ${movie.Budget:N0}";
@@ -376,6 +387,196 @@ namespace SilverScreen.Presentation.UI
             _statusDefaultSize = _statusText.rectTransform.sizeDelta;
             _statusDefaultFontSize = _statusText.fontSize;
             _statusDefaultsCaptured = true;
+        }
+
+        private void EnsureTakeControlUI()
+        {
+            if (_takeControlRoot != null || _activeCardRoot == null) return;
+
+            var root = ManagementUIFactory.Rect(
+                "TakeControl",
+                _activeCardRoot.transform,
+                new Vector2(0f, 0f),
+                new Vector2(1f, 0f),
+                new Vector2(0f, 76f),
+                new Vector2(-32f, 136f));
+            ManagementUIFactory.Background(root, new Color(0.035f, 0.043f, 0.05f, 0.98f));
+            _takeControlRoot = root.gameObject;
+
+            var labelRect = ManagementUIFactory.Rect(
+                "ModeLabel",
+                root,
+                new Vector2(0f, 1f),
+                new Vector2(0f, 1f),
+                new Vector2(72f, -22f),
+                new Vector2(120f, 28f));
+            ManagementUIFactory.Text(
+                "Text",
+                labelRect,
+                "TAKE CONTROL",
+                12f,
+                TextAlignmentOptions.MidlineLeft,
+                ManagementUIFactory.Muted);
+
+            _automaticModeButton = CreateTakeButton(
+                root, "Automatic", "AUTOMATIC", new Vector2(196f, -22f), new Vector2(112f, 28f));
+            _manualModeButton = CreateTakeButton(
+                root, "Manual", "MANUAL", new Vector2(318f, -22f), new Vector2(112f, 28f));
+            _automaticModeButton.onClick.AddListener(
+                () => SetProductionControlMode(ProductionControlMode.Automatic));
+            _manualModeButton.onClick.AddListener(
+                () => SetProductionControlMode(ProductionControlMode.Manual));
+
+            var decisionRect = ManagementUIFactory.Rect(
+                "TakeDecision",
+                root,
+                new Vector2(0f, 0f),
+                new Vector2(1f, 1f),
+                new Vector2(0f, -18f),
+                new Vector2(-16f, -52f));
+            _takeDecisionRoot = decisionRect.gameObject;
+            var cutText = ManagementUIFactory.Text(
+                "CutLabel",
+                decisionRect,
+                "CUT — CHOOSE A TAKE",
+                14f,
+                TextAlignmentOptions.TopLeft,
+                ManagementUIFactory.Gold);
+            cutText.raycastTarget = false;
+
+            var takeButtonsRect = ManagementUIFactory.Rect(
+                "Takes",
+                decisionRect,
+                new Vector2(0f, 0f),
+                new Vector2(0f, 0f),
+                new Vector2(132f, 22f),
+                new Vector2(240f, 32f));
+            _takeButtonsRoot = takeButtonsRect;
+            _keepTakeButton = CreateTakeButton(
+                decisionRect, "Keep", "KEEP SELECTED TAKE", new Vector2(330f, 22f), new Vector2(190f, 32f));
+            _shootAgainButton = CreateTakeButton(
+                decisionRect, "Again", "SHOOT AGAIN", new Vector2(440f, 22f), new Vector2(100f, 32f));
+            _keepTakeButton.onClick.AddListener(KeepSelectedTake);
+            _shootAgainButton.onClick.AddListener(ShootAgain);
+        }
+
+        private static Button CreateTakeButton(
+            Transform parent,
+            string name,
+            string label,
+            Vector2 position,
+            Vector2 size)
+        {
+            var rect = ManagementUIFactory.Rect(
+                name,
+                parent,
+                new Vector2(0f, 1f),
+                new Vector2(0f, 1f),
+                position,
+                size);
+            return ManagementUIFactory.Button(
+                "Button",
+                rect,
+                label,
+                ManagementUIFactory.PanelRaised,
+                Color.white);
+        }
+
+        private void RefreshTakeControlUI(MovieProject movie)
+        {
+            if (_takeControlRoot == null) return;
+
+            bool show = movie != null &&
+                movie.CurrentState != MovieProductionState.Completed &&
+                movie.CurrentState != MovieProductionState.Released;
+            _takeControlRoot.SetActive(show);
+            if (!show) return;
+
+            SetButtonSelected(
+                _automaticModeButton,
+                movie.ProductionControlMode == ProductionControlMode.Automatic);
+            SetButtonSelected(
+                _manualModeButton,
+                movie.ProductionControlMode == ProductionControlMode.Manual);
+
+            var service = _productionDriver?.ProductionService;
+            bool awaiting = service != null &&
+                movie == service.ActiveMovie &&
+                service.CurrentProductionPhase == ProductionPhase.AwaitingTakeDecision;
+            _takeDecisionRoot.SetActive(awaiting);
+            if (!awaiting) return;
+
+            PopulateCompletedTakeButtons(service.ActiveScene);
+            _keepTakeButton.interactable =
+                service.CanKeepTake && !string.IsNullOrWhiteSpace(_selectedTakeId);
+            _shootAgainButton.interactable = service.CanShootAgain;
+        }
+
+        private void PopulateCompletedTakeButtons(MovieScene scene)
+        {
+            foreach (Transform child in _takeButtonsRoot)
+                Destroy(child.gameObject);
+            if (scene == null) return;
+
+            MovieTake firstCompleted = null;
+            foreach (var take in scene.Takes)
+            {
+                if (take.Status != MovieTakeStatus.Completed) continue;
+                firstCompleted ??= take;
+            }
+
+            if (scene.GetTake(_selectedTakeId)?.Status != MovieTakeStatus.Completed)
+                _selectedTakeId = firstCompleted?.Id;
+
+            int index = 0;
+            foreach (var take in scene.Takes)
+            {
+                if (take.Status != MovieTakeStatus.Completed) continue;
+                var button = CreateTakeButton(
+                    _takeButtonsRoot,
+                    $"Take{take.TakeNumber}",
+                    $"TAKE {take.TakeNumber}",
+                    new Vector2(48f + index * 82f, 16f),
+                    new Vector2(72f, 28f));
+                string takeId = take.Id;
+                button.onClick.AddListener(() => SelectTake(takeId));
+                SetButtonSelected(button, takeId == _selectedTakeId);
+                index++;
+            }
+        }
+
+        private void SetProductionControlMode(ProductionControlMode mode)
+        {
+            var service = _productionDriver?.ProductionService;
+            if (service?.SetProductionControlMode(_observedMovie, mode) == false)
+                RefreshTakeControlUI(_observedMovie);
+        }
+
+        private void SelectTake(string takeId)
+        {
+            _selectedTakeId = takeId;
+            RefreshTakeControlUI(_observedMovie);
+        }
+
+        private void KeepSelectedTake()
+        {
+            _productionDriver?.ProductionService?.KeepTake(_selectedTakeId);
+        }
+
+        private void ShootAgain()
+        {
+            _productionDriver?.ProductionService?.ShootAgain();
+        }
+
+        private static void SetButtonSelected(Button button, bool selected)
+        {
+            if (button == null) return;
+            var image = button.GetComponent<Image>();
+            if (image != null)
+                image.color = selected ? ManagementUIFactory.Gold : ManagementUIFactory.PanelRaised;
+            var text = button.GetComponentInChildren<TextMeshProUGUI>();
+            if (text != null)
+                text.color = selected ? new Color(0.08f, 0.07f, 0.05f) : Color.white;
         }
 
         public void ShowProject(MovieProject movie)

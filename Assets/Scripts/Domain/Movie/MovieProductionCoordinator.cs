@@ -35,6 +35,11 @@ namespace SilverScreen.Domain.Movie
         public int? ActiveSlateTakeNumber => _activeTake?.TakeNumber;
         public string StatusMessage => _statusMessage;
         public ProductionPhase CurrentProductionPhase { get; private set; } = ProductionPhase.Inactive;
+        public bool CanKeepTake =>
+            CurrentProductionPhase == ProductionPhase.AwaitingTakeDecision &&
+            _activeScene != null &&
+            _activeScene.Takes.Count > 0;
+        public bool CanShootAgain => CanKeepTake;
         public IReadOnlyList<GenreDefinition> AvailableGenres => _genres;
         public IReadOnlyList<BudgetTier> AvailableBudgets => BudgetTier.DefaultTiers;
 
@@ -70,6 +75,25 @@ namespace SilverScreen.Domain.Movie
         {
             _genres.Clear();
             if (genres != null) _genres.AddRange(genres);
+        }
+
+        public bool SetProductionControlMode(MovieProject project, ProductionControlMode mode)
+        {
+            if (project == null || project != ActiveMovie ||
+                CurrentProductionPhase == ProductionPhase.Filming ||
+                CurrentProductionPhase == ProductionPhase.Slating ||
+                CurrentProductionPhase == ProductionPhase.AwaitingTakeDecision)
+            {
+                return false;
+            }
+
+            bool changed = project.SetProductionControlMode(mode);
+            if (changed)
+            {
+                UpdateStatus();
+                OnActiveMovieChanged?.Invoke(project);
+            }
+            return changed;
         }
 
         public void Dispose()
@@ -612,7 +636,8 @@ namespace SilverScreen.Domain.Movie
                 () =>
                 {
                     if (movie == ActiveMovie &&
-                        movie.CurrentState == MovieProductionState.ReadyToFilm &&
+                        (movie.CurrentState == MovieProductionState.ReadyToFilm ||
+                         movie.CurrentState == MovieProductionState.Filming) &&
                         CurrentProductionPhase == ProductionPhase.Slating)
                     {
                         BeginFilming(movie);
@@ -664,10 +689,91 @@ namespace SilverScreen.Domain.Movie
         {
             if (_activeScene == null ||
                 _activeTake == null ||
-                !_activeScene.CompleteTake(_activeTake.Id, TimeSpan.FromMinutes(_filmingMinutesElapsed)) ||
-                !_activeScene.CompleteFilming())
+                !_activeScene.CompleteTake(_activeTake.Id, TimeSpan.FromMinutes(_filmingMinutesElapsed)))
             {
-                FailProduction(movie, "The active scene or take could not be completed.");
+                FailProduction(movie, "The active take could not be completed.");
+                return;
+            }
+
+            if (movie.ProductionControlMode == ProductionControlMode.Manual)
+            {
+                AwaitTakeDecision(movie);
+                return;
+            }
+
+            if (!_activeScene.SelectTake(_activeTake.Id))
+            {
+                FailProduction(movie, "The completed take could not be selected.");
+                return;
+            }
+
+            CompleteActiveScene(movie);
+        }
+
+        public bool KeepTake(string takeId)
+        {
+            var movie = ActiveMovie;
+            if (!CanKeepTake || movie == null ||
+                string.IsNullOrWhiteSpace(takeId) ||
+                !_activeScene.SelectTake(takeId))
+            {
+                return false;
+            }
+
+            CompleteActiveScene(movie);
+            return true;
+        }
+
+        public bool ShootAgain()
+        {
+            var movie = ActiveMovie;
+            if (!CanShootAgain || movie == null || !_activeScene.PrepareForRetake())
+            {
+                return false;
+            }
+
+            _activeTake = _activeScene.PrepareTake();
+            if (_activeTake == null)
+            {
+                FailProduction(movie, "A new take could not be prepared.");
+                return false;
+            }
+
+            SetProductionPhase(ProductionPhase.ReadyForTake);
+            BeginSlateSequence(movie);
+            return CurrentProductionPhase != ProductionPhase.Failed;
+        }
+
+        private void AwaitTakeDecision(MovieProject movie)
+        {
+            SetProductionPhase(ProductionPhase.AwaitingTakeDecision);
+            if (movie.AssignedDirector != null)
+            {
+                movie.AssignedDirector.SetState(EmployeeState.Working);
+                movie.AssignedDirector.SetIntent(new EmployeeIntent(
+                    EmployeeIntentPurpose.PerformTask,
+                    $"Awaiting take decision — {movie.Title}",
+                    "SoundStage"));
+            }
+
+            foreach (var participant in _requiredActors)
+            {
+                participant.Actor.SetState(EmployeeState.Working);
+                participant.Actor.SetIntent(new EmployeeIntent(
+                    EmployeeIntentPurpose.PerformTask,
+                    $"Awaiting take decision — {movie.Title}",
+                    "SoundStage"));
+            }
+
+            UpdateStatus();
+            OnActiveMovieChanged?.Invoke(movie);
+        }
+
+        private void CompleteActiveScene(MovieProject movie)
+        {
+            if (_activeScene == null || _activeScene.SelectedTake == null || !_activeScene.CompleteFilming())
+            {
+                FailProduction(movie, "The active scene could not be completed.");
                 return;
             }
 
@@ -955,6 +1061,11 @@ namespace SilverScreen.Domain.Movie
                     break;
 
                 case MovieProductionState.Filming:
+                    if (CurrentProductionPhase == ProductionPhase.AwaitingTakeDecision)
+                    {
+                        _statusMessage = FormatActiveSceneStatus("Awaiting Take Decision");
+                        break;
+                    }
                     int pct = (int)Math.Round(movie.ProductionProgress * 100f);
                     _statusMessage = FormatActiveSceneStatus($"Filming — {pct}%");
                     break;

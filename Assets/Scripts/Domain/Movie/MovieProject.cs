@@ -17,6 +17,7 @@ namespace SilverScreen.Domain.Movie
         public SimulationDateTime? ReleaseDate { get; private set; }
         public MovieTheatricalRun TheatricalRun { get; private set; }
         public MovieCommercialResult CommercialResult { get; private set; }
+        public ProductionControlMode ProductionControlMode { get; private set; }
 
         public MovieProductionState CurrentState { get; private set; }
         public Employee AssignedDirector { get; private set; }
@@ -71,6 +72,21 @@ namespace SilverScreen.Domain.Movie
             ReleaseDate = null;
             TheatricalRun = null;
             CommercialResult = null;
+            ProductionControlMode = ProductionControlMode.Automatic;
+        }
+
+        public bool SetProductionControlMode(ProductionControlMode mode)
+        {
+            if (CurrentState == MovieProductionState.Completed ||
+                CurrentState == MovieProductionState.Released ||
+                ProductionControlMode == mode)
+            {
+                return false;
+            }
+
+            ProductionControlMode = mode;
+            OnProjectUpdated?.Invoke(this);
+            return true;
         }
 
         public bool AddScene(MovieScene scene)

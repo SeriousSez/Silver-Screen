@@ -157,6 +157,8 @@ namespace SilverScreen.Domain.Movie
 
         public bool BeginFilming() => TrySetStatus(MovieSceneStatus.Ready, MovieSceneStatus.Filming);
 
+        public bool PrepareForRetake() => TrySetStatus(MovieSceneStatus.Filming, MovieSceneStatus.Ready);
+
         public bool CompleteFilming() => TrySetStatus(MovieSceneStatus.Filming, MovieSceneStatus.Completed);
 
         public MovieTake PrepareTake(string takeId = null)
