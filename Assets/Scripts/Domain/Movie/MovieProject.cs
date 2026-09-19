@@ -23,6 +23,8 @@ namespace SilverScreen.Domain.Movie
         public bool DirectorArrivedAtStage { get; private set; }
 
         private readonly List<MovieRole> _roles = new List<MovieRole>();
+        public IReadOnlyList<MovieRole> CastRoles => _roles;
+        // Compatibility alias retained for the existing casting and production UI.
         public IReadOnlyList<MovieRole> Roles => _roles;
 
         private readonly List<MovieScene> _scenes = new List<MovieScene>();
@@ -32,7 +34,7 @@ namespace SilverScreen.Domain.Movie
         public SimulationDateTime CreatedDate { get; }
 
         public bool HasDirector => AssignedDirector != null;
-        public bool AllRolesCast => _roles.Count > 0 && _roles.TrueForAll(r => r.AssignedActor != null);
+        public bool AllRolesCast => _roles.Count > 0 && _roles.TrueForAll(r => r.AssignedActorId != null);
         public bool AllCastingComplete => _roles.Count > 0 && _roles.TrueForAll(r => r.CastingCompleted);
         public bool ReadyForFilming => HasDirector && AllRolesCast && AllCastingComplete;
         public bool AllParticipantsAtStage => DirectorArrivedAtStage && (_roles.Count == 0 || _roles.TrueForAll(r => r.ArrivedAtStage));
@@ -104,12 +106,18 @@ namespace SilverScreen.Domain.Movie
             for (int index = 0; index < _scenes.Count; index++)
                 _scenes[index].SetSceneNumber(index + 1);
         }
-        public void AddRole(MovieRole role)
+        public bool AddCastRole(MovieRole role)
         {
-            if (role == null || _roles.Contains(role)) return;
+            if (role == null || _roles.Exists(existing => existing.Id == role.Id)) return false;
             _roles.Add(role);
             role.OnRoleUpdated += HandleRoleUpdated;
             OnProjectUpdated?.Invoke(this);
+            return true;
+        }
+
+        public void AddRole(MovieRole role)
+        {
+            AddCastRole(role);
         }
 
         public void RemoveRole(string roleId)
@@ -123,12 +131,15 @@ namespace SilverScreen.Domain.Movie
             }
         }
 
-        public MovieRole GetRole(string roleId) => _roles.Find(r => r.Id == roleId);
+        public MovieRole GetCastRole(string roleId) =>
+            string.IsNullOrWhiteSpace(roleId) ? null : _roles.Find(role => role.Id == roleId);
+
+        public MovieRole GetRole(string roleId) => GetCastRole(roleId);
 
         public bool IsActorAssignedAnyRole(Employee actor)
         {
             if (actor == null) return false;
-            return _roles.Exists(r => r.AssignedActor == actor);
+            return _roles.Exists(role => role.AssignedActorId == actor.Id);
         }
 
         public void AssignDirector(Employee director)
@@ -139,22 +150,34 @@ namespace SilverScreen.Domain.Movie
             OnProjectUpdated?.Invoke(this);
         }
 
-        public void AssignActorToRole(string roleId, Employee actor)
+        public bool AssignActorToCastRole(string roleId, Employee actor)
         {
-            var role = GetRole(roleId);
-            if (role == null) return;
+            var role = GetCastRole(roleId);
+            if (role == null || actor == null || actor.Role != EmployeeRole.Actor) return false;
 
-            // Enforce: an actor may only occupy one role in the same movie
-            if (actor != null && IsActorAssignedAnyRole(actor))
+            // Preserve the existing prototype rule: one actor occupies one role per movie.
+            if (IsActorAssignedAnyRole(actor) && role.AssignedActorId != actor.Id)
             {
-                foreach (var r in _roles)
-                {
-                    if (r.AssignedActor == actor) r.ClearActor();
-                }
+                return false;
             }
 
-            role.AssignActor(actor);
+            if (!role.TryAssignActor(actor)) return false;
             OnProjectUpdated?.Invoke(this);
+            return true;
+        }
+
+        public bool UnassignActorFromCastRole(string roleId)
+        {
+            var role = GetCastRole(roleId);
+            if (role == null || role.AssignedActorId == null) return false;
+            role.ClearActor();
+            OnProjectUpdated?.Invoke(this);
+            return true;
+        }
+
+        public void AssignActorToRole(string roleId, Employee actor)
+        {
+            AssignActorToCastRole(roleId, actor);
         }
 
         public void SetDirectorArrivedAtStage(bool arrived)
