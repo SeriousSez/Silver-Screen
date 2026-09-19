@@ -4,8 +4,9 @@ namespace SilverScreen.Domain
 {
     public class Employee
     {
-        public string Id { get; }
-        public string Name { get; set; }
+        public PersonProfile Person { get; }
+        public string Id => Person.Id;
+        public string Name { get => Person.Name; set => Person.Rename(value); }
         public EmployeeRole Role { get; set; }
         public int Skill { get; set; }
         public int Salary { get; set; }
@@ -18,15 +19,32 @@ namespace SilverScreen.Domain
         public event Action<Employee> OnDetailsChanged;
 
         public Employee(string id, string name, EmployeeRole role, int skill, int salary, int morale = 80)
+            : this(new PersonProfile(id, name, new Time.SimulationDateTime(1900, 1, 1, 0, 0),
+                ToProfessionalRole(role), new TalentProfile(role == EmployeeRole.Director ? 25 : skill,
+                    role == EmployeeRole.Director ? skill : 25)), role, salary, morale)
         {
-            Id = id ?? Guid.NewGuid().ToString();
-            Name = name;
+        }
+
+        public Employee(PersonProfile person, EmployeeRole role, int salary, int morale = 80)
+        {
+            Person = person ?? throw new ArgumentNullException(nameof(person));
             Role = role;
-            Skill = skill;
+            Skill = role == EmployeeRole.Director ? person.Talent.DirectingAbility : person.Talent.ActingAbility;
             Salary = salary;
             Morale = morale;
             CurrentState = EmployeeState.Idle;
             CurrentIntent = EmployeeIntent.None;
+        }
+
+        private static ProfessionalRole ToProfessionalRole(EmployeeRole role)
+        {
+            return role switch
+            {
+                EmployeeRole.Director => ProfessionalRole.Director,
+                EmployeeRole.Extra => ProfessionalRole.Extra,
+                EmployeeRole.Crew => ProfessionalRole.Crew,
+                _ => ProfessionalRole.Actor
+            };
         }
 
         public void SetState(EmployeeState newState)

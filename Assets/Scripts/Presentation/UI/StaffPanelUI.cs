@@ -24,6 +24,10 @@ namespace SilverScreen.Presentation.UI
         {
             _employeeManager = employeeManager;
             _selectionController = selectionController;
+            if (_employeeManager != null)
+            {
+                _employeeManager.OnEmployeeAdded += HandleEmployeeAdded;
+            }
             Build();
             BindEmployees();
             Refresh();
@@ -31,6 +35,11 @@ namespace SilverScreen.Presentation.UI
 
         private void OnDestroy()
         {
+            if (_employeeManager != null)
+            {
+                _employeeManager.OnEmployeeAdded -= HandleEmployeeAdded;
+            }
+
             foreach (var employee in _observedEmployees)
             {
                 employee.OnStateChanged -= HandleEmployeeChanged;
@@ -95,6 +104,12 @@ namespace SilverScreen.Presentation.UI
                 employee.OnStateChanged += HandleEmployeeChanged;
                 employee.OnDetailsChanged += HandleEmployeeChanged;
             }
+        }
+
+        private void HandleEmployeeAdded(Employee employee)
+        {
+            BindEmployees();
+            Refresh();
         }
 
         private void HandleEmployeeChanged(Employee employee)

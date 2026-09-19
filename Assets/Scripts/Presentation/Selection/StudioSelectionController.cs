@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using SilverScreen.Presentation.Employees;
+using SilverScreen.Presentation.Recruitment;
 
 namespace SilverScreen.Presentation.Selection
 {
@@ -15,7 +16,12 @@ namespace SilverScreen.Presentation.Selection
         [SerializeField] private float _maxDragDistance = 6f;
 
         public EmployeeAgent SelectedAgent { get; private set; }
+        public CandidateAgent SelectedCandidate { get; private set; }
+        public StageSchoolView SelectedStageSchool { get; private set; }
+
         public event Action<EmployeeAgent> OnSelectionChanged;
+        public event Action<CandidateAgent> OnCandidateSelectionChanged;
+        public event Action<StageSchoolView> OnStageSchoolSelectionChanged;
 
         private Vector2 _mouseDownPosition;
         private bool _isMouseDown;
@@ -39,7 +45,6 @@ namespace SilverScreen.Presentation.Selection
 
             if (mouse.leftButton.wasPressedThisFrame)
             {
-                // Check if clicking on UI
                 if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
                 {
                     return;
@@ -49,66 +54,103 @@ namespace SilverScreen.Presentation.Selection
                 _isMouseDown = true;
             }
 
-            if (_isMouseDown && mouse.leftButton.wasReleasedThisFrame)
+            if (!_isMouseDown || !mouse.leftButton.wasReleasedThisFrame) return;
+
+            _isMouseDown = false;
+            Vector2 mouseUpPosition = mouse.position.ReadValue();
+            if (Vector2.Distance(_mouseDownPosition, mouseUpPosition) > _maxDragDistance)
             {
-                _isMouseDown = false;
-                Vector2 mouseUpPosition = mouse.position.ReadValue();
-
-                // If pointer moved significantly, user was panning/dragging, ignore selection
-                if (Vector2.Distance(_mouseDownPosition, mouseUpPosition) > _maxDragDistance)
-                {
-                    return;
-                }
-
-                // Raycast into scene
-                Ray ray = _mainCamera.ScreenPointToRay(mouseUpPosition);
-                if (Physics.Raycast(ray, out RaycastHit hit, 300f, _selectableMask))
-                {
-                    var agent = hit.collider.GetComponentInParent<EmployeeAgent>();
-                    if (agent != null)
-                    {
-                        Select(agent);
-                    }
-                    else
-                    {
-                        // Clicked terrain or something else -> deselect
-                        Deselect();
-                    }
-                }
-                else
-                {
-                    Deselect();
-                }
+                return;
             }
+
+            Ray ray = _mainCamera.ScreenPointToRay(mouseUpPosition);
+            if (!Physics.Raycast(ray, out RaycastHit hit, 300f, _selectableMask))
+            {
+                Deselect();
+                return;
+            }
+
+            var candidate = hit.collider.GetComponentInParent<CandidateAgent>();
+            if (candidate != null)
+            {
+                Select(candidate);
+                return;
+            }
+
+            var employee = hit.collider.GetComponentInParent<EmployeeAgent>();
+            if (employee != null)
+            {
+                Select(employee);
+                return;
+            }
+
+            var school = hit.collider.GetComponentInParent<StageSchoolView>();
+            if (school != null)
+            {
+                Select(school);
+                return;
+            }
+
+            Deselect();
         }
 
         public void Select(EmployeeAgent agent)
         {
-            if (SelectedAgent == agent) return;
+            if (SelectedAgent == agent && SelectedCandidate == null && SelectedStageSchool == null) return;
 
-            if (SelectedAgent != null)
-            {
-                SelectedAgent.SetSelected(false);
-            }
-
+            ClearSelectionVisuals();
             SelectedAgent = agent;
+            if (agent != null) agent.SetSelected(true);
 
-            if (SelectedAgent != null)
-            {
-                SelectedAgent.SetSelected(true);
-            }
+            OnSelectionChanged?.Invoke(agent);
+            OnCandidateSelectionChanged?.Invoke(null);
+            OnStageSchoolSelectionChanged?.Invoke(null);
+        }
 
-            OnSelectionChanged?.Invoke(SelectedAgent);
+        public void Select(CandidateAgent agent)
+        {
+            if (SelectedCandidate == agent && SelectedAgent == null && SelectedStageSchool == null) return;
+
+            ClearSelectionVisuals();
+            SelectedCandidate = agent;
+            if (agent != null) agent.SetSelected(true);
+
+            OnSelectionChanged?.Invoke(null);
+            OnCandidateSelectionChanged?.Invoke(agent);
+            OnStageSchoolSelectionChanged?.Invoke(null);
+        }
+
+        public void Select(StageSchoolView school)
+        {
+            if (SelectedStageSchool == school && SelectedAgent == null && SelectedCandidate == null) return;
+
+            ClearSelectionVisuals();
+            SelectedStageSchool = school;
+
+            OnSelectionChanged?.Invoke(null);
+            OnCandidateSelectionChanged?.Invoke(null);
+            OnStageSchoolSelectionChanged?.Invoke(school);
         }
 
         public void Deselect()
         {
-            if (SelectedAgent != null)
-            {
-                SelectedAgent.SetSelected(false);
-                SelectedAgent = null;
-                OnSelectionChanged?.Invoke(null);
-            }
+            bool changed = SelectedAgent != null || SelectedCandidate != null || SelectedStageSchool != null;
+            ClearSelectionVisuals();
+            if (!changed) return;
+
+            OnSelectionChanged?.Invoke(null);
+            OnCandidateSelectionChanged?.Invoke(null);
+            OnStageSchoolSelectionChanged?.Invoke(null);
+        }
+
+        private void ClearSelectionVisuals()
+        {
+            if (SelectedAgent != null) SelectedAgent.SetSelected(false);
+            if (SelectedCandidate != null) SelectedCandidate.SetSelected(false);
+
+            SelectedAgent = null;
+            SelectedCandidate = null;
+            SelectedStageSchool = null;
         }
     }
 }

@@ -4,6 +4,7 @@ namespace SilverScreen.Domain
     {
         StudioOffice,
         CastingOffice,
-        SoundStage
+        SoundStage,
+        StageSchool
     }
 }
