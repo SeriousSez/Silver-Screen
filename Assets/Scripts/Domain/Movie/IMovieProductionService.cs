@@ -15,6 +15,9 @@ namespace SilverScreen.Domain.Movie
         int? ActiveSlateSceneNumber { get; }
         int? ActiveSlateTakeNumber { get; }
         string StatusMessage { get; }
+        ProductionPhase CurrentProductionPhase { get; }
+        bool CanKeepTake { get; }
+        bool CanShootAgain { get; }
 
         IReadOnlyList<GenreDefinition> AvailableGenres { get; }
         IReadOnlyList<BudgetTier> AvailableBudgets { get; }
@@ -26,6 +29,10 @@ namespace SilverScreen.Domain.Movie
 
         bool CanAssignDirector(MovieProject project, Employee director);
         void AssignDirector(MovieProject project, Employee director);
+
+        bool SetProductionControlMode(MovieProject project, ProductionControlMode mode);
+        bool KeepTake(string takeId);
+        bool ShootAgain();
 
         event Action<MovieProject> OnActiveMovieChanged;
         event Action<string> OnProductionNotification;
