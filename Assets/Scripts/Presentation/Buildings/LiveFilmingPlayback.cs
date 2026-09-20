@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using SilverScreen.Domain;
 using SilverScreen.Domain.Movie;
+using SilverScreen.Domain.Writing;
 using SilverScreen.Domain.Time;
 using SilverScreen.Presentation.Employees;
 using UnityEngine;

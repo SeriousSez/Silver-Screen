@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using SilverScreen.Domain;
 using SilverScreen.Domain.Movie;
+using SilverScreen.Domain.Writing;
 using SilverScreen.Domain.Time;
 
 namespace SilverScreen.Presentation.Employees

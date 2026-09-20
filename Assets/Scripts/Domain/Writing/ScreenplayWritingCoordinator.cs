@@ -75,6 +75,7 @@ namespace SilverScreen.Domain.Writing
         private readonly ISimulationTimeService _time;
         private readonly IScreenplayWritingWorldRouter _world;
         private readonly ScreenplayTitleGenerator _titleGenerator;
+        private readonly ScreenplayContentGenerator _contentGenerator;
         public IReadOnlyList<ScreenplayProject> Library => _library;
         public event Action<ScreenplayProject> ScreenplayAdded;
         public event Action<ScreenplayProject> ScreenplayChanged;
@@ -85,12 +86,15 @@ namespace SilverScreen.Domain.Writing
         }
 
         public ScreenplayWritingCoordinator(IReadOnlyList<Employee> employees, ISimulationTimeService time,
-            IScreenplayWritingWorldRouter world, ScreenplayTitleGenerator titleGenerator)
+            IScreenplayWritingWorldRouter world, ScreenplayTitleGenerator titleGenerator,
+            ScreenplayContentGenerator contentGenerator = null)
         {
             _employees = employees ?? throw new ArgumentNullException(nameof(employees));
             _time = time ?? throw new ArgumentNullException(nameof(time));
             _world = world ?? throw new ArgumentNullException(nameof(world));
             _titleGenerator = titleGenerator ?? throw new ArgumentNullException(nameof(titleGenerator));
+            _contentGenerator = contentGenerator ??
+                new ScreenplayContentGenerator(new SeededScreenplayTitleRandomSource(1934));
             _time.OnMinutePassed += HandleMinutePassed;
         }
 
@@ -227,7 +231,25 @@ namespace SilverScreen.Domain.Writing
                 }
                 bool wasCompleted = screenplay.Status == ScreenplayStatus.Completed;
                 screenplay.AdvanceWritingMinute(active);
-                if (!wasCompleted && screenplay.Status == ScreenplayStatus.Completed) ReleaseAll(screenplay);
+                if (!wasCompleted && screenplay.Status == ScreenplayStatus.Completed)
+                {
+                    FinalizeContent(screenplay);
+                    ReleaseAll(screenplay);
+                }
+            }
+        }
+
+        private void FinalizeContent(ScreenplayProject screenplay)
+        {
+            if (screenplay.ContentStatus != ScreenplayContentStatus.Pending) return;
+            try
+            {
+                ScreenplayContent content = _contentGenerator.Generate(screenplay);
+                if (!screenplay.TryFinalizeContent(content)) screenplay.MarkContentFinalizationFailed();
+            }
+            catch (Exception)
+            {
+                screenplay.MarkContentFinalizationFailed();
             }
         }
 

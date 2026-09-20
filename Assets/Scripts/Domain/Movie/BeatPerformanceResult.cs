@@ -1,4 +1,5 @@
 using System;
+using SilverScreen.Domain.Writing;
 using System.Collections.Generic;
 
 namespace SilverScreen.Domain.Movie

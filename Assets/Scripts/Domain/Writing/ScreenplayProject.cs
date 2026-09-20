@@ -5,6 +5,7 @@ namespace SilverScreen.Domain.Writing
 {
     public enum ScreenplayStatus { Assigned, Writing, Completed }
     public enum WriterParticipationStatus { Assigned, Traveling, Writing, Unavailable, Credited }
+    public enum ScreenplayContentStatus { Pending, Ready, Failed }
     public enum ScreenplayAcquisitionSource
     {
         Commissioned = 0,
@@ -39,6 +40,8 @@ namespace SilverScreen.Domain.Writing
         private readonly List<ScreenplayWriterContributor> _contributors = new List<ScreenplayWriterContributor>();
         private readonly List<string> _creditedWriterIds = new List<string>();
         private readonly List<string> _genreIds = new List<string>();
+        private readonly List<ScreenplayCharacter> _characters = new List<ScreenplayCharacter>();
+        private readonly List<ScreenplayScene> _scenes = new List<ScreenplayScene>();
 
         public string Id { get; }
         public string Title { get; }
@@ -54,6 +57,9 @@ namespace SilverScreen.Domain.Writing
         public double Progress { get; private set; }
         public IReadOnlyList<ScreenplayWriterContributor> Contributors => _contributors;
         public IReadOnlyList<string> CreditedWriterIds => _creditedWriterIds;
+        public ScreenplayContentStatus ContentStatus { get; private set; }
+        public IReadOnlyList<ScreenplayCharacter> Characters => _characters;
+        public IReadOnlyList<ScreenplayScene> Scenes => _scenes;
         public event Action<ScreenplayProject> Changed;
 
         public ScreenplayProject(string id, string title, IEnumerable<string> writerIds,
@@ -96,6 +102,7 @@ namespace SilverScreen.Domain.Writing
             }
             if (_contributors.Count == 0) throw new ArgumentException("A screenplay requires at least one writer.", nameof(writerIds));
             Status = ScreenplayStatus.Assigned;
+            ContentStatus = ScreenplayContentStatus.Pending;
         }
 
         public bool TryAddGenre(string genreId)
@@ -158,6 +165,58 @@ namespace SilverScreen.Domain.Writing
                 contributor.SetStatus(WriterParticipationStatus.Credited);
                 _creditedWriterIds.Add(contributor.WriterId);
             }
+        }
+
+        public bool TryFinalizeContent(ScreenplayContent content)
+        {
+            if (Status != ScreenplayStatus.Completed || ContentStatus != ScreenplayContentStatus.Pending ||
+                content == null || content.Characters.Count == 0 || content.Scenes.Count == 0)
+                return false;
+
+            var characterIds = new HashSet<string>();
+            foreach (ScreenplayCharacter character in content.Characters)
+            {
+                if (character == null || !characterIds.Add(character.Id))
+                {
+                    ContentStatus = ScreenplayContentStatus.Failed;
+                    Changed?.Invoke(this);
+                    return false;
+                }
+            }
+
+            var sceneIds = new HashSet<string>();
+            foreach (ScreenplayScene scene in content.Scenes)
+            {
+                if (scene == null || !sceneIds.Add(scene.Id) || scene.Beats.Count == 0)
+                {
+                    ContentStatus = ScreenplayContentStatus.Failed;
+                    Changed?.Invoke(this);
+                    return false;
+                }
+                foreach (string characterId in scene.ParticipatingCharacterIds)
+                    if (!characterIds.Contains(characterId))
+                    {
+                        ContentStatus = ScreenplayContentStatus.Failed;
+                        Changed?.Invoke(this);
+                        return false;
+                    }
+            }
+
+            _characters.AddRange(content.Characters);
+            _scenes.AddRange(content.Scenes);
+            for (int i = 0; i < _scenes.Count; i++) _scenes[i].SceneNumber = i + 1;
+            ContentStatus = ScreenplayContentStatus.Ready;
+            Changed?.Invoke(this);
+            return true;
+        }
+
+        public bool MarkContentFinalizationFailed()
+        {
+            if (Status != ScreenplayStatus.Completed || ContentStatus != ScreenplayContentStatus.Pending)
+                return false;
+            ContentStatus = ScreenplayContentStatus.Failed;
+            Changed?.Invoke(this);
+            return true;
         }
     }
 }

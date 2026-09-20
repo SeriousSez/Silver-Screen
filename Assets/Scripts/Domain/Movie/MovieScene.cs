@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using SilverScreen.Domain.Writing;
 
 namespace SilverScreen.Domain.Movie
 {

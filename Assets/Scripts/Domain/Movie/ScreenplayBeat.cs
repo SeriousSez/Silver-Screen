@@ -1,6 +1,6 @@
 using System;
 
-namespace SilverScreen.Domain.Movie
+namespace SilverScreen.Domain.Writing
 {
     public enum ScreenplayBeatType
     {
@@ -30,7 +30,8 @@ namespace SilverScreen.Domain.Movie
         public string TargetCharacterId { get; }
         public string Content { get; }
         public ScreenplayEmotion? EmotionalIntention { get; }
-        public string BlockingTargetId { get; }
+        public string BlockingIntentionId { get; }
+        public string BlockingTargetId => BlockingIntentionId;
         public double IntendedIntensity { get; }
 
         public ScreenplayBeat(
@@ -42,7 +43,8 @@ namespace SilverScreen.Domain.Movie
             string targetCharacterId = null,
             ScreenplayEmotion? emotionalIntention = null,
             string blockingTargetId = null,
-            double intendedIntensity = 0.6d)
+            double intendedIntensity = 0.6d,
+            string blockingIntentionId = null)
         {
             if (order < 1) throw new ArgumentOutOfRangeException(nameof(order));
             if (string.IsNullOrWhiteSpace(content))
@@ -55,7 +57,7 @@ namespace SilverScreen.Domain.Movie
             TargetCharacterId = NormalizeOptionalId(targetCharacterId);
             Content = content.Trim();
             EmotionalIntention = emotionalIntention;
-            BlockingTargetId = NormalizeOptionalId(blockingTargetId);
+            BlockingIntentionId = NormalizeOptionalId(blockingIntentionId ?? blockingTargetId);
             IntendedIntensity = Math.Clamp(intendedIntensity, 0d, 1d);
         }
 
