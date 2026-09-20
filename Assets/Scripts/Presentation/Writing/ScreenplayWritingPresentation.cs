@@ -76,7 +76,8 @@ namespace SilverScreen.Presentation.Writing
             world.Initialize(_employees, office);
             Coordinator = new ScreenplayWritingCoordinator(_employees.AllEmployees, _time.TimeService, world,
                 new ScreenplayTitleGenerator(new SeededScreenplayTitleRandomSource(1930)),
-                new ScreenplayContentGenerator(new SeededScreenplayTitleRandomSource(1934)));
+                new ScreenplayContentGenerator(new SeededScreenplayTitleRandomSource(1934)),
+                new ScreenplayEvaluator(new SeededScreenplayTitleRandomSource(1935)));
             var genreIds = new List<string>();
             var movieDriver = FindAnyObjectByType<MovieProductionDriver>();
             var genres = movieDriver?.ProductionService?.AvailableGenres;

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using SilverScreen.Domain;
 using SilverScreen.Domain.Writing;
@@ -178,16 +179,31 @@ namespace SilverScreen.Presentation.UI
                 screenplay.Status == ScreenplayStatus.Completed && screenplay.ContentStatus == ScreenplayContentStatus.Failed
                     ? "\n<color=#E6A33E>Structured content could not be finalized.</color>"
                     : string.Empty;
-            var text = ManagementUIFactory.Text("Text", row, $"<b>{screenplay.Title}</b>\n{string.Join(" / ", genres)}  •  {origin}\n{screenplay.Status}  •  {screenplay.Progress:P0}{creative}\nWriters: {string.Join("  |  ", writerLines)}{credits}{content}", 13f, TextAlignmentOptions.TopLeft, Color.white);
+            string evaluation = BuildEvaluation(screenplay);
+            var text = ManagementUIFactory.Text("Text", row, $"<b>{screenplay.Title}</b>\n{string.Join(" / ", genres)}  •  {origin}\n{screenplay.Status}  •  {screenplay.Progress:P0}{creative}\nWriters: {string.Join("  |  ", writerLines)}{credits}{evaluation}{content}", 13f, TextAlignmentOptions.TopLeft, Color.white);
             ManagementUIFactory.SetOffsets(text.rectTransform, 12f, 4f, 12f, 4f);
         }
 
         private static float CalculateCompletedHeight(ScreenplayProject screenplay)
         {
-            int lines = 8 + screenplay.Characters.Count * 2;
+            int lines = 12 + screenplay.Characters.Count * 2;
             foreach (ScreenplayScene scene in screenplay.Scenes)
                 lines += 3 + scene.Beats.Count * 2;
             return Mathf.Max(240f, lines * 18f + 20f);
+        }
+
+        private static string BuildEvaluation(ScreenplayProject screenplay)
+        {
+            if (screenplay.EvaluationStatus == ScreenplayEvaluationStatus.Failed)
+                return "\n<color=#E6A33E>Creative evaluation unavailable.</color>";
+            ScreenplayEvaluation value = screenplay.Evaluation;
+            if (screenplay.EvaluationStatus != ScreenplayEvaluationStatus.Ready || value == null)
+                return string.Empty;
+
+            string Score(double score) => (score / 10d).ToString("0.0", CultureInfo.InvariantCulture);
+            return $"\n\n<color=#E6A33E><b>{Score(value.OverallQuality)} / 10</b></color>" +
+                   $"\nCharacters {Score(value.CharacterDevelopment)}  •  Structure {Score(value.StructureCoherence)}  •  Dialogue {Score(value.Dialogue)}" +
+                   $"\nPacing {Score(value.Pacing)}  •  Genre {Score(value.GenreExecution)}  •  Variety {Score(value.SceneVariety)}  •  Theme {Score(value.ThematicExecution)}";
         }
 
         private static string BuildScreenplayContent(ScreenplayProject screenplay)

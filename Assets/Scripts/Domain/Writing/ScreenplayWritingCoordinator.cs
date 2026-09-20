@@ -76,6 +76,7 @@ namespace SilverScreen.Domain.Writing
         private readonly IScreenplayWritingWorldRouter _world;
         private readonly ScreenplayTitleGenerator _titleGenerator;
         private readonly ScreenplayContentGenerator _contentGenerator;
+        private readonly ScreenplayEvaluator _evaluator;
         public IReadOnlyList<ScreenplayProject> Library => _library;
         public event Action<ScreenplayProject> ScreenplayAdded;
         public event Action<ScreenplayProject> ScreenplayChanged;
@@ -87,7 +88,8 @@ namespace SilverScreen.Domain.Writing
 
         public ScreenplayWritingCoordinator(IReadOnlyList<Employee> employees, ISimulationTimeService time,
             IScreenplayWritingWorldRouter world, ScreenplayTitleGenerator titleGenerator,
-            ScreenplayContentGenerator contentGenerator = null)
+            ScreenplayContentGenerator contentGenerator = null,
+            ScreenplayEvaluator evaluator = null)
         {
             _employees = employees ?? throw new ArgumentNullException(nameof(employees));
             _time = time ?? throw new ArgumentNullException(nameof(time));
@@ -95,6 +97,8 @@ namespace SilverScreen.Domain.Writing
             _titleGenerator = titleGenerator ?? throw new ArgumentNullException(nameof(titleGenerator));
             _contentGenerator = contentGenerator ??
                 new ScreenplayContentGenerator(new SeededScreenplayTitleRandomSource(1934));
+            _evaluator = evaluator ??
+                new ScreenplayEvaluator(new SeededScreenplayTitleRandomSource(1935));
             _time.OnMinutePassed += HandleMinutePassed;
         }
 
@@ -234,6 +238,7 @@ namespace SilverScreen.Domain.Writing
                 if (!wasCompleted && screenplay.Status == ScreenplayStatus.Completed)
                 {
                     FinalizeContent(screenplay);
+                    FinalizeEvaluation(screenplay);
                     ReleaseAll(screenplay);
                 }
             }
@@ -250,6 +255,32 @@ namespace SilverScreen.Domain.Writing
             catch (Exception)
             {
                 screenplay.MarkContentFinalizationFailed();
+            }
+        }
+
+        private void FinalizeEvaluation(ScreenplayProject screenplay)
+        {
+            if (screenplay.EvaluationStatus != ScreenplayEvaluationStatus.Pending) return;
+            if (screenplay.ContentStatus != ScreenplayContentStatus.Ready)
+            {
+                screenplay.MarkEvaluationFailed();
+                return;
+            }
+
+            try
+            {
+                var writers = new List<Employee>();
+                foreach (string writerId in screenplay.CreditedWriterIds)
+                {
+                    Employee writer = FindWriter(writerId);
+                    if (writer != null) writers.Add(writer);
+                }
+                ScreenplayEvaluation evaluation = _evaluator.Evaluate(screenplay, writers);
+                if (!screenplay.TrySetEvaluation(evaluation)) screenplay.MarkEvaluationFailed();
+            }
+            catch (Exception)
+            {
+                screenplay.MarkEvaluationFailed();
             }
         }
 
