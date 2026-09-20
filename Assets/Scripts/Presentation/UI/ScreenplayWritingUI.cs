@@ -16,7 +16,10 @@ namespace SilverScreen.Presentation.UI
         private ScreenplayWritingDriver _driver;
         private Button _genreButton;
         private TextMeshProUGUI _genreButtonText;
+        private Button _startButton;
+        private TextMeshProUGUI _startButtonText;
         private int _genreIndex;
+        private string _selectedIdeaId;
         private static readonly string[] GenreIds = { "drama", "comedy", "action", "romance", "thriller", "horror" };
         private static readonly string[] GenreNames = { "Drama", "Comedy", "Action", "Romance", "Thriller", "Horror" };
         private RectTransform _writerContent;
@@ -55,8 +58,10 @@ namespace SilverScreen.Presentation.UI
             _genreButton.gameObject.AddComponent<LayoutElement>().flexibleWidth = 1f;
             _genreButtonText = _genreButton.GetComponentInChildren<TextMeshProUGUI>();
             _genreButton.onClick.AddListener(CycleGenre);
-            var start = ManagementUIFactory.Button("Start", input, "START WRITING", ManagementUIFactory.Gold, Color.black);
-            start.gameObject.AddComponent<LayoutElement>().preferredWidth = 170f; start.onClick.AddListener(StartWriting);
+            _startButton = ManagementUIFactory.Button("Start", input, "START WRITING", ManagementUIFactory.Gold, Color.black);
+            _startButton.gameObject.AddComponent<LayoutElement>().preferredWidth = 190f;
+            _startButtonText = _startButton.GetComponentInChildren<TextMeshProUGUI>();
+            _startButton.onClick.AddListener(StartWriting);
 
             var writers = ManagementUIFactory.Rect("Writers", transform, new Vector2(.04f, .30f), new Vector2(.47f, .68f), Vector2.zero, Vector2.zero);
             ManagementUIFactory.Background(writers, ManagementUIFactory.PanelRaised);
@@ -110,6 +115,7 @@ namespace SilverScreen.Presentation.UI
             var ideas = _driver?.IdeaCoordinator?.Library;
             if (ideas == null || ideas.Count == 0) AddLabel(_screenplayContent, "No ideas developed yet.");
             else foreach (var idea in ideas) AddIdea(idea);
+            UpdateAssignmentMode();
         }
 
         private Toggle CreateToggle(Transform parent, string label, string writerId)
@@ -147,8 +153,10 @@ namespace SilverScreen.Presentation.UI
 
         private void AddScreenplay(ScreenplayProject screenplay)
         {
-            var row = ManagementUIFactory.Rect("Screenplay_" + screenplay.Id, _screenplayContent, Vector2.zero, Vector2.one, Vector2.zero, new Vector2(0f, 112f));
-            row.gameObject.AddComponent<LayoutElement>().preferredHeight = 112f;
+            bool fromIdea = screenplay.AcquisitionSource == ScreenplayAcquisitionSource.DevelopedFromIdea;
+            float height = fromIdea ? 176f : 112f;
+            var row = ManagementUIFactory.Rect("Screenplay_" + screenplay.Id, _screenplayContent, Vector2.zero, Vector2.one, Vector2.zero, new Vector2(0f, height));
+            row.gameObject.AddComponent<LayoutElement>().preferredHeight = height;
             ManagementUIFactory.Background(row, ManagementUIFactory.Panel);
             var writerLines = new List<string>();
             foreach (var contributor in screenplay.Contributors)
@@ -157,23 +165,46 @@ namespace SilverScreen.Presentation.UI
                 writerLines.Add($"{writer?.Name ?? contributor.WriterId}: {contributor.Status}");
             }
             string credits = screenplay.Status == ScreenplayStatus.Completed ? "\nCredits: " + Names(screenplay.CreditedWriterIds) : string.Empty;
-            string genre = ToDisplayName(screenplay.PrimaryGenreId);
-            var text = ManagementUIFactory.Text("Text", row, $"<b>{screenplay.Title}</b>\n{genre}  •  {screenplay.Status}  •  {screenplay.Progress:P0}\nWriters: {string.Join("  |  ", writerLines)}{credits}", 13f, TextAlignmentOptions.MidlineLeft, Color.white);
+            var genres = new List<string>();
+            foreach (string genreId in screenplay.GenreIds) genres.Add(ToDisplayName(genreId));
+            string origin = fromIdea ? "Developed from Story Idea" : "Commissioned";
+            string creative = fromIdea
+                ? $"\nSetting: {DisplayId(screenplay.SettingId)}  •  Protagonist: {DisplayId(screenplay.ProtagonistArchetypeId)}\nAntagonist: {(string.IsNullOrEmpty(screenplay.AntagonistArchetypeId) ? "None" : DisplayId(screenplay.AntagonistArchetypeId))}  •  Theme: {DisplayId(screenplay.ThemeId)}"
+                : string.Empty;
+            var text = ManagementUIFactory.Text("Text", row, $"<b>{screenplay.Title}</b>\n{string.Join(" / ", genres)}  •  {origin}\n{screenplay.Status}  •  {screenplay.Progress:P0}{creative}\nWriters: {string.Join("  |  ", writerLines)}{credits}", 13f, TextAlignmentOptions.MidlineLeft, Color.white);
             ManagementUIFactory.SetOffsets(text.rectTransform, 12f, 4f, 12f, 4f);
         }
 
         private void StartWriting()
         {
-            var screenplay = _driver?.Coordinator?.CreateCommissioned(GenreIds[_genreIndex], _selectedWriterIds);
-            _status.text = screenplay != null ? "Writers assigned. They are travelling to the Script Office." : "Select 1–4 idle Writers (one per available station).";
-            if (screenplay != null) { _selectedWriterIds.Clear(); Refresh(); }
+            ScreenplayProject screenplay;
+            if (!string.IsNullOrEmpty(_selectedIdeaId))
+            {
+                StoryIdea idea = FindIdea(_selectedIdeaId);
+                screenplay = _driver?.Coordinator?.CreateFromIdea(idea, _selectedWriterIds);
+                _status.text = screenplay != null
+                    ? $"Development started from {idea.Title}. Writers are travelling to the Script Office."
+                    : "Select 1–4 idle Writers and ensure enough Script Office stations are free.";
+            }
+            else
+            {
+                screenplay = _driver?.Coordinator?.CreateCommissioned(GenreIds[_genreIndex], _selectedWriterIds);
+                _status.text = screenplay != null
+                    ? "Writers assigned. They are travelling to the Script Office."
+                    : "Select 1–4 idle Writers (one per available station).";
+            }
+            if (screenplay == null) return;
+            _selectedIdeaId = null;
+            _selectedWriterIds.Clear();
+            Refresh();
         }
 
         private void AddIdea(StoryIdea idea)
         {
             bool complete = idea.State == IdeaDevelopmentState.Completed;
-            var row = ManagementUIFactory.Rect("Idea_" + idea.Id, _screenplayContent, Vector2.zero, Vector2.one, Vector2.zero, new Vector2(0f, complete ? 176f : 86f));
-            row.gameObject.AddComponent<LayoutElement>().preferredHeight = complete ? 176f : 86f;
+            float height = complete ? 210f : 86f;
+            var row = ManagementUIFactory.Rect("Idea_" + idea.Id, _screenplayContent, Vector2.zero, Vector2.one, Vector2.zero, new Vector2(0f, height));
+            row.gameObject.AddComponent<LayoutElement>().preferredHeight = height;
             ManagementUIFactory.Background(row, ManagementUIFactory.Panel);
             string creator = FindEmployee(idea.CreatorWriterId)?.Name ?? idea.CreatorWriterId;
             string value;
@@ -184,10 +215,51 @@ namespace SilverScreen.Presentation.UI
             else
             {
                 var genres = new List<string>(); foreach (string genre in idea.GenreIds) genres.Add(ToDisplayName(genre));
-                value = $"<b>{idea.Title}</b>\n{string.Join(" / ", genres)}\nSetting: {DisplayId(idea.SettingId)}\nProtagonist: {DisplayId(idea.ProtagonistArchetypeId)}\nAntagonist: {(string.IsNullOrEmpty(idea.AntagonistArchetypeId) ? "None" : DisplayId(idea.AntagonistArchetypeId))}\nTheme: {DisplayId(idea.ThemeId)}\nCreated by: {creator}";
+                string development = idea.HasScreenplayDevelopment
+                    ? $"\nDeveloped as: {FindScreenplay(idea.DevelopedScreenplayId)?.Title ?? idea.DevelopedScreenplayId}"
+                    : string.Empty;
+                value = $"<b>{idea.Title}</b>\n{string.Join(" / ", genres)}\nSetting: {DisplayId(idea.SettingId)}\nProtagonist: {DisplayId(idea.ProtagonistArchetypeId)}\nAntagonist: {(string.IsNullOrEmpty(idea.AntagonistArchetypeId) ? "None" : DisplayId(idea.AntagonistArchetypeId))}\nTheme: {DisplayId(idea.ThemeId)}\nIdea by: {creator}{development}";
             }
             var text = ManagementUIFactory.Text("Text", row, value, 13f, TextAlignmentOptions.MidlineLeft, Color.white);
-            ManagementUIFactory.SetOffsets(text.rectTransform, 12f, 5f, 12f, 5f);
+            ManagementUIFactory.SetOffsets(text.rectTransform, 12f, complete ? 38f : 5f, 12f, 5f);
+            if (complete && !idea.HasScreenplayDevelopment)
+            {
+                var buttonRect = ManagementUIFactory.Rect("DevelopScreenplay", row,
+                    new Vector2(.55f, 0f), new Vector2(1f, 0f), new Vector2(0f, 5f), new Vector2(-8f, 34f));
+                var button = ManagementUIFactory.Button("Button", buttonRect,
+                    _selectedIdeaId == idea.Id ? "SELECTED FOR DEVELOPMENT" : "DEVELOP SCREENPLAY",
+                    _selectedIdeaId == idea.Id ? ManagementUIFactory.Gold : ManagementUIFactory.PanelRaised,
+                    _selectedIdeaId == idea.Id ? Color.black : Color.white);
+                button.onClick.AddListener(() => SelectIdeaForDevelopment(idea.Id));
+            }
+        }
+
+        private void SelectIdeaForDevelopment(string ideaId)
+        {
+            StoryIdea idea = FindIdea(ideaId);
+            if (idea == null || idea.State != IdeaDevelopmentState.Completed ||
+                idea.HasScreenplayDevelopment) return;
+            _selectedIdeaId = ideaId;
+            _selectedWriterIds.Clear();
+            _status.text = $"Developing from Idea: {idea.Title}. Select 1–4 Writers, then start development.";
+            Refresh();
+        }
+
+        private void UpdateAssignmentMode()
+        {
+            StoryIdea selectedIdea = FindIdea(_selectedIdeaId);
+            if (selectedIdea == null || selectedIdea.State != IdeaDevelopmentState.Completed ||
+                selectedIdea.HasScreenplayDevelopment)
+            {
+                _selectedIdeaId = null;
+                if (_genreButtonText != null)
+                    _genreButtonText.text = "GENRE: " + GenreNames[_genreIndex].ToUpperInvariant();
+                if (_startButtonText != null) _startButtonText.text = "START WRITING";
+                return;
+            }
+            if (_genreButtonText != null)
+                _genreButtonText.text = "FROM IDEA: " + selectedIdea.Title.ToUpperInvariant();
+            if (_startButtonText != null) _startButtonText.text = "START DEVELOPMENT";
         }
 
         private static string DisplayId(string id)
@@ -200,6 +272,14 @@ namespace SilverScreen.Presentation.UI
 
         private void CycleGenre()
         {
+            if (!string.IsNullOrEmpty(_selectedIdeaId))
+            {
+                _selectedIdeaId = null;
+                _selectedWriterIds.Clear();
+                _status.text = "Idea development cancelled. Choose a genre to commission a screenplay.";
+                Refresh();
+                return;
+            }
             _genreIndex = (_genreIndex + 1) % GenreIds.Length;
             if (_genreButtonText != null) _genreButtonText.text = "GENRE: " + GenreNames[_genreIndex].ToUpperInvariant();
         }
@@ -214,6 +294,10 @@ namespace SilverScreen.Presentation.UI
         { var names = new List<string>(); foreach (string id in ids) names.Add(FindEmployee(id)?.Name ?? id); return string.Join(", ", names); }
         private Employee FindEmployee(string id)
         { if (_employees != null) foreach (var employee in _employees.AllEmployees) if (employee.Id == id) return employee; return null; }
+        private StoryIdea FindIdea(string id)
+        { var ideas = _driver?.IdeaCoordinator?.Library; if (ideas != null) foreach (var idea in ideas) if (idea.Id == id) return idea; return null; }
+        private ScreenplayProject FindScreenplay(string id)
+        { var screenplays = _driver?.Coordinator?.Library; if (screenplays != null) foreach (var screenplay in screenplays) if (screenplay.Id == id) return screenplay; return null; }
         private void HandleEmployeeAdded(Employee unused) => Refresh();
         private void HandleScreenplayChanged(ScreenplayProject unused) => Refresh();
         private void HandleIdeaChanged(StoryIdea unused) => Refresh();

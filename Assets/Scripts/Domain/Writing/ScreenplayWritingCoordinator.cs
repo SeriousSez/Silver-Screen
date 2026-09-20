@@ -96,34 +96,89 @@ namespace SilverScreen.Domain.Writing
 
         public ScreenplayProject CreateCommissioned(string genreId, IEnumerable<string> writerIds)
         {
-            var ids = new List<string>();
-            if (writerIds != null) foreach (string id in writerIds) if (!ids.Contains(id)) ids.Add(id);
-            if (ids.Count == 0 || ids.Count > _world.WritingStationCapacity) return null;
-            foreach (string id in ids)
-            {
-                var writer = FindWriter(id);
-                if (writer == null || !CanAssignWriter(id)) return null;
-            }
-
-            var stations = new Dictionary<string, int>();
-            foreach (string id in ids)
-            {
-                var writer = FindWriter(id);
-                if (_world.TryReserveWritingStation(writer, out int station)) { stations[id] = station; continue; }
-                foreach (string reservedId in stations.Keys) _world.ReleaseWriter(FindWriter(reservedId));
-                return null;
-            }
+            if (string.IsNullOrWhiteSpace(genreId) ||
+                !TryReserveWriters(writerIds, out var ids, out var stations)) return null;
 
             var existingTitles = new List<string>();
             foreach (var existing in _library) existingTitles.Add(existing.Title);
             string title = _titleGenerator.GenerateUnique(genreId, existingTitles);
             var screenplay = new ScreenplayProject(Guid.NewGuid().ToString(), title, ids, new[] { genreId },
                 ScreenplayAcquisitionSource.Commissioned);
+            RegisterAndRoute(screenplay, ids, stations);
+            return screenplay;
+        }
+
+        public ScreenplayProject CreateFromIdea(StoryIdea idea, IEnumerable<string> writerIds)
+        {
+            if (idea == null || idea.State != IdeaDevelopmentState.Completed ||
+                idea.HasScreenplayDevelopment || HasScreenplayForIdea(idea.Id) ||
+                !TryReserveWriters(writerIds, out var ids, out var stations)) return null;
+
+            var screenplay = new ScreenplayProject(Guid.NewGuid().ToString(), idea.Title, ids,
+                idea.GenreIds, ScreenplayAcquisitionSource.DevelopedFromIdea, idea.Id,
+                idea.SettingId, idea.ProtagonistArchetypeId, idea.AntagonistArchetypeId,
+                idea.ThemeId);
+            if (!idea.TryLinkDevelopedScreenplay(screenplay.Id))
+            {
+                ReleaseReservations(stations);
+                return null;
+            }
+            RegisterAndRoute(screenplay, ids, stations);
+            return screenplay;
+        }
+
+        private bool TryReserveWriters(IEnumerable<string> writerIds, out List<string> ids,
+            out Dictionary<string, int> stations)
+        {
+            ids = new List<string>();
+            stations = new Dictionary<string, int>();
+            if (writerIds != null)
+                foreach (string id in writerIds)
+                    if (!string.IsNullOrWhiteSpace(id) && !ids.Contains(id)) ids.Add(id);
+            if (ids.Count == 0 || ids.Count > 4 || ids.Count > _world.WritingStationCapacity)
+                return false;
+
+            foreach (string id in ids)
+                if (!CanAssignWriter(id)) return false;
+
+            foreach (string id in ids)
+            {
+                Employee writer = FindWriter(id);
+                if (_world.TryReserveWritingStation(writer, out int station))
+                {
+                    stations[id] = station;
+                    continue;
+                }
+                ReleaseReservations(stations);
+                stations.Clear();
+                return false;
+            }
+            return true;
+        }
+
+        private void RegisterAndRoute(ScreenplayProject screenplay, IReadOnlyList<string> ids,
+            IReadOnlyDictionary<string, int> stations)
+        {
             screenplay.Changed += HandleScreenplayChanged;
             _library.Add(screenplay);
             ScreenplayAdded?.Invoke(screenplay);
             for (int i = 0; i < ids.Count; i++) RouteWriter(screenplay, ids[i], stations[ids[i]]);
-            return screenplay;
+        }
+
+        private bool HasScreenplayForIdea(string ideaId)
+        {
+            for (int i = 0; i < _library.Count; i++)
+                if (_library[i].SourceStoryIdeaId == ideaId) return true;
+            return false;
+        }
+
+        private void ReleaseReservations(IReadOnlyDictionary<string, int> stations)
+        {
+            foreach (string writerId in stations.Keys)
+            {
+                Employee writer = FindWriter(writerId);
+                if (writer != null) _world.ReleaseWriter(writer);
+            }
         }
 
         private void RouteWriter(ScreenplayProject screenplay, string writerId, int station)
