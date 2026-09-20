@@ -25,6 +25,9 @@ namespace SilverScreen.Domain.Movie
         public string Title { get; private set; }
         public string Description { get; private set; }
         public string SetLocationId { get; private set; }
+        public string SourceScreenplaySceneId { get; }
+        public string LocationTypeId { get; }
+        public string TimeOfDayId { get; }
         public MovieSceneStatus Status { get; private set; }
         public IReadOnlyCollection<string> ParticipatingPersonIds => _participatingPersonIds;
         public IReadOnlyCollection<string> ParticipatingCharacterIds => _participatingCharacterIds;
@@ -42,7 +45,10 @@ namespace SilverScreen.Domain.Movie
             int sceneNumber,
             string setLocationId,
             string title = null,
-            string description = null)
+            string description = null,
+            string sourceScreenplaySceneId = null,
+            string locationTypeId = null,
+            string timeOfDayId = null)
         {
             if (sceneNumber < 1) throw new ArgumentOutOfRangeException(nameof(sceneNumber));
             if (string.IsNullOrWhiteSpace(setLocationId))
@@ -53,6 +59,9 @@ namespace SilverScreen.Domain.Movie
             SetLocationId = setLocationId.Trim();
             Title = title?.Trim();
             Description = description?.Trim();
+            SourceScreenplaySceneId = NormalizeOptional(sourceScreenplaySceneId);
+            LocationTypeId = NormalizeOptional(locationTypeId);
+            TimeOfDayId = NormalizeOptional(timeOfDayId);
             Status = MovieSceneStatus.Planned;
         }
 
@@ -312,5 +321,8 @@ namespace SilverScreen.Domain.Movie
         {
             return !string.IsNullOrWhiteSpace(value) && identifiers.Remove(value.Trim());
         }
+
+        private static string NormalizeOptional(string value) =>
+            string.IsNullOrWhiteSpace(value) ? string.Empty : value.Trim();
     }
 }

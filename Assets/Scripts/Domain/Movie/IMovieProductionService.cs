@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using SilverScreen.Domain.Writing;
 
 namespace SilverScreen.Domain.Movie
 {
@@ -23,6 +24,8 @@ namespace SilverScreen.Domain.Movie
         IReadOnlyList<BudgetTier> AvailableBudgets { get; }
 
         MovieCreationResult CreateMovie(string title, string genreId, int budget, string protagonistName, List<string> supportingNames);
+        ScreenplayGreenlightResult GreenlightScreenplay(ScreenplayProject screenplay);
+        bool HasProductionForScreenplay(string screenplayId);
 
         bool CanAssignActorToRole(MovieProject project, MovieRole role, Employee actor);
         void AssignActorToRole(MovieProject project, MovieRole role, Employee actor);

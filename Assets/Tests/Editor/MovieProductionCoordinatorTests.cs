@@ -6,6 +6,7 @@ using SilverScreen.Domain;
 using SilverScreen.Domain.Finance;
 using SilverScreen.Domain.Movie;
 using SilverScreen.Domain.Time;
+using SilverScreen.Domain.Writing;
 
 namespace SilverScreen.Tests.EditMode
 {
@@ -220,6 +221,71 @@ namespace SilverScreen.Tests.EditMode
             Assert.That(_coordinator.Slate.AllProjects, Has.Count.EqualTo(2));
         }
 
+        [Test]
+        public void Greenlight_RegistersEveryAdaptedSceneWithIndependentTakeHistory()
+        {
+            ScreenplayProject screenplay = MovieReleaseServiceTests.CreateCompletedScreenplay(4);
+
+            ScreenplayGreenlightResult result = _coordinator.GreenlightScreenplay(screenplay);
+
+            Assert.That(result.Succeeded, Is.True);
+            Assert.That(result.Movie.SourceScreenplayId, Is.EqualTo(screenplay.Id));
+            Assert.That(result.Movie.Scenes, Has.Count.EqualTo(4));
+            for (int index = 0; index < result.Movie.Scenes.Count; index++)
+            {
+                MovieScene scene = result.Movie.Scenes[index];
+                Assert.That(scene.SceneNumber, Is.EqualTo(index + 1));
+                Assert.That(scene.SourceScreenplaySceneId, Is.EqualTo(screenplay.Scenes[index].Id));
+                Assert.That(scene.Takes, Is.Empty);
+                Assert.That(scene.Beats, Has.Count.EqualTo(screenplay.Scenes[index].Beats.Count));
+                Assert.That(scene.Shots, Has.Count.EqualTo(screenplay.Scenes[index].Beats.Count));
+            }
+        }
+
+        [Test]
+        public void ScreenplayBackedProduction_AdvancesAllScenesAndBecomesReleaseEligible()
+        {
+            ScreenplayGreenlightResult result = _coordinator.GreenlightScreenplay(
+                MovieReleaseServiceTests.CreateCompletedScreenplay(4));
+            Assert.That(result.Succeeded, Is.True);
+            MovieProject movie = result.Movie;
+            var lead = CreateEmployee("screenplay-lead", "Lead Actor", EmployeeRole.Actor);
+            var support = CreateEmployee("screenplay-support", "Support Actor", EmployeeRole.Actor);
+            var director = CreateEmployee("screenplay-director", "Director", EmployeeRole.Director);
+
+            _coordinator.AssignActorToRole(movie, movie.Roles[0], lead);
+            _coordinator.AssignActorToRole(movie, movie.Roles[1], support);
+            _router.CompleteRoute(lead, BuildingType.CastingOffice);
+            _router.CompleteRoute(support, BuildingType.CastingOffice);
+            _time.PassMinutes(60);
+            _coordinator.AssignDirector(movie, director);
+
+            for (int sceneIndex = 0; sceneIndex < 4; sceneIndex++)
+            {
+                Assert.That(_coordinator.ActiveScene.SceneNumber, Is.EqualTo(sceneIndex + 1));
+                _router.CompleteRoute(director, BuildingType.SoundStage);
+                _router.CompleteRoute(lead, BuildingType.SoundStage);
+                _router.CompleteRoute(support, BuildingType.SoundStage);
+
+                MovieScene completedScene = movie.Scenes[sceneIndex];
+                Assert.That(completedScene.Status, Is.EqualTo(MovieSceneStatus.Completed));
+                Assert.That(completedScene.Takes, Has.Count.EqualTo(1));
+                Assert.That(completedScene.SelectedTake, Is.SameAs(completedScene.Takes[0]));
+                Assert.That(completedScene.Takes[0].Status, Is.EqualTo(MovieTakeStatus.Completed));
+                for (int previous = 0; previous < sceneIndex; previous++)
+                    Assert.That(movie.Scenes[previous].Takes, Has.Count.EqualTo(1));
+            }
+
+            Assert.That(movie.AllScenesCompleted, Is.True);
+            Assert.That(movie.CurrentState, Is.EqualTo(MovieProductionState.Completed));
+            Assert.That(movie.ProductionResult, Is.Not.Null);
+            Assert.That(_coordinator.NextFilmableScene, Is.Null);
+
+            var releaseService = new MovieReleaseService(_time, new StudioFinances(_time.CurrentTime));
+            Assert.That(releaseService.ReleaseMovie(movie).Succeeded, Is.True);
+            releaseService.Dispose();
+        }
+
         private MovieProject CreateMovieWithTwoActorsRequired()
         {
             return _coordinator.CreateMovie(
@@ -427,6 +493,55 @@ namespace SilverScreen.Tests.EditMode
             _time = new ReleaseTimeService();
             _finances = new StudioFinances(_time.CurrentTime);
             _service = new MovieReleaseService(_time, _finances);
+        }
+
+        internal static ScreenplayProject CreateCompletedScreenplay(int sceneCount)
+        {
+            const string writerId = "writer";
+            const string leadId = "screenplay-character-lead";
+            const string supportId = "screenplay-character-support";
+            var screenplay = new ScreenplayProject(
+                "screenplay-multi-scene",
+                "Four Scene Film",
+                new[] { writerId },
+                new[] { "drama" });
+            screenplay.SetParticipation(writerId, WriterParticipationStatus.Writing);
+            for (int minute = 0; minute < 480 && screenplay.Status != ScreenplayStatus.Completed; minute++)
+                screenplay.AdvanceWritingMinute(new Dictionary<string, int> { [writerId] = 100 });
+
+            var lead = new ScreenplayCharacter(leadId, "Lead Character", ScreenplayCharacterRole.Protagonist);
+            var support = new ScreenplayCharacter(supportId, "Supporting Character", ScreenplayCharacterRole.Supporting);
+            var scenes = new List<ScreenplayScene>();
+            for (int index = 0; index < sceneCount; index++)
+            {
+                int sceneNumber = index + 1;
+                var scene = new ScreenplayScene(
+                    $"source-scene-{sceneNumber}",
+                    sceneNumber,
+                    "sound-stage-1",
+                    ScreenplaySceneLocation.Interior,
+                    ScreenplayTimeOfDay.Day,
+                    $"Scene {sceneNumber}");
+                scene.AddCharacter(lead.Id);
+                scene.AddCharacter(support.Id);
+                scene.AddBeat(new ScreenplayBeat(
+                    $"source-scene-{sceneNumber}-beat-1", 1, ScreenplayBeatType.Action,
+                    "The lead crosses the set.", lead.Id));
+                scene.AddBeat(new ScreenplayBeat(
+                    $"source-scene-{sceneNumber}-beat-2", 2, ScreenplayBeatType.Dialogue,
+                    "We have to keep moving.", lead.Id, support.Id));
+                scene.AddBeat(new ScreenplayBeat(
+                    $"source-scene-{sceneNumber}-beat-3", 3, ScreenplayBeatType.Reaction,
+                    "The supporting character reacts.", support.Id, lead.Id,
+                    ScreenplayEmotion.Nervous));
+                scenes.Add(scene);
+            }
+
+            Assert.That(screenplay.TryFinalizeContent(
+                new ScreenplayContent(new[] { lead, support }, scenes)), Is.True);
+            Assert.That(screenplay.TrySetEvaluation(
+                new ScreenplayEvaluation(50, 50, 50, 50, 50, 50, 50)), Is.True);
+            return screenplay;
         }
 
         [TearDown]

@@ -13,6 +13,7 @@ namespace SilverScreen.Domain.Movie
         private readonly StudioProductionSlate _slate;
         private readonly IStudioFinanceService _finances;
         private readonly IMovieQualityCalculator _qualityCalculator;
+        private readonly ScreenplayProductionAdapter _screenplayAdapter = new ScreenplayProductionAdapter();
         private readonly List<GenreDefinition> _genres = new List<GenreDefinition>();
 
         private string _statusMessage = "No active project";
@@ -193,6 +194,48 @@ namespace SilverScreen.Domain.Movie
             UpdateStatus();
             OnActiveMovieChanged?.Invoke(movie);
             return MovieCreationResult.Success(movie);
+        }
+
+        public ScreenplayGreenlightResult GreenlightScreenplay(ScreenplayProject screenplay)
+        {
+            if (screenplay == null)
+                return ScreenplayGreenlightResult.Failed(ScreenplayGreenlightFailure.InvalidScreenplay, "No screenplay was selected.");
+            if (HasProductionForScreenplay(screenplay.Id))
+                return ScreenplayGreenlightResult.Failed(
+                    ScreenplayGreenlightFailure.AlreadyGreenlit,
+                    $"A production already exists for \"{screenplay.Title}\".");
+            if (ActiveMovie != null && !IsTerminal(ActiveMovie.CurrentState))
+                return ScreenplayGreenlightResult.Failed(
+                    ScreenplayGreenlightFailure.ActiveProductionInProgress,
+                    $"Cannot greenlight a new movie while \"{ActiveMovie.Title}\" is in production.");
+
+            ScreenplayGreenlightResult result = _screenplayAdapter.Adapt(
+                screenplay,
+                _timeService.CurrentTime,
+                FindGenreDisplayName(screenplay.PrimaryGenreId));
+            if (!result.Succeeded) return result;
+
+            _slate.AddProject(result.Movie, setAsActive: true);
+            _routingFailureMessage = null;
+            UpdateStatus();
+            OnActiveMovieChanged?.Invoke(result.Movie);
+            return result;
+        }
+
+        public bool HasProductionForScreenplay(string screenplayId)
+        {
+            if (string.IsNullOrWhiteSpace(screenplayId)) return false;
+            foreach (MovieProject project in _slate.AllProjects)
+                if (string.Equals(project.SourceScreenplayId, screenplayId.Trim(), StringComparison.Ordinal))
+                    return true;
+            return false;
+        }
+
+        private string FindGenreDisplayName(string genreId)
+        {
+            GenreDefinition definition = _genres.Find(genre => genre != null &&
+                string.Equals(genre.Id, genreId, StringComparison.OrdinalIgnoreCase));
+            return definition != null ? definition.DisplayName : FormatGenreDisplayName(genreId);
         }
 
         private static bool IsTerminal(MovieProductionState state)
@@ -910,12 +953,17 @@ namespace SilverScreen.Domain.Movie
             {
                 SetProductionPhase(ProductionPhase.AwaitingNextScene);
                 movie.SetState(MovieProductionState.ReadyToFilm);
-                var nextScene = movie.GetNextFilmableScene();
-                string nextDescription = nextScene != null
-                    ? $"Scene {nextScene.SceneNumber} is next."
-                    : "Another unfinished scene remains.";
+                MovieScene nextScene = movie.GetNextFilmableScene();
+                if (nextScene == null)
+                {
+                    FailProduction(movie, "An unfinished movie scene could not be selected for production.");
+                    return;
+                }
                 OnProductionNotification?.Invoke(
-                    $"Scene {completedSceneNumber} of {movie.Title} is complete. {nextDescription}");
+                    $"Scene {completedSceneNumber} of {movie.Title} is complete. " +
+                    $"Scene {nextScene.SceneNumber} is next.");
+                TransitionToReadyToFilm(movie);
+                return;
             }
 
             UpdateStatus();
@@ -1012,7 +1060,7 @@ namespace SilverScreen.Domain.Movie
 
             _activeScene = movie.GetNextFilmableScene();
 
-            if (_activeScene == null && movie.Scenes.Count == 0)
+            if (_activeScene == null && movie.Scenes.Count == 0 && !movie.IsScreenplayAdaptation)
             {
                 var defaultScene = new MovieScene(
                     Guid.NewGuid().ToString(),
