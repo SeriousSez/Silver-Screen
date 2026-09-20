@@ -66,6 +66,8 @@ namespace SilverScreen.Presentation.Writing
         public ScreenplayWritingCoordinator Coordinator { get; private set; }
         public StoryIdeaDevelopmentCoordinator IdeaCoordinator { get; private set; }
         public IMovieProductionService MovieProductionService { get; private set; }
+        public ISetDefinitionCatalog KnownSetDefinitions { get; private set; }
+        public IStudioFilmingCapabilities FilmingCapabilities { get; private set; }
         private AutonomousWriterIdeaCoordinator _autonomousIdeas;
 
         private void Awake()
@@ -76,9 +78,11 @@ namespace SilverScreen.Presentation.Writing
             var office = FindAnyObjectByType<ScriptOfficeStationLayout>() ?? CreatePrototypeOffice();
             var world = GetComponent<ScreenplayWritingWorldRouter>() ?? gameObject.AddComponent<ScreenplayWritingWorldRouter>();
             world.Initialize(_employees, office);
+            KnownSetDefinitions = SetDefinitionCatalog.CreatePrototype();
+            FilmingCapabilities = StudioFilmingCapabilities.CreateStarterStudio(KnownSetDefinitions);
             Coordinator = new ScreenplayWritingCoordinator(_employees.AllEmployees, _time.TimeService, world,
                 new ScreenplayTitleGenerator(new SeededScreenplayTitleRandomSource(1930)),
-                new ScreenplayContentGenerator(new SeededScreenplayTitleRandomSource(1934)),
+                new ScreenplayContentGenerator(new SeededScreenplayTitleRandomSource(1934), FilmingCapabilities),
                 new ScreenplayEvaluator(new SeededScreenplayTitleRandomSource(1935)));
             var genreIds = new List<string>();
             var movieDriver = FindAnyObjectByType<MovieProductionDriver>();

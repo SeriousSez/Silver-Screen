@@ -181,7 +181,7 @@ namespace SilverScreen.Presentation.UI
                 : string.Empty;
             string content = showContent ? BuildScreenplayContent(screenplay) :
                 screenplay.Status == ScreenplayStatus.Completed && screenplay.ContentStatus == ScreenplayContentStatus.Failed
-                    ? "\n<color=#E6A33E>Structured content could not be finalized.</color>"
+                    ? $"\n<color=#E6A33E>{(string.IsNullOrEmpty(screenplay.ContentFailureReason) ? "Structured content could not be finalized." : screenplay.ContentFailureReason)}</color>"
                     : string.Empty;
             string evaluation = BuildEvaluation(screenplay);
             string greenlightStatus = greenlit ? "\n<color=#E6A33E>Production created</color>" : string.Empty;
@@ -223,7 +223,7 @@ namespace SilverScreen.Presentation.UI
         {
             int lines = 12 + screenplay.Characters.Count * 2;
             foreach (ScreenplayScene scene in screenplay.Scenes)
-                lines += 3 + scene.Beats.Count * 2;
+                lines += 4 + scene.Beats.Count * 2;
             return Mathf.Max(240f, lines * 18f + 20f);
         }
 
@@ -259,6 +259,7 @@ namespace SilverScreen.Presentation.UI
                     .Append(DisplayId(scene.LocationId).ToUpperInvariant()).Append(" - ")
                     .Append(scene.TimeOfDay.ToString().ToUpperInvariant()).Append("</b>");
                 if (!string.IsNullOrEmpty(scene.Title)) builder.Append("  ").Append(scene.Title);
+                builder.Append("\nSet: ").Append(DisplayId(scene.RequiredSetDefinitionId));
                 builder.Append("\nCharacters: ");
                 for (int i = 0; i < scene.ParticipatingCharacterIds.Count; i++)
                 {

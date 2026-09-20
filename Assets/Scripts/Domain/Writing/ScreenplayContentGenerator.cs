@@ -3,6 +3,11 @@ using System.Collections.Generic;
 
 namespace SilverScreen.Domain.Writing
 {
+    public sealed class ScreenplayContentGenerationException : InvalidOperationException
+    {
+        public ScreenplayContentGenerationException(string message) : base(message) { }
+    }
+
     public sealed class ScreenplayContent
     {
         public IReadOnlyList<ScreenplayCharacter> Characters { get; }
@@ -24,16 +29,43 @@ namespace SilverScreen.Domain.Writing
             { "Cross", "Hale", "Shaw", "Mercer", "Vance", "Sterling", "Hart", "Langley", "Reed", "Vale", "Bennett", "Price" };
         private static readonly string[] FallbackArchetypes =
             { "investigator", "dreamer", "professional", "outsider", "guardian", "rival", "confidant" };
-        private static readonly string[] FallbackLocations =
-            { "studio-office", "city-street", "apartment", "hotel-lobby", "railway-platform", "country-road" };
+        private static readonly Dictionary<string, string[]> GenreSetPreferences =
+            new Dictionary<string, string[]>(StringComparer.OrdinalIgnoreCase)
+            {
+                ["drama"] = new[] { SetDefinitionIds.LivingRoom, SetDefinitionIds.Bedroom, SetDefinitionIds.Office, SetDefinitionIds.RestaurantCafe },
+                ["comedy"] = new[] { SetDefinitionIds.LivingRoom, SetDefinitionIds.RestaurantCafe, SetDefinitionIds.Office, SetDefinitionIds.Street },
+                ["romance"] = new[] { SetDefinitionIds.RestaurantCafe, SetDefinitionIds.LivingRoom, SetDefinitionIds.Street },
+                ["thriller"] = new[] { SetDefinitionIds.Office, SetDefinitionIds.Street, SetDefinitionIds.GenericInterior },
+                ["action"] = new[] { SetDefinitionIds.Street, SetDefinitionIds.Office, SetDefinitionIds.GenericInterior },
+                ["horror"] = new[] { SetDefinitionIds.Bedroom, SetDefinitionIds.GenericInterior, SetDefinitionIds.Street }
+            };
+        private static readonly Dictionary<string, string[]> SemanticLocationsBySet =
+            new Dictionary<string, string[]>(StringComparer.OrdinalIgnoreCase)
+            {
+                [SetDefinitionIds.GenericInterior] = new[] { "hotel-lobby", "theatre-backstage", "private-club" },
+                [SetDefinitionIds.Office] = new[] { "studio-executive-office", "detective-office", "newspaper-office" },
+                [SetDefinitionIds.LivingRoom] = new[] { "family-apartment", "townhouse-parlor", "country-estate-sitting-room" },
+                [SetDefinitionIds.Bedroom] = new[] { "hotel-bedroom", "upstairs-bedroom", "boarding-house-room" },
+                [SetDefinitionIds.RestaurantCafe] = new[] { "neighborhood-cafe", "hotel-restaurant", "downtown-nightclub" },
+                [SetDefinitionIds.Street] = new[] { "downtown-street", "studio-backlot-street", "rainy-side-street" }
+            };
         private readonly IScreenplayTitleRandomSource _random;
+        private readonly IStudioFilmingCapabilities _filmingCapabilities;
 
-        public ScreenplayContentGenerator(IScreenplayTitleRandomSource random) =>
+        public ScreenplayContentGenerator(IScreenplayTitleRandomSource random,
+            IStudioFilmingCapabilities filmingCapabilities)
+        {
             _random = random ?? throw new ArgumentNullException(nameof(random));
+            _filmingCapabilities = filmingCapabilities ??
+                throw new ArgumentNullException(nameof(filmingCapabilities));
+        }
 
         public ScreenplayContent Generate(ScreenplayProject screenplay)
         {
             if (screenplay == null) throw new ArgumentNullException(nameof(screenplay));
+            if (_filmingCapabilities.AvailableDefinitions.Count == 0)
+                throw new ScreenplayContentGenerationException(
+                    "The studio has no filming environments available for screenplay development.");
 
             int characterCount = _random.Next(2, 5);
             var characters = GenerateCharacters(screenplay, characterCount);
@@ -44,13 +76,14 @@ namespace SilverScreen.Domain.Writing
             {
                 int number = sceneIndex + 1;
                 string sceneId = $"{screenplay.Id}:scene:{number}";
-                string location = ResolveLocation(screenplay, sceneIndex);
-                var locationType = sceneIndex % 3 == 1
+                SetDefinition requiredSet = SelectRequiredSet(screenplay.PrimaryGenreId);
+                string location = ResolveLocation(screenplay, sceneIndex, requiredSet.Id);
+                var locationType = requiredSet.Id == SetDefinitionIds.Street
                     ? ScreenplaySceneLocation.Exterior
                     : ScreenplaySceneLocation.Interior;
                 var time = sceneIndex % 2 == 0 ? ScreenplayTimeOfDay.Day : ScreenplayTimeOfDay.Night;
                 var scene = new ScreenplayScene(sceneId, number, location, locationType, time,
-                    BuildSceneTitle(screenplay, number));
+                    BuildSceneTitle(screenplay, number), requiredSet.Id);
 
                 ScreenplayCharacter protagonist = characters[0];
                 scene.AddCharacter(protagonist.Id);
@@ -111,11 +144,32 @@ namespace SilverScreen.Domain.Writing
                 partner.Id, protagonist.Id, ReactionFor(screenplay.PrimaryGenreId), intendedIntensity: 0.6d));
         }
 
-        private string ResolveLocation(ScreenplayProject screenplay, int sceneIndex)
+        private SetDefinition SelectRequiredSet(string genreId)
+        {
+            var weighted = new List<SetDefinition>();
+            GenreSetPreferences.TryGetValue(genreId ?? string.Empty, out string[] preferences);
+            foreach (SetDefinition available in _filmingCapabilities.AvailableDefinitions)
+            {
+                weighted.Add(available);
+                if (preferences == null) continue;
+                for (int index = 0; index < preferences.Length; index++)
+                    if (string.Equals(preferences[index], available.Id, StringComparison.OrdinalIgnoreCase))
+                    {
+                        weighted.Add(available);
+                        weighted.Add(available);
+                        break;
+                    }
+            }
+            return Pick(weighted);
+        }
+
+        private string ResolveLocation(ScreenplayProject screenplay, int sceneIndex, string requiredSetDefinitionId)
         {
             if (!string.IsNullOrEmpty(screenplay.SettingId) && sceneIndex % 2 == 0)
                 return screenplay.SettingId;
-            return Pick(FallbackLocations);
+            if (SemanticLocationsBySet.TryGetValue(requiredSetDefinitionId, out string[] locations))
+                return locations[sceneIndex % locations.Length];
+            return $"{requiredSetDefinitionId}-location";
         }
 
         private string ChooseArchetype(string preferred) =>

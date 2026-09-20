@@ -59,6 +59,7 @@ namespace SilverScreen.Domain.Writing
         public IReadOnlyList<ScreenplayWriterContributor> Contributors => _contributors;
         public IReadOnlyList<string> CreditedWriterIds => _creditedWriterIds;
         public ScreenplayContentStatus ContentStatus { get; private set; }
+        public string ContentFailureReason { get; private set; }
         public IReadOnlyList<ScreenplayCharacter> Characters => _characters;
         public IReadOnlyList<ScreenplayScene> Scenes => _scenes;
         public ScreenplayEvaluationStatus EvaluationStatus { get; private set; }
@@ -214,11 +215,14 @@ namespace SilverScreen.Domain.Writing
             return true;
         }
 
-        public bool MarkContentFinalizationFailed()
+        public bool MarkContentFinalizationFailed(string reason = null)
         {
             if (Status != ScreenplayStatus.Completed || ContentStatus != ScreenplayContentStatus.Pending)
                 return false;
             ContentStatus = ScreenplayContentStatus.Failed;
+            ContentFailureReason = string.IsNullOrWhiteSpace(reason)
+                ? "Structured screenplay content could not be finalized."
+                : reason.Trim();
             Changed?.Invoke(this);
             return true;
         }
