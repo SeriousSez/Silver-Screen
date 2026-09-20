@@ -25,6 +25,7 @@ namespace SilverScreen.Domain.Movie
         public string Title { get; private set; }
         public string Description { get; private set; }
         public string SetLocationId { get; private set; }
+        public string RequiredSetDefinitionId { get; }
         public string SourceScreenplaySceneId { get; }
         public string LocationTypeId { get; }
         public string TimeOfDayId { get; }
@@ -48,15 +49,19 @@ namespace SilverScreen.Domain.Movie
             string description = null,
             string sourceScreenplaySceneId = null,
             string locationTypeId = null,
-            string timeOfDayId = null)
+            string timeOfDayId = null,
+            string requiredSetDefinitionId = SetDefinitionIds.GenericInterior)
         {
             if (sceneNumber < 1) throw new ArgumentOutOfRangeException(nameof(sceneNumber));
             if (string.IsNullOrWhiteSpace(setLocationId))
                 throw new ArgumentException("A scene requires a set or location identifier.", nameof(setLocationId));
+            if (string.IsNullOrWhiteSpace(requiredSetDefinitionId))
+                throw new ArgumentException("A scene requires a set definition identifier.", nameof(requiredSetDefinitionId));
 
             Id = string.IsNullOrWhiteSpace(id) ? Guid.NewGuid().ToString() : id.Trim();
             SceneNumber = sceneNumber;
             SetLocationId = setLocationId.Trim();
+            RequiredSetDefinitionId = requiredSetDefinitionId.Trim().ToLowerInvariant();
             Title = title?.Trim();
             Description = description?.Trim();
             SourceScreenplaySceneId = NormalizeOptional(sourceScreenplaySceneId);

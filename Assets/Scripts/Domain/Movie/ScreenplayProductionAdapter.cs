@@ -87,7 +87,8 @@ namespace SilverScreen.Domain.Movie
                     source.Title,
                     sourceScreenplaySceneId: source.Id,
                     locationTypeId: source.LocationType.ToString().ToLowerInvariant(),
-                    timeOfDayId: source.TimeOfDay.ToString().ToLowerInvariant());
+                    timeOfDayId: source.TimeOfDay.ToString().ToLowerInvariant(),
+                    requiredSetDefinitionId: source.RequiredSetDefinitionId);
                 if (!movie.AddScene(scene))
                     return ScreenplayGreenlightResult.Failed(
                         ScreenplayGreenlightFailure.InvalidContent,

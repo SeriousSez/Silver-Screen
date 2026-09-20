@@ -1066,7 +1066,8 @@ namespace SilverScreen.Domain.Movie
                     Guid.NewGuid().ToString(),
                     1,
                     "sound-stage-1",
-                    "Scene 1");
+                    "Scene 1",
+                    requiredSetDefinitionId: SetDefinitionIds.GenericInterior);
                 if (movie.AddScene(defaultScene))
                 {
                     foreach (var castRole in movie.CastRoles)

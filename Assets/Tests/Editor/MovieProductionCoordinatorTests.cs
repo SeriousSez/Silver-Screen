@@ -236,10 +236,84 @@ namespace SilverScreen.Tests.EditMode
                 MovieScene scene = result.Movie.Scenes[index];
                 Assert.That(scene.SceneNumber, Is.EqualTo(index + 1));
                 Assert.That(scene.SourceScreenplaySceneId, Is.EqualTo(screenplay.Scenes[index].Id));
+                Assert.That(scene.RequiredSetDefinitionId,
+                    Is.EqualTo(screenplay.Scenes[index].RequiredSetDefinitionId));
                 Assert.That(scene.Takes, Is.Empty);
                 Assert.That(scene.Beats, Has.Count.EqualTo(screenplay.Scenes[index].Beats.Count));
                 Assert.That(scene.Shots, Has.Count.EqualTo(screenplay.Scenes[index].Beats.Count));
             }
+        }
+
+        [Test]
+        public void StarterStudio_KnowsSpecializedSetsButStageProvidesOnlyBasicCapabilities()
+        {
+            SetDefinitionCatalog definitions = SetDefinitionCatalog.CreatePrototype();
+            StudioFilmingCapabilities capabilities =
+                StudioFilmingCapabilities.CreateStarterStudio(definitions);
+
+            Assert.That(definitions.KnownDefinitions, Has.Count.EqualTo(6));
+            Assert.That(definitions.GetDefinition(SetDefinitionIds.Street), Is.Not.Null);
+            Assert.That(definitions.GetDefinition(SetDefinitionIds.RestaurantCafe), Is.Not.Null);
+            Assert.That(capabilities.Facilities, Has.Count.EqualTo(1));
+            Assert.That(capabilities.Facilities[0].SupportedSetDefinitionIds,
+                Is.EquivalentTo(new[]
+                {
+                    SetDefinitionIds.GenericInterior,
+                    SetDefinitionIds.Office,
+                    SetDefinitionIds.LivingRoom,
+                    SetDefinitionIds.Bedroom
+                }));
+            Assert.That(capabilities.CanSatisfy(SetDefinitionIds.Street), Is.False);
+            Assert.That(capabilities.CanSatisfy(SetDefinitionIds.RestaurantCafe), Is.False);
+        }
+
+        [Test]
+        public void ScreenplayContentGenerator_UsesSingleAvailableFacilityCapability()
+        {
+            SetDefinitionCatalog definitions = SetDefinitionCatalog.CreatePrototype();
+            var capabilities = new StudioFilmingCapabilities(definitions, new[]
+            {
+                new FilmingFacilityCapabilities("small-stage", new[] { SetDefinitionIds.Office })
+            });
+            var generator = new ScreenplayContentGenerator(
+                new SeededScreenplayTitleRandomSource(42), capabilities);
+            var screenplay = new ScreenplayProject(
+                "limited-sets", "Limited Sets", new[] { "writer" }, new[] { "romance" });
+
+            ScreenplayContent content = generator.Generate(screenplay);
+
+            Assert.That(content.Scenes, Is.Not.Empty);
+            Assert.That(content.Scenes.All(scene =>
+                scene.RequiredSetDefinitionId == SetDefinitionIds.Office), Is.True);
+            Assert.That(content.Scenes.Select(scene => scene.LocationId).Distinct().Count(),
+                Is.GreaterThan(1));
+        }
+
+        [Test]
+        public void ScreenplayContentGenerator_RefusesCleanlyWhenStudioHasNoCapabilities()
+        {
+            var screenplay = new ScreenplayProject(
+                "no-sets", "No Sets", new[] { "writer" }, new[] { "drama" });
+            var generator = new ScreenplayContentGenerator(
+                new SeededScreenplayTitleRandomSource(42),
+                new StudioFilmingCapabilities(SetDefinitionCatalog.CreatePrototype()));
+
+            var exception = Assert.Throws<ScreenplayContentGenerationException>(
+                () => generator.Generate(screenplay));
+
+            Assert.That(exception.Message, Does.Contain("no filming environments"));
+            Assert.That(screenplay.ContentStatus, Is.EqualTo(ScreenplayContentStatus.Pending));
+        }
+
+        [Test]
+        public void ScreenplayScene_AllowsContextuallyUnavailableSetRequirement()
+        {
+            var scene = new ScreenplayScene(
+                "ambitious-scene", 1, "county-courthouse",
+                ScreenplaySceneLocation.Interior, ScreenplayTimeOfDay.Day,
+                requiredSetDefinitionId: "courtroom");
+
+            Assert.That(scene.RequiredSetDefinitionId, Is.EqualTo("courtroom"));
         }
 
         [Test]

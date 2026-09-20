@@ -96,7 +96,8 @@ namespace SilverScreen.Domain.Writing
             _world = world ?? throw new ArgumentNullException(nameof(world));
             _titleGenerator = titleGenerator ?? throw new ArgumentNullException(nameof(titleGenerator));
             _contentGenerator = contentGenerator ??
-                new ScreenplayContentGenerator(new SeededScreenplayTitleRandomSource(1934));
+                new ScreenplayContentGenerator(new SeededScreenplayTitleRandomSource(1934),
+                    StudioFilmingCapabilities.CreateStarterStudio(SetDefinitionCatalog.CreatePrototype()));
             _evaluator = evaluator ??
                 new ScreenplayEvaluator(new SeededScreenplayTitleRandomSource(1935));
             _time.OnMinutePassed += HandleMinutePassed;
@@ -252,9 +253,13 @@ namespace SilverScreen.Domain.Writing
                 ScreenplayContent content = _contentGenerator.Generate(screenplay);
                 if (!screenplay.TryFinalizeContent(content)) screenplay.MarkContentFinalizationFailed();
             }
+            catch (ScreenplayContentGenerationException exception)
+            {
+                screenplay.MarkContentFinalizationFailed(exception.Message);
+            }
             catch (Exception)
             {
-                screenplay.MarkContentFinalizationFailed();
+                screenplay.MarkContentFinalizationFailed("Structured screenplay content could not be finalized.");
             }
         }
 

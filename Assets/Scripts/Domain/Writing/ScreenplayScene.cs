@@ -27,23 +27,28 @@ namespace SilverScreen.Domain.Writing
         public int SceneNumber { get; internal set; }
         public string Title { get; }
         public string LocationId { get; }
+        public string RequiredSetDefinitionId { get; }
         public ScreenplaySceneLocation LocationType { get; }
         public ScreenplayTimeOfDay TimeOfDay { get; }
         public IReadOnlyList<string> ParticipatingCharacterIds => _participatingCharacterIds;
         public IReadOnlyList<ScreenplayBeat> Beats => _beats;
 
         public ScreenplayScene(string id, int sceneNumber, string locationId,
-            ScreenplaySceneLocation locationType, ScreenplayTimeOfDay timeOfDay, string title = null)
+            ScreenplaySceneLocation locationType, ScreenplayTimeOfDay timeOfDay, string title = null,
+            string requiredSetDefinitionId = SetDefinitionIds.GenericInterior)
         {
             if (string.IsNullOrWhiteSpace(id))
                 throw new ArgumentException("A screenplay scene requires a stable ID.", nameof(id));
             if (sceneNumber < 1) throw new ArgumentOutOfRangeException(nameof(sceneNumber));
             if (string.IsNullOrWhiteSpace(locationId))
                 throw new ArgumentException("A screenplay scene requires a semantic location ID.", nameof(locationId));
+            if (string.IsNullOrWhiteSpace(requiredSetDefinitionId))
+                throw new ArgumentException("A screenplay scene requires a set definition ID.", nameof(requiredSetDefinitionId));
 
             Id = id.Trim();
             SceneNumber = sceneNumber;
             LocationId = locationId.Trim();
+            RequiredSetDefinitionId = requiredSetDefinitionId.Trim().ToLowerInvariant();
             LocationType = locationType;
             TimeOfDay = timeOfDay;
             Title = string.IsNullOrWhiteSpace(title) ? string.Empty : title.Trim();
