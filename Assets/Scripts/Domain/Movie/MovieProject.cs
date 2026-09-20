@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using SilverScreen.Domain.Time;
+using SilverScreen.Domain.Writing;
 
 namespace SilverScreen.Domain.Movie
 {

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using SilverScreen.Domain.Writing;
 using SilverScreen.Domain.Finance;
 using SilverScreen.Domain.Time;
 

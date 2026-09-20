@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Text;
 using SilverScreen.Domain;
 using SilverScreen.Domain.Writing;
 using SilverScreen.Presentation.Employees;
@@ -154,7 +155,9 @@ namespace SilverScreen.Presentation.UI
         private void AddScreenplay(ScreenplayProject screenplay)
         {
             bool fromIdea = screenplay.AcquisitionSource == ScreenplayAcquisitionSource.DevelopedFromIdea;
-            float height = fromIdea ? 176f : 112f;
+            bool showContent = screenplay.Status == ScreenplayStatus.Completed &&
+                               screenplay.ContentStatus == ScreenplayContentStatus.Ready;
+            float height = showContent ? CalculateCompletedHeight(screenplay) : fromIdea ? 176f : 112f;
             var row = ManagementUIFactory.Rect("Screenplay_" + screenplay.Id, _screenplayContent, Vector2.zero, Vector2.one, Vector2.zero, new Vector2(0f, height));
             row.gameObject.AddComponent<LayoutElement>().preferredHeight = height;
             ManagementUIFactory.Background(row, ManagementUIFactory.Panel);
@@ -171,8 +174,62 @@ namespace SilverScreen.Presentation.UI
             string creative = fromIdea
                 ? $"\nSetting: {DisplayId(screenplay.SettingId)}  •  Protagonist: {DisplayId(screenplay.ProtagonistArchetypeId)}\nAntagonist: {(string.IsNullOrEmpty(screenplay.AntagonistArchetypeId) ? "None" : DisplayId(screenplay.AntagonistArchetypeId))}  •  Theme: {DisplayId(screenplay.ThemeId)}"
                 : string.Empty;
-            var text = ManagementUIFactory.Text("Text", row, $"<b>{screenplay.Title}</b>\n{string.Join(" / ", genres)}  •  {origin}\n{screenplay.Status}  •  {screenplay.Progress:P0}{creative}\nWriters: {string.Join("  |  ", writerLines)}{credits}", 13f, TextAlignmentOptions.MidlineLeft, Color.white);
+            string content = showContent ? BuildScreenplayContent(screenplay) :
+                screenplay.Status == ScreenplayStatus.Completed && screenplay.ContentStatus == ScreenplayContentStatus.Failed
+                    ? "\n<color=#E6A33E>Structured content could not be finalized.</color>"
+                    : string.Empty;
+            var text = ManagementUIFactory.Text("Text", row, $"<b>{screenplay.Title}</b>\n{string.Join(" / ", genres)}  •  {origin}\n{screenplay.Status}  •  {screenplay.Progress:P0}{creative}\nWriters: {string.Join("  |  ", writerLines)}{credits}{content}", 13f, TextAlignmentOptions.TopLeft, Color.white);
             ManagementUIFactory.SetOffsets(text.rectTransform, 12f, 4f, 12f, 4f);
+        }
+
+        private static float CalculateCompletedHeight(ScreenplayProject screenplay)
+        {
+            int lines = 8 + screenplay.Characters.Count * 2;
+            foreach (ScreenplayScene scene in screenplay.Scenes)
+                lines += 3 + scene.Beats.Count * 2;
+            return Mathf.Max(240f, lines * 18f + 20f);
+        }
+
+        private static string BuildScreenplayContent(ScreenplayProject screenplay)
+        {
+            var builder = new StringBuilder("\n\n<b>CHARACTERS</b>");
+            foreach (ScreenplayCharacter character in screenplay.Characters)
+            {
+                builder.Append("\n").Append(character.Name).Append(" — ").Append(character.Role);
+                if (!string.IsNullOrEmpty(character.ArchetypeId))
+                    builder.Append(" — ").Append(DisplayId(character.ArchetypeId));
+            }
+
+            builder.Append("\n\n<b>SCENES</b>");
+            foreach (ScreenplayScene scene in screenplay.Scenes)
+            {
+                builder.Append("\n\n<b>").Append(scene.SceneNumber).Append(". ")
+                    .Append(scene.LocationType == ScreenplaySceneLocation.Interior ? "INT. " : "EXT. ")
+                    .Append(DisplayId(scene.LocationId).ToUpperInvariant()).Append(" - ")
+                    .Append(scene.TimeOfDay.ToString().ToUpperInvariant()).Append("</b>");
+                if (!string.IsNullOrEmpty(scene.Title)) builder.Append("  ").Append(scene.Title);
+                builder.Append("\nCharacters: ");
+                for (int i = 0; i < scene.ParticipatingCharacterIds.Count; i++)
+                {
+                    if (i > 0) builder.Append(", ");
+                    builder.Append(FindCharacterName(screenplay, scene.ParticipatingCharacterIds[i]));
+                }
+                foreach (ScreenplayBeat beat in scene.Beats)
+                {
+                    builder.Append("\n<color=#E6A33E>").Append(beat.BeatType.ToString().ToUpperInvariant());
+                    if (beat.PerformingCharacterId != null)
+                        builder.Append(" — ").Append(FindCharacterName(screenplay, beat.PerformingCharacterId));
+                    builder.Append("</color>\n").Append(beat.Content);
+                }
+            }
+            return builder.ToString();
+        }
+
+        private static string FindCharacterName(ScreenplayProject screenplay, string characterId)
+        {
+            foreach (ScreenplayCharacter character in screenplay.Characters)
+                if (character.Id == characterId) return character.Name;
+            return characterId;
         }
 
         private void StartWriting()
