@@ -21,6 +21,8 @@ namespace SilverScreen.Domain.Writing
         public string ProtagonistArchetypeId { get; private set; }
         public string AntagonistArchetypeId { get; private set; }
         public string ThemeId { get; private set; }
+        public string DevelopedScreenplayId { get; private set; }
+        public bool HasScreenplayDevelopment => !string.IsNullOrEmpty(DevelopedScreenplayId);
 
         public event Action<StoryIdea> Changed;
 
@@ -82,6 +84,15 @@ namespace SilverScreen.Domain.Writing
             if (State == IdeaDevelopmentState.Completed || State == IdeaDevelopmentState.Failed) return;
             State = IdeaDevelopmentState.Failed;
             Changed?.Invoke(this);
+        }
+
+        public bool TryLinkDevelopedScreenplay(string screenplayId)
+        {
+            if (State != IdeaDevelopmentState.Completed || HasScreenplayDevelopment ||
+                string.IsNullOrWhiteSpace(screenplayId)) return false;
+            DevelopedScreenplayId = screenplayId.Trim();
+            Changed?.Invoke(this);
+            return true;
         }
     }
 }

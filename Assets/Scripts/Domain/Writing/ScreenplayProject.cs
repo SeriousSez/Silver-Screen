@@ -5,7 +5,13 @@ namespace SilverScreen.Domain.Writing
 {
     public enum ScreenplayStatus { Assigned, Writing, Completed }
     public enum WriterParticipationStatus { Assigned, Traveling, Writing, Unavailable, Credited }
-    public enum ScreenplayAcquisitionSource { Commissioned, Purchased, PlayerCreated }
+    public enum ScreenplayAcquisitionSource
+    {
+        Commissioned = 0,
+        Purchased = 1,
+        PlayerCreated = 2,
+        DevelopedFromIdea = 3
+    }
 
     [Serializable]
     public sealed class ScreenplayWriterContributor
@@ -39,6 +45,11 @@ namespace SilverScreen.Domain.Writing
         public IReadOnlyList<string> GenreIds => _genreIds;
         public string PrimaryGenreId => _genreIds[0];
         public ScreenplayAcquisitionSource AcquisitionSource { get; }
+        public string SourceStoryIdeaId { get; }
+        public string SettingId { get; }
+        public string ProtagonistArchetypeId { get; }
+        public string AntagonistArchetypeId { get; }
+        public string ThemeId { get; }
         public ScreenplayStatus Status { get; private set; }
         public double Progress { get; private set; }
         public IReadOnlyList<ScreenplayWriterContributor> Contributors => _contributors;
@@ -46,11 +57,28 @@ namespace SilverScreen.Domain.Writing
         public event Action<ScreenplayProject> Changed;
 
         public ScreenplayProject(string id, string title, IEnumerable<string> writerIds,
-            IEnumerable<string> genreIds, ScreenplayAcquisitionSource acquisitionSource = ScreenplayAcquisitionSource.Commissioned)
+            IEnumerable<string> genreIds,
+            ScreenplayAcquisitionSource acquisitionSource = ScreenplayAcquisitionSource.Commissioned,
+            string sourceStoryIdeaId = null, string settingId = null,
+            string protagonistArchetypeId = null, string antagonistArchetypeId = null,
+            string themeId = null)
         {
             Id = string.IsNullOrWhiteSpace(id) ? Guid.NewGuid().ToString() : id.Trim();
             Title = string.IsNullOrWhiteSpace(title) ? "Untitled Screenplay" : title.Trim();
             AcquisitionSource = acquisitionSource;
+            if (acquisitionSource == ScreenplayAcquisitionSource.DevelopedFromIdea &&
+                string.IsNullOrWhiteSpace(sourceStoryIdeaId))
+                throw new ArgumentException("An Idea-derived screenplay requires a source Story Idea ID.",
+                    nameof(sourceStoryIdeaId));
+            if (acquisitionSource != ScreenplayAcquisitionSource.DevelopedFromIdea &&
+                !string.IsNullOrWhiteSpace(sourceStoryIdeaId))
+                throw new ArgumentException("Only Idea-derived screenplays may reference a source Story Idea.",
+                    nameof(sourceStoryIdeaId));
+            SourceStoryIdeaId = sourceStoryIdeaId?.Trim() ?? string.Empty;
+            SettingId = settingId?.Trim() ?? string.Empty;
+            ProtagonistArchetypeId = protagonistArchetypeId?.Trim() ?? string.Empty;
+            AntagonistArchetypeId = antagonistArchetypeId?.Trim() ?? string.Empty;
+            ThemeId = themeId?.Trim() ?? string.Empty;
             if (genreIds == null) throw new ArgumentNullException(nameof(genreIds));
             foreach (string genreId in genreIds)
             {
