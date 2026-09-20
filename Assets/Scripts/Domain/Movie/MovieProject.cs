@@ -12,6 +12,8 @@ namespace SilverScreen.Domain.Movie
         public string GenreId { get; }
         public string GenreDisplayName { get; }
         public string Genre => GenreDisplayName;
+        public string SourceScreenplayId { get; }
+        public bool IsScreenplayAdaptation => !string.IsNullOrEmpty(SourceScreenplayId);
         public int Budget { get; set; }
         public string BudgetTierId { get; }
         public MovieProductionResult ProductionResult { get; private set; }
@@ -55,12 +57,16 @@ namespace SilverScreen.Domain.Movie
             string genreDisplayName,
             int budget,
             SimulationDateTime createdDate,
-            string budgetTierId = null)
+            string budgetTierId = null,
+            string sourceScreenplayId = null)
         {
             Id = id ?? Guid.NewGuid().ToString();
             Title = title;
             GenreId = string.IsNullOrWhiteSpace(genreId) ? "drama" : genreId.Trim();
             GenreDisplayName = string.IsNullOrWhiteSpace(genreDisplayName) ? GenreId : genreDisplayName.Trim();
+            SourceScreenplayId = string.IsNullOrWhiteSpace(sourceScreenplayId)
+                ? string.Empty
+                : sourceScreenplayId.Trim();
             Budget = budget;
             BudgetTierId = string.IsNullOrWhiteSpace(budgetTierId)
                 ? BudgetTier.GetIdForAmount(budget)

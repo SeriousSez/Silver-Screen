@@ -9,6 +9,7 @@ using SilverScreen.Presentation.Buildings;
 using SilverScreen.Presentation.SimulationTime;
 using SilverScreen.Presentation.Recruitment;
 using SilverScreen.Presentation.Movie;
+using SilverScreen.Domain.Movie;
 using UnityEngine;
 
 namespace SilverScreen.Presentation.Writing
@@ -64,6 +65,7 @@ namespace SilverScreen.Presentation.Writing
         private SimulationTimeDriver _time;
         public ScreenplayWritingCoordinator Coordinator { get; private set; }
         public StoryIdeaDevelopmentCoordinator IdeaCoordinator { get; private set; }
+        public IMovieProductionService MovieProductionService { get; private set; }
         private AutonomousWriterIdeaCoordinator _autonomousIdeas;
 
         private void Awake()
@@ -80,7 +82,8 @@ namespace SilverScreen.Presentation.Writing
                 new ScreenplayEvaluator(new SeededScreenplayTitleRandomSource(1935)));
             var genreIds = new List<string>();
             var movieDriver = FindAnyObjectByType<MovieProductionDriver>();
-            var genres = movieDriver?.ProductionService?.AvailableGenres;
+            MovieProductionService = movieDriver?.ProductionService;
+            var genres = MovieProductionService?.AvailableGenres;
             if (genres != null) foreach (var genre in genres) if (genre != null && !string.IsNullOrWhiteSpace(genre.Id)) genreIds.Add(genre.Id);
             if (genreIds.Count == 0) genreIds.AddRange(new[] { "drama", "comedy", "action", "romance", "thriller", "horror" });
             IdeaCoordinator = new StoryIdeaDevelopmentCoordinator(_employees.AllEmployees, _time.TimeService, world,

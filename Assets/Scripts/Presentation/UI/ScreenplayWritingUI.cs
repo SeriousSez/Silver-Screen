@@ -3,6 +3,7 @@ using System.Globalization;
 using System.Text;
 using SilverScreen.Domain;
 using SilverScreen.Domain.Writing;
+using SilverScreen.Domain.Movie;
 using SilverScreen.Presentation.Employees;
 using SilverScreen.Presentation.Writing;
 using TMPro;
@@ -158,7 +159,10 @@ namespace SilverScreen.Presentation.UI
             bool fromIdea = screenplay.AcquisitionSource == ScreenplayAcquisitionSource.DevelopedFromIdea;
             bool showContent = screenplay.Status == ScreenplayStatus.Completed &&
                                screenplay.ContentStatus == ScreenplayContentStatus.Ready;
+            bool greenlit = _driver?.MovieProductionService?.HasProductionForScreenplay(screenplay.Id) ?? false;
+            bool eligible = IsGreenlightEligible(screenplay);
             float height = showContent ? CalculateCompletedHeight(screenplay) : fromIdea ? 176f : 112f;
+            if (eligible || greenlit) height += 40f;
             var row = ManagementUIFactory.Rect("Screenplay_" + screenplay.Id, _screenplayContent, Vector2.zero, Vector2.one, Vector2.zero, new Vector2(0f, height));
             row.gameObject.AddComponent<LayoutElement>().preferredHeight = height;
             ManagementUIFactory.Background(row, ManagementUIFactory.Panel);
@@ -180,8 +184,39 @@ namespace SilverScreen.Presentation.UI
                     ? "\n<color=#E6A33E>Structured content could not be finalized.</color>"
                     : string.Empty;
             string evaluation = BuildEvaluation(screenplay);
+            string greenlightStatus = greenlit ? "\n<color=#E6A33E>Production created</color>" : string.Empty;
             var text = ManagementUIFactory.Text("Text", row, $"<b>{screenplay.Title}</b>\n{string.Join(" / ", genres)}  •  {origin}\n{screenplay.Status}  •  {screenplay.Progress:P0}{creative}\nWriters: {string.Join("  |  ", writerLines)}{credits}{evaluation}{content}", 13f, TextAlignmentOptions.TopLeft, Color.white);
-            ManagementUIFactory.SetOffsets(text.rectTransform, 12f, 4f, 12f, 4f);
+            text.text += greenlightStatus;
+            ManagementUIFactory.SetOffsets(text.rectTransform, 12f, eligible || greenlit ? 42f : 4f, 12f, 4f);
+            if (eligible || greenlit)
+            {
+                var buttonRect = ManagementUIFactory.Rect("Greenlight", row,
+                    new Vector2(.62f, 0f), new Vector2(1f, 0f), new Vector2(0f, 5f), new Vector2(-8f, 36f));
+                var button = ManagementUIFactory.Button("Button", buttonRect,
+                    greenlit ? "PRODUCTION CREATED" : "GREENLIGHT",
+                    greenlit ? ManagementUIFactory.PanelRaised : ManagementUIFactory.Gold,
+                    greenlit ? ManagementUIFactory.Muted : Color.black);
+                button.interactable = !greenlit;
+                if (!greenlit) button.onClick.AddListener(() => Greenlight(screenplay));
+            }
+        }
+
+        private static bool IsGreenlightEligible(ScreenplayProject screenplay) =>
+            screenplay != null &&
+            screenplay.Status == ScreenplayStatus.Completed &&
+            screenplay.ContentStatus == ScreenplayContentStatus.Ready &&
+            screenplay.EvaluationStatus == ScreenplayEvaluationStatus.Ready &&
+            screenplay.Evaluation != null;
+
+        private void Greenlight(ScreenplayProject screenplay)
+        {
+            ScreenplayGreenlightResult result = _driver?.MovieProductionService?.GreenlightScreenplay(screenplay);
+            _status.text = result == null
+                ? "Movie production is unavailable."
+                : result.Succeeded
+                    ? $"{screenplay.Title} has been greenlit. Cast and prepare it from Productions."
+                    : result.Message;
+            Refresh();
         }
 
         private static float CalculateCompletedHeight(ScreenplayProject screenplay)

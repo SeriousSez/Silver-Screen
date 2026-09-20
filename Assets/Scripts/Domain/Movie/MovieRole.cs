@@ -9,6 +9,9 @@ namespace SilverScreen.Domain.Movie
         public MovieRoleProminence Prominence { get; private set; }
         public string CharacterName { get; private set; }
         public string Description { get; private set; }
+        public string SourceScreenplayCharacterId { get; }
+        public string SourceScreenplayRoleCategoryId { get; }
+        public string CharacterArchetypeId { get; }
         public string AssignedActorId { get; private set; }
 
         // Temporary runtime compatibility bridge for existing routing, UI, and quality code.
@@ -37,7 +40,10 @@ namespace SilverScreen.Domain.Movie
             string id,
             MovieRoleProminence prominence,
             string characterName,
-            string description = null)
+            string description = null,
+            string sourceScreenplayCharacterId = null,
+            string sourceScreenplayRoleCategoryId = null,
+            string characterArchetypeId = null)
         {
             Id = string.IsNullOrWhiteSpace(id) ? Guid.NewGuid().ToString() : id.Trim();
             Prominence = prominence;
@@ -48,12 +54,18 @@ namespace SilverScreen.Domain.Movie
                 ? prominence == MovieRoleProminence.Lead ? "Lead Character" : "Supporting Character"
                 : characterName.Trim();
             Description = description?.Trim();
+            SourceScreenplayCharacterId = NormalizeOptional(sourceScreenplayCharacterId);
+            SourceScreenplayRoleCategoryId = NormalizeOptional(sourceScreenplayRoleCategoryId);
+            CharacterArchetypeId = NormalizeOptional(characterArchetypeId);
             AssignedActorId = null;
             CastingCompleted = false;
             CastingMinutesElapsed = 0;
             IsCastingActive = false;
             ArrivedAtStage = false;
         }
+
+        private static string NormalizeOptional(string value) =>
+            string.IsNullOrWhiteSpace(value) ? string.Empty : value.Trim();
 
         public void UpdateCharacter(string characterName, string description, MovieRoleProminence prominence)
         {
