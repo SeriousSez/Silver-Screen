@@ -8,31 +8,11 @@ using SilverScreen.Presentation.Employees;
 using SilverScreen.Presentation.Buildings;
 using SilverScreen.Presentation.SimulationTime;
 using SilverScreen.Presentation.Recruitment;
+using SilverScreen.Presentation.Movie;
 using UnityEngine;
 
 namespace SilverScreen.Presentation.Writing
 {
-    public sealed class ScriptOfficeStationLayout : MonoBehaviour
-    {
-        [SerializeField] private Transform _entrance;
-        [SerializeField] private List<Transform> _stations = new List<Transform>();
-        public Transform Entrance => _entrance;
-        public int Capacity => _stations.Count;
-
-        public bool TryGetStation(int index, out Vector3 position)
-        {
-            if (index >= 0 && index < _stations.Count && _stations[index] != null)
-            { position = _stations[index].position; return true; }
-            position = default; return false;
-        }
-
-        public void Configure(Transform entrance, IEnumerable<Transform> stations)
-        {
-            _entrance = entrance; _stations.Clear();
-            if (stations != null) _stations.AddRange(stations);
-        }
-    }
-
     public sealed class ScreenplayWritingWorldRouter : MonoBehaviour, IScreenplayWritingWorldRouter
     {
         private StudioEmployeeManager _employees;
@@ -41,6 +21,12 @@ namespace SilverScreen.Presentation.Writing
 
         public void Initialize(StudioEmployeeManager employees, ScriptOfficeStationLayout office)
         { _employees = employees; _office = office; }
+
+        public bool TryReserveWritingStation(Employee writer, out int stationIndex)
+        {
+            if (writer == null || _office == null) { stationIndex = -1; return false; }
+            return _office.TryReserve(writer.Id, out stationIndex);
+        }
 
         public WritingRouteResult SendToScriptOffice(Employee writer, EmployeeIntent intent, Action onArrival) =>
             Route(writer, _office != null ? _office.Entrance : null, intent, onArrival, true);
@@ -54,6 +40,7 @@ namespace SilverScreen.Presentation.Writing
 
         public void ReleaseWriter(Employee writer)
         {
+            if (writer != null) _office?.Release(writer.Id);
             var agent = _employees != null ? _employees.GetAgent(writer) : null;
             agent?.ClearTaskDestination();
         }
@@ -76,6 +63,8 @@ namespace SilverScreen.Presentation.Writing
         private StudioEmployeeManager _employees;
         private SimulationTimeDriver _time;
         public ScreenplayWritingCoordinator Coordinator { get; private set; }
+        public StoryIdeaDevelopmentCoordinator IdeaCoordinator { get; private set; }
+        private AutonomousWriterIdeaCoordinator _autonomousIdeas;
 
         private void Awake()
         {
@@ -87,9 +76,24 @@ namespace SilverScreen.Presentation.Writing
             world.Initialize(_employees, office);
             Coordinator = new ScreenplayWritingCoordinator(_employees.AllEmployees, _time.TimeService, world,
                 new ScreenplayTitleGenerator(new SeededScreenplayTitleRandomSource(1930)));
+            var genreIds = new List<string>();
+            var movieDriver = FindAnyObjectByType<MovieProductionDriver>();
+            var genres = movieDriver?.ProductionService?.AvailableGenres;
+            if (genres != null) foreach (var genre in genres) if (genre != null && !string.IsNullOrWhiteSpace(genre.Id)) genreIds.Add(genre.Id);
+            if (genreIds.Count == 0) genreIds.AddRange(new[] { "drama", "comedy", "action", "romance", "thriller", "horror" });
+            IdeaCoordinator = new StoryIdeaDevelopmentCoordinator(_employees.AllEmployees, _time.TimeService, world,
+                new StoryIdeaGenerator(new SeededScreenplayTitleRandomSource(1931),
+                    new ScreenplayTitleGenerator(new SeededScreenplayTitleRandomSource(1932)), genreIds));
+            _autonomousIdeas = new AutonomousWriterIdeaCoordinator(_employees.AllEmployees, _time.TimeService,
+                IdeaCoordinator, new SeededScreenplayTitleRandomSource(1933));
         }
 
-        private void OnDestroy() => Coordinator?.Dispose();
+        private void OnDestroy()
+        {
+            _autonomousIdeas?.Dispose();
+            Coordinator?.Dispose();
+            IdeaCoordinator?.Dispose();
+        }
 
         private static ScriptOfficeStationLayout CreatePrototypeOffice()
         {
