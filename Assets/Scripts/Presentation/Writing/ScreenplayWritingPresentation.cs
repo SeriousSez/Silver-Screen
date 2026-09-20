@@ -67,7 +67,8 @@ namespace SilverScreen.Presentation.Writing
         public StoryIdeaDevelopmentCoordinator IdeaCoordinator { get; private set; }
         public IMovieProductionService MovieProductionService { get; private set; }
         public ISetDefinitionCatalog KnownSetDefinitions { get; private set; }
-        public IStudioFilmingCapabilities FilmingCapabilities { get; private set; }
+        public StudioFilmingCapabilities FilmingCapabilities { get; private set; }
+        public SpecializedSetConstructionService FacilityConstruction { get; private set; }
         private AutonomousWriterIdeaCoordinator _autonomousIdeas;
 
         private void Awake()
@@ -80,6 +81,8 @@ namespace SilverScreen.Presentation.Writing
             world.Initialize(_employees, office);
             KnownSetDefinitions = SetDefinitionCatalog.CreatePrototype();
             FilmingCapabilities = StudioFilmingCapabilities.CreateStarterStudio(KnownSetDefinitions);
+            FacilityConstruction = new SpecializedSetConstructionService(
+                FilmingCapabilities, SpecializedSetFacilityDefinition.CreatePrototypeDefinitions());
             Coordinator = new ScreenplayWritingCoordinator(_employees.AllEmployees, _time.TimeService, world,
                 new ScreenplayTitleGenerator(new SeededScreenplayTitleRandomSource(1930)),
                 new ScreenplayContentGenerator(new SeededScreenplayTitleRandomSource(1934), FilmingCapabilities),

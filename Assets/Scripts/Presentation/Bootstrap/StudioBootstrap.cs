@@ -106,10 +106,11 @@ namespace SilverScreen.Presentation.Bootstrap
             {
                 gameObject.AddComponent<RecruitmentDriver>();
             }
-            if (GetComponent<ScreenplayWritingDriver>() == null)
-            {
-                gameObject.AddComponent<ScreenplayWritingDriver>();
-            }
+            var writingDriver = GetComponent<ScreenplayWritingDriver>();
+            if (writingDriver == null) writingDriver = gameObject.AddComponent<ScreenplayWritingDriver>();
+            var setConstruction = GetComponent<SpecializedSetConstructionDriver>();
+            if (setConstruction == null) setConstruction = gameObject.AddComponent<SpecializedSetConstructionDriver>();
+            setConstruction.Initialize(writingDriver);
         }
 
         private void InitializeStudioIdentityPresentation()

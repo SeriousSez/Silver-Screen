@@ -6,6 +6,7 @@ using SilverScreen.Domain.Time;
 using SilverScreen.Presentation.Employees;
 using SilverScreen.Presentation.Finance;
 using SilverScreen.Presentation.Movie;
+using SilverScreen.Presentation.Buildings;
 using SilverScreen.Presentation.SimulationTime;
 using TMPro;
 using UnityEngine;
@@ -31,19 +32,25 @@ namespace SilverScreen.Presentation.UI
         private TextMeshProUGUI _renameStatusText;
         private TMP_InputField _renameInput;
         private StudioIdentity _studioIdentity;
+        private SpecializedSetConstructionDriver _setConstructionDriver;
+        private Button _streetSetButton;
+        private Button _restaurantSetButton;
+        private TextMeshProUGUI _setStatusText;
 
         public void Initialize(
             SimulationTimeDriver timeDriver,
             StudioEconomyDriver economyDriver,
             StudioEmployeeManager employeeManager,
             MovieProductionDriver productionDriver,
-            StudioIdentity studioIdentity)
+            StudioIdentity studioIdentity,
+            SpecializedSetConstructionDriver setConstructionDriver)
         {
             _timeDriver = timeDriver;
             _economyDriver = economyDriver;
             _employeeManager = employeeManager;
             _productionDriver = productionDriver;
             _studioIdentity = studioIdentity;
+            _setConstructionDriver = setConstructionDriver;
             Build();
             Bind();
             Refresh();
@@ -76,6 +83,11 @@ namespace SilverScreen.Presentation.UI
             {
                 _studioIdentity.OnNameChanged += HandleStudioNameChanged;
             }
+            if (_setConstructionDriver?.Service != null)
+            {
+                _setConstructionDriver.Service.FacilityConstructed += HandleFacilityChanged;
+                _setConstructionDriver.Service.FacilityRemoved += HandleFacilityChanged;
+            }
         }
 
         private void OnDestroy()
@@ -103,6 +115,11 @@ namespace SilverScreen.Presentation.UI
             if (_studioIdentity != null)
             {
                 _studioIdentity.OnNameChanged -= HandleStudioNameChanged;
+            }
+            if (_setConstructionDriver?.Service != null)
+            {
+                _setConstructionDriver.Service.FacilityConstructed -= HandleFacilityChanged;
+                _setConstructionDriver.Service.FacilityRemoved -= HandleFacilityChanged;
             }
 
             foreach (var project in _observedProjects)
@@ -155,16 +172,48 @@ namespace SilverScreen.Presentation.UI
             _theatersText = CreateMetric("Theaters", "IN THEATERS", 0, 1);
             _boxOfficeText = CreateMetric("BoxOffice", "LIFETIME BOX OFFICE", 1, 1);
             _operatingCostText = CreateMetric("Costs", "MONTHLY OPERATING COST", 2, 1);
+            BuildSetConstructionControls();
             BuildRenameControls();
         }
+
+        private void BuildSetConstructionControls()
+        {
+            var root = ManagementUIFactory.Rect("SpecializedSets", transform,
+                new Vector2(.16f, .16f), new Vector2(.84f, .22f), Vector2.zero, Vector2.zero);
+            var layout = root.gameObject.AddComponent<HorizontalLayoutGroup>();
+            layout.spacing = 8f;
+            layout.childControlHeight = true;
+            layout.childControlWidth = true;
+            layout.childForceExpandWidth = true;
+            layout.childForceExpandHeight = true;
+            _streetSetButton = ManagementUIFactory.Button("BuildStreetSet", root, "BUILD STREET SET",
+                ManagementUIFactory.PanelRaised, Color.white);
+            _streetSetButton.onClick.AddListener(() => BuildSet(SpecializedSetFacilityIds.StreetSet));
+            _restaurantSetButton = ManagementUIFactory.Button("BuildRestaurantCafeSet", root,
+                "BUILD RESTAURANT / CAFÉ SET", ManagementUIFactory.PanelRaised, Color.white);
+            _restaurantSetButton.onClick.AddListener(() => BuildSet(SpecializedSetFacilityIds.RestaurantCafeSet));
+
+            var status = ManagementUIFactory.Rect("SetStatus", transform,
+                new Vector2(.16f, .125f), new Vector2(.84f, .155f), Vector2.zero, Vector2.zero);
+            _setStatusText = ManagementUIFactory.Text("Text", status, string.Empty, 11f,
+                TextAlignmentOptions.Center, ManagementUIFactory.Muted);
+        }
+
+        private void BuildSet(string definitionId)
+        {
+            if (_setConstructionDriver == null || !_setConstructionDriver.TryConstruct(definitionId)) return;
+            Refresh();
+        }
+
+        private void HandleFacilityChanged(SpecializedSetFacility facility) => Refresh();
 
         private void BuildRenameControls()
         {
             var root = ManagementUIFactory.Rect(
                 "RenameStudio",
                 transform,
-                new Vector2(0.22f, 0.06f),
-                new Vector2(0.78f, 0.15f),
+                new Vector2(0.22f, 0.045f),
+                new Vector2(0.78f, 0.115f),
                 Vector2.zero,
                 Vector2.zero);
             var layout = root.gameObject.AddComponent<HorizontalLayoutGroup>();
@@ -195,8 +244,8 @@ namespace SilverScreen.Presentation.UI
             var statusRect = ManagementUIFactory.Rect(
                 "RenameStatus",
                 transform,
-                new Vector2(0.22f, 0.015f),
-                new Vector2(0.78f, 0.055f),
+                new Vector2(0.22f, 0.005f),
+                new Vector2(0.78f, 0.04f),
                 Vector2.zero,
                 Vector2.zero);
             _renameStatusText = ManagementUIFactory.Text(
@@ -230,7 +279,7 @@ namespace SilverScreen.Presentation.UI
             const float gap = 0.025f;
             float minX = 0.07f + column * (width + gap);
             float maxX = minX + width;
-            float maxY = row == 0 ? 0.69f : 0.39f;
+            float maxY = row == 0 ? 0.69f : 0.43f;
             float minY = maxY - 0.20f;
 
             var rect = ManagementUIFactory.Rect(
@@ -339,6 +388,13 @@ namespace SilverScreen.Presentation.UI
 
             if (_theatersText != null) _theatersText.text = inTheaters.ToString();
             if (_boxOfficeText != null) _boxOfficeText.text = StudioFinanceUI.FormatMoney(lifetimeBoxOffice);
+            var construction = _setConstructionDriver?.Service;
+            bool streetBuilt = construction != null && construction.HasDefinitionConstructed(SpecializedSetFacilityIds.StreetSet);
+            bool restaurantBuilt = construction != null && construction.HasDefinitionConstructed(SpecializedSetFacilityIds.RestaurantCafeSet);
+            if (_streetSetButton != null) _streetSetButton.interactable = construction != null && !streetBuilt;
+            if (_restaurantSetButton != null) _restaurantSetButton.interactable = construction != null && !restaurantBuilt;
+            if (_setStatusText != null)
+                _setStatusText.text = $"FILMING SETS  •  Street: {(streetBuilt ? "AVAILABLE" : "NOT BUILT")}  •  Restaurant / Café: {(restaurantBuilt ? "AVAILABLE" : "NOT BUILT")}";
         }
     }
 }
