@@ -43,10 +43,11 @@ namespace SilverScreen.Domain
     {
         Employee ResolveEmployee(string employeeId, Employee compatibilityReference);
         StudioRouteResult SendEmployeeToBuilding(Employee employee, BuildingType buildingType, EmployeeIntent intent, Action onArrival);
-        StudioRouteResult SendEmployeeToProductionStation(Employee employee, BuildingType buildingType, ProductionStationType stationType, EmployeeIntent intent, Action onArrival);
-        StudioRouteResult SendEmployeeToSceneMark(Employee employee, BuildingType buildingType, ActorSceneMarkType markType, EmployeeIntent intent, Action onArrival);
-        StudioRouteResult StartSlateSequence(BuildingType buildingType, Action onCompleted, Action<StudioRouteResult> onFailed);
-        StudioRouteResult StartBeatSequence(Movie.MovieProject movie, Movie.MovieScene scene, Movie.MovieTake take, Action onCompleted, Action<StudioRouteResult> onFailed);
+        StudioRouteResult SendEmployeeToFacility(Employee employee, string facilityId, EmployeeIntent intent, Action onArrival);
+        StudioRouteResult SendEmployeeToProductionStation(Employee employee, string facilityId, ProductionStationType stationType, EmployeeIntent intent, Action onArrival);
+        StudioRouteResult SendEmployeeToSceneMark(Employee employee, string facilityId, ActorSceneMarkType markType, EmployeeIntent intent, Action onArrival);
+        StudioRouteResult StartSlateSequence(string facilityId, Action onCompleted, Action<StudioRouteResult> onFailed);
+        StudioRouteResult StartBeatSequence(string facilityId, Movie.MovieProject movie, Movie.MovieScene scene, Movie.MovieTake take, Action onCompleted, Action<StudioRouteResult> onFailed);
         void ReleaseEmployee(Employee employee);
     }
 }

@@ -2,11 +2,65 @@ using System.Linq;
 using NUnit.Framework;
 using SilverScreen.Domain;
 using SilverScreen.Domain.Writing;
+using SilverScreen.Domain.Movie;
 
 namespace SilverScreen.Tests.EditMode
 {
     public sealed class SpecializedSetConstructionTests
     {
+        [TestCase(SetDefinitionIds.GenericInterior)]
+        [TestCase(SetDefinitionIds.Office)]
+        [TestCase(SetDefinitionIds.LivingRoom)]
+        [TestCase(SetDefinitionIds.Bedroom)]
+        public void StarterRequirements_ResolveToStageOne(string requirementId)
+        {
+            var resolver = new OwnedStudioProductionEnvironmentResolver(
+                StudioFilmingCapabilities.CreateStarterStudio(SetDefinitionCatalog.CreatePrototype()));
+
+            ProductionEnvironmentResolution result = resolver.ResolveOwnedFacility(requirementId);
+
+            Assert.That(result.FacilityId, Is.EqualTo(StudioFilmingCapabilities.StarterStageId));
+            Assert.That(result.RequiredSetDefinitionId, Is.EqualTo(requirementId));
+        }
+
+        [Test]
+        public void SpecializedRequirements_ResolveToConstructedFacilityInstances()
+        {
+            CreateServices(out var capabilities, out var construction);
+            construction.Construct(SpecializedSetFacilityIds.StreetSet, "street-instance");
+            construction.Construct(SpecializedSetFacilityIds.RestaurantCafeSet, "cafe-instance");
+            var resolver = new OwnedStudioProductionEnvironmentResolver(capabilities);
+
+            Assert.That(resolver.ResolveOwnedFacility(SetDefinitionIds.Street).FacilityId,
+                Is.EqualTo("street-instance"));
+            Assert.That(resolver.ResolveOwnedFacility(SetDefinitionIds.RestaurantCafe).FacilityId,
+                Is.EqualTo("cafe-instance"));
+        }
+
+        [Test]
+        public void Resolver_ReturnsNullWhenNoOwnedFacilityCanSatisfyRequirement()
+        {
+            var resolver = new OwnedStudioProductionEnvironmentResolver(
+                StudioFilmingCapabilities.CreateStarterStudio(SetDefinitionCatalog.CreatePrototype()));
+
+            Assert.That(resolver.ResolveOwnedFacility("courtroom"), Is.Null);
+        }
+
+        [Test]
+        public void Resolver_UsesStableFacilityRegistrationOrderAndSurvivesDuplicateRemoval()
+        {
+            CreateServices(out var capabilities, out var construction);
+            construction.Construct(SpecializedSetFacilityIds.StreetSet, "street-first");
+            construction.Construct(SpecializedSetFacilityIds.StreetSet, "street-second");
+            var resolver = new OwnedStudioProductionEnvironmentResolver(capabilities);
+
+            Assert.That(resolver.ResolveOwnedFacility(SetDefinitionIds.Street).FacilityId,
+                Is.EqualTo("street-first"));
+            construction.Remove("street-first");
+            Assert.That(resolver.ResolveOwnedFacility(SetDefinitionIds.Street).FacilityId,
+                Is.EqualTo("street-second"));
+        }
+
         [Test]
         public void StarterStage_RetainsExactlyItsFourOriginalCapabilities()
         {

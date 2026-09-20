@@ -8,9 +8,11 @@ namespace SilverScreen.Domain
         private readonly List<string> _supportedSetDefinitionIds = new List<string>();
 
         public string FacilityId { get; }
+        public string DisplayName { get; }
         public IReadOnlyList<string> SupportedSetDefinitionIds => _supportedSetDefinitionIds;
 
-        public FilmingFacilityCapabilities(string facilityId, IEnumerable<string> supportedSetDefinitionIds)
+        public FilmingFacilityCapabilities(string facilityId, IEnumerable<string> supportedSetDefinitionIds,
+            string displayName = null)
         {
             if (string.IsNullOrWhiteSpace(facilityId))
                 throw new ArgumentException("A filming facility requires a stable ID.", nameof(facilityId));
@@ -18,6 +20,7 @@ namespace SilverScreen.Domain
                 throw new ArgumentNullException(nameof(supportedSetDefinitionIds));
 
             FacilityId = facilityId.Trim();
+            DisplayName = string.IsNullOrWhiteSpace(displayName) ? FacilityId : displayName.Trim();
             foreach (string setDefinitionId in supportedSetDefinitionIds)
             {
                 if (string.IsNullOrWhiteSpace(setDefinitionId)) continue;
@@ -101,7 +104,7 @@ namespace SilverScreen.Domain
                     SetDefinitionIds.Office,
                     SetDefinitionIds.LivingRoom,
                     SetDefinitionIds.Bedroom
-                })
+                }, "Sound Stage 1")
             });
     }
 }

@@ -90,6 +90,8 @@ namespace SilverScreen.Presentation.Writing
             var genreIds = new List<string>();
             var movieDriver = FindAnyObjectByType<MovieProductionDriver>();
             MovieProductionService = movieDriver?.ProductionService;
+            movieDriver?.Coordinator?.SetEnvironmentResolver(
+                new OwnedStudioProductionEnvironmentResolver(FilmingCapabilities));
             var genres = MovieProductionService?.AvailableGenres;
             if (genres != null) foreach (var genre in genres) if (genre != null && !string.IsNullOrWhiteSpace(genre.Id)) genreIds.Add(genre.Id);
             if (genreIds.Count == 0) genreIds.AddRange(new[] { "drama", "comedy", "action", "romance", "thriller", "horror" });

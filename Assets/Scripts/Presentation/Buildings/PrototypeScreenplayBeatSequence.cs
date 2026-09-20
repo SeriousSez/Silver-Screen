@@ -26,6 +26,7 @@ namespace SilverScreen.Presentation.Buildings
         private SetBlockingPointLayout _blockingPointLayout;
         private BeatPerformanceGenerator _performanceGenerator;
         private PrototypeProductionCamera _productionCamera;
+        private string _facilityId;
         private MovieProject _activeMovie;
         private MovieScene _activeScene;
         private MovieTake _activeTake;
@@ -51,13 +52,15 @@ namespace SilverScreen.Presentation.Buildings
             ISimulationTimeService timeService,
             SetBlockingPointLayout blockingPointLayout,
             BeatPerformanceGenerator performanceGenerator,
-            PrototypeProductionCamera productionCamera)
+            PrototypeProductionCamera productionCamera,
+            string facilityId)
         {
             _employeeManager = employeeManager;
             _timeService = timeService;
             _blockingPointLayout = blockingPointLayout;
             _performanceGenerator = performanceGenerator;
             _productionCamera = productionCamera;
+            _facilityId = facilityId;
         }
 
         public StudioRouteResult TryBegin(
@@ -188,7 +191,7 @@ namespace SilverScreen.Presentation.Buildings
             var intent = new EmployeeIntent(
                 EmployeeIntentPurpose.PerformTask,
                 $"Moving to blocking point — {beat.BlockingTargetId}",
-                $"SoundStage:{beat.BlockingTargetId}");
+                $"{_facilityId}:{beat.BlockingTargetId}");
             bool started = performer.TryAssignTaskDestination(
                 destination,
                 intent,
@@ -220,7 +223,7 @@ namespace SilverScreen.Presentation.Buildings
             performer.Employee.SetIntent(new EmployeeIntent(
                 EmployeeIntentPurpose.PerformTask,
                 "Performing screenplay action",
-                "SoundStage"));
+                _facilityId));
             StudioRouteResult result = BeginBeatPresentation(performer, beat, performance, target);
             if (result != StudioRouteResult.Started)
                 Fail(result);
@@ -290,7 +293,7 @@ namespace SilverScreen.Presentation.Buildings
             performer.Employee.SetIntent(new EmployeeIntent(
                 EmployeeIntentPurpose.PerformTask,
                 "Performing screenplay action",
-                "SoundStage"));
+                _facilityId));
             StudioRouteResult result = BeginBeatPresentation(performer, beat, performance, null);
             if (result != StudioRouteResult.Started)
                 Fail(result);

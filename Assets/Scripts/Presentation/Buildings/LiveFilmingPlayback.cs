@@ -52,6 +52,7 @@ namespace SilverScreen.Presentation.Buildings
         private ActorSceneMarkLayout _sceneMarks;
         private SetBlockingPointLayout _blockingPoints;
         private PrototypeProductionCamera _productionCamera;
+        private string _facilityId;
         private MovieProject _movie;
         private MovieScene _scene;
         private MovieTake _take;
@@ -73,13 +74,15 @@ namespace SilverScreen.Presentation.Buildings
             StudioEmployeeManager employeeManager,
             ActorSceneMarkLayout sceneMarks,
             SetBlockingPointLayout blockingPoints,
-            PrototypeProductionCamera productionCamera)
+            PrototypeProductionCamera productionCamera,
+            string facilityId)
         {
             _simulationTime = simulationTime;
             _employeeManager = employeeManager;
             _sceneMarks = sceneMarks;
             _blockingPoints = blockingPoints;
             _productionCamera = productionCamera;
+            _facilityId = facilityId;
         }
 
         public void BindProductionService(IMovieProductionService productionService)
@@ -95,6 +98,9 @@ namespace SilverScreen.Presentation.Buildings
             {
                 return false;
             }
+            if (_productionService.ActiveEnvironment == null ||
+                !string.Equals(_productionService.ActiveEnvironment.FacilityId, _facilityId, StringComparison.Ordinal))
+                return false;
 
             _movie = _productionService.ActiveMovie;
             _scene = _productionService.ActiveScene;
@@ -410,6 +416,8 @@ namespace SilverScreen.Presentation.Buildings
                    _productionService.ActiveMovie == _movie &&
                    _productionService.ActiveScene == _scene &&
                    _productionService.ActiveTake == _take &&
+                   _productionService.ActiveEnvironment != null &&
+                   string.Equals(_productionService.ActiveEnvironment.FacilityId, _facilityId, StringComparison.Ordinal) &&
                    _take.Status == MovieTakeStatus.Recording;
         }
 

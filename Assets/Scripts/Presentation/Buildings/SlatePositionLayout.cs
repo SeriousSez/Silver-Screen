@@ -32,10 +32,10 @@ namespace SilverScreen.Presentation.Buildings
             return false;
         }
 
-        public void EnsurePrototypePositions()
+        public void EnsurePrototypePositions(float filmingZ = -9.8f, float stagingZ = -8.4f)
         {
-            AddPrototypeIfMissing(SlatePositionType.SlateStaging, new Vector3(3.8f, 0.05f, -8.4f));
-            AddPrototypeIfMissing(SlatePositionType.SlateMark, new Vector3(0f, 0.05f, -9.8f));
+            AddPrototypeIfMissing(SlatePositionType.SlateStaging, new Vector3(3.8f, 0.05f, stagingZ));
+            AddPrototypeIfMissing(SlatePositionType.SlateMark, new Vector3(0f, 0.05f, filmingZ));
         }
 
         private void AddPrototypeIfMissing(SlatePositionType positionType, Vector3 localPosition)

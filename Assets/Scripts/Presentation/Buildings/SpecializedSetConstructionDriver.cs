@@ -21,12 +21,14 @@ namespace SilverScreen.Presentation.Buildings
     {
         private readonly Dictionary<string, GameObject> _views = new Dictionary<string, GameObject>();
         private SpecializedSetConstructionService _service;
+        private ScreenplayWritingDriver _writingDriver;
 
         public SpecializedSetConstructionService Service => _service;
 
         public void Initialize(ScreenplayWritingDriver writingDriver)
         {
             if (_service != null || writingDriver?.FacilityConstruction == null) return;
+            _writingDriver = writingDriver;
             _service = writingDriver.FacilityConstruction;
             _service.FacilityConstructed += HandleConstructed;
             _service.FacilityRemoved += HandleRemoved;
@@ -50,13 +52,17 @@ namespace SilverScreen.Presentation.Buildings
                 ? CreateStreetSet(facility)
                 : CreateRestaurantCafeSet(facility);
             _views.Add(facility.Id, root);
+            FindAnyObjectByType<StudioWorldRouter>()?.RefreshBuildings();
+            _writingDriver?.MovieProductionService?.RetryUnresolvedEnvironment();
         }
 
         private void HandleRemoved(SpecializedSetFacility facility)
         {
             if (facility == null || !_views.TryGetValue(facility.Id, out GameObject view)) return;
+            _writingDriver?.MovieProductionService?.HandleOwnedFacilityRemoved(facility.Id);
             _views.Remove(facility.Id);
             if (view != null) Destroy(view);
+            FindAnyObjectByType<StudioWorldRouter>()?.RefreshBuildings();
         }
 
         private static GameObject CreateStreetSet(SpecializedSetFacility facility)

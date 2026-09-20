@@ -115,7 +115,7 @@ namespace SilverScreen.Presentation.Selection
             _lastBuildingClickTime = now;
             Deselect();
 
-            if (isDoubleClick && building.BuildingType == BuildingType.SoundStage)
+            if (isDoubleClick)
             {
                 building.GetComponent<LiveFilmingPlayback>()?.TryEnter();
                 _lastClickedBuilding = null;
