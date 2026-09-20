@@ -36,6 +36,11 @@ namespace SilverScreen.Presentation.UI
                 _driver.Coordinator.ScreenplayAdded -= HandleScreenplayChanged;
                 _driver.Coordinator.ScreenplayChanged -= HandleScreenplayChanged;
             }
+            if (_driver?.IdeaCoordinator != null)
+            {
+                _driver.IdeaCoordinator.IdeaAdded -= HandleIdeaChanged;
+                _driver.IdeaCoordinator.IdeaChanged -= HandleIdeaChanged;
+            }
         }
 
         private void Build()
@@ -71,6 +76,11 @@ namespace SilverScreen.Presentation.UI
                 _driver.Coordinator.ScreenplayAdded += HandleScreenplayChanged;
                 _driver.Coordinator.ScreenplayChanged += HandleScreenplayChanged;
             }
+            if (_driver?.IdeaCoordinator != null)
+            {
+                _driver.IdeaCoordinator.IdeaAdded += HandleIdeaChanged;
+                _driver.IdeaCoordinator.IdeaChanged += HandleIdeaChanged;
+            }
         }
 
         public void Refresh()
@@ -96,6 +106,10 @@ namespace SilverScreen.Presentation.UI
             var library = _driver?.Coordinator?.Library;
             if (library == null || library.Count == 0) AddLabel(_screenplayContent, "No screenplays in development.");
             else foreach (var screenplay in library) AddScreenplay(screenplay);
+            AddLabel(_screenplayContent, "IDEA LIBRARY");
+            var ideas = _driver?.IdeaCoordinator?.Library;
+            if (ideas == null || ideas.Count == 0) AddLabel(_screenplayContent, "No ideas developed yet.");
+            else foreach (var idea in ideas) AddIdea(idea);
         }
 
         private Toggle CreateToggle(Transform parent, string label, string writerId)
@@ -155,6 +169,35 @@ namespace SilverScreen.Presentation.UI
             if (screenplay != null) { _selectedWriterIds.Clear(); Refresh(); }
         }
 
+        private void AddIdea(StoryIdea idea)
+        {
+            bool complete = idea.State == IdeaDevelopmentState.Completed;
+            var row = ManagementUIFactory.Rect("Idea_" + idea.Id, _screenplayContent, Vector2.zero, Vector2.one, Vector2.zero, new Vector2(0f, complete ? 176f : 86f));
+            row.gameObject.AddComponent<LayoutElement>().preferredHeight = complete ? 176f : 86f;
+            ManagementUIFactory.Background(row, ManagementUIFactory.Panel);
+            string creator = FindEmployee(idea.CreatorWriterId)?.Name ?? idea.CreatorWriterId;
+            string value;
+            if (!complete)
+            {
+                value = $"<b>{creator}</b>\n{(idea.State == IdeaDevelopmentState.Traveling ? "Travelling to develop an idea..." : "Developing an idea...")}\n{idea.Progress:P0}";
+            }
+            else
+            {
+                var genres = new List<string>(); foreach (string genre in idea.GenreIds) genres.Add(ToDisplayName(genre));
+                value = $"<b>{idea.Title}</b>\n{string.Join(" / ", genres)}\nSetting: {DisplayId(idea.SettingId)}\nProtagonist: {DisplayId(idea.ProtagonistArchetypeId)}\nAntagonist: {(string.IsNullOrEmpty(idea.AntagonistArchetypeId) ? "None" : DisplayId(idea.AntagonistArchetypeId))}\nTheme: {DisplayId(idea.ThemeId)}\nCreated by: {creator}";
+            }
+            var text = ManagementUIFactory.Text("Text", row, value, 13f, TextAlignmentOptions.MidlineLeft, Color.white);
+            ManagementUIFactory.SetOffsets(text.rectTransform, 12f, 5f, 12f, 5f);
+        }
+
+        private static string DisplayId(string id)
+        {
+            if (string.IsNullOrWhiteSpace(id)) return "None";
+            string[] words = id.Split('-');
+            for (int i = 0; i < words.Length; i++) if (words[i].Length > 0) words[i] = char.ToUpperInvariant(words[i][0]) + words[i].Substring(1);
+            return string.Join(" ", words);
+        }
+
         private void CycleGenre()
         {
             _genreIndex = (_genreIndex + 1) % GenreIds.Length;
@@ -173,6 +216,7 @@ namespace SilverScreen.Presentation.UI
         { if (_employees != null) foreach (var employee in _employees.AllEmployees) if (employee.Id == id) return employee; return null; }
         private void HandleEmployeeAdded(Employee unused) => Refresh();
         private void HandleScreenplayChanged(ScreenplayProject unused) => Refresh();
+        private void HandleIdeaChanged(StoryIdea unused) => Refresh();
         private static void AddLabel(Transform parent, string value)
         { var row = ManagementUIFactory.Rect("Empty", parent, Vector2.zero, Vector2.one, Vector2.zero, new Vector2(0f, 44f)); row.gameObject.AddComponent<LayoutElement>().preferredHeight = 44f; ManagementUIFactory.Text("Text", row, value, 14f, TextAlignmentOptions.MidlineLeft, ManagementUIFactory.Muted); }
         private static void Clear(Transform parent) { for (int i = parent.childCount - 1; i >= 0; i--) Destroy(parent.GetChild(i).gameObject); }

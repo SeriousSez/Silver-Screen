@@ -62,6 +62,7 @@ namespace SilverScreen.Domain.Writing
     public interface IScreenplayWritingWorldRouter
     {
         int WritingStationCapacity { get; }
+        bool TryReserveWritingStation(Employee writer, out int stationIndex);
         WritingRouteResult SendToScriptOffice(Employee writer, EmployeeIntent intent, Action onArrival);
         WritingRouteResult SendToWritingStation(Employee writer, int stationIndex, EmployeeIntent intent, Action onArrival);
         void ReleaseWriter(Employee writer);
@@ -80,15 +81,7 @@ namespace SilverScreen.Domain.Writing
 
         public bool CanAssignWriter(string writerId)
         {
-            var writer = FindWriter(writerId);
-            bool hasNoConflictingIntent = writer != null &&
-                (writer.CurrentIntent == null ||
-                 writer.CurrentIntent.Purpose == EmployeeIntentPurpose.None ||
-                 writer.CurrentIntent.Purpose == EmployeeIntentPurpose.IdleWander);
-            return writer != null && hasNoConflictingIntent &&
-                   (writer.CurrentState == EmployeeState.Idle ||
-                    (writer.CurrentState == EmployeeState.Walking &&
-                     writer.CurrentIntent?.Purpose == EmployeeIntentPurpose.IdleWander));
+            return WriterAssignmentRules.CanAssign(FindWriter(writerId));
         }
 
         public ScreenplayWritingCoordinator(IReadOnlyList<Employee> employees, ISimulationTimeService time,
@@ -112,6 +105,15 @@ namespace SilverScreen.Domain.Writing
                 if (writer == null || !CanAssignWriter(id)) return null;
             }
 
+            var stations = new Dictionary<string, int>();
+            foreach (string id in ids)
+            {
+                var writer = FindWriter(id);
+                if (_world.TryReserveWritingStation(writer, out int station)) { stations[id] = station; continue; }
+                foreach (string reservedId in stations.Keys) _world.ReleaseWriter(FindWriter(reservedId));
+                return null;
+            }
+
             var existingTitles = new List<string>();
             foreach (var existing in _library) existingTitles.Add(existing.Title);
             string title = _titleGenerator.GenerateUnique(genreId, existingTitles);
@@ -120,7 +122,7 @@ namespace SilverScreen.Domain.Writing
             screenplay.Changed += HandleScreenplayChanged;
             _library.Add(screenplay);
             ScreenplayAdded?.Invoke(screenplay);
-            for (int i = 0; i < ids.Count; i++) RouteWriter(screenplay, ids[i], i);
+            for (int i = 0; i < ids.Count; i++) RouteWriter(screenplay, ids[i], stations[ids[i]]);
             return screenplay;
         }
 
@@ -201,7 +203,11 @@ namespace SilverScreen.Domain.Writing
         public void Dispose()
         {
             _time.OnMinutePassed -= HandleMinutePassed;
-            foreach (var screenplay in _library) screenplay.Changed -= HandleScreenplayChanged;
+            foreach (var screenplay in _library)
+            {
+                screenplay.Changed -= HandleScreenplayChanged;
+                if (screenplay.Status != ScreenplayStatus.Completed) ReleaseAll(screenplay);
+            }
         }
     }
 }

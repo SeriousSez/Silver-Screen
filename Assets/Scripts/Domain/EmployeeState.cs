@@ -11,7 +11,8 @@ namespace SilverScreen.Domain
         Eating,
         Socializing,
         Resting,
-        Writing
+        Writing,
+        DevelopingIdea
     }
 
     public enum EmployeeIntentPurpose
@@ -24,7 +25,8 @@ namespace SilverScreen.Domain
         PerformTask,
         ReportToScriptOffice,
         MovingToWritingStation,
-        WriteScreenplay
+        WriteScreenplay,
+        DevelopIdea
     }
 
     public class EmployeeIntent
