@@ -6,6 +6,7 @@ namespace SilverScreen.Domain.Writing
     public enum ScreenplayStatus { Assigned, Writing, Completed }
     public enum WriterParticipationStatus { Assigned, Traveling, Writing, Unavailable, Credited }
     public enum ScreenplayContentStatus { Pending, Ready, Failed }
+    public enum ScreenplayEvaluationStatus { Pending, Ready, Failed }
     public enum ScreenplayAcquisitionSource
     {
         Commissioned = 0,
@@ -60,6 +61,8 @@ namespace SilverScreen.Domain.Writing
         public ScreenplayContentStatus ContentStatus { get; private set; }
         public IReadOnlyList<ScreenplayCharacter> Characters => _characters;
         public IReadOnlyList<ScreenplayScene> Scenes => _scenes;
+        public ScreenplayEvaluationStatus EvaluationStatus { get; private set; }
+        public ScreenplayEvaluation Evaluation { get; private set; }
         public event Action<ScreenplayProject> Changed;
 
         public ScreenplayProject(string id, string title, IEnumerable<string> writerIds,
@@ -103,6 +106,7 @@ namespace SilverScreen.Domain.Writing
             if (_contributors.Count == 0) throw new ArgumentException("A screenplay requires at least one writer.", nameof(writerIds));
             Status = ScreenplayStatus.Assigned;
             ContentStatus = ScreenplayContentStatus.Pending;
+            EvaluationStatus = ScreenplayEvaluationStatus.Pending;
         }
 
         public bool TryAddGenre(string genreId)
@@ -215,6 +219,26 @@ namespace SilverScreen.Domain.Writing
             if (Status != ScreenplayStatus.Completed || ContentStatus != ScreenplayContentStatus.Pending)
                 return false;
             ContentStatus = ScreenplayContentStatus.Failed;
+            Changed?.Invoke(this);
+            return true;
+        }
+
+        public bool TrySetEvaluation(ScreenplayEvaluation evaluation)
+        {
+            if (Status != ScreenplayStatus.Completed || ContentStatus != ScreenplayContentStatus.Ready ||
+                EvaluationStatus != ScreenplayEvaluationStatus.Pending || evaluation == null)
+                return false;
+            Evaluation = evaluation;
+            EvaluationStatus = ScreenplayEvaluationStatus.Ready;
+            Changed?.Invoke(this);
+            return true;
+        }
+
+        public bool MarkEvaluationFailed()
+        {
+            if (Status != ScreenplayStatus.Completed || EvaluationStatus != ScreenplayEvaluationStatus.Pending)
+                return false;
+            EvaluationStatus = ScreenplayEvaluationStatus.Failed;
             Changed?.Invoke(this);
             return true;
         }
