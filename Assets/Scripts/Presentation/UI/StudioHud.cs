@@ -6,6 +6,7 @@ using SilverScreen.Domain.Time;
 using SilverScreen.Presentation.Employees;
 using SilverScreen.Presentation.Finance;
 using SilverScreen.Presentation.Movie;
+using SilverScreen.Presentation.Buildings;
 using SilverScreen.Presentation.Selection;
 using SilverScreen.Presentation.SimulationTime;
 using TMPro;
@@ -38,6 +39,7 @@ namespace SilverScreen.Presentation.UI
         private GameObject _screenplaysRoot;
         private ScreenplayWritingUI _screenplayWritingUI;
         private ScreenplayWritingDriver _writingDriver;
+        private SpecializedSetConstructionDriver _setConstructionDriver;
         private TextMeshProUGUI _dateText;
         private TextMeshProUGUI _cashText;
         private TextMeshProUGUI _studioNameText;
@@ -120,6 +122,7 @@ namespace SilverScreen.Presentation.UI
             _creationDialog = FindAnyObjectByType<MovieCreationDialogUI>(FindObjectsInactive.Include);
             _legacyClockUI = FindAnyObjectByType<SimulationClockUI>(FindObjectsInactive.Include);
             _writingDriver = FindAnyObjectByType<ScreenplayWritingDriver>();
+            _setConstructionDriver = FindAnyObjectByType<SpecializedSetConstructionDriver>();
         }
 
         private void Build()
@@ -260,7 +263,8 @@ namespace SilverScreen.Presentation.UI
 
             _studioRoot = CreatePanelRoot("StudioPanel", content);
             _studioOverview = _studioRoot.AddComponent<StudioOverviewUI>();
-            _studioOverview.Initialize(_timeDriver, _economyDriver, _employeeManager, _productionDriver, _studioIdentity);
+            _studioOverview.Initialize(_timeDriver, _economyDriver, _employeeManager, _productionDriver,
+                _studioIdentity, _setConstructionDriver);
 
             _productionsRoot = CreatePanelRoot("ProductionsPanel", content);
             _productionSlate = _productionsRoot.AddComponent<ProductionSlateUI>();
