@@ -32,11 +32,11 @@ namespace SilverScreen.Presentation.Buildings
             return false;
         }
 
-        public void EnsurePrototypeMarks()
+        public void EnsurePrototypeMarks(float filmingZ = -11f)
         {
-            AddPrototypeIfMissing(ActorSceneMarkType.ActorMarkA, new Vector3(-1.5f, 0.05f, -11f));
-            AddPrototypeIfMissing(ActorSceneMarkType.ActorMarkB, new Vector3(0f, 0.05f, -11f));
-            AddPrototypeIfMissing(ActorSceneMarkType.ActorMarkC, new Vector3(1.5f, 0.05f, -11f));
+            AddPrototypeIfMissing(ActorSceneMarkType.ActorMarkA, new Vector3(-1.5f, 0.05f, filmingZ));
+            AddPrototypeIfMissing(ActorSceneMarkType.ActorMarkB, new Vector3(0f, 0.05f, filmingZ));
+            AddPrototypeIfMissing(ActorSceneMarkType.ActorMarkC, new Vector3(1.5f, 0.05f, filmingZ));
         }
 
         private void AddPrototypeIfMissing(ActorSceneMarkType markType, Vector3 localPosition)

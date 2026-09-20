@@ -32,15 +32,15 @@ namespace SilverScreen.Presentation.Buildings
             return false;
         }
 
-        public void EnsurePrototypeStations()
+        public void EnsurePrototypeStations(float stationZ = -8.2f)
         {
-            AddPrototypeIfMissing(ProductionStationType.Director, new Vector3(-3f, 0.05f, -8.2f));
-            AddPrototypeIfMissing(ProductionStationType.ActorWaitingA, new Vector3(-1.5f, 0.05f, -8.2f));
-            AddPrototypeIfMissing(ProductionStationType.ActorWaitingB, new Vector3(0f, 0.05f, -8.2f));
-            AddPrototypeIfMissing(ProductionStationType.ActorWaitingC, new Vector3(1.5f, 0.05f, -8.2f));
-            AddPrototypeIfMissing(ProductionStationType.Camera, new Vector3(-2f, 0.05f, -9.7f));
-            AddPrototypeIfMissing(ProductionStationType.Sound, new Vector3(0f, 0.05f, -9.7f));
-            AddPrototypeIfMissing(ProductionStationType.CrewWaiting, new Vector3(2f, 0.05f, -9.7f));
+            AddPrototypeIfMissing(ProductionStationType.Director, new Vector3(-3f, 0.05f, stationZ));
+            AddPrototypeIfMissing(ProductionStationType.ActorWaitingA, new Vector3(-1.5f, 0.05f, stationZ));
+            AddPrototypeIfMissing(ProductionStationType.ActorWaitingB, new Vector3(0f, 0.05f, stationZ));
+            AddPrototypeIfMissing(ProductionStationType.ActorWaitingC, new Vector3(1.5f, 0.05f, stationZ));
+            AddPrototypeIfMissing(ProductionStationType.Camera, new Vector3(-2f, 0.05f, stationZ - 1.5f));
+            AddPrototypeIfMissing(ProductionStationType.Sound, new Vector3(0f, 0.05f, stationZ - 1.5f));
+            AddPrototypeIfMissing(ProductionStationType.CrewWaiting, new Vector3(2f, 0.05f, stationZ - 1.5f));
         }
 
         private void AddPrototypeIfMissing(ProductionStationType stationType, Vector3 localPosition)

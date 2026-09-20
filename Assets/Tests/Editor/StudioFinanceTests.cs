@@ -252,7 +252,7 @@ namespace SilverScreen.Tests.EditMode
 
             public StudioRouteResult SendEmployeeToProductionStation(
                 Employee employee,
-                BuildingType buildingType,
+                string facilityId,
                 ProductionStationType stationType,
                 EmployeeIntent intent,
                 Action onArrival)
@@ -262,7 +262,7 @@ namespace SilverScreen.Tests.EditMode
             }
             public StudioRouteResult SendEmployeeToSceneMark(
                 Employee employee,
-                BuildingType buildingType,
+                string facilityId,
                 ActorSceneMarkType markType,
                 EmployeeIntent intent,
                 Action onArrival)
@@ -271,7 +271,7 @@ namespace SilverScreen.Tests.EditMode
                 return StudioRouteResult.Started;
             }
             public StudioRouteResult StartSlateSequence(
-                BuildingType buildingType,
+                string facilityId,
                 Action onCompleted,
                 Action<StudioRouteResult> onFailed)
             {
@@ -279,6 +279,7 @@ namespace SilverScreen.Tests.EditMode
                 return StudioRouteResult.Started;
             }
             public StudioRouteResult StartBeatSequence(
+                string facilityId,
                 MovieProject movie,
                 MovieScene scene,
                 MovieTake take,
@@ -286,6 +287,12 @@ namespace SilverScreen.Tests.EditMode
                 Action<StudioRouteResult> onFailed)
             {
                 onCompleted?.Invoke();
+                return StudioRouteResult.Started;
+            }
+            public StudioRouteResult SendEmployeeToFacility(
+                Employee employee, string facilityId, EmployeeIntent intent, Action onArrival)
+            {
+                onArrival?.Invoke();
                 return StudioRouteResult.Started;
             }
             public void ReleaseEmployee(Employee employee)

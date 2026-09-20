@@ -43,7 +43,8 @@ namespace SilverScreen.Domain
             if (string.IsNullOrWhiteSpace(id)) throw new ArgumentException("A constructed facility requires a stable ID.", nameof(id));
             Id = id.Trim();
             Definition = definition ?? throw new ArgumentNullException(nameof(definition));
-            FilmingCapabilities = new FilmingFacilityCapabilities(Id, definition.SupportedSetDefinitionIds);
+            FilmingCapabilities = new FilmingFacilityCapabilities(
+                Id, definition.SupportedSetDefinitionIds, definition.DisplayName);
         }
     }
 

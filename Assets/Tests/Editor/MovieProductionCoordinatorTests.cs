@@ -360,6 +360,85 @@ namespace SilverScreen.Tests.EditMode
             releaseService.Dispose();
         }
 
+        [Test]
+        public void ConsecutiveScenes_ResolveDifferentOwnedFacilitiesWithoutMutatingRequirements()
+        {
+            var capabilities = StudioFilmingCapabilities.CreateStarterStudio(SetDefinitionCatalog.CreatePrototype());
+            var construction = new SpecializedSetConstructionService(
+                capabilities, SpecializedSetFacilityDefinition.CreatePrototypeDefinitions());
+            construction.Construct(SpecializedSetFacilityIds.StreetSet, "street-a");
+            _coordinator.SetEnvironmentResolver(new OwnedStudioProductionEnvironmentResolver(capabilities));
+            var result = _coordinator.GreenlightScreenplay(MovieReleaseServiceTests.CreateCompletedScreenplay(
+                2, new[] { SetDefinitionIds.Office, SetDefinitionIds.Street }));
+            MovieProject movie = result.Movie;
+            PrepareScreenplayMovieForProduction(movie, out Employee lead, out Employee support, out Employee director);
+
+            Assert.That(_coordinator.ActiveEnvironment.FacilityId, Is.EqualTo(StudioFilmingCapabilities.StarterStageId));
+            _router.CompleteRoute(director, BuildingType.SoundStage);
+            _router.CompleteRoute(lead, BuildingType.SoundStage);
+            _router.CompleteRoute(support, BuildingType.SoundStage);
+
+            Assert.That(movie.Scenes[0].Status, Is.EqualTo(MovieSceneStatus.Completed));
+            Assert.That(_coordinator.ActiveScene, Is.SameAs(movie.Scenes[1]));
+            Assert.That(_coordinator.ActiveEnvironment.FacilityId, Is.EqualTo("street-a"));
+            Assert.That(movie.Scenes[0].RequiredSetDefinitionId, Is.EqualTo(SetDefinitionIds.Office));
+            Assert.That(movie.Scenes[1].RequiredSetDefinitionId, Is.EqualTo(SetDefinitionIds.Street));
+        }
+
+        [Test]
+        public void Retake_KeepsTheResolvedFacilityForTheActiveScene()
+        {
+            var capabilities = StudioFilmingCapabilities.CreateStarterStudio(SetDefinitionCatalog.CreatePrototype());
+            var construction = new SpecializedSetConstructionService(
+                capabilities, SpecializedSetFacilityDefinition.CreatePrototypeDefinitions());
+            construction.Construct(SpecializedSetFacilityIds.StreetSet, "street-a");
+            _coordinator.SetEnvironmentResolver(new OwnedStudioProductionEnvironmentResolver(capabilities));
+            MovieProject movie = _coordinator.GreenlightScreenplay(
+                MovieReleaseServiceTests.CreateCompletedScreenplay(1, new[] { SetDefinitionIds.Street })).Movie;
+            PrepareScreenplayMovieForProduction(movie, out Employee lead, out Employee support, out Employee director);
+            _coordinator.SetProductionControlMode(movie, ProductionControlMode.Manual);
+            _router.CompleteRoute(director, BuildingType.SoundStage);
+            _router.CompleteRoute(lead, BuildingType.SoundStage);
+            _router.CompleteRoute(support, BuildingType.SoundStage);
+
+            Assert.That(_coordinator.CurrentProductionPhase, Is.EqualTo(ProductionPhase.AwaitingTakeDecision));
+            Assert.That(_coordinator.ActiveEnvironment.FacilityId, Is.EqualTo("street-a"));
+            Assert.That(_coordinator.ShootAgain(), Is.True);
+            Assert.That(_coordinator.ActiveEnvironment.FacilityId, Is.EqualTo("street-a"));
+            Assert.That(_coordinator.ActiveScene.Takes, Has.Count.EqualTo(2));
+        }
+
+        [Test]
+        public void MissingEnvironment_BlocksProductionWithoutRejectingGreenlightOrMutatingScene()
+        {
+            _coordinator.SetEnvironmentResolver(new OwnedStudioProductionEnvironmentResolver(
+                StudioFilmingCapabilities.CreateStarterStudio(SetDefinitionCatalog.CreatePrototype())));
+            ScreenplayGreenlightResult result = _coordinator.GreenlightScreenplay(
+                MovieReleaseServiceTests.CreateCompletedScreenplay(1, new[] { "courtroom" }));
+            Assert.That(result.Succeeded, Is.True);
+            PrepareScreenplayMovieForProduction(result.Movie, out _, out _, out _);
+
+            Assert.That(_coordinator.CurrentProductionPhase, Is.EqualTo(ProductionPhase.EnvironmentUnresolved));
+            Assert.That(_coordinator.ActiveEnvironment, Is.Null);
+            Assert.That(_coordinator.ActiveScene.RequiredSetDefinitionId, Is.EqualTo("courtroom"));
+            Assert.That(_coordinator.StatusMessage, Does.Contain("courtroom"));
+            Assert.That(result.Movie.CurrentState, Is.EqualTo(MovieProductionState.ReadyToFilm));
+        }
+
+        private void PrepareScreenplayMovieForProduction(
+            MovieProject movie, out Employee lead, out Employee support, out Employee director)
+        {
+            lead = CreateEmployee("environment-lead", "Lead Actor", EmployeeRole.Actor);
+            support = CreateEmployee("environment-support", "Support Actor", EmployeeRole.Actor);
+            director = CreateEmployee("environment-director", "Director", EmployeeRole.Director);
+            _coordinator.AssignActorToRole(movie, movie.Roles[0], lead);
+            _coordinator.AssignActorToRole(movie, movie.Roles[1], support);
+            _router.CompleteRoute(lead, BuildingType.CastingOffice);
+            _router.CompleteRoute(support, BuildingType.CastingOffice);
+            _time.PassMinutes(60);
+            _coordinator.AssignDirector(movie, director);
+        }
+
         private MovieProject CreateMovieWithTwoActorsRequired()
         {
             return _coordinator.CreateMovie(
@@ -419,6 +498,7 @@ namespace SilverScreen.Tests.EditMode
 
             public List<Employee> ReleasedEmployees { get; } = new List<Employee>();
             public StudioRouteResult NextRouteResult { get; set; } = StudioRouteResult.Started;
+            public string LastFacilityId { get; private set; }
 
             public Employee ResolveEmployee(string employeeId, Employee compatibilityReference)
             {
@@ -445,7 +525,7 @@ namespace SilverScreen.Tests.EditMode
 
             public StudioRouteResult SendEmployeeToProductionStation(
                 Employee employee,
-                BuildingType buildingType,
+                string facilityId,
                 ProductionStationType stationType,
                 EmployeeIntent intent,
                 Action onArrival)
@@ -456,7 +536,7 @@ namespace SilverScreen.Tests.EditMode
 
             public StudioRouteResult SendEmployeeToSceneMark(
                 Employee employee,
-                BuildingType buildingType,
+                string facilityId,
                 ActorSceneMarkType markType,
                 EmployeeIntent intent,
                 Action onArrival)
@@ -465,7 +545,7 @@ namespace SilverScreen.Tests.EditMode
                 return StudioRouteResult.Started;
             }
             public StudioRouteResult StartSlateSequence(
-                BuildingType buildingType,
+                string facilityId,
                 Action onCompleted,
                 Action<StudioRouteResult> onFailed)
             {
@@ -473,6 +553,7 @@ namespace SilverScreen.Tests.EditMode
                 return StudioRouteResult.Started;
             }
             public StudioRouteResult StartBeatSequence(
+                string facilityId,
                 MovieProject movie,
                 MovieScene scene,
                 MovieTake take,
@@ -481,6 +562,16 @@ namespace SilverScreen.Tests.EditMode
             {
                 onCompleted?.Invoke();
                 return StudioRouteResult.Started;
+            }
+            public StudioRouteResult SendEmployeeToFacility(
+                Employee employee, string facilityId, EmployeeIntent intent, Action onArrival)
+            {
+                LastFacilityId = facilityId;
+                var result = NextRouteResult;
+                NextRouteResult = StudioRouteResult.Started;
+                if (result == StudioRouteResult.Started)
+                    _requests.Add(new RouteRequest(employee, BuildingType.SoundStage, onArrival));
+                return result;
             }
             public void ReleaseEmployee(Employee employee)
             {
@@ -569,7 +660,8 @@ namespace SilverScreen.Tests.EditMode
             _service = new MovieReleaseService(_time, _finances);
         }
 
-        internal static ScreenplayProject CreateCompletedScreenplay(int sceneCount)
+        internal static ScreenplayProject CreateCompletedScreenplay(
+            int sceneCount, IReadOnlyList<string> requiredSetDefinitionIds = null)
         {
             const string writerId = "writer";
             const string leadId = "screenplay-character-lead";
@@ -595,7 +687,10 @@ namespace SilverScreen.Tests.EditMode
                     "sound-stage-1",
                     ScreenplaySceneLocation.Interior,
                     ScreenplayTimeOfDay.Day,
-                    $"Scene {sceneNumber}");
+                    $"Scene {sceneNumber}",
+                    requiredSetDefinitionId: requiredSetDefinitionIds != null && index < requiredSetDefinitionIds.Count
+                        ? requiredSetDefinitionIds[index]
+                        : SetDefinitionIds.GenericInterior);
                 scene.AddCharacter(lead.Id);
                 scene.AddCharacter(support.Id);
                 scene.AddBeat(new ScreenplayBeat(
