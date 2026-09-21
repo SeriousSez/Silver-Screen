@@ -85,7 +85,7 @@ namespace SilverScreen.Presentation.Writing
                 FilmingCapabilities, SpecializedSetFacilityDefinition.CreatePrototypeDefinitions());
             Coordinator = new ScreenplayWritingCoordinator(_employees.AllEmployees, _time.TimeService, world,
                 new ScreenplayTitleGenerator(new SeededScreenplayTitleRandomSource(1930)),
-                new ScreenplayContentGenerator(new SeededScreenplayTitleRandomSource(1934), FilmingCapabilities),
+                new ScreenplayContentGenerator(new SeededScreenplayTitleRandomSource(1934), KnownSetDefinitions),
                 new ScreenplayEvaluator(new SeededScreenplayTitleRandomSource(1935)));
             var genreIds = new List<string>();
             var movieDriver = FindAnyObjectByType<MovieProductionDriver>();

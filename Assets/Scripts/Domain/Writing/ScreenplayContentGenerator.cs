@@ -50,22 +50,29 @@ namespace SilverScreen.Domain.Writing
                 [SetDefinitionIds.Street] = new[] { "downtown-street", "studio-backlot-street", "rainy-side-street" }
             };
         private readonly IScreenplayTitleRandomSource _random;
-        private readonly IStudioFilmingCapabilities _filmingCapabilities;
+        private readonly ISetDefinitionCatalog _setDefinitions;
 
         public ScreenplayContentGenerator(IScreenplayTitleRandomSource random,
-            IStudioFilmingCapabilities filmingCapabilities)
+            ISetDefinitionCatalog setDefinitions)
         {
             _random = random ?? throw new ArgumentNullException(nameof(random));
-            _filmingCapabilities = filmingCapabilities ??
-                throw new ArgumentNullException(nameof(filmingCapabilities));
+            _setDefinitions = setDefinitions ?? throw new ArgumentNullException(nameof(setDefinitions));
+        }
+
+        // Compatibility for older callers. Owned facilities no longer constrain screenplay content.
+        public ScreenplayContentGenerator(IScreenplayTitleRandomSource random,
+            IStudioFilmingCapabilities filmingCapabilities)
+            : this(random, SetDefinitionCatalog.CreatePrototype())
+        {
+            _ = filmingCapabilities ?? throw new ArgumentNullException(nameof(filmingCapabilities));
         }
 
         public ScreenplayContent Generate(ScreenplayProject screenplay)
         {
             if (screenplay == null) throw new ArgumentNullException(nameof(screenplay));
-            if (_filmingCapabilities.AvailableDefinitions.Count == 0)
+            if (_setDefinitions.KnownDefinitions.Count == 0)
                 throw new ScreenplayContentGenerationException(
-                    "The studio has no filming environments available for screenplay development.");
+                    "There are no known filming environments available for screenplay development.");
 
             int characterCount = _random.Next(2, 5);
             var characters = GenerateCharacters(screenplay, characterCount);
@@ -148,7 +155,7 @@ namespace SilverScreen.Domain.Writing
         {
             var weighted = new List<SetDefinition>();
             GenreSetPreferences.TryGetValue(genreId ?? string.Empty, out string[] preferences);
-            foreach (SetDefinition available in _filmingCapabilities.AvailableDefinitions)
+            foreach (SetDefinition available in _setDefinitions.KnownDefinitions)
             {
                 weighted.Add(available);
                 if (preferences == null) continue;

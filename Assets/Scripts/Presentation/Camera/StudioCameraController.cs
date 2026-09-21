@@ -13,6 +13,11 @@ namespace SilverScreen.Presentation.Camera
         [SerializeField] private Vector2 _panBoundsMin = new Vector2(-45f, -45f);
         [SerializeField] private Vector2 _panBoundsMax = new Vector2(45f, 45f);
 
+        [Header("Mouse Pan")]
+        [SerializeField] private float _mouseDragPanSpeed = 0.035f;
+        [SerializeField] private bool _enableEdgePan = true;
+        [SerializeField] private float _edgePanWidth = 12f;
+
         [Header("Rotation")]
         [SerializeField] private float _rotationSpeed = 80f;
         [SerializeField] private float _mouseRotationSpeed = 0.25f;
@@ -26,6 +31,8 @@ namespace SilverScreen.Presentation.Camera
 
         [Header("Elevation Angles")]
         [SerializeField] private float _pitchAngle = 52f;
+        [SerializeField] private float _closeZoomPitchAngle = 15f;
+        [SerializeField] private float _pitchSmoothing = 10f;
 
         [Header("Target References")]
         [SerializeField] private UnityEngine.Camera _targetCamera;
@@ -39,9 +46,11 @@ namespace SilverScreen.Presentation.Camera
 
         private float _targetDistance = 22f;
         private float _currentDistance = 22f;
+        private float _currentPitch;
 
         private Vector2 _lastMousePosition;
         private bool _isRightDragging;
+        private bool _isMiddleDragging;
 
         private void Awake()
         {
@@ -61,6 +70,7 @@ namespace SilverScreen.Presentation.Camera
             _currentYaw = _targetYaw;
 
             _currentDistance = _targetDistance;
+            _currentPitch = CalculatePitchForDistance(_currentDistance);
         }
 
         private void Update()
@@ -86,6 +96,35 @@ namespace SilverScreen.Presentation.Camera
                 if (keyboard.dKey.isPressed || keyboard.rightArrowKey.isPressed) panInput.x += 1f;
             }
 
+            var mouse = Mouse.current;
+            bool pointerOverUi = EventSystem.current != null && EventSystem.current.IsPointerOverGameObject();
+            if (mouse != null)
+            {
+                if (mouse.middleButton.wasPressedThisFrame && !pointerOverUi)
+                {
+                    _isMiddleDragging = true;
+                    _lastMousePosition = mouse.position.ReadValue();
+                }
+                if (mouse.middleButton.wasReleasedThisFrame) _isMiddleDragging = false;
+
+                Vector2 mousePosition = mouse.position.ReadValue();
+                if (_isMiddleDragging)
+                {
+                    Vector2 delta = mousePosition - _lastMousePosition;
+                    _lastMousePosition = mousePosition;
+                    Quaternion yawRotation = Quaternion.Euler(0f, _targetYaw, 0f);
+                    Vector3 drag = yawRotation * new Vector3(-delta.x, 0f, -delta.y);
+                    _targetPosition += drag * (_mouseDragPanSpeed * ZoomSpeedModifier());
+                }
+                else if (_enableEdgePan && !pointerOverUi && Application.isFocused)
+                {
+                    if (mousePosition.x <= _edgePanWidth) panInput.x -= 1f;
+                    else if (mousePosition.x >= Screen.width - _edgePanWidth) panInput.x += 1f;
+                    if (mousePosition.y <= _edgePanWidth) panInput.y -= 1f;
+                    else if (mousePosition.y >= Screen.height - _edgePanWidth) panInput.y += 1f;
+                }
+            }
+
             if (panInput.sqrMagnitude > 0.001f)
             {
                 panInput.Normalize();
@@ -94,14 +133,15 @@ namespace SilverScreen.Presentation.Camera
                 Quaternion yawRotation = Quaternion.Euler(0f, _targetYaw, 0f);
                 Vector3 moveDir = yawRotation * new Vector3(panInput.x, 0f, panInput.y);
 
-                float speedModifier = (_targetDistance / 20f);
-                _targetPosition += moveDir * (_panSpeed * speedModifier * UnityEngine.Time.unscaledDeltaTime);
+                _targetPosition += moveDir * (_panSpeed * ZoomSpeedModifier() * UnityEngine.Time.unscaledDeltaTime);
             }
 
             // Clamp target position within studio bounds
             _targetPosition.x = Mathf.Clamp(_targetPosition.x, _panBoundsMin.x, _panBoundsMax.x);
             _targetPosition.z = Mathf.Clamp(_targetPosition.z, _panBoundsMin.y, _panBoundsMax.y);
         }
+
+        private float ZoomSpeedModifier() => _targetDistance / 20f;
 
         private void HandleRotationInput()
         {
@@ -180,11 +220,13 @@ namespace SilverScreen.Presentation.Camera
 
             // Interpolate zoom distance
             _currentDistance = Mathf.Lerp(_currentDistance, _targetDistance, dt * _zoomSmoothing);
+            float targetPitch = CalculatePitchForDistance(_targetDistance);
+            _currentPitch = Mathf.LerpAngle(_currentPitch, targetPitch, dt * _pitchSmoothing);
 
             // Position target camera
             if (_targetCamera != null)
             {
-                Quaternion cameraRotation = Quaternion.Euler(_pitchAngle, _currentYaw, 0f);
+                Quaternion cameraRotation = Quaternion.Euler(_currentPitch, _currentYaw, 0f);
                 Vector3 offset = cameraRotation * new Vector3(0f, 0f, -_currentDistance);
 
                 _targetCamera.transform.position = _currentPosition + offset;
@@ -195,6 +237,20 @@ namespace SilverScreen.Presentation.Camera
         public void FocusOn(Vector3 worldPosition)
         {
             _targetPosition = new Vector3(worldPosition.x, 0f, worldPosition.z);
+        }
+
+        private float CalculatePitchForDistance(float distance)
+        {
+            float zoomRange = Mathf.Max(0.01f, _maxZoomDistance - _minZoomDistance);
+            float normalizedZoom = Mathf.Clamp01((distance - _minZoomDistance) / zoomRange);
+            float easedZoom = Mathf.SmoothStep(0f, 1f, normalizedZoom);
+            return Mathf.Lerp(_closeZoomPitchAngle, _pitchAngle, easedZoom);
+        }
+
+        private void OnDisable()
+        {
+            _isRightDragging = false;
+            _isMiddleDragging = false;
         }
 
         private static bool IsTypingIntoUI()

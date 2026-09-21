@@ -111,6 +111,10 @@ namespace SilverScreen.Presentation.Bootstrap
             var setConstruction = GetComponent<SpecializedSetConstructionDriver>();
             if (setConstruction == null) setConstruction = gameObject.AddComponent<SpecializedSetConstructionDriver>();
             setConstruction.Initialize(writingDriver);
+            if (GetComponent<OutsideWorldPrototype>() == null)
+            {
+                gameObject.AddComponent<OutsideWorldPrototype>();
+            }
         }
 
         private void InitializeStudioIdentityPresentation()

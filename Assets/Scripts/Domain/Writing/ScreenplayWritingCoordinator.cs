@@ -97,7 +97,7 @@ namespace SilverScreen.Domain.Writing
             _titleGenerator = titleGenerator ?? throw new ArgumentNullException(nameof(titleGenerator));
             _contentGenerator = contentGenerator ??
                 new ScreenplayContentGenerator(new SeededScreenplayTitleRandomSource(1934),
-                    StudioFilmingCapabilities.CreateStarterStudio(SetDefinitionCatalog.CreatePrototype()));
+                    SetDefinitionCatalog.CreatePrototype());
             _evaluator = evaluator ??
                 new ScreenplayEvaluator(new SeededScreenplayTitleRandomSource(1935));
             _time.OnMinutePassed += HandleMinutePassed;
