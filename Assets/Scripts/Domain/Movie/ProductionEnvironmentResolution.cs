@@ -4,7 +4,8 @@ namespace SilverScreen.Domain.Movie
 {
     public enum ProductionEnvironmentFulfillmentSource
     {
-        OwnedStudioFacility
+        OwnedStudioFacility,
+        ExternalFilmingLocation
     }
 
     public sealed class ProductionEnvironmentResolution
