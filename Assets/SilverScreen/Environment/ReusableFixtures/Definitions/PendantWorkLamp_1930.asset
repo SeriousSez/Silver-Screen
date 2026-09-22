@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f6e6edcd9c33894c89ae33bf4fc505f, type: 3}
+  m_Name: PendantWorkLamp_1930
+  m_EditorClassIdentifier: Assembly-CSharp::SilverScreen.Presentation.ReusableAssets.ReusableAssetDefinition
+  _stableId: silverscreen.fixture.pendantworklamp_1930
+  _displayName: Pendant work lamp
+  _category: Fixtures
+  _subcategory: Lighting
+  _playerCatalogItem: 1
+  _availableFromYear: 1930
+  _hasAvailableUntilYear: 0
+  _availableUntilYear: 0
+  _suitability: 0
+  _placementSurface: 1
+  _role: 2
+  _handedness: 0
+  _visibleBounds:
+    m_Center: {x: 0.00000023841858, y: -0.34474993, z: 0}
+    m_Extent: {x: 0.25399995, y: 0.34474993, z: 0.2539997}
+  _functionalClearance:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  _supportsMaterialVariants: 1
+  _materialRoles:
+  - C1_EnamelWhite
+  - C1_Steel
+  - C1_LampReflector
+  - C1_LampGlass
+  _environmentTags:
+  - Studio
+  - Industrial
+  - Utility
+  - Period and later settings
+  _optionalInteraction: Representational light switch
+  _snapBehavior: Mount plane and typed anchors; no automatic placement runtime.
+  _prefab: {fileID: 724406898186024267, guid: 46ca7e1fe1d13434fb0f71ae5c5a4284, type: 3}

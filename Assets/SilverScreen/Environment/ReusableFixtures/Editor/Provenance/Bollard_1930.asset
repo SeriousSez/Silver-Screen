@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fee2b82949f9b64facb8e9bbd6272ef, type: 3}
+  m_Name: Bollard_1930
+  m_EditorClassIdentifier: Assembly-CSharp-Editor::SilverScreen.Editor.ReusableAssets.ReusableAssetProvenance
+  _masterCommit: 927ad371a96c4044689286473b542febac6a7265
+  _sourcePath: ArtSource/Stage1CleanCandidate/Stage1_CleanCandidate_A.blend
+  _sourceSha256: df68dc9e3cd42ddc1085ae98e63ec9a62a96b6f53429ba52cdd0b64df7c669db
+  _canonicalId: silverscreen.fixture.bollard_1930
+  _prefab: {fileID: 3002507989556275449, guid: d57d66fc9feabee4aa76fe2249fb15f8, type: 3}
+  _recordJson: "{\n    \"name\": \"Bollard_1930\",\n    \"label\": \"Bolted safety
+    bollard\",\n    \"family\": \"SiteProtection\",\n    \"id\": \"silverscreen.fixture.bollard_1930\",\n   
+    \"surface\": \"Ground\",\n    \"suitability\": \"Both\",\n    \"hand\": \"None\",\n   
+    \"status\": \"Exact source geometry; canonical pivot, hierarchy and winding repackaging\",\n   
+    \"interfaceAddition\": \"\",\n    \"player\": true,\n    \"clearance\": 0.0,\n   
+    \"origin\": [\n        -6.800000190734863,\n        -12.680000305175782,\n       
+    0.0\n    ],\n    \"basisRows\": [\n        -1.0,\n        0.0,\n        0.0,\n       
+    0.0,\n        0.0,\n        1.0,\n        0.0,\n        -1.0,\n        0.0\n   
+    ],\n    \"boundsMin\": [\n        -0.13000011444091798,\n        0.0,\n       
+    -0.13000011444091798\n    ],\n    \"boundsMax\": [\n        0.12999963760375977,\n       
+    1.309999942779541,\n        0.13000011444091798\n    ],\n    \"dimensions\":
+    [\n        0.25999975204467776,\n        1.309999942779541,\n        0.26000022888183596\n   
+    ],\n    \"parts\": [\n        {\n            \"name\": \"Assembly\",\n           
+    \"positions\": [],\n            \"normals\": [],\n            \"uv\": [],\n           
+    \"materials\": [\n                \"C1_Galvanized\",\n                \"C1_Steel\",\n               
+    \"C1_SafetyOchre\"\n            ],\n            \"submeshes\": [],\n           
+    \"members\": [\n                {\n                    \"name\": \"BollardAnchor\",\n                   
+    \"semanticGroup\": \"FixedProtection\",\n                    \"uvSha256\": \"0c9fec1f7cbcbc94dd36d5ee43e581c2a8c29b0814dcfa8e1d15ce06ae8a30e4\",\n                   
+    \"positionSha256\": \"a7f0f5cad962894a53514611b6800a59023d8ff625eabfa3ef64220fcbdd5f59\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"BollardAnchor.001\",\n                   
+    \"semanticGroup\": \"FixedProtection\",\n                    \"uvSha256\": \"f92834570a6594b2ebc7fc5daf8e0f9dbfddf61c061a10730219e9681626bb14\",\n                   
+    \"positionSha256\": \"3e9e17030a02f55efd8d9c874fde2df9938a47b571de6dc7c281c5bd3306a082\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"BollardAnchor.002\",\n                   
+    \"semanticGroup\": \"FixedProtection\",\n                    \"uvSha256\": \"7bbcc1d8ce0d78ed6217276c14a0c287fa5988c86def3d7691e55cf9eed3a818\",\n                   
+    \"positionSha256\": \"4adccb60e258541b26942671655135c45e22076508f3249f942cfa5fb11e96b6\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"BollardAnchor.003\",\n                   
+    \"semanticGroup\": \"FixedProtection\",\n                    \"uvSha256\": \"452111293c30193ba09556ea7031a0120d7161db301617c9b75fd4e9a0fdc3b8\",\n                   
+    \"positionSha256\": \"59365882a0e902861e8910ddae1a0ad9a5b005bf35cbdd2aece04b70e87b4ea9\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"BollardFoot\",\n                    \"semanticGroup\":
+    \"FixedProtection\",\n                    \"uvSha256\": \"06fbf4a95af94fa9342b5ef9c7d4a2c343f853960c37d55d4c31c6afd77e060a\",\n                   
+    \"positionSha256\": \"210b9725dc54312c66f656b3d0acde525f476e4690544fdc639894b58c2a3304\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"BollardTube\",\n                    \"semanticGroup\":
+    \"FixedProtection\",\n                    \"uvSha256\": \"6f3340671421e89db29ced7c041a8ebfe2a7315987885e6b765604e34887e95f\",\n                   
+    \"positionSha256\": \"47b8bdcf542066d9c8afeb260d9c91fd59ccefd430ab5ec57d918de34f69a763\",\n                   
+    \"vertices\": 160,\n                    \"triangles\": 316\n                }\n           
+    ],\n            \"vertices\": 781,\n            \"triangles\": 744\n        }\n   
+    ],\n    \"anchors\": []\n}"

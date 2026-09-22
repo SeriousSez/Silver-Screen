@@ -1,0 +1,2 @@
+StandaloneWindows64 runtime script compilation completed. Assemblies: 35
+This is a script compilation check, not a packaged player build.

@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fee2b82949f9b64facb8e9bbd6272ef, type: 3}
+  m_Name: DoorPull_1930
+  m_EditorClassIdentifier: Assembly-CSharp-Editor::SilverScreen.Editor.ReusableAssets.ReusableAssetProvenance
+  _masterCommit: 927ad371a96c4044689286473b542febac6a7265
+  _sourcePath: ArtSource/Stage1CleanCandidate/Stage1_CleanCandidate_A.blend
+  _sourceSha256: df68dc9e3cd42ddc1085ae98e63ec9a62a96b6f53429ba52cdd0b64df7c669db
+  _canonicalId: silverscreen.fixture.doorpull_1930
+  _prefab: {fileID: 6588628769182363912, guid: eeaca1a1405bc9545b1c3cf22e74eb06, type: 3}
+  _recordJson: "{\n    \"name\": \"DoorPull_1930\",\n    \"label\": \"Curved personnel-door
+    pull\",\n    \"family\": \"DoorHardware\",\n    \"id\": \"silverscreen.fixture.doorpull_1930\",\n   
+    \"surface\": \"DoorLeaf\",\n    \"suitability\": \"Both\",\n    \"hand\": \"None\",\n   
+    \"status\": \"Exact source geometry; canonical pivot, hierarchy and winding repackaging\",\n   
+    \"interfaceAddition\": \"\",\n    \"player\": false,\n    \"clearance\": 0.0,\n   
+    \"origin\": [\n        -5.670000076293945,\n        -12.199999809265137,\n       
+    1.149999976158142\n    ],\n    \"basisRows\": [\n        -1.0,\n        0.0,\n       
+    0.0,\n        0.0,\n        0.0,\n        1.0,\n        0.0,\n        -1.0,\n       
+    0.0\n    ],\n    \"boundsMin\": [\n        -0.05000019073486328,\n        -0.22999995946884156,\n       
+    0.0\n    ],\n    \"boundsMax\": [\n        0.04999971389770508,\n        0.23000001907348634,\n       
+    0.16900062561035157\n    ],\n    \"dimensions\": [\n        0.09999990463256836,\n       
+    0.4599999785423279,\n        0.16900062561035157\n    ],\n    \"parts\": [\n       
+    {\n            \"name\": \"Assembly\",\n            \"positions\": [],\n           
+    \"normals\": [],\n            \"uv\": [],\n            \"materials\": [\n               
+    \"C1_Brass\"\n            ],\n            \"submeshes\": [],\n            \"members\":
+    [\n                {\n                    \"name\": \"EscutcheonScrew.016\",\n                   
+    \"semanticGroup\": \"PersonnelDoors\",\n                    \"uvSha256\": \"0dda7f7321d4ea563a85b7e3e96dcfda4c9b4faceca0dd2eb04b323d0aaaeb1f\",\n                   
+    \"positionSha256\": \"37d07a684da350c1541d16dea4b353f8760f4b34a9d42f345d79044b580899b6\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"EscutcheonScrew.017\",\n                   
+    \"semanticGroup\": \"PersonnelDoors\",\n                    \"uvSha256\": \"ae1caee1088936846bca63482ad23e215386809876a76c83994c1cd1f7c502bf\",\n                   
+    \"positionSha256\": \"7314081a068046de1545fbb799b8c7ee65ff2c6083398320b02bf4d372b7cfea\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"EscutcheonScrew.018\",\n                   
+    \"semanticGroup\": \"PersonnelDoors\",\n                    \"uvSha256\": \"e89e66754b7f5fd428c14b49665d34a233205536c76032ac8a65c2f58e0dbf96\",\n                   
+    \"positionSha256\": \"3ecbd5c330d764ac62e3a232379222bae1d781fef9cda2a4a18b387031ba6184\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"EscutcheonScrew.019\",\n                   
+    \"semanticGroup\": \"PersonnelDoors\",\n                    \"uvSha256\": \"51acdb87154cda28a1409f7b3b835601a631cc0d80a103bf0f4da0014399fcab\",\n                   
+    \"positionSha256\": \"402f8b4fdcbd041cd64008aa91f7043724bb7f988c90623d3bd966afeb5d96bf\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"ForgedPull.004\",\n                    \"semanticGroup\":
+    \"PersonnelDoors\",\n                    \"uvSha256\": \"a395d1c12cc5aa1c2a318c7a543e0a4c7ae528a6a893bfc6fdb8139e0cc56e89\",\n                   
+    \"positionSha256\": \"2abcfb332756b2c0d7f78f098ce47b51584b6726ff150f5da15d54dacf37cfbf\",\n                   
+    \"vertices\": 672,\n                    \"triangles\": 1340\n               
+    },\n                {\n                    \"name\": \"PullEscutcheon.008\",\n                   
+    \"semanticGroup\": \"PersonnelDoors\",\n                    \"uvSha256\": \"a6f5b99948c482a2505a9053ecedbc2f168c4a74f452c54ecf411043fd4fa7ef\",\n                   
+    \"positionSha256\": \"165267040c219f2b28075ac796250b2dfb254ee492e1e40eda223e77a34535dc\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"PullEscutcheon.009\",\n                   
+    \"semanticGroup\": \"PersonnelDoors\",\n                    \"uvSha256\": \"3e2b71e3ffe2efc41fa8866b78ef54a4bb090b1c02c4ae94152cac27aef22665\",\n                   
+    \"positionSha256\": \"a97c989da3473d3d56d124460662bffcaefa5c73cab02cbcb34d27883ba6e7a9\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                }\n           
+    ],\n            \"vertices\": 1440,\n            \"triangles\": 1828\n       
+    }\n    ],\n    \"anchors\": []\n}"

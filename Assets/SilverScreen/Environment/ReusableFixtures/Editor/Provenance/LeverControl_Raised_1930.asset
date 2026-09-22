@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fee2b82949f9b64facb8e9bbd6272ef, type: 3}
+  m_Name: LeverControl_Raised_1930
+  m_EditorClassIdentifier: Assembly-CSharp-Editor::SilverScreen.Editor.ReusableAssets.ReusableAssetProvenance
+  _masterCommit: 927ad371a96c4044689286473b542febac6a7265
+  _sourcePath: ArtSource/Stage1CleanCandidate/Stage1_CleanCandidate_A.blend
+  _sourceSha256: df68dc9e3cd42ddc1085ae98e63ec9a62a96b6f53429ba52cdd0b64df7c669db
+  _canonicalId: silverscreen.fixture.levercontrol_raised_1930
+  _prefab: {fileID: 8918065388258312077, guid: 70ea2ef6f44ea8a4d83318d632f49dc1, type: 3}
+  _recordJson: "{\n    \"name\": \"LeverControl_Raised_1930\",\n    \"label\": \"Raised
+    lever control\",\n    \"family\": \"ControlHardware\",\n    \"id\": \"silverscreen.fixture.levercontrol_raised_1930\",\n   
+    \"surface\": \"Wall\",\n    \"suitability\": \"Indoor\",\n    \"hand\": \"None\",\n   
+    \"status\": \"Exact source geometry; canonical pivot, hierarchy and winding repackaging\",\n   
+    \"interfaceAddition\": \"\",\n    \"player\": false,\n    \"clearance\": 0.20000000298023225,\n   
+    \"origin\": [\n        7.2170000076293949,\n        -8.300000190734864,\n       
+    0.8500000238418579\n    ],\n    \"basisRows\": [\n        0.0,\n        1.0,\n       
+    0.0,\n        0.0,\n        0.0,\n        1.0,\n        -1.0,\n        0.0,\n       
+    0.0\n    ],\n    \"boundsMin\": [\n        -0.06400012969970703,\n        -0.08799999952316284,\n       
+    0.0\n    ],\n    \"boundsMax\": [\n        0.06400012969970703,\n        0.15056252479553224,\n       
+    0.20197200775146485\n    ],\n    \"dimensions\": [\n        0.12800025939941407,\n       
+    0.23856252431869508,\n        0.20197200775146485\n    ],\n    \"parts\": [\n       
+    {\n            \"name\": \"Assembly\",\n            \"positions\": [],\n           
+    \"normals\": [],\n            \"uv\": [],\n            \"materials\": [\n               
+    \"C1_Brass\",\n                \"C1_DarkCeramic\",\n                \"C1_Steel\",\n               
+    \"C1_Galvanized\"\n            ],\n            \"submeshes\": [],\n           
+    \"members\": [\n                {\n                    \"name\": \"ForgedSwitchLever.006\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"dc24dbd25bb1f47fb1770082409e3e67adc783eb09752d5d5b03a0124ff38189\",\n                   
+    \"positionSha256\": \"0c00789155fc8b83a9b6034a8d16ad2c1485acdba66b17c972b755d949578053\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"ShapedSwitchGrip.006\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"e69e5f2b71444ffa8aa80be08fd662828a09ee58471f3a0a449c77426d73de1a\",\n                   
+    \"positionSha256\": \"58c266141c55cf210af50f06aed1cd0081863aca56c04f86d8ba3c06e4800dd7\",\n                   
+    \"vertices\": 160,\n                    \"triangles\": 316\n                },\n               
+    {\n                    \"name\": \"SwitchBearingBoss.006\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"b5218fffdf4ce675c71e7716c39d3ec2bb733f57062832ea183d00cb2c229152\",\n                   
+    \"positionSha256\": \"c17e1332597f29d9d76223c2ec0c5ca87b1124df77a686e62c82d1c7c406da9e\",\n                   
+    \"vertices\": 160,\n                    \"triangles\": 316\n                },\n               
+    {\n                    \"name\": \"SwitchEscutcheon.006\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"cc2a918b77cc6d334bb86d303d7e78e709eb955c4605682022ca76ad5e9f16d1\",\n                   
+    \"positionSha256\": \"146f8def8a95f2950da30e5c914d4a5a654447794ec68b79628ac218444fdd13\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"SwitchMountScrew.024\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"e40e1c61eac36442267d83b2790d655dcfbc5a8d74e27bc15bcc46c25eda48c3\",\n                   
+    \"positionSha256\": \"ac32ea101bc7b12dfca3dcf134e3bb437fe1925dc65a27d5b594626234d051fb\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"SwitchMountScrew.025\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"bbc861a72a3f82f419cb2febeb20633bb8cd0c02283c8c25ef322355869307ab\",\n                   
+    \"positionSha256\": \"2099da4d047417a606bb2b37ebd967ba96b7fa2809cda0506d1b8882be5629e4\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"SwitchMountScrew.026\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"548bca1dd496fa5c444934ac4b2232b42c7e390f8e6b49b89cbc51a9601815bf\",\n                   
+    \"positionSha256\": \"5dcfcb7661d9059add627ed3ab3d09517b3a4f9de9d1cc66b94d5348dd1a272c\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"SwitchMountScrew.027\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"a73de070c1efefb059d7e1b3894dd9e6a959b73fe038708c02722aee29793b7e\",\n                   
+    \"positionSha256\": \"691d50b46c0b1bc67e68e575cf3ff34bbe82ecd2438c41b67df978199edb517f\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"SwitchPivotPin.006\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"bc5a53c450db419c4c72b2a6010239f3851425a20a7746b8b9b1a6c0798c1daa\",\n                   
+    \"positionSha256\": \"d6725836ac98f9cee1b90d9789377636b951b9137b28b6b0a3af4656ebe955e6\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"SwitchPivotRetainer.012\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"2c6f19bf4ff9f803812e1e5bca1500937cd1eec231c29558821ea770e0b1b135\",\n                   
+    \"positionSha256\": \"d904a047e6deee48d6925c924723a43d3821aff0b3e44a136d2277bddc08940e\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"SwitchPivotRetainer.013\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"62d70a5300635746c70e9279ab809ba1e6e4ea729cf0b419cf9e48c833d10fca\",\n                   
+    \"positionSha256\": \"6fdf3ce3b3611bf1abe1bcb05fba221a969b546b767004f419fe26ee47fdde7f\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"SwitchTravelStop.012\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"250b2f5b0fcd5b573ac202f0896e5f2868aa5165db33105048916cf4a469a21e\",\n                   
+    \"positionSha256\": \"ee953c86b3dc77dc17f83afe029071c7fbc472210506917146eaabafb8c7b31e\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"SwitchTravelStop.013\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"9d6d22c67d7e0852a28c649c0f74cc95b7df1aad8373e74d8b4dc338bd83d2e9\",\n                   
+    \"positionSha256\": \"f513aa99544b6210d377202db2d51e34a9ae043d63abe0e75d9d692a32eb3152\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                }\n           
+    ],\n            \"vertices\": 1678,\n            \"triangles\": 1548\n       
+    }\n    ],\n    \"anchors\": [\n        {\n            \"name\": \"LeverAxis\",\n           
+    \"kind\": \"Pivot\",\n            \"position\": [\n                0.0,\n               
+    0.0,\n                0.08399999886751175\n            ],\n            \"forward\":
+    [\n                -1.0,\n                0.0,\n                0.0\n           
+    ],\n            \"diameter\": 0.0\n        }\n    ]\n}"

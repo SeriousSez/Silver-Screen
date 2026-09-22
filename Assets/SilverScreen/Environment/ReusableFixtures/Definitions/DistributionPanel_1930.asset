@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f6e6edcd9c33894c89ae33bf4fc505f, type: 3}
+  m_Name: DistributionPanel_1930
+  m_EditorClassIdentifier: Assembly-CSharp::SilverScreen.Presentation.ReusableAssets.ReusableAssetDefinition
+  _stableId: silverscreen.fixture.distributionpanel_1930
+  _displayName: Three-lever distribution panel
+  _category: Fixtures
+  _subcategory: Electrical
+  _playerCatalogItem: 1
+  _availableFromYear: 1930
+  _hasAvailableUntilYear: 0
+  _availableUntilYear: 0
+  _suitability: 0
+  _placementSurface: 0
+  _role: 2
+  _handedness: 0
+  _visibleBounds:
+    m_Center: {x: 0, y: -0.000000029802322, z: 0.29446816}
+    m_Extent: {x: 0.375, y: 0.54999995, z: 0.29446816}
+  _functionalClearance:
+    m_Center: {x: 0, y: 0, z: 0.9889363}
+    m_Extent: {x: 0.375, y: 0.54999995, z: 0.4}
+  _supportsMaterialVariants: 1
+  _materialRoles:
+  - C1_Steel
+  - C1_Brass
+  - C1_Base
+  - C1_DarkCeramic
+  - C1_Galvanized
+  _environmentTags:
+  - Studio
+  - Industrial
+  - Utility
+  - Period and later settings
+  _optionalInteraction: None; controls remain representational
+  _snapBehavior: Mount plane and typed anchors; no automatic placement runtime.
+  _prefab: {fileID: 1682974051786573452, guid: 409cac4632ac05e4d8ef14d697d76593, type: 3}

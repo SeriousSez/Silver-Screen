@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fee2b82949f9b64facb8e9bbd6272ef, type: 3}
+  m_Name: Disconnect_1930
+  m_EditorClassIdentifier: Assembly-CSharp-Editor::SilverScreen.Editor.ReusableAssets.ReusableAssetProvenance
+  _masterCommit: 927ad371a96c4044689286473b542febac6a7265
+  _sourcePath: ArtSource/Stage1CleanCandidate/Stage1_CleanCandidate_A.blend
+  _sourceSha256: df68dc9e3cd42ddc1085ae98e63ec9a62a96b6f53429ba52cdd0b64df7c669db
+  _canonicalId: silverscreen.fixture.disconnect_1930
+  _prefab: {fileID: 656873894673538272, guid: e2b6d2018f3d62146b87d99b0cd03dbb, type: 3}
+  _recordJson: "{\n    \"name\": \"Disconnect_1930\",\n    \"label\": \"Disconnect
+    box\",\n    \"family\": \"Electrical\",\n    \"id\": \"silverscreen.fixture.disconnect_1930\",\n   
+    \"surface\": \"Wall\",\n    \"suitability\": \"Both\",\n    \"hand\": \"None\",\n   
+    \"status\": \"Exact source geometry; canonical pivot, hierarchy and winding repackaging\",\n   
+    \"interfaceAddition\": \"\",\n    \"player\": true,\n    \"clearance\": 0.44999998807907107,\n   
+    \"origin\": [\n        -3.0199999809265138,\n        12.029999732971192,\n       
+    1.4600000381469727\n    ],\n    \"basisRows\": [\n        1.0,\n        0.0,\n       
+    0.0,\n        0.0,\n        0.0,\n        1.0,\n        0.0,\n        1.0,\n       
+    0.0\n    ],\n    \"boundsMin\": [\n        -0.20000004768371583,\n        -0.2900000810623169,\n       
+    0.0\n    ],\n    \"boundsMax\": [\n        0.20000004768371583,\n        0.34999990463256838,\n       
+    0.34200000762939455\n    ],\n    \"dimensions\": [\n        0.40000009536743166,\n       
+    0.6399999856948853,\n        0.34200000762939455\n    ],\n    \"parts\": [\n       
+    {\n            \"name\": \"Assembly\",\n            \"positions\": [],\n           
+    \"normals\": [],\n            \"uv\": [],\n            \"materials\": [\n               
+    \"C1_DarkCeramic\",\n                \"C1_Brass\",\n                \"C1_Steel\",\n               
+    \"C1_Galvanized\"\n            ],\n            \"submeshes\": [],\n           
+    \"members\": [\n                {\n                    \"name\": \"DisconnectBoss\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"081b7b33cfbe02e5ebfaf33131fd7d834cccbbdffe8aa47708977a52d6562e5a\",\n                   
+    \"positionSha256\": \"cf20cda0a8e0dc5fd29b1a66d6ec4396b0868e2ca43a61e93eeeb4f6afdabc6f\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"DisconnectLever\",\n                    \"semanticGroup\":
+    \"PermanentServices\",\n                    \"uvSha256\": \"a4064ca8ac1947a1e62baca559803afeda705445f0cfcf3ad33eec7ed392e7bc\",\n                   
+    \"positionSha256\": \"818ab18b2477241492ff8caa514d16e61a16162c647c92672d9dc6d833f93339\",\n                   
+    \"vertices\": 40,\n                    \"triangles\": 76\n                },\n               
+    {\n                    \"name\": \"RearDisconnect\",\n                    \"semanticGroup\":
+    \"PermanentServices\",\n                    \"uvSha256\": \"4e6b60fa2cc3e2ca66c65370c25d07d231467a882898bb0bdc87b2225e396456\",\n                   
+    \"positionSha256\": \"95c1e07f0c29ac22427a1ce342dba2f64188600b1bb43e5a493d789d2a889a31\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"RearDisconnectCover\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"e0cd5913ff7cd27475e0c2be41315b5e44d8bb37c70302a7c358766e569f308a\",\n                   
+    \"positionSha256\": \"6663b64146e670c573f2cc5c93a3682c07a0cf276edc8db8cbf09b504c434fd1\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"RearDisconnectEntryGland\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"75a10ad78ea070821f268104b6a0c93fa9d589ee688551bb7956089da3e9d92b\",\n                   
+    \"positionSha256\": \"1e09c90bd73803009ea1411bd72e6dec3d875cc8d405d4e1dd47b7165953f945\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                }\n           
+    ],\n            \"vertices\": 522,\n            \"triangles\": 380\n        }\n   
+    ],\n    \"anchors\": [\n        {\n            \"name\": \"Service_Top\",\n           
+    \"kind\": \"Service\",\n            \"position\": [\n                0.0,\n               
+    0.3499999940395355,\n                0.14000000059604646\n            ],\n           
+    \"forward\": [\n                0.0,\n                1.0,\n                0.0\n           
+    ],\n            \"diameter\": 0.04600000008940697\n        }\n    ]\n}"

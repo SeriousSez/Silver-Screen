@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f6e6edcd9c33894c89ae33bf4fc505f, type: 3}
+  m_Name: IntakeCabinet_1930
+  m_EditorClassIdentifier: Assembly-CSharp::SilverScreen.Presentation.ReusableAssets.ReusableAssetDefinition
+  _stableId: silverscreen.fixture.intakecabinet_1930
+  _displayName: Electrical intake cabinet
+  _category: Fixtures
+  _subcategory: Electrical
+  _playerCatalogItem: 1
+  _availableFromYear: 1930
+  _hasAvailableUntilYear: 0
+  _availableUntilYear: 0
+  _suitability: 2
+  _placementSurface: 0
+  _role: 2
+  _handedness: 0
+  _visibleBounds:
+    m_Center: {x: -0.000000059604645, y: 0.000000029802322, z: 0.31549978}
+    m_Extent: {x: 0.575, y: 0.82000005, z: 0.31549978}
+  _functionalClearance:
+    m_Center: {x: 0, y: 0, z: 1.0809996}
+    m_Extent: {x: 0.575, y: 0.82000005, z: 0.45}
+  _supportsMaterialVariants: 1
+  _materialRoles:
+  - C1_Brass
+  - C1_Steel
+  - C1_Galvanized
+  - C1_Base
+  _environmentTags:
+  - Studio
+  - Industrial
+  - Utility
+  - Period and later settings
+  _optionalInteraction: None; controls remain representational
+  _snapBehavior: Mount plane and typed anchors; no automatic placement runtime.
+  _prefab: {fileID: 4000656558975216878, guid: eccbd45e8a45d0045a8aeff5fc356102, type: 3}

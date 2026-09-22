@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fee2b82949f9b64facb8e9bbd6272ef, type: 3}
+  m_Name: GooseneckLamp_1930
+  m_EditorClassIdentifier: Assembly-CSharp-Editor::SilverScreen.Editor.ReusableAssets.ReusableAssetProvenance
+  _masterCommit: 927ad371a96c4044689286473b542febac6a7265
+  _sourcePath: ArtSource/Stage1CleanCandidate/Stage1_CleanCandidate_A.blend
+  _sourceSha256: df68dc9e3cd42ddc1085ae98e63ec9a62a96b6f53429ba52cdd0b64df7c669db
+  _canonicalId: silverscreen.fixture.goosenecklamp_1930
+  _prefab: {fileID: 5681870088992385518, guid: d1e794fb21582e74fbff41c6b9a0e93b, type: 3}
+  _recordJson: "{\n    \"name\": \"GooseneckLamp_1930\",\n    \"label\": \"Gooseneck
+    wall lamp\",\n    \"family\": \"Lighting\",\n    \"id\": \"silverscreen.fixture.goosenecklamp_1930\",\n   
+    \"surface\": \"Wall\",\n    \"suitability\": \"Both\",\n    \"hand\": \"None\",\n   
+    \"status\": \"Exact source geometry; canonical pivot, hierarchy and winding repackaging\",\n   
+    \"interfaceAddition\": \"\",\n    \"player\": true,\n    \"clearance\": 0.0,\n   
+    \"origin\": [\n        -5.96999979019165,\n        -11.994999885559082,\n       
+    3.7799999713897707\n    ],\n    \"basisRows\": [\n        -1.0,\n        0.0,\n       
+    0.0,\n        0.0,\n        0.0,\n        1.0,\n        0.0,\n        -1.0,\n       
+    0.0\n    ],\n    \"boundsMin\": [\n        -0.19500017166137696,\n        -0.13499999046325684,\n       
+    0.0\n    ],\n    \"boundsMax\": [\n        0.19500017166137696,\n        0.42412495613098147,\n       
+    0.6549997329711914\n    ],\n    \"dimensions\": [\n        0.3900003433227539,\n       
+    0.5591249465942383,\n        0.6549997329711914\n    ],\n    \"parts\": [\n       
+    {\n            \"name\": \"Assembly\",\n            \"positions\": [],\n           
+    \"normals\": [],\n            \"uv\": [],\n            \"materials\": [\n               
+    \"C1_Steel\",\n                \"C1_LampGlass\",\n                \"C1_LampReflector\"\n           
+    ],\n            \"submeshes\": [],\n            \"members\": [\n               
+    {\n                    \"name\": \"GooseneckLampArm\",\n                    \"semanticGroup\":
+    \"PermanentLighting\",\n                    \"uvSha256\": \"43099b0c62ee353a2fcb628f2493904434ffad9fffa0ecd1994f3327d687d78d\",\n                   
+    \"positionSha256\": \"fa3cfba83b8527da20c8391efa8720091e69cf3f00cc3f726ce522ad1a4dc7ef\",\n                   
+    \"vertices\": 1296,\n                    \"triangles\": 2588\n               
+    },\n                {\n                    \"name\": \"LampMountScrew\",\n                   
+    \"semanticGroup\": \"PermanentLighting\",\n                    \"uvSha256\":
+    \"e39a9a34a628a56c959cade7bc32c77835b4cd2b1dbc214bfb06ae55c360ee23\",\n                   
+    \"positionSha256\": \"d9b86c379fcdf8f02be1d50d122464572b10b442c9ee51888d27e76c71a95721\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"LampMountScrew.001\",\n                   
+    \"semanticGroup\": \"PermanentLighting\",\n                    \"uvSha256\":
+    \"d6eea8cb4da334a0649a9c4f61eef00d56484eb231ea9a51666f7ac07fa499e7\",\n                   
+    \"positionSha256\": \"a1f4b82b5548039cb13158416ab3ddf1393879f93c7d4a43da28f1c3d7248166\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"LampWallBackplate\",\n                   
+    \"semanticGroup\": \"PermanentLighting\",\n                    \"uvSha256\":
+    \"61566b044ee92e78ac3a435679698694cbad679f05f51a964929a92fc1df5c5e\",\n                   
+    \"positionSha256\": \"bc7fdd7892f4252d66c8c52527c5e3d2c1b1b25c1a416f4d3c86e31065395f04\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"WallLampGlass\",\n                    \"semanticGroup\":
+    \"PermanentLighting\",\n                    \"uvSha256\": \"0abbdebe8eecec74309de28eaba24e1df2761b651f2d99a2aac8714604d35287\",\n                   
+    \"positionSha256\": \"2ad3e2912da44bf0348fe9b9b34948c09e87b782ce3e8102691f23ecfd8c246a\",\n                   
+    \"vertices\": 128,\n                    \"triangles\": 252\n                },\n               
+    {\n                    \"name\": \"WallLampSpunShade\",\n                   
+    \"semanticGroup\": \"PermanentLighting\",\n                    \"uvSha256\":
+    \"65d6d543f31557e07733789517d970d2f6959451dd6c74f15f85cf523c0012e2\",\n                   
+    \"positionSha256\": \"2e513126ae292142f629c7b194444857e662d8663c6d626e02ed8720b71aa815\",\n                   
+    \"vertices\": 528,\n                    \"triangles\": 1052\n               
+    }\n            ],\n            \"vertices\": 2996,\n            \"triangles\":
+    4136\n        }\n    ],\n    \"anchors\": [\n        {\n            \"name\":
+    \"LightOrigin\",\n            \"kind\": \"Light\",\n            \"position\":
+    [\n                0.0,\n                -0.06499999761581421,\n               
+    0.46000000834465029\n            ],\n            \"forward\": [\n               
+    0.0,\n                -1.0,\n                0.15000000596046449\n           
+    ],\n            \"diameter\": 0.0\n        },\n        {\n            \"name\":
+    \"Service_Rear\",\n            \"kind\": \"Service\",\n            \"position\":
+    [\n                0.0,\n                0.0,\n                0.0\n           
+    ],\n            \"forward\": [\n                0.0,\n                0.0,\n               
+    -1.0\n            ],\n            \"diameter\": 0.026000000536441804\n       
+    }\n    ]\n}"

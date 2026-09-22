@@ -1,0 +1,97 @@
+[
+  {
+    "asset": "MeterCabinet_1930",
+    "meanAbsoluteChannelDifference_0_to_255": 5.233333333333334e-05,
+    "maximumChannelDifference": 1
+  },
+  {
+    "asset": "DistributionPanel_1930",
+    "meanAbsoluteChannelDifference_0_to_255": 2.9666666666666665e-05,
+    "maximumChannelDifference": 1
+  },
+  {
+    "asset": "IntakeCabinet_1930",
+    "meanAbsoluteChannelDifference_0_to_255": 1.0333333333333333e-05,
+    "maximumChannelDifference": 1
+  },
+  {
+    "asset": "Disconnect_1930",
+    "meanAbsoluteChannelDifference_0_to_255": 2.4e-05,
+    "maximumChannelDifference": 1
+  },
+  {
+    "asset": "JunctionBox_Shallow_1930",
+    "meanAbsoluteChannelDifference_0_to_255": 0.000342,
+    "maximumChannelDifference": 1
+  },
+  {
+    "asset": "JunctionBox_Deep_1930",
+    "meanAbsoluteChannelDifference_0_to_255": 0.0003053333333333333,
+    "maximumChannelDifference": 1
+  },
+  {
+    "asset": "PullBox_1930",
+    "meanAbsoluteChannelDifference_0_to_255": 7.866666666666666e-05,
+    "maximumChannelDifference": 1
+  },
+  {
+    "asset": "LeverControl_Raised_1930",
+    "meanAbsoluteChannelDifference_0_to_255": 2.4666666666666665e-05,
+    "maximumChannelDifference": 1
+  },
+  {
+    "asset": "LeverControl_Lowered_1930",
+    "meanAbsoluteChannelDifference_0_to_255": 8e-06,
+    "maximumChannelDifference": 1
+  },
+  {
+    "asset": "GooseneckLamp_1930",
+    "meanAbsoluteChannelDifference_0_to_255": 1.6666666666666665e-06,
+    "maximumChannelDifference": 1
+  },
+  {
+    "asset": "PendantWorkLamp_1930",
+    "meanAbsoluteChannelDifference_0_to_255": 0.03777566666666667,
+    "maximumChannelDifference": 182
+  },
+  {
+    "asset": "Bollard_1930",
+    "meanAbsoluteChannelDifference_0_to_255": 2.333333333333333e-06,
+    "maximumChannelDifference": 1
+  },
+  {
+    "asset": "DoorPull_1930",
+    "meanAbsoluteChannelDifference_0_to_255": 6e-06,
+    "maximumChannelDifference": 1
+  },
+  {
+    "asset": "PersonnelLockset_1930",
+    "meanAbsoluteChannelDifference_0_to_255": 1e-06,
+    "maximumChannelDifference": 1
+  },
+  {
+    "asset": "PersonnelHinge_180_1930",
+    "meanAbsoluteChannelDifference_0_to_255": 6.666666666666666e-07,
+    "maximumChannelDifference": 1
+  },
+  {
+    "asset": "PersonnelHinge_190_1930",
+    "meanAbsoluteChannelDifference_0_to_255": 1e-06,
+    "maximumChannelDifference": 1
+  },
+  {
+    "asset": "PersonnelHinge_140_1930",
+    "meanAbsoluteChannelDifference_0_to_255": 5.3333333333333345e-06,
+    "maximumChannelDifference": 1
+  },
+  {
+    "asset": "DisplayFrame_Double_1930",
+    "meanAbsoluteChannelDifference_0_to_255": 9.666666666666667e-06,
+    "maximumChannelDifference": 1
+  },
+  {
+    "asset": "DisplayFrame_Single_1930",
+    "meanAbsoluteChannelDifference_0_to_255": 1.8e-05,
+    "maximumChannelDifference": 1
+  }
+]

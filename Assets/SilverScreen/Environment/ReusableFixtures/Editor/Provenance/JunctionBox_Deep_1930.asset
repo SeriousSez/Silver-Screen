@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fee2b82949f9b64facb8e9bbd6272ef, type: 3}
+  m_Name: JunctionBox_Deep_1930
+  m_EditorClassIdentifier: Assembly-CSharp-Editor::SilverScreen.Editor.ReusableAssets.ReusableAssetProvenance
+  _masterCommit: 927ad371a96c4044689286473b542febac6a7265
+  _sourcePath: ArtSource/Stage1CleanCandidate/Stage1_CleanCandidate_A.blend
+  _sourceSha256: df68dc9e3cd42ddc1085ae98e63ec9a62a96b6f53429ba52cdd0b64df7c669db
+  _canonicalId: silverscreen.fixture.junctionbox_deep_1930
+  _prefab: {fileID: 5956086861323623672, guid: 9fc131b02455c1f439eb27cf02d37de7, type: 3}
+  _recordJson: "{\n    \"name\": \"JunctionBox_Deep_1930\",\n    \"label\": \"Deep
+    junction box\",\n    \"family\": \"Electrical\",\n    \"id\": \"silverscreen.fixture.junctionbox_deep_1930\",\n   
+    \"surface\": \"Wall\",\n    \"suitability\": \"Both\",\n    \"hand\": \"None\",\n   
+    \"status\": \"Exact source geometry; canonical pivot, hierarchy and winding repackaging\",\n   
+    \"interfaceAddition\": \"\",\n    \"player\": true,\n    \"clearance\": 0.25,\n   
+    \"origin\": [\n        -2.0399999618530275,\n        11.984999656677246,\n       
+    3.0999999046325685\n    ],\n    \"basisRows\": [\n        1.0,\n        0.0,\n       
+    0.0,\n        0.0,\n        0.0,\n        1.0,\n        0.0,\n        1.0,\n       
+    0.0\n    ],\n    \"boundsMin\": [\n        -0.06999993324279785,\n        -0.08999991416931153,\n       
+    0.0\n    ],\n    \"boundsMax\": [\n        0.06999993324279785,\n        0.09000015258789063,\n       
+    0.17300033569335938\n    ],\n    \"dimensions\": [\n        0.1399998664855957,\n       
+    0.18000006675720216,\n        0.17300033569335938\n    ],\n    \"parts\": [\n       
+    {\n            \"name\": \"Assembly\",\n            \"positions\": [],\n           
+    \"normals\": [],\n            \"uv\": [],\n            \"materials\": [\n               
+    \"C1_Steel\",\n                \"C1_Galvanized\"\n            ],\n           
+    \"submeshes\": [],\n            \"members\": [\n                {\n                   
+    \"name\": \"CastJunctionBox\",\n                    \"semanticGroup\": \"PermanentServices\",\n                   
+    \"uvSha256\": \"4888e2d4e0d41d60dc7b93fb73c28d7a59c9b7ae3d937bfdfb9e9526f7798a32\",\n                   
+    \"positionSha256\": \"f816692c5eddeaa7a8d420d63cf23627a0d77804e14479f12f3caa478384e1cd\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"JunctionCover\",\n                    \"semanticGroup\":
+    \"PermanentServices\",\n                    \"uvSha256\": \"80c7b2c32fcaa5b785adfabdf54c7e845767b85556f70fdbbfb6d3ad3fbb11ff\",\n                   
+    \"positionSha256\": \"321bd664ae80c401761bb9d0ac0a710859fce0e134a73c68840c681deb7cb389\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"JunctionLidScrew\",\n                    \"semanticGroup\":
+    \"PermanentServices\",\n                    \"uvSha256\": \"b3b40a7ccfea42d430b108594c2623e456240c2ee80714e84c25412920aeffe2\",\n                   
+    \"positionSha256\": \"4b172630e5c33dd2c989d144065267d9a06b9c720a2386c653491eb132e30ef5\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"JunctionLidScrew.001\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"1913f50df065af7a6932edabd96b81dd2e447fbe9cc301fb37cc754a29fd3be3\",\n                   
+    \"positionSha256\": \"24512cbbb31015aa38f8cf9807e4897b5ccb3f853ca5649cd45a996ee74ff63a\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"JunctionLidScrew.002\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"7545b9c060963a57779e63a50484c3be92dd61350b3366272f92398983569f28\",\n                   
+    \"positionSha256\": \"444f5ac4752b6373393afdee20f3f5bc164739aa72cb30edfc19b0fdb52e563d\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"JunctionLidScrew.003\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"0a803fe389a9b7c7fb015f06c11381b2d7e99d4c763587c7ab8db347e44339a5\",\n                   
+    \"positionSha256\": \"dd2ac1b9e57cc61bc49701da234020c78ac1ea96a5c024fd0a9bd2b981638c2c\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                }\n           
+    ],\n            \"vertices\": 580,\n            \"triangles\": 488\n        }\n   
+    ],\n    \"anchors\": [\n        {\n            \"name\": \"Service_Rear\",\n           
+    \"kind\": \"Service\",\n            \"position\": [\n                0.0,\n               
+    0.0,\n                0.0\n            ],\n            \"forward\": [\n               
+    0.0,\n                0.0,\n                -1.0\n            ],\n           
+    \"diameter\": 0.026000000536441804\n        }\n    ]\n}"

@@ -1,0 +1,194 @@
+{
+    "assets": [
+        {
+            "asset": "MeterCabinet_1930",
+            "canonicalVertices": 2675,
+            "unmatchedVertices": 0,
+            "canonicalTriangles": 3008,
+            "referenceTriangles": 3008,
+            "maximumPositionErrorMetres": 0.0,
+            "maximumUvError": 0.0,
+            "maximumNormalDifference": 0.00024514293181709945
+        },
+        {
+            "asset": "DistributionPanel_1930",
+            "canonicalVertices": 5331,
+            "unmatchedVertices": 0,
+            "canonicalTriangles": 4824,
+            "referenceTriangles": 4824,
+            "maximumPositionErrorMetres": 0.0,
+            "maximumUvError": 0.0,
+            "maximumNormalDifference": 0.00016185022832360119
+        },
+        {
+            "asset": "IntakeCabinet_1930",
+            "canonicalVertices": 2709,
+            "unmatchedVertices": 0,
+            "canonicalTriangles": 2836,
+            "referenceTriangles": 2836,
+            "maximumPositionErrorMetres": 2.9802322387695315e-8,
+            "maximumUvError": 0.0,
+            "maximumNormalDifference": 0.00038416439201682806
+        },
+        {
+            "asset": "Disconnect_1930",
+            "canonicalVertices": 522,
+            "unmatchedVertices": 0,
+            "canonicalTriangles": 380,
+            "referenceTriangles": 380,
+            "maximumPositionErrorMetres": 0.0,
+            "maximumUvError": 0.0,
+            "maximumNormalDifference": 0.00009059120202437043
+        },
+        {
+            "asset": "JunctionBox_Shallow_1930",
+            "canonicalVertices": 579,
+            "unmatchedVertices": 0,
+            "canonicalTriangles": 488,
+            "referenceTriangles": 488,
+            "maximumPositionErrorMetres": 0.0,
+            "maximumUvError": 0.0,
+            "maximumNormalDifference": 0.0007941221119835973
+        },
+        {
+            "asset": "JunctionBox_Deep_1930",
+            "canonicalVertices": 580,
+            "unmatchedVertices": 0,
+            "canonicalTriangles": 488,
+            "referenceTriangles": 488,
+            "maximumPositionErrorMetres": 0.0,
+            "maximumUvError": 0.0,
+            "maximumNormalDifference": 0.0005530096241272986
+        },
+        {
+            "asset": "PullBox_1930",
+            "canonicalVertices": 400,
+            "unmatchedVertices": 0,
+            "canonicalTriangles": 304,
+            "referenceTriangles": 304,
+            "maximumPositionErrorMetres": 0.0,
+            "maximumUvError": 0.0,
+            "maximumNormalDifference": 0.00010101987572852522
+        },
+        {
+            "asset": "LeverControl_Raised_1930",
+            "canonicalVertices": 1678,
+            "unmatchedVertices": 0,
+            "canonicalTriangles": 1548,
+            "referenceTriangles": 1548,
+            "maximumPositionErrorMetres": 0.0,
+            "maximumUvError": 0.0,
+            "maximumNormalDifference": 0.00013226344890426844
+        },
+        {
+            "asset": "LeverControl_Lowered_1930",
+            "canonicalVertices": 1654,
+            "unmatchedVertices": 0,
+            "canonicalTriangles": 1548,
+            "referenceTriangles": 1548,
+            "maximumPositionErrorMetres": 0.0,
+            "maximumUvError": 0.0,
+            "maximumNormalDifference": 0.0000099181515906821
+        },
+        {
+            "asset": "GooseneckLamp_1930",
+            "canonicalVertices": 2996,
+            "unmatchedVertices": 0,
+            "canonicalTriangles": 4136,
+            "referenceTriangles": 4136,
+            "maximumPositionErrorMetres": 0.0,
+            "maximumUvError": 0.0,
+            "maximumNormalDifference": 0.000038897218473721296
+        },
+        {
+            "asset": "PendantWorkLamp_1930",
+            "canonicalVertices": 1880,
+            "unmatchedVertices": 0,
+            "canonicalTriangles": 2108,
+            "referenceTriangles": 2108,
+            "maximumPositionErrorMetres": 0.0,
+            "maximumUvError": 0.0,
+            "maximumNormalDifference": 0.00011184162576682866
+        },
+        {
+            "asset": "Bollard_1930",
+            "canonicalVertices": 781,
+            "unmatchedVertices": 0,
+            "canonicalTriangles": 744,
+            "referenceTriangles": 744,
+            "maximumPositionErrorMetres": 0.0,
+            "maximumUvError": 0.0,
+            "maximumNormalDifference": 0.00016250158660113811
+        },
+        {
+            "asset": "DoorPull_1930",
+            "canonicalVertices": 1440,
+            "unmatchedVertices": 0,
+            "canonicalTriangles": 1828,
+            "referenceTriangles": 1828,
+            "maximumPositionErrorMetres": 0.0,
+            "maximumUvError": 0.0,
+            "maximumNormalDifference": 0.00009361248521599919
+        },
+        {
+            "asset": "PersonnelLockset_1930",
+            "canonicalVertices": 1107,
+            "unmatchedVertices": 0,
+            "canonicalTriangles": 772,
+            "referenceTriangles": 772,
+            "maximumPositionErrorMetres": 0.0,
+            "maximumUvError": 0.0,
+            "maximumNormalDifference": 0.00011300871847197413
+        },
+        {
+            "asset": "PersonnelHinge_180_1930",
+            "canonicalVertices": 602,
+            "unmatchedVertices": 0,
+            "canonicalTriangles": 456,
+            "referenceTriangles": 456,
+            "maximumPositionErrorMetres": 0.0,
+            "maximumUvError": 0.0,
+            "maximumNormalDifference": 0.00032749975798651576
+        },
+        {
+            "asset": "PersonnelHinge_190_1930",
+            "canonicalVertices": 613,
+            "unmatchedVertices": 0,
+            "canonicalTriangles": 456,
+            "referenceTriangles": 456,
+            "maximumPositionErrorMetres": 0.0,
+            "maximumUvError": 0.0,
+            "maximumNormalDifference": 0.000219136054511182
+        },
+        {
+            "asset": "PersonnelHinge_140_1930",
+            "canonicalVertices": 604,
+            "unmatchedVertices": 0,
+            "canonicalTriangles": 456,
+            "referenceTriangles": 456,
+            "maximumPositionErrorMetres": 0.0,
+            "maximumUvError": 0.0,
+            "maximumNormalDifference": 0.000015592773706885055
+        },
+        {
+            "asset": "DisplayFrame_Double_1930",
+            "canonicalVertices": 895,
+            "unmatchedVertices": 0,
+            "canonicalTriangles": 480,
+            "referenceTriangles": 480,
+            "maximumPositionErrorMetres": 0.0,
+            "maximumUvError": 0.0,
+            "maximumNormalDifference": 0.0006005302420817316
+        },
+        {
+            "asset": "DisplayFrame_Single_1930",
+            "canonicalVertices": 570,
+            "unmatchedVertices": 0,
+            "canonicalTriangles": 300,
+            "referenceTriangles": 300,
+            "maximumPositionErrorMetres": 0.0,
+            "maximumUvError": 0.0,
+            "maximumNormalDifference": 0.00043860505684278905
+        }
+    ]
+}

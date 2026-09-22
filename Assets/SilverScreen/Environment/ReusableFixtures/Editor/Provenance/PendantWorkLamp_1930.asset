@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fee2b82949f9b64facb8e9bbd6272ef, type: 3}
+  m_Name: PendantWorkLamp_1930
+  m_EditorClassIdentifier: Assembly-CSharp-Editor::SilverScreen.Editor.ReusableAssets.ReusableAssetProvenance
+  _masterCommit: 927ad371a96c4044689286473b542febac6a7265
+  _sourcePath: ArtSource/Stage1CleanCandidate/Stage1_CleanCandidate_A.blend
+  _sourceSha256: df68dc9e3cd42ddc1085ae98e63ec9a62a96b6f53429ba52cdd0b64df7c669db
+  _canonicalId: silverscreen.fixture.pendantworklamp_1930
+  _prefab: {fileID: 724406898186024267, guid: 46ca7e1fe1d13434fb0f71ae5c5a4284, type: 3}
+  _recordJson: "{\n    \"name\": \"PendantWorkLamp_1930\",\n    \"label\": \"Pendant
+    work lamp\",\n    \"family\": \"Lighting\",\n    \"id\": \"silverscreen.fixture.pendantworklamp_1930\",\n   
+    \"surface\": \"Ceiling\",\n    \"suitability\": \"Indoor\",\n    \"hand\": \"None\",\n   
+    \"status\": \"Exact source geometry; canonical pivot, hierarchy and winding repackaging\",\n   
+    \"interfaceAddition\": \"\",\n    \"player\": true,\n    \"clearance\": 0.0,\n   
+    \"origin\": [\n        -4.349999904632568,\n        -10.5,\n        7.427499771118164\n   
+    ],\n    \"basisRows\": [\n        -1.0,\n        0.0,\n        0.0,\n       
+    0.0,\n        0.0,\n        1.0,\n        0.0,\n        -1.0,\n        0.0\n   
+    ],\n    \"boundsMin\": [\n        -0.2539997100830078,\n        -0.6894998550415039,\n       
+    -0.2539997100830078\n    ],\n    \"boundsMax\": [\n        0.254000186920166,\n       
+    0.0,\n        0.2539997100830078\n    ],\n    \"dimensions\": [\n        0.5079998970031738,\n       
+    0.6894998550415039,\n        0.5079994201660156\n    ],\n    \"parts\": [\n       
+    {\n            \"name\": \"Head\",\n            \"positions\": [],\n           
+    \"normals\": [],\n            \"uv\": [],\n            \"materials\": [\n               
+    \"C1_EnamelWhite\",\n                \"C1_Steel\",\n                \"C1_LampReflector\",\n               
+    \"C1_LampGlass\"\n            ],\n            \"submeshes\": [],\n           
+    \"members\": [\n                {\n                    \"name\": \"PorcelainSocket\",\n                   
+    \"semanticGroup\": \"PermanentLighting\",\n                    \"uvSha256\":
+    \"bf22de5646a01153033333216bd23bae7118150dd4c1a385fd43ea023a436614\",\n                   
+    \"positionSha256\": \"902618f6f76fbb73082226d186ee424c5f7cd5bb05d32c989750a322ad086447\",\n                   
+    \"vertices\": 128,\n                    \"triangles\": 252\n                },\n               
+    {\n                    \"name\": \"SpunEnamelReflector\",\n                   
+    \"semanticGroup\": \"PermanentLighting\",\n                    \"uvSha256\":
+    \"0b4123eadd2223aae01f2bd9b2c582a3285496fa519547cd796108c5a65edab6\",\n                   
+    \"positionSha256\": \"729652db859bcbae5f6eba3620d82f0a766f66eb266d1173ff5cd48daaef2d15\",\n                   
+    \"vertices\": 672,\n                    \"triangles\": 1340\n               
+    },\n                {\n                    \"name\": \"WarmLampBulb\",\n                   
+    \"semanticGroup\": \"PermanentLighting\",\n                    \"uvSha256\":
+    \"a40c8c3af7441bb97526acb0d30e1d4d6dce650e7bbe8af869c6312225a03d6f\",\n                   
+    \"positionSha256\": \"4019fca170b78cb5c0031329508dc4575bcce1805b4c27128fbe5ba26f76dd2e\",\n                   
+    \"vertices\": 192,\n                    \"triangles\": 380\n                }\n           
+    ],\n            \"vertices\": 1684,\n            \"triangles\": 1972\n       
+    },\n        {\n            \"name\": \"Mount\",\n            \"positions\": [],\n           
+    \"normals\": [],\n            \"uv\": [],\n            \"materials\": [\n               
+    \"C1_Steel\"\n            ],\n            \"submeshes\": [],\n            \"members\":
+    [\n                {\n                    \"name\": \"PendantClamp\",\n                   
+    \"semanticGroup\": \"PermanentLighting\",\n                    \"uvSha256\":
+    \"1ecbcf3fdf476779e8be98ea8c95f096810d7ee924ed602cff7f47043f87406b\",\n                   
+    \"positionSha256\": \"a57df1728e545239eb760c4ae51e5ca89be066cdf9146d1137cb2bd908961730\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"PendantStem\",\n                    \"semanticGroup\":
+    \"PermanentLighting\",\n                    \"uvSha256\": \"02972f4105ec8214b8ac71166f827bcc9d87374600eb60ca08f8550954dba055\",\n                   
+    \"positionSha256\": \"4ea8da330e9de61a2a7e702a7f760dbd6bbe7cb9edad3da0a7436801d08b86cd\",\n                   
+    \"vertices\": 40,\n                    \"triangles\": 76\n                }\n           
+    ],\n            \"vertices\": 196,\n            \"triangles\": 136\n        }\n   
+    ],\n    \"anchors\": [\n        {\n            \"name\": \"HeadSocket\",\n           
+    \"kind\": \"Socket\",\n            \"position\": [\n                0.0,\n               
+    -0.407499760389328,\n                0.0\n            ],\n            \"forward\":
+    [\n                0.0,\n                1.0,\n                0.0\n           
+    ],\n            \"diameter\": 0.0\n        },\n        {\n            \"name\":
+    \"LightOrigin\",\n            \"kind\": \"Light\",\n            \"position\":
+    [\n                0.0,\n                -0.7074997425079346,\n               
+    0.0\n            ],\n            \"forward\": [\n                0.0,\n               
+    -1.0,\n                0.0\n            ],\n            \"diameter\": 0.0\n       
+    }\n    ]\n}"

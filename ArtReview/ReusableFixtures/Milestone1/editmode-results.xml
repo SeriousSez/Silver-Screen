@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="15" result="Passed" total="15" passed="15" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-09-22 09:30:50Z" end-time="2026-09-22 09:30:51Z" duration="1.0338436">
+  <test-suite type="TestSuite" id="1000" name="Silver Screen" fullname="Silver Screen" runstate="Runnable" testcasecount="99" result="Passed" start-time="2026-09-22 09:30:50Z" end-time="2026-09-22 09:30:51Z" duration="1.033844" total="15" passed="15" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1113" name="Assembly-CSharp-Editor.dll" fullname="C:/Repos/Unity/Silver Screen/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" runstate="Runnable" testcasecount="99" result="Passed" start-time="2026-09-22 09:30:50Z" end-time="2026-09-22 09:30:51Z" duration="0.934977" total="15" passed="15" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="7080" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1114" name="SilverScreen" fullname="SilverScreen" runstate="Runnable" testcasecount="99" result="Passed" start-time="2026-09-22 09:30:50Z" end-time="2026-09-22 09:30:51Z" duration="0.927620" total="15" passed="15" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1115" name="Tests" fullname="SilverScreen.Tests" runstate="Runnable" testcasecount="99" result="Passed" start-time="2026-09-22 09:30:50Z" end-time="2026-09-22 09:30:51Z" duration="0.825630" total="15" passed="15" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1116" name="EditMode" fullname="SilverScreen.Tests.EditMode" runstate="Runnable" testcasecount="85" result="Passed" start-time="2026-09-22 09:30:50Z" end-time="2026-09-22 09:30:51Z" duration="0.818096" total="15" passed="15" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1016" name="DisplayArtworkTests" fullname="SilverScreen.Tests.EditMode.DisplayArtworkTests" classname="SilverScreen.Tests.EditMode.DisplayArtworkTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-09-22 09:30:51Z" end-time="2026-09-22 09:30:51Z" duration="0.252286" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1018" name="ArbitraryFieldsHaveNoImplicitPlayerOrYearDefaultsAndIgnoreUnchangedValues" fullname="SilverScreen.Tests.EditMode.DisplayArtworkTests.ArbitraryFieldsHaveNoImplicitPlayerOrYearDefaultsAndIgnoreUnchangedValues" methodname="ArbitraryFieldsHaveNoImplicitPlayerOrYearDefaultsAndIgnoreUnchangedValues" classname="SilverScreen.Tests.EditMode.DisplayArtworkTests" runstate="Runnable" seed="2104534898" result="Passed" start-time="2026-09-22 09:30:51Z" end-time="2026-09-22 09:30:51Z" duration="0.026289" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1020" name="HistoricalLiteralDateStaysFixedAndFutureTemplateFieldRenders" fullname="SilverScreen.Tests.EditMode.DisplayArtworkTests.HistoricalLiteralDateStaysFixedAndFutureTemplateFieldRenders" methodname="HistoricalLiteralDateStaysFixedAndFutureTemplateFieldRenders" classname="SilverScreen.Tests.EditMode.DisplayArtworkTests" runstate="Runnable" seed="2119602127" result="Passed" start-time="2026-09-22 09:30:51Z" end-time="2026-09-22 09:30:51Z" duration="0.052633" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1017" name="IdentityYearRolloverAndRestoredClockUpdateOnlyTheirBoundContext" fullname="SilverScreen.Tests.EditMode.DisplayArtworkTests.IdentityYearRolloverAndRestoredClockUpdateOnlyTheirBoundContext" methodname="IdentityYearRolloverAndRestoredClockUpdateOnlyTheirBoundContext" classname="SilverScreen.Tests.EditMode.DisplayArtworkTests" runstate="Runnable" seed="1442206290" result="Passed" start-time="2026-09-22 09:30:51Z" end-time="2026-09-22 09:30:51Z" duration="0.000702" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1019" name="RealRenderedPixelsChangeForNameYearAndTitleWhileSharedAssetsAndRivalStayUnchanged" fullname="SilverScreen.Tests.EditMode.DisplayArtworkTests.RealRenderedPixelsChangeForNameYearAndTitleWhileSharedAssetsAndRivalStayUnchanged" methodname="RealRenderedPixelsChangeForNameYearAndTitleWhileSharedAssetsAndRivalStayUnchanged" classname="SilverScreen.Tests.EditMode.DisplayArtworkTests" runstate="Runnable" seed="701163554" result="Passed" start-time="2026-09-22 09:30:51Z" end-time="2026-09-22 09:30:51Z" duration="0.145468" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1066" name="ReusableFixtureTests" fullname="SilverScreen.Tests.EditMode.ReusableFixtureTests" classname="SilverScreen.Tests.EditMode.ReusableFixtureTests" runstate="Runnable" testcasecount="11" result="Passed" start-time="2026-09-22 09:30:51Z" end-time="2026-09-22 09:30:51Z" duration="0.465270" total="11" passed="11" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1078" name="ArtworkIsPerInstanceAndSurvivesDisableEnableWithoutMaterialMutation" fullname="SilverScreen.Tests.EditMode.ReusableFixtureTests.ArtworkIsPerInstanceAndSurvivesDisableEnableWithoutMaterialMutation" methodname="ArtworkIsPerInstanceAndSurvivesDisableEnableWithoutMaterialMutation" classname="SilverScreen.Tests.EditMode.ReusableFixtureTests" runstate="Runnable" seed="1463222090" result="Passed" start-time="2026-09-22 09:30:51Z" end-time="2026-09-22 09:30:51Z" duration="0.008320" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1079" name="BollardColliderStopsAHorizontalRayButClearanceIsNotCollision" fullname="SilverScreen.Tests.EditMode.ReusableFixtureTests.BollardColliderStopsAHorizontalRayButClearanceIsNotCollision" methodname="BollardColliderStopsAHorizontalRayButClearanceIsNotCollision" classname="SilverScreen.Tests.EditMode.ReusableFixtureTests" runstate="Runnable" seed="1122124190" result="Passed" start-time="2026-09-22 09:30:51Z" end-time="2026-09-22 09:30:51Z" duration="0.004425" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1075" name="CatalogAvailabilityBeginsIn1930AndDoesNotExpire" fullname="SilverScreen.Tests.EditMode.ReusableFixtureTests.CatalogAvailabilityBeginsIn1930AndDoesNotExpire" methodname="CatalogAvailabilityBeginsIn1930AndDoesNotExpire" classname="SilverScreen.Tests.EditMode.ReusableFixtureTests" runstate="Runnable" seed="760440827" result="Passed" start-time="2026-09-22 09:30:51Z" end-time="2026-09-22 09:30:51Z" duration="0.030307" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-suite type="ParameterizedMethod" id="1069" name="CropRetainsImageAspect" fullname="SilverScreen.Tests.EditMode.ReusableFixtureTests.CropRetainsImageAspect" classname="SilverScreen.Tests.EditMode.ReusableFixtureTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-22 09:30:51Z" end-time="2026-09-22 09:30:51Z" duration="0.005984" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1067" name="CropRetainsImageAspect(1,2,600,900)" fullname="SilverScreen.Tests.EditMode.ReusableFixtureTests.CropRetainsImageAspect(1,2,600,900)" methodname="CropRetainsImageAspect" classname="SilverScreen.Tests.EditMode.ReusableFixtureTests" runstate="Runnable" seed="1077476943" result="Passed" start-time="2026-09-22 09:30:51Z" end-time="2026-09-22 09:30:51Z" duration="0.000574" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1068" name="CropRetainsImageAspect(2,1,600,900)" fullname="SilverScreen.Tests.EditMode.ReusableFixtureTests.CropRetainsImageAspect(2,1,600,900)" methodname="CropRetainsImageAspect" classname="SilverScreen.Tests.EditMode.ReusableFixtureTests" runstate="Runnable" seed="740456755" result="Passed" start-time="2026-09-22 09:30:51Z" end-time="2026-09-22 09:30:51Z" duration="0.000052" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+              </test-suite>
+              <test-case id="1076" name="EveryImportedMeshMatchesPacketPositionsNormalsUvsTrianglesAndMaterials" fullname="SilverScreen.Tests.EditMode.ReusableFixtureTests.EveryImportedMeshMatchesPacketPositionsNormalsUvsTrianglesAndMaterials" methodname="EveryImportedMeshMatchesPacketPositionsNormalsUvsTrianglesAndMaterials" classname="SilverScreen.Tests.EditMode.ReusableFixtureTests" runstate="Runnable" seed="379096317" result="Passed" start-time="2026-09-22 09:30:51Z" end-time="2026-09-22 09:30:51Z" duration="0.394261" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-suite type="ParameterizedMethod" id="1073" name="FitPreservesWholeArtworkAndDoesNotEscapeAperture" fullname="SilverScreen.Tests.EditMode.ReusableFixtureTests.FitPreservesWholeArtworkAndDoesNotEscapeAperture" classname="SilverScreen.Tests.EditMode.ReusableFixtureTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-22 09:30:51Z" end-time="2026-09-22 09:30:51Z" duration="0.007426" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1070" name="FitPreservesWholeArtworkAndDoesNotEscapeAperture(1,2,600,900)" fullname="SilverScreen.Tests.EditMode.ReusableFixtureTests.FitPreservesWholeArtworkAndDoesNotEscapeAperture(1,2,600,900)" methodname="FitPreservesWholeArtworkAndDoesNotEscapeAperture" classname="SilverScreen.Tests.EditMode.ReusableFixtureTests" runstate="Runnable" seed="1009289072" result="Passed" start-time="2026-09-22 09:30:51Z" end-time="2026-09-22 09:30:51Z" duration="0.000818" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1071" name="FitPreservesWholeArtworkAndDoesNotEscapeAperture(2,1,1000,600)" fullname="SilverScreen.Tests.EditMode.ReusableFixtureTests.FitPreservesWholeArtworkAndDoesNotEscapeAperture(2,1,1000,600)" methodname="FitPreservesWholeArtworkAndDoesNotEscapeAperture" classname="SilverScreen.Tests.EditMode.ReusableFixtureTests" runstate="Runnable" seed="1417848465" result="Passed" start-time="2026-09-22 09:30:51Z" end-time="2026-09-22 09:30:51Z" duration="0.000066" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1072" name="FitPreservesWholeArtworkAndDoesNotEscapeAperture(2,1,600,900)" fullname="SilverScreen.Tests.EditMode.ReusableFixtureTests.FitPreservesWholeArtworkAndDoesNotEscapeAperture(2,1,600,900)" methodname="FitPreservesWholeArtworkAndDoesNotEscapeAperture" classname="SilverScreen.Tests.EditMode.ReusableFixtureTests" runstate="Runnable" seed="1219763152" result="Passed" start-time="2026-09-22 09:30:51Z" end-time="2026-09-22 09:30:51Z" duration="0.000042" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+              </test-suite>
+              <test-case id="1074" name="InvalidArtworkDimensionsAreRejected" fullname="SilverScreen.Tests.EditMode.ReusableFixtureTests.InvalidArtworkDimensionsAreRejected" methodname="InvalidArtworkDimensionsAreRejected" classname="SilverScreen.Tests.EditMode.ReusableFixtureTests" runstate="Runnable" seed="507882548" result="Passed" start-time="2026-09-22 09:30:51Z" end-time="2026-09-22 09:30:51Z" duration="0.000482" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1077" name="PrefabsHaveUnitScaleMountAnchorsAndIndependentBounds" fullname="SilverScreen.Tests.EditMode.ReusableFixtureTests.PrefabsHaveUnitScaleMountAnchorsAndIndependentBounds" methodname="PrefabsHaveUnitScaleMountAnchorsAndIndependentBounds" classname="SilverScreen.Tests.EditMode.ReusableFixtureTests" runstate="Runnable" seed="1267950230" result="Passed" start-time="2026-09-22 09:30:51Z" end-time="2026-09-22 09:30:51Z" duration="0.011416" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Saving results to: C:/Users/Sez/AppData/LocalLow/DefaultCompany/Silver Screen\TestResults.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

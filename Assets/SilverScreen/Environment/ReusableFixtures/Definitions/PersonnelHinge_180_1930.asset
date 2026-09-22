@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f6e6edcd9c33894c89ae33bf4fc505f, type: 3}
+  m_Name: PersonnelHinge_180_1930
+  m_EditorClassIdentifier: Assembly-CSharp::SilverScreen.Presentation.ReusableAssets.ReusableAssetDefinition
+  _stableId: silverscreen.fixture.personnelhinge_180_1930
+  _displayName: Cranked personnel hinge 180
+  _category: Authoring Subassemblies
+  _subcategory: DoorHardware
+  _playerCatalogItem: 0
+  _availableFromYear: 1930
+  _hasAvailableUntilYear: 0
+  _availableUntilYear: 0
+  _suitability: 2
+  _placementSurface: 3
+  _role: 0
+  _handedness: 1
+  _visibleBounds:
+    m_Center: {x: -0.038499594, y: -0.000000014901161, z: -0.02425003}
+    m_Extent: {x: 0.15149999, y: 0.075, z: 0.0482502}
+  _functionalClearance:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  _supportsMaterialVariants: 1
+  _materialRoles:
+  - C1_Steel
+  _environmentTags:
+  - Studio
+  - Industrial
+  - Utility
+  - Period and later settings
+  _optionalInteraction: None; controls remain representational
+  _snapBehavior: Mount plane and typed anchors; no automatic placement runtime.
+  _prefab: {fileID: 1283663798202321340, guid: 0cc2f7c6baa32aa49a1136e906bf63c2, type: 3}

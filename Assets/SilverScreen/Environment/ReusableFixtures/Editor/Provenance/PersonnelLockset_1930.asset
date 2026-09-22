@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fee2b82949f9b64facb8e9bbd6272ef, type: 3}
+  m_Name: PersonnelLockset_1930
+  m_EditorClassIdentifier: Assembly-CSharp-Editor::SilverScreen.Editor.ReusableAssets.ReusableAssetProvenance
+  _masterCommit: 927ad371a96c4044689286473b542febac6a7265
+  _sourcePath: ArtSource/Stage1CleanCandidate/Stage1_CleanCandidate_A.blend
+  _sourceSha256: df68dc9e3cd42ddc1085ae98e63ec9a62a96b6f53429ba52cdd0b64df7c669db
+  _canonicalId: silverscreen.fixture.personnellockset_1930
+  _prefab: {fileID: 3667501057086255411, guid: 73fd1c2bb2d10884d8fac59ad19f8386, type: 3}
+  _recordJson: "{\n    \"name\": \"PersonnelLockset_1930\",\n    \"label\": \"Paired
+    personnel mortise lockset\",\n    \"family\": \"DoorHardware\",\n    \"id\":
+    \"silverscreen.fixture.personnellockset_1930\",\n    \"surface\": \"DoorLeaf\",\n   
+    \"suitability\": \"Both\",\n    \"hand\": \"LeftHinge\",\n    \"status\": \"Exact
+    source geometry; canonical pivot, hierarchy and winding repackaging\",\n    \"interfaceAddition\":
+    \"\",\n    \"player\": false,\n    \"clearance\": 0.0,\n    \"origin\": [\n       
+    -5.670000076293945,\n        -12.199999809265137,\n        0.8199999928474426\n   
+    ],\n    \"basisRows\": [\n        -1.0,\n        0.0,\n        0.0,\n       
+    0.0,\n        0.0,\n        1.0,\n        0.0,\n        -1.0,\n        0.0\n   
+    ],\n    \"boundsMin\": [\n        -0.21900033950805665,\n        -0.052500009536743167,\n       
+    -0.2760000228881836\n    ],\n    \"boundsMax\": [\n        0.03699970245361328,\n       
+    0.20499998331069947,\n        0.03600025177001953\n    ],\n    \"dimensions\":
+    [\n        0.2560000419616699,\n        0.2574999928474426,\n        0.3120002746582031\n   
+    ],\n    \"parts\": [\n        {\n            \"name\": \"FaceHardware\",\n           
+    \"positions\": [],\n            \"normals\": [],\n            \"uv\": [],\n           
+    \"materials\": [\n                \"C1_Blackout\",\n                \"C1_Brass\"\n           
+    ],\n            \"submeshes\": [],\n            \"members\": [\n               
+    {\n                    \"name\": \"KeyholeRound\",\n                    \"semanticGroup\":
+    \"PersonnelDoors\",\n                    \"uvSha256\": \"16d0a0afb72ff449cef45da4c4bbbd12fff793c295ccfde66ab9321446a58b79\",\n                   
+    \"positionSha256\": \"cd5b4a82cedf23081107b5043de1879e510d4eadcfd175f1e8a900b9f382936b\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"KeyholeSlot\",\n                    \"semanticGroup\":
+    \"PersonnelDoors\",\n                    \"uvSha256\": \"a72a793373877eaf25dfdbbb4c17e491523ebf9c1a47a4daf133c28112bcad5f\",\n                   
+    \"positionSha256\": \"64db3cca6d174df3aba422ca8106bb880083f12f221b0a14b6b6f17ff2c0737b\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"LockEscutcheonScrew\",\n                   
+    \"semanticGroup\": \"PersonnelDoors\",\n                    \"uvSha256\": \"678c1c59c41897a31e9394bca2f8a316db9be9561d73aa548c8d26fea250ab48\",\n                   
+    \"positionSha256\": \"53da31eea77967fa8252d3435b7583e6823eb6a1947c0f7283665e1b8b57810f\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"LockEscutcheonScrew.001\",\n                   
+    \"semanticGroup\": \"PersonnelDoors\",\n                    \"uvSha256\": \"9acf405e1ec61d74bf159e8f0cae00ad438f99c2978855fe7f182e3ee136f372\",\n                   
+    \"positionSha256\": \"d5a087a14968ddc592032f5eea1d151b6f85111b6a378b6e8a56cce20c76dc55\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"MortiseKeyEscutcheon\",\n                   
+    \"semanticGroup\": \"PersonnelDoors\",\n                    \"uvSha256\": \"c7335db03b4a45e49a318a831d7239beb042ae25c5dbf64e387d7b9934b91c7f\",\n                   
+    \"positionSha256\": \"924161bf019fc9021623f6840691558f71b844bdc7c215e44708b96f905e23d6\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                }\n           
+    ],\n            \"vertices\": 492,\n            \"triangles\": 396\n        },\n       
+    {\n            \"name\": \"EdgeLatch\",\n            \"positions\": [],\n           
+    \"normals\": [],\n            \"uv\": [],\n            \"materials\": [\n               
+    \"C1_Brass\"\n            ],\n            \"submeshes\": [],\n            \"members\":
+    [\n                {\n                    \"name\": \"LatchTongue\",\n                   
+    \"semanticGroup\": \"PersonnelDoors\",\n                    \"uvSha256\": \"7bc93e2a15c7be2410e689ccd16ee76516a62959a65e6f1d815c2b3020333711\",\n                   
+    \"positionSha256\": \"88a1c3fe7fae414804c482ad0f665634f218c0bee3d3a60d8025e0053cb1124f\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"MortiseLockEdgePlate\",\n                   
+    \"semanticGroup\": \"PersonnelDoors\",\n                    \"uvSha256\": \"84ed750c22cd2ec00b59500915edefe4a9721564305b16f1d4fef2c1dc651df6\",\n                   
+    \"positionSha256\": \"46bc8b22c30a189674e3b0db0316272306f958b2673bfd806fc0fa0d77eef5d1\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                }\n           
+    ],\n            \"vertices\": 212,\n            \"triangles\": 120\n        },\n       
+    {\n            \"name\": \"Strike\",\n            \"positions\": [],\n           
+    \"normals\": [],\n            \"uv\": [],\n            \"materials\": [\n               
+    \"C1_Steel\"\n            ],\n            \"submeshes\": [],\n            \"members\":
+    [\n                {\n                    \"name\": \"LatchStrike\",\n                   
+    \"semanticGroup\": \"PersonnelDoors\",\n                    \"uvSha256\": \"655c96b8455dc97af239ec43c4b88d021a6a9594700c8ba7b178280be6740620\",\n                   
+    \"positionSha256\": \"fa0b2ed744660095a724b3b363c3e334be504b130ea3c248d2c404f1de0c88cd\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                }\n           
+    ],\n            \"vertices\": 107,\n            \"triangles\": 60\n        },\n       
+    {\n            \"name\": \"Thumbturn\",\n            \"positions\": [],\n           
+    \"normals\": [],\n            \"uv\": [],\n            \"materials\": [\n               
+    \"C1_Brass\"\n            ],\n            \"submeshes\": [],\n            \"members\":
+    [\n                {\n                    \"name\": \"InteriorLockSpindle\",\n                   
+    \"semanticGroup\": \"PersonnelDoors\",\n                    \"uvSha256\": \"b1b63cf3d117e57ace8c343b49c8737eef54bb57b2e311bdb6f4a00a2851160e\",\n                   
+    \"positionSha256\": \"acc50feebfd52cf2c8813980b6fdb45d35cf3098a29214e14043a2465c0cee98\",\n                   
+    \"vertices\": 40,\n                    \"triangles\": 76\n                },\n               
+    {\n                    \"name\": \"InteriorLockThumbturn\",\n                   
+    \"semanticGroup\": \"PersonnelDoors\",\n                    \"uvSha256\": \"519b5fe73ffde590683293d297976b7182b8b1f36103bd6d9e21c1854640c378\",\n                   
+    \"positionSha256\": \"3dc9814752d1ad3d27f7b9c3f0c0076165e76d36414b026c0dd1a3289e24852c\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"InteriorMortiseThumbturnPlate\",\n                   
+    \"semanticGroup\": \"PersonnelDoors\",\n                    \"uvSha256\": \"978877340f865daec276c19f289147e94475ee18d48d505a9b516e6101f30ba4\",\n                   
+    \"positionSha256\": \"b7f86e20cfd2028fbf1cd9dce1ac0bbe34a4e36b9c926c5f4e8b8b70bb17036c\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                }\n           
+    ],\n            \"vertices\": 296,\n            \"triangles\": 196\n        }\n   
+    ],\n    \"anchors\": [\n        {\n            \"name\": \"LeafMount\",\n           
+    \"kind\": \"Mount\",\n            \"position\": [\n                0.0,\n               
+    0.0,\n                0.0\n            ],\n            \"forward\": [\n               
+    0.0,\n                0.0,\n                -1.0\n            ],\n           
+    \"diameter\": 0.0\n        },\n        {\n            \"name\": \"Spindle\",\n           
+    \"kind\": \"Pivot\",\n            \"position\": [\n                0.0,\n               
+    0.0,\n                -0.23000000417232514\n            ],\n            \"forward\":
+    [\n                0.0,\n                0.0,\n                1.0\n           
+    ],\n            \"diameter\": 0.0\n        },\n        {\n            \"name\":
+    \"LatchAxis\",\n            \"kind\": \"Latch\",\n            \"position\": [\n               
+    -0.18199999630451203,\n                0.12999999523162843,\n               
+    -0.10000000149011612\n            ],\n            \"forward\": [\n               
+    -1.0,\n                0.0,\n                0.0\n            ],\n           
+    \"diameter\": 0.0\n        },\n        {\n            \"name\": \"StrikeMount\",\n           
+    \"kind\": \"Socket\",\n            \"position\": [\n                -0.21299999952316285,\n               
+    0.12999999523162843,\n                -0.0949999988079071\n            ],\n           
+    \"forward\": [\n                -1.0,\n                0.0,\n               
+    0.0\n            ],\n            \"diameter\": 0.0\n        }\n    ]\n}"

@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fee2b82949f9b64facb8e9bbd6272ef, type: 3}
+  m_Name: DisplayFrame_Double_1930
+  m_EditorClassIdentifier: Assembly-CSharp-Editor::SilverScreen.Editor.ReusableAssets.ReusableAssetProvenance
+  _masterCommit: 927ad371a96c4044689286473b542febac6a7265
+  _sourcePath: ArtSource/Stage1CleanCandidate/Stage1_CleanCandidate_A.blend
+  _sourceSha256: df68dc9e3cd42ddc1085ae98e63ec9a62a96b6f53429ba52cdd0b64df7c669db
+  _canonicalId: silverscreen.fixture.displayframe_double_1930
+  _prefab: {fileID: 4599489904515439468, guid: 128ad5724fc811048917b8fa5a7b3254, type: 3}
+  _recordJson: "{\n    \"name\": \"DisplayFrame_Double_1930\",\n    \"label\": \"Double
+    industrial acoustic / display frame\",\n    \"family\": \"Displays\",\n    \"id\":
+    \"silverscreen.fixture.displayframe_double_1930\",\n    \"surface\": \"Wall\",\n   
+    \"suitability\": \"Indoor\",\n    \"hand\": \"None\",\n    \"status\": \"Exact
+    source geometry; canonical pivot, hierarchy and winding repackaging\",\n    \"interfaceAddition\":
+    \"Independent flat artwork/matte planes; single frame receives a removable backing
+    board for graphic mode only. No source frame geometry changed.\",\n    \"player\":
+    true,\n    \"clearance\": 0.0,\n    \"origin\": [\n        7.554999828338623,\n       
+    -8.399999618530274,\n        3.2699999809265138\n    ],\n    \"basisRows\": [\n       
+    0.0,\n        1.0,\n        0.0,\n        0.0,\n        0.0,\n        1.0,\n       
+    -1.0,\n        0.0,\n        0.0\n    ],\n    \"boundsMin\": [\n        -1.1470003128051758,\n       
+    -0.9119999408721924,\n        0.0\n    ],\n    \"boundsMax\": [\n        1.1469998359680176,\n       
+    0.9120001792907715,\n        0.16750001907348634\n    ],\n    \"dimensions\":
+    [\n        2.2940001487731935,\n        1.8240001201629639,\n        0.16750001907348634\n   
+    ],\n    \"parts\": [\n        {\n            \"name\": \"Backing\",\n           
+    \"positions\": [],\n            \"normals\": [],\n            \"uv\": [],\n           
+    \"materials\": [\n                \"C1_RoofTimber\"\n            ],\n           
+    \"submeshes\": [],\n            \"members\": [\n                {\n                   
+    \"name\": \"AcousticPanelBacking.004\",\n                    \"semanticGroup\":
+    \"AcousticTreatment\",\n                    \"uvSha256\": \"0ec5e819754cef785e69049123223866d8b70a6ec1477aaed0f154952b53c0e5\",\n                   
+    \"positionSha256\": \"019947db5d22155f2b5929d0905ff44c8d259a8de76ebff5f3ad19abd82b64f2\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                }\n           
+    ],\n            \"vertices\": 113,\n            \"triangles\": 60\n        },\n       
+    {\n            \"name\": \"OuterFrame\",\n            \"positions\": [],\n           
+    \"normals\": [],\n            \"uv\": [],\n            \"materials\": [\n               
+    \"C1_Steel\"\n            ],\n            \"submeshes\": [],\n            \"members\":
+    [\n                {\n                    \"name\": \"AcousticPanelRail.008\",\n                   
+    \"semanticGroup\": \"AcousticTreatment\",\n                    \"uvSha256\":
+    \"77c09f3f36383e60feece439987a0eb469362032c5a2c37ce96783a2be0c0499\",\n                   
+    \"positionSha256\": \"95ffbf82efd0eadbed9169a6dbe8af3d5f99cfad22e37a42cf620e951e8ca673\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"AcousticPanelRail.009\",\n                   
+    \"semanticGroup\": \"AcousticTreatment\",\n                    \"uvSha256\":
+    \"2ffab527e91b738944d7446275259cb1e092d7a76679c9faacb5627e0a72f98c\",\n                   
+    \"positionSha256\": \"9ed765b036dd42bb208055dac4c1d6bad0843c48acbeda9764c6b3f4d11189af\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"AcousticPanelStile.012\",\n                   
+    \"semanticGroup\": \"AcousticTreatment\",\n                    \"uvSha256\":
+    \"020c371ef2b849ba3aeaf35a8717f8572a73b7768a4f956b493a9873aafa5f45\",\n                   
+    \"positionSha256\": \"f2722f4e4504952c4df2fae677cc0bfd6fb5b4d3de8f6217f9af21115fa1d964\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"AcousticPanelStile.014\",\n                   
+    \"semanticGroup\": \"AcousticTreatment\",\n                    \"uvSha256\":
+    \"2053d4ad10d729cb7b5c9e5d21009c9a89107a9cfba5f5bf35f01bdd85d1baf1\",\n                   
+    \"positionSha256\": \"f7a12de2ae30a2b86ac67c429b6f2f8d8a58da04b1b0aca6deb898b20636876c\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                }\n           
+    ],\n            \"vertices\": 441,\n            \"triangles\": 240\n        },\n       
+    {\n            \"name\": \"Divider\",\n            \"positions\": [],\n           
+    \"normals\": [],\n            \"uv\": [],\n            \"materials\": [\n               
+    \"C1_Steel\"\n            ],\n            \"submeshes\": [],\n            \"members\":
+    [\n                {\n                    \"name\": \"AcousticPanelStile.013\",\n                   
+    \"semanticGroup\": \"AcousticTreatment\",\n                    \"uvSha256\":
+    \"265eace25c8f9344f37d282b97adb581954d68473d7f118e8c2a5ea4e777b96d\",\n                   
+    \"positionSha256\": \"884bf92a4d9a1d55c97733361c05942ed8bd519c9a4cef58a516bbf2d488e0b6\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                }\n           
+    ],\n            \"vertices\": 115,\n            \"triangles\": 60\n        },\n       
+    {\n            \"name\": \"AcousticLeft\",\n            \"positions\": [],\n           
+    \"normals\": [],\n            \"uv\": [],\n            \"materials\": [\n               
+    \"C1_AcousticFabric\"\n            ],\n            \"submeshes\": [],\n           
+    \"members\": [\n                {\n                    \"name\": \"FabricAbsorberPanel.009\",\n                   
+    \"semanticGroup\": \"AcousticTreatment\",\n                    \"uvSha256\":
+    \"bbba6b2b08c75709c3c7272282eafe72d7b418792bff50548d42e73036cebbd7\",\n                   
+    \"positionSha256\": \"cda9163c72db6b22be9e48df56c53575abee9c755576d17f47081c390acf3126\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                }\n           
+    ],\n            \"vertices\": 114,\n            \"triangles\": 60\n        },\n       
+    {\n            \"name\": \"AcousticRight\",\n            \"positions\": [],\n           
+    \"normals\": [],\n            \"uv\": [],\n            \"materials\": [\n               
+    \"C1_AcousticFabric\"\n            ],\n            \"submeshes\": [],\n           
+    \"members\": [\n                {\n                    \"name\": \"FabricAbsorberPanel.008\",\n                   
+    \"semanticGroup\": \"AcousticTreatment\",\n                    \"uvSha256\":
+    \"48a66c8d612354ec859dfb12ed2b909921e202a9dc3cdbb17310e4f8e35c3473\",\n                   
+    \"positionSha256\": \"94049df678e4d6c491f41f589f11db522bee6b1db02b9199f3765745afd3540f\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                }\n           
+    ],\n            \"vertices\": 112,\n            \"triangles\": 60\n        }\n   
+    ],\n    \"anchors\": [\n        {\n            \"name\": \"Insert_Left\",\n           
+    \"kind\": \"Insert\",\n            \"position\": [\n                0.5625,\n               
+    0.0,\n                0.14350000023841859\n            ],\n            \"forward\":
+    [\n                0.0,\n                0.0,\n                1.0\n           
+    ],\n            \"diameter\": 0.0\n        },\n        {\n            \"name\":
+    \"Insert_Right\",\n            \"kind\": \"Insert\",\n            \"position\":
+    [\n                -0.5625,\n                0.0,\n                0.14350000023841859\n           
+    ],\n            \"forward\": [\n                0.0,\n                0.0,\n               
+    1.0\n            ],\n            \"diameter\": 0.0\n        }\n    ]\n}"

@@ -1,0 +1,3228 @@
+{
+  "schema": 1,
+  "masterCommit": "927ad371a96c4044689286473b542febac6a7265",
+  "source": "ArtSource/Stage1CleanCandidate/Stage1_CleanCandidate_A.blend",
+  "sourceSha256": "df68dc9e3cd42ddc1085ae98e63ec9a62a96b6f53429ba52cdd0b64df7c669db",
+  "units": "metres",
+  "unityAxes": "X right, Y up, Z out from mounting face; clockwise triangles",
+  "assets": [
+    {
+      "name": "MeterCabinet_1930",
+      "label": "Exterior meter cabinet",
+      "family": "Electrical",
+      "player": true,
+      "surface": "Wall",
+      "suitability": "Both",
+      "hand": "None",
+      "anchors": [
+        {
+          "name": "Service_Top",
+          "kind": "Service",
+          "position": [
+            0,
+            0.57,
+            0.15
+          ],
+          "forward": [
+            0,
+            1,
+            0
+          ],
+          "diameter": 0.046
+        }
+      ],
+      "clearance": 0.8,
+      "id": "silverscreen.fixture.metercabinet_1930",
+      "origin": [
+        7.900000095367432,
+        -7.599999904632568,
+        1.190000057220459
+      ],
+      "basisRows": [
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "boundsMin": [
+        -0.36499977111816406,
+        -0.5250000357627869,
+        0.0
+      ],
+      "boundsMax": [
+        0.36500024795532227,
+        0.5699999332427979,
+        0.4419999122619629
+      ],
+      "dimensions": [
+        0.7300000190734863,
+        1.0949999690055847,
+        0.4419999122619629
+      ],
+      "status": "Exact source geometry; canonical pivot, hierarchy and winding repackaging",
+      "parts": [
+        {
+          "name": "Assembly",
+          "materials": [
+            "C1_Brass",
+            "C1_EnamelWhite",
+            "C1_DarkCeramic",
+            "C1_Steel",
+            "C1_Galvanized"
+          ],
+          "members": [
+            {
+              "name": "AmmeterBezel",
+              "semanticGroup": "PermanentServices",
+              "vertices": 492,
+              "triangles": 980,
+              "uvSha256": "a34485535e70cf6e51ab3a17fb3fbd4a4c63cffa450f93b1f687967f2e67c532",
+              "positionSha256": "895dfb9b0c711b218e363e5640694b6b2ba13c06c167786efd81ec70174082d2"
+            },
+            {
+              "name": "AmmeterDial",
+              "semanticGroup": "PermanentServices",
+              "vertices": 80,
+              "triangles": 156,
+              "uvSha256": "b887da96c590f500d4ffab9adf16a57f3e672d6036e5e5133297531bbd00363b",
+              "positionSha256": "7063a54c6de4f3085dee319f1dda2ce25aa5e34b16bcfcfa62057184be0a01b8"
+            },
+            {
+              "name": "AmmeterHousing",
+              "semanticGroup": "PermanentServices",
+              "vertices": 80,
+              "triangles": 156,
+              "uvSha256": "6136d6518a0b6d502f9b3483e31c3f5d0d1b0dcdd3df1b957f3d34d80da52ef0",
+              "positionSha256": "6176ddfb45ddbbc96d923f13e3b574cd8c17c6e7f12d476f6fab2962c1044256"
+            },
+            {
+              "name": "AmmeterPointer",
+              "semanticGroup": "PermanentServices",
+              "vertices": 16,
+              "triangles": 28,
+              "uvSha256": "3dd0c1dcee1016e5a92a275a16c62b1a454afa2840145a21aee1a5d14b1ff974",
+              "positionSha256": "3c09c81a16968cabb3bcdab31b231dc25f30124c40b1d01d0e6a185948435f7d"
+            },
+            {
+              "name": "CabinetHinge",
+              "semanticGroup": "PermanentServices",
+              "vertices": 40,
+              "triangles": 76,
+              "uvSha256": "8d841025c809bf7fdf0d02ac82439c4da9d86756007c83ae79dc75c2706dce26",
+              "positionSha256": "55e298ebed09a34723c80fc5d04aa3b258188169061e2e315514360e3d4611f6"
+            },
+            {
+              "name": "CabinetHinge.001",
+              "semanticGroup": "PermanentServices",
+              "vertices": 40,
+              "triangles": 76,
+              "uvSha256": "12e2a0253ce33a351cd42911e443c5ce3e5452fedc694049333f1a588818d663",
+              "positionSha256": "514fe35bd6e83af6696e21c5f8d2500c378382a17af82ab5353138633af9e9c6"
+            },
+            {
+              "name": "CabinetLatchPull",
+              "semanticGroup": "PermanentServices",
+              "vertices": 480,
+              "triangles": 956,
+              "uvSha256": "a9582bdf1bde77bf7a85efbc8b1d6d62718db9d0f46687258ad6a308948e4fd5",
+              "positionSha256": "f4b407d331d2651d137fa9daa548d224194c7be432445bd8b0ac18ce1c2a1b32"
+            },
+            {
+              "name": "CabinetLidScrew",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "22b1fc739181bd38b9955795891657aead91072292f0e7c7fed491d1923b1678",
+              "positionSha256": "fda9dc8f25f22981b270bcd66c2d186ff52eccc0077ffcf591a5cccde82f4d08"
+            },
+            {
+              "name": "CabinetLidScrew.001",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "f008074406ce510a90bc004040c829a6d089827a058a0bad75d932e02a4f85d6",
+              "positionSha256": "2ef642e9853411645bddfd2b8508b6242e91ea87aca8e00f19d042a1a47e7c5f"
+            },
+            {
+              "name": "CabinetLidScrew.002",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "4924b49d5c96d7543d2cdbc828c4e2dfcb8cddc94c2e9a37539159cca3fb37bb",
+              "positionSha256": "6c255c3abb14aa4bf7806acb73aef14386aed10b2f18a989d4c916507c62e4ab"
+            },
+            {
+              "name": "CabinetLidScrew.003",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "418b2102111b6c9dc4c489480c13fc320551412d47b3a19765cb91f0f668aee6",
+              "positionSha256": "ebcdad599b980c6bb2ba34e963499d8737c64c188695d5e436854f68f5d8705b"
+            },
+            {
+              "name": "CabinetRaisedLid",
+              "semanticGroup": "PermanentServices",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "83407d690b650bc8acca4594c3392b8dc4d93238c8adf2ece35e57f5fe900ee0",
+              "positionSha256": "62cf37b3e972f16f33d97378a7931099e2b70bb70fabfd598dc31ebe2fc47f72"
+            },
+            {
+              "name": "ExteriorCabinetEntryGland",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "61df7e07296c477d928fc3146ea5c311b4e882b1738019da77f477fffa966417",
+              "positionSha256": "c96cc4d2126e95099d7b760f070492436f8d350af5a5d734782a1544030647e1"
+            },
+            {
+              "name": "ExteriorServiceCabinet",
+              "semanticGroup": "PermanentServices",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "cdd040c41436a63ad6c75ef2bbd7c48ff49bb90fea4c60e68e7039b387a160ba",
+              "positionSha256": "7cf72b03ff9bed2a3b766e507b5d446850a4e2ba09dec728d32ed0c026cf7220"
+            }
+          ],
+          "vertices": 2675,
+          "triangles": 3008
+        }
+      ]
+    },
+    {
+      "name": "DistributionPanel_1930",
+      "label": "Three-lever distribution panel",
+      "family": "Electrical",
+      "player": true,
+      "surface": "Wall",
+      "suitability": "Indoor",
+      "hand": "None",
+      "anchors": [
+        {
+          "name": "Service_TopA",
+          "kind": "Service",
+          "position": [
+            -0.2,
+            0.53,
+            0.225
+          ],
+          "forward": [
+            0,
+            1,
+            0
+          ],
+          "diameter": 0.036
+        },
+        {
+          "name": "Service_TopB",
+          "kind": "Service",
+          "position": [
+            0.2,
+            0.53,
+            0.225
+          ],
+          "forward": [
+            0,
+            1,
+            0
+          ],
+          "diameter": 0.036
+        }
+      ],
+      "clearance": 0.8,
+      "id": "silverscreen.fixture.distributionpanel_1930",
+      "origin": [
+        7.585000038146973,
+        -8.300000190734863,
+        1.1299999952316284
+      ],
+      "basisRows": [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "boundsMin": [
+        -0.375,
+        -0.550000011920929,
+        0.0
+      ],
+      "boundsMax": [
+        0.375,
+        0.5499999523162842,
+        0.5889363288879395
+      ],
+      "dimensions": [
+        0.75,
+        1.0999999642372131,
+        0.5889363288879395
+      ],
+      "status": "Exact source geometry; canonical pivot, hierarchy and winding repackaging",
+      "parts": [
+        {
+          "name": "Assembly",
+          "materials": [
+            "C1_Steel",
+            "C1_Brass",
+            "C1_Base",
+            "C1_DarkCeramic",
+            "C1_Galvanized"
+          ],
+          "members": [
+            {
+              "name": "DistributionCabinet.002",
+              "semanticGroup": "PermanentServices",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "cc057d4621d2d7008510067894bae8e1bcebc861cbd78d0dd89c6de1630d2b13",
+              "positionSha256": "46509dc8ce586261f6070a9c0808c0cb239812b7df9b3a97442ae64c9090846a"
+            },
+            {
+              "name": "DistributionDoor.002",
+              "semanticGroup": "PermanentServices",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "f286bda27b5b3fd74fa99bc35f94c6984e4f36f5e414f44f10fda2f806ef9e13",
+              "positionSha256": "52ee65f71332c390f785b16b31a8a0b78bfa48c3c8f8d043fb88554b75fbbc94"
+            },
+            {
+              "name": "ForgedSwitchLever.006",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "dc24dbd25bb1f47fb1770082409e3e67adc783eb09752d5d5b03a0124ff38189",
+              "positionSha256": "0c00789155fc8b83a9b6034a8d16ad2c1485acdba66b17c972b755d949578053"
+            },
+            {
+              "name": "ForgedSwitchLever.007",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "cd6bdf7ad4c0d6624fc8077f084962c29aeee7c45e1430b3f6e3dc5e72073f57",
+              "positionSha256": "8c1fed7c906391dc002c2d03bd8b7e4a95283bf8265b50edd616049665e09b15"
+            },
+            {
+              "name": "ForgedSwitchLever.008",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "339b454afd0ee337b5c50218cca765194b88f1d344a22c56adf5b66eb37c85a2",
+              "positionSha256": "4082d0054d6579403e883e6f356f41582699ded3d7b5392f9015d489403e41ab"
+            },
+            {
+              "name": "PanelMasonryMount.002",
+              "semanticGroup": "PermanentServices",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "3eee8ddec1a6c37b3fc214eaaa67a2620d41d79b54f731726e31040a9bc9d35e",
+              "positionSha256": "4754b26158db75113703a396992de0aeb079b53b41941200a5f041a99fc12d0b"
+            },
+            {
+              "name": "ShapedSwitchGrip.006",
+              "semanticGroup": "PermanentServices",
+              "vertices": 160,
+              "triangles": 316,
+              "uvSha256": "e69e5f2b71444ffa8aa80be08fd662828a09ee58471f3a0a449c77426d73de1a",
+              "positionSha256": "58c266141c55cf210af50f06aed1cd0081863aca56c04f86d8ba3c06e4800dd7"
+            },
+            {
+              "name": "ShapedSwitchGrip.007",
+              "semanticGroup": "PermanentServices",
+              "vertices": 160,
+              "triangles": 316,
+              "uvSha256": "633b1d5f49e4d88f023e4c024ddcf24deefb42f7c85e4fb8802a16edaa2c4936",
+              "positionSha256": "6dc23c96c6f44efe78188b94025f7010eb6ea389506ee01e8929e1285424c21f"
+            },
+            {
+              "name": "ShapedSwitchGrip.008",
+              "semanticGroup": "PermanentServices",
+              "vertices": 160,
+              "triangles": 316,
+              "uvSha256": "61706a2d1986d3aa9ba8c5563a688ddec47e9ad7baaf477a3579379b91d3b6d6",
+              "positionSha256": "bc24c7c285fe8a8b7689645144dc9502ac98de72329e56702bc1f14d624b3f6b"
+            },
+            {
+              "name": "SwitchBearingBoss.006",
+              "semanticGroup": "PermanentServices",
+              "vertices": 160,
+              "triangles": 316,
+              "uvSha256": "b5218fffdf4ce675c71e7716c39d3ec2bb733f57062832ea183d00cb2c229152",
+              "positionSha256": "c17e1332597f29d9d76223c2ec0c5ca87b1124df77a686e62c82d1c7c406da9e"
+            },
+            {
+              "name": "SwitchBearingBoss.007",
+              "semanticGroup": "PermanentServices",
+              "vertices": 160,
+              "triangles": 316,
+              "uvSha256": "f94e360de1d91c9101de7ca198b1d0abc588486f8b8804cfe2e0ab411c8841ca",
+              "positionSha256": "9c936fbba67e47078ef499ade999ed2f67ca29d97d851c22f0bb519b6ddeb5a7"
+            },
+            {
+              "name": "SwitchBearingBoss.008",
+              "semanticGroup": "PermanentServices",
+              "vertices": 160,
+              "triangles": 316,
+              "uvSha256": "62b3354c809d9802309135250499e3e2010c355659068a225ae3ad45b4ede030",
+              "positionSha256": "88f4412453ee6932e0b75f2a457704900b7511908558af84f97df30da0dfac62"
+            },
+            {
+              "name": "SwitchEscutcheon.006",
+              "semanticGroup": "PermanentServices",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "cc2a918b77cc6d334bb86d303d7e78e709eb955c4605682022ca76ad5e9f16d1",
+              "positionSha256": "146f8def8a95f2950da30e5c914d4a5a654447794ec68b79628ac218444fdd13"
+            },
+            {
+              "name": "SwitchEscutcheon.007",
+              "semanticGroup": "PermanentServices",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "2871a2ae8e58b7a9a3ea7f1da1bef164c12c66bf82e9657069d4bec7fd42f21c",
+              "positionSha256": "fd77b78df2e6b6c9fa7d3315f1b917ea046a4351efe40871289bea0f7359e54a"
+            },
+            {
+              "name": "SwitchEscutcheon.008",
+              "semanticGroup": "PermanentServices",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "028ac5e97fa7348c704268ff7b78dbbbbcb4e9f9a692f53a725bf91e0f6a75d4",
+              "positionSha256": "a69f4e4c431f5fa0bb18ecd4cc16f50cc15d069a57870300a0a2b76e15f9a83a"
+            },
+            {
+              "name": "SwitchMountScrew.024",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "e40e1c61eac36442267d83b2790d655dcfbc5a8d74e27bc15bcc46c25eda48c3",
+              "positionSha256": "ac32ea101bc7b12dfca3dcf134e3bb437fe1925dc65a27d5b594626234d051fb"
+            },
+            {
+              "name": "SwitchMountScrew.025",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "bbc861a72a3f82f419cb2febeb20633bb8cd0c02283c8c25ef322355869307ab",
+              "positionSha256": "2099da4d047417a606bb2b37ebd967ba96b7fa2809cda0506d1b8882be5629e4"
+            },
+            {
+              "name": "SwitchMountScrew.026",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "548bca1dd496fa5c444934ac4b2232b42c7e390f8e6b49b89cbc51a9601815bf",
+              "positionSha256": "5dcfcb7661d9059add627ed3ab3d09517b3a4f9de9d1cc66b94d5348dd1a272c"
+            },
+            {
+              "name": "SwitchMountScrew.027",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "a73de070c1efefb059d7e1b3894dd9e6a959b73fe038708c02722aee29793b7e",
+              "positionSha256": "691d50b46c0b1bc67e68e575cf3ff34bbe82ecd2438c41b67df978199edb517f"
+            },
+            {
+              "name": "SwitchMountScrew.028",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "b9985ef0526252167b4c316958646a42efce1a1ac621dccbd1705a07c3614485",
+              "positionSha256": "0e1b83e59bdfa87cac875c9a6264b9fc421768ee3952bb6eb9b1dd3a083a25c5"
+            },
+            {
+              "name": "SwitchMountScrew.029",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "99abb3b98d57842dc06704b227035fa00d10e4ee41864d4c24e9a59ee9e1cd13",
+              "positionSha256": "b606a0ec24db7a6bb084a54a81d418f29cc5ef6a1f95bed66f8e63644f676d43"
+            },
+            {
+              "name": "SwitchMountScrew.030",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "899fc47b7d4b5a9f1cda7783232ee6214815d07a44d0411f9b0b092a994b1dee",
+              "positionSha256": "35a308b5d7f62b64f31bf4524619746de5d3ade2e0fbf7d835bcee34586e3a61"
+            },
+            {
+              "name": "SwitchMountScrew.031",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "47c4ea1fc2b2851494a3cadcc6be3043a4357ac8a51dbcce7aec81c7312c95db",
+              "positionSha256": "53114e9cf54b7db88cd116fdf92ec14b933628e87594d68eb74075886db83a04"
+            },
+            {
+              "name": "SwitchMountScrew.032",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "c24094505e5e9df4803741361248c208256b2c48e82e9f3da420cd23517ba94d",
+              "positionSha256": "d1272891b3dc51e6fc0ae30764491c2e868e57ad3a54a97663f490c00bfce7a5"
+            },
+            {
+              "name": "SwitchMountScrew.033",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "b3e6b073ae3a1c6a778eeb6efa20a8eed3c2b00f7068de88bc2c12d484fc6716",
+              "positionSha256": "6a57db870ad51a42d19770556247b87cc56f06c684ba4754fda908d8bf071b42"
+            },
+            {
+              "name": "SwitchMountScrew.034",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "af1a97645298df892d0f31f76481d1d3f234ce4bd8cddfbd7289e96022426cdd",
+              "positionSha256": "f402223d158d88bdcef25c44279e9c7f951a85ed0e7077dd88016ba6ab21d1fd"
+            },
+            {
+              "name": "SwitchMountScrew.035",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "c772cc54c8d2df5832fff2b9c02daad4924645836e672e18b6a19a745d00c887",
+              "positionSha256": "4bd8af55a65b016b3d8ddd522755d527d4aed608022433845ffb07327401e074"
+            },
+            {
+              "name": "SwitchPivotPin.006",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "bc5a53c450db419c4c72b2a6010239f3851425a20a7746b8b9b1a6c0798c1daa",
+              "positionSha256": "d6725836ac98f9cee1b90d9789377636b951b9137b28b6b0a3af4656ebe955e6"
+            },
+            {
+              "name": "SwitchPivotPin.007",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "dfa0761a79d1ff5c3ef3f122e63a355bb4907bcdc6f1b7263efc9317cf6e5852",
+              "positionSha256": "8e52903e6dfbe81d99564f0c08f799ab6638d5a4564aa04dbac002a6a87113d0"
+            },
+            {
+              "name": "SwitchPivotPin.008",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "e4372affdded878fc6dad0b6b7bd6a627036d9aa566fe8dd14e993a777392f61",
+              "positionSha256": "774692a2a5e6741cab1a410008c569cc5f4fa062103b8df721e2c6611cd41439"
+            },
+            {
+              "name": "SwitchPivotRetainer.012",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "2c6f19bf4ff9f803812e1e5bca1500937cd1eec231c29558821ea770e0b1b135",
+              "positionSha256": "d904a047e6deee48d6925c924723a43d3821aff0b3e44a136d2277bddc08940e"
+            },
+            {
+              "name": "SwitchPivotRetainer.013",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "62d70a5300635746c70e9279ab809ba1e6e4ea729cf0b419cf9e48c833d10fca",
+              "positionSha256": "6fdf3ce3b3611bf1abe1bcb05fba221a969b546b767004f419fe26ee47fdde7f"
+            },
+            {
+              "name": "SwitchPivotRetainer.014",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "ee35e4e0f451707b1a9a524b6bdfd91068cf6816c1f688df2fbe0c0f1f4dc1bf",
+              "positionSha256": "7f7ee17fe2b7b63540f9cfaf18905243b7ad02afda96b5301d911d5d3f587561"
+            },
+            {
+              "name": "SwitchPivotRetainer.015",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "ba24289281f41d2a84a1a6ef9d7d3b101b17389307c38af9bc229ea1da242447",
+              "positionSha256": "cea9d04c15c4d63db34ecf62755e80a3e50e50f22ae64b6ab79806b019649738"
+            },
+            {
+              "name": "SwitchPivotRetainer.016",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "7e773ebab8787a05031f9ca98d1dcc4a28ce5fd1b972d882f5351d7d0fecbb8f",
+              "positionSha256": "162156b11ca47fa03dc75a8108f0a115548fed94c688b3702d055a6f66e13e8c"
+            },
+            {
+              "name": "SwitchPivotRetainer.017",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "96cd7ade27ade7e03f697c13b4cd7fa5362ad8c3d0f1c5f605d35603fcd1464f",
+              "positionSha256": "3c239676528464caf7dbe5acd70c0e43eeff22fe91ccda364d0e942fa9794d1e"
+            },
+            {
+              "name": "SwitchTravelStop.012",
+              "semanticGroup": "PermanentServices",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "250b2f5b0fcd5b573ac202f0896e5f2868aa5165db33105048916cf4a469a21e",
+              "positionSha256": "ee953c86b3dc77dc17f83afe029071c7fbc472210506917146eaabafb8c7b31e"
+            },
+            {
+              "name": "SwitchTravelStop.013",
+              "semanticGroup": "PermanentServices",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "9d6d22c67d7e0852a28c649c0f74cc95b7df1aad8373e74d8b4dc338bd83d2e9",
+              "positionSha256": "f513aa99544b6210d377202db2d51e34a9ae043d63abe0e75d9d692a32eb3152"
+            },
+            {
+              "name": "SwitchTravelStop.014",
+              "semanticGroup": "PermanentServices",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "5044fd5e53abb3acc1b3e0cbdf43cdc0f272bd69a05464695d833d4863ad09e7",
+              "positionSha256": "465a0aee0675f675526b4f313a38489504031c2cf50972a346c604837eb55df0"
+            },
+            {
+              "name": "SwitchTravelStop.015",
+              "semanticGroup": "PermanentServices",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "d1a1ac0f72a150fb1e398243ca910a771197ce4aa2ae3a67b7e4f74b5964cec8",
+              "positionSha256": "cad482aa238feb074bda82bc9170c46c5a3dcd23649fb0ed4264318125356cfa"
+            },
+            {
+              "name": "SwitchTravelStop.016",
+              "semanticGroup": "PermanentServices",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "68a1ec38071f3a156bc5fd5d98a56cc07c40850a5273810a311516031f0f6376",
+              "positionSha256": "9ff19dbf9aa832c48f6527961f648eed242827e512abf6113c484eef176a2d65"
+            },
+            {
+              "name": "SwitchTravelStop.017",
+              "semanticGroup": "PermanentServices",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "59ad2d1c1dfb91a09c982ad71d1b4db8f3a9f7cf4ca9318ba65c814b74a5a502",
+              "positionSha256": "fdd56117f288578382d3504bae8cc1a07016e2b40b8545fc73895f37050d1808"
+            }
+          ],
+          "vertices": 5331,
+          "triangles": 4824
+        }
+      ]
+    },
+    {
+      "name": "IntakeCabinet_1930",
+      "label": "Electrical intake cabinet",
+      "family": "Electrical",
+      "player": true,
+      "surface": "Wall",
+      "suitability": "Both",
+      "hand": "None",
+      "anchors": [
+        {
+          "name": "Service_TopA",
+          "kind": "Service",
+          "position": [
+            -0.23,
+            0.82,
+            0.195
+          ],
+          "forward": [
+            0,
+            1,
+            0
+          ],
+          "diameter": 0.046
+        },
+        {
+          "name": "Service_TopB",
+          "kind": "Service",
+          "position": [
+            0.06,
+            0.82,
+            0.255
+          ],
+          "forward": [
+            0,
+            1,
+            0
+          ],
+          "diameter": 0.046
+        },
+        {
+          "name": "Service_TopC",
+          "kind": "Service",
+          "position": [
+            0.25,
+            0.82,
+            0.255
+          ],
+          "forward": [
+            0,
+            1,
+            0
+          ],
+          "diameter": 0.046
+        }
+      ],
+      "clearance": 0.9,
+      "id": "silverscreen.fixture.intakecabinet_1930",
+      "origin": [
+        -2.0999999046325684,
+        11.975000381469727,
+        1.0
+      ],
+      "basisRows": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "boundsMin": [
+        -0.5750000476837158,
+        -0.8199999928474426,
+        0.0
+      ],
+      "boundsMax": [
+        0.5749999284744263,
+        0.8200000524520874,
+        0.6309995651245117
+      ],
+      "dimensions": [
+        1.149999976158142,
+        1.64000004529953,
+        0.6309995651245117
+      ],
+      "status": "Exact source geometry; canonical pivot, hierarchy and winding repackaging",
+      "parts": [
+        {
+          "name": "Assembly",
+          "materials": [
+            "C1_Brass",
+            "C1_Steel",
+            "C1_Galvanized",
+            "C1_Base"
+          ],
+          "members": [
+            {
+              "name": "EscutcheonScrew.072",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "101716a871e3b6e9d9165b8e02bbbc3b794e8105b3afabf760b7d9657491fcc2",
+              "positionSha256": "276a52138f648d36490547ae1b3a64420397922f2f88d8c7acea3592f332ff0d"
+            },
+            {
+              "name": "EscutcheonScrew.073",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "d339f7dfda3aca019aa0b83ecbe12f29222e42e8638703099dd199866f23fb84",
+              "positionSha256": "e99b38f08c3af750d8c8869a21ba80a4b163d899f8cfe7684c33af27954d32f2"
+            },
+            {
+              "name": "EscutcheonScrew.074",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "240bc3386aa1490f0d9a65af5aab69c57f5c0c45edfaadb76c91f31cd8a2d09c",
+              "positionSha256": "12fd7c45d0c00d0947fc29adcb58510941cfe5bfcb4d7294e4354017341f85eb"
+            },
+            {
+              "name": "EscutcheonScrew.075",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "504ba0afbdd80145af0acbacbd3bc118f0d6ecb51971142186702fa5da4c3cc6",
+              "positionSha256": "af36ec5281e6b10d4d086f35a01decfe7b11dc3f07a89a809cc3a775fd9b1e6c"
+            },
+            {
+              "name": "ForgedPull.018",
+              "semanticGroup": "PermanentServices",
+              "vertices": 672,
+              "triangles": 1340,
+              "uvSha256": "ba018f87c037baa91c12d66649d5021b86362eefd85625cb788fe78caa81b3c2",
+              "positionSha256": "6f3f56e17aacfe00871edbf175cdc1ecabe61030a2f7dce52d171281369f3dfd"
+            },
+            {
+              "name": "PullEscutcheon.036",
+              "semanticGroup": "PermanentServices",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "c8abfc49a4ac1514a203990b0ada1bc0557a3fc8de30030d574b92dc7cd45d99",
+              "positionSha256": "f9c47041d7dfdad6f215c01c1488aa3ede81f58f754ee1264346dc845933044c"
+            },
+            {
+              "name": "PullEscutcheon.037",
+              "semanticGroup": "PermanentServices",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "795274f7923c132a3717a3f801010f5945390e83396e19b843e614aca2c1403a",
+              "positionSha256": "2490a9fbf69def0a118fe81d7b4e4e874382441784afb2352c1dde02ccbab92d"
+            },
+            {
+              "name": "RearCabinetHinge",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "f57d7953583e5f8cef090d04d6bc504dd1b44f9fd0121ec948186be5abec4faa",
+              "positionSha256": "01cf18fb1cbbe366f0b6569e2a2e6b296d13e2ceed705642230edf7fed8c48c3"
+            },
+            {
+              "name": "RearCabinetHinge.001",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "a2fcaf2cd8adfb33bcd3e4f03c5f3bdc1af78a4972ce677305b098e89edc0d7c",
+              "positionSha256": "30e6f575b62f4245d8beb5b3c9074f16b7a8cc8aa303cc041d7379252b0a5089"
+            },
+            {
+              "name": "RearIntakeCabinet",
+              "semanticGroup": "PermanentServices",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "f51956ca9e9e5011cefdeefdde189e1fc1c839ff941d46a470c45f7c39a1bf4f",
+              "positionSha256": "2a89d01dac72f3d24d17963e8d69579c1c5679bb3926a347281af7022f8ee528"
+            },
+            {
+              "name": "RearIntakeEntryGland",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "569b014898fb4fef127b89ff5dd547d74e1c268c2008880f565afe94acf617df",
+              "positionSha256": "a81fe3d1cca2f6a0e16d968c01baa11b58d0891bee282b2016e276d8401cebd5"
+            },
+            {
+              "name": "RearIntakeEntryGland.001",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "35f18bc4e7f07e4ceee0540cf90be3d0361cfa17e568ed1a8886f8f2f015c356",
+              "positionSha256": "2edcd3b04ca60d2cb50fe2bd5257a5cb025127e77c25936abe6ccd9066faba96"
+            },
+            {
+              "name": "RearIntakeEntryGland.002",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "1191e0813149118b4d83bd07e083c50fcc0436ff0e241f787beb6cbfa8174102",
+              "positionSha256": "77ca7a10d3592477e2e39f0f166c6c0a486227f909e7061ecee2db0e25d40b91"
+            },
+            {
+              "name": "RearIntakeLid",
+              "semanticGroup": "PermanentServices",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "938bfa84ec305f3cb167674eb829aecfdbcbc35a0f46e90b7124702d5c384203",
+              "positionSha256": "9a4beccc0ff9410174f0526dc8bcded4caeae4bd78ba5ac4a4b31463a62827c5"
+            },
+            {
+              "name": "RearIntakeMount",
+              "semanticGroup": "PermanentServices",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "18f382f6a823cf147e85e32cb8eb680350327ee253acf06947b590f60b06aa9b",
+              "positionSha256": "956929e3f47bc9ce6173b78189206ec6fbbb642089c983dc76e386a98126329d"
+            },
+            {
+              "name": "RearLidFastener",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "aca2ce181da8ed5e7b4e6d1961be1bff7ec00915fa3e82783b4207ac0297c117",
+              "positionSha256": "210d342657d5bb9de094c47cd74eccf76e1303d08ef43a4acab05d78c6c56812"
+            },
+            {
+              "name": "RearLidFastener.001",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "cd58afa772a82d9d56103bb09e02ed14fb4e2e6086f0094b44048a8217f28001",
+              "positionSha256": "973f1a4d13f1d205b4af96ecb1fae74ac4243cb535aa13a8e914fa671f076d1f"
+            },
+            {
+              "name": "RearLidFastener.002",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "cbb9f651d057cb91076d87c5f679246fc4472068062acf41384645116fbdfbcc",
+              "positionSha256": "e93e542b242c08dc93edaafc2d5b734ff17e370cb77d43bd1df035fccc3ba9fd"
+            },
+            {
+              "name": "RearLidFastener.003",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "c67ac5b5b8c24ad1ac91aec614c5975ce100c4f4e669151f518084465bc42314",
+              "positionSha256": "9fed34acb4590b9bdd678666b79cb61fcf250b31ee67998a3446a5ecb0672979"
+            }
+          ],
+          "vertices": 2709,
+          "triangles": 2836
+        }
+      ]
+    },
+    {
+      "name": "Disconnect_1930",
+      "label": "Disconnect box",
+      "family": "Electrical",
+      "player": true,
+      "surface": "Wall",
+      "suitability": "Both",
+      "hand": "None",
+      "anchors": [
+        {
+          "name": "Service_Top",
+          "kind": "Service",
+          "position": [
+            0,
+            0.35,
+            0.14
+          ],
+          "forward": [
+            0,
+            1,
+            0
+          ],
+          "diameter": 0.046
+        }
+      ],
+      "clearance": 0.45,
+      "id": "silverscreen.fixture.disconnect_1930",
+      "origin": [
+        -3.0199999809265137,
+        12.029999732971191,
+        1.4600000381469727
+      ],
+      "basisRows": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "boundsMin": [
+        -0.20000004768371582,
+        -0.2900000810623169,
+        0.0
+      ],
+      "boundsMax": [
+        0.20000004768371582,
+        0.34999990463256836,
+        0.34200000762939453
+      ],
+      "dimensions": [
+        0.40000009536743164,
+        0.6399999856948853,
+        0.34200000762939453
+      ],
+      "status": "Exact source geometry; canonical pivot, hierarchy and winding repackaging",
+      "parts": [
+        {
+          "name": "Assembly",
+          "materials": [
+            "C1_DarkCeramic",
+            "C1_Brass",
+            "C1_Steel",
+            "C1_Galvanized"
+          ],
+          "members": [
+            {
+              "name": "DisconnectBoss",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "081b7b33cfbe02e5ebfaf33131fd7d834cccbbdffe8aa47708977a52d6562e5a",
+              "positionSha256": "cf20cda0a8e0dc5fd29b1a66d6ec4396b0868e2ca43a61e93eeeb4f6afdabc6f"
+            },
+            {
+              "name": "DisconnectLever",
+              "semanticGroup": "PermanentServices",
+              "vertices": 40,
+              "triangles": 76,
+              "uvSha256": "a4064ca8ac1947a1e62baca559803afeda705445f0cfcf3ad33eec7ed392e7bc",
+              "positionSha256": "818ab18b2477241492ff8caa514d16e61a16162c647c92672d9dc6d833f93339"
+            },
+            {
+              "name": "RearDisconnect",
+              "semanticGroup": "PermanentServices",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "4e6b60fa2cc3e2ca66c65370c25d07d231467a882898bb0bdc87b2225e396456",
+              "positionSha256": "95c1e07f0c29ac22427a1ce342dba2f64188600b1bb43e5a493d789d2a889a31"
+            },
+            {
+              "name": "RearDisconnectCover",
+              "semanticGroup": "PermanentServices",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "e0cd5913ff7cd27475e0c2be41315b5e44d8bb37c70302a7c358766e569f308a",
+              "positionSha256": "6663b64146e670c573f2cc5c93a3682c07a0cf276edc8db8cbf09b504c434fd1"
+            },
+            {
+              "name": "RearDisconnectEntryGland",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "75a10ad78ea070821f268104b6a0c93fa9d589ee688551bb7956089da3e9d92b",
+              "positionSha256": "1e09c90bd73803009ea1411bd72e6dec3d875cc8d405d4e1dd47b7165953f945"
+            }
+          ],
+          "vertices": 522,
+          "triangles": 380
+        }
+      ]
+    },
+    {
+      "name": "JunctionBox_Shallow_1930",
+      "label": "Shallow junction box",
+      "family": "Electrical",
+      "player": true,
+      "surface": "Wall",
+      "suitability": "Both",
+      "hand": "None",
+      "anchors": [
+        {
+          "name": "Service_Rear",
+          "kind": "Service",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "forward": [
+            0,
+            0,
+            -1
+          ],
+          "diameter": 0.026
+        }
+      ],
+      "clearance": 0.25,
+      "id": "silverscreen.fixture.junctionbox_shallow_1930",
+      "origin": [
+        -5.579999923706055,
+        -12.023500442504883,
+        2.630000114440918
+      ],
+      "basisRows": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "boundsMin": [
+        -0.07999992370605469,
+        -0.10000014305114746,
+        0.0
+      ],
+      "boundsMax": [
+        0.07999992370605469,
+        0.09999990463256836,
+        0.12799930572509766
+      ],
+      "dimensions": [
+        0.15999984741210938,
+        0.20000004768371582,
+        0.12799930572509766
+      ],
+      "status": "Exact source geometry; canonical pivot, hierarchy and winding repackaging",
+      "parts": [
+        {
+          "name": "Assembly",
+          "materials": [
+            "C1_Steel",
+            "C1_Galvanized"
+          ],
+          "members": [
+            {
+              "name": "CastJunctionBox.002",
+              "semanticGroup": "PermanentServices",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "4b58888c2c310ade531af39ee8b87b37eaf5b076dbd7ac776ff3a8e91e3d6547",
+              "positionSha256": "0ef233df54e5970221e0b3d5c2b355ad58fd5b82034306f4fe282a8103a7dfa6"
+            },
+            {
+              "name": "JunctionCover.002",
+              "semanticGroup": "PermanentServices",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "a100bad45477365f33a3aabc2f8e2d45c2e4c5975c9cab47b5b7fe0cfd04a762",
+              "positionSha256": "2215e4ce78daaaee840c8d711797069db22c3d0cd51214eb51ad501ffdf9bfdb"
+            },
+            {
+              "name": "JunctionLidScrew.008",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "bbafbb0e1dbfff6b46677106ae6eaada57f5807e11867a9c2a0ce9b92898fd73",
+              "positionSha256": "5ed0f0b774ec71886fb48a71e091e7563dcf2f7116aebae64c1c8f7ab0d35528"
+            },
+            {
+              "name": "JunctionLidScrew.009",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "9c0091b2c7d61d99e7d0938c7682cc1fe90cea73934c607ea2d13fd0834ed1af",
+              "positionSha256": "b4ec0cd6b5a6ecec8ee29492a65886887ed2ebc58b52e2c1eeac7492c8e83044"
+            },
+            {
+              "name": "JunctionLidScrew.010",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "dbdad6e66941eececb9ff37815b6c0b78db1f454ec5324380a78221771cc68f6",
+              "positionSha256": "3990a5ef8ed1ae0c016b1855ad324bb21cf7c7b68869dc4d74d5fd732d3b5cc0"
+            },
+            {
+              "name": "JunctionLidScrew.011",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "bc45cc6a9d97300fb4e42657cbe1f89076fe9a313f61a8d55cf532dc447cefcf",
+              "positionSha256": "f5cbefa022da4aa08d730f905cb20683307ee08649668cca9541501826206159"
+            }
+          ],
+          "vertices": 579,
+          "triangles": 488
+        }
+      ]
+    },
+    {
+      "name": "JunctionBox_Deep_1930",
+      "label": "Deep junction box",
+      "family": "Electrical",
+      "player": true,
+      "surface": "Wall",
+      "suitability": "Both",
+      "hand": "None",
+      "anchors": [
+        {
+          "name": "Service_Rear",
+          "kind": "Service",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "forward": [
+            0,
+            0,
+            -1
+          ],
+          "diameter": 0.026
+        }
+      ],
+      "clearance": 0.25,
+      "id": "silverscreen.fixture.junctionbox_deep_1930",
+      "origin": [
+        -2.0399999618530273,
+        11.984999656677246,
+        3.0999999046325684
+      ],
+      "basisRows": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "boundsMin": [
+        -0.06999993324279785,
+        -0.08999991416931152,
+        0.0
+      ],
+      "boundsMax": [
+        0.06999993324279785,
+        0.09000015258789062,
+        0.17300033569335938
+      ],
+      "dimensions": [
+        0.1399998664855957,
+        0.18000006675720215,
+        0.17300033569335938
+      ],
+      "status": "Exact source geometry; canonical pivot, hierarchy and winding repackaging",
+      "parts": [
+        {
+          "name": "Assembly",
+          "materials": [
+            "C1_Steel",
+            "C1_Galvanized"
+          ],
+          "members": [
+            {
+              "name": "CastJunctionBox",
+              "semanticGroup": "PermanentServices",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "4888e2d4e0d41d60dc7b93fb73c28d7a59c9b7ae3d937bfdfb9e9526f7798a32",
+              "positionSha256": "f816692c5eddeaa7a8d420d63cf23627a0d77804e14479f12f3caa478384e1cd"
+            },
+            {
+              "name": "JunctionCover",
+              "semanticGroup": "PermanentServices",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "80c7b2c32fcaa5b785adfabdf54c7e845767b85556f70fdbbfb6d3ad3fbb11ff",
+              "positionSha256": "321bd664ae80c401761bb9d0ac0a710859fce0e134a73c68840c681deb7cb389"
+            },
+            {
+              "name": "JunctionLidScrew",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "b3b40a7ccfea42d430b108594c2623e456240c2ee80714e84c25412920aeffe2",
+              "positionSha256": "4b172630e5c33dd2c989d144065267d9a06b9c720a2386c653491eb132e30ef5"
+            },
+            {
+              "name": "JunctionLidScrew.001",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "1913f50df065af7a6932edabd96b81dd2e447fbe9cc301fb37cc754a29fd3be3",
+              "positionSha256": "24512cbbb31015aa38f8cf9807e4897b5ccb3f853ca5649cd45a996ee74ff63a"
+            },
+            {
+              "name": "JunctionLidScrew.002",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "7545b9c060963a57779e63a50484c3be92dd61350b3366272f92398983569f28",
+              "positionSha256": "444f5ac4752b6373393afdee20f3f5bc164739aa72cb30edfc19b0fdb52e563d"
+            },
+            {
+              "name": "JunctionLidScrew.003",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "0a803fe389a9b7c7fb015f06c11381b2d7e99d4c763587c7ab8db347e44339a5",
+              "positionSha256": "dd2ac1b9e57cc61bc49701da234020c78ac1ea96a5c024fd0a9bd2b981638c2c"
+            }
+          ],
+          "vertices": 580,
+          "triangles": 488
+        }
+      ]
+    },
+    {
+      "name": "PullBox_1930",
+      "label": "Twin-entry service pull box",
+      "family": "Electrical",
+      "player": true,
+      "surface": "Wall",
+      "suitability": "Both",
+      "hand": "None",
+      "anchors": [
+        {
+          "name": "Service_TopA",
+          "kind": "Service",
+          "position": [
+            0,
+            0.22,
+            0.08
+          ],
+          "forward": [
+            0,
+            1,
+            0
+          ],
+          "diameter": 0.036
+        },
+        {
+          "name": "Service_TopB",
+          "kind": "Service",
+          "position": [
+            0,
+            0.22,
+            0.135
+          ],
+          "forward": [
+            0,
+            1,
+            0
+          ],
+          "diameter": 0.036
+        },
+        {
+          "name": "WallSleeve",
+          "kind": "Service",
+          "position": [
+            0,
+            0,
+            -0.115
+          ],
+          "forward": [
+            0,
+            0,
+            -1
+          ],
+          "diameter": 0.076
+        }
+      ],
+      "clearance": 0.3,
+      "id": "silverscreen.fixture.pullbox_1930",
+      "origin": [
+        7.885000228881836,
+        -11.020000457763672,
+        0.3700000047683716
+      ],
+      "basisRows": [
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "boundsMin": [
+        -0.1550006866455078,
+        -0.20000000298023224,
+        -0.11500024795532227
+      ],
+      "boundsMax": [
+        0.1549997329711914,
+        0.21999996900558472,
+        0.18999958038330078
+      ],
+      "dimensions": [
+        0.3100004196166992,
+        0.41999997198581696,
+        0.30499982833862305
+      ],
+      "status": "Exact source geometry; canonical pivot, hierarchy and winding repackaging",
+      "parts": [
+        {
+          "name": "Assembly",
+          "materials": [
+            "C1_Steel",
+            "C1_Galvanized"
+          ],
+          "members": [
+            {
+              "name": "RiserBaseBox.003",
+              "semanticGroup": "PermanentServices",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "1701c41ac1d0f8fc58082984239937fe661521fded083d0eb572f6983038b442",
+              "positionSha256": "68880750ea854e9682dacd1dd4b2c102316a9da85b8e73ab2e62469d926f35ce"
+            },
+            {
+              "name": "RiserCompressionGland.006",
+              "semanticGroup": "PermanentServices",
+              "vertices": 40,
+              "triangles": 76,
+              "uvSha256": "6b0a559a2c3c50f6e2af8a154d7512c9bac0f8e24fcceeea03c7c8c82cb5c9e8",
+              "positionSha256": "7c89af9f9b3e21b952d426d9c3ca45d85b172df1f166edbd39c4da1c5a8303ce"
+            },
+            {
+              "name": "RiserCompressionGland.007",
+              "semanticGroup": "PermanentServices",
+              "vertices": 40,
+              "triangles": 76,
+              "uvSha256": "2e4b81df0fcce36898f85eb3a90d7074230faf37046707cea861d373807627c0",
+              "positionSha256": "7fe47eadf2852d51003b2dacd12ccbff5d2f673f3b7422f5ef1897daff6cd263"
+            },
+            {
+              "name": "RiserWallPenetration.003",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "3d5a52a95dce42dd021657e35923b03a7aae3280cefd98a2356c50b14a9bb3eb",
+              "positionSha256": "c46fedb75ca8a1ad011e597e8677a5e890c784bf6ff6de48a7487a3c70961133"
+            }
+          ],
+          "vertices": 400,
+          "triangles": 304
+        }
+      ]
+    },
+    {
+      "name": "LeverControl_Raised_1930",
+      "label": "Raised lever control",
+      "family": "ControlHardware",
+      "player": false,
+      "surface": "Wall",
+      "suitability": "Indoor",
+      "hand": "None",
+      "anchors": [
+        {
+          "name": "LeverAxis",
+          "kind": "Pivot",
+          "position": [
+            0,
+            0,
+            0.084
+          ],
+          "forward": [
+            -1,
+            0,
+            0
+          ],
+          "diameter": 0
+        }
+      ],
+      "clearance": 0.2,
+      "id": "silverscreen.fixture.levercontrol_raised_1930",
+      "origin": [
+        7.2170000076293945,
+        -8.300000190734863,
+        0.8500000238418579
+      ],
+      "basisRows": [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "boundsMin": [
+        -0.06400012969970703,
+        -0.08799999952316284,
+        0.0
+      ],
+      "boundsMax": [
+        0.06400012969970703,
+        0.15056252479553223,
+        0.20197200775146484
+      ],
+      "dimensions": [
+        0.12800025939941406,
+        0.23856252431869507,
+        0.20197200775146484
+      ],
+      "status": "Exact source geometry; canonical pivot, hierarchy and winding repackaging",
+      "parts": [
+        {
+          "name": "Assembly",
+          "materials": [
+            "C1_Brass",
+            "C1_DarkCeramic",
+            "C1_Steel",
+            "C1_Galvanized"
+          ],
+          "members": [
+            {
+              "name": "ForgedSwitchLever.006",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "dc24dbd25bb1f47fb1770082409e3e67adc783eb09752d5d5b03a0124ff38189",
+              "positionSha256": "0c00789155fc8b83a9b6034a8d16ad2c1485acdba66b17c972b755d949578053"
+            },
+            {
+              "name": "ShapedSwitchGrip.006",
+              "semanticGroup": "PermanentServices",
+              "vertices": 160,
+              "triangles": 316,
+              "uvSha256": "e69e5f2b71444ffa8aa80be08fd662828a09ee58471f3a0a449c77426d73de1a",
+              "positionSha256": "58c266141c55cf210af50f06aed1cd0081863aca56c04f86d8ba3c06e4800dd7"
+            },
+            {
+              "name": "SwitchBearingBoss.006",
+              "semanticGroup": "PermanentServices",
+              "vertices": 160,
+              "triangles": 316,
+              "uvSha256": "b5218fffdf4ce675c71e7716c39d3ec2bb733f57062832ea183d00cb2c229152",
+              "positionSha256": "c17e1332597f29d9d76223c2ec0c5ca87b1124df77a686e62c82d1c7c406da9e"
+            },
+            {
+              "name": "SwitchEscutcheon.006",
+              "semanticGroup": "PermanentServices",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "cc2a918b77cc6d334bb86d303d7e78e709eb955c4605682022ca76ad5e9f16d1",
+              "positionSha256": "146f8def8a95f2950da30e5c914d4a5a654447794ec68b79628ac218444fdd13"
+            },
+            {
+              "name": "SwitchMountScrew.024",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "e40e1c61eac36442267d83b2790d655dcfbc5a8d74e27bc15bcc46c25eda48c3",
+              "positionSha256": "ac32ea101bc7b12dfca3dcf134e3bb437fe1925dc65a27d5b594626234d051fb"
+            },
+            {
+              "name": "SwitchMountScrew.025",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "bbc861a72a3f82f419cb2febeb20633bb8cd0c02283c8c25ef322355869307ab",
+              "positionSha256": "2099da4d047417a606bb2b37ebd967ba96b7fa2809cda0506d1b8882be5629e4"
+            },
+            {
+              "name": "SwitchMountScrew.026",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "548bca1dd496fa5c444934ac4b2232b42c7e390f8e6b49b89cbc51a9601815bf",
+              "positionSha256": "5dcfcb7661d9059add627ed3ab3d09517b3a4f9de9d1cc66b94d5348dd1a272c"
+            },
+            {
+              "name": "SwitchMountScrew.027",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "a73de070c1efefb059d7e1b3894dd9e6a959b73fe038708c02722aee29793b7e",
+              "positionSha256": "691d50b46c0b1bc67e68e575cf3ff34bbe82ecd2438c41b67df978199edb517f"
+            },
+            {
+              "name": "SwitchPivotPin.006",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "bc5a53c450db419c4c72b2a6010239f3851425a20a7746b8b9b1a6c0798c1daa",
+              "positionSha256": "d6725836ac98f9cee1b90d9789377636b951b9137b28b6b0a3af4656ebe955e6"
+            },
+            {
+              "name": "SwitchPivotRetainer.012",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "2c6f19bf4ff9f803812e1e5bca1500937cd1eec231c29558821ea770e0b1b135",
+              "positionSha256": "d904a047e6deee48d6925c924723a43d3821aff0b3e44a136d2277bddc08940e"
+            },
+            {
+              "name": "SwitchPivotRetainer.013",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "62d70a5300635746c70e9279ab809ba1e6e4ea729cf0b419cf9e48c833d10fca",
+              "positionSha256": "6fdf3ce3b3611bf1abe1bcb05fba221a969b546b767004f419fe26ee47fdde7f"
+            },
+            {
+              "name": "SwitchTravelStop.012",
+              "semanticGroup": "PermanentServices",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "250b2f5b0fcd5b573ac202f0896e5f2868aa5165db33105048916cf4a469a21e",
+              "positionSha256": "ee953c86b3dc77dc17f83afe029071c7fbc472210506917146eaabafb8c7b31e"
+            },
+            {
+              "name": "SwitchTravelStop.013",
+              "semanticGroup": "PermanentServices",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "9d6d22c67d7e0852a28c649c0f74cc95b7df1aad8373e74d8b4dc338bd83d2e9",
+              "positionSha256": "f513aa99544b6210d377202db2d51e34a9ae043d63abe0e75d9d692a32eb3152"
+            }
+          ],
+          "vertices": 1678,
+          "triangles": 1548
+        }
+      ]
+    },
+    {
+      "name": "LeverControl_Lowered_1930",
+      "label": "Lowered lever control",
+      "family": "ControlHardware",
+      "player": false,
+      "surface": "Wall",
+      "suitability": "Indoor",
+      "hand": "None",
+      "anchors": [
+        {
+          "name": "LeverAxis",
+          "kind": "Pivot",
+          "position": [
+            0,
+            0,
+            0.084
+          ],
+          "forward": [
+            -1,
+            0,
+            0
+          ],
+          "diameter": 0
+        }
+      ],
+      "clearance": 0.2,
+      "id": "silverscreen.fixture.levercontrol_lowered_1930",
+      "origin": [
+        7.2170000076293945,
+        -8.300000190734863,
+        1.1699999570846558
+      ],
+      "basisRows": [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "boundsMin": [
+        -0.06400012969970703,
+        -0.13293612003326416,
+        0.0
+      ],
+      "boundsMax": [
+        0.06400012969970703,
+        0.08799993991851807,
+        0.22093629837036133
+      ],
+      "dimensions": [
+        0.12800025939941406,
+        0.22093605995178223,
+        0.22093629837036133
+      ],
+      "status": "Exact source geometry; canonical pivot, hierarchy and winding repackaging",
+      "parts": [
+        {
+          "name": "Assembly",
+          "materials": [
+            "C1_Brass",
+            "C1_DarkCeramic",
+            "C1_Steel",
+            "C1_Galvanized"
+          ],
+          "members": [
+            {
+              "name": "ForgedSwitchLever.007",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "cd6bdf7ad4c0d6624fc8077f084962c29aeee7c45e1430b3f6e3dc5e72073f57",
+              "positionSha256": "8c1fed7c906391dc002c2d03bd8b7e4a95283bf8265b50edd616049665e09b15"
+            },
+            {
+              "name": "ShapedSwitchGrip.007",
+              "semanticGroup": "PermanentServices",
+              "vertices": 160,
+              "triangles": 316,
+              "uvSha256": "633b1d5f49e4d88f023e4c024ddcf24deefb42f7c85e4fb8802a16edaa2c4936",
+              "positionSha256": "6dc23c96c6f44efe78188b94025f7010eb6ea389506ee01e8929e1285424c21f"
+            },
+            {
+              "name": "SwitchBearingBoss.007",
+              "semanticGroup": "PermanentServices",
+              "vertices": 160,
+              "triangles": 316,
+              "uvSha256": "f94e360de1d91c9101de7ca198b1d0abc588486f8b8804cfe2e0ab411c8841ca",
+              "positionSha256": "9c936fbba67e47078ef499ade999ed2f67ca29d97d851c22f0bb519b6ddeb5a7"
+            },
+            {
+              "name": "SwitchEscutcheon.007",
+              "semanticGroup": "PermanentServices",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "2871a2ae8e58b7a9a3ea7f1da1bef164c12c66bf82e9657069d4bec7fd42f21c",
+              "positionSha256": "fd77b78df2e6b6c9fa7d3315f1b917ea046a4351efe40871289bea0f7359e54a"
+            },
+            {
+              "name": "SwitchMountScrew.028",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "b9985ef0526252167b4c316958646a42efce1a1ac621dccbd1705a07c3614485",
+              "positionSha256": "0e1b83e59bdfa87cac875c9a6264b9fc421768ee3952bb6eb9b1dd3a083a25c5"
+            },
+            {
+              "name": "SwitchMountScrew.029",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "99abb3b98d57842dc06704b227035fa00d10e4ee41864d4c24e9a59ee9e1cd13",
+              "positionSha256": "b606a0ec24db7a6bb084a54a81d418f29cc5ef6a1f95bed66f8e63644f676d43"
+            },
+            {
+              "name": "SwitchMountScrew.030",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "899fc47b7d4b5a9f1cda7783232ee6214815d07a44d0411f9b0b092a994b1dee",
+              "positionSha256": "35a308b5d7f62b64f31bf4524619746de5d3ade2e0fbf7d835bcee34586e3a61"
+            },
+            {
+              "name": "SwitchMountScrew.031",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "47c4ea1fc2b2851494a3cadcc6be3043a4357ac8a51dbcce7aec81c7312c95db",
+              "positionSha256": "53114e9cf54b7db88cd116fdf92ec14b933628e87594d68eb74075886db83a04"
+            },
+            {
+              "name": "SwitchPivotPin.007",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "dfa0761a79d1ff5c3ef3f122e63a355bb4907bcdc6f1b7263efc9317cf6e5852",
+              "positionSha256": "8e52903e6dfbe81d99564f0c08f799ab6638d5a4564aa04dbac002a6a87113d0"
+            },
+            {
+              "name": "SwitchPivotRetainer.014",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "ee35e4e0f451707b1a9a524b6bdfd91068cf6816c1f688df2fbe0c0f1f4dc1bf",
+              "positionSha256": "7f7ee17fe2b7b63540f9cfaf18905243b7ad02afda96b5301d911d5d3f587561"
+            },
+            {
+              "name": "SwitchPivotRetainer.015",
+              "semanticGroup": "PermanentServices",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "ba24289281f41d2a84a1a6ef9d7d3b101b17389307c38af9bc229ea1da242447",
+              "positionSha256": "cea9d04c15c4d63db34ecf62755e80a3e50e50f22ae64b6ab79806b019649738"
+            },
+            {
+              "name": "SwitchTravelStop.014",
+              "semanticGroup": "PermanentServices",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "5044fd5e53abb3acc1b3e0cbdf43cdc0f272bd69a05464695d833d4863ad09e7",
+              "positionSha256": "465a0aee0675f675526b4f313a38489504031c2cf50972a346c604837eb55df0"
+            },
+            {
+              "name": "SwitchTravelStop.015",
+              "semanticGroup": "PermanentServices",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "d1a1ac0f72a150fb1e398243ca910a771197ce4aa2ae3a67b7e4f74b5964cec8",
+              "positionSha256": "cad482aa238feb074bda82bc9170c46c5a3dcd23649fb0ed4264318125356cfa"
+            }
+          ],
+          "vertices": 1654,
+          "triangles": 1548
+        }
+      ]
+    },
+    {
+      "name": "GooseneckLamp_1930",
+      "label": "Gooseneck wall lamp",
+      "family": "Lighting",
+      "player": true,
+      "surface": "Wall",
+      "suitability": "Both",
+      "hand": "None",
+      "anchors": [
+        {
+          "name": "LightOrigin",
+          "kind": "Light",
+          "position": [
+            0,
+            -0.065,
+            0.46
+          ],
+          "forward": [
+            0,
+            -1,
+            0.15
+          ],
+          "diameter": 0
+        },
+        {
+          "name": "Service_Rear",
+          "kind": "Service",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "forward": [
+            0,
+            0,
+            -1
+          ],
+          "diameter": 0.026
+        }
+      ],
+      "clearance": 0.0,
+      "id": "silverscreen.fixture.goosenecklamp_1930",
+      "origin": [
+        -5.96999979019165,
+        -11.994999885559082,
+        3.7799999713897705
+      ],
+      "basisRows": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "boundsMin": [
+        -0.19500017166137695,
+        -0.13499999046325684,
+        0.0
+      ],
+      "boundsMax": [
+        0.19500017166137695,
+        0.42412495613098145,
+        0.6549997329711914
+      ],
+      "dimensions": [
+        0.3900003433227539,
+        0.5591249465942383,
+        0.6549997329711914
+      ],
+      "status": "Exact source geometry; canonical pivot, hierarchy and winding repackaging",
+      "parts": [
+        {
+          "name": "Assembly",
+          "materials": [
+            "C1_Steel",
+            "C1_LampGlass",
+            "C1_LampReflector"
+          ],
+          "members": [
+            {
+              "name": "GooseneckLampArm",
+              "semanticGroup": "PermanentLighting",
+              "vertices": 1296,
+              "triangles": 2588,
+              "uvSha256": "43099b0c62ee353a2fcb628f2493904434ffad9fffa0ecd1994f3327d687d78d",
+              "positionSha256": "fa3cfba83b8527da20c8391efa8720091e69cf3f00cc3f726ce522ad1a4dc7ef"
+            },
+            {
+              "name": "LampMountScrew",
+              "semanticGroup": "PermanentLighting",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "e39a9a34a628a56c959cade7bc32c77835b4cd2b1dbc214bfb06ae55c360ee23",
+              "positionSha256": "d9b86c379fcdf8f02be1d50d122464572b10b442c9ee51888d27e76c71a95721"
+            },
+            {
+              "name": "LampMountScrew.001",
+              "semanticGroup": "PermanentLighting",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "d6eea8cb4da334a0649a9c4f61eef00d56484eb231ea9a51666f7ac07fa499e7",
+              "positionSha256": "a1f4b82b5548039cb13158416ab3ddf1393879f93c7d4a43da28f1c3d7248166"
+            },
+            {
+              "name": "LampWallBackplate",
+              "semanticGroup": "PermanentLighting",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "61566b044ee92e78ac3a435679698694cbad679f05f51a964929a92fc1df5c5e",
+              "positionSha256": "bc7fdd7892f4252d66c8c52527c5e3d2c1b1b25c1a416f4d3c86e31065395f04"
+            },
+            {
+              "name": "WallLampGlass",
+              "semanticGroup": "PermanentLighting",
+              "vertices": 128,
+              "triangles": 252,
+              "uvSha256": "0abbdebe8eecec74309de28eaba24e1df2761b651f2d99a2aac8714604d35287",
+              "positionSha256": "2ad3e2912da44bf0348fe9b9b34948c09e87b782ce3e8102691f23ecfd8c246a"
+            },
+            {
+              "name": "WallLampSpunShade",
+              "semanticGroup": "PermanentLighting",
+              "vertices": 528,
+              "triangles": 1052,
+              "uvSha256": "65d6d543f31557e07733789517d970d2f6959451dd6c74f15f85cf523c0012e2",
+              "positionSha256": "2e513126ae292142f629c7b194444857e662d8663c6d626e02ed8720b71aa815"
+            }
+          ],
+          "vertices": 2996,
+          "triangles": 4136
+        }
+      ]
+    },
+    {
+      "name": "PendantWorkLamp_1930",
+      "label": "Pendant work lamp",
+      "family": "Lighting",
+      "player": true,
+      "surface": "Ceiling",
+      "suitability": "Indoor",
+      "hand": "None",
+      "anchors": [
+        {
+          "name": "HeadSocket",
+          "kind": "Socket",
+          "position": [
+            0,
+            -0.4074997711181645,
+            0
+          ],
+          "forward": [
+            0,
+            1,
+            0
+          ],
+          "diameter": 0
+        },
+        {
+          "name": "LightOrigin",
+          "kind": "Light",
+          "position": [
+            0,
+            -0.7074997711181643,
+            0
+          ],
+          "forward": [
+            0,
+            -1,
+            0
+          ],
+          "diameter": 0
+        }
+      ],
+      "clearance": 0.0,
+      "id": "silverscreen.fixture.pendantworklamp_1930",
+      "origin": [
+        -4.349999904632568,
+        -10.5,
+        7.427499771118164
+      ],
+      "basisRows": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "boundsMin": [
+        -0.2539997100830078,
+        -0.6894998550415039,
+        -0.2539997100830078
+      ],
+      "boundsMax": [
+        0.254000186920166,
+        0.0,
+        0.2539997100830078
+      ],
+      "dimensions": [
+        0.5079998970031738,
+        0.6894998550415039,
+        0.5079994201660156
+      ],
+      "status": "Exact source geometry; canonical pivot, hierarchy and winding repackaging",
+      "parts": [
+        {
+          "name": "Head",
+          "materials": [
+            "C1_EnamelWhite",
+            "C1_Steel",
+            "C1_LampReflector",
+            "C1_LampGlass"
+          ],
+          "members": [
+            {
+              "name": "PorcelainSocket",
+              "semanticGroup": "PermanentLighting",
+              "vertices": 128,
+              "triangles": 252,
+              "uvSha256": "bf22de5646a01153033333216bd23bae7118150dd4c1a385fd43ea023a436614",
+              "positionSha256": "902618f6f76fbb73082226d186ee424c5f7cd5bb05d32c989750a322ad086447"
+            },
+            {
+              "name": "SpunEnamelReflector",
+              "semanticGroup": "PermanentLighting",
+              "vertices": 672,
+              "triangles": 1340,
+              "uvSha256": "0b4123eadd2223aae01f2bd9b2c582a3285496fa519547cd796108c5a65edab6",
+              "positionSha256": "729652db859bcbae5f6eba3620d82f0a766f66eb266d1173ff5cd48daaef2d15"
+            },
+            {
+              "name": "WarmLampBulb",
+              "semanticGroup": "PermanentLighting",
+              "vertices": 192,
+              "triangles": 380,
+              "uvSha256": "a40c8c3af7441bb97526acb0d30e1d4d6dce650e7bbe8af869c6312225a03d6f",
+              "positionSha256": "4019fca170b78cb5c0031329508dc4575bcce1805b4c27128fbe5ba26f76dd2e"
+            }
+          ],
+          "vertices": 1684,
+          "triangles": 1972
+        },
+        {
+          "name": "Mount",
+          "materials": [
+            "C1_Steel"
+          ],
+          "members": [
+            {
+              "name": "PendantClamp",
+              "semanticGroup": "PermanentLighting",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "1ecbcf3fdf476779e8be98ea8c95f096810d7ee924ed602cff7f47043f87406b",
+              "positionSha256": "a57df1728e545239eb760c4ae51e5ca89be066cdf9146d1137cb2bd908961730"
+            },
+            {
+              "name": "PendantStem",
+              "semanticGroup": "PermanentLighting",
+              "vertices": 40,
+              "triangles": 76,
+              "uvSha256": "02972f4105ec8214b8ac71166f827bcc9d87374600eb60ca08f8550954dba055",
+              "positionSha256": "4ea8da330e9de61a2a7e702a7f760dbd6bbe7cb9edad3da0a7436801d08b86cd"
+            }
+          ],
+          "vertices": 196,
+          "triangles": 136
+        }
+      ]
+    },
+    {
+      "name": "Bollard_1930",
+      "label": "Bolted safety bollard",
+      "family": "SiteProtection",
+      "player": true,
+      "surface": "Ground",
+      "suitability": "Both",
+      "hand": "None",
+      "anchors": [],
+      "clearance": 0.0,
+      "id": "silverscreen.fixture.bollard_1930",
+      "origin": [
+        -6.800000190734863,
+        -12.680000305175781,
+        0.0
+      ],
+      "basisRows": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "boundsMin": [
+        -0.13000011444091797,
+        0.0,
+        -0.13000011444091797
+      ],
+      "boundsMax": [
+        0.12999963760375977,
+        1.309999942779541,
+        0.13000011444091797
+      ],
+      "dimensions": [
+        0.25999975204467773,
+        1.309999942779541,
+        0.26000022888183594
+      ],
+      "status": "Exact source geometry; canonical pivot, hierarchy and winding repackaging",
+      "parts": [
+        {
+          "name": "Assembly",
+          "materials": [
+            "C1_Galvanized",
+            "C1_Steel",
+            "C1_SafetyOchre"
+          ],
+          "members": [
+            {
+              "name": "BollardAnchor",
+              "semanticGroup": "FixedProtection",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "0c9fec1f7cbcbc94dd36d5ee43e581c2a8c29b0814dcfa8e1d15ce06ae8a30e4",
+              "positionSha256": "a7f0f5cad962894a53514611b6800a59023d8ff625eabfa3ef64220fcbdd5f59"
+            },
+            {
+              "name": "BollardAnchor.001",
+              "semanticGroup": "FixedProtection",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "f92834570a6594b2ebc7fc5daf8e0f9dbfddf61c061a10730219e9681626bb14",
+              "positionSha256": "3e9e17030a02f55efd8d9c874fde2df9938a47b571de6dc7c281c5bd3306a082"
+            },
+            {
+              "name": "BollardAnchor.002",
+              "semanticGroup": "FixedProtection",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "7bbcc1d8ce0d78ed6217276c14a0c287fa5988c86def3d7691e55cf9eed3a818",
+              "positionSha256": "4adccb60e258541b26942671655135c45e22076508f3249f942cfa5fb11e96b6"
+            },
+            {
+              "name": "BollardAnchor.003",
+              "semanticGroup": "FixedProtection",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "452111293c30193ba09556ea7031a0120d7161db301617c9b75fd4e9a0fdc3b8",
+              "positionSha256": "59365882a0e902861e8910ddae1a0ad9a5b005bf35cbdd2aece04b70e87b4ea9"
+            },
+            {
+              "name": "BollardFoot",
+              "semanticGroup": "FixedProtection",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "06fbf4a95af94fa9342b5ef9c7d4a2c343f853960c37d55d4c31c6afd77e060a",
+              "positionSha256": "210b9725dc54312c66f656b3d0acde525f476e4690544fdc639894b58c2a3304"
+            },
+            {
+              "name": "BollardTube",
+              "semanticGroup": "FixedProtection",
+              "vertices": 160,
+              "triangles": 316,
+              "uvSha256": "6f3340671421e89db29ced7c041a8ebfe2a7315987885e6b765604e34887e95f",
+              "positionSha256": "47b8bdcf542066d9c8afeb260d9c91fd59ccefd430ab5ec57d918de34f69a763"
+            }
+          ],
+          "vertices": 781,
+          "triangles": 744
+        }
+      ]
+    },
+    {
+      "name": "DoorPull_1930",
+      "label": "Curved personnel-door pull",
+      "family": "DoorHardware",
+      "player": false,
+      "surface": "DoorLeaf",
+      "suitability": "Both",
+      "hand": "None",
+      "anchors": [],
+      "clearance": 0.0,
+      "id": "silverscreen.fixture.doorpull_1930",
+      "origin": [
+        -5.670000076293945,
+        -12.199999809265137,
+        1.149999976158142
+      ],
+      "basisRows": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "boundsMin": [
+        -0.05000019073486328,
+        -0.22999995946884155,
+        0.0
+      ],
+      "boundsMax": [
+        0.04999971389770508,
+        0.23000001907348633,
+        0.16900062561035156
+      ],
+      "dimensions": [
+        0.09999990463256836,
+        0.4599999785423279,
+        0.16900062561035156
+      ],
+      "status": "Exact source geometry; canonical pivot, hierarchy and winding repackaging",
+      "parts": [
+        {
+          "name": "Assembly",
+          "materials": [
+            "C1_Brass"
+          ],
+          "members": [
+            {
+              "name": "EscutcheonScrew.016",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "0dda7f7321d4ea563a85b7e3e96dcfda4c9b4faceca0dd2eb04b323d0aaaeb1f",
+              "positionSha256": "37d07a684da350c1541d16dea4b353f8760f4b34a9d42f345d79044b580899b6"
+            },
+            {
+              "name": "EscutcheonScrew.017",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "ae1caee1088936846bca63482ad23e215386809876a76c83994c1cd1f7c502bf",
+              "positionSha256": "7314081a068046de1545fbb799b8c7ee65ff2c6083398320b02bf4d372b7cfea"
+            },
+            {
+              "name": "EscutcheonScrew.018",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "e89e66754b7f5fd428c14b49665d34a233205536c76032ac8a65c2f58e0dbf96",
+              "positionSha256": "3ecbd5c330d764ac62e3a232379222bae1d781fef9cda2a4a18b387031ba6184"
+            },
+            {
+              "name": "EscutcheonScrew.019",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "51acdb87154cda28a1409f7b3b835601a631cc0d80a103bf0f4da0014399fcab",
+              "positionSha256": "402f8b4fdcbd041cd64008aa91f7043724bb7f988c90623d3bd966afeb5d96bf"
+            },
+            {
+              "name": "ForgedPull.004",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 672,
+              "triangles": 1340,
+              "uvSha256": "a395d1c12cc5aa1c2a318c7a543e0a4c7ae528a6a893bfc6fdb8139e0cc56e89",
+              "positionSha256": "2abcfb332756b2c0d7f78f098ce47b51584b6726ff150f5da15d54dacf37cfbf"
+            },
+            {
+              "name": "PullEscutcheon.008",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "a6f5b99948c482a2505a9053ecedbc2f168c4a74f452c54ecf411043fd4fa7ef",
+              "positionSha256": "165267040c219f2b28075ac796250b2dfb254ee492e1e40eda223e77a34535dc"
+            },
+            {
+              "name": "PullEscutcheon.009",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "3e2b71e3ffe2efc41fa8866b78ef54a4bb090b1c02c4ae94152cac27aef22665",
+              "positionSha256": "a97c989da3473d3d56d124460662bffcaefa5c73cab02cbcb34d27883ba6e7a9"
+            }
+          ],
+          "vertices": 1440,
+          "triangles": 1828
+        }
+      ]
+    },
+    {
+      "name": "PersonnelLockset_1930",
+      "label": "Paired personnel mortise lockset",
+      "family": "DoorHardware",
+      "player": false,
+      "surface": "DoorLeaf",
+      "suitability": "Both",
+      "hand": "LeftHinge",
+      "anchors": [
+        {
+          "name": "LeafMount",
+          "kind": "Mount",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "forward": [
+            0,
+            0,
+            -1
+          ],
+          "diameter": 0
+        },
+        {
+          "name": "Spindle",
+          "kind": "Pivot",
+          "position": [
+            0,
+            0,
+            -0.23
+          ],
+          "forward": [
+            0,
+            0,
+            1
+          ],
+          "diameter": 0
+        },
+        {
+          "name": "LatchAxis",
+          "kind": "Latch",
+          "position": [
+            -0.182,
+            0.13,
+            -0.1
+          ],
+          "forward": [
+            -1,
+            0,
+            0
+          ],
+          "diameter": 0
+        },
+        {
+          "name": "StrikeMount",
+          "kind": "Socket",
+          "position": [
+            -0.213,
+            0.13,
+            -0.095
+          ],
+          "forward": [
+            -1,
+            0,
+            0
+          ],
+          "diameter": 0
+        }
+      ],
+      "clearance": 0.0,
+      "id": "silverscreen.fixture.personnellockset_1930",
+      "origin": [
+        -5.670000076293945,
+        -12.199999809265137,
+        0.8199999928474426
+      ],
+      "basisRows": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "boundsMin": [
+        -0.21900033950805664,
+        -0.052500009536743164,
+        -0.2760000228881836
+      ],
+      "boundsMax": [
+        0.03699970245361328,
+        0.20499998331069946,
+        0.03600025177001953
+      ],
+      "dimensions": [
+        0.2560000419616699,
+        0.2574999928474426,
+        0.3120002746582031
+      ],
+      "status": "Exact source geometry; canonical pivot, hierarchy and winding repackaging",
+      "parts": [
+        {
+          "name": "FaceHardware",
+          "materials": [
+            "C1_Blackout",
+            "C1_Brass"
+          ],
+          "members": [
+            {
+              "name": "KeyholeRound",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "16d0a0afb72ff449cef45da4c4bbbd12fff793c295ccfde66ab9321446a58b79",
+              "positionSha256": "cd5b4a82cedf23081107b5043de1879e510d4eadcfd175f1e8a900b9f382936b"
+            },
+            {
+              "name": "KeyholeSlot",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "a72a793373877eaf25dfdbbb4c17e491523ebf9c1a47a4daf133c28112bcad5f",
+              "positionSha256": "64db3cca6d174df3aba422ca8106bb880083f12f221b0a14b6b6f17ff2c0737b"
+            },
+            {
+              "name": "LockEscutcheonScrew",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "678c1c59c41897a31e9394bca2f8a316db9be9561d73aa548c8d26fea250ab48",
+              "positionSha256": "53da31eea77967fa8252d3435b7583e6823eb6a1947c0f7283665e1b8b57810f"
+            },
+            {
+              "name": "LockEscutcheonScrew.001",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "9acf405e1ec61d74bf159e8f0cae00ad438f99c2978855fe7f182e3ee136f372",
+              "positionSha256": "d5a087a14968ddc592032f5eea1d151b6f85111b6a378b6e8a56cce20c76dc55"
+            },
+            {
+              "name": "MortiseKeyEscutcheon",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "c7335db03b4a45e49a318a831d7239beb042ae25c5dbf64e387d7b9934b91c7f",
+              "positionSha256": "924161bf019fc9021623f6840691558f71b844bdc7c215e44708b96f905e23d6"
+            }
+          ],
+          "vertices": 492,
+          "triangles": 396
+        },
+        {
+          "name": "EdgeLatch",
+          "materials": [
+            "C1_Brass"
+          ],
+          "members": [
+            {
+              "name": "LatchTongue",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "7bc93e2a15c7be2410e689ccd16ee76516a62959a65e6f1d815c2b3020333711",
+              "positionSha256": "88a1c3fe7fae414804c482ad0f665634f218c0bee3d3a60d8025e0053cb1124f"
+            },
+            {
+              "name": "MortiseLockEdgePlate",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "84ed750c22cd2ec00b59500915edefe4a9721564305b16f1d4fef2c1dc651df6",
+              "positionSha256": "46bc8b22c30a189674e3b0db0316272306f958b2673bfd806fc0fa0d77eef5d1"
+            }
+          ],
+          "vertices": 212,
+          "triangles": 120
+        },
+        {
+          "name": "Strike",
+          "materials": [
+            "C1_Steel"
+          ],
+          "members": [
+            {
+              "name": "LatchStrike",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "655c96b8455dc97af239ec43c4b88d021a6a9594700c8ba7b178280be6740620",
+              "positionSha256": "fa0b2ed744660095a724b3b363c3e334be504b130ea3c248d2c404f1de0c88cd"
+            }
+          ],
+          "vertices": 107,
+          "triangles": 60
+        },
+        {
+          "name": "Thumbturn",
+          "materials": [
+            "C1_Brass"
+          ],
+          "members": [
+            {
+              "name": "InteriorLockSpindle",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 40,
+              "triangles": 76,
+              "uvSha256": "b1b63cf3d117e57ace8c343b49c8737eef54bb57b2e311bdb6f4a00a2851160e",
+              "positionSha256": "acc50feebfd52cf2c8813980b6fdb45d35cf3098a29214e14043a2465c0cee98"
+            },
+            {
+              "name": "InteriorLockThumbturn",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "519b5fe73ffde590683293d297976b7182b8b1f36103bd6d9e21c1854640c378",
+              "positionSha256": "3dc9814752d1ad3d27f7b9c3f0c0076165e76d36414b026c0dd1a3289e24852c"
+            },
+            {
+              "name": "InteriorMortiseThumbturnPlate",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "978877340f865daec276c19f289147e94475ee18d48d505a9b516e6101f30ba4",
+              "positionSha256": "b7f86e20cfd2028fbf1cd9dce1ac0bbe34a4e36b9c926c5f4e8b8b70bb17036c"
+            }
+          ],
+          "vertices": 296,
+          "triangles": 196
+        }
+      ]
+    },
+    {
+      "name": "PersonnelHinge_180_1930",
+      "label": "Cranked personnel hinge 180",
+      "family": "DoorHardware",
+      "player": false,
+      "surface": "DoorLeaf",
+      "suitability": "Both",
+      "hand": "LeftHinge",
+      "anchors": [
+        {
+          "name": "HingeAxis",
+          "kind": "Pivot",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "forward": [
+            0,
+            1,
+            0
+          ],
+          "diameter": 0
+        },
+        {
+          "name": "LeafMount",
+          "kind": "Mount",
+          "position": [
+            -0.095,
+            0,
+            -0.04749999999999999
+          ],
+          "forward": [
+            0,
+            0,
+            -1
+          ],
+          "diameter": 0
+        },
+        {
+          "name": "JambMount",
+          "kind": "Mount",
+          "position": [
+            0.053,
+            0,
+            -0.07
+          ],
+          "forward": [
+            0,
+            0,
+            -1
+          ],
+          "diameter": 0
+        }
+      ],
+      "clearance": 0.0,
+      "id": "silverscreen.fixture.personnelhinge_180_1930",
+      "origin": [
+        -6.481999397277832,
+        -12.270000457763672,
+        0.3500000238418579
+      ],
+      "basisRows": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "boundsMin": [
+        -0.18999958038330078,
+        -0.07500001788139343,
+        -0.07250022888183594
+      ],
+      "boundsMax": [
+        0.11300039291381836,
+        0.07499998807907104,
+        0.024000167846679688
+      ],
+      "dimensions": [
+        0.30299997329711914,
+        0.15000000596046448,
+        0.09650039672851562
+      ],
+      "status": "Exact source geometry; canonical pivot, hierarchy and winding repackaging",
+      "parts": [
+        {
+          "name": "Assembly",
+          "materials": [
+            "C1_Steel"
+          ],
+          "members": [
+            {
+              "name": "CrankedHingeReturn",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "21cef764741602355abfda63e96fb8b5811427da7a52349d42412985ac3ee5cf",
+              "positionSha256": "415d3ef2c82f670e2e8d5204227869d30ae29d1c783194642581567d69548712"
+            },
+            {
+              "name": "HingeJambAttachment",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "39d646f999321065d6365660601b475b80910811985f713912866c69d0d0ee8d",
+              "positionSha256": "1fbd6c4ebf494fa05bde36fdcc4855d476fbc74ecb9377e8e861bbdcfd30c5b3"
+            },
+            {
+              "name": "HingeLeafScrew",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "e1056aa8abb2d19a59704c7dedaca75ceefdb0b8f2e952fb7aeb08151685d28e",
+              "positionSha256": "80d165ba936132ae7ea4370dccb784c7809c9a823a1bf79168958805ed615c3f"
+            },
+            {
+              "name": "HingeLeafScrew.001",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "61888d1d5a1a0fe59503e6b115905ee1c899156425474c8be377959dbb9c38df",
+              "positionSha256": "6d96f65fec2738d61d83d36b54de8e045b3f07a0ff65f4af0687bf02132e05ae"
+            },
+            {
+              "name": "PersonnelHinge",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "f593c0b6bcf73b8404038aac37a1995ff8031742227a271f092da7615037ee9f",
+              "positionSha256": "abb0cf595f0adc27e0d6911e992f0d7b4e95b1ff79fc5177428cb04e6f12eaf0"
+            },
+            {
+              "name": "PersonnelHingeLeaf",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "3674a26bd815ed36e70cbe255227c99c0e4b830590d50c3ded2878d5b5ee64d7",
+              "positionSha256": "4c187c1a1040299bdd28f5d8db158027cda704244328ac87badf40cb2eca5f12"
+            }
+          ],
+          "vertices": 602,
+          "triangles": 456
+        }
+      ]
+    },
+    {
+      "name": "PersonnelHinge_190_1930",
+      "label": "Cranked personnel hinge 190",
+      "family": "DoorHardware",
+      "player": false,
+      "surface": "DoorLeaf",
+      "suitability": "Both",
+      "hand": "LeftHinge",
+      "anchors": [
+        {
+          "name": "HingeAxis",
+          "kind": "Pivot",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "forward": [
+            0,
+            1,
+            0
+          ],
+          "diameter": 0
+        },
+        {
+          "name": "LeafMount",
+          "kind": "Mount",
+          "position": [
+            -0.095,
+            0,
+            -0.057499999999999996
+          ],
+          "forward": [
+            0,
+            0,
+            -1
+          ],
+          "diameter": 0
+        },
+        {
+          "name": "JambMount",
+          "kind": "Mount",
+          "position": [
+            0.053,
+            0,
+            -0.07
+          ],
+          "forward": [
+            0,
+            0,
+            -1
+          ],
+          "diameter": 0
+        }
+      ],
+      "clearance": 0.0,
+      "id": "silverscreen.fixture.personnelhinge_190_1930",
+      "origin": [
+        0.7919999957084656,
+        12.299999237060547,
+        0.3500000238418579
+      ],
+      "basisRows": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "boundsMin": [
+        -0.1899999976158142,
+        -0.07500001788139343,
+        -0.08249950408935547
+      ],
+      "boundsMax": [
+        0.11299997568130493,
+        0.07499998807907104,
+        0.024000167846679688
+      ],
+      "dimensions": [
+        0.30299997329711914,
+        0.15000000596046448,
+        0.10649967193603516
+      ],
+      "status": "Exact source geometry; canonical pivot, hierarchy and winding repackaging",
+      "parts": [
+        {
+          "name": "Assembly",
+          "materials": [
+            "C1_Steel"
+          ],
+          "members": [
+            {
+              "name": "CrankedHingeReturn.006",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "2f36a92744641f70137f03198486ac23b13e805c84875fcb326c1f2ef86dda0f",
+              "positionSha256": "2a45381b2e88f03f523970ece7e3b279bcf297777a8f96b5aee0009a4db25b79"
+            },
+            {
+              "name": "HingeJambAttachment.006",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "c7d92e3be995d37f59c08bb0ad1441dc2494eb0965749ed21c1b0a882aa7a435",
+              "positionSha256": "112a2fc2ad06809103d9cee8e92504ec7c6f4d99e0f69c9950962c98a17dcc0a"
+            },
+            {
+              "name": "HingeLeafScrew.012",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "f0812d2e05c66bc4c68b0b168fe328469fa9ea3b9abaa938d1f6f066d130005c",
+              "positionSha256": "2ceb563339f747736f43371fc359c15f5712729ac0187fb71f6e1ef63d495365"
+            },
+            {
+              "name": "HingeLeafScrew.013",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "4425ad4f35a29566dae150a83814bf72c7df481e30fb1c064c83489c16b292a9",
+              "positionSha256": "27b6100040e1fb5d9baace22b85126da2e99421669b7e24e44fd6e70e18f207f"
+            },
+            {
+              "name": "PersonnelHinge.006",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "9cdf494ccac3ad7d162fb1e02460da0c520427a1719bcd3b39afd6094c1d12ef",
+              "positionSha256": "0ba86412ffffe8d34c898ef3576049abb08c579bc476e6977b6a98b2e5b7076f"
+            },
+            {
+              "name": "PersonnelHingeLeaf.006",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "a441795f94899d0d348b2bb91a20aa383d7ab0520a254e17f4532e50179de868",
+              "positionSha256": "e2f9d99dd3ecf5ad1f7320589bee29905f913da51308c0ea1f8709975e25bb8c"
+            }
+          ],
+          "vertices": 613,
+          "triangles": 456
+        }
+      ]
+    },
+    {
+      "name": "PersonnelHinge_140_1930",
+      "label": "Cranked personnel hinge 140",
+      "family": "DoorHardware",
+      "player": false,
+      "surface": "DoorLeaf",
+      "suitability": "Both",
+      "hand": "LeftHinge",
+      "anchors": [
+        {
+          "name": "HingeAxis",
+          "kind": "Pivot",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "forward": [
+            0,
+            1,
+            0
+          ],
+          "diameter": 0
+        },
+        {
+          "name": "LeafMount",
+          "kind": "Mount",
+          "position": [
+            -0.095,
+            0,
+            -0.007500000000000007
+          ],
+          "forward": [
+            0,
+            0,
+            -1
+          ],
+          "diameter": 0
+        },
+        {
+          "name": "JambMount",
+          "kind": "Mount",
+          "position": [
+            0.053,
+            0,
+            -0.07
+          ],
+          "forward": [
+            0,
+            0,
+            -1
+          ],
+          "diameter": 0
+        }
+      ],
+      "clearance": 0.0,
+      "id": "silverscreen.fixture.personnelhinge_140_1930",
+      "origin": [
+        -7.940000534057617,
+        -9.487998962402344,
+        0.3500000238418579
+      ],
+      "basisRows": [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "boundsMin": [
+        -0.1900005340576172,
+        -0.07500001788139343,
+        -0.07000017166137695
+      ],
+      "boundsMax": [
+        0.11299896240234375,
+        0.07499998807907104,
+        0.023999691009521484
+      ],
+      "dimensions": [
+        0.30299949645996094,
+        0.15000000596046448,
+        0.09399986267089844
+      ],
+      "status": "Exact source geometry; canonical pivot, hierarchy and winding repackaging",
+      "parts": [
+        {
+          "name": "Assembly",
+          "materials": [
+            "C1_Steel"
+          ],
+          "members": [
+            {
+              "name": "CrankedHingeReturn.009",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "9b4d42f37b885556ab333b9ac7f83110309540b408dc66f426b401040ed7a89c",
+              "positionSha256": "f7e8ddda695d09d2af3788c9d21c643f67c0bc280f99920fc85c8bee6a1bf064"
+            },
+            {
+              "name": "HingeJambAttachment.009",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "2df29fa0ce879f296c0db496a6e68d5f3fe01b8eebeb0df2393943e85bf6c5d9",
+              "positionSha256": "8c44751706b6323613f4224c9cf6b6a3dccb2d892bf68f4d10d45dc2d9aa9c76"
+            },
+            {
+              "name": "HingeLeafScrew.018",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "ac7c19b271cfc9d03c9dd211af8df1fb78dc2a1063609b97f1c1238b90bda0b6",
+              "positionSha256": "4c430c22a884175e7ee70f1c9d94c479847c8e633cea12d15605d0052be6dd5f"
+            },
+            {
+              "name": "HingeLeafScrew.019",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "819b0a6f4982654d74966f87a3c5009fe406b047c40ad863b5ca39f1cd7d4c7c",
+              "positionSha256": "03060d1a2ac3b6296b6c846acbb8510530c295d9e4c4cbe38a66fb61c3e74240"
+            },
+            {
+              "name": "PersonnelHinge.009",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 48,
+              "triangles": 92,
+              "uvSha256": "e49b55814364d25b1c766308a2758b51e71203cf5c3782a7740898471f6de398",
+              "positionSha256": "ff08ecaffe4004c6482f9d0d6a1725d812d6da1ac6d348029347e192b7a06e0b"
+            },
+            {
+              "name": "PersonnelHingeLeaf.009",
+              "semanticGroup": "PersonnelDoors",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "4fbc8f8facfb5c8268e85637007dc8ed9cee03b8cff3a58b27792d6161aa28be",
+              "positionSha256": "d72b740f8bd4bbe34f451f5943a7ab8ac6a5d00d9c6b6947f56aff9e65bc4efb"
+            }
+          ],
+          "vertices": 604,
+          "triangles": 456
+        }
+      ]
+    },
+    {
+      "name": "DisplayFrame_Double_1930",
+      "label": "Double industrial acoustic / display frame",
+      "family": "Displays",
+      "player": true,
+      "surface": "Wall",
+      "suitability": "Indoor",
+      "hand": "None",
+      "anchors": [
+        {
+          "name": "Insert_Left",
+          "kind": "Insert",
+          "position": [
+            0.5625,
+            0,
+            0.1435
+          ],
+          "forward": [
+            0,
+            0,
+            1
+          ],
+          "diameter": 0
+        },
+        {
+          "name": "Insert_Right",
+          "kind": "Insert",
+          "position": [
+            -0.5625,
+            0,
+            0.1435
+          ],
+          "forward": [
+            0,
+            0,
+            1
+          ],
+          "diameter": 0
+        }
+      ],
+      "clearance": 0.0,
+      "id": "silverscreen.fixture.displayframe_double_1930",
+      "origin": [
+        7.554999828338623,
+        -8.399999618530273,
+        3.2699999809265137
+      ],
+      "basisRows": [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "boundsMin": [
+        -1.1470003128051758,
+        -0.9119999408721924,
+        0.0
+      ],
+      "boundsMax": [
+        1.1469998359680176,
+        0.9120001792907715,
+        0.16750001907348633
+      ],
+      "dimensions": [
+        2.2940001487731934,
+        1.8240001201629639,
+        0.16750001907348633
+      ],
+      "status": "Exact source geometry; canonical pivot, hierarchy and winding repackaging",
+      "parts": [
+        {
+          "name": "Backing",
+          "materials": [
+            "C1_RoofTimber"
+          ],
+          "members": [
+            {
+              "name": "AcousticPanelBacking.004",
+              "semanticGroup": "AcousticTreatment",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "0ec5e819754cef785e69049123223866d8b70a6ec1477aaed0f154952b53c0e5",
+              "positionSha256": "019947db5d22155f2b5929d0905ff44c8d259a8de76ebff5f3ad19abd82b64f2"
+            }
+          ],
+          "vertices": 113,
+          "triangles": 60
+        },
+        {
+          "name": "OuterFrame",
+          "materials": [
+            "C1_Steel"
+          ],
+          "members": [
+            {
+              "name": "AcousticPanelRail.008",
+              "semanticGroup": "AcousticTreatment",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "77c09f3f36383e60feece439987a0eb469362032c5a2c37ce96783a2be0c0499",
+              "positionSha256": "95ffbf82efd0eadbed9169a6dbe8af3d5f99cfad22e37a42cf620e951e8ca673"
+            },
+            {
+              "name": "AcousticPanelRail.009",
+              "semanticGroup": "AcousticTreatment",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "2ffab527e91b738944d7446275259cb1e092d7a76679c9faacb5627e0a72f98c",
+              "positionSha256": "9ed765b036dd42bb208055dac4c1d6bad0843c48acbeda9764c6b3f4d11189af"
+            },
+            {
+              "name": "AcousticPanelStile.012",
+              "semanticGroup": "AcousticTreatment",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "020c371ef2b849ba3aeaf35a8717f8572a73b7768a4f956b493a9873aafa5f45",
+              "positionSha256": "f2722f4e4504952c4df2fae677cc0bfd6fb5b4d3de8f6217f9af21115fa1d964"
+            },
+            {
+              "name": "AcousticPanelStile.014",
+              "semanticGroup": "AcousticTreatment",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "2053d4ad10d729cb7b5c9e5d21009c9a89107a9cfba5f5bf35f01bdd85d1baf1",
+              "positionSha256": "f7a12de2ae30a2b86ac67c429b6f2f8d8a58da04b1b0aca6deb898b20636876c"
+            }
+          ],
+          "vertices": 441,
+          "triangles": 240
+        },
+        {
+          "name": "Divider",
+          "materials": [
+            "C1_Steel"
+          ],
+          "members": [
+            {
+              "name": "AcousticPanelStile.013",
+              "semanticGroup": "AcousticTreatment",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "265eace25c8f9344f37d282b97adb581954d68473d7f118e8c2a5ea4e777b96d",
+              "positionSha256": "884bf92a4d9a1d55c97733361c05942ed8bd519c9a4cef58a516bbf2d488e0b6"
+            }
+          ],
+          "vertices": 115,
+          "triangles": 60
+        },
+        {
+          "name": "AcousticLeft",
+          "materials": [
+            "C1_AcousticFabric"
+          ],
+          "members": [
+            {
+              "name": "FabricAbsorberPanel.009",
+              "semanticGroup": "AcousticTreatment",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "bbba6b2b08c75709c3c7272282eafe72d7b418792bff50548d42e73036cebbd7",
+              "positionSha256": "cda9163c72db6b22be9e48df56c53575abee9c755576d17f47081c390acf3126"
+            }
+          ],
+          "vertices": 114,
+          "triangles": 60
+        },
+        {
+          "name": "AcousticRight",
+          "materials": [
+            "C1_AcousticFabric"
+          ],
+          "members": [
+            {
+              "name": "FabricAbsorberPanel.008",
+              "semanticGroup": "AcousticTreatment",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "48a66c8d612354ec859dfb12ed2b909921e202a9dc3cdbb17310e4f8e35c3473",
+              "positionSha256": "94049df678e4d6c491f41f589f11db522bee6b1db02b9199f3765745afd3540f"
+            }
+          ],
+          "vertices": 112,
+          "triangles": 60
+        }
+      ],
+      "interfaceAddition": "Independent flat artwork/matte planes; single frame receives a removable backing board for graphic mode only. No source frame geometry changed."
+    },
+    {
+      "name": "DisplayFrame_Single_1930",
+      "label": "Single industrial acoustic / display frame",
+      "family": "Displays",
+      "player": true,
+      "surface": "Wall",
+      "suitability": "Indoor",
+      "hand": "None",
+      "anchors": [
+        {
+          "name": "Insert",
+          "kind": "Insert",
+          "position": [
+            0,
+            0,
+            0.131
+          ],
+          "forward": [
+            0,
+            0,
+            1
+          ],
+          "diameter": 0
+        }
+      ],
+      "clearance": 0.0,
+      "id": "silverscreen.fixture.displayframe_single_1930",
+      "origin": [
+        -4.900000095367432,
+        11.555000305175781,
+        3.0999999046325684
+      ],
+      "basisRows": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "boundsMin": [
+        -1.3550000190734863,
+        -1.0774998664855957,
+        0.0
+      ],
+      "boundsMax": [
+        1.3550000190734863,
+        1.0774998664855957,
+        0.18500041961669922
+      ],
+      "dimensions": [
+        2.7100000381469727,
+        2.1549997329711914,
+        0.18500041961669922
+      ],
+      "status": "Exact source geometry; canonical pivot, hierarchy and winding repackaging",
+      "parts": [
+        {
+          "name": "OuterFrame",
+          "materials": [
+            "C1_Steel"
+          ],
+          "members": [
+            {
+              "name": "RearAcousticFrame",
+              "semanticGroup": "AcousticTreatment",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "a4687a74d1e0f1ba7a58022bfdb96ab16ed39acc739d0a2704feb16c0cdffcc8",
+              "positionSha256": "6415738339bebc6ddc4a165672bc4d56031a2fb7c39e8362fe96074974e24b9f"
+            },
+            {
+              "name": "RearAcousticFrame.001",
+              "semanticGroup": "AcousticTreatment",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "833c424f5b545574106362c562e72a89385280c2dba3e4144278bea19aa7a89f",
+              "positionSha256": "9a9dfe531a428d488b9c1fd4559bb9ff373335100545a4f67e6a03ae0a5b882b"
+            },
+            {
+              "name": "RearAcousticFrame.002",
+              "semanticGroup": "AcousticTreatment",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "c5c8ec913c11a7f05be7fa9692411d1ca6064f0802563bb0f057483db62fec1c",
+              "positionSha256": "0e85e93f1233a3600291c10a82ce138052736c9041ac45c3b2528349062a42da"
+            },
+            {
+              "name": "RearAcousticFrame.003",
+              "semanticGroup": "AcousticTreatment",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "a44870b9c42a24d7f0d43e3d3684e1765efbfd433dbab991bbaed40844ad94a5",
+              "positionSha256": "fcfdfe8009ad83826b1f732e4d21c35dca1558ea51d39a2021e9521d8baa90c5"
+            }
+          ],
+          "vertices": 464,
+          "triangles": 240
+        },
+        {
+          "name": "Acoustic",
+          "materials": [
+            "C1_AcousticFabric"
+          ],
+          "members": [
+            {
+              "name": "RearAcousticPanel",
+              "semanticGroup": "AcousticTreatment",
+              "vertices": 32,
+              "triangles": 60,
+              "uvSha256": "42675b5d8094fb570c820ffcdebc8bff9e393bf07bb6307f4c222081563de874",
+              "positionSha256": "757886eff3f35302099410502c3043cee12356f288525fb91f10104eeaa5af42"
+            }
+          ],
+          "vertices": 106,
+          "triangles": 60
+        }
+      ],
+      "interfaceAddition": "Independent flat artwork/matte planes; single frame receives a removable backing board for graphic mode only. No source frame geometry changed."
+    }
+  ]
+}

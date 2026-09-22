@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b1abda1c341bae4ab31b437b50e59e4, type: 3}
+  m_Name: OpenHouse
+  m_EditorClassIdentifier: Assembly-CSharp::SilverScreen.Presentation.ReusableAssets.DisplayArtworkTemplate
+  Background: {fileID: 2800000, guid: c831e5b1337fff249b47b7be8b5041c7, type: 3}
+  Font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  TextShader: {fileID: 4800000, guid: 0c9e43d81dbdebb44908efe42db0475c, type: 3}
+  Fields:
+  - Key: studioName
+    Literal: 
+    Rect:
+      serializedVersion: 2
+      x: 45
+      y: 735
+      width: 510
+      height: 105
+    FontSize: 42
+    Color: {r: 0.9411765, g: 0.9019608, b: 0.7921569, a: 1}
+  - Key: currentYear
+    Literal: 
+    Rect:
+      serializedVersion: 2
+      x: 65
+      y: 40
+      width: 470
+      height: 65
+    FontSize: 30
+    Color: {r: 0.90588236, g: 0.8352941, b: 0.65882355, a: 1}

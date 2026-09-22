@@ -1,0 +1,141 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fee2b82949f9b64facb8e9bbd6272ef, type: 3}
+  m_Name: IntakeCabinet_1930
+  m_EditorClassIdentifier: Assembly-CSharp-Editor::SilverScreen.Editor.ReusableAssets.ReusableAssetProvenance
+  _masterCommit: 927ad371a96c4044689286473b542febac6a7265
+  _sourcePath: ArtSource/Stage1CleanCandidate/Stage1_CleanCandidate_A.blend
+  _sourceSha256: df68dc9e3cd42ddc1085ae98e63ec9a62a96b6f53429ba52cdd0b64df7c669db
+  _canonicalId: silverscreen.fixture.intakecabinet_1930
+  _prefab: {fileID: 4000656558975216878, guid: eccbd45e8a45d0045a8aeff5fc356102, type: 3}
+  _recordJson: "{\n    \"name\": \"IntakeCabinet_1930\",\n    \"label\": \"Electrical
+    intake cabinet\",\n    \"family\": \"Electrical\",\n    \"id\": \"silverscreen.fixture.intakecabinet_1930\",\n   
+    \"surface\": \"Wall\",\n    \"suitability\": \"Both\",\n    \"hand\": \"None\",\n   
+    \"status\": \"Exact source geometry; canonical pivot, hierarchy and winding repackaging\",\n   
+    \"interfaceAddition\": \"\",\n    \"player\": true,\n    \"clearance\": 0.8999999761581421,\n   
+    \"origin\": [\n        -2.0999999046325685,\n        11.975000381469727,\n       
+    1.0\n    ],\n    \"basisRows\": [\n        1.0,\n        0.0,\n        0.0,\n       
+    0.0,\n        0.0,\n        1.0,\n        0.0,\n        1.0,\n        0.0\n   
+    ],\n    \"boundsMin\": [\n        -0.5750000476837158,\n        -0.8199999928474426,\n       
+    0.0\n    ],\n    \"boundsMax\": [\n        0.5749999284744263,\n        0.8200000524520874,\n       
+    0.6309995651245117\n    ],\n    \"dimensions\": [\n        1.149999976158142,\n       
+    1.6400001049041749,\n        0.6309995651245117\n    ],\n    \"parts\": [\n       
+    {\n            \"name\": \"Assembly\",\n            \"positions\": [],\n           
+    \"normals\": [],\n            \"uv\": [],\n            \"materials\": [\n               
+    \"C1_Brass\",\n                \"C1_Steel\",\n                \"C1_Galvanized\",\n               
+    \"C1_Base\"\n            ],\n            \"submeshes\": [],\n            \"members\":
+    [\n                {\n                    \"name\": \"EscutcheonScrew.072\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"101716a871e3b6e9d9165b8e02bbbc3b794e8105b3afabf760b7d9657491fcc2\",\n                   
+    \"positionSha256\": \"276a52138f648d36490547ae1b3a64420397922f2f88d8c7acea3592f332ff0d\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"EscutcheonScrew.073\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"d339f7dfda3aca019aa0b83ecbe12f29222e42e8638703099dd199866f23fb84\",\n                   
+    \"positionSha256\": \"e99b38f08c3af750d8c8869a21ba80a4b163d899f8cfe7684c33af27954d32f2\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"EscutcheonScrew.074\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"240bc3386aa1490f0d9a65af5aab69c57f5c0c45edfaadb76c91f31cd8a2d09c\",\n                   
+    \"positionSha256\": \"12fd7c45d0c00d0947fc29adcb58510941cfe5bfcb4d7294e4354017341f85eb\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"EscutcheonScrew.075\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"504ba0afbdd80145af0acbacbd3bc118f0d6ecb51971142186702fa5da4c3cc6\",\n                   
+    \"positionSha256\": \"af36ec5281e6b10d4d086f35a01decfe7b11dc3f07a89a809cc3a775fd9b1e6c\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"ForgedPull.018\",\n                    \"semanticGroup\":
+    \"PermanentServices\",\n                    \"uvSha256\": \"ba018f87c037baa91c12d66649d5021b86362eefd85625cb788fe78caa81b3c2\",\n                   
+    \"positionSha256\": \"6f3f56e17aacfe00871edbf175cdc1ecabe61030a2f7dce52d171281369f3dfd\",\n                   
+    \"vertices\": 672,\n                    \"triangles\": 1340\n               
+    },\n                {\n                    \"name\": \"PullEscutcheon.036\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"c8abfc49a4ac1514a203990b0ada1bc0557a3fc8de30030d574b92dc7cd45d99\",\n                   
+    \"positionSha256\": \"f9c47041d7dfdad6f215c01c1488aa3ede81f58f754ee1264346dc845933044c\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"PullEscutcheon.037\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"795274f7923c132a3717a3f801010f5945390e83396e19b843e614aca2c1403a\",\n                   
+    \"positionSha256\": \"2490a9fbf69def0a118fe81d7b4e4e874382441784afb2352c1dde02ccbab92d\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"RearCabinetHinge\",\n                    \"semanticGroup\":
+    \"PermanentServices\",\n                    \"uvSha256\": \"f57d7953583e5f8cef090d04d6bc504dd1b44f9fd0121ec948186be5abec4faa\",\n                   
+    \"positionSha256\": \"01cf18fb1cbbe366f0b6569e2a2e6b296d13e2ceed705642230edf7fed8c48c3\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"RearCabinetHinge.001\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"a2fcaf2cd8adfb33bcd3e4f03c5f3bdc1af78a4972ce677305b098e89edc0d7c\",\n                   
+    \"positionSha256\": \"30e6f575b62f4245d8beb5b3c9074f16b7a8cc8aa303cc041d7379252b0a5089\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"RearIntakeCabinet\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"f51956ca9e9e5011cefdeefdde189e1fc1c839ff941d46a470c45f7c39a1bf4f\",\n                   
+    \"positionSha256\": \"2a89d01dac72f3d24d17963e8d69579c1c5679bb3926a347281af7022f8ee528\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"RearIntakeEntryGland\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"569b014898fb4fef127b89ff5dd547d74e1c268c2008880f565afe94acf617df\",\n                   
+    \"positionSha256\": \"a81fe3d1cca2f6a0e16d968c01baa11b58d0891bee282b2016e276d8401cebd5\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"RearIntakeEntryGland.001\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"35f18bc4e7f07e4ceee0540cf90be3d0361cfa17e568ed1a8886f8f2f015c356\",\n                   
+    \"positionSha256\": \"2edcd3b04ca60d2cb50fe2bd5257a5cb025127e77c25936abe6ccd9066faba96\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"RearIntakeEntryGland.002\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"1191e0813149118b4d83bd07e083c50fcc0436ff0e241f787beb6cbfa8174102\",\n                   
+    \"positionSha256\": \"77ca7a10d3592477e2e39f0f166c6c0a486227f909e7061ecee2db0e25d40b91\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"RearIntakeLid\",\n                    \"semanticGroup\":
+    \"PermanentServices\",\n                    \"uvSha256\": \"938bfa84ec305f3cb167674eb829aecfdbcbc35a0f46e90b7124702d5c384203\",\n                   
+    \"positionSha256\": \"9a4beccc0ff9410174f0526dc8bcded4caeae4bd78ba5ac4a4b31463a62827c5\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"RearIntakeMount\",\n                    \"semanticGroup\":
+    \"PermanentServices\",\n                    \"uvSha256\": \"18f382f6a823cf147e85e32cb8eb680350327ee253acf06947b590f60b06aa9b\",\n                   
+    \"positionSha256\": \"956929e3f47bc9ce6173b78189206ec6fbbb642089c983dc76e386a98126329d\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"RearLidFastener\",\n                    \"semanticGroup\":
+    \"PermanentServices\",\n                    \"uvSha256\": \"aca2ce181da8ed5e7b4e6d1961be1bff7ec00915fa3e82783b4207ac0297c117\",\n                   
+    \"positionSha256\": \"210d342657d5bb9de094c47cd74eccf76e1303d08ef43a4acab05d78c6c56812\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"RearLidFastener.001\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"cd58afa772a82d9d56103bb09e02ed14fb4e2e6086f0094b44048a8217f28001\",\n                   
+    \"positionSha256\": \"973f1a4d13f1d205b4af96ecb1fae74ac4243cb535aa13a8e914fa671f076d1f\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"RearLidFastener.002\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"cbb9f651d057cb91076d87c5f679246fc4472068062acf41384645116fbdfbcc\",\n                   
+    \"positionSha256\": \"e93e542b242c08dc93edaafc2d5b734ff17e370cb77d43bd1df035fccc3ba9fd\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"RearLidFastener.003\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"c67ac5b5b8c24ad1ac91aec614c5975ce100c4f4e669151f518084465bc42314\",\n                   
+    \"positionSha256\": \"9fed34acb4590b9bdd678666b79cb61fcf250b31ee67998a3446a5ecb0672979\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                }\n           
+    ],\n            \"vertices\": 2709,\n            \"triangles\": 2836\n       
+    }\n    ],\n    \"anchors\": [\n        {\n            \"name\": \"Service_TopA\",\n           
+    \"kind\": \"Service\",\n            \"position\": [\n                -0.23000000417232514,\n               
+    0.8199999928474426,\n                0.19499999284744264\n            ],\n           
+    \"forward\": [\n                0.0,\n                1.0,\n                0.0\n           
+    ],\n            \"diameter\": 0.04600000008940697\n        },\n        {\n           
+    \"name\": \"Service_TopB\",\n            \"kind\": \"Service\",\n           
+    \"position\": [\n                0.05999999865889549,\n                0.8199999928474426,\n               
+    0.2549999952316284\n            ],\n            \"forward\": [\n               
+    0.0,\n                1.0,\n                0.0\n            ],\n           
+    \"diameter\": 0.04600000008940697\n        },\n        {\n            \"name\":
+    \"Service_TopC\",\n            \"kind\": \"Service\",\n            \"position\":
+    [\n                0.25,\n                0.8199999928474426,\n               
+    0.2549999952316284\n            ],\n            \"forward\": [\n               
+    0.0,\n                1.0,\n                0.0\n            ],\n           
+    \"diameter\": 0.04600000008940697\n        }\n    ]\n}"

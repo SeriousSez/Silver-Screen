@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fee2b82949f9b64facb8e9bbd6272ef, type: 3}
+  m_Name: MeterCabinet_1930
+  m_EditorClassIdentifier: Assembly-CSharp-Editor::SilverScreen.Editor.ReusableAssets.ReusableAssetProvenance
+  _masterCommit: 927ad371a96c4044689286473b542febac6a7265
+  _sourcePath: ArtSource/Stage1CleanCandidate/Stage1_CleanCandidate_A.blend
+  _sourceSha256: df68dc9e3cd42ddc1085ae98e63ec9a62a96b6f53429ba52cdd0b64df7c669db
+  _canonicalId: silverscreen.fixture.metercabinet_1930
+  _prefab: {fileID: 8581692102461739909, guid: bd428574e8364b84aa7c51b62f8a4de8, type: 3}
+  _recordJson: "{\n    \"name\": \"MeterCabinet_1930\",\n    \"label\": \"Exterior
+    meter cabinet\",\n    \"family\": \"Electrical\",\n    \"id\": \"silverscreen.fixture.metercabinet_1930\",\n   
+    \"surface\": \"Wall\",\n    \"suitability\": \"Both\",\n    \"hand\": \"None\",\n   
+    \"status\": \"Exact source geometry; canonical pivot, hierarchy and winding repackaging\",\n   
+    \"interfaceAddition\": \"\",\n    \"player\": true,\n    \"clearance\": 0.800000011920929,\n   
+    \"origin\": [\n        7.900000095367432,\n        -7.599999904632568,\n       
+    1.190000057220459\n    ],\n    \"basisRows\": [\n        0.0,\n        -1.0,\n       
+    0.0,\n        0.0,\n        0.0,\n        1.0,\n        1.0,\n        0.0,\n       
+    0.0\n    ],\n    \"boundsMin\": [\n        -0.36499977111816409,\n        -0.5250000357627869,\n       
+    0.0\n    ],\n    \"boundsMax\": [\n        0.36500024795532229,\n        0.5699999332427979,\n       
+    0.4419999122619629\n    ],\n    \"dimensions\": [\n        0.7300000190734863,\n       
+    1.0950000286102296,\n        0.4419999122619629\n    ],\n    \"parts\": [\n       
+    {\n            \"name\": \"Assembly\",\n            \"positions\": [],\n           
+    \"normals\": [],\n            \"uv\": [],\n            \"materials\": [\n               
+    \"C1_Brass\",\n                \"C1_EnamelWhite\",\n                \"C1_DarkCeramic\",\n               
+    \"C1_Steel\",\n                \"C1_Galvanized\"\n            ],\n           
+    \"submeshes\": [],\n            \"members\": [\n                {\n                   
+    \"name\": \"AmmeterBezel\",\n                    \"semanticGroup\": \"PermanentServices\",\n                   
+    \"uvSha256\": \"a34485535e70cf6e51ab3a17fb3fbd4a4c63cffa450f93b1f687967f2e67c532\",\n                   
+    \"positionSha256\": \"895dfb9b0c711b218e363e5640694b6b2ba13c06c167786efd81ec70174082d2\",\n                   
+    \"vertices\": 492,\n                    \"triangles\": 980\n                },\n               
+    {\n                    \"name\": \"AmmeterDial\",\n                    \"semanticGroup\":
+    \"PermanentServices\",\n                    \"uvSha256\": \"b887da96c590f500d4ffab9adf16a57f3e672d6036e5e5133297531bbd00363b\",\n                   
+    \"positionSha256\": \"7063a54c6de4f3085dee319f1dda2ce25aa5e34b16bcfcfa62057184be0a01b8\",\n                   
+    \"vertices\": 80,\n                    \"triangles\": 156\n                },\n               
+    {\n                    \"name\": \"AmmeterHousing\",\n                    \"semanticGroup\":
+    \"PermanentServices\",\n                    \"uvSha256\": \"6136d6518a0b6d502f9b3483e31c3f5d0d1b0dcdd3df1b957f3d34d80da52ef0\",\n                   
+    \"positionSha256\": \"6176ddfb45ddbbc96d923f13e3b574cd8c17c6e7f12d476f6fab2962c1044256\",\n                   
+    \"vertices\": 80,\n                    \"triangles\": 156\n                },\n               
+    {\n                    \"name\": \"AmmeterPointer\",\n                    \"semanticGroup\":
+    \"PermanentServices\",\n                    \"uvSha256\": \"3dd0c1dcee1016e5a92a275a16c62b1a454afa2840145a21aee1a5d14b1ff974\",\n                   
+    \"positionSha256\": \"3c09c81a16968cabb3bcdab31b231dc25f30124c40b1d01d0e6a185948435f7d\",\n                   
+    \"vertices\": 16,\n                    \"triangles\": 28\n                },\n               
+    {\n                    \"name\": \"CabinetHinge\",\n                    \"semanticGroup\":
+    \"PermanentServices\",\n                    \"uvSha256\": \"8d841025c809bf7fdf0d02ac82439c4da9d86756007c83ae79dc75c2706dce26\",\n                   
+    \"positionSha256\": \"55e298ebed09a34723c80fc5d04aa3b258188169061e2e315514360e3d4611f6\",\n                   
+    \"vertices\": 40,\n                    \"triangles\": 76\n                },\n               
+    {\n                    \"name\": \"CabinetHinge.001\",\n                    \"semanticGroup\":
+    \"PermanentServices\",\n                    \"uvSha256\": \"12e2a0253ce33a351cd42911e443c5ce3e5452fedc694049333f1a588818d663\",\n                   
+    \"positionSha256\": \"514fe35bd6e83af6696e21c5f8d2500c378382a17af82ab5353138633af9e9c6\",\n                   
+    \"vertices\": 40,\n                    \"triangles\": 76\n                },\n               
+    {\n                    \"name\": \"CabinetLatchPull\",\n                    \"semanticGroup\":
+    \"PermanentServices\",\n                    \"uvSha256\": \"a9582bdf1bde77bf7a85efbc8b1d6d62718db9d0f46687258ad6a308948e4fd5\",\n                   
+    \"positionSha256\": \"f4b407d331d2651d137fa9daa548d224194c7be432445bd8b0ac18ce1c2a1b32\",\n                   
+    \"vertices\": 480,\n                    \"triangles\": 956\n                },\n               
+    {\n                    \"name\": \"CabinetLidScrew\",\n                    \"semanticGroup\":
+    \"PermanentServices\",\n                    \"uvSha256\": \"22b1fc739181bd38b9955795891657aead91072292f0e7c7fed491d1923b1678\",\n                   
+    \"positionSha256\": \"fda9dc8f25f22981b270bcd66c2d186ff52eccc0077ffcf591a5cccde82f4d08\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"CabinetLidScrew.001\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"f008074406ce510a90bc004040c829a6d089827a058a0bad75d932e02a4f85d6\",\n                   
+    \"positionSha256\": \"2ef642e9853411645bddfd2b8508b6242e91ea87aca8e00f19d042a1a47e7c5f\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"CabinetLidScrew.002\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"4924b49d5c96d7543d2cdbc828c4e2dfcb8cddc94c2e9a37539159cca3fb37bb\",\n                   
+    \"positionSha256\": \"6c255c3abb14aa4bf7806acb73aef14386aed10b2f18a989d4c916507c62e4ab\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"CabinetLidScrew.003\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"418b2102111b6c9dc4c489480c13fc320551412d47b3a19765cb91f0f668aee6\",\n                   
+    \"positionSha256\": \"ebcdad599b980c6bb2ba34e963499d8737c64c188695d5e436854f68f5d8705b\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"CabinetRaisedLid\",\n                    \"semanticGroup\":
+    \"PermanentServices\",\n                    \"uvSha256\": \"83407d690b650bc8acca4594c3392b8dc4d93238c8adf2ece35e57f5fe900ee0\",\n                   
+    \"positionSha256\": \"62cf37b3e972f16f33d97378a7931099e2b70bb70fabfd598dc31ebe2fc47f72\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"ExteriorCabinetEntryGland\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"61df7e07296c477d928fc3146ea5c311b4e882b1738019da77f477fffa966417\",\n                   
+    \"positionSha256\": \"c96cc4d2126e95099d7b760f070492436f8d350af5a5d734782a1544030647e1\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"ExteriorServiceCabinet\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"cdd040c41436a63ad6c75ef2bbd7c48ff49bb90fea4c60e68e7039b387a160ba\",\n                   
+    \"positionSha256\": \"7cf72b03ff9bed2a3b766e507b5d446850a4e2ba09dec728d32ed0c026cf7220\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                }\n           
+    ],\n            \"vertices\": 2675,\n            \"triangles\": 3008\n       
+    }\n    ],\n    \"anchors\": [\n        {\n            \"name\": \"Service_Top\",\n           
+    \"kind\": \"Service\",\n            \"position\": [\n                0.0,\n               
+    0.5699999928474426,\n                0.15000000596046449\n            ],\n           
+    \"forward\": [\n                0.0,\n                1.0,\n                0.0\n           
+    ],\n            \"diameter\": 0.04600000008940697\n        }\n    ]\n}"

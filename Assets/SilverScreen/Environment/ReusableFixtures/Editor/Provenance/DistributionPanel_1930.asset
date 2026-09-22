@@ -1,0 +1,256 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fee2b82949f9b64facb8e9bbd6272ef, type: 3}
+  m_Name: DistributionPanel_1930
+  m_EditorClassIdentifier: Assembly-CSharp-Editor::SilverScreen.Editor.ReusableAssets.ReusableAssetProvenance
+  _masterCommit: 927ad371a96c4044689286473b542febac6a7265
+  _sourcePath: ArtSource/Stage1CleanCandidate/Stage1_CleanCandidate_A.blend
+  _sourceSha256: df68dc9e3cd42ddc1085ae98e63ec9a62a96b6f53429ba52cdd0b64df7c669db
+  _canonicalId: silverscreen.fixture.distributionpanel_1930
+  _prefab: {fileID: 1682974051786573452, guid: 409cac4632ac05e4d8ef14d697d76593, type: 3}
+  _recordJson: "{\n    \"name\": \"DistributionPanel_1930\",\n    \"label\": \"Three-lever
+    distribution panel\",\n    \"family\": \"Electrical\",\n    \"id\": \"silverscreen.fixture.distributionpanel_1930\",\n   
+    \"surface\": \"Wall\",\n    \"suitability\": \"Indoor\",\n    \"hand\": \"None\",\n   
+    \"status\": \"Exact source geometry; canonical pivot, hierarchy and winding repackaging\",\n   
+    \"interfaceAddition\": \"\",\n    \"player\": true,\n    \"clearance\": 0.800000011920929,\n   
+    \"origin\": [\n        7.585000038146973,\n        -8.300000190734864,\n       
+    1.1299999952316285\n    ],\n    \"basisRows\": [\n        0.0,\n        1.0,\n       
+    0.0,\n        0.0,\n        0.0,\n        1.0,\n        -1.0,\n        0.0,\n       
+    0.0\n    ],\n    \"boundsMin\": [\n        -0.375,\n        -0.550000011920929,\n       
+    0.0\n    ],\n    \"boundsMax\": [\n        0.375,\n        0.5499999523162842,\n       
+    0.5889363288879395\n    ],\n    \"dimensions\": [\n        0.75,\n        1.0999999046325684,\n       
+    0.5889363288879395\n    ],\n    \"parts\": [\n        {\n            \"name\":
+    \"Assembly\",\n            \"positions\": [],\n            \"normals\": [],\n           
+    \"uv\": [],\n            \"materials\": [\n                \"C1_Steel\",\n               
+    \"C1_Brass\",\n                \"C1_Base\",\n                \"C1_DarkCeramic\",\n               
+    \"C1_Galvanized\"\n            ],\n            \"submeshes\": [],\n           
+    \"members\": [\n                {\n                    \"name\": \"DistributionCabinet.002\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"cc057d4621d2d7008510067894bae8e1bcebc861cbd78d0dd89c6de1630d2b13\",\n                   
+    \"positionSha256\": \"46509dc8ce586261f6070a9c0808c0cb239812b7df9b3a97442ae64c9090846a\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"DistributionDoor.002\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"f286bda27b5b3fd74fa99bc35f94c6984e4f36f5e414f44f10fda2f806ef9e13\",\n                   
+    \"positionSha256\": \"52ee65f71332c390f785b16b31a8a0b78bfa48c3c8f8d043fb88554b75fbbc94\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"ForgedSwitchLever.006\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"dc24dbd25bb1f47fb1770082409e3e67adc783eb09752d5d5b03a0124ff38189\",\n                   
+    \"positionSha256\": \"0c00789155fc8b83a9b6034a8d16ad2c1485acdba66b17c972b755d949578053\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"ForgedSwitchLever.007\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"cd6bdf7ad4c0d6624fc8077f084962c29aeee7c45e1430b3f6e3dc5e72073f57\",\n                   
+    \"positionSha256\": \"8c1fed7c906391dc002c2d03bd8b7e4a95283bf8265b50edd616049665e09b15\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"ForgedSwitchLever.008\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"339b454afd0ee337b5c50218cca765194b88f1d344a22c56adf5b66eb37c85a2\",\n                   
+    \"positionSha256\": \"4082d0054d6579403e883e6f356f41582699ded3d7b5392f9015d489403e41ab\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"PanelMasonryMount.002\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"3eee8ddec1a6c37b3fc214eaaa67a2620d41d79b54f731726e31040a9bc9d35e\",\n                   
+    \"positionSha256\": \"4754b26158db75113703a396992de0aeb079b53b41941200a5f041a99fc12d0b\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"ShapedSwitchGrip.006\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"e69e5f2b71444ffa8aa80be08fd662828a09ee58471f3a0a449c77426d73de1a\",\n                   
+    \"positionSha256\": \"58c266141c55cf210af50f06aed1cd0081863aca56c04f86d8ba3c06e4800dd7\",\n                   
+    \"vertices\": 160,\n                    \"triangles\": 316\n                },\n               
+    {\n                    \"name\": \"ShapedSwitchGrip.007\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"633b1d5f49e4d88f023e4c024ddcf24deefb42f7c85e4fb8802a16edaa2c4936\",\n                   
+    \"positionSha256\": \"6dc23c96c6f44efe78188b94025f7010eb6ea389506ee01e8929e1285424c21f\",\n                   
+    \"vertices\": 160,\n                    \"triangles\": 316\n                },\n               
+    {\n                    \"name\": \"ShapedSwitchGrip.008\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"61706a2d1986d3aa9ba8c5563a688ddec47e9ad7baaf477a3579379b91d3b6d6\",\n                   
+    \"positionSha256\": \"bc24c7c285fe8a8b7689645144dc9502ac98de72329e56702bc1f14d624b3f6b\",\n                   
+    \"vertices\": 160,\n                    \"triangles\": 316\n                },\n               
+    {\n                    \"name\": \"SwitchBearingBoss.006\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"b5218fffdf4ce675c71e7716c39d3ec2bb733f57062832ea183d00cb2c229152\",\n                   
+    \"positionSha256\": \"c17e1332597f29d9d76223c2ec0c5ca87b1124df77a686e62c82d1c7c406da9e\",\n                   
+    \"vertices\": 160,\n                    \"triangles\": 316\n                },\n               
+    {\n                    \"name\": \"SwitchBearingBoss.007\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"f94e360de1d91c9101de7ca198b1d0abc588486f8b8804cfe2e0ab411c8841ca\",\n                   
+    \"positionSha256\": \"9c936fbba67e47078ef499ade999ed2f67ca29d97d851c22f0bb519b6ddeb5a7\",\n                   
+    \"vertices\": 160,\n                    \"triangles\": 316\n                },\n               
+    {\n                    \"name\": \"SwitchBearingBoss.008\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"62b3354c809d9802309135250499e3e2010c355659068a225ae3ad45b4ede030\",\n                   
+    \"positionSha256\": \"88f4412453ee6932e0b75f2a457704900b7511908558af84f97df30da0dfac62\",\n                   
+    \"vertices\": 160,\n                    \"triangles\": 316\n                },\n               
+    {\n                    \"name\": \"SwitchEscutcheon.006\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"cc2a918b77cc6d334bb86d303d7e78e709eb955c4605682022ca76ad5e9f16d1\",\n                   
+    \"positionSha256\": \"146f8def8a95f2950da30e5c914d4a5a654447794ec68b79628ac218444fdd13\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"SwitchEscutcheon.007\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"2871a2ae8e58b7a9a3ea7f1da1bef164c12c66bf82e9657069d4bec7fd42f21c\",\n                   
+    \"positionSha256\": \"fd77b78df2e6b6c9fa7d3315f1b917ea046a4351efe40871289bea0f7359e54a\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"SwitchEscutcheon.008\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"028ac5e97fa7348c704268ff7b78dbbbbcb4e9f9a692f53a725bf91e0f6a75d4\",\n                   
+    \"positionSha256\": \"a69f4e4c431f5fa0bb18ecd4cc16f50cc15d069a57870300a0a2b76e15f9a83a\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"SwitchMountScrew.024\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"e40e1c61eac36442267d83b2790d655dcfbc5a8d74e27bc15bcc46c25eda48c3\",\n                   
+    \"positionSha256\": \"ac32ea101bc7b12dfca3dcf134e3bb437fe1925dc65a27d5b594626234d051fb\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"SwitchMountScrew.025\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"bbc861a72a3f82f419cb2febeb20633bb8cd0c02283c8c25ef322355869307ab\",\n                   
+    \"positionSha256\": \"2099da4d047417a606bb2b37ebd967ba96b7fa2809cda0506d1b8882be5629e4\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"SwitchMountScrew.026\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"548bca1dd496fa5c444934ac4b2232b42c7e390f8e6b49b89cbc51a9601815bf\",\n                   
+    \"positionSha256\": \"5dcfcb7661d9059add627ed3ab3d09517b3a4f9de9d1cc66b94d5348dd1a272c\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"SwitchMountScrew.027\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"a73de070c1efefb059d7e1b3894dd9e6a959b73fe038708c02722aee29793b7e\",\n                   
+    \"positionSha256\": \"691d50b46c0b1bc67e68e575cf3ff34bbe82ecd2438c41b67df978199edb517f\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"SwitchMountScrew.028\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"b9985ef0526252167b4c316958646a42efce1a1ac621dccbd1705a07c3614485\",\n                   
+    \"positionSha256\": \"0e1b83e59bdfa87cac875c9a6264b9fc421768ee3952bb6eb9b1dd3a083a25c5\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"SwitchMountScrew.029\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"99abb3b98d57842dc06704b227035fa00d10e4ee41864d4c24e9a59ee9e1cd13\",\n                   
+    \"positionSha256\": \"b606a0ec24db7a6bb084a54a81d418f29cc5ef6a1f95bed66f8e63644f676d43\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"SwitchMountScrew.030\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"899fc47b7d4b5a9f1cda7783232ee6214815d07a44d0411f9b0b092a994b1dee\",\n                   
+    \"positionSha256\": \"35a308b5d7f62b64f31bf4524619746de5d3ade2e0fbf7d835bcee34586e3a61\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"SwitchMountScrew.031\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"47c4ea1fc2b2851494a3cadcc6be3043a4357ac8a51dbcce7aec81c7312c95db\",\n                   
+    \"positionSha256\": \"53114e9cf54b7db88cd116fdf92ec14b933628e87594d68eb74075886db83a04\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"SwitchMountScrew.032\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"c24094505e5e9df4803741361248c208256b2c48e82e9f3da420cd23517ba94d\",\n                   
+    \"positionSha256\": \"d1272891b3dc51e6fc0ae30764491c2e868e57ad3a54a97663f490c00bfce7a5\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"SwitchMountScrew.033\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"b3e6b073ae3a1c6a778eeb6efa20a8eed3c2b00f7068de88bc2c12d484fc6716\",\n                   
+    \"positionSha256\": \"6a57db870ad51a42d19770556247b87cc56f06c684ba4754fda908d8bf071b42\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"SwitchMountScrew.034\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"af1a97645298df892d0f31f76481d1d3f234ce4bd8cddfbd7289e96022426cdd\",\n                   
+    \"positionSha256\": \"f402223d158d88bdcef25c44279e9c7f951a85ed0e7077dd88016ba6ab21d1fd\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"SwitchMountScrew.035\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"c772cc54c8d2df5832fff2b9c02daad4924645836e672e18b6a19a745d00c887\",\n                   
+    \"positionSha256\": \"4bd8af55a65b016b3d8ddd522755d527d4aed608022433845ffb07327401e074\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"SwitchPivotPin.006\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"bc5a53c450db419c4c72b2a6010239f3851425a20a7746b8b9b1a6c0798c1daa\",\n                   
+    \"positionSha256\": \"d6725836ac98f9cee1b90d9789377636b951b9137b28b6b0a3af4656ebe955e6\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"SwitchPivotPin.007\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"dfa0761a79d1ff5c3ef3f122e63a355bb4907bcdc6f1b7263efc9317cf6e5852\",\n                   
+    \"positionSha256\": \"8e52903e6dfbe81d99564f0c08f799ab6638d5a4564aa04dbac002a6a87113d0\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"SwitchPivotPin.008\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"e4372affdded878fc6dad0b6b7bd6a627036d9aa566fe8dd14e993a777392f61\",\n                   
+    \"positionSha256\": \"774692a2a5e6741cab1a410008c569cc5f4fa062103b8df721e2c6611cd41439\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"SwitchPivotRetainer.012\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"2c6f19bf4ff9f803812e1e5bca1500937cd1eec231c29558821ea770e0b1b135\",\n                   
+    \"positionSha256\": \"d904a047e6deee48d6925c924723a43d3821aff0b3e44a136d2277bddc08940e\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"SwitchPivotRetainer.013\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"62d70a5300635746c70e9279ab809ba1e6e4ea729cf0b419cf9e48c833d10fca\",\n                   
+    \"positionSha256\": \"6fdf3ce3b3611bf1abe1bcb05fba221a969b546b767004f419fe26ee47fdde7f\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"SwitchPivotRetainer.014\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"ee35e4e0f451707b1a9a524b6bdfd91068cf6816c1f688df2fbe0c0f1f4dc1bf\",\n                   
+    \"positionSha256\": \"7f7ee17fe2b7b63540f9cfaf18905243b7ad02afda96b5301d911d5d3f587561\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"SwitchPivotRetainer.015\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"ba24289281f41d2a84a1a6ef9d7d3b101b17389307c38af9bc229ea1da242447\",\n                   
+    \"positionSha256\": \"cea9d04c15c4d63db34ecf62755e80a3e50e50f22ae64b6ab79806b019649738\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"SwitchPivotRetainer.016\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"7e773ebab8787a05031f9ca98d1dcc4a28ce5fd1b972d882f5351d7d0fecbb8f\",\n                   
+    \"positionSha256\": \"162156b11ca47fa03dc75a8108f0a115548fed94c688b3702d055a6f66e13e8c\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"SwitchPivotRetainer.017\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"96cd7ade27ade7e03f697c13b4cd7fa5362ad8c3d0f1c5f605d35603fcd1464f\",\n                   
+    \"positionSha256\": \"3c239676528464caf7dbe5acd70c0e43eeff22fe91ccda364d0e942fa9794d1e\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"SwitchTravelStop.012\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"250b2f5b0fcd5b573ac202f0896e5f2868aa5165db33105048916cf4a469a21e\",\n                   
+    \"positionSha256\": \"ee953c86b3dc77dc17f83afe029071c7fbc472210506917146eaabafb8c7b31e\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"SwitchTravelStop.013\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"9d6d22c67d7e0852a28c649c0f74cc95b7df1aad8373e74d8b4dc338bd83d2e9\",\n                   
+    \"positionSha256\": \"f513aa99544b6210d377202db2d51e34a9ae043d63abe0e75d9d692a32eb3152\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"SwitchTravelStop.014\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"5044fd5e53abb3acc1b3e0cbdf43cdc0f272bd69a05464695d833d4863ad09e7\",\n                   
+    \"positionSha256\": \"465a0aee0675f675526b4f313a38489504031c2cf50972a346c604837eb55df0\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"SwitchTravelStop.015\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"d1a1ac0f72a150fb1e398243ca910a771197ce4aa2ae3a67b7e4f74b5964cec8\",\n                   
+    \"positionSha256\": \"cad482aa238feb074bda82bc9170c46c5a3dcd23649fb0ed4264318125356cfa\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"SwitchTravelStop.016\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"68a1ec38071f3a156bc5fd5d98a56cc07c40850a5273810a311516031f0f6376\",\n                   
+    \"positionSha256\": \"9ff19dbf9aa832c48f6527961f648eed242827e512abf6113c484eef176a2d65\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"SwitchTravelStop.017\",\n                   
+    \"semanticGroup\": \"PermanentServices\",\n                    \"uvSha256\":
+    \"59ad2d1c1dfb91a09c982ad71d1b4db8f3a9f7cf4ca9318ba65c814b74a5a502\",\n                   
+    \"positionSha256\": \"fdd56117f288578382d3504bae8cc1a07016e2b40b8545fc73895f37050d1808\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                }\n           
+    ],\n            \"vertices\": 5331,\n            \"triangles\": 4824\n       
+    }\n    ],\n    \"anchors\": [\n        {\n            \"name\": \"Service_TopA\",\n           
+    \"kind\": \"Service\",\n            \"position\": [\n                -0.20000000298023225,\n               
+    0.5299999713897705,\n                0.22499999403953553\n            ],\n           
+    \"forward\": [\n                0.0,\n                1.0,\n                0.0\n           
+    ],\n            \"diameter\": 0.035999998450279239\n        },\n        {\n           
+    \"name\": \"Service_TopB\",\n            \"kind\": \"Service\",\n           
+    \"position\": [\n                0.20000000298023225,\n                0.5299999713897705,\n               
+    0.22499999403953553\n            ],\n            \"forward\": [\n               
+    0.0,\n                1.0,\n                0.0\n            ],\n           
+    \"diameter\": 0.035999998450279239\n        }\n    ]\n}"

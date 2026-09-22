@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fee2b82949f9b64facb8e9bbd6272ef, type: 3}
+  m_Name: PersonnelHinge_140_1930
+  m_EditorClassIdentifier: Assembly-CSharp-Editor::SilverScreen.Editor.ReusableAssets.ReusableAssetProvenance
+  _masterCommit: 927ad371a96c4044689286473b542febac6a7265
+  _sourcePath: ArtSource/Stage1CleanCandidate/Stage1_CleanCandidate_A.blend
+  _sourceSha256: df68dc9e3cd42ddc1085ae98e63ec9a62a96b6f53429ba52cdd0b64df7c669db
+  _canonicalId: silverscreen.fixture.personnelhinge_140_1930
+  _prefab: {fileID: 470705186198118130, guid: 171a8fda0af788b4884d36a924e135d9, type: 3}
+  _recordJson: "{\n    \"name\": \"PersonnelHinge_140_1930\",\n    \"label\": \"Cranked
+    personnel hinge 140\",\n    \"family\": \"DoorHardware\",\n    \"id\": \"silverscreen.fixture.personnelhinge_140_1930\",\n   
+    \"surface\": \"DoorLeaf\",\n    \"suitability\": \"Both\",\n    \"hand\": \"LeftHinge\",\n   
+    \"status\": \"Exact source geometry; canonical pivot, hierarchy and winding repackaging\",\n   
+    \"interfaceAddition\": \"\",\n    \"player\": false,\n    \"clearance\": 0.0,\n   
+    \"origin\": [\n        -7.940000534057617,\n        -9.487998962402344,\n       
+    0.3500000238418579\n    ],\n    \"basisRows\": [\n        0.0,\n        1.0,\n       
+    0.0,\n        0.0,\n        0.0,\n        1.0,\n        -1.0,\n        0.0,\n       
+    0.0\n    ],\n    \"boundsMin\": [\n        -0.1900005340576172,\n        -0.07500001788139343,\n       
+    -0.07000017166137696\n    ],\n    \"boundsMax\": [\n        0.11299896240234375,\n       
+    0.07499998807907105,\n        0.023999691009521486\n    ],\n    \"dimensions\":
+    [\n        0.30299949645996096,\n        0.15000000596046449,\n        0.09399986267089844\n   
+    ],\n    \"parts\": [\n        {\n            \"name\": \"Assembly\",\n           
+    \"positions\": [],\n            \"normals\": [],\n            \"uv\": [],\n           
+    \"materials\": [\n                \"C1_Steel\"\n            ],\n            \"submeshes\":
+    [],\n            \"members\": [\n                {\n                    \"name\":
+    \"CrankedHingeReturn.009\",\n                    \"semanticGroup\": \"PersonnelDoors\",\n                   
+    \"uvSha256\": \"9b4d42f37b885556ab333b9ac7f83110309540b408dc66f426b401040ed7a89c\",\n                   
+    \"positionSha256\": \"f7e8ddda695d09d2af3788c9d21c643f67c0bc280f99920fc85c8bee6a1bf064\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"HingeJambAttachment.009\",\n                   
+    \"semanticGroup\": \"PersonnelDoors\",\n                    \"uvSha256\": \"2df29fa0ce879f296c0db496a6e68d5f3fe01b8eebeb0df2393943e85bf6c5d9\",\n                   
+    \"positionSha256\": \"8c44751706b6323613f4224c9cf6b6a3dccb2d892bf68f4d10d45dc2d9aa9c76\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                },\n               
+    {\n                    \"name\": \"HingeLeafScrew.018\",\n                   
+    \"semanticGroup\": \"PersonnelDoors\",\n                    \"uvSha256\": \"ac7c19b271cfc9d03c9dd211af8df1fb78dc2a1063609b97f1c1238b90bda0b6\",\n                   
+    \"positionSha256\": \"4c430c22a884175e7ee70f1c9d94c479847c8e633cea12d15605d0052be6dd5f\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"HingeLeafScrew.019\",\n                   
+    \"semanticGroup\": \"PersonnelDoors\",\n                    \"uvSha256\": \"819b0a6f4982654d74966f87a3c5009fe406b047c40ad863b5ca39f1cd7d4c7c\",\n                   
+    \"positionSha256\": \"03060d1a2ac3b6296b6c846acbb8510530c295d9e4c4cbe38a66fb61c3e74240\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"PersonnelHinge.009\",\n                   
+    \"semanticGroup\": \"PersonnelDoors\",\n                    \"uvSha256\": \"e49b55814364d25b1c766308a2758b51e71203cf5c3782a7740898471f6de398\",\n                   
+    \"positionSha256\": \"ff08ecaffe4004c6482f9d0d6a1725d812d6da1ac6d348029347e192b7a06e0b\",\n                   
+    \"vertices\": 48,\n                    \"triangles\": 92\n                },\n               
+    {\n                    \"name\": \"PersonnelHingeLeaf.009\",\n                   
+    \"semanticGroup\": \"PersonnelDoors\",\n                    \"uvSha256\": \"4fbc8f8facfb5c8268e85637007dc8ed9cee03b8cff3a58b27792d6161aa28be\",\n                   
+    \"positionSha256\": \"d72b740f8bd4bbe34f451f5943a7ab8ac6a5d00d9c6b6947f56aff9e65bc4efb\",\n                   
+    \"vertices\": 32,\n                    \"triangles\": 60\n                }\n           
+    ],\n            \"vertices\": 604,\n            \"triangles\": 456\n        }\n   
+    ],\n    \"anchors\": [\n        {\n            \"name\": \"HingeAxis\",\n           
+    \"kind\": \"Pivot\",\n            \"position\": [\n                0.0,\n               
+    0.0,\n                0.0\n            ],\n            \"forward\": [\n               
+    0.0,\n                1.0,\n                0.0\n            ],\n           
+    \"diameter\": 0.0\n        },\n        {\n            \"name\": \"LeafMount\",\n           
+    \"kind\": \"Mount\",\n            \"position\": [\n                -0.0949999988079071,\n               
+    0.0,\n                -0.007499999832361937\n            ],\n            \"forward\":
+    [\n                0.0,\n                0.0,\n                -1.0\n           
+    ],\n            \"diameter\": 0.0\n        },\n        {\n            \"name\":
+    \"JambMount\",\n            \"kind\": \"Mount\",\n            \"position\": [\n               
+    0.05299999937415123,\n                0.0,\n                -0.07000000029802323\n           
+    ],\n            \"forward\": [\n                0.0,\n                0.0,\n               
+    -1.0\n            ],\n            \"diameter\": 0.0\n        }\n    ]\n}"
