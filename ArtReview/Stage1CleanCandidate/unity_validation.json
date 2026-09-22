@@ -1,0 +1,521 @@
+{
+  "revision": "04",
+  "status": "Stopped for final visual approval",
+  "unity": "6000.5.9f1",
+  "pipeline": "Existing PC URP 17.5, studio daylight and volume; candidate permanent worklights and updated interior reflection",
+  "validation": "[Log] Floor hit (0.00, 0.08, -12.00)\n[Log] CHECK importedGroundDatum=-0.000001 sideOpeningRays=36 rearOpeningRays=9 roofExteriorProbeAnchors=2 roofMetallic=0.78 roofSmoothness=0.64\n[Log] Live candidate root=(21.811130, 0.000000, -19.607070) lights=31\n[Log] CHECK missingScripts=0 importedMeshChannelsInvalid=0 renderers=30 trianglesWithSign=634040 distinctMaterials=20 colliders=5 centralHits=0 floorHits=1 stage1GlyphVertices=2704 stage2GlyphVertices=3368 stageRestored=1\n[Log] Permanent spot lights=31 reflection=Stage1InteriorReflection cubemapSize=128 productionRegistration=False\n[Log] Editor Unity=6000.5.9f1 compiling=False playing=False target=StandaloneWindows64 active=Assets/Scenes/Studio.unity dirty=True\n[Log] Review outside build settings=True\n[Log] Original Studio has not been saved or reloaded. Its extra candidate was seated at measured ground as one undoable root change. Play Mode, navigation, door movement, stair collision, player build and performance benchmark not exercised.",
+  "capture_execution": "[Log] 47 Unity captures saved. Camera, renderer, layer and sun state restored.",
+  "console": {
+    "success": true,
+    "message": "Tool 'GetConsoleLogs' executed successfully",
+    "data": {
+      "logs": [],
+      "totalCount": 0,
+      "errorCount": 0,
+      "warningCount": 0
+    }
+  },
+  "light_refresh_regression": {
+    "success": true,
+    "message": "Command executed successfully.",
+    "data": {
+      "isCompilationSuccessful": true,
+      "isExecutionSuccessful": true,
+      "executionId": 1,
+      "compilationLogs": "",
+      "executionLogs": "[Log] Before: previewLights=186 prefabLights=124 previewGroups=6\n[Log] PASS: two consecutive refresh/save operations and reflection bake preserve exactly 31 lights and one lighting root.",
+      "localFixedCode": "using UnityEngine;\r\nusing UnityEditor;\r\nusing System.Linq;\r\nusing SilverScreen.Editor;\r\n\r\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\r\n{\r\n    internal class CommandScript : IRunCommand\r\n    {\r\n        public void Execute(ExecutionResult result)\r\n        {\r\n            Stage1CandidateReview.OpenPreviewReview();\r\n            var root = Stage1CandidateReview.FindReviewObject(\"Stage1_CleanCandidate_A_REVIEW_ONLY\");\r\n            var asset = AssetDatabase.LoadAssetAtPath<GameObject>(Stage1CandidateReview.PrefabPath);\r\n            result.Log(\"Before: previewLights=\" + root.GetComponentsInChildren<Light>(true).Length + \" prefabLights=\" + asset.GetComponentsInChildren<Light>(true).Length + \" previewGroups=\" + root.transform.Cast<Transform>().Count(t => t.name == \"PermanentWorkLighting\"));\r\n            Stage1CandidateReview.UpdateReviewCandidate();\r\n            if (root.GetComponentsInChildren<Light>(true).Length != 31)\r\n                throw new System.Exception(\"First refresh duplicate lights\");\r\n            Stage1CandidateReview.UpdateReviewCandidate();\r\n            if (root.GetComponentsInChildren<Light>(true).Length != 31)\r\n                throw new System.Exception(\"Second refresh duplicate lights\");\r\n            asset = AssetDatabase.LoadAssetAtPath<GameObject>(Stage1CandidateReview.PrefabPath);\r\n            if (asset.GetComponentsInChildren<Light>(true).Length != 31)\r\n                throw new System.Exception(\"Saved prefab duplicate lights\");\r\n            Stage1CandidateReview.BakeInteriorReflection();\r\n            if (root.GetComponentsInChildren<Light>(true).Length != 31)\r\n                throw new System.Exception(\"Bake save duplicate lights\");\r\n            result.Log(\"PASS: two consecutive refresh/save operations and reflection bake preserve exactly 31 lights and one lighting root.\");\r\n        }\r\n    }\r\n}",
+      "result": "Command executed successfully."
+    }
+  },
+  "live_placement": "[Log] Whole candidate instance aligned to actual Ground: (21.811130, 0.200003, -19.607070) -> (21.811130, 0.000000, -19.607070). Children unchanged. Undo available. Studio remains unsaved.",
+  "captures": [
+    {
+      "file": "01_front_three_quarter.png",
+      "view": "Front three-quarter",
+      "size": [
+        3072,
+        1030
+      ],
+      "sha256": "512bd730164811c64d98f72c262606e3303e05128bcf43de5965949e7d6b559a",
+      "visually_inspected": true
+    },
+    {
+      "file": "02_front.png",
+      "view": "Straight front",
+      "size": [
+        2910,
+        1434
+      ],
+      "sha256": "9de4a7b5df814c423d046d0d85eb736dd85217511bca1c6b4c2bbdbe36f1f97d",
+      "visually_inspected": true
+    },
+    {
+      "file": "03_side.png",
+      "view": "Opposite side",
+      "size": [
+        3354,
+        1434
+      ],
+      "sha256": "093485d4fe7ecbf300ad77f270e237ef2913eb70e381cb893a0f1cda5d8e3a61",
+      "visually_inspected": true
+    },
+    {
+      "file": "04_rear.png",
+      "view": "Rear",
+      "size": [
+        2784,
+        1434
+      ],
+      "sha256": "da77da8f5eb04df4a6e5fcb612b7f47384c1bec071c481908b04196ac85f3e34",
+      "visually_inspected": true
+    },
+    {
+      "file": "05_roof.png",
+      "view": "Roof overview",
+      "size": [
+        3200,
+        2000
+      ],
+      "sha256": "c5db44765adcd0198c9a55e947f8fb8ea16678035ebb87c92aaa04492e688b63",
+      "visually_inspected": true
+    },
+    {
+      "file": "13_main_door_detail.png",
+      "view": "Main stage doors",
+      "size": [
+        3200,
+        2000
+      ],
+      "sha256": "bed31be9500a0cd08baa8b3af485d18827e77aa222ae313ff5f4eabee818ac9f",
+      "visually_inspected": true
+    },
+    {
+      "file": "14_personnel_entrance.png",
+      "view": "Personnel entrance",
+      "size": [
+        2320,
+        2000
+      ],
+      "sha256": "c9fa298ecc55e2be3b24f65fc4feda86f85db8e0e77dc4a73dfafee9cf7a56e8",
+      "visually_inspected": true
+    },
+    {
+      "file": "18_clerestory_detail.png",
+      "view": "Clerestory construction",
+      "size": [
+        3200,
+        2000
+      ],
+      "sha256": "3b9f4fbf71c7dec893505d4647e5833242f6cc7b640162e265fda16a0f9c0432",
+      "visually_inspected": true
+    },
+    {
+      "file": "19_roof_construction.png",
+      "view": "Roof construction",
+      "size": [
+        3200,
+        2000
+      ],
+      "sha256": "fba33fcf3e825eb7bc30189eb8d57829b80b06c93ce3a99415f0d4e21b999602",
+      "visually_inspected": true
+    },
+    {
+      "file": "20_door_pulls_close.png",
+      "view": "Door pulls \u00b7 close inspection",
+      "size": [
+        3200,
+        2000
+      ],
+      "sha256": "fa6cfa41749593dffbaec2a9e5df22c9576eb91afa9a2dcafacb542abc513d8f",
+      "visually_inspected": true
+    },
+    {
+      "file": "21_service_construction.png",
+      "view": "Side service construction",
+      "size": [
+        3200,
+        2000
+      ],
+      "sha256": "56d844f4f16f8eb0a8b273c642cd7deb31395848542cbbb5c4ada3798d419d6c",
+      "visually_inspected": true
+    },
+    {
+      "file": "22_rear_services.png",
+      "view": "Rear service construction",
+      "size": [
+        3200,
+        2000
+      ],
+      "sha256": "c78399df4f7b515c59afc5862346310fcaec269bb8ae869e7dd11a35b6190717",
+      "visually_inspected": true
+    },
+    {
+      "file": "09_interior_wide.png",
+      "view": "Interior \u00b7 looking inward",
+      "size": [
+        3200,
+        2000
+      ],
+      "sha256": "f74fe67765ffd90ef0670fd09dcc693bdc08e3fd28a528feea17f069d99a4e89",
+      "visually_inspected": true
+    },
+    {
+      "file": "12_interior_reverse.png",
+      "view": "Interior \u00b7 toward stage doors",
+      "size": [
+        3200,
+        2000
+      ],
+      "sha256": "f2ccbfddb99d4bdfcc868e5350bdc1c91b12d1946457f0f19257ca0dbc150e0d",
+      "visually_inspected": true
+    },
+    {
+      "file": "15_truss_and_rigging.png",
+      "view": "Roof trusses and rigging",
+      "size": [
+        3200,
+        2000
+      ],
+      "sha256": "69c45fbbc007aa5f2beb2510543f839d6d6f47a63daf00e99a8360abdb9020af",
+      "visually_inspected": true
+    },
+    {
+      "file": "16_stair_and_catwalk.png",
+      "view": "Stair and catwalk",
+      "size": [
+        3200,
+        2000
+      ],
+      "sha256": "19e2bcaddea46428bc238143af201eff939ce670f137a5e5420207baecff4ca2",
+      "visually_inspected": true
+    },
+    {
+      "file": "17_inside_stage_doors.png",
+      "view": "Stage doors from inside",
+      "size": [
+        3200,
+        2000
+      ],
+      "sha256": "dd74648dfa7e091e0c80865c1ee77e1fcc9584a8e4bbcc3d5bdf09b0dacbc9d0",
+      "visually_inspected": true
+    },
+    {
+      "file": "10_structure_cutaway.png",
+      "view": "Structure cutaway",
+      "size": [
+        3200,
+        2000
+      ],
+      "sha256": "7b8e3b6a2480544570daec771f0def32c5ea3eac3234fa3fa1f1a0a3c4ac6c0a",
+      "visually_inspected": true
+    },
+    {
+      "file": "11_rear_circulation_cutaway.png",
+      "view": "Rear circulation cutaway",
+      "size": [
+        3200,
+        2000
+      ],
+      "sha256": "c2cfdff410b63584b651714b408bf9d108eff7c9ea5f8777fbe5bba418d6fb64",
+      "visually_inspected": true
+    },
+    {
+      "file": "07_management_candidate.png",
+      "view": "Management camera \u00b7 candidate framed",
+      "size": [
+        1600,
+        1000
+      ],
+      "sha256": "294414a3183a9fc643b1ec909c092efdb246ff832825c5e0f0e33b07d3302bdc",
+      "visually_inspected": true
+    },
+    {
+      "file": "06_management_original_pose.png",
+      "view": "Management camera \u00b7 saved pose",
+      "size": [
+        1600,
+        1000
+      ],
+      "sha256": "aaefdb2ec368035bd10eac0963a82288784766b033a488a5afe196918f5c0a19",
+      "visually_inspected": true
+    },
+    {
+      "file": "08_beside_administration.png",
+      "view": "Administration context",
+      "size": [
+        3200,
+        2000
+      ],
+      "sha256": "62fc589b9cf75076b9fce535db982979ca82ecb190edb2a26466eaac912a392c",
+      "visually_inspected": true
+    },
+    {
+      "file": "23_ground_front.png",
+      "view": "Front perimeter at grade",
+      "size": [
+        3000,
+        1800
+      ],
+      "sha256": "cb8acf2a50f65c25e5f474912e47d59bbe8e2a145b69ef639bb740db3b3626df",
+      "visually_inspected": true
+    },
+    {
+      "file": "24_ground_rear.png",
+      "view": "Rear perimeter at grade",
+      "size": [
+        3000,
+        1800
+      ],
+      "sha256": "e7e5a1a183b4852ac6cb6b3ded5c268453f58b93376c011a7fc313bd53ab3d8d",
+      "visually_inspected": true
+    },
+    {
+      "file": "25_ground_hero_side.png",
+      "view": "Hero side at grade",
+      "size": [
+        3000,
+        1800
+      ],
+      "sha256": "4c895f9abb275339fec555e3eaf296cde8ac694c577c4a3f8bc394b471154d92",
+      "visually_inspected": true
+    },
+    {
+      "file": "26_ground_opposite_side.png",
+      "view": "Opposite side at grade",
+      "size": [
+        3000,
+        1800
+      ],
+      "sha256": "3fe3e43e6e332f5afd444346adc9e87f374e28f021e6b294a000025bc92f9cc8",
+      "visually_inspected": true
+    },
+    {
+      "file": "27_personnel_frontal.png",
+      "view": "Personnel entrance \u00b7 frontal",
+      "size": [
+        2000,
+        2600
+      ],
+      "sha256": "d42529f66f8b7f05a7b309fee13c4441cf817de2336522545c3ac251ca59df02",
+      "visually_inspected": true
+    },
+    {
+      "file": "28_side_door_oblique.png",
+      "view": "Side doorway \u00b7 low oblique",
+      "size": [
+        2000,
+        2600
+      ],
+      "sha256": "0549d22edaf0a28ced7338d785befec1031d26ae2c786a781c9d8389a43eb176",
+      "visually_inspected": true
+    },
+    {
+      "file": "29_lamp_column_clearance.png",
+      "view": "Lamp and column relationship",
+      "size": [
+        3000,
+        2000
+      ],
+      "sha256": "9e44e6e4e27bf964fa8a8c54adbaebebe79973984c2f2a2627f3ebbe5cb4573e",
+      "visually_inspected": true
+    },
+    {
+      "file": "30_panel_switch_controls.png",
+      "view": "Industrial switch mechanisms",
+      "size": [
+        2200,
+        2800
+      ],
+      "sha256": "6a71d3b1c7371585e239fd1a78a28c7c04e5a93b878f0c113e9c40bede1b9d9a",
+      "visually_inspected": true
+    },
+    {
+      "file": "31_personnel_lock_pull.png",
+      "view": "Pull and mortise lock",
+      "size": [
+        2000,
+        2400
+      ],
+      "sha256": "3a2ac5e025ca445d4329215b1c571b05372e61e3090557fe21d618708e91b08a",
+      "visually_inspected": true
+    },
+    {
+      "file": "32_canvas_awning.png",
+      "view": "Canvas awning construction",
+      "size": [
+        3000,
+        2000
+      ],
+      "sha256": "30dcab948d463968e22abcce462fada6c0f97dcd913bec8ba6408b2c1184b646",
+      "visually_inspected": true
+    },
+    {
+      "file": "33_pilaster_crown.png",
+      "view": "Corner pilaster crown",
+      "size": [
+        2400,
+        2400
+      ],
+      "sha256": "968798bae5ce0c68800c08e6b62acb53b2829871fd329919d03afad7b3ea5c61",
+      "visually_inspected": true
+    },
+    {
+      "file": "34_roof_grazing.png",
+      "view": "Roof \u00b7 grazing view",
+      "size": [
+        3000,
+        2000
+      ],
+      "sha256": "ddeba76bb6d3152bb1d95552e54d13646bee1d75bd85e1dabf2b946c9eb4b2b3",
+      "visually_inspected": true
+    },
+    {
+      "file": "35_roof_blackout_structure.png",
+      "view": "Roof blackout and structure",
+      "size": [
+        3000,
+        2000
+      ],
+      "sha256": "1bf51e41bb60b18380fca4e274995770f76f5fa353d0b95d8760fcd9ad69cfe4",
+      "visually_inspected": true
+    },
+    {
+      "file": "36_clerestory_roller.png",
+      "view": "Clerestory roller and catwalk",
+      "size": [
+        3000,
+        2000
+      ],
+      "sha256": "3bc1e9a6879987d2ca7748b844d71ba65cb1577a81c1035b8cc52be31a7e6870",
+      "visually_inspected": true
+    },
+    {
+      "file": "37_roof_direct_sun.png",
+      "view": "Roof \u00b7 direct sunlight",
+      "size": [
+        3000,
+        2000
+      ],
+      "sha256": "6793221a0784f29641af500be06e045e9123d49d445564843cb333e30bd82fc0",
+      "visually_inspected": true
+    },
+    {
+      "file": "38_roof_shaded.png",
+      "view": "Roof \u00b7 shaded foreground",
+      "size": [
+        3000,
+        2000
+      ],
+      "sha256": "9204b4a8d1cf782515163d1e5a1d878f1ef5f8f1d8fd41143c875d66f86870e5",
+      "visually_inspected": true
+    },
+    {
+      "file": "39_ground_front_left.png",
+      "view": "Front-left perimeter at grade",
+      "size": [
+        3000,
+        1800
+      ],
+      "sha256": "9f417cd3d85bd62d50d75a5816ddae85ad300370cbcc2c1755af3fc146f5a8d3",
+      "visually_inspected": true
+    },
+    {
+      "file": "40_front_left_door.png",
+      "view": "Front-left personnel opening",
+      "size": [
+        2000,
+        2600
+      ],
+      "sha256": "9f3159ffa417c6e715cfded326017cb5ae8f07398fe18e1f80c8a272af50cfe4",
+      "visually_inspected": true
+    },
+    {
+      "file": "41_hero_rear_service_door.png",
+      "view": "Hero-side rear service opening",
+      "size": [
+        2000,
+        2600
+      ],
+      "sha256": "f604cdf2816288d4dbaa192f18b5fab4295883e721374a6c8768cee87a0a4035",
+      "visually_inspected": true
+    },
+    {
+      "file": "42_opposite_front_service_door.png",
+      "view": "Opposite-side front opening",
+      "size": [
+        2000,
+        2600
+      ],
+      "sha256": "3eb5fd2cf1770d462464f2b1acb5ecbe4186090707a758365abace3961b3d810",
+      "visually_inspected": true
+    },
+    {
+      "file": "43_opposite_rear_service_door.png",
+      "view": "Opposite-side rear opening",
+      "size": [
+        2000,
+        2600
+      ],
+      "sha256": "dd9445c7908fe3f3119cb6104098d487f2955c50f4c14e0b95d7347dd3b38bff",
+      "visually_inspected": true
+    },
+    {
+      "file": "44_rear_service_door.png",
+      "view": "Rear service opening \u00b7 frontal",
+      "size": [
+        2000,
+        2600
+      ],
+      "sha256": "6ea9edbc06f2804da32f7d6c754862f2512ce7ab15727969e9f795c92e47b4f8",
+      "visually_inspected": true
+    },
+    {
+      "file": "45_ground_rear_right.png",
+      "view": "Rear-right perimeter at grade",
+      "size": [
+        3000,
+        1800
+      ],
+      "sha256": "29d0ebc37dbb7e5cc3bbd9c6641865201ed62957a2480ed3594e74b141c90054",
+      "visually_inspected": true
+    },
+    {
+      "file": "46_ground_hero_side_reverse.png",
+      "view": "Hero-side ground \u00b7 reverse",
+      "size": [
+        3000,
+        1800
+      ],
+      "sha256": "47390d263f1edec3e8d68029a78951def756a96388018031357ac2819f375e89",
+      "visually_inspected": true
+    },
+    {
+      "file": "47_ground_opposite_side_reverse.png",
+      "view": "Opposite ground \u00b7 reverse",
+      "size": [
+        3000,
+        1800
+      ],
+      "sha256": "376c2d606bf438c137708c51a5ba5a7750bec264181cd70bb0b7cd2a0ba20cbb",
+      "visually_inspected": true
+    }
+  ],
+  "protected_files": {
+    "date": "2026-09-22",
+    "revision": "04",
+    "files_checked": 483,
+    "changed": [],
+    "candidate_existing_guids_checked": 46,
+    "candidate_guid_changes": [],
+    "scope": "Original scenes, scripts, Stage/Administration source and assets, project settings and packages"
+  },
+  "limitations": [
+    "Visual master awaiting user approval",
+    "No LOD, optimization, reusable prop extraction, player build or performance benchmark",
+    "No Play Mode, door/blackout animation, navigation or walkable stair integration",
+    "Geometric clearance checks do not constitute structural engineering or acoustic simulation",
+    "Gallery browser automation was previously blocked for the local file URL; native Unity images and local HTML references checked directly"
+  ],
+  "preview_cleanup": "[Log] Temporary candidate preview closed. Active scene=Assets/Scenes/Studio.unity dirty=True playing=False. Original Studio was not saved or reloaded."
+}

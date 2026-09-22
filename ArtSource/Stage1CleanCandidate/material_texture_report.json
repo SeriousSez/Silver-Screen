@@ -1,0 +1,12 @@
+{
+  "resolution": 1024,
+  "seed": 1930,
+  "tiles": 9,
+  "maps": [
+    "albedo with smoothness multiplier in alpha",
+    "tangent-space normal"
+  ],
+  "roof_metal": "Subtle elongated rolling grain in surface normals; no directional illumination or highlight painted in RGB",
+  "localized_weathering": false,
+  "baked_lighting": false
+}

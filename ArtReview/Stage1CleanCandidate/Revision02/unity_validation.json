@@ -1,0 +1,105 @@
+{
+  "date": "2026-09-22",
+  "revision": "02",
+  "scope": "Architectural massing and major interior planning; user review pending",
+  "unity": "6000.5.9f1",
+  "pipeline": "PC URP 17.5.0, existing Studio lighting, sky and volume",
+  "validation": "[Log] Floor hit (0.00, 0.08, -12.00)\n[Log] CHECK missingScripts=0 meshRenderers=20 trianglesWithSign=22140 materialSlots=29 colliders=5 centreRayHits=0 floorHits=1 glyphVerticesStage1=2704 glyphVerticesStage2=3368 restoredStage=1\n[Log] Candidate not registered for gameplay=True\n[Log] Final captures refreshed and review scene saved. Original Studio remains unchanged.",
+  "console_before": {
+    "logs": [],
+    "totalCount": 0,
+    "errorCount": 0,
+    "warningCount": 0
+  },
+  "console_after": {
+    "logs": [],
+    "totalCount": 0,
+    "errorCount": 0,
+    "warningCount": 0
+  },
+  "earlier_capture_issue": "An initial capture in the same command as opening the review scene encountered URP ColorGradingLut and ZBinningJob initialization errors. Captures were rerun after scene initialization; final commands succeeded. No Console clearing was requested.",
+  "captures": [
+    {
+      "file": "01_front_three_quarter.png",
+      "view": "Front three-quarter",
+      "sha256": "a0d2aee42be8b178ca78a11e5372fd094d78222c299acbd2836eb126a57a1914",
+      "visually_inspected": true
+    },
+    {
+      "file": "02_front.png",
+      "view": "Front",
+      "sha256": "8f07424b11283340baa96588f5b42311e969d365587acc77055d80fa2c9fb7e6",
+      "visually_inspected": true
+    },
+    {
+      "file": "03_side.png",
+      "view": "Opposite side",
+      "sha256": "d5546253467210f366ec8fa9843900d2d426e6fd150eef51dbc2e78bff38ee5b",
+      "visually_inspected": true
+    },
+    {
+      "file": "04_rear.png",
+      "view": "Rear",
+      "sha256": "5a938d91c6b68e237b7c29607b4da74a8b5e14f6a53c45f3b336c70d801bce4f",
+      "visually_inspected": true
+    },
+    {
+      "file": "05_roof.png",
+      "view": "Roof",
+      "sha256": "9a25d5a45b06b821fc97c16b3ba64c3982854745c81d203af68e7f88c9817db5",
+      "visually_inspected": true
+    },
+    {
+      "file": "06_management_original_pose.png",
+      "view": "Original management camera",
+      "sha256": "6ba5ec69505f9a8e75cd8c435dcc277b1f9758302ae3e8852023a92144c0f46d",
+      "visually_inspected": true
+    },
+    {
+      "file": "07_management_candidate.png",
+      "view": "Panned management camera",
+      "sha256": "070eb3dc760841c87ba07029be0d1ced6b663cefccba025102b1ace247980f45",
+      "visually_inspected": true
+    },
+    {
+      "file": "08_beside_administration.png",
+      "view": "Beside unchanged Administration",
+      "sha256": "4cf74d499cbc3a0ea91ee8a0277fc1135bdebb9d200d30374a857a0160ca3159",
+      "visually_inspected": true
+    },
+    {
+      "file": "09_interior_wide.png",
+      "view": "Enclosed interior",
+      "sha256": "6b2250a1922395a33c229e813b3c56fae35631d76be589c70de8e0c6294fd65c",
+      "visually_inspected": true
+    },
+    {
+      "file": "10_structure_cutaway.png",
+      "view": "Structure cutaway",
+      "sha256": "5cbb3d1a3e57f8b3ee0822882eaa2fec5aeaadff7b1e796b93aceb67efddd660",
+      "visually_inspected": true
+    },
+    {
+      "file": "11_rear_circulation_cutaway.png",
+      "view": "Rear stair and catwalk connection",
+      "sha256": "ad9085251d5a5d99561cdd13f9935afccc1f60402d700a6f91b905081f9bc145",
+      "visually_inspected": true
+    }
+  ],
+  "protected_files": {
+    "date": "2026-09-22",
+    "revision": "02",
+    "files_checked": 483,
+    "changed": [],
+    "scope": "Original scenes, scripts, Stage/Administration source and assets, project settings and packages"
+  },
+  "unvalidated": [
+    "Play Mode gameplay",
+    "navigation",
+    "walkable stair/catwalk collision",
+    "player build",
+    "structural loads",
+    "final light leakage/acoustic performance"
+  ],
+  "studio_restoration": "[Log] Review imported final regenerated FBX; compiling=False dirty=False\n[Log] Final candidate missing scripts=0\n[Log] RESTORED Assets/Scenes/Studio.unity dirty=False oldStageActive=True number=1 camera=(0.00, 18.00, -15.00) rot=(52.00, 0.00, 0.00) fov=60 play=False"
+}

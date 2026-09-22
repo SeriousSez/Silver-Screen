@@ -1,0 +1,3396 @@
+{
+  "follow_up": "Revision 04 gutter/eave clearance",
+  "status": "Stopped for visual review",
+  "source_report": {
+    "candidate": "Stage1_CleanCandidate_A",
+    "revision": "04",
+    "gate": "FINAL_VISUAL_APPROVAL_PENDING",
+    "geometry_source": "Approved production candidate with targeted construction corrections",
+    "group_statistics": {
+      "ExteriorWalls": {
+        "components": 146,
+        "triangles": 4792
+      },
+      "MasonryFraming": {
+        "components": 117,
+        "triangles": 12220
+      },
+      "Clerestory": {
+        "components": 128,
+        "triangles": 7680
+      },
+      "BlackoutShutters": {
+        "components": 297,
+        "triangles": 47500
+      },
+      "PersonnelDoors": {
+        "components": 490,
+        "triangles": 51912
+      },
+      "MainDoorLeft": {
+        "components": 170,
+        "triangles": 15320
+      },
+      "MainDoorRight": {
+        "components": 171,
+        "triangles": 15380
+      },
+      "EntranceCanopies": {
+        "components": 158,
+        "triangles": 18688
+      },
+      "RearVentilation": {
+        "components": 38,
+        "triangles": 2280
+      },
+      "Roof": {
+        "components": 7,
+        "triangles": 2012
+      },
+      "RoofGlazing": {
+        "components": 40,
+        "triangles": 8224
+      },
+      "RoofVents": {
+        "components": 69,
+        "triangles": 4140
+      },
+      "InteriorFloor": {
+        "components": 1,
+        "triangles": 12
+      },
+      "PrimaryStructure": {
+        "components": 148,
+        "triangles": 17072
+      },
+      "RiggingPrimary": {
+        "components": 567,
+        "triangles": 43876
+      },
+      "CirculationAllowances": {
+        "components": 952,
+        "triangles": 11712
+      },
+      "CatwalkStructure": {
+        "components": 112,
+        "triangles": 5312
+      },
+      "CirculationGuards": {
+        "components": 423,
+        "triangles": 38516
+      },
+      "Stairs": {
+        "components": 474,
+        "triangles": 11760
+      },
+      "DoorFrameHardware": {
+        "components": 33,
+        "triangles": 2620
+      },
+      "WindowGlass": {
+        "components": 88,
+        "triangles": 1056
+      },
+      "RoofSeams": {
+        "components": 153,
+        "triangles": 49188
+      },
+      "Rainwater": {
+        "components": 326,
+        "triangles": 50672
+      },
+      "InteriorRoofLining": {
+        "components": 296,
+        "triangles": 5920
+      },
+      "StructuralConnections": {
+        "components": 805,
+        "triangles": 59820
+      },
+      "AcousticTreatment": {
+        "components": 74,
+        "triangles": 4440
+      },
+      "PermanentLighting": {
+        "components": 182,
+        "triangles": 96552
+      },
+      "PermanentServices": {
+        "components": 478,
+        "triangles": 77016
+      },
+      "FixedProtection": {
+        "components": 24,
+        "triangles": 2976
+      }
+    },
+    "dimensions": {
+      "wall_width": 15.8,
+      "wall_depth": 24.0,
+      "eave": 7.1,
+      "roof_crown": 10.77,
+      "coping_crown": 11.01,
+      "vent_top": 11.4275,
+      "arch_circle_radius": 10.196333333333333,
+      "main_door_clear_width": 7.2,
+      "main_door_clear_height": 6.9,
+      "portal_outer_width": 9.16,
+      "wall_thickness": 0.32,
+      "interior_wall_clear_width": 15.16,
+      "interior_wall_clear_depth": 23.36,
+      "floor_level": 0.08,
+      "central_width_between_catwalks": 12.24,
+      "catwalk_deck_top": 4.95,
+      "truss_bottom_chord_centre": 7.32,
+      "rigging_grid_centre": 6.48,
+      "sign_baseline": 8.0,
+      "sign_letter_height": 1.02,
+      "sign_maximum_width": 4.95
+    },
+    "bounds_blender_xyz": [
+      [
+        -8.58,
+        -12.9238,
+        0.0
+      ],
+      [
+        8.58,
+        13.0538,
+        11.4275
+      ]
+    ],
+    "unity_front": "-Z with model root Euler (-90,180,0)",
+    "source_meshes": 6967,
+    "export_meshes": 29,
+    "triangles": 668668,
+    "planning_validation": {
+      "circulation_headroom_samples": 161,
+      "minimum_sampled_headroom": 2.195,
+      "clear_floor_samples": 40,
+      "minimum_sampled_filming_height": 6.263,
+      "scope": "Geometric planning checks, not engineering or regulatory certification"
+    },
+    "degenerate_faces": 0,
+    "all_source_components_closed_and_outward": true,
+    "export_groups": [
+      "ExteriorWalls",
+      "MasonryFraming",
+      "Clerestory",
+      "BlackoutShutters",
+      "PersonnelDoors",
+      "MainDoorLeft",
+      "MainDoorRight",
+      "EntranceCanopies",
+      "RearVentilation",
+      "Roof",
+      "RoofGlazing",
+      "RoofVents",
+      "InteriorFloor",
+      "PrimaryStructure",
+      "RiggingPrimary",
+      "CirculationAllowances",
+      "CatwalkStructure",
+      "CirculationGuards",
+      "Stairs",
+      "DoorFrameHardware",
+      "WindowGlass",
+      "RoofSeams",
+      "Rainwater",
+      "InteriorRoofLining",
+      "StructuralConnections",
+      "AcousticTreatment",
+      "PermanentLighting",
+      "PermanentServices",
+      "FixedProtection"
+    ],
+    "materials": [
+      {
+        "name": "C1_Stucco",
+        "linear_rgb": [
+          0.55,
+          0.48,
+          0.375
+        ],
+        "metallic": 0,
+        "roughness": 0.84,
+        "texture_set": "stucco"
+      },
+      {
+        "name": "C1_Trim",
+        "linear_rgb": [
+          0.61,
+          0.545,
+          0.445
+        ],
+        "metallic": 0,
+        "roughness": 0.76,
+        "texture_set": "stone"
+      },
+      {
+        "name": "C1_Base",
+        "linear_rgb": [
+          0.26,
+          0.25,
+          0.226
+        ],
+        "metallic": 0,
+        "roughness": 0.88,
+        "texture_set": "concrete"
+      },
+      {
+        "name": "C1_Roof",
+        "linear_rgb": [
+          0.19,
+          0.2,
+          0.205
+        ],
+        "metallic": 0.78,
+        "roughness": 0.36,
+        "texture_set": "roof_metal"
+      },
+      {
+        "name": "C1_Timber",
+        "linear_rgb": [
+          0.026,
+          0.023,
+          0.02
+        ],
+        "metallic": 0,
+        "roughness": 0.62,
+        "texture_set": "timber"
+      },
+      {
+        "name": "C1_Steel",
+        "linear_rgb": [
+          0.031,
+          0.035,
+          0.036
+        ],
+        "metallic": 0.04,
+        "roughness": 0.49,
+        "texture_set": "paint"
+      },
+      {
+        "name": "C1_GlassStudy",
+        "linear_rgb": [
+          0.14,
+          0.205,
+          0.235
+        ],
+        "metallic": 0.05,
+        "roughness": 0.15,
+        "texture_set": ""
+      },
+      {
+        "name": "C1_Blackout",
+        "linear_rgb": [
+          0.032,
+          0.03,
+          0.026
+        ],
+        "metallic": 0,
+        "roughness": 0.96,
+        "texture_set": "cloth"
+      },
+      {
+        "name": "C1_Floor",
+        "linear_rgb": [
+          0.145,
+          0.15,
+          0.147
+        ],
+        "metallic": 0,
+        "roughness": 0.28,
+        "texture_set": "floor"
+      },
+      {
+        "name": "C1_StructuralSteel",
+        "linear_rgb": [
+          0.06,
+          0.065,
+          0.063
+        ],
+        "metallic": 0.52,
+        "roughness": 0.52,
+        "texture_set": "metal"
+      },
+      {
+        "name": "C1_RoofTimber",
+        "linear_rgb": [
+          0.275,
+          0.184,
+          0.105
+        ],
+        "metallic": 0,
+        "roughness": 0.74,
+        "texture_set": "timber"
+      },
+      {
+        "name": "C1_Brass",
+        "linear_rgb": [
+          0.42,
+          0.28,
+          0.09
+        ],
+        "metallic": 0.83,
+        "roughness": 0.32,
+        "texture_set": "metal"
+      },
+      {
+        "name": "C1_Galvanized",
+        "linear_rgb": [
+          0.37,
+          0.38,
+          0.37
+        ],
+        "metallic": 0.76,
+        "roughness": 0.47,
+        "texture_set": "metal"
+      },
+      {
+        "name": "C1_EnamelWhite",
+        "linear_rgb": [
+          0.77,
+          0.735,
+          0.64
+        ],
+        "metallic": 0.06,
+        "roughness": 0.31,
+        "texture_set": ""
+      },
+      {
+        "name": "C1_LampReflector",
+        "linear_rgb": [
+          0.77,
+          0.735,
+          0.64
+        ],
+        "metallic": 0.06,
+        "roughness": 0.31,
+        "texture_set": ""
+      },
+      {
+        "name": "C1_LampGlass",
+        "linear_rgb": [
+          0.93,
+          0.75,
+          0.46
+        ],
+        "metallic": 0,
+        "roughness": 0.22,
+        "texture_set": ""
+      },
+      {
+        "name": "C1_SafetyOchre",
+        "linear_rgb": [
+          0.57,
+          0.365,
+          0.055
+        ],
+        "metallic": 0.03,
+        "roughness": 0.57,
+        "texture_set": "paint"
+      },
+      {
+        "name": "C1_AcousticFabric",
+        "linear_rgb": [
+          0.09,
+          0.085,
+          0.068
+        ],
+        "metallic": 0,
+        "roughness": 0.96,
+        "texture_set": "cloth"
+      },
+      {
+        "name": "C1_DarkCeramic",
+        "linear_rgb": [
+          0.022,
+          0.019,
+          0.015
+        ],
+        "metallic": 0,
+        "roughness": 0.28,
+        "texture_set": ""
+      },
+      {
+        "name": "C1_Canvas",
+        "linear_rgb": [
+          0.105,
+          0.094,
+          0.076
+        ],
+        "metallic": 0,
+        "roughness": 0.9,
+        "texture_set": "cloth"
+      }
+    ],
+    "permanent_lights": [
+      {
+        "name": "InteriorPendant",
+        "position": [
+          -4.35,
+          -10.5,
+          6.72
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "intensity": 32.0,
+        "range": 12.0,
+        "spot_angle": 115,
+        "color": [
+          1,
+          0.78,
+          0.53
+        ],
+        "type": "spot"
+      },
+      {
+        "name": "InteriorPendant",
+        "position": [
+          -4.35,
+          -7.7,
+          6.72
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "intensity": 32.0,
+        "range": 12.0,
+        "spot_angle": 115,
+        "color": [
+          1,
+          0.78,
+          0.53
+        ],
+        "type": "spot"
+      },
+      {
+        "name": "InteriorPendant",
+        "position": [
+          -4.35,
+          -4.9,
+          6.72
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "intensity": 32.0,
+        "range": 12.0,
+        "spot_angle": 115,
+        "color": [
+          1,
+          0.78,
+          0.53
+        ],
+        "type": "spot"
+      },
+      {
+        "name": "InteriorPendant",
+        "position": [
+          -4.35,
+          -2.1,
+          6.72
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "intensity": 32.0,
+        "range": 12.0,
+        "spot_angle": 115,
+        "color": [
+          1,
+          0.78,
+          0.53
+        ],
+        "type": "spot"
+      },
+      {
+        "name": "InteriorPendant",
+        "position": [
+          -4.35,
+          0.7,
+          6.72
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "intensity": 32.0,
+        "range": 12.0,
+        "spot_angle": 115,
+        "color": [
+          1,
+          0.78,
+          0.53
+        ],
+        "type": "spot"
+      },
+      {
+        "name": "InteriorPendant",
+        "position": [
+          -4.35,
+          3.5,
+          6.72
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "intensity": 32.0,
+        "range": 12.0,
+        "spot_angle": 115,
+        "color": [
+          1,
+          0.78,
+          0.53
+        ],
+        "type": "spot"
+      },
+      {
+        "name": "InteriorPendant",
+        "position": [
+          -4.35,
+          6.3,
+          6.72
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "intensity": 32.0,
+        "range": 12.0,
+        "spot_angle": 115,
+        "color": [
+          1,
+          0.78,
+          0.53
+        ],
+        "type": "spot"
+      },
+      {
+        "name": "InteriorPendant",
+        "position": [
+          -4.35,
+          9.1,
+          6.72
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "intensity": 32.0,
+        "range": 12.0,
+        "spot_angle": 115,
+        "color": [
+          1,
+          0.78,
+          0.53
+        ],
+        "type": "spot"
+      },
+      {
+        "name": "InteriorPendant",
+        "position": [
+          4.35,
+          -10.5,
+          6.72
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "intensity": 32.0,
+        "range": 12.0,
+        "spot_angle": 115,
+        "color": [
+          1,
+          0.78,
+          0.53
+        ],
+        "type": "spot"
+      },
+      {
+        "name": "InteriorPendant",
+        "position": [
+          4.35,
+          -7.7,
+          6.72
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "intensity": 32.0,
+        "range": 12.0,
+        "spot_angle": 115,
+        "color": [
+          1,
+          0.78,
+          0.53
+        ],
+        "type": "spot"
+      },
+      {
+        "name": "InteriorPendant",
+        "position": [
+          4.35,
+          -4.9,
+          6.72
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "intensity": 32.0,
+        "range": 12.0,
+        "spot_angle": 115,
+        "color": [
+          1,
+          0.78,
+          0.53
+        ],
+        "type": "spot"
+      },
+      {
+        "name": "InteriorPendant",
+        "position": [
+          4.35,
+          -2.1,
+          6.72
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "intensity": 32.0,
+        "range": 12.0,
+        "spot_angle": 115,
+        "color": [
+          1,
+          0.78,
+          0.53
+        ],
+        "type": "spot"
+      },
+      {
+        "name": "InteriorPendant",
+        "position": [
+          4.35,
+          0.7,
+          6.72
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "intensity": 32.0,
+        "range": 12.0,
+        "spot_angle": 115,
+        "color": [
+          1,
+          0.78,
+          0.53
+        ],
+        "type": "spot"
+      },
+      {
+        "name": "InteriorPendant",
+        "position": [
+          4.35,
+          3.5,
+          6.72
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "intensity": 32.0,
+        "range": 12.0,
+        "spot_angle": 115,
+        "color": [
+          1,
+          0.78,
+          0.53
+        ],
+        "type": "spot"
+      },
+      {
+        "name": "InteriorPendant",
+        "position": [
+          4.35,
+          6.3,
+          6.72
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "intensity": 32.0,
+        "range": 12.0,
+        "spot_angle": 115,
+        "color": [
+          1,
+          0.78,
+          0.53
+        ],
+        "type": "spot"
+      },
+      {
+        "name": "InteriorPendant",
+        "position": [
+          4.35,
+          9.1,
+          6.72
+        ],
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "intensity": 32.0,
+        "range": 12.0,
+        "spot_angle": 115,
+        "color": [
+          1,
+          0.78,
+          0.53
+        ],
+        "type": "spot"
+      },
+      {
+        "name": "WallWorkLamp",
+        "position": [
+          -5.97,
+          -12.455,
+          3.715
+        ],
+        "direction": [
+          0.0,
+          -0.15,
+          -1
+        ],
+        "intensity": 7.0,
+        "range": 6.0,
+        "spot_angle": 110,
+        "color": [
+          1,
+          0.77,
+          0.49
+        ],
+        "type": "spot"
+      },
+      {
+        "name": "WallWorkLamp",
+        "position": [
+          5.7,
+          -12.455,
+          4.0649999999999995
+        ],
+        "direction": [
+          0.0,
+          -0.15,
+          -1
+        ],
+        "intensity": 7.0,
+        "range": 6.0,
+        "spot_angle": 110,
+        "color": [
+          1,
+          0.77,
+          0.49
+        ],
+        "type": "spot"
+      },
+      {
+        "name": "WallWorkLamp",
+        "position": [
+          1.87,
+          12.455,
+          3.365
+        ],
+        "direction": [
+          0.0,
+          0.15,
+          -1
+        ],
+        "intensity": 7.0,
+        "range": 6.0,
+        "spot_angle": 110,
+        "color": [
+          1,
+          0.77,
+          0.49
+        ],
+        "type": "spot"
+      },
+      {
+        "name": "WallWorkLamp",
+        "position": [
+          -8.355,
+          -7.0,
+          3.935
+        ],
+        "direction": [
+          -0.15,
+          0.0,
+          -1
+        ],
+        "intensity": 7.0,
+        "range": 6.0,
+        "spot_angle": 110,
+        "color": [
+          1,
+          0.77,
+          0.49
+        ],
+        "type": "spot"
+      },
+      {
+        "name": "WallWorkLamp",
+        "position": [
+          -8.355,
+          0.0,
+          3.935
+        ],
+        "direction": [
+          -0.15,
+          0.0,
+          -1
+        ],
+        "intensity": 7.0,
+        "range": 6.0,
+        "spot_angle": 110,
+        "color": [
+          1,
+          0.77,
+          0.49
+        ],
+        "type": "spot"
+      },
+      {
+        "name": "WallWorkLamp",
+        "position": [
+          -8.355,
+          7.0,
+          3.935
+        ],
+        "direction": [
+          -0.15,
+          0.0,
+          -1
+        ],
+        "intensity": 7.0,
+        "range": 6.0,
+        "spot_angle": 110,
+        "color": [
+          1,
+          0.77,
+          0.49
+        ],
+        "type": "spot"
+      },
+      {
+        "name": "WallWorkLamp",
+        "position": [
+          -7.13,
+          -4.3,
+          2.735
+        ],
+        "direction": [
+          0.15,
+          0.0,
+          -1
+        ],
+        "intensity": 7.0,
+        "range": 6.0,
+        "spot_angle": 110,
+        "color": [
+          1,
+          0.77,
+          0.49
+        ],
+        "type": "spot"
+      },
+      {
+        "name": "WallWorkLamp",
+        "position": [
+          -7.13,
+          1.35,
+          2.735
+        ],
+        "direction": [
+          0.15,
+          0.0,
+          -1
+        ],
+        "intensity": 7.0,
+        "range": 6.0,
+        "spot_angle": 110,
+        "color": [
+          1,
+          0.77,
+          0.49
+        ],
+        "type": "spot"
+      },
+      {
+        "name": "WallWorkLamp",
+        "position": [
+          -7.13,
+          6.7,
+          2.735
+        ],
+        "direction": [
+          0.15,
+          0.0,
+          -1
+        ],
+        "intensity": 7.0,
+        "range": 6.0,
+        "spot_angle": 110,
+        "color": [
+          1,
+          0.77,
+          0.49
+        ],
+        "type": "spot"
+      },
+      {
+        "name": "WallWorkLamp",
+        "position": [
+          8.355,
+          -7.0,
+          3.935
+        ],
+        "direction": [
+          0.15,
+          0.0,
+          -1
+        ],
+        "intensity": 7.0,
+        "range": 6.0,
+        "spot_angle": 110,
+        "color": [
+          1,
+          0.77,
+          0.49
+        ],
+        "type": "spot"
+      },
+      {
+        "name": "WallWorkLamp",
+        "position": [
+          8.355,
+          0.0,
+          3.935
+        ],
+        "direction": [
+          0.15,
+          0.0,
+          -1
+        ],
+        "intensity": 7.0,
+        "range": 6.0,
+        "spot_angle": 110,
+        "color": [
+          1,
+          0.77,
+          0.49
+        ],
+        "type": "spot"
+      },
+      {
+        "name": "WallWorkLamp",
+        "position": [
+          8.355,
+          7.0,
+          3.935
+        ],
+        "direction": [
+          0.15,
+          0.0,
+          -1
+        ],
+        "intensity": 7.0,
+        "range": 6.0,
+        "spot_angle": 110,
+        "color": [
+          1,
+          0.77,
+          0.49
+        ],
+        "type": "spot"
+      },
+      {
+        "name": "WallWorkLamp",
+        "position": [
+          7.13,
+          -4.3,
+          2.735
+        ],
+        "direction": [
+          -0.15,
+          0.0,
+          -1
+        ],
+        "intensity": 7.0,
+        "range": 6.0,
+        "spot_angle": 110,
+        "color": [
+          1,
+          0.77,
+          0.49
+        ],
+        "type": "spot"
+      },
+      {
+        "name": "WallWorkLamp",
+        "position": [
+          7.13,
+          1.35,
+          2.735
+        ],
+        "direction": [
+          -0.15,
+          0.0,
+          -1
+        ],
+        "intensity": 7.0,
+        "range": 6.0,
+        "spot_angle": 110,
+        "color": [
+          1,
+          0.77,
+          0.49
+        ],
+        "type": "spot"
+      },
+      {
+        "name": "WallWorkLamp",
+        "position": [
+          7.13,
+          6.7,
+          2.735
+        ],
+        "direction": [
+          -0.15,
+          0.0,
+          -1
+        ],
+        "intensity": 7.0,
+        "range": 6.0,
+        "spot_angle": 110,
+        "color": [
+          1,
+          0.77,
+          0.49
+        ],
+        "type": "spot"
+      }
+    ],
+    "texture_materials": {
+      "C1_Stucco": {
+        "set": "stucco",
+        "metres_per_tile": 3.0
+      },
+      "C1_Trim": {
+        "set": "stone",
+        "metres_per_tile": 2.0
+      },
+      "C1_Base": {
+        "set": "concrete",
+        "metres_per_tile": 2.4
+      },
+      "C1_Roof": {
+        "set": "roof_metal",
+        "metres_per_tile": 2.5
+      },
+      "C1_Timber": {
+        "set": "timber",
+        "metres_per_tile": 2.0
+      },
+      "C1_Steel": {
+        "set": "paint",
+        "metres_per_tile": 1.5
+      },
+      "C1_Blackout": {
+        "set": "cloth",
+        "metres_per_tile": 1.4
+      },
+      "C1_Floor": {
+        "set": "floor",
+        "metres_per_tile": 4.0
+      },
+      "C1_StructuralSteel": {
+        "set": "metal",
+        "metres_per_tile": 2.0
+      },
+      "C1_RoofTimber": {
+        "set": "timber",
+        "metres_per_tile": 2.0
+      },
+      "C1_Brass": {
+        "set": "metal",
+        "metres_per_tile": 1.2
+      },
+      "C1_Galvanized": {
+        "set": "metal",
+        "metres_per_tile": 1.7
+      },
+      "C1_SafetyOchre": {
+        "set": "paint",
+        "metres_per_tile": 1.2
+      },
+      "C1_AcousticFabric": {
+        "set": "cloth",
+        "metres_per_tile": 1.4
+      },
+      "C1_Canvas": {
+        "set": "cloth",
+        "metres_per_tile": 1.4
+      }
+    },
+    "ground_datum": 0.0,
+    "defect_validation": {
+      "ground_datum": 0.0,
+      "floor_level": 0.08,
+      "masonry_opening_exclusions": [
+        {
+          "opening": "SideEntry_-1_-10.025",
+          "component": "BaseControlJoint"
+        },
+        {
+          "opening": "SideEntry_-1_10.025",
+          "component": "BaseControlJoint.008"
+        },
+        {
+          "opening": "SideEntry_1_-10.025",
+          "component": "BaseControlJoint.009"
+        },
+        {
+          "opening": "SideEntry_1_10.025",
+          "component": "BaseControlJoint.017"
+        }
+      ],
+      "rainwater": {
+        "gutter_side_offset": 8.2,
+        "outside_radius": 0.1,
+        "wall_thickness": 0.003,
+        "run_end_y": 11.64,
+        "outlet_y": 11.4,
+        "fall_toward_outlets": 0.0025,
+        "ridge_to_outlet_drop_m": 0.0285,
+        "minimum_arch_coping_separation_m": 0.076034,
+        "gutter_envelope_intersections": [],
+        "apron_masonry_intersections": [],
+        "apron_standing_seam_intersections": [],
+        "roof_sheet_runoff_x": 7.67,
+        "apron_weather_lap_x": [
+          7.58,
+          7.67
+        ],
+        "apron_tip_xz": [
+          8.19,
+          7.04
+        ],
+        "minimum_tip_above_gutter_rim_m": 0.0265,
+        "runoff_capture_samples": 82,
+        "outlet_lip_above_trough_m": 0.0015,
+        "supports": [
+          {
+            "side": -1,
+            "y": -11.55,
+            "rim_z": 6.98538
+          },
+          {
+            "side": -1,
+            "y": -10.2667,
+            "rim_z": 6.98783
+          },
+          {
+            "side": -1,
+            "y": -8.9833,
+            "rim_z": 6.99104
+          },
+          {
+            "side": -1,
+            "y": -7.7,
+            "rim_z": 6.99425
+          },
+          {
+            "side": -1,
+            "y": -6.4167,
+            "rim_z": 6.99746
+          },
+          {
+            "side": -1,
+            "y": -5.1333,
+            "rim_z": 7.00067
+          },
+          {
+            "side": -1,
+            "y": -3.85,
+            "rim_z": 7.00388
+          },
+          {
+            "side": -1,
+            "y": -2.5667,
+            "rim_z": 7.00708
+          },
+          {
+            "side": -1,
+            "y": -1.2833,
+            "rim_z": 7.01029
+          },
+          {
+            "side": -1,
+            "y": 0.0,
+            "rim_z": 7.0135
+          },
+          {
+            "side": -1,
+            "y": 1.2833,
+            "rim_z": 7.01029
+          },
+          {
+            "side": -1,
+            "y": 2.5667,
+            "rim_z": 7.00708
+          },
+          {
+            "side": -1,
+            "y": 3.85,
+            "rim_z": 7.00388
+          },
+          {
+            "side": -1,
+            "y": 5.1333,
+            "rim_z": 7.00067
+          },
+          {
+            "side": -1,
+            "y": 6.4167,
+            "rim_z": 6.99746
+          },
+          {
+            "side": -1,
+            "y": 7.7,
+            "rim_z": 6.99425
+          },
+          {
+            "side": -1,
+            "y": 8.9833,
+            "rim_z": 6.99104
+          },
+          {
+            "side": -1,
+            "y": 10.2667,
+            "rim_z": 6.98783
+          },
+          {
+            "side": -1,
+            "y": 11.55,
+            "rim_z": 6.98538
+          },
+          {
+            "side": 1,
+            "y": -11.55,
+            "rim_z": 6.98538
+          },
+          {
+            "side": 1,
+            "y": -10.2667,
+            "rim_z": 6.98783
+          },
+          {
+            "side": 1,
+            "y": -8.9833,
+            "rim_z": 6.99104
+          },
+          {
+            "side": 1,
+            "y": -7.7,
+            "rim_z": 6.99425
+          },
+          {
+            "side": 1,
+            "y": -6.4167,
+            "rim_z": 6.99746
+          },
+          {
+            "side": 1,
+            "y": -5.1333,
+            "rim_z": 7.00067
+          },
+          {
+            "side": 1,
+            "y": -3.85,
+            "rim_z": 7.00388
+          },
+          {
+            "side": 1,
+            "y": -2.5667,
+            "rim_z": 7.00708
+          },
+          {
+            "side": 1,
+            "y": -1.2833,
+            "rim_z": 7.01029
+          },
+          {
+            "side": 1,
+            "y": 0.0,
+            "rim_z": 7.0135
+          },
+          {
+            "side": 1,
+            "y": 1.2833,
+            "rim_z": 7.01029
+          },
+          {
+            "side": 1,
+            "y": 2.5667,
+            "rim_z": 7.00708
+          },
+          {
+            "side": 1,
+            "y": 3.85,
+            "rim_z": 7.00388
+          },
+          {
+            "side": 1,
+            "y": 5.1333,
+            "rim_z": 7.00067
+          },
+          {
+            "side": 1,
+            "y": 6.4167,
+            "rim_z": 6.99746
+          },
+          {
+            "side": 1,
+            "y": 7.7,
+            "rim_z": 6.99425
+          },
+          {
+            "side": 1,
+            "y": 8.9833,
+            "rim_z": 6.99104
+          },
+          {
+            "side": 1,
+            "y": 10.2667,
+            "rim_z": 6.98783
+          },
+          {
+            "side": 1,
+            "y": 11.55,
+            "rim_z": 6.98538
+          }
+        ],
+        "outlets": [
+          {
+            "side": -1,
+            "y": -11.4,
+            "open_outlet": true,
+            "clear_downpipe_segments": 34,
+            "shoe_hits_splash_block": true
+          },
+          {
+            "side": -1,
+            "y": 11.4,
+            "open_outlet": true,
+            "clear_downpipe_segments": 34,
+            "shoe_hits_splash_block": true
+          },
+          {
+            "side": 1,
+            "y": -11.4,
+            "open_outlet": true,
+            "clear_downpipe_segments": 34,
+            "shoe_hits_splash_block": true
+          },
+          {
+            "side": 1,
+            "y": 11.4,
+            "open_outlet": true,
+            "clear_downpipe_segments": 34,
+            "shoe_hits_splash_block": true
+          }
+        ],
+        "scope": "Actual source mesh clearance and connected open flow paths; no hydraulic capacity simulation"
+      },
+      "roof_blackout_panels": [
+        {
+          "angle_limits": [
+            -0.6027019724222977,
+            -0.3161356822313134
+          ],
+          "y_limits": [
+            -10.22,
+            -8.76
+          ],
+          "fabric_outer_radius_offset": -0.211,
+          "minimum_primary_chord_radial_clearance": 0.0128,
+          "mechanism": "Curved guides and spring roller; gearbox accepts removable operating pole from service access"
+        },
+        {
+          "angle_limits": [
+            -0.6027019724222977,
+            -0.3161356822313134
+          ],
+          "y_limits": [
+            -8.76,
+            -7.300000000000001
+          ],
+          "fabric_outer_radius_offset": -0.211,
+          "minimum_primary_chord_radial_clearance": 0.0128,
+          "mechanism": "Curved guides and spring roller; gearbox accepts removable operating pole from service access"
+        },
+        {
+          "angle_limits": [
+            -0.6027019724222977,
+            -0.3161356822313134
+          ],
+          "y_limits": [
+            -7.300000000000001,
+            -5.84
+          ],
+          "fabric_outer_radius_offset": -0.211,
+          "minimum_primary_chord_radial_clearance": 0.0128,
+          "mechanism": "Curved guides and spring roller; gearbox accepts removable operating pole from service access"
+        },
+        {
+          "angle_limits": [
+            -0.6027019724222977,
+            -0.3161356822313134
+          ],
+          "y_limits": [
+            -5.84,
+            -4.38
+          ],
+          "fabric_outer_radius_offset": -0.211,
+          "minimum_primary_chord_radial_clearance": 0.0128,
+          "mechanism": "Curved guides and spring roller; gearbox accepts removable operating pole from service access"
+        },
+        {
+          "angle_limits": [
+            -0.6027019724222977,
+            -0.3161356822313134
+          ],
+          "y_limits": [
+            -4.38,
+            -2.920000000000001
+          ],
+          "fabric_outer_radius_offset": -0.211,
+          "minimum_primary_chord_radial_clearance": 0.0128,
+          "mechanism": "Curved guides and spring roller; gearbox accepts removable operating pole from service access"
+        },
+        {
+          "angle_limits": [
+            -0.6027019724222977,
+            -0.3161356822313134
+          ],
+          "y_limits": [
+            -2.920000000000001,
+            -1.459999999999999
+          ],
+          "fabric_outer_radius_offset": -0.211,
+          "minimum_primary_chord_radial_clearance": 0.0128,
+          "mechanism": "Curved guides and spring roller; gearbox accepts removable operating pole from service access"
+        },
+        {
+          "angle_limits": [
+            -0.6027019724222977,
+            -0.3161356822313134
+          ],
+          "y_limits": [
+            -1.459999999999999,
+            0.0
+          ],
+          "fabric_outer_radius_offset": -0.211,
+          "minimum_primary_chord_radial_clearance": 0.0128,
+          "mechanism": "Curved guides and spring roller; gearbox accepts removable operating pole from service access"
+        },
+        {
+          "angle_limits": [
+            -0.6027019724222977,
+            -0.3161356822313134
+          ],
+          "y_limits": [
+            0.0,
+            1.4600000000000009
+          ],
+          "fabric_outer_radius_offset": -0.211,
+          "minimum_primary_chord_radial_clearance": 0.0128,
+          "mechanism": "Curved guides and spring roller; gearbox accepts removable operating pole from service access"
+        },
+        {
+          "angle_limits": [
+            -0.6027019724222977,
+            -0.3161356822313134
+          ],
+          "y_limits": [
+            1.4600000000000009,
+            2.92
+          ],
+          "fabric_outer_radius_offset": -0.211,
+          "minimum_primary_chord_radial_clearance": 0.0128,
+          "mechanism": "Curved guides and spring roller; gearbox accepts removable operating pole from service access"
+        },
+        {
+          "angle_limits": [
+            -0.6027019724222977,
+            -0.3161356822313134
+          ],
+          "y_limits": [
+            2.92,
+            4.379999999999999
+          ],
+          "fabric_outer_radius_offset": -0.211,
+          "minimum_primary_chord_radial_clearance": 0.0128,
+          "mechanism": "Curved guides and spring roller; gearbox accepts removable operating pole from service access"
+        },
+        {
+          "angle_limits": [
+            -0.6027019724222977,
+            -0.3161356822313134
+          ],
+          "y_limits": [
+            4.379999999999999,
+            5.839999999999998
+          ],
+          "fabric_outer_radius_offset": -0.211,
+          "minimum_primary_chord_radial_clearance": 0.0128,
+          "mechanism": "Curved guides and spring roller; gearbox accepts removable operating pole from service access"
+        },
+        {
+          "angle_limits": [
+            -0.6027019724222977,
+            -0.3161356822313134
+          ],
+          "y_limits": [
+            5.839999999999998,
+            7.3000000000000025
+          ],
+          "fabric_outer_radius_offset": -0.211,
+          "minimum_primary_chord_radial_clearance": 0.0128,
+          "mechanism": "Curved guides and spring roller; gearbox accepts removable operating pole from service access"
+        },
+        {
+          "angle_limits": [
+            -0.6027019724222977,
+            -0.3161356822313134
+          ],
+          "y_limits": [
+            7.3000000000000025,
+            8.76
+          ],
+          "fabric_outer_radius_offset": -0.211,
+          "minimum_primary_chord_radial_clearance": 0.0128,
+          "mechanism": "Curved guides and spring roller; gearbox accepts removable operating pole from service access"
+        },
+        {
+          "angle_limits": [
+            -0.6027019724222977,
+            -0.3161356822313134
+          ],
+          "y_limits": [
+            8.76,
+            10.22
+          ],
+          "fabric_outer_radius_offset": -0.211,
+          "minimum_primary_chord_radial_clearance": 0.0128,
+          "mechanism": "Curved guides and spring roller; gearbox accepts removable operating pole from service access"
+        },
+        {
+          "angle_limits": [
+            0.3161356822313134,
+            0.6027019724222977
+          ],
+          "y_limits": [
+            -10.22,
+            -8.76
+          ],
+          "fabric_outer_radius_offset": -0.211,
+          "minimum_primary_chord_radial_clearance": 0.0128,
+          "mechanism": "Curved guides and spring roller; gearbox accepts removable operating pole from service access"
+        },
+        {
+          "angle_limits": [
+            0.3161356822313134,
+            0.6027019724222977
+          ],
+          "y_limits": [
+            -8.76,
+            -7.300000000000001
+          ],
+          "fabric_outer_radius_offset": -0.211,
+          "minimum_primary_chord_radial_clearance": 0.0128,
+          "mechanism": "Curved guides and spring roller; gearbox accepts removable operating pole from service access"
+        },
+        {
+          "angle_limits": [
+            0.3161356822313134,
+            0.6027019724222977
+          ],
+          "y_limits": [
+            -7.300000000000001,
+            -5.84
+          ],
+          "fabric_outer_radius_offset": -0.211,
+          "minimum_primary_chord_radial_clearance": 0.0128,
+          "mechanism": "Curved guides and spring roller; gearbox accepts removable operating pole from service access"
+        },
+        {
+          "angle_limits": [
+            0.3161356822313134,
+            0.6027019724222977
+          ],
+          "y_limits": [
+            -5.84,
+            -4.38
+          ],
+          "fabric_outer_radius_offset": -0.211,
+          "minimum_primary_chord_radial_clearance": 0.0128,
+          "mechanism": "Curved guides and spring roller; gearbox accepts removable operating pole from service access"
+        },
+        {
+          "angle_limits": [
+            0.3161356822313134,
+            0.6027019724222977
+          ],
+          "y_limits": [
+            -4.38,
+            -2.920000000000001
+          ],
+          "fabric_outer_radius_offset": -0.211,
+          "minimum_primary_chord_radial_clearance": 0.0128,
+          "mechanism": "Curved guides and spring roller; gearbox accepts removable operating pole from service access"
+        },
+        {
+          "angle_limits": [
+            0.3161356822313134,
+            0.6027019724222977
+          ],
+          "y_limits": [
+            -2.920000000000001,
+            -1.459999999999999
+          ],
+          "fabric_outer_radius_offset": -0.211,
+          "minimum_primary_chord_radial_clearance": 0.0128,
+          "mechanism": "Curved guides and spring roller; gearbox accepts removable operating pole from service access"
+        },
+        {
+          "angle_limits": [
+            0.3161356822313134,
+            0.6027019724222977
+          ],
+          "y_limits": [
+            -1.459999999999999,
+            0.0
+          ],
+          "fabric_outer_radius_offset": -0.211,
+          "minimum_primary_chord_radial_clearance": 0.0128,
+          "mechanism": "Curved guides and spring roller; gearbox accepts removable operating pole from service access"
+        },
+        {
+          "angle_limits": [
+            0.3161356822313134,
+            0.6027019724222977
+          ],
+          "y_limits": [
+            0.0,
+            1.4600000000000009
+          ],
+          "fabric_outer_radius_offset": -0.211,
+          "minimum_primary_chord_radial_clearance": 0.0128,
+          "mechanism": "Curved guides and spring roller; gearbox accepts removable operating pole from service access"
+        },
+        {
+          "angle_limits": [
+            0.3161356822313134,
+            0.6027019724222977
+          ],
+          "y_limits": [
+            1.4600000000000009,
+            2.92
+          ],
+          "fabric_outer_radius_offset": -0.211,
+          "minimum_primary_chord_radial_clearance": 0.0128,
+          "mechanism": "Curved guides and spring roller; gearbox accepts removable operating pole from service access"
+        },
+        {
+          "angle_limits": [
+            0.3161356822313134,
+            0.6027019724222977
+          ],
+          "y_limits": [
+            2.92,
+            4.379999999999999
+          ],
+          "fabric_outer_radius_offset": -0.211,
+          "minimum_primary_chord_radial_clearance": 0.0128,
+          "mechanism": "Curved guides and spring roller; gearbox accepts removable operating pole from service access"
+        },
+        {
+          "angle_limits": [
+            0.3161356822313134,
+            0.6027019724222977
+          ],
+          "y_limits": [
+            4.379999999999999,
+            5.839999999999998
+          ],
+          "fabric_outer_radius_offset": -0.211,
+          "minimum_primary_chord_radial_clearance": 0.0128,
+          "mechanism": "Curved guides and spring roller; gearbox accepts removable operating pole from service access"
+        },
+        {
+          "angle_limits": [
+            0.3161356822313134,
+            0.6027019724222977
+          ],
+          "y_limits": [
+            5.839999999999998,
+            7.3000000000000025
+          ],
+          "fabric_outer_radius_offset": -0.211,
+          "minimum_primary_chord_radial_clearance": 0.0128,
+          "mechanism": "Curved guides and spring roller; gearbox accepts removable operating pole from service access"
+        },
+        {
+          "angle_limits": [
+            0.3161356822313134,
+            0.6027019724222977
+          ],
+          "y_limits": [
+            7.3000000000000025,
+            8.76
+          ],
+          "fabric_outer_radius_offset": -0.211,
+          "minimum_primary_chord_radial_clearance": 0.0128,
+          "mechanism": "Curved guides and spring roller; gearbox accepts removable operating pole from service access"
+        },
+        {
+          "angle_limits": [
+            0.3161356822313134,
+            0.6027019724222977
+          ],
+          "y_limits": [
+            8.76,
+            10.22
+          ],
+          "fabric_outer_radius_offset": -0.211,
+          "minimum_primary_chord_radial_clearance": 0.0128,
+          "mechanism": "Curved guides and spring roller; gearbox accepts removable operating pole from service access"
+        }
+      ],
+      "ground_contacts": {
+        "FilmingFloor": [
+          0.0
+        ],
+        "EndPierBase": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "BollardFoot": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "StanchionBaseplate": [
+          0.08,
+          0.08,
+          0.08,
+          0.08,
+          0.08,
+          0.08,
+          0.08,
+          0.08,
+          0.08,
+          0.08
+        ]
+      },
+      "four_finial_clearances": [
+        {
+          "corner": "front_left",
+          "roof_intersections": [],
+          "minimum_separating_gap_m": 0.04,
+          "plinth_bearing_margin_m": 0.028,
+          "plinth_bedding_m": -0.0025,
+          "outward_shift_m": 0.325,
+          "cap_extension_m": 0.145
+        },
+        {
+          "corner": "front_right",
+          "roof_intersections": [],
+          "minimum_separating_gap_m": 0.04,
+          "plinth_bearing_margin_m": 0.028,
+          "plinth_bedding_m": -0.0025,
+          "outward_shift_m": 0.325,
+          "cap_extension_m": 0.145
+        },
+        {
+          "corner": "rear_left",
+          "roof_intersections": [],
+          "minimum_separating_gap_m": 0.04,
+          "plinth_bearing_margin_m": 0.028,
+          "plinth_bedding_m": -0.0025,
+          "outward_shift_m": 0.325,
+          "cap_extension_m": 0.145
+        },
+        {
+          "corner": "rear_right",
+          "roof_intersections": [],
+          "minimum_separating_gap_m": 0.04,
+          "plinth_bearing_margin_m": 0.028,
+          "plinth_bedding_m": -0.0025,
+          "outward_shift_m": 0.325,
+          "cap_extension_m": 0.145
+        }
+      ],
+      "door_sweeps": [
+        {
+          "door": "FrontLeftEntry",
+          "tested_outward_degrees": [
+            0,
+            95
+          ],
+          "increment_degrees": 5,
+          "collisions": [],
+          "collision_objects": []
+        },
+        {
+          "door": "FrontRightEntry",
+          "tested_outward_degrees": [
+            0,
+            95
+          ],
+          "increment_degrees": 5,
+          "collisions": [],
+          "collision_objects": []
+        },
+        {
+          "door": "RearEntry",
+          "tested_outward_degrees": [
+            0,
+            95
+          ],
+          "increment_degrees": 5,
+          "collisions": [],
+          "collision_objects": []
+        },
+        {
+          "door": "SideEntry_-1_-10.025",
+          "tested_outward_degrees": [
+            0,
+            95
+          ],
+          "increment_degrees": 5,
+          "collisions": [],
+          "collision_objects": []
+        },
+        {
+          "door": "SideEntry_-1_10.025",
+          "tested_outward_degrees": [
+            0,
+            95
+          ],
+          "increment_degrees": 5,
+          "collisions": [],
+          "collision_objects": []
+        },
+        {
+          "door": "SideEntry_1_-10.025",
+          "tested_outward_degrees": [
+            0,
+            95
+          ],
+          "increment_degrees": 5,
+          "collisions": [],
+          "collision_objects": []
+        },
+        {
+          "door": "SideEntry_1_10.025",
+          "tested_outward_degrees": [
+            0,
+            95
+          ],
+          "increment_degrees": 5,
+          "collisions": [],
+          "collision_objects": []
+        }
+      ],
+      "all_wall_lamp_clearances": [
+        {
+          "lamp": 16,
+          "structural_or_acoustic_intersections": []
+        },
+        {
+          "lamp": 17,
+          "structural_or_acoustic_intersections": []
+        },
+        {
+          "lamp": 18,
+          "structural_or_acoustic_intersections": []
+        },
+        {
+          "lamp": 19,
+          "structural_or_acoustic_intersections": []
+        },
+        {
+          "lamp": 20,
+          "structural_or_acoustic_intersections": []
+        },
+        {
+          "lamp": 21,
+          "structural_or_acoustic_intersections": []
+        },
+        {
+          "lamp": 22,
+          "structural_or_acoustic_intersections": []
+        },
+        {
+          "lamp": 23,
+          "structural_or_acoustic_intersections": []
+        },
+        {
+          "lamp": 24,
+          "structural_or_acoustic_intersections": []
+        },
+        {
+          "lamp": 25,
+          "structural_or_acoustic_intersections": []
+        },
+        {
+          "lamp": 26,
+          "structural_or_acoustic_intersections": []
+        },
+        {
+          "lamp": 27,
+          "structural_or_acoustic_intersections": []
+        },
+        {
+          "lamp": 28,
+          "structural_or_acoustic_intersections": []
+        },
+        {
+          "lamp": 29,
+          "structural_or_acoustic_intersections": []
+        },
+        {
+          "lamp": 30,
+          "structural_or_acoustic_intersections": []
+        }
+      ],
+      "roof_blackout_structure_intersections": [],
+      "roof_blackout_coverage": {
+        "rays": 290,
+        "blocked": 290
+      },
+      "clerestory_blackout_structure_intersections": [],
+      "clerestory_coverage": [
+        {
+          "side": -1,
+          "opening": [
+            -7.72,
+            0.3,
+            5.18,
+            6.25
+          ],
+          "fabric_width": 8.1,
+          "required_drop": 1.3200000000000003,
+          "fabric_plane_x": -7.535,
+          "wall_inner_x": -7.58
+        },
+        {
+          "side": -1,
+          "opening": [
+            2.72,
+            8.72,
+            5.18,
+            6.25
+          ],
+          "fabric_width": 6.08,
+          "required_drop": 1.3200000000000003,
+          "fabric_plane_x": -7.535,
+          "wall_inner_x": -7.58
+        },
+        {
+          "side": 1,
+          "opening": [
+            -10.0,
+            -4.65,
+            5.11,
+            6.25
+          ],
+          "fabric_width": 5.43,
+          "required_drop": 1.3899999999999997,
+          "fabric_plane_x": 7.535,
+          "wall_inner_x": 7.58
+        },
+        {
+          "side": 1,
+          "opening": [
+            -2.48,
+            2.98,
+            5.11,
+            6.25
+          ],
+          "fabric_width": 5.54,
+          "required_drop": 1.3899999999999997,
+          "fabric_plane_x": 7.535,
+          "wall_inner_x": 7.58
+        },
+        {
+          "side": 1,
+          "opening": [
+            5.25,
+            10.0,
+            5.11,
+            6.25
+          ],
+          "fabric_width": 4.83,
+          "required_drop": 1.3899999999999997,
+          "fabric_plane_x": 7.535,
+          "wall_inner_x": 7.58
+        }
+      ]
+    },
+    "roof_daylight_control": "Closed opaque roof blackout fabric on curved guides above primary steel; fourteen independent roller sections per glazed ribbon with sealed overlaps, end gears and pole-operated drives. Clerestory rollers stowed with aligned guides, hem and catwalk-accessible chains. Roof lining stops outside glazing. Motion is structurally planned, not gameplay animated.",
+    "structural_planning": {
+      "frames_y": [
+        -11.2,
+        -5.6,
+        0,
+        5.6,
+        11.2
+      ],
+      "system": "Five clear-span bowstring roof trusses with rolled chords, paired angle webs, riveted gussets and purlins",
+      "catwalks": "Open bar grating on girders and column knee brackets; rear crosswalk on service-edge supports; tubular guards and toe boards",
+      "rigging": "Seven longitudinal rows and fourteen cross battens, ending at Y=7.0 ahead of the stair; rear high carriers connect to roof ties above circulation headroom",
+      "stairs": {
+        "risers": 28,
+        "rise": 0.17392857142857143,
+        "going": 0.28,
+        "deck_width": 1.2,
+        "intermediate_landing": 1.2,
+        "top_landing": 1.2,
+        "position": "Rear service band ahead of crosswalk; no deck over upper stair",
+        "headroom_below_ties": 2.245
+      },
+      "clear_central_floor_rectangle": [
+        -6.0,
+        6.0,
+        -10.8,
+        8.15
+      ]
+    },
+    "exclusions": [
+      "localized weathering and condition effects",
+      "loose props",
+      "baked stage lettering",
+      "LOD meshes",
+      "gameplay integration of door and blackout motion"
+    ],
+    "anchors_unity_local": {
+      "MainPortal": [
+        0,
+        0.08,
+        -12.05
+      ],
+      "FrontPersonnelRight": [
+        5.7,
+        0.08,
+        -12.5
+      ],
+      "FrontPersonnelLeft": [
+        -5.97,
+        0.08,
+        -12.5
+      ],
+      "FilmingCentre": [
+        0,
+        0.08,
+        0
+      ],
+      "SignBaseline": [
+        0,
+        8.0,
+        -12.035
+      ]
+    }
+  },
+  "original_intersections": [
+    {
+      "part": "FormedRoofDripIntoGutter",
+      "bounds": [
+        [
+          -7.980000019073486,
+          -11.449999809265137,
+          7.019999980926514
+        ],
+        [
+          -7.809999942779541,
+          11.449999809265137,
+          7.210000038146973
+        ]
+      ],
+      "structure_intersections": [
+        "ContinuousEaveCourse",
+        "ContinuousEaveCourse.001"
+      ]
+    },
+    {
+      "part": "FormedRoofDripIntoGutter.001",
+      "bounds": [
+        [
+          7.809999942779541,
+          -11.449999809265137,
+          7.019999980926514
+        ],
+        [
+          7.980000019073486,
+          11.449999809265137,
+          7.210000038146973
+        ]
+      ],
+      "structure_intersections": [
+        "ContinuousEaveCourse.002",
+        "ContinuousEaveCourse.003"
+      ]
+    },
+    {
+      "part": "GutterClosedEnd",
+      "bounds": [
+        [
+          -8.076000213623047,
+          -11.468000411987305,
+          6.914999961853027
+        ],
+        [
+          -7.915999889373779,
+          -11.45199966430664,
+          6.994999885559082
+        ]
+      ],
+      "structure_intersections": [
+        "ContinuousEaveCourse"
+      ]
+    },
+    {
+      "part": "GutterClosedEnd.001",
+      "bounds": [
+        [
+          -8.076000213623047,
+          11.45199966430664,
+          6.914999961853027
+        ],
+        [
+          -7.915999889373779,
+          11.468000411987305,
+          6.994999885559082
+        ]
+      ],
+      "structure_intersections": [
+        "ContinuousEaveCourse"
+      ]
+    },
+    {
+      "part": "GutterClosedEnd.002",
+      "bounds": [
+        [
+          7.915999889373779,
+          -11.468000411987305,
+          6.914999961853027
+        ],
+        [
+          8.076000213623047,
+          -11.45199966430664,
+          6.994999885559082
+        ]
+      ],
+      "structure_intersections": [
+        "ContinuousEaveCourse.002"
+      ]
+    },
+    {
+      "part": "GutterClosedEnd.003",
+      "bounds": [
+        [
+          7.915999889373779,
+          11.45199966430664,
+          6.914999961853027
+        ],
+        [
+          8.076000213623047,
+          11.468000411987305,
+          6.994999885559082
+        ]
+      ],
+      "structure_intersections": [
+        "ContinuousEaveCourse.002"
+      ]
+    },
+    {
+      "part": "OpenHalfRoundEaveGutter",
+      "bounds": [
+        [
+          -8.076000213623047,
+          -11.460000038146973,
+          6.914999961853027
+        ],
+        [
+          -7.915999889373779,
+          11.460000038146973,
+          6.994999885559082
+        ]
+      ],
+      "structure_intersections": [
+        "ContinuousEaveCourse"
+      ]
+    },
+    {
+      "part": "OpenHalfRoundEaveGutter.001",
+      "bounds": [
+        [
+          7.915999889373779,
+          -11.460000038146973,
+          6.914999961853027
+        ],
+        [
+          8.076000213623047,
+          11.460000038146973,
+          6.994999885559082
+        ]
+      ],
+      "structure_intersections": [
+        "ContinuousEaveCourse.002"
+      ]
+    },
+    {
+      "part": "RainwaterDownpipe",
+      "bounds": [
+        [
+          -8.227849006652832,
+          -11.444999694824219,
+          0.1746528446674347
+        ],
+        [
+          -7.951690673828125,
+          -11.354999542236328,
+          6.9778547286987305
+        ]
+      ],
+      "structure_intersections": [
+        "ContinuousEaveCourse"
+      ]
+    },
+    {
+      "part": "RainwaterDownpipe.001",
+      "bounds": [
+        [
+          -8.227849006652832,
+          11.354999542236328,
+          0.1746528446674347
+        ],
+        [
+          -7.951690673828125,
+          11.444999694824219,
+          6.9778547286987305
+        ]
+      ],
+      "structure_intersections": [
+        "ContinuousEaveCourse"
+      ]
+    },
+    {
+      "part": "RainwaterDownpipe.002",
+      "bounds": [
+        [
+          7.951690673828125,
+          -11.444999694824219,
+          0.1746528446674347
+        ],
+        [
+          8.227849006652832,
+          -11.354999542236328,
+          6.9778547286987305
+        ]
+      ],
+      "structure_intersections": [
+        "ContinuousEaveCourse.002"
+      ]
+    },
+    {
+      "part": "RainwaterDownpipe.003",
+      "bounds": [
+        [
+          7.951690673828125,
+          11.354999542236328,
+          0.1746528446674347
+        ],
+        [
+          8.227849006652832,
+          11.444999694824219,
+          6.9778547286987305
+        ]
+      ],
+      "structure_intersections": [
+        "ContinuousEaveCourse.002"
+      ]
+    }
+  ],
+  "final_clearances": [
+    {
+      "part": "EaveRunoffApron",
+      "bounds": [
+        [
+          -8.1899995803833,
+          -11.567999839782715,
+          7.0370001792907715
+        ],
+        [
+          -7.578499794006348,
+          11.567999839782715,
+          7.356204032897949
+        ]
+      ],
+      "structure_intersections": [
+        "RoofSheet"
+      ]
+    },
+    {
+      "part": "EaveRunoffApron.001",
+      "bounds": [
+        [
+          7.578499794006348,
+          -11.567999839782715,
+          7.0370001792907715
+        ],
+        [
+          8.1899995803833,
+          11.567999839782715,
+          7.356204032897949
+        ]
+      ],
+      "structure_intersections": [
+        "RoofSheet.002"
+      ]
+    },
+    {
+      "part": "GutterRun",
+      "bounds": [
+        [
+          -8.300000190734863,
+          -11.640000343322754,
+          6.885105133056641
+        ],
+        [
+          -8.100000381469727,
+          11.640000343322754,
+          7.013500213623047
+        ]
+      ],
+      "structure_intersections": []
+    },
+    {
+      "part": "GutterRun.001",
+      "bounds": [
+        [
+          8.100000381469727,
+          -11.640000343322754,
+          6.885105133056641
+        ],
+        [
+          8.300000190734863,
+          11.640000343322754,
+          7.013500213623047
+        ]
+      ],
+      "structure_intersections": []
+    },
+    {
+      "part": "GutterStopEnd",
+      "bounds": [
+        [
+          -8.300000190734863,
+          -11.642000198364258,
+          6.8856000900268555
+        ],
+        [
+          -8.09999942779541,
+          -11.637999534606934,
+          6.985599994659424
+        ]
+      ],
+      "structure_intersections": []
+    },
+    {
+      "part": "GutterStopEnd.001",
+      "bounds": [
+        [
+          -8.300000190734863,
+          11.637999534606934,
+          6.8856000900268555
+        ],
+        [
+          -8.09999942779541,
+          11.642000198364258,
+          6.985599994659424
+        ]
+      ],
+      "structure_intersections": []
+    },
+    {
+      "part": "GutterStopEnd.002",
+      "bounds": [
+        [
+          8.09999942779541,
+          -11.642000198364258,
+          6.8856000900268555
+        ],
+        [
+          8.300000190734863,
+          -11.637999534606934,
+          6.985599994659424
+        ]
+      ],
+      "structure_intersections": []
+    },
+    {
+      "part": "GutterStopEnd.003",
+      "bounds": [
+        [
+          8.09999942779541,
+          11.637999534606934,
+          6.8856000900268555
+        ],
+        [
+          8.300000190734863,
+          11.642000198364258,
+          6.985599994659424
+        ]
+      ],
+      "structure_intersections": []
+    },
+    {
+      "part": "RainwaterHollowDownpipe",
+      "bounds": [
+        [
+          -8.244999885559082,
+          -11.444999694824219,
+          0.1746528446674347
+        ],
+        [
+          -7.989999771118164,
+          -11.354999542236328,
+          6.840000152587891
+        ]
+      ],
+      "structure_intersections": []
+    },
+    {
+      "part": "RainwaterHollowDownpipe.001",
+      "bounds": [
+        [
+          -8.244999885559082,
+          11.354999542236328,
+          0.1746528446674347
+        ],
+        [
+          -7.989999771118164,
+          11.444999694824219,
+          6.840000152587891
+        ]
+      ],
+      "structure_intersections": []
+    },
+    {
+      "part": "RainwaterHollowDownpipe.002",
+      "bounds": [
+        [
+          7.989999771118164,
+          -11.444999694824219,
+          0.1746528446674347
+        ],
+        [
+          8.244999885559082,
+          -11.354999542236328,
+          6.840000152587891
+        ]
+      ],
+      "structure_intersections": []
+    },
+    {
+      "part": "RainwaterHollowDownpipe.003",
+      "bounds": [
+        [
+          7.989999771118164,
+          11.354999542236328,
+          0.1746528446674347
+        ],
+        [
+          8.244999885559082,
+          11.444999694824219,
+          6.840000152587891
+        ]
+      ],
+      "structure_intersections": []
+    }
+  ],
+  "geometry_scope": {
+    "unchanged_meshes": 6537,
+    "modified_meshes": [
+      "EndAbutmentFlashing",
+      "EndAbutmentFlashing.001",
+      "RoofSheet",
+      "RoofSheet.002",
+      "RoofStandingSeam",
+      "RoofStandingSeam.002",
+      "RoofStandingSeam.003",
+      "RoofStandingSeam.005",
+      "RoofStandingSeam.006",
+      "RoofStandingSeam.008",
+      "RoofStandingSeam.009",
+      "RoofStandingSeam.011",
+      "RoofStandingSeam.012",
+      "RoofStandingSeam.014",
+      "RoofStandingSeam.015",
+      "RoofStandingSeam.017",
+      "RoofStandingSeam.018",
+      "RoofStandingSeam.020",
+      "RoofStandingSeam.021",
+      "RoofStandingSeam.023",
+      "RoofStandingSeam.024",
+      "RoofStandingSeam.026",
+      "RoofStandingSeam.027",
+      "RoofStandingSeam.029",
+      "RoofStandingSeam.030",
+      "RoofStandingSeam.032",
+      "RoofStandingSeam.033",
+      "RoofStandingSeam.035",
+      "RoofStandingSeam.036",
+      "RoofStandingSeam.038",
+      "RoofStandingSeam.039",
+      "RoofStandingSeam.041",
+      "RoofStandingSeam.042",
+      "RoofStandingSeam.044",
+      "RoofStandingSeam.045",
+      "RoofStandingSeam.047",
+      "RoofStandingSeam.048",
+      "RoofStandingSeam.050",
+      "RoofStandingSeam.051",
+      "RoofStandingSeam.053",
+      "RoofStandingSeam.054",
+      "RoofStandingSeam.056",
+      "RoofStandingSeam.057",
+      "RoofStandingSeam.059",
+      "RoofStandingSeam.060",
+      "RoofStandingSeam.062",
+      "RoofStandingSeam.063",
+      "RoofStandingSeam.065",
+      "RoofStandingSeam.066",
+      "RoofStandingSeam.068",
+      "RoofStandingSeam.069",
+      "RoofStandingSeam.071",
+      "RoofStandingSeam.072",
+      "RoofStandingSeam.074",
+      "RoofStandingSeam.075",
+      "RoofStandingSeam.077",
+      "RoofStandingSeam.078",
+      "RoofStandingSeam.080",
+      "RoofStandingSeam.081",
+      "RoofStandingSeam.083",
+      "RoofStandingSeam.084",
+      "RoofStandingSeam.086",
+      "RoofStandingSeam.087",
+      "RoofStandingSeam.089",
+      "RoofStandingSeam.090",
+      "RoofStandingSeam.092",
+      "RoofStandingSeam.093",
+      "RoofStandingSeam.095",
+      "RoofStandingSeam.096",
+      "RoofStandingSeam.098",
+      "RoofStandingSeam.099",
+      "RoofStandingSeam.101",
+      "RoofStandingSeam.102",
+      "RoofStandingSeam.104",
+      "RoofStandingSeam.105",
+      "RoofStandingSeam.107",
+      "RoofStandingSeam.108",
+      "RoofStandingSeam.110",
+      "RoofStandingSeam.111",
+      "RoofStandingSeam.113",
+      "RoofStandingSeam.114",
+      "RoofStandingSeam.116",
+      "RoofStandingSeam.117",
+      "RoofStandingSeam.119",
+      "RoofStandingSeam.120",
+      "RoofStandingSeam.122",
+      "RoofStandingSeam.123",
+      "RoofStandingSeam.125",
+      "RoofStandingSeam.126",
+      "RoofStandingSeam.128",
+      "RoofStandingSeam.129",
+      "RoofStandingSeam.131",
+      "RoofStandingSeam.132",
+      "RoofStandingSeam.134",
+      "RoofStandingSeam.135",
+      "RoofStandingSeam.137",
+      "RoofStandingSeam.138",
+      "RoofStandingSeam.140"
+    ],
+    "replaced_old_rainwater_meshes": [
+      "DownpipeShoeDarkMouth",
+      "DownpipeShoeDarkMouth.001",
+      "DownpipeShoeDarkMouth.002",
+      "DownpipeShoeDarkMouth.003",
+      "DownpipeWallClip",
+      "DownpipeWallClip.001",
+      "DownpipeWallClip.002",
+      "DownpipeWallClip.003",
+      "DownpipeWallClip.004",
+      "DownpipeWallClip.005",
+      "DownpipeWallClip.006",
+      "DownpipeWallClip.007",
+      "DownpipeWallClip.008",
+      "DownpipeWallClip.009",
+      "DownpipeWallClip.010",
+      "DownpipeWallClip.011",
+      "DownpipeWallClip.012",
+      "DownpipeWallClip.013",
+      "DownpipeWallClip.014",
+      "DownpipeWallClip.015",
+      "EavePipeSaddle",
+      "EavePipeSaddle.001",
+      "EavePipeSaddle.002",
+      "EavePipeSaddle.003",
+      "EavePipeSaddle.004",
+      "EavePipeSaddle.005",
+      "EavePipeSaddle.006",
+      "EavePipeSaddle.007",
+      "EavePipeSaddle.008",
+      "EavePipeSaddle.009",
+      "EavePipeSaddle.010",
+      "EavePipeSaddle.011",
+      "EavePipeSaddle.012",
+      "EavePipeSaddle.013",
+      "EavePipeSaddle.014",
+      "EavePipeSaddle.015",
+      "FormedRoofDripIntoGutter",
+      "FormedRoofDripIntoGutter.001",
+      "GutterClosedEnd",
+      "GutterClosedEnd.001",
+      "GutterClosedEnd.002",
+      "GutterClosedEnd.003",
+      "OpenHalfRoundEaveGutter",
+      "OpenHalfRoundEaveGutter.001",
+      "PipeClipAnchor",
+      "PipeClipAnchor.001",
+      "PipeClipAnchor.002",
+      "PipeClipAnchor.003",
+      "PipeClipAnchor.004",
+      "PipeClipAnchor.005",
+      "PipeClipAnchor.006",
+      "PipeClipAnchor.007",
+      "PipeClipAnchor.008",
+      "PipeClipAnchor.009",
+      "PipeClipAnchor.010",
+      "PipeClipAnchor.011",
+      "PipeClipAnchor.012",
+      "PipeClipAnchor.013",
+      "PipeClipAnchor.014",
+      "PipeClipAnchor.015",
+      "RainwaterDownpipe",
+      "RainwaterDownpipe.001",
+      "RainwaterDownpipe.002",
+      "RainwaterDownpipe.003"
+    ],
+    "new_rainwater_meshes": [
+      "DownpipeClipWallAnchor",
+      "DownpipeClipWallAnchor.001",
+      "DownpipeClipWallAnchor.002",
+      "DownpipeClipWallAnchor.003",
+      "DownpipeClipWallAnchor.004",
+      "DownpipeClipWallAnchor.005",
+      "DownpipeClipWallAnchor.006",
+      "DownpipeClipWallAnchor.007",
+      "DownpipeClipWallAnchor.008",
+      "DownpipeClipWallAnchor.009",
+      "DownpipeClipWallAnchor.010",
+      "DownpipeClipWallAnchor.011",
+      "DownpipeClipWallAnchor.012",
+      "DownpipeClipWallAnchor.013",
+      "DownpipeClipWallAnchor.014",
+      "DownpipeClipWallAnchor.015",
+      "DownpipeClipWallAnchor.016",
+      "DownpipeClipWallAnchor.017",
+      "DownpipeClipWallAnchor.018",
+      "DownpipeClipWallAnchor.019",
+      "DownpipeClipWallAnchor.020",
+      "DownpipeClipWallAnchor.021",
+      "DownpipeClipWallAnchor.022",
+      "DownpipeClipWallAnchor.023",
+      "DownpipeClipWallAnchor.024",
+      "DownpipeClipWallAnchor.025",
+      "DownpipeClipWallAnchor.026",
+      "DownpipeClipWallAnchor.027",
+      "DownpipeClipWallAnchor.028",
+      "DownpipeClipWallAnchor.029",
+      "DownpipeClipWallAnchor.030",
+      "DownpipeClipWallAnchor.031",
+      "DownpipeClipWallLug",
+      "DownpipeClipWallLug.001",
+      "DownpipeClipWallLug.002",
+      "DownpipeClipWallLug.003",
+      "DownpipeClipWallLug.004",
+      "DownpipeClipWallLug.005",
+      "DownpipeClipWallLug.006",
+      "DownpipeClipWallLug.007",
+      "DownpipeClipWallLug.008",
+      "DownpipeClipWallLug.009",
+      "DownpipeClipWallLug.010",
+      "DownpipeClipWallLug.011",
+      "DownpipeClipWallLug.012",
+      "DownpipeClipWallLug.013",
+      "DownpipeClipWallLug.014",
+      "DownpipeClipWallLug.015",
+      "DownpipeClipWallLug.016",
+      "DownpipeClipWallLug.017",
+      "DownpipeClipWallLug.018",
+      "DownpipeClipWallLug.019",
+      "DownpipeClipWallLug.020",
+      "DownpipeClipWallLug.021",
+      "DownpipeClipWallLug.022",
+      "DownpipeClipWallLug.023",
+      "DownpipeClipWallLug.024",
+      "DownpipeClipWallLug.025",
+      "DownpipeClipWallLug.026",
+      "DownpipeClipWallLug.027",
+      "DownpipeClipWallLug.028",
+      "DownpipeClipWallLug.029",
+      "DownpipeClipWallLug.030",
+      "DownpipeClipWallLug.031",
+      "DownpipeWrapClip",
+      "DownpipeWrapClip.001",
+      "DownpipeWrapClip.002",
+      "DownpipeWrapClip.003",
+      "DownpipeWrapClip.004",
+      "DownpipeWrapClip.005",
+      "DownpipeWrapClip.006",
+      "DownpipeWrapClip.007",
+      "DownpipeWrapClip.008",
+      "DownpipeWrapClip.009",
+      "DownpipeWrapClip.010",
+      "DownpipeWrapClip.011",
+      "DownpipeWrapClip.012",
+      "DownpipeWrapClip.013",
+      "DownpipeWrapClip.014",
+      "DownpipeWrapClip.015",
+      "EaveAbutmentWeatherJoint",
+      "EaveAbutmentWeatherJoint.001",
+      "EaveAbutmentWeatherJoint.002",
+      "EaveAbutmentWeatherJoint.003",
+      "EaveApronBearingCleat",
+      "EaveApronBearingCleat.001",
+      "EaveApronBearingCleat.002",
+      "EaveApronBearingCleat.003",
+      "EaveApronBearingCleat.004",
+      "EaveApronBearingCleat.005",
+      "EaveApronBearingCleat.006",
+      "EaveApronBearingCleat.007",
+      "EaveApronBearingCleat.008",
+      "EaveApronBearingCleat.009",
+      "EaveApronBearingCleat.010",
+      "EaveApronBearingCleat.011",
+      "EaveApronBearingCleat.012",
+      "EaveApronBearingCleat.013",
+      "EaveApronBearingCleat.014",
+      "EaveApronBearingCleat.015",
+      "EaveApronBearingCleat.016",
+      "EaveApronBearingCleat.017",
+      "EaveApronBearingCleat.018",
+      "EaveApronBearingCleat.019",
+      "EaveApronBearingCleat.020",
+      "EaveApronBearingCleat.021",
+      "EaveApronBearingCleat.022",
+      "EaveApronBearingCleat.023",
+      "EaveApronBearingCleat.024",
+      "EaveApronBearingCleat.025",
+      "EaveApronBearingCleat.026",
+      "EaveApronBearingCleat.027",
+      "EaveApronBearingCleat.028",
+      "EaveApronBearingCleat.029",
+      "EaveApronBearingCleat.030",
+      "EaveApronBearingCleat.031",
+      "EaveApronBearingCleat.032",
+      "EaveApronBearingCleat.033",
+      "EaveApronBearingCleat.034",
+      "EaveApronBearingCleat.035",
+      "EaveApronBearingCleat.036",
+      "EaveApronBearingCleat.037",
+      "EaveApronEndReturn",
+      "EaveApronEndReturn.001",
+      "EaveApronEndReturn.002",
+      "EaveApronEndReturn.003",
+      "EaveRunoffApron",
+      "EaveRunoffApron.001",
+      "GutterBracketAnchor",
+      "GutterBracketAnchor.001",
+      "GutterBracketAnchor.002",
+      "GutterBracketAnchor.003",
+      "GutterBracketAnchor.004",
+      "GutterBracketAnchor.005",
+      "GutterBracketAnchor.006",
+      "GutterBracketAnchor.007",
+      "GutterBracketAnchor.008",
+      "GutterBracketAnchor.009",
+      "GutterBracketAnchor.010",
+      "GutterBracketAnchor.011",
+      "GutterBracketAnchor.012",
+      "GutterBracketAnchor.013",
+      "GutterBracketAnchor.014",
+      "GutterBracketAnchor.015",
+      "GutterBracketAnchor.016",
+      "GutterBracketAnchor.017",
+      "GutterBracketAnchor.018",
+      "GutterBracketAnchor.019",
+      "GutterBracketAnchor.020",
+      "GutterBracketAnchor.021",
+      "GutterBracketAnchor.022",
+      "GutterBracketAnchor.023",
+      "GutterBracketAnchor.024",
+      "GutterBracketAnchor.025",
+      "GutterBracketAnchor.026",
+      "GutterBracketAnchor.027",
+      "GutterBracketAnchor.028",
+      "GutterBracketAnchor.029",
+      "GutterBracketAnchor.030",
+      "GutterBracketAnchor.031",
+      "GutterBracketAnchor.032",
+      "GutterBracketAnchor.033",
+      "GutterBracketAnchor.034",
+      "GutterBracketAnchor.035",
+      "GutterBracketAnchor.036",
+      "GutterBracketAnchor.037",
+      "GutterBracketAnchor.038",
+      "GutterBracketAnchor.039",
+      "GutterBracketAnchor.040",
+      "GutterBracketAnchor.041",
+      "GutterBracketAnchor.042",
+      "GutterBracketAnchor.043",
+      "GutterBracketAnchor.044",
+      "GutterBracketAnchor.045",
+      "GutterBracketAnchor.046",
+      "GutterBracketAnchor.047",
+      "GutterBracketAnchor.048",
+      "GutterBracketAnchor.049",
+      "GutterBracketAnchor.050",
+      "GutterBracketAnchor.051",
+      "GutterBracketAnchor.052",
+      "GutterBracketAnchor.053",
+      "GutterBracketAnchor.054",
+      "GutterBracketAnchor.055",
+      "GutterBracketAnchor.056",
+      "GutterBracketAnchor.057",
+      "GutterBracketAnchor.058",
+      "GutterBracketAnchor.059",
+      "GutterBracketAnchor.060",
+      "GutterBracketAnchor.061",
+      "GutterBracketAnchor.062",
+      "GutterBracketAnchor.063",
+      "GutterBracketAnchor.064",
+      "GutterBracketAnchor.065",
+      "GutterBracketAnchor.066",
+      "GutterBracketAnchor.067",
+      "GutterBracketAnchor.068",
+      "GutterBracketAnchor.069",
+      "GutterBracketAnchor.070",
+      "GutterBracketAnchor.071",
+      "GutterBracketAnchor.072",
+      "GutterBracketAnchor.073",
+      "GutterBracketAnchor.074",
+      "GutterBracketAnchor.075",
+      "GutterBracketWallPlate",
+      "GutterBracketWallPlate.001",
+      "GutterBracketWallPlate.002",
+      "GutterBracketWallPlate.003",
+      "GutterBracketWallPlate.004",
+      "GutterBracketWallPlate.005",
+      "GutterBracketWallPlate.006",
+      "GutterBracketWallPlate.007",
+      "GutterBracketWallPlate.008",
+      "GutterBracketWallPlate.009",
+      "GutterBracketWallPlate.010",
+      "GutterBracketWallPlate.011",
+      "GutterBracketWallPlate.012",
+      "GutterBracketWallPlate.013",
+      "GutterBracketWallPlate.014",
+      "GutterBracketWallPlate.015",
+      "GutterBracketWallPlate.016",
+      "GutterBracketWallPlate.017",
+      "GutterBracketWallPlate.018",
+      "GutterBracketWallPlate.019",
+      "GutterBracketWallPlate.020",
+      "GutterBracketWallPlate.021",
+      "GutterBracketWallPlate.022",
+      "GutterBracketWallPlate.023",
+      "GutterBracketWallPlate.024",
+      "GutterBracketWallPlate.025",
+      "GutterBracketWallPlate.026",
+      "GutterBracketWallPlate.027",
+      "GutterBracketWallPlate.028",
+      "GutterBracketWallPlate.029",
+      "GutterBracketWallPlate.030",
+      "GutterBracketWallPlate.031",
+      "GutterBracketWallPlate.032",
+      "GutterBracketWallPlate.033",
+      "GutterBracketWallPlate.034",
+      "GutterBracketWallPlate.035",
+      "GutterBracketWallPlate.036",
+      "GutterBracketWallPlate.037",
+      "GutterCradleArm",
+      "GutterCradleArm.001",
+      "GutterCradleArm.002",
+      "GutterCradleArm.003",
+      "GutterCradleArm.004",
+      "GutterCradleArm.005",
+      "GutterCradleArm.006",
+      "GutterCradleArm.007",
+      "GutterCradleArm.008",
+      "GutterCradleArm.009",
+      "GutterCradleArm.010",
+      "GutterCradleArm.011",
+      "GutterCradleArm.012",
+      "GutterCradleArm.013",
+      "GutterCradleArm.014",
+      "GutterCradleArm.015",
+      "GutterCradleArm.016",
+      "GutterCradleArm.017",
+      "GutterCradleArm.018",
+      "GutterCradleArm.019",
+      "GutterCradleArm.020",
+      "GutterCradleArm.021",
+      "GutterCradleArm.022",
+      "GutterCradleArm.023",
+      "GutterCradleArm.024",
+      "GutterCradleArm.025",
+      "GutterCradleArm.026",
+      "GutterCradleArm.027",
+      "GutterCradleArm.028",
+      "GutterCradleArm.029",
+      "GutterCradleArm.030",
+      "GutterCradleArm.031",
+      "GutterCradleArm.032",
+      "GutterCradleArm.033",
+      "GutterCradleArm.034",
+      "GutterCradleArm.035",
+      "GutterCradleArm.036",
+      "GutterCradleArm.037",
+      "GutterCradleStrap",
+      "GutterCradleStrap.001",
+      "GutterCradleStrap.002",
+      "GutterCradleStrap.003",
+      "GutterCradleStrap.004",
+      "GutterCradleStrap.005",
+      "GutterCradleStrap.006",
+      "GutterCradleStrap.007",
+      "GutterCradleStrap.008",
+      "GutterCradleStrap.009",
+      "GutterCradleStrap.010",
+      "GutterCradleStrap.011",
+      "GutterCradleStrap.012",
+      "GutterCradleStrap.013",
+      "GutterCradleStrap.014",
+      "GutterCradleStrap.015",
+      "GutterCradleStrap.016",
+      "GutterCradleStrap.017",
+      "GutterCradleStrap.018",
+      "GutterCradleStrap.019",
+      "GutterCradleStrap.020",
+      "GutterCradleStrap.021",
+      "GutterCradleStrap.022",
+      "GutterCradleStrap.023",
+      "GutterCradleStrap.024",
+      "GutterCradleStrap.025",
+      "GutterCradleStrap.026",
+      "GutterCradleStrap.027",
+      "GutterCradleStrap.028",
+      "GutterCradleStrap.029",
+      "GutterCradleStrap.030",
+      "GutterCradleStrap.031",
+      "GutterCradleStrap.032",
+      "GutterCradleStrap.033",
+      "GutterCradleStrap.034",
+      "GutterCradleStrap.035",
+      "GutterCradleStrap.036",
+      "GutterCradleStrap.037",
+      "GutterOpenOutletSocket",
+      "GutterOpenOutletSocket.001",
+      "GutterOpenOutletSocket.002",
+      "GutterOpenOutletSocket.003",
+      "GutterRun",
+      "GutterRun.001",
+      "GutterStopEnd",
+      "GutterStopEnd.001",
+      "GutterStopEnd.002",
+      "GutterStopEnd.003",
+      "RainwaterHollowDownpipe",
+      "RainwaterHollowDownpipe.001",
+      "RainwaterHollowDownpipe.002",
+      "RainwaterHollowDownpipe.003"
+    ],
+    "finial_components_unchanged": 24
+  },
+  "protected_files_unchanged": 483,
+  "candidate_meta_files_unchanged": 49,
+  "source_hashes": {
+    "generate_stage1_candidate.py": "f5f19b87d212a831d77a1f5573d6cda160b986a6f0f5f7d5e196cb5b2dd82f2d",
+    "production_geometry.py": "6ec3bd2c495b67aa45ce7ae524c5a6edb5e52b78eeac847b45754a843cdd5940",
+    "production_corrections.py": "39a9b214ee9ee64f3aec25270587980ba6cce902ceec97d249f7b678d8ea686d",
+    "production_rainwater.py": "171158eeb37aad45cdc89cd9b2fa5fa8482eeb36a25d1baa298969f973078060",
+    "Stage1_CleanCandidate_A.blend": "df68dc9e3cd42ddc1085ae98e63ec9a62a96b6f53429ba52cdd0b64df7c669db"
+  },
+  "export_sha256": "319e8bb8e4d2397f085a88d82a4622e23704ad7180e5fe77e5b8f2b93b2be202",
+  "unity_model_sha256": "319e8bb8e4d2397f085a88d82a4622e23704ad7180e5fe77e5b8f2b93b2be202",
+  "unity_import": "[Log] Production candidate imported, prefab and isolated review saved. Captures run separately after initialization.",
+  "unity_validation": "[Log] Floor hit (0.00, 0.08, -12.00)\n[Log] CHECK importedGroundDatum=-0.000001 sideOpeningRays=36 rearOpeningRays=9 roofExteriorProbeAnchors=2 roofMetallic=0.78 roofSmoothness=0.64\n[Log] CHECK missingScripts=0 importedMeshChannelsInvalid=0 renderers=30 trianglesWithSign=672672 distinctMaterials=20 colliders=5 centralHits=0 floorHits=1 stage1GlyphVertices=2704 stage2GlyphVertices=3368 stageRestored=1\n[Log] Permanent spot lights=31 reflection=Stage1InteriorReflection cubemapSize=128 productionRegistration=False\n[Log] Editor Unity=6000.5.9f1 compiling=False playing=True target=StandaloneWindows64 active=Assets/Scenes/Studio.unity dirty=True\n[Log] Review outside build settings=True\n[Log] Original Studio has not been saved or reloaded. Its extra candidate was seated at measured ground as one undoable root change. Play Mode, navigation, door movement, stair collision, player build and performance benchmark not exercised.",
+  "unity_captures": "[Log] Both complete gutter runs, four transitions/outlets/downpipes and four exterior overviews captured; camera and layers restored.",
+  "unity_downpipe_framing": "[Log] Four complete downpipes recaptured with outlet and splash-block extents in frame.",
+  "unity_cleanup": "[Log] Temporary candidate preview closed. Active scene=Assets/Scenes/Studio.unity dirty=True playing=True. Original Studio was not saved or reloaded.",
+  "console": {
+    "logs": [
+      {
+        "message": "The character with Unicode value \\u2161 was not found in the [LiberationSans SDF] font asset or any potential fallbacks. It was replaced by Unicode character \\u25A1 in text object [Label].\nUnityEngine.Debug:LogWarning (object,UnityEngine.Object)\nTMPro.TextMeshProUGUI:SetArraySizes (TMPro.TMP_Text/TextProcessingElement[]) (at ./Library/PackageCache/com.unity.ugui@1c4864518158/Runtime/TMP/TextMeshProUGUI.cs:2012)\nTMPro.TMP_Text:ParseInputText () (at ./Library/PackageCache/com.unity.ugui@1c4864518158/Runtime/TMP/TMP_Text.cs:2063)\nTMPro.TextMeshProUGUI:OnPreRenderCanvas () (at ./Library/PackageCache/com.unity.ugui@1c4864518158/Runtime/TMP/TextMeshProUGUI.cs:2496)\nTMPro.TextMeshProUGUI:Rebuild (UnityEngine.UI.CanvasUpdate) (at ./Library/PackageCache/com.unity.ugui@1c4864518158/Runtime/TMP/TextMeshProUGUI.cs:229)\nUnityEngine.UI.ScrollRect:LateUpdate () (at ./Library/PackageCache/com.unity.ugui@1c4864518158/Runtime/UGUI/UI/Core/ScrollRect.cs:835)\n",
+        "stackTrace": "",
+        "type": "Warning",
+        "timestamp": "[05:05:05]"
+      }
+    ],
+    "totalCount": 1,
+    "errorCount": 0,
+    "warningCount": 1
+  },
+  "captures": [
+    {
+      "file": "01_front_three_quarter.png",
+      "size": [
+        3072,
+        1030
+      ],
+      "sha256": "8d14ec8934d8aec558dfcf86b7cb307216494de793d2c28758d1384267589671",
+      "visually_inspected": true
+    },
+    {
+      "file": "02_front.png",
+      "size": [
+        2910,
+        1434
+      ],
+      "sha256": "8cb37d7940f3722f73fe1a94032cb4c467fee62f8674e2b71cd3c6cd25f9070f",
+      "visually_inspected": true
+    },
+    {
+      "file": "03_side.png",
+      "size": [
+        3354,
+        1434
+      ],
+      "sha256": "94c4ad5e4955acef00090f9d957dfe9f4394438c191c5be5a4938d22ff86ac53",
+      "visually_inspected": true
+    },
+    {
+      "file": "04_rear.png",
+      "size": [
+        2784,
+        1434
+      ],
+      "sha256": "a40efa79ce6d5ae8f2c4df7f14a93d48c157151984a5d21e30c9aef559880142",
+      "visually_inspected": true
+    },
+    {
+      "file": "after_hero_front_downpipe.png",
+      "size": [
+        1700,
+        2600
+      ],
+      "sha256": "aff2fdedd60d866f5b2c41c5b10499b142af94b68e762137cd8f6e675b9c6c80",
+      "visually_inspected": true
+    },
+    {
+      "file": "after_hero_front_oblique.png",
+      "size": [
+        2400,
+        2000
+      ],
+      "sha256": "aaf444fd1f8bf34d39ca5be52fcdb5478d7114724bc790fcba223a403a0542bb",
+      "visually_inspected": true
+    },
+    {
+      "file": "after_hero_front_outlet.png",
+      "size": [
+        2000,
+        2000
+      ],
+      "sha256": "3ca21e5fa283ff1f4ecbaef3466af8f6bb3178f43dd73d83c1ca1623a5d79270",
+      "visually_inspected": true
+    },
+    {
+      "file": "after_hero_front_profile.png",
+      "size": [
+        2400,
+        2000
+      ],
+      "sha256": "61cb3102c7efd9fddf4b83e844f831edf66833696e9fbcf22056a66a171cd71e",
+      "visually_inspected": true
+    },
+    {
+      "file": "after_hero_midrun.png",
+      "size": [
+        2400,
+        2000
+      ],
+      "sha256": "f231bcccfdaf9ac9dcbcef9cba247da37eeb25e83bc791476532158b24e354d7",
+      "visually_inspected": true
+    },
+    {
+      "file": "after_hero_rear_downpipe.png",
+      "size": [
+        1700,
+        2600
+      ],
+      "sha256": "69483e655e85b40ac7e659c33fc2ee9b7737b758f3abd259270bf2d6f797be9d",
+      "visually_inspected": true
+    },
+    {
+      "file": "after_hero_rear_oblique.png",
+      "size": [
+        2400,
+        2000
+      ],
+      "sha256": "972efd8acea6d85817e0d4d32a09829add2996dfb9695c4099ad6dd9ad9d3478",
+      "visually_inspected": true
+    },
+    {
+      "file": "after_hero_rear_outlet.png",
+      "size": [
+        2000,
+        2000
+      ],
+      "sha256": "55d61d41c97109d07c11d06ee0741ab6f524508cacc75bcde8aa6209a60ed445",
+      "visually_inspected": true
+    },
+    {
+      "file": "after_hero_rear_profile.png",
+      "size": [
+        2400,
+        2000
+      ],
+      "sha256": "ad26cd6dde71bbad477794325f34bb8feaac68306c35b5b762ce1ac76f577b34",
+      "visually_inspected": true
+    },
+    {
+      "file": "after_hero_run_front.png",
+      "size": [
+        3000,
+        1700
+      ],
+      "sha256": "d43713908fea53d7583f8dc761e2e72a63acb6217d71a24b844fc1685fdf9675",
+      "visually_inspected": true
+    },
+    {
+      "file": "after_hero_run_rear.png",
+      "size": [
+        3000,
+        1700
+      ],
+      "sha256": "47e41e5c27a274447620339dc0c14a0fe57226a195dcb30e9e9ab5c30b33a4ad",
+      "visually_inspected": true
+    },
+    {
+      "file": "after_opposite_front_downpipe.png",
+      "size": [
+        1700,
+        2600
+      ],
+      "sha256": "30c95d67e552e3aec9e3c804c22c1018ff779987374a97c3c30259fb8b53b706",
+      "visually_inspected": true
+    },
+    {
+      "file": "after_opposite_front_oblique.png",
+      "size": [
+        2400,
+        2000
+      ],
+      "sha256": "690b6c2e1607046dd43656cde353ba9373157172360eb5a576cfd461a16ac4d2",
+      "visually_inspected": true
+    },
+    {
+      "file": "after_opposite_front_outlet.png",
+      "size": [
+        2000,
+        2000
+      ],
+      "sha256": "7916fc48e4efb59115d785009649ed283524c0c2f44a5bbdf7e5b03297efbf09",
+      "visually_inspected": true
+    },
+    {
+      "file": "after_opposite_front_profile.png",
+      "size": [
+        2400,
+        2000
+      ],
+      "sha256": "ebc58afb334519f94e42032e8fd4485d72ea58f9f059e218aa01e9424b5c981e",
+      "visually_inspected": true
+    },
+    {
+      "file": "after_opposite_midrun.png",
+      "size": [
+        2400,
+        2000
+      ],
+      "sha256": "49b75b6c8889f2a1b37df024baec621eeca8c05df773c69d54631b0cf7c0906b",
+      "visually_inspected": true
+    },
+    {
+      "file": "after_opposite_rear_downpipe.png",
+      "size": [
+        1700,
+        2600
+      ],
+      "sha256": "5cf28f48367fc47320648eec7bcf2feade490752a5e848736ca7de8e85cd5ec0",
+      "visually_inspected": true
+    },
+    {
+      "file": "after_opposite_rear_oblique.png",
+      "size": [
+        2400,
+        2000
+      ],
+      "sha256": "0cb6a9ad70d3da7ba0365e72707f650e8c4e7f5cae2815983c07ac9cff1d2108",
+      "visually_inspected": true
+    },
+    {
+      "file": "after_opposite_rear_outlet.png",
+      "size": [
+        2000,
+        2000
+      ],
+      "sha256": "e19107f9a4de6c9a9f7fe5ec32cc690bb5a85a7eb66a9577aa49ff0156fe05e2",
+      "visually_inspected": true
+    },
+    {
+      "file": "after_opposite_rear_profile.png",
+      "size": [
+        2400,
+        2000
+      ],
+      "sha256": "2d66c47c05e3a746840f2bb0f32cb53168d4e81ffc3fd8ac82776a76bc7b0a65",
+      "visually_inspected": true
+    },
+    {
+      "file": "after_opposite_run_front.png",
+      "size": [
+        3000,
+        1700
+      ],
+      "sha256": "485aef04e64fddbbc6923ce19dc1b497eb532e92664a362d92d25b290d643d41",
+      "visually_inspected": true
+    },
+    {
+      "file": "after_opposite_run_rear.png",
+      "size": [
+        3000,
+        1700
+      ],
+      "sha256": "96ab1d6ddcedeed25264cf2eec01f5d34490ef5289aaee07114fcff2ec9bf126",
+      "visually_inspected": true
+    },
+    {
+      "file": "before_hero_front.png",
+      "size": [
+        2400,
+        2000
+      ],
+      "sha256": "7f2de545c1eee42874a00a7482e279342cb777a429fc7ee77c1f5d46880db867",
+      "visually_inspected": true
+    },
+    {
+      "file": "before_hero_rear.png",
+      "size": [
+        2400,
+        2000
+      ],
+      "sha256": "99cce80e38209a7bafda4ebedadd78ca8335800a14cb81b54c84d3b49c8bd77e",
+      "visually_inspected": true
+    },
+    {
+      "file": "before_hero_run.png",
+      "size": [
+        3000,
+        1700
+      ],
+      "sha256": "6c233e0a5b97b0c4c763adafb8c573e479e7c4695d2a7bfc92d9fa8d974fecb4",
+      "visually_inspected": true
+    },
+    {
+      "file": "before_opposite_front.png",
+      "size": [
+        2400,
+        2000
+      ],
+      "sha256": "f9cdbe7bca0ac1a438d448aba5b3bfe4f738003d2aacb37f4b40d3905b4ac7b7",
+      "visually_inspected": true
+    },
+    {
+      "file": "before_opposite_rear.png",
+      "size": [
+        2400,
+        2000
+      ],
+      "sha256": "48c98532934d5f1deecad40e3951577592b0a6da5ec4be18b9acfe4febbb7441",
+      "visually_inspected": true
+    },
+    {
+      "file": "before_opposite_run.png",
+      "size": [
+        3000,
+        1700
+      ],
+      "sha256": "78874eda7c75f34586c4f3b9a1c117e7a3569f37e53e0761096bccdee4235bf9",
+      "visually_inspected": true
+    }
+  ],
+  "limits": [
+    "Source geometry verifies clearance, gravity fall and connected open flow paths; no fluid or rainfall capacity simulation",
+    "Existing lighting, roof texture and close-range shadow artifacts retained",
+    "Studio was in Play Mode during final checks; no gameplay behavior, player build or optimization was tested",
+    "Local gallery links checked; browser layout not exercised"
+  ]
+}

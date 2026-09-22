@@ -1,0 +1,88 @@
+{
+  "date": "2026-09-22",
+  "scope": "Clean Stage candidate A massing gate",
+  "unity": "6000.5.9f1",
+  "pipeline": "URP 17.5.0 PC_RPAsset Linear",
+  "mcp": "Installed official Unity relay; Unity_RunCommand",
+  "validation": "[Log] Floor hit (0.00, 0.08, -12.00)\n[Log] CHECK missingScripts=0 meshRenderers=16 trianglesWithSign=15472 materialSlots=24 colliders=5 centreRayHits=0 floorHits=1 glyphVerticesStage1=2704 glyphVerticesStage2=3368 restoredStage=1\n[Log] Candidate not registered for gameplay=True\n[Log] Final captures refreshed and review scene saved. Original Studio remains unchanged.",
+  "console_before": {
+    "logs": [],
+    "totalCount": 0,
+    "errorCount": 0,
+    "warningCount": 0
+  },
+  "console_after": {
+    "logs": [],
+    "totalCount": 0,
+    "errorCount": 0,
+    "warningCount": 0
+  },
+  "captures": [
+    {
+      "file": "01_front_three_quarter.png",
+      "view": "Front three-quarter",
+      "notes": "Primary silhouette and facade composition",
+      "sha256": "2c1f5961fa93baa78234e59b0496d4b4f50744dd67cb1d8b4087381d05e47cdf"
+    },
+    {
+      "file": "02_front.png",
+      "view": "Straight front",
+      "notes": "Portal, arch and personnel entrances",
+      "sha256": "c931db6e63ae32914bf7ee0f96c222b1f3e4329488d04a57226546c40fffe6d8"
+    },
+    {
+      "file": "03_side.png",
+      "view": "Side",
+      "notes": "24 m depth and clerestory rhythm",
+      "sha256": "875d2e481a3f05db90927ab9cc301b3082acc0b655dbc9983bf0954e5db6e46b"
+    },
+    {
+      "file": "04_rear.png",
+      "view": "Rear",
+      "notes": "Service opening and high ventilation",
+      "sha256": "68e8bf89898379bcf3520f0a232d62734b5e3193dbf93a139fba5f213212493f"
+    },
+    {
+      "file": "05_roof.png",
+      "view": "Roof and silhouette",
+      "notes": "Closed blackout allowances sit below both glazing ribbons",
+      "sha256": "a1bc0bb6ba2c229cf27a5a4e9a8b0d8e5d1a255f3a5b77b6fb2f37f1ff90c630"
+    },
+    {
+      "file": "06_management_original_pose.png",
+      "view": "Original management pose",
+      "notes": "Exact saved Main Camera pose; roof-dominated",
+      "sha256": "9d4bf89eaa93df6e452501b78b0b260c236bd690ecef2360d69a968084601d4b"
+    },
+    {
+      "file": "07_management_candidate.png",
+      "view": "Management view, panned",
+      "notes": "Actual Main Camera: 52-degree pitch, FOV 60, distance 34 m",
+      "sha256": "46fdf2f9e735a34b85a30eaea11ea0be1e8df632c4fe5af8cab0bd0ffcd49f34"
+    },
+    {
+      "file": "08_beside_administration.png",
+      "view": "Beside Administration",
+      "notes": "Stage crown 12 m; Administration highest point about 11.02 m",
+      "sha256": "7c7c615ef6ba20fef45826d51066af5bc6483672832c435f2bcdc2030f7d4c9f"
+    },
+    {
+      "file": "09_interior_wide.png",
+      "view": "Interior volume",
+      "notes": "Circulation and arch-depth allowances only; not final structure",
+      "sha256": "0a20adee5b42b91ab7d60180f1b047d2b17010afdd440ca97a541849750bd1b3"
+    }
+  ],
+  "not_run": [
+    "Play Mode",
+    "employee navigation",
+    "Live Camera View runtime",
+    "player build",
+    "performance profiling"
+  ],
+  "approval": "AWAITING_USER_MASSING_APPROVAL",
+  "existing_files_hashed": 483,
+  "existing_files_changed": [],
+  "missing_candidate_metadata": [],
+  "restore": "[Log] Review imported final regenerated FBX; compiling=False dirty=False\n[Log] Final candidate missing scripts=0\n[Log] RESTORED Assets/Scenes/Studio.unity dirty=False oldStageActive=True number=1 camera=(0.00, 18.00, -15.00) rot=(52.00, 0.00, 0.00) fov=60 play=False"
+}

@@ -1,0 +1,247 @@
+{
+  "date": "2026-09-22",
+  "revision": "02",
+  "source_report": {
+    "candidate": "Stage1_CleanCandidate_A",
+    "revision": "02",
+    "gate": "ARCHITECTURAL_MASSING_AWAITING_APPROVAL",
+    "geometry_source": "Clean candidate source; no old Stage geometry or materials",
+    "dimensions": {
+      "wall_width": 15.8,
+      "wall_depth": 24.0,
+      "eave": 7.1,
+      "roof_crown": 10.77,
+      "coping_crown": 11.01,
+      "vent_top": 11.44,
+      "arch_circle_radius": 10.196333333333333,
+      "main_door_clear_width": 7.2,
+      "main_door_clear_height": 6.9,
+      "portal_outer_width": 9.16,
+      "wall_thickness": 0.32,
+      "interior_wall_clear_width": 15.16,
+      "interior_wall_clear_depth": 23.36,
+      "floor_level": 0.08,
+      "central_width_between_catwalks": 12.24,
+      "catwalk_deck_top": 4.95,
+      "truss_bottom_chord_centre": 7.32,
+      "rigging_grid_centre": 6.48,
+      "sign_baseline": 8.0,
+      "sign_letter_height": 1.02,
+      "sign_maximum_width": 4.95
+    },
+    "bounds_blender_xyz": [
+      [
+        -8.055,
+        -12.89,
+        -0.2
+      ],
+      [
+        8.055,
+        13.02,
+        11.44
+      ]
+    ],
+    "unity_front": "-Z with model root Euler (-90,180,0)",
+    "source_meshes": 634,
+    "export_meshes": 19,
+    "triangles": 18104,
+    "planning_validation": {
+      "circulation_headroom_samples": 161,
+      "minimum_sampled_headroom": 2.27,
+      "clear_floor_samples": 40,
+      "minimum_sampled_filming_height": 6.325,
+      "scope": "Geometric planning checks, not engineering or regulatory certification"
+    },
+    "degenerate_faces": 0,
+    "all_source_components_closed_and_outward": true,
+    "export_groups": [
+      "ExteriorWalls",
+      "MasonryFraming",
+      "Clerestory",
+      "BlackoutShutters",
+      "PersonnelDoors",
+      "MainDoorLeft",
+      "MainDoorRight",
+      "EntranceCanopies",
+      "RearVentilation",
+      "Roof",
+      "RoofGlazing",
+      "RoofVents",
+      "InteriorFloor",
+      "PrimaryStructure",
+      "RiggingPrimary",
+      "CirculationAllowances",
+      "CatwalkStructure",
+      "CirculationGuards",
+      "Stairs"
+    ],
+    "materials": [
+      {
+        "name": "C1_Stucco",
+        "linear_rgb": [
+          0.57,
+          0.5,
+          0.39
+        ],
+        "metallic": 0,
+        "roughness": 0.86
+      },
+      {
+        "name": "C1_Trim",
+        "linear_rgb": [
+          0.63,
+          0.56,
+          0.45
+        ],
+        "metallic": 0,
+        "roughness": 0.8
+      },
+      {
+        "name": "C1_Base",
+        "linear_rgb": [
+          0.24,
+          0.235,
+          0.22
+        ],
+        "metallic": 0,
+        "roughness": 0.91
+      },
+      {
+        "name": "C1_Roof",
+        "linear_rgb": [
+          0.13,
+          0.14,
+          0.145
+        ],
+        "metallic": 0.65,
+        "roughness": 0.55
+      },
+      {
+        "name": "C1_Timber",
+        "linear_rgb": [
+          0.045,
+          0.037,
+          0.029
+        ],
+        "metallic": 0,
+        "roughness": 0.8
+      },
+      {
+        "name": "C1_Steel",
+        "linear_rgb": [
+          0.055,
+          0.061,
+          0.061
+        ],
+        "metallic": 0.65,
+        "roughness": 0.52
+      },
+      {
+        "name": "C1_GlassStudy",
+        "linear_rgb": [
+          0.095,
+          0.145,
+          0.17
+        ],
+        "metallic": 0.3,
+        "roughness": 0.24
+      },
+      {
+        "name": "C1_Blackout",
+        "linear_rgb": [
+          0.023,
+          0.022,
+          0.021
+        ],
+        "metallic": 0,
+        "roughness": 0.98
+      },
+      {
+        "name": "C1_Floor",
+        "linear_rgb": [
+          0.15,
+          0.14,
+          0.12
+        ],
+        "metallic": 0,
+        "roughness": 0.92
+      }
+    ],
+    "roof_daylight_control": "Closed opaque shutters under roof ribbons and clerestories; paths and acoustic seals await detailed design",
+    "structural_planning": {
+      "frames_y": [
+        -11.2,
+        -5.6,
+        0,
+        5.6,
+        11.2
+      ],
+      "system": "Five clear-span bowstring roof trusses with ties, webs and longitudinal purlins",
+      "catwalks": "Side catwalks supported from primary columns by beams and knee braces; rear crosswalk on service-edge supports",
+      "rigging": "Separate orthogonal grid hung from four truss bottom chords, stopping at Y=5.6 before the rear stair/crosswalk headroom zone",
+      "stairs": {
+        "risers": 28,
+        "rise": 0.17392857142857143,
+        "going": 0.28,
+        "clear_width": 1.2,
+        "intermediate_landing": 1.2,
+        "top_landing": 1.2,
+        "position": "Rear service band ahead of crosswalk; no deck over upper stair",
+        "headroom_below_ties": 2.2700000000000005
+      },
+      "clear_central_floor_rectangle": [
+        -6.0,
+        6.0,
+        -10.8,
+        8.15
+      ]
+    },
+    "exclusions": [
+      "final materials and UVs",
+      "lamps",
+      "utilities",
+      "fasteners",
+      "roof panel seams",
+      "final connections and rigging fittings",
+      "grating detail",
+      "loose props",
+      "baked stage lettering"
+    ],
+    "anchors_unity_local": {
+      "MainPortal": [
+        0,
+        0.08,
+        -12.05
+      ],
+      "FrontPersonnelRight": [
+        5.7,
+        0.08,
+        -12.5
+      ],
+      "FrontPersonnelLeft": [
+        -5.97,
+        0.08,
+        -12.5
+      ],
+      "FilmingCentre": [
+        0,
+        0.08,
+        0
+      ],
+      "SignBaseline": [
+        0,
+        8.0,
+        -12.035
+      ]
+    }
+  },
+  "export_sha256": "4595ea5df6d41522ab519e3380e89c921354b69a97bb1d50f1049ae209bfb40b",
+  "unity_model_sha256": "4595ea5df6d41522ab519e3380e89c921354b69a97bb1d50f1049ae209bfb40b",
+  "protected_files": {
+    "date": "2026-09-22",
+    "revision": "02",
+    "files_checked": 483,
+    "changed": [],
+    "scope": "Original scenes, scripts, Stage/Administration source and assets, project settings and packages"
+  }
+}

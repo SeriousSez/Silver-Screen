@@ -1,0 +1,270 @@
+{
+  "date": "2026-09-22",
+  "revision": "03",
+  "status": "Ready for visual review with rendering and integration limitations",
+  "scope": "High-fidelity production geometry candidate; visual approval pending",
+  "unity": "6000.5.9f1",
+  "pipeline": "Existing PC URP 17.5.0, Studio sky, directional light and volume; candidate adds permanent worklights and a 128px interior reflection probe",
+  "validation": "[Log] Floor hit (0.00, 0.08, -12.00)\n[Log] CHECK missingScripts=0 importedMeshChannelsInvalid=0 renderers=30 trianglesWithSign=523860 distinctMaterials=19 colliders=5 centralHits=0 floorHits=1 stage1GlyphVertices=2704 stage2GlyphVertices=3368 stageRestored=1\n[Log] Permanent spot lights=31 reflection=Stage1InteriorReflection cubemapSize=128 productionRegistration=False\n[Log] Editor Unity=6000.5.9f1 compiling=False playing=False target=StandaloneWindows64 active=Assets/Scenes/Studio.unity dirty=True\n[Log] Review outside build settings=True\n[Log] Original Studio has not been saved or reloaded. Play Mode, navigation, door movement, stair collision, player build and performance benchmark not exercised.",
+  "capture_execution": "[Log] Final production comparison set captured with baked interior reflection in Unity.",
+  "console_after": {
+    "success": true,
+    "message": "Tool 'GetConsoleLogs' executed successfully",
+    "data": {
+      "logs": [],
+      "totalCount": 0,
+      "errorCount": 0,
+      "warningCount": 0
+    }
+  },
+  "working_scene": "Original Studio remains open and dirty with the user-placed candidate. Its unsaved state was preserved; a separate snapshot exists under ReviewSnapshots. Original Studio was not saved or reloaded.",
+  "diagnostics": "Temporary shadow, normal-map, AO, renderer-feature and post-processing diagnostics restored their original states. Narrow bevel/board-edge aliasing improves at native 3K captures; lower-resolution shimmer remains a rendering/LOD concern. A validation script initially checked the generated sign for textured-mesh UV/tangent channels; corrected to check imported model meshes. Earlier preview-save/URP API setup errors were fixed. No Console clear was requested.",
+  "captures": [
+    {
+      "file": "01_front_three_quarter.png",
+      "view": "Front three-quarter",
+      "size": [
+        3072,
+        1030
+      ],
+      "sha256": "258c784ef7b871e03e20f48f9516c47ccf47991ed3533eb29c77be5eac6b677e",
+      "visually_inspected": true
+    },
+    {
+      "file": "02_front.png",
+      "view": "Straight front",
+      "size": [
+        2910,
+        1434
+      ],
+      "sha256": "6666e9c36dd00d8bd335781ad41230e57d4efcd654e717ba1c15a06040c51ba7",
+      "visually_inspected": true
+    },
+    {
+      "file": "03_side.png",
+      "view": "Opposite side",
+      "size": [
+        3354,
+        1434
+      ],
+      "sha256": "e5a78d800b6b80309ce1748e8ebaf9a03a28f94a952e369e1d3df0d954329cf6",
+      "visually_inspected": true
+    },
+    {
+      "file": "04_rear.png",
+      "view": "Rear",
+      "size": [
+        2784,
+        1434
+      ],
+      "sha256": "cdd1ab767fabd2e0a3fa7b0e4bb46837842a38ed1cf58c5a743bf495b5a9dff7",
+      "visually_inspected": true
+    },
+    {
+      "file": "05_roof.png",
+      "view": "Roof overview",
+      "size": [
+        3200,
+        2000
+      ],
+      "sha256": "3ea22a8d8e075e94aa06b19285bdefe30d92b6a4d13abfd96d055a27ef514bb0",
+      "visually_inspected": true
+    },
+    {
+      "file": "13_main_door_detail.png",
+      "view": "Main stage doors",
+      "size": [
+        3200,
+        2000
+      ],
+      "sha256": "70d7e8ab8be667bd3d4047f761abf2742cece0d8adb72f59b85b7a1e92f76a78",
+      "visually_inspected": true
+    },
+    {
+      "file": "14_personnel_entrance.png",
+      "view": "Personnel entrance",
+      "size": [
+        2320,
+        2000
+      ],
+      "sha256": "41ec1b2b2bfb3e1a37b573a991a6545d5a4d68b087fce58981543bb5b01671ba",
+      "visually_inspected": true
+    },
+    {
+      "file": "18_clerestory_detail.png",
+      "view": "Clerestory construction",
+      "size": [
+        3200,
+        2000
+      ],
+      "sha256": "7290952ae0ed48a5c81fa8de90231f45fbf7d3bdbd037e50f251a6da1492103b",
+      "visually_inspected": true
+    },
+    {
+      "file": "19_roof_construction.png",
+      "view": "Roof construction",
+      "size": [
+        3200,
+        2000
+      ],
+      "sha256": "467d33166b56f4194a2a352d4983c51bf158ffe49e6dff6d415f2cf546d6f3f0",
+      "visually_inspected": true
+    },
+    {
+      "file": "20_door_pulls_close.png",
+      "view": "Door pulls \u00b7 close inspection",
+      "size": [
+        3200,
+        2000
+      ],
+      "sha256": "fa6cfa41749593dffbaec2a9e5df22c9576eb91afa9a2dcafacb542abc513d8f",
+      "visually_inspected": true
+    },
+    {
+      "file": "21_service_construction.png",
+      "view": "Side service construction",
+      "size": [
+        3200,
+        2000
+      ],
+      "sha256": "e35145602132db0646a5f368aa2ac8d426804ac696523005d329effbe0c9eb86",
+      "visually_inspected": true
+    },
+    {
+      "file": "22_rear_services.png",
+      "view": "Rear service construction",
+      "size": [
+        3200,
+        2000
+      ],
+      "sha256": "69ade6612221173fb17dab6dd0068e07f72ce3550f0bac9a52d05b4fe4a12628",
+      "visually_inspected": true
+    },
+    {
+      "file": "09_interior_wide.png",
+      "view": "Interior \u00b7 looking inward",
+      "size": [
+        3200,
+        2000
+      ],
+      "sha256": "a67874be8352a44b4f5fc337bf0769a30902a49dbbf357fda22f1b628048d76f",
+      "visually_inspected": true
+    },
+    {
+      "file": "12_interior_reverse.png",
+      "view": "Interior \u00b7 toward stage doors",
+      "size": [
+        3200,
+        2000
+      ],
+      "sha256": "1d17a2977285c68b5228b3f8cfe2d4561066a011c07a01bc8931d3d2dc1044ee",
+      "visually_inspected": true
+    },
+    {
+      "file": "15_truss_and_rigging.png",
+      "view": "Roof trusses and rigging",
+      "size": [
+        3200,
+        2000
+      ],
+      "sha256": "24bf0af1a3f2583665638d01e9a2fb38a4808617288630a4db7e596aee165ac7",
+      "visually_inspected": true
+    },
+    {
+      "file": "16_stair_and_catwalk.png",
+      "view": "Stair and catwalk",
+      "size": [
+        3200,
+        2000
+      ],
+      "sha256": "ebc2b0e3dfb4f0cc7c512674f4cfec656d00f3e22ee61c036d5fc97527c0b56c",
+      "visually_inspected": true
+    },
+    {
+      "file": "17_inside_stage_doors.png",
+      "view": "Stage doors from inside",
+      "size": [
+        3200,
+        2000
+      ],
+      "sha256": "2955bd26858c1a5c87bcc63b77fda9a6313ade1a0e915fe40455153f0496f914",
+      "visually_inspected": true
+    },
+    {
+      "file": "10_structure_cutaway.png",
+      "view": "Structure cutaway",
+      "size": [
+        3200,
+        2000
+      ],
+      "sha256": "32995e877b3253403eff121855bb9253985f7446bb6d5d7e9878645d853d7215",
+      "visually_inspected": true
+    },
+    {
+      "file": "11_rear_circulation_cutaway.png",
+      "view": "Rear circulation cutaway",
+      "size": [
+        3200,
+        2000
+      ],
+      "sha256": "0701012ac23b98170d583359376dbf6148c892843db3ce9e981b72596348affb",
+      "visually_inspected": true
+    },
+    {
+      "file": "07_management_candidate.png",
+      "view": "Management camera \u00b7 candidate framed",
+      "size": [
+        1600,
+        1000
+      ],
+      "sha256": "c3fb6169537283c217d81ea85cf8d912a72d18e78c63530ae7a50284b40a0d72",
+      "visually_inspected": true
+    },
+    {
+      "file": "06_management_original_pose.png",
+      "view": "Management camera \u00b7 saved pose",
+      "size": [
+        1600,
+        1000
+      ],
+      "sha256": "66c9cac43cac38beaa6bdaa76cbf6465dd2e7b2237aa5dc98e6400b1a6a1c8b6",
+      "visually_inspected": true
+    },
+    {
+      "file": "08_beside_administration.png",
+      "view": "Administration context",
+      "size": [
+        3200,
+        2000
+      ],
+      "sha256": "73d81fad205bcf43f746371d4d20a7606564731586be4188fb7e3431ab8ba3b6",
+      "visually_inspected": true
+    }
+  ],
+  "protected_files": {
+    "date": "2026-09-22",
+    "revision": "03",
+    "files_checked": 483,
+    "changed": [],
+    "candidate_existing_guids_checked": 16,
+    "candidate_guid_changes": [],
+    "scope": "Original scenes, scripts, Stage/Administration source and assets, project settings and packages"
+  },
+  "not_run": [
+    "Play Mode gameplay",
+    "player build",
+    "navigation rebake",
+    "walkable stair/catwalk collision",
+    "animated door and blackout integration",
+    "multi-building performance/LOD benchmark",
+    "structural load calculations",
+    "acoustic simulation"
+  ],
+  "reflection_validation": "Final six-face cubemap visually inspected: real interior geometry and permanent lighting. Native preview bake initially captured only sky; final bake uses a temporary regular-scene candidate copy with reflection-static flags and isolated layer.",
+  "gallery_validation": {
+    "local_links_checked": 93,
+    "missing": 0,
+    "browser_layout": "Not verified: Browser URL policy blocked the local file URL; no workaround attempted."
+  },
+  "cleanup": "[Log] Temporary candidate preview closed. Active scene=Assets/Scenes/Studio.unity dirty=True playing=False. Original Studio was not saved or reloaded."
+}
