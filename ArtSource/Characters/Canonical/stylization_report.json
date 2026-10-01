@@ -1,0 +1,50 @@
+{
+  "study": "SilverScreen_ArtStudy01",
+  "source_vertex_count": 41816,
+  "topology_changed": false,
+  "uv_changed": false,
+  "head_width_scale": 1.045,
+  "head_height_scale": 1.03,
+  "head_depth_scale": 1.025,
+  "max_displacement_m": 0.010630208957021624,
+  "changed_vertices": 18705,
+  "eye_centres_m": {
+    "eye_l": [
+      -0.011808083392679691,
+      0.08594757318496704,
+      1.6251657009124756
+    ],
+    "eye_r": [
+      0.043088771402835846,
+      0.08225616067647934,
+      1.6244608163833618
+    ]
+  },
+  "feature_uv": {
+    "eye_l": [
+      0.8360002040863037,
+      0.26106685400009155
+    ],
+    "eye_r": [
+      0.7329064607620239,
+      0.2539065480232239
+    ],
+    "mouth": [
+      0.7893048524856567,
+      0.10684286803007126
+    ],
+    "nose": [
+      0.787030816078186,
+      0.19343286752700806
+    ]
+  },
+  "material_faces": {
+    "SS_Study_Skin": 17132,
+    "SS_Study_Hair": 1768,
+    "SS_Study_Cloth": 16138,
+    "SS_Study_Leather": 2652,
+    "SS_Canonical_Eyes": 3968
+  },
+  "rendered_height_m": 1.7597312924917787,
+  "status": "one restrained study; visual approval pending; no animation approval"
+}

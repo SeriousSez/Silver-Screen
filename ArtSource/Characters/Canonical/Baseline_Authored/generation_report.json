@@ -1,0 +1,19 @@
+{
+  "status": "single visual candidate; approval pending",
+  "source": "Renderpeople Eric Rigged 001",
+  "rig_version": "canonical-authored-v0",
+  "height_m": 1.750000118976459,
+  "feet_z": 2.3283064365386963e-10,
+  "vertices": 41816,
+  "triangles": 83316,
+  "bones": 88,
+  "model": "Assets\\SilverScreen\\Art\\Characters\\Canonical\\Models\\CanonicalAdult.fbx",
+  "unity_forward": "+Z",
+  "material": "SS_Canonical_Authored",
+  "limitations": [
+    "Clothed source has no complete hidden nude body",
+    "Garments share one source mesh and atlas; not a modular wardrobe",
+    "No customization variants or animation approval",
+    "Period cut and stylization require explicit visual review"
+  ]
+}

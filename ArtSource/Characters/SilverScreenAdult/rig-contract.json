@@ -1,0 +1,1434 @@
+{
+  "version": "silverscreen-adult-authoring-v1",
+  "status": "provisional authoring scaffold",
+  "unit": "metre",
+  "up": "+Z",
+  "forward": "-Y",
+  "rootOrigin": "feet-ground",
+  "anatomicalHeightMetres": 1.78,
+  "bones": [
+    {
+      "name": "Root",
+      "parent": null,
+      "head": [
+        0,
+        0,
+        0
+      ],
+      "tail": [
+        0,
+        0,
+        0.12
+      ],
+      "role": "root"
+    },
+    {
+      "name": "Hips",
+      "parent": "Root",
+      "head": [
+        0,
+        0,
+        0.98
+      ],
+      "tail": [
+        0,
+        0,
+        1.075
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "Spine",
+      "parent": "Hips",
+      "head": [
+        0,
+        0,
+        1.075
+      ],
+      "tail": [
+        0,
+        0,
+        1.23
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "Spine1",
+      "parent": "Spine",
+      "head": [
+        0,
+        0,
+        1.23
+      ],
+      "tail": [
+        0,
+        0,
+        1.37
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "Spine2",
+      "parent": "Spine1",
+      "head": [
+        0,
+        0,
+        1.37
+      ],
+      "tail": [
+        0,
+        0,
+        1.47
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "Neck",
+      "parent": "Spine2",
+      "head": [
+        0,
+        0,
+        1.47
+      ],
+      "tail": [
+        0,
+        -0.004,
+        1.555
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "Head",
+      "parent": "Neck",
+      "head": [
+        0,
+        -0.004,
+        1.555
+      ],
+      "tail": [
+        0,
+        0,
+        1.745
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "Jaw",
+      "parent": "Head",
+      "head": [
+        0,
+        -0.012,
+        1.625
+      ],
+      "tail": [
+        0,
+        -0.087,
+        1.574
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftEye",
+      "parent": "Head",
+      "head": [
+        0.032,
+        -0.071,
+        1.665
+      ],
+      "tail": [
+        0.032,
+        -0.096,
+        1.665
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftShoulder",
+      "parent": "Spine2",
+      "head": [
+        0.035,
+        0,
+        1.465
+      ],
+      "tail": [
+        0.185,
+        0,
+        1.46
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftArm",
+      "parent": "LeftShoulder",
+      "head": [
+        0.185,
+        0,
+        1.46
+      ],
+      "tail": [
+        0.475,
+        0,
+        1.46
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftForeArm",
+      "parent": "LeftArm",
+      "head": [
+        0.475,
+        0,
+        1.46
+      ],
+      "tail": [
+        0.725,
+        0,
+        1.46
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftHand",
+      "parent": "LeftForeArm",
+      "head": [
+        0.725,
+        0,
+        1.46
+      ],
+      "tail": [
+        0.803,
+        0,
+        1.46
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftHandIndex1",
+      "parent": "LeftHand",
+      "head": [
+        0.796,
+        -0.027,
+        1.46
+      ],
+      "tail": [
+        0.82975,
+        -0.027,
+        1.46
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftHandIndex2",
+      "parent": "LeftHandIndex1",
+      "head": [
+        0.82975,
+        -0.027,
+        1.46
+      ],
+      "tail": [
+        0.85375,
+        -0.027,
+        1.46
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftHandIndex3",
+      "parent": "LeftHandIndex2",
+      "head": [
+        0.85375,
+        -0.027,
+        1.46
+      ],
+      "tail": [
+        0.871,
+        -0.027,
+        1.46
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftHandMiddle1",
+      "parent": "LeftHand",
+      "head": [
+        0.796,
+        -0.009,
+        1.46
+      ],
+      "tail": [
+        0.8338000000000001,
+        -0.009,
+        1.46
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftHandMiddle2",
+      "parent": "LeftHandMiddle1",
+      "head": [
+        0.8338000000000001,
+        -0.009,
+        1.46
+      ],
+      "tail": [
+        0.8606800000000001,
+        -0.009,
+        1.46
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftHandMiddle3",
+      "parent": "LeftHandMiddle2",
+      "head": [
+        0.8606800000000001,
+        -0.009,
+        1.46
+      ],
+      "tail": [
+        0.8800000000000001,
+        -0.009,
+        1.46
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftHandRing1",
+      "parent": "LeftHand",
+      "head": [
+        0.796,
+        0.009,
+        1.46
+      ],
+      "tail": [
+        0.8311000000000001,
+        0.009,
+        1.46
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftHandRing2",
+      "parent": "LeftHandRing1",
+      "head": [
+        0.8311000000000001,
+        0.009,
+        1.46
+      ],
+      "tail": [
+        0.85606,
+        0.009,
+        1.46
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftHandRing3",
+      "parent": "LeftHandRing2",
+      "head": [
+        0.85606,
+        0.009,
+        1.46
+      ],
+      "tail": [
+        0.874,
+        0.009,
+        1.46
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftHandPinky1",
+      "parent": "LeftHand",
+      "head": [
+        0.788,
+        0.026,
+        1.46
+      ],
+      "tail": [
+        0.8150000000000001,
+        0.026,
+        1.46
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftHandPinky2",
+      "parent": "LeftHandPinky1",
+      "head": [
+        0.8150000000000001,
+        0.026,
+        1.46
+      ],
+      "tail": [
+        0.8342,
+        0.026,
+        1.46
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftHandPinky3",
+      "parent": "LeftHandPinky2",
+      "head": [
+        0.8342,
+        0.026,
+        1.46
+      ],
+      "tail": [
+        0.8480000000000001,
+        0.026,
+        1.46
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftHandThumb1",
+      "parent": "LeftHand",
+      "head": [
+        0.745,
+        -0.02,
+        1.449
+      ],
+      "tail": [
+        0.769,
+        -0.043,
+        1.445
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftHandThumb2",
+      "parent": "LeftHandThumb1",
+      "head": [
+        0.769,
+        -0.043,
+        1.445
+      ],
+      "tail": [
+        0.794,
+        -0.053,
+        1.445
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftHandThumb3",
+      "parent": "LeftHandThumb2",
+      "head": [
+        0.794,
+        -0.053,
+        1.445
+      ],
+      "tail": [
+        0.816,
+        -0.062,
+        1.445
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftUpLeg",
+      "parent": "Hips",
+      "head": [
+        0.096,
+        0,
+        0.98
+      ],
+      "tail": [
+        0.103,
+        -0.018,
+        0.505
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftLeg",
+      "parent": "LeftUpLeg",
+      "head": [
+        0.103,
+        -0.018,
+        0.505
+      ],
+      "tail": [
+        0.102,
+        0,
+        0.087
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftFoot",
+      "parent": "LeftLeg",
+      "head": [
+        0.102,
+        0,
+        0.087
+      ],
+      "tail": [
+        0.102,
+        -0.137,
+        0.042
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftToeBase",
+      "parent": "LeftFoot",
+      "head": [
+        0.102,
+        -0.137,
+        0.042
+      ],
+      "tail": [
+        0.102,
+        -0.233,
+        0.027
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftArmTwist1",
+      "parent": "LeftArm",
+      "head": [
+        0.28070002794265747,
+        0.0,
+        1.4600000381469727
+      ],
+      "tail": [
+        0.33869999647140503,
+        0.0,
+        1.4600000381469727
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftArmTwist2",
+      "parent": "LeftArm",
+      "head": [
+        0.37640002369880676,
+        0.0,
+        1.4600000381469727
+      ],
+      "tail": [
+        0.4344000220298767,
+        0.0,
+        1.4600000381469727
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftForeArmTwist1",
+      "parent": "LeftForeArm",
+      "head": [
+        0.5575000047683716,
+        0.0,
+        1.4600000381469727
+      ],
+      "tail": [
+        0.6075000166893005,
+        0.0,
+        1.4600000381469727
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftForeArmTwist2",
+      "parent": "LeftForeArm",
+      "head": [
+        0.64000004529953,
+        0.0,
+        1.4600000381469727
+      ],
+      "tail": [
+        0.690000057220459,
+        0.0,
+        1.4600000381469727
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftUpLegTwist1",
+      "parent": "LeftUpLeg",
+      "head": [
+        0.09831000119447708,
+        -0.005940000526607037,
+        0.8232500553131104
+      ],
+      "tail": [
+        0.09971000254154205,
+        -0.009539999067783356,
+        0.7282500267028809
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftUpLegTwist2",
+      "parent": "LeftUpLeg",
+      "head": [
+        0.10062000155448914,
+        -0.011880000121891499,
+        0.6664999723434448
+      ],
+      "tail": [
+        0.10202000290155411,
+        -0.015479999594390392,
+        0.5715000033378601
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftLegTwist1",
+      "parent": "LeftLeg",
+      "head": [
+        0.10266999900341034,
+        -0.012059998698532581,
+        0.36705997586250305
+      ],
+      "tail": [
+        0.10246999561786652,
+        -0.008460000157356262,
+        0.28346002101898193
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftLegTwist2",
+      "parent": "LeftLeg",
+      "head": [
+        0.10233999788761139,
+        -0.006119999103248119,
+        0.22911998629570007
+      ],
+      "tail": [
+        0.10213999450206757,
+        -0.0025199996307492256,
+        0.14551998674869537
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftScapula",
+      "parent": "Spine2",
+      "head": [
+        0.07,
+        0.045,
+        1.407
+      ],
+      "tail": [
+        0.16,
+        0.045,
+        1.45
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "LeftHandIK",
+      "parent": "Root",
+      "head": [
+        0.725,
+        0,
+        1.46
+      ],
+      "tail": [
+        0.725,
+        -0.06,
+        1.46
+      ],
+      "role": "authoring_anchor"
+    },
+    {
+      "name": "LeftFootIK",
+      "parent": "Root",
+      "head": [
+        0.102,
+        0,
+        0.087
+      ],
+      "tail": [
+        0.102,
+        -0.09,
+        0.087
+      ],
+      "role": "authoring_anchor"
+    },
+    {
+      "name": "LeftElbowPole",
+      "parent": "Root",
+      "head": [
+        0.475,
+        0.35,
+        1.46
+      ],
+      "tail": [
+        0.475,
+        0.35,
+        1.52
+      ],
+      "role": "authoring_anchor"
+    },
+    {
+      "name": "LeftKneePole",
+      "parent": "Root",
+      "head": [
+        0.103,
+        -0.4,
+        0.505
+      ],
+      "tail": [
+        0.103,
+        -0.4,
+        0.565
+      ],
+      "role": "authoring_anchor"
+    },
+    {
+      "name": "LeftGrip",
+      "parent": "LeftHand",
+      "head": [
+        0.77,
+        -0.012,
+        1.448
+      ],
+      "tail": [
+        0.77,
+        -0.065,
+        1.448
+      ],
+      "role": "interaction_anchor"
+    },
+    {
+      "name": "LeftSoleContact",
+      "parent": "LeftFoot",
+      "head": [
+        0.102,
+        -0.08,
+        0
+      ],
+      "tail": [
+        0.102,
+        -0.14,
+        0
+      ],
+      "role": "contact_anchor"
+    },
+    {
+      "name": "LeftEyeAim",
+      "parent": "Root",
+      "head": [
+        0.032,
+        -0.75,
+        1.665
+      ],
+      "tail": [
+        0.032,
+        -0.81,
+        1.665
+      ],
+      "role": "authoring_anchor"
+    },
+    {
+      "name": "RightEye",
+      "parent": "Head",
+      "head": [
+        -0.032,
+        -0.071,
+        1.665
+      ],
+      "tail": [
+        -0.032,
+        -0.096,
+        1.665
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "RightShoulder",
+      "parent": "Spine2",
+      "head": [
+        -0.035,
+        0,
+        1.465
+      ],
+      "tail": [
+        -0.185,
+        0,
+        1.46
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "RightArm",
+      "parent": "RightShoulder",
+      "head": [
+        -0.185,
+        0,
+        1.46
+      ],
+      "tail": [
+        -0.475,
+        0,
+        1.46
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "RightForeArm",
+      "parent": "RightArm",
+      "head": [
+        -0.475,
+        0,
+        1.46
+      ],
+      "tail": [
+        -0.725,
+        0,
+        1.46
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "RightHand",
+      "parent": "RightForeArm",
+      "head": [
+        -0.725,
+        0,
+        1.46
+      ],
+      "tail": [
+        -0.803,
+        0,
+        1.46
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "RightHandIndex1",
+      "parent": "RightHand",
+      "head": [
+        -0.796,
+        -0.027,
+        1.46
+      ],
+      "tail": [
+        -0.82975,
+        -0.027,
+        1.46
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "RightHandIndex2",
+      "parent": "RightHandIndex1",
+      "head": [
+        -0.82975,
+        -0.027,
+        1.46
+      ],
+      "tail": [
+        -0.85375,
+        -0.027,
+        1.46
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "RightHandIndex3",
+      "parent": "RightHandIndex2",
+      "head": [
+        -0.85375,
+        -0.027,
+        1.46
+      ],
+      "tail": [
+        -0.871,
+        -0.027,
+        1.46
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "RightHandMiddle1",
+      "parent": "RightHand",
+      "head": [
+        -0.796,
+        -0.009,
+        1.46
+      ],
+      "tail": [
+        -0.8338000000000001,
+        -0.009,
+        1.46
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "RightHandMiddle2",
+      "parent": "RightHandMiddle1",
+      "head": [
+        -0.8338000000000001,
+        -0.009,
+        1.46
+      ],
+      "tail": [
+        -0.8606800000000001,
+        -0.009,
+        1.46
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "RightHandMiddle3",
+      "parent": "RightHandMiddle2",
+      "head": [
+        -0.8606800000000001,
+        -0.009,
+        1.46
+      ],
+      "tail": [
+        -0.8800000000000001,
+        -0.009,
+        1.46
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "RightHandRing1",
+      "parent": "RightHand",
+      "head": [
+        -0.796,
+        0.009,
+        1.46
+      ],
+      "tail": [
+        -0.8311000000000001,
+        0.009,
+        1.46
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "RightHandRing2",
+      "parent": "RightHandRing1",
+      "head": [
+        -0.8311000000000001,
+        0.009,
+        1.46
+      ],
+      "tail": [
+        -0.85606,
+        0.009,
+        1.46
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "RightHandRing3",
+      "parent": "RightHandRing2",
+      "head": [
+        -0.85606,
+        0.009,
+        1.46
+      ],
+      "tail": [
+        -0.874,
+        0.009,
+        1.46
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "RightHandPinky1",
+      "parent": "RightHand",
+      "head": [
+        -0.788,
+        0.026,
+        1.46
+      ],
+      "tail": [
+        -0.8150000000000001,
+        0.026,
+        1.46
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "RightHandPinky2",
+      "parent": "RightHandPinky1",
+      "head": [
+        -0.8150000000000001,
+        0.026,
+        1.46
+      ],
+      "tail": [
+        -0.8342,
+        0.026,
+        1.46
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "RightHandPinky3",
+      "parent": "RightHandPinky2",
+      "head": [
+        -0.8342,
+        0.026,
+        1.46
+      ],
+      "tail": [
+        -0.8480000000000001,
+        0.026,
+        1.46
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "RightHandThumb1",
+      "parent": "RightHand",
+      "head": [
+        -0.745,
+        -0.02,
+        1.449
+      ],
+      "tail": [
+        -0.769,
+        -0.043,
+        1.445
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "RightHandThumb2",
+      "parent": "RightHandThumb1",
+      "head": [
+        -0.769,
+        -0.043,
+        1.445
+      ],
+      "tail": [
+        -0.794,
+        -0.053,
+        1.445
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "RightHandThumb3",
+      "parent": "RightHandThumb2",
+      "head": [
+        -0.794,
+        -0.053,
+        1.445
+      ],
+      "tail": [
+        -0.816,
+        -0.062,
+        1.445
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "RightUpLeg",
+      "parent": "Hips",
+      "head": [
+        -0.096,
+        0,
+        0.98
+      ],
+      "tail": [
+        -0.103,
+        -0.018,
+        0.505
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "RightLeg",
+      "parent": "RightUpLeg",
+      "head": [
+        -0.103,
+        -0.018,
+        0.505
+      ],
+      "tail": [
+        -0.102,
+        0,
+        0.087
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "RightFoot",
+      "parent": "RightLeg",
+      "head": [
+        -0.102,
+        0,
+        0.087
+      ],
+      "tail": [
+        -0.102,
+        -0.137,
+        0.042
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "RightToeBase",
+      "parent": "RightFoot",
+      "head": [
+        -0.102,
+        -0.137,
+        0.042
+      ],
+      "tail": [
+        -0.102,
+        -0.233,
+        0.027
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "RightArmTwist1",
+      "parent": "RightArm",
+      "head": [
+        -0.28070002794265747,
+        0.0,
+        1.4600000381469727
+      ],
+      "tail": [
+        -0.33869999647140503,
+        0.0,
+        1.4600000381469727
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "RightArmTwist2",
+      "parent": "RightArm",
+      "head": [
+        -0.37640002369880676,
+        0.0,
+        1.4600000381469727
+      ],
+      "tail": [
+        -0.4344000220298767,
+        0.0,
+        1.4600000381469727
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "RightForeArmTwist1",
+      "parent": "RightForeArm",
+      "head": [
+        -0.5575000047683716,
+        0.0,
+        1.4600000381469727
+      ],
+      "tail": [
+        -0.6075000166893005,
+        0.0,
+        1.4600000381469727
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "RightForeArmTwist2",
+      "parent": "RightForeArm",
+      "head": [
+        -0.64000004529953,
+        0.0,
+        1.4600000381469727
+      ],
+      "tail": [
+        -0.690000057220459,
+        0.0,
+        1.4600000381469727
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "RightUpLegTwist1",
+      "parent": "RightUpLeg",
+      "head": [
+        -0.09831000119447708,
+        -0.005940000526607037,
+        0.8232500553131104
+      ],
+      "tail": [
+        -0.09971000254154205,
+        -0.009539999067783356,
+        0.7282500267028809
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "RightUpLegTwist2",
+      "parent": "RightUpLeg",
+      "head": [
+        -0.10062000155448914,
+        -0.011880000121891499,
+        0.6664999723434448
+      ],
+      "tail": [
+        -0.10202000290155411,
+        -0.015479999594390392,
+        0.5715000033378601
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "RightLegTwist1",
+      "parent": "RightLeg",
+      "head": [
+        -0.10266999900341034,
+        -0.012059998698532581,
+        0.36705997586250305
+      ],
+      "tail": [
+        -0.10246999561786652,
+        -0.008460000157356262,
+        0.28346002101898193
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "RightLegTwist2",
+      "parent": "RightLeg",
+      "head": [
+        -0.10233999788761139,
+        -0.006119999103248119,
+        0.22911998629570007
+      ],
+      "tail": [
+        -0.10213999450206757,
+        -0.0025199996307492256,
+        0.14551998674869537
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "RightScapula",
+      "parent": "Spine2",
+      "head": [
+        -0.07,
+        0.045,
+        1.407
+      ],
+      "tail": [
+        -0.16,
+        0.045,
+        1.45
+      ],
+      "role": "deform"
+    },
+    {
+      "name": "RightHandIK",
+      "parent": "Root",
+      "head": [
+        -0.725,
+        0,
+        1.46
+      ],
+      "tail": [
+        -0.725,
+        -0.06,
+        1.46
+      ],
+      "role": "authoring_anchor"
+    },
+    {
+      "name": "RightFootIK",
+      "parent": "Root",
+      "head": [
+        -0.102,
+        0,
+        0.087
+      ],
+      "tail": [
+        -0.102,
+        -0.09,
+        0.087
+      ],
+      "role": "authoring_anchor"
+    },
+    {
+      "name": "RightElbowPole",
+      "parent": "Root",
+      "head": [
+        -0.475,
+        0.35,
+        1.46
+      ],
+      "tail": [
+        -0.475,
+        0.35,
+        1.52
+      ],
+      "role": "authoring_anchor"
+    },
+    {
+      "name": "RightKneePole",
+      "parent": "Root",
+      "head": [
+        -0.103,
+        -0.4,
+        0.505
+      ],
+      "tail": [
+        -0.103,
+        -0.4,
+        0.565
+      ],
+      "role": "authoring_anchor"
+    },
+    {
+      "name": "RightGrip",
+      "parent": "RightHand",
+      "head": [
+        -0.77,
+        -0.012,
+        1.448
+      ],
+      "tail": [
+        -0.77,
+        -0.065,
+        1.448
+      ],
+      "role": "interaction_anchor"
+    },
+    {
+      "name": "RightSoleContact",
+      "parent": "RightFoot",
+      "head": [
+        -0.102,
+        -0.08,
+        0
+      ],
+      "tail": [
+        -0.102,
+        -0.14,
+        0
+      ],
+      "role": "contact_anchor"
+    },
+    {
+      "name": "RightEyeAim",
+      "parent": "Root",
+      "head": [
+        -0.032,
+        -0.75,
+        1.665
+      ],
+      "tail": [
+        -0.032,
+        -0.81,
+        1.665
+      ],
+      "role": "authoring_anchor"
+    },
+    {
+      "name": "HeadwearSocket",
+      "parent": "Head",
+      "head": [
+        0,
+        0,
+        1.742
+      ],
+      "tail": [
+        0,
+        0,
+        1.792
+      ],
+      "role": "attachment_anchor"
+    },
+    {
+      "name": "LookOrigin",
+      "parent": "Head",
+      "head": [
+        0,
+        -0.071,
+        1.665
+      ],
+      "tail": [
+        0,
+        -0.141,
+        1.665
+      ],
+      "role": "interaction_anchor"
+    },
+    {
+      "name": "SeatContact",
+      "parent": "Hips",
+      "head": [
+        0,
+        0.035,
+        0.88
+      ],
+      "tail": [
+        0,
+        0.035,
+        0.94
+      ],
+      "role": "contact_anchor"
+    }
+  ],
+  "unityHumanoidMapping": {
+    "Hips": "Hips",
+    "Spine": "Spine",
+    "Chest": "Spine1",
+    "UpperChest": "Spine2",
+    "Neck": "Neck",
+    "Head": "Head",
+    "Jaw": "Jaw",
+    "LeftEye": "LeftEye",
+    "LeftShoulder": "LeftShoulder",
+    "LeftUpperArm": "LeftArm",
+    "LeftLowerArm": "LeftForeArm",
+    "LeftHand": "LeftHand",
+    "LeftIndexProximal": "LeftHandIndex1",
+    "LeftIndexIntermediate": "LeftHandIndex2",
+    "LeftIndexDistal": "LeftHandIndex3",
+    "LeftMiddleProximal": "LeftHandMiddle1",
+    "LeftMiddleIntermediate": "LeftHandMiddle2",
+    "LeftMiddleDistal": "LeftHandMiddle3",
+    "LeftRingProximal": "LeftHandRing1",
+    "LeftRingIntermediate": "LeftHandRing2",
+    "LeftRingDistal": "LeftHandRing3",
+    "LeftLittleProximal": "LeftHandPinky1",
+    "LeftLittleIntermediate": "LeftHandPinky2",
+    "LeftLittleDistal": "LeftHandPinky3",
+    "LeftThumbProximal": "LeftHandThumb1",
+    "LeftThumbIntermediate": "LeftHandThumb2",
+    "LeftThumbDistal": "LeftHandThumb3",
+    "LeftUpperLeg": "LeftUpLeg",
+    "LeftLowerLeg": "LeftLeg",
+    "LeftFoot": "LeftFoot",
+    "LeftToes": "LeftToeBase",
+    "RightEye": "RightEye",
+    "RightShoulder": "RightShoulder",
+    "RightUpperArm": "RightArm",
+    "RightLowerArm": "RightForeArm",
+    "RightHand": "RightHand",
+    "RightIndexProximal": "RightHandIndex1",
+    "RightIndexIntermediate": "RightHandIndex2",
+    "RightIndexDistal": "RightHandIndex3",
+    "RightMiddleProximal": "RightHandMiddle1",
+    "RightMiddleIntermediate": "RightHandMiddle2",
+    "RightMiddleDistal": "RightHandMiddle3",
+    "RightRingProximal": "RightHandRing1",
+    "RightRingIntermediate": "RightHandRing2",
+    "RightRingDistal": "RightHandRing3",
+    "RightLittleProximal": "RightHandPinky1",
+    "RightLittleIntermediate": "RightHandPinky2",
+    "RightLittleDistal": "RightHandPinky3",
+    "RightThumbProximal": "RightHandThumb1",
+    "RightThumbIntermediate": "RightHandThumb2",
+    "RightThumbDistal": "RightHandThumb3",
+    "RightUpperLeg": "RightUpLeg",
+    "RightLowerLeg": "RightLeg",
+    "RightFoot": "RightFoot",
+    "RightToes": "RightToeBase"
+  },
+  "note": "Unity Avatar validity, skinning and deformation have not been tested."
+}

@@ -1,0 +1,25 @@
+C:\Repos\Unity\Silver Screen\ArtReview\Characters\SuppliedSources\inspect_fbx.py:40: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat=bpy.data.materials.new('InspectionClay_'+o.name);mat.use_nodes=True
+C:\Repos\Unity\Silver Screen\ArtReview\Characters\SuppliedSources\inspect_fbx.py:57: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  scene.world=bpy.data.worlds.new('Neutral inspection');scene.world.use_nodes=True
+00:14.125  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SuppliedSources\Blender2\head-front.png'
+00:23.266  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SuppliedSources\Blender2\head-threequarter.png'
+00:32.188  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SuppliedSources\Blender2\head-profile.png'
+C:\Repos\Unity\Silver Screen\ArtReview\Characters\SuppliedSources\inspect_fbx.py:84: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  wm=bpy.data.materials.new('InspectionWire');wm.diffuse_color=(.008,.008,.008,1);wm.use_nodes=True
+00:44.703  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SuppliedSources\Blender2\head-topology.png'
+Extensions: writing cache failed ([WinError 183] Cannot create a file when that file already exists: 'C:\\Users\\Sez\\AppData\\Roaming\\Blender Foundation\\Blender\\5.0\\extensions\\.cache').
+FBX version: 7200
+ERROR: not enough data in this FBX layer, missing data will be left as default!
+ERROR: not enough data in this FBX layer, missing data will be left as default!
+ERROR: not enough data in this FBX layer, missing data will be left as default!
+ERROR: not enough data in this FBX layer, missing data will be left as default!
+ERROR: not enough data in this FBX layer, missing data will be left as default!
+ERROR: not enough data in this FBX layer, missing data will be left as default!
+ERROR: not enough data in this FBX layer, missing data will be left as default!
+ERROR: not enough data in this FBX layer, missing data will be left as default!
+ERROR: not enough data in this FBX layer, missing data will be left as default!
+{"source": "C:\\Users\\Sez\\Downloads\\Blender\\Blender 2\\Blender.Fbx", "meshCount": 13, "bodyHeight": 1.687842931598425, "output": "C:\\Repos\\Unity\\Silver Screen\\ArtReview\\Characters\\SuppliedSources\\Blender2"}
+Blender 5.0.1 (hash a3db93c5b259 built 2025-12-16 01:32:30)
+
+Blender quit

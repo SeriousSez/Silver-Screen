@@ -1,0 +1,13 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"success\": false,\n  \"error\": \"Error executing tool: Error during asset operation: Generation request failed and download cannot proceed.\\r\\nParameter name: arg\"\n}"
+      }
+    ],
+    "isError": true
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}

@@ -1,0 +1,39 @@
+{
+  "status": "AUTHORING_STRATEGY_ONLY",
+  "foundationId": "silverscreen.adult.male.head.v1",
+  "foundationManifest": "male-head-v1.json",
+  "identityNamespace": "Identity",
+  "expressionNamespace": "Expression",
+  "correctiveNamespace": "Corrective",
+  "implementedIdentityTargets": [],
+  "implementedExpressionTargets": [],
+  "conceptPreset": { "id": "silverscreen.concept.male.01", "status": "PLANNED_UNAUTHORED", "weights": null },
+  "targetFamilies": [
+    { "region": "cranial", "capabilities": ["head shape", "cranial breadth/depth/height", "face width/length", "forehead"], "dependencies": ["scalp", "neck seam", "feature placement"] },
+    { "region": "brow_orbit", "capabilities": ["brow projection/shape", "orbital depth", "eye size/shape/spacing/tilt"], "dependencies": ["eyelids", "independent eyeballs", "gaze pivots", "brows"] },
+    { "region": "cheek", "capabilities": ["cheekbone width/projection", "cheek volume"], "dependencies": ["orbit", "nasolabial transition", "jaw"] },
+    { "region": "nose", "capabilities": ["bridge", "length", "width", "tip", "alar shape"], "dependencies": ["nostrils", "septum", "philtrum", "cheeks"] },
+    { "region": "mouth", "capabilities": ["philtrum", "mouth width", "upper lip volume/shape", "lower lip volume/shape"], "dependencies": ["mouth corners", "lip seal", "mouth bag", "teeth", "tongue"] },
+    { "region": "jaw_chin", "capabilities": ["jaw width/angle", "chin width/height/projection"], "dependencies": ["jaw pivot", "mouth interior", "neck"] },
+    { "region": "ear", "capabilities": ["ear form", "ear placement"], "dependencies": ["temporal scalp", "hair/headwear fit"] },
+    { "region": "asymmetry", "capabilities": ["restrained anatomical asymmetry"], "dependencies": ["resolved symmetric identity", "eye and mouth contact"] }
+  ],
+  "futureDeltaAssetRequirements": [
+    "foundation and topology revision",
+    "foundation vertex-index deltas including authored non-source vertices",
+    "region ownership and neighboring falloff",
+    "dependent module and semantic landmark/pivot changes",
+    "seam policy and paired seam deltas where necessary",
+    "validated range and combination constraints",
+    "identity-dependent expression/corrective refit status"
+  ],
+  "futureBodyLayers": {
+    "proportionProfile": ["adult height", "shoulder width", "ribcage/chest", "torso length/depth", "waist", "pelvis/hips", "arm proportions", "leg proportions"],
+    "composition": ["structural frame", "regional body fat", "regional muscularity"],
+    "requiredCoordination": ["mesh rest anatomy", "semantic skeleton rest landmarks", "joint axes", "bind poses", "IK/interaction anchors", "module fits"],
+    "wholeCharacterHeightScale": false,
+    "globalWeightWidthScale": false,
+    "implementedVariationTargets": []
+  },
+  "populationContract": "Compatible semantic rig/animation contracts; topology compatibility is scoped to each anatomical foundation revision."
+}

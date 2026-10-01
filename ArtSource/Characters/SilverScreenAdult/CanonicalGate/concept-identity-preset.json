@@ -1,0 +1,24 @@
+{
+  "id": "silverscreen.canonical.leading_man.v1",
+  "foundation": "silverscreen.adult.male.head.v1",
+  "status": "FIRST_AUTHORED_IDENTITY_VISUAL_REVIEW",
+  "identityTargets": {
+    "Identity.cranial_jaw": 1.0,
+    "Identity.brow_cheek": 1.0,
+    "Identity.nose_lips": 1.0
+  },
+  "expressionTargets": {},
+  "affectedModules": [
+    "SS_MaleHead_Foundation_v1",
+    "SS_Teeth",
+    "SS_Tongue"
+  ],
+  "eyesRemainRigid": true,
+  "neckSeamDeltasZero": true,
+  "appearance": {
+    "hair": "swept_side_part.v1",
+    "iris": "brown.review",
+    "skin": "warm_neutral.review"
+  },
+  "validatedRange": "This authored combination only; no slider range or expression compatibility claim"
+}

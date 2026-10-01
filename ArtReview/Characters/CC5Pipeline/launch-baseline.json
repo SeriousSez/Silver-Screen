@@ -1,0 +1,12 @@
+{
+  "recordedUtc": "2026-09-23T12:08:29.0502192Z",
+  "configurationPath": "C:\\Users\\Public\\Documents\\Reallusion\\Reallusion Custom\\ccic_blender_pipeline_plugin.txt",
+  "previousBlenderPath": "C:\\Program Files\\Blender Foundation\\Blender 5.0\\blender-launcher.exe",
+  "intendedBlenderPath": "C:\\Program Files\\Blender Foundation\\Blender 4.5\\blender.exe",
+  "executableVersion": "Blender 4.5.14 LTS",
+  "originalConfigurationSha256": "B42C2CB4DB2966B208E0D3DB96734E14180088B7866749FCD694BC549616C4A6",
+  "executableSha256": "362074A47FE6AC821A776B5B75D22DBF5157D47F676B65C7632CFBE2AAF3EB9D",
+  "sourceProjectPath": "C:\\Repos\\Unity\\Silver Screen\\CC5\\character1.ccProject",
+  "sourceProjectSha256": "ACD1AC540BF26A05C97133860C51D7F6C057546E803053E45F563EFA01911CB9",
+  "status": "Verified executable and preserved original configuration; launch test pending"
+}

@@ -1,0 +1,73 @@
+{
+  "source": "https://renderpeople.com/sample/free/renderpeople_free_rigged_people_FBX.zip",
+  "publisher": "Renderpeople",
+  "license_url": "https://renderpeople.com/general-terms-and-conditions/",
+  "archive_sha256": "dadbe6fb83345566ff1d2822c0fa38e05aaa09c17d7f1340719a4c8e01dbadcd",
+  "files": [
+    {
+      "path": "rp_eric_rigged_001_FBX.zip",
+      "bytes": 45243926,
+      "sha256": "6d88a1e0e661bb7ca36158bd60a02d757181a93a58b4db5c6be203f4e5f0bd66"
+    },
+    {
+      "path": "Original\\rp_eric_rigged_001_zup_a.fbx",
+      "bytes": 6440448,
+      "sha256": "2324fee0c1deb546eebe7a68ab84d6be9dc0180119de852630f30a545f25f740"
+    },
+    {
+      "path": "Original\\rp_eric_rigged_001_zup_t.fbx",
+      "bytes": 6437504,
+      "sha256": "e275e9b2c93e5cbcac138ef7eea20bea0702f065a460c0a440ebf6428682f762"
+    },
+    {
+      "path": "Original\\tex\\rp_eric_rigged_001_dif.jpg",
+      "bytes": 5494792,
+      "sha256": "586ca7aa7acdd4a66258045553d434d9cb52f45c6f49a992d897c3fd4705ac2e"
+    },
+    {
+      "path": "Original\\tex\\rp_eric_rigged_001_gloss.jpg",
+      "bytes": 5062610,
+      "sha256": "73bf1d7c419557b4794897abbf1dbe14db81d650cd6374acae423b5b98832c27"
+    },
+    {
+      "path": "Original\\tex\\rp_eric_rigged_001_mask01.jpg",
+      "bytes": 2315050,
+      "sha256": "a90f702c33cabba892276821fbc5049595a10e6d3ca29e0ffd955e6c34a6cc21"
+    },
+    {
+      "path": "Original\\tex\\rp_eric_rigged_001_mask02.jpg",
+      "bytes": 2243825,
+      "sha256": "704b7a16f97bb5a833986fa790e08127b892a90eebcd9ca8ffe01cad75b5cdf6"
+    },
+    {
+      "path": "Original\\tex\\rp_eric_rigged_001_norm.jpg",
+      "bytes": 12880171,
+      "sha256": "9ebc1c277550ead990b62f1c9ea4ba84e79a1a771ece642d2af0fb5c09e47c8f"
+    },
+    {
+      "path": "Original\\rp_eric_rigged_001_A.jpg",
+      "bytes": 49260,
+      "sha256": "a36970aaf10032faa1f2e1bf0b3232beb3759c9edd29a83ac8c30a9f4ad6c088"
+    },
+    {
+      "path": "Original\\rp_eric_rigged_001_u3d.fbx",
+      "bytes": 1025696,
+      "sha256": "077ac01d17b78ce99fc1be2f383268ba1733ae71eec6d1ff4577b84968c7b9c7"
+    },
+    {
+      "path": "Original\\rp_eric_rigged_001_ue4.fbx",
+      "bytes": 1222592,
+      "sha256": "060e4a29027d0338a0a15fad3ab7c57eec3f6dcf9a324301fb57d663d971025d"
+    },
+    {
+      "path": "Original\\rp_eric_rigged_001_yup_a.fbx",
+      "bytes": 6444480,
+      "sha256": "99e24d9e614c4238f539a7872f1db1e3d5cfa6de98251598fb602e9c36015392"
+    },
+    {
+      "path": "Original\\rp_eric_rigged_001_yup_t.fbx",
+      "bytes": 6444000,
+      "sha256": "c587ff60c19fa84f79782d888e835d10e4826bd492ea972dbb86ef094b50d930"
+    }
+  ]
+}

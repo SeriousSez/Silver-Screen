@@ -1,0 +1,25 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"success\": true,\n  \"message\": \"Command executed successfully.\",\n  \"data\": {\n    \"isCompilationSuccessful\": true,\n    \"isExecutionSuccessful\": true,\n    \"executionId\": 1,\n    \"compilationLogs\": \"\",\n    \"executionLogs\": \"[Log] Compiling=False\\n[Log] Active Assets/Scenes/Studio.unity dirty=True\\n[Log] Export_InteriorFloor Center: (21.81, 0.04, -17.83), Extents: (7.58, 0.04, 11.68)\\n[Log] Ground Center: (0.00, -0.50, 0.00), Extents: (250.00, 0.50, 250.00)\",\n    \"localFixedCode\": \"using UnityEngine;\\r\\nusing UnityEditor;\\r\\n\\r\\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\\r\\n{\\r\\n    internal class CommandScript : IRunCommand\\r\\n    {\\r\\n        public void Execute(ExecutionResult result)\\r\\n        {\\r\\n            result.Log(\\\"Compiling=\\\" + EditorApplication.isCompiling);\\r\\n            var active = UnityEngine.SceneManagement.SceneManager.GetActiveScene();\\r\\n            result.Log(\\\"Active \\\" + active.path + \\\" dirty=\\\" + active.isDirty);\\r\\n            foreach (var r in Resources.FindObjectsOfTypeAll<Renderer>())\\r\\n                if (UnityEditor.SceneManagement.EditorSceneManager.IsPreviewSceneObject(r) && (r.name.ToLower().Contains(\\\"floor\\\") || r.name.ToLower().Contains(\\\"ground\\\")))\\r\\n                    result.Log(r.name + \\\" \\\" + r.bounds.ToString());\\r\\n        }\\r\\n    }\\r\\n}\",\n    \"result\": \"Command executed successfully.\"\n  }\n}"
+      }
+    ],
+    "structuredContent": {
+      "success": true,
+      "message": "Command executed successfully.",
+      "data": {
+        "isCompilationSuccessful": true,
+        "isExecutionSuccessful": true,
+        "executionId": 1,
+        "compilationLogs": "",
+        "executionLogs": "[Log] Compiling=False\n[Log] Active Assets/Scenes/Studio.unity dirty=True\n[Log] Export_InteriorFloor Center: (21.81, 0.04, -17.83), Extents: (7.58, 0.04, 11.68)\n[Log] Ground Center: (0.00, -0.50, 0.00), Extents: (250.00, 0.50, 250.00)",
+        "localFixedCode": "using UnityEngine;\r\nusing UnityEditor;\r\n\r\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\r\n{\r\n    internal class CommandScript : IRunCommand\r\n    {\r\n        public void Execute(ExecutionResult result)\r\n        {\r\n            result.Log(\"Compiling=\" + EditorApplication.isCompiling);\r\n            var active = UnityEngine.SceneManagement.SceneManager.GetActiveScene();\r\n            result.Log(\"Active \" + active.path + \" dirty=\" + active.isDirty);\r\n            foreach (var r in Resources.FindObjectsOfTypeAll<Renderer>())\r\n                if (UnityEditor.SceneManagement.EditorSceneManager.IsPreviewSceneObject(r) && (r.name.ToLower().Contains(\"floor\") || r.name.ToLower().Contains(\"ground\")))\r\n                    result.Log(r.name + \" \" + r.bounds.ToString());\r\n        }\r\n    }\r\n}",
+        "result": "Command executed successfully."
+      }
+    }
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}

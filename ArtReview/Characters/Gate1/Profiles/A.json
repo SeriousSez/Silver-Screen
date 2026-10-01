@@ -1,0 +1,16 @@
+{
+    "schemaVersion": 1,
+    "rigVersion": "adult-v1.0.0",
+    "appearanceId": "gate1-A",
+    "calibrationId": "A",
+    "foundationId": "adult-m",
+    "personalOutfitId": "suits/clothes/toigo_male_suit_tie_and_jacket",
+    "hairId": "short02",
+    "heightMetres": 1.7518731355667115,
+    "jawWidth": 0.0,
+    "noseWidth": 0.0,
+    "noseBridge": 0.0,
+    "mouthWidth": 0.0,
+    "cheekWidth": 0.0,
+    "chinHeight": 0.0
+}

@@ -1,0 +1,3120 @@
+{
+  "source": "C:\\Users\\Sez\\Downloads\\Blender\\Blender 1\\blender.Fbx",
+  "sourceSHA256": "b1680fcf4359488397bf622daa1072cd6d4dcd3fbe5fb1c0ff7d12905e063e7c",
+  "shapeCount": 148,
+  "classificationBasis": "Name, actual nonzero vertex displacement, and affected region. Corrective means a rig-coupled candidate, not verified corrective behavior; source driver metadata is unavailable. Not a validated deformation test.",
+  "identityBodyCustomizationShapes": 0,
+  "identityNote": "No dedicated identity/body customization morphs identified among the 148 exported names. Local facial action controls are not identity presets.",
+  "categoryCounts": {
+    "identity/body-customization": 0,
+    "facial-expression": 118,
+    "corrective": 12,
+    "source-specific": 18
+  },
+  "shapes": [
+    {
+      "name": "V_Open",
+      "category": "facial-expression",
+      "decision": "defer full viseme/tongue library beyond the head gate",
+      "affectedVerticesAbove10Microns": 3517,
+      "headVerticesAffected": 2792,
+      "maximumDeltaMetres": 0.007453157744201571,
+      "activeBoundsMin": [
+        -0.36580371856689453,
+        -0.08966280519962311,
+        1.2685301303863525
+      ],
+      "activeBoundsMax": [
+        0.36583825945854187,
+        0.11218004673719406,
+        1.706925630569458
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "V_Explosive",
+      "category": "facial-expression",
+      "decision": "defer full viseme/tongue library beyond the head gate",
+      "affectedVerticesAbove10Microns": 2789,
+      "headVerticesAffected": 2071,
+      "maximumDeltaMetres": 0.0019941676486423363,
+      "activeBoundsMin": [
+        -0.36580371856689453,
+        -0.08966280519962311,
+        1.2773239612579346
+      ],
+      "activeBoundsMax": [
+        0.36583825945854187,
+        0.10923440754413605,
+        1.6215001344680786
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "V_Dental_Lip",
+      "category": "facial-expression",
+      "decision": "defer full viseme/tongue library beyond the head gate",
+      "affectedVerticesAbove10Microns": 3615,
+      "headVerticesAffected": 2899,
+      "maximumDeltaMetres": 0.007703389286273978,
+      "activeBoundsMin": [
+        -0.36580371856689453,
+        -0.08966280519962311,
+        1.2773239612579346
+      ],
+      "activeBoundsMax": [
+        0.36583825945854187,
+        0.10923440754413605,
+        1.7108218669891357
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "V_Tight_O",
+      "category": "facial-expression",
+      "decision": "defer full viseme/tongue library beyond the head gate",
+      "affectedVerticesAbove10Microns": 3816,
+      "headVerticesAffected": 3094,
+      "maximumDeltaMetres": 0.012370056903455558,
+      "activeBoundsMin": [
+        -0.36580371856689453,
+        -0.08966280519962311,
+        1.2773239612579346
+      ],
+      "activeBoundsMax": [
+        0.36583825945854187,
+        0.10923440754413605,
+        1.6440000534057617
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "V_Tight",
+      "category": "facial-expression",
+      "decision": "defer full viseme/tongue library beyond the head gate",
+      "affectedVerticesAbove10Microns": 2911,
+      "headVerticesAffected": 2195,
+      "maximumDeltaMetres": 0.009323291582742886,
+      "activeBoundsMin": [
+        -0.36580371856689453,
+        -0.08966280519962311,
+        1.2773239612579346
+      ],
+      "activeBoundsMax": [
+        0.36583825945854187,
+        0.10923440754413605,
+        1.6095796823501587
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "V_Wide",
+      "category": "facial-expression",
+      "decision": "defer full viseme/tongue library beyond the head gate",
+      "affectedVerticesAbove10Microns": 4165,
+      "headVerticesAffected": 3106,
+      "maximumDeltaMetres": 0.004870178318459157,
+      "activeBoundsMin": [
+        -0.36580371856689453,
+        -0.08966280519962311,
+        1.2773239612579346
+      ],
+      "activeBoundsMax": [
+        0.36583825945854187,
+        0.10923440754413605,
+        1.629253625869751
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "V_Affricate",
+      "category": "facial-expression",
+      "decision": "defer full viseme/tongue library beyond the head gate",
+      "affectedVerticesAbove10Microns": 3651,
+      "headVerticesAffected": 2935,
+      "maximumDeltaMetres": 0.00793054972053372,
+      "activeBoundsMin": [
+        -0.36580371856689453,
+        -0.08966280519962311,
+        1.2773239612579346
+      ],
+      "activeBoundsMax": [
+        0.36583825945854187,
+        0.10923440754413605,
+        1.6263458728790283
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "V_Lip_Open",
+      "category": "facial-expression",
+      "decision": "defer full viseme/tongue library beyond the head gate",
+      "affectedVerticesAbove10Microns": 2412,
+      "headVerticesAffected": 1696,
+      "maximumDeltaMetres": 0.003974608920640691,
+      "activeBoundsMin": [
+        -0.36580371856689453,
+        -0.08966280519962311,
+        1.2773239612579346
+      ],
+      "activeBoundsMax": [
+        0.36583825945854187,
+        0.10923440754413605,
+        1.5982457399368286
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Brow_Raise_Inner_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1714,
+      "headVerticesAffected": 1527,
+      "maximumDeltaMetres": 0.00947608671562831,
+      "activeBoundsMin": [
+        -0.04487122967839241,
+        -0.08966280519962311,
+        1.5386141538619995
+      ],
+      "activeBoundsMax": [
+        0.09156962484121323,
+        0.11589166522026062,
+        1.7108218669891357
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Brow_Raise_Inner_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1714,
+      "headVerticesAffected": 1527,
+      "maximumDeltaMetres": 0.00947596960874649,
+      "activeBoundsMin": [
+        -0.09155561029911041,
+        -0.08966280519962311,
+        1.538644790649414
+      ],
+      "activeBoundsMax": [
+        0.04483029246330261,
+        0.11585597693920135,
+        1.7108218669891357
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Brow_Raise_Outer_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1399,
+      "headVerticesAffected": 1131,
+      "maximumDeltaMetres": 0.01114192741482496,
+      "activeBoundsMin": [
+        -0.017152095213532448,
+        -0.07410804182291031,
+        1.5386141538619995
+      ],
+      "activeBoundsMax": [
+        0.09156962484121323,
+        0.11589166522026062,
+        1.7108218669891357
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Brow_Raise_Outer_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1400,
+      "headVerticesAffected": 1132,
+      "maximumDeltaMetres": 0.011142036626903135,
+      "activeBoundsMin": [
+        -0.09155561029911041,
+        -0.07409730553627014,
+        1.538644790649414
+      ],
+      "activeBoundsMax": [
+        0.017117014154791832,
+        0.11585597693920135,
+        1.7108218669891357
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Brow_Drop_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1999,
+      "headVerticesAffected": 1523,
+      "maximumDeltaMetres": 0.006943029456053853,
+      "activeBoundsMin": [
+        -0.3857545852661133,
+        -0.09699296951293945,
+        1.2415778636932373
+      ],
+      "activeBoundsMax": [
+        0.38579222559928894,
+        0.11846610903739929,
+        1.7108218669891357
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Brow_Drop_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1809,
+      "headVerticesAffected": 1507,
+      "maximumDeltaMetres": 0.0069428719490424945,
+      "activeBoundsMin": [
+        -0.09155561029911041,
+        -0.08901985734701157,
+        1.4976166486740112
+      ],
+      "activeBoundsMax": [
+        0.02051595225930214,
+        0.11846248060464859,
+        1.7108218669891357
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Brow_Compress_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1299,
+      "headVerticesAffected": 1120,
+      "maximumDeltaMetres": 0.0054184228145133595,
+      "activeBoundsMin": [
+        -0.007786399219185114,
+        -0.08966280519962311,
+        1.498657464981079
+      ],
+      "activeBoundsMax": [
+        0.09156962484121323,
+        0.11589166522026062,
+        1.7098109722137451
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Brow_Compress_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1299,
+      "headVerticesAffected": 1120,
+      "maximumDeltaMetres": 0.005418533357635939,
+      "activeBoundsMin": [
+        -0.09155561029911041,
+        -0.08966280519962311,
+        1.4976166486740112
+      ],
+      "activeBoundsMax": [
+        0.00776404095813632,
+        0.11585597693920135,
+        1.709812045097351
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Eye_Blink_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 356,
+      "headVerticesAffected": 169,
+      "maximumDeltaMetres": 0.025331812973507815,
+      "activeBoundsMin": [
+        -0.05404939502477646,
+        -0.07410804182291031,
+        1.4640429019927979
+      ],
+      "activeBoundsMax": [
+        0.06442192941904068,
+        0.060850050300359726,
+        1.6467231512069702
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Eye_Blink_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 359,
+      "headVerticesAffected": 173,
+      "maximumDeltaMetres": 0.02535829508998237,
+      "activeBoundsMin": [
+        -0.06442786008119583,
+        -0.07409730553627014,
+        1.4640429019927979
+      ],
+      "activeBoundsMax": [
+        0.05407191067934036,
+        0.060850050300359726,
+        1.6467231512069702
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Eye_Squint_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 2435,
+      "headVerticesAffected": 2083,
+      "maximumDeltaMetres": 0.0029986248987048693,
+      "activeBoundsMin": [
+        -0.05404939502477646,
+        -0.08868821710348129,
+        1.4640429019927979
+      ],
+      "activeBoundsMax": [
+        0.09156962484121323,
+        0.11218004673719406,
+        1.7108218669891357
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Eye_Squint_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 2435,
+      "headVerticesAffected": 2083,
+      "maximumDeltaMetres": 0.0029986963540988127,
+      "activeBoundsMin": [
+        -0.09155561029911041,
+        -0.08869413286447525,
+        1.4640429019927979
+      ],
+      "activeBoundsMax": [
+        0.05407191067934036,
+        0.11149832606315613,
+        1.7108218669891357
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Eye_Wide_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 809,
+      "headVerticesAffected": 457,
+      "maximumDeltaMetres": 0.004053167481216559,
+      "activeBoundsMin": [
+        -0.007090706378221512,
+        -0.07410804182291031,
+        1.4640429019927979
+      ],
+      "activeBoundsMax": [
+        0.06991755962371826,
+        0.060850050300359726,
+        1.6467231512069702
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Eye_Wide_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 808,
+      "headVerticesAffected": 456,
+      "maximumDeltaMetres": 0.0040530506892264995,
+      "activeBoundsMin": [
+        -0.0695740133523941,
+        -0.07409730553627014,
+        1.4640432596206665
+      ],
+      "activeBoundsMax": [
+        0.007056105881929398,
+        0.06080138683319092,
+        1.6467231512069702
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Eye_L_Look_L",
+      "category": "corrective",
+      "decision": "refit later against semantic eye gaze bones; never drive whole eye rotation with this skin shape",
+      "affectedVerticesAbove10Microns": 789,
+      "headVerticesAffected": 437,
+      "maximumDeltaMetres": 0.0033282847389747446,
+      "activeBoundsMin": [
+        -0.035062357783317566,
+        -0.07410804182291031,
+        1.5787705183029175
+      ],
+      "activeBoundsMax": [
+        0.06845628470182419,
+        -0.01696678437292576,
+        1.6347744464874268
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Eye_R_Look_L",
+      "category": "corrective",
+      "decision": "refit later against semantic eye gaze bones; never drive whole eye rotation with this skin shape",
+      "affectedVerticesAbove10Microns": 975,
+      "headVerticesAffected": 504,
+      "maximumDeltaMetres": 0.002156689072007654,
+      "activeBoundsMin": [
+        -0.0709092989563942,
+        -0.07618206739425659,
+        1.5721526145935059
+      ],
+      "activeBoundsMax": [
+        0.06332025676965714,
+        -0.013470882549881935,
+        1.6405305862426758
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Eye_L_Look_R",
+      "category": "corrective",
+      "decision": "refit later against semantic eye gaze bones; never drive whole eye rotation with this skin shape",
+      "affectedVerticesAbove10Microns": 975,
+      "headVerticesAffected": 504,
+      "maximumDeltaMetres": 0.0021566942733701002,
+      "activeBoundsMin": [
+        -0.06334683299064636,
+        -0.07619739323854446,
+        1.5721640586853027
+      ],
+      "activeBoundsMax": [
+        0.07090511173009872,
+        -0.013489692471921444,
+        1.6405341625213623
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Eye_R_Look_R",
+      "category": "corrective",
+      "decision": "refit later against semantic eye gaze bones; never drive whole eye rotation with this skin shape",
+      "affectedVerticesAbove10Microns": 788,
+      "headVerticesAffected": 436,
+      "maximumDeltaMetres": 0.0033282636457495564,
+      "activeBoundsMin": [
+        -0.0684664249420166,
+        -0.07409730553627014,
+        1.5787711143493652
+      ],
+      "activeBoundsMax": [
+        0.035031117498874664,
+        -0.016976848244667053,
+        1.6347689628601074
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Eye_L_Look_Up",
+      "category": "corrective",
+      "decision": "refit later against semantic eye gaze bones; never drive whole eye rotation with this skin shape",
+      "affectedVerticesAbove10Microns": 831,
+      "headVerticesAffected": 479,
+      "maximumDeltaMetres": 0.004041083388568864,
+      "activeBoundsMin": [
+        -0.007090706378221512,
+        -0.07410804182291031,
+        1.5771112442016602
+      ],
+      "activeBoundsMax": [
+        0.07070937007665634,
+        -0.02142377942800522,
+        1.6510045528411865
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Eye_R_Look_Up",
+      "category": "corrective",
+      "decision": "refit later against semantic eye gaze bones; never drive whole eye rotation with this skin shape",
+      "affectedVerticesAbove10Microns": 831,
+      "headVerticesAffected": 479,
+      "maximumDeltaMetres": 0.004040839226428518,
+      "activeBoundsMin": [
+        -0.07049153000116348,
+        -0.07409730553627014,
+        1.577103614807129
+      ],
+      "activeBoundsMax": [
+        0.007056105881929398,
+        -0.021630382165312767,
+        1.6510001420974731
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Eye_L_Look_Down",
+      "category": "corrective",
+      "decision": "refit later against semantic eye gaze bones; never drive whole eye rotation with this skin shape",
+      "affectedVerticesAbove10Microns": 819,
+      "headVerticesAffected": 467,
+      "maximumDeltaMetres": 0.01397916047595855,
+      "activeBoundsMin": [
+        -0.007090706378221512,
+        -0.07477165013551712,
+        1.5366334915161133
+      ],
+      "activeBoundsMax": [
+        0.07070937007665634,
+        0.004578412510454655,
+        1.6510045528411865
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Eye_R_Look_Down",
+      "category": "corrective",
+      "decision": "refit later against semantic eye gaze bones; never drive whole eye rotation with this skin shape",
+      "affectedVerticesAbove10Microns": 818,
+      "headVerticesAffected": 466,
+      "maximumDeltaMetres": 0.013979275349190502,
+      "activeBoundsMin": [
+        -0.07049153000116348,
+        -0.07476238161325455,
+        1.5363606214523315
+      ],
+      "activeBoundsMax": [
+        0.007056105881929398,
+        0.004301791545003653,
+        1.6510001420974731
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Eyelash_Upper_Up_L",
+      "category": "source-specific",
+      "decision": "archive: eyelash-card adjustment; do not retain as a skin expression",
+      "affectedVerticesAbove10Microns": 207,
+      "headVerticesAffected": 0,
+      "maximumDeltaMetres": 0.003726184955012717,
+      "activeBoundsMin": [
+        0.013018058612942696,
+        -0.07410804182291031,
+        1.5988532304763794
+      ],
+      "activeBoundsMax": [
+        0.06332025676965714,
+        -0.046772073954343796,
+        1.6241483688354492
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Eyelash_Upper_Down_L",
+      "category": "source-specific",
+      "decision": "archive: eyelash-card adjustment; do not retain as a skin expression",
+      "affectedVerticesAbove10Microns": 187,
+      "headVerticesAffected": 0,
+      "maximumDeltaMetres": 0.00853648236458806,
+      "activeBoundsMin": [
+        0.013018058612942696,
+        -0.07410804182291031,
+        1.6041185855865479
+      ],
+      "activeBoundsMax": [
+        0.06332025676965714,
+        -0.046772073954343796,
+        1.6241483688354492
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Eyelash_Upper_Up_R",
+      "category": "source-specific",
+      "decision": "archive: eyelash-card adjustment; do not retain as a skin expression",
+      "affectedVerticesAbove10Microns": 206,
+      "headVerticesAffected": 0,
+      "maximumDeltaMetres": 0.003725949057911704,
+      "activeBoundsMin": [
+        -0.06334683299064636,
+        -0.07409730553627014,
+        1.5987011194229126
+      ],
+      "activeBoundsMax": [
+        -0.012842928990721703,
+        -0.0470428504049778,
+        1.6239902973175049
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Eyelash_Upper_Down_R",
+      "category": "source-specific",
+      "decision": "archive: eyelash-card adjustment; do not retain as a skin expression",
+      "affectedVerticesAbove10Microns": 187,
+      "headVerticesAffected": 0,
+      "maximumDeltaMetres": 0.008536696591362372,
+      "activeBoundsMin": [
+        -0.06334683299064636,
+        -0.07409730553627014,
+        1.6036878824234009
+      ],
+      "activeBoundsMax": [
+        -0.012842928990721703,
+        -0.046696409583091736,
+        1.6239902973175049
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Eyelash_Lower_Up_L",
+      "category": "source-specific",
+      "decision": "archive: eyelash-card adjustment; do not retain as a skin expression",
+      "affectedVerticesAbove10Microns": 150,
+      "headVerticesAffected": 0,
+      "maximumDeltaMetres": 0.0021631601221726,
+      "activeBoundsMin": [
+        0.015862267464399338,
+        -0.0626438558101654,
+        1.592915415763855
+      ],
+      "activeBoundsMax": [
+        0.059530723839998245,
+        -0.04729124531149864,
+        1.6066384315490723
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Eyelash_Lower_Down_L",
+      "category": "source-specific",
+      "decision": "archive: eyelash-card adjustment; do not retain as a skin expression",
+      "affectedVerticesAbove10Microns": 150,
+      "headVerticesAffected": 0,
+      "maximumDeltaMetres": 0.0028857993548417993,
+      "activeBoundsMin": [
+        0.015862267464399338,
+        -0.0626438558101654,
+        1.592915415763855
+      ],
+      "activeBoundsMax": [
+        0.059530723839998245,
+        -0.04729124531149864,
+        1.6066384315490723
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Eyelash_Lower_Up_R",
+      "category": "source-specific",
+      "decision": "archive: eyelash-card adjustment; do not retain as a skin expression",
+      "affectedVerticesAbove10Microns": 150,
+      "headVerticesAffected": 0,
+      "maximumDeltaMetres": 0.0021632352446745075,
+      "activeBoundsMin": [
+        -0.05953057110309601,
+        -0.06265893578529358,
+        1.5927242040634155
+      ],
+      "activeBoundsMax": [
+        -0.015834162011742592,
+        -0.04728278890252113,
+        1.6064448356628418
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Eyelash_Lower_Down_R",
+      "category": "source-specific",
+      "decision": "archive: eyelash-card adjustment; do not retain as a skin expression",
+      "affectedVerticesAbove10Microns": 150,
+      "headVerticesAffected": 0,
+      "maximumDeltaMetres": 0.0028865060831659395,
+      "activeBoundsMin": [
+        -0.05953057110309601,
+        -0.06265893578529358,
+        1.5927242040634155
+      ],
+      "activeBoundsMax": [
+        -0.015834162011742592,
+        -0.04728278890252113,
+        1.6064448356628418
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Ear_Up_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 581,
+      "headVerticesAffected": 581,
+      "maximumDeltaMetres": 0.00511455776104702,
+      "activeBoundsMin": [
+        0.035299789160490036,
+        -0.021147100254893303,
+        1.5060971975326538
+      ],
+      "activeBoundsMax": [
+        0.09156962484121323,
+        0.08992893248796463,
+        1.656073808670044
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Ear_Up_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 580,
+      "headVerticesAffected": 580,
+      "maximumDeltaMetres": 0.005114776446937717,
+      "activeBoundsMin": [
+        -0.09155561029911041,
+        -0.02112595923244953,
+        1.5060324668884277
+      ],
+      "activeBoundsMax": [
+        -0.03533220663666725,
+        0.08968068659305573,
+        1.6560993194580078
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Ear_Down_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 584,
+      "headVerticesAffected": 584,
+      "maximumDeltaMetres": 0.005062888499118501,
+      "activeBoundsMin": [
+        0.03613663464784622,
+        -0.016238445416092873,
+        1.5131207704544067
+      ],
+      "activeBoundsMax": [
+        0.09156962484121323,
+        0.08355645835399628,
+        1.6609013080596924
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Ear_Down_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 584,
+      "headVerticesAffected": 584,
+      "maximumDeltaMetres": 0.005062766198640992,
+      "activeBoundsMin": [
+        -0.09155561029911041,
+        -0.01636899635195732,
+        1.515692949295044
+      ],
+      "activeBoundsMax": [
+        -0.03655662387609482,
+        0.08295834809541702,
+        1.6608926057815552
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Ear_Out_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 412,
+      "headVerticesAffected": 412,
+      "maximumDeltaMetres": 0.0036841475450596285,
+      "activeBoundsMin": [
+        0.05862314999103546,
+        0.00245868181809783,
+        1.5533535480499268
+      ],
+      "activeBoundsMax": [
+        0.09156962484121323,
+        0.0431581549346447,
+        1.617965817451477
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Ear_Out_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 412,
+      "headVerticesAffected": 412,
+      "maximumDeltaMetres": 0.0036846546693672538,
+      "activeBoundsMin": [
+        -0.09155561029911041,
+        0.002701832912862301,
+        1.553259015083313
+      ],
+      "activeBoundsMax": [
+        -0.0594915971159935,
+        0.04318159818649292,
+        1.6179490089416504
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Nose_Sneer_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1632,
+      "headVerticesAffected": 1280,
+      "maximumDeltaMetres": 0.005796645406566074,
+      "activeBoundsMin": [
+        -0.007846241816878319,
+        -0.08966280519962311,
+        1.5387201309204102
+      ],
+      "activeBoundsMax": [
+        0.09156962484121323,
+        0.11315695196390152,
+        1.710458755493164
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Nose_Sneer_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1631,
+      "headVerticesAffected": 1279,
+      "maximumDeltaMetres": 0.005796663702607314,
+      "activeBoundsMin": [
+        -0.09155561029911041,
+        -0.08966280519962311,
+        1.5386981964111328
+      ],
+      "activeBoundsMax": [
+        0.007811622694134712,
+        0.11316366493701935,
+        1.710458755493164
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Nose_Nostril_Raise_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 744,
+      "headVerticesAffected": 744,
+      "maximumDeltaMetres": 0.004966083959177101,
+      "activeBoundsMin": [
+        -0.05677156150341034,
+        -0.08966280519962311,
+        1.534173846244812
+      ],
+      "activeBoundsMax": [
+        0.06986002624034882,
+        -0.004937333054840565,
+        1.617368221282959
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Nose_Nostril_Raise_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 742,
+      "headVerticesAffected": 742,
+      "maximumDeltaMetres": 0.00496560726402897,
+      "activeBoundsMin": [
+        -0.069866843521595,
+        -0.08966280519962311,
+        1.534175157546997
+      ],
+      "activeBoundsMax": [
+        0.05674998089671135,
+        -0.004932006821036339,
+        1.617368221282959
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Nose_Nostril_Dilate_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 237,
+      "headVerticesAffected": 237,
+      "maximumDeltaMetres": 0.0024996587084501177,
+      "activeBoundsMin": [
+        -5.5565775255672634e-05,
+        -0.08966280519962311,
+        1.5447001457214355
+      ],
+      "activeBoundsMax": [
+        0.0483832061290741,
+        -0.0550009049475193,
+        1.6120737791061401
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Nose_Nostril_Dilate_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 236,
+      "headVerticesAffected": 236,
+      "maximumDeltaMetres": 0.0024995526755637563,
+      "activeBoundsMin": [
+        -0.04838581010699272,
+        -0.08966280519962311,
+        1.5447663068771362
+      ],
+      "activeBoundsMax": [
+        -1.1159398127347231e-05,
+        -0.054972995072603226,
+        1.6072018146514893
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Nose_Crease_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 935,
+      "headVerticesAffected": 935,
+      "maximumDeltaMetres": 0.0045335634526292,
+      "activeBoundsMin": [
+        -0.015973340719938278,
+        -0.08966280519962311,
+        1.500924825668335
+      ],
+      "activeBoundsMax": [
+        0.07075189054012299,
+        0.007087272126227617,
+        1.6263232231140137
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Nose_Crease_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 935,
+      "headVerticesAffected": 935,
+      "maximumDeltaMetres": 0.004533551622272122,
+      "activeBoundsMin": [
+        -0.07075003534555435,
+        -0.08966280519962311,
+        1.5009188652038574
+      ],
+      "activeBoundsMax": [
+        0.015965119004249573,
+        0.006572849117219448,
+        1.626288652420044
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Nose_Nostril_Down_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1435,
+      "headVerticesAffected": 502,
+      "maximumDeltaMetres": 0.0032550778537172634,
+      "activeBoundsMin": [
+        -0.18232624232769012,
+        -0.08966280519962311,
+        0.12990808486938477
+      ],
+      "activeBoundsMax": [
+        0.1823112517595291,
+        0.12271466106176376,
+        1.6014333963394165
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Nose_Nostril_Down_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1440,
+      "headVerticesAffected": 501,
+      "maximumDeltaMetres": 0.0032543634232307305,
+      "activeBoundsMin": [
+        -0.18232624232769012,
+        -0.08966280519962311,
+        0.12990711629390717
+      ],
+      "activeBoundsMax": [
+        0.1823112517595291,
+        0.12271466106176376,
+        1.5991612672805786
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Nose_Nostril_In_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 424,
+      "headVerticesAffected": 424,
+      "maximumDeltaMetres": 0.003039451030490215,
+      "activeBoundsMin": [
+        -0.012778891250491142,
+        -0.08966280519962311,
+        1.5447001457214355
+      ],
+      "activeBoundsMax": [
+        0.06239599362015724,
+        -0.04306764528155327,
+        1.616565465927124
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Nose_Nostril_In_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 423,
+      "headVerticesAffected": 423,
+      "maximumDeltaMetres": 0.003039216335744138,
+      "activeBoundsMin": [
+        -0.06240721419453621,
+        -0.08966280519962311,
+        1.5447663068771362
+      ],
+      "activeBoundsMax": [
+        0.012760220095515251,
+        -0.0430622324347496,
+        1.6165659427642822
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Nose_Tip_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 3160,
+      "headVerticesAffected": 2812,
+      "maximumDeltaMetres": 0.008410411661637997,
+      "activeBoundsMin": [
+        -0.09105973690748215,
+        -0.08966280519962311,
+        1.4507018327713013
+      ],
+      "activeBoundsMax": [
+        0.09156962484121323,
+        0.11938832700252533,
+        1.7063485383987427
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Nose_Tip_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 3137,
+      "headVerticesAffected": 2789,
+      "maximumDeltaMetres": 0.008410351512615679,
+      "activeBoundsMin": [
+        -0.09155561029911041,
+        -0.08966280519962311,
+        1.4702738523483276
+      ],
+      "activeBoundsMax": [
+        0.09106199443340302,
+        0.11928938329219818,
+        1.7052024602890015
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Nose_Tip_Up",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 846,
+      "headVerticesAffected": 846,
+      "maximumDeltaMetres": 0.0015534597561896255,
+      "activeBoundsMin": [
+        -0.06744113564491272,
+        -0.08966280519962311,
+        1.5279932022094727
+      ],
+      "activeBoundsMax": [
+        0.06742686033248901,
+        -0.006518548354506493,
+        1.616919755935669
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Nose_Tip_Down",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1271,
+      "headVerticesAffected": 1271,
+      "maximumDeltaMetres": 0.0019733664888523985,
+      "activeBoundsMin": [
+        -0.06744113564491272,
+        -0.08966280519962311,
+        1.508732557296753
+      ],
+      "activeBoundsMax": [
+        0.06742686033248901,
+        -0.005184867884963751,
+        1.6075587272644043
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Cheek_Raise_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1407,
+      "headVerticesAffected": 1057,
+      "maximumDeltaMetres": 0.00712617342249635,
+      "activeBoundsMin": [
+        -5.5565775255672634e-05,
+        -0.08901985734701157,
+        1.4640429019927979
+      ],
+      "activeBoundsMax": [
+        0.07639385014772415,
+        0.060850050300359726,
+        1.6776639223098755
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Cheek_Raise_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1410,
+      "headVerticesAffected": 1060,
+      "maximumDeltaMetres": 0.0071976614888041275,
+      "activeBoundsMin": [
+        -0.07639996707439423,
+        -0.08901985734701157,
+        1.4640432596206665
+      ],
+      "activeBoundsMax": [
+        1.4297393136075698e-06,
+        0.06080138683319092,
+        1.6776621341705322
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Cheek_Suck_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1238,
+      "headVerticesAffected": 1196,
+      "maximumDeltaMetres": 0.010140688624111797,
+      "activeBoundsMin": [
+        -0.06102632358670235,
+        -0.08966280519962311,
+        1.4352723360061646
+      ],
+      "activeBoundsMax": [
+        0.09106199443340302,
+        0.08992893248796463,
+        1.6890959739685059
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Cheek_Suck_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1229,
+      "headVerticesAffected": 1191,
+      "maximumDeltaMetres": 0.01014071349672004,
+      "activeBoundsMin": [
+        -0.09105973690748215,
+        -0.08966280519962311,
+        1.4352723360061646
+      ],
+      "activeBoundsMax": [
+        0.06107110530138016,
+        0.08968068659305573,
+        1.6890952587127686
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Cheek_Puff_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 4502,
+      "headVerticesAffected": 3798,
+      "maximumDeltaMetres": 0.0161899637494775,
+      "activeBoundsMin": [
+        -0.09155561029911041,
+        -0.08966280519962311,
+        1.4345121383666992
+      ],
+      "activeBoundsMax": [
+        0.09156962484121323,
+        0.11671599000692368,
+        1.7108218669891357
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Cheek_Puff_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 4502,
+      "headVerticesAffected": 3798,
+      "maximumDeltaMetres": 0.016189848975313677,
+      "activeBoundsMin": [
+        -0.09155561029911041,
+        -0.08966280519962311,
+        1.4345121383666992
+      ],
+      "activeBoundsMax": [
+        0.09156962484121323,
+        0.11671599000692368,
+        1.7108218669891357
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Smile_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 2506,
+      "headVerticesAffected": 2329,
+      "maximumDeltaMetres": 0.017868388161505357,
+      "activeBoundsMin": [
+        -0.06949765235185623,
+        -0.08966280519962311,
+        1.4644007682800293
+      ],
+      "activeBoundsMax": [
+        0.09156962484121323,
+        0.08505048602819443,
+        1.6355749368667603
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Smile_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 2507,
+      "headVerticesAffected": 2330,
+      "maximumDeltaMetres": 0.01786835154057539,
+      "activeBoundsMin": [
+        -0.09155561029911041,
+        -0.08966280519962311,
+        1.4644007682800293
+      ],
+      "activeBoundsMax": [
+        0.06950167566537857,
+        0.08501406759023666,
+        1.6354798078536987
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Smile_Sharp_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1831,
+      "headVerticesAffected": 1665,
+      "maximumDeltaMetres": 0.011202616153490969,
+      "activeBoundsMin": [
+        -0.042925070971250534,
+        -0.08966280519962311,
+        1.4386005401611328
+      ],
+      "activeBoundsMax": [
+        0.07536095380783081,
+        0.05413931980729103,
+        1.6253091096878052
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Smile_Sharp_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1831,
+      "headVerticesAffected": 1665,
+      "maximumDeltaMetres": 0.011202781786625446,
+      "activeBoundsMin": [
+        -0.07527491450309753,
+        -0.08966280519962311,
+        1.438596487045288
+      ],
+      "activeBoundsMax": [
+        0.043085675686597824,
+        0.05415382981300354,
+        1.6253294944763184
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Frown_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 2040,
+      "headVerticesAffected": 2040,
+      "maximumDeltaMetres": 0.008883430985999065,
+      "activeBoundsMin": [
+        -0.054551780223846436,
+        -0.08966280519962311,
+        1.4376705884933472
+      ],
+      "activeBoundsMax": [
+        0.09156962484121323,
+        0.05413931980729103,
+        1.620259165763855
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Frown_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 2040,
+      "headVerticesAffected": 2040,
+      "maximumDeltaMetres": 0.00888326113637205,
+      "activeBoundsMin": [
+        -0.09155561029911041,
+        -0.08966280519962311,
+        1.4376695156097412
+      ],
+      "activeBoundsMax": [
+        0.054595235735177994,
+        0.05415382981300354,
+        1.6202622652053833
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Stretch_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 2112,
+      "headVerticesAffected": 2112,
+      "maximumDeltaMetres": 0.011269296296067646,
+      "activeBoundsMin": [
+        -0.06878487765789032,
+        -0.08966280519962311,
+        1.4443755149841309
+      ],
+      "activeBoundsMax": [
+        0.09156962484121323,
+        0.07314612716436386,
+        1.656073808670044
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Stretch_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 2113,
+      "headVerticesAffected": 2113,
+      "maximumDeltaMetres": 0.011269127408597014,
+      "activeBoundsMin": [
+        -0.09155561029911041,
+        -0.08966280519962311,
+        1.4443755149841309
+      ],
+      "activeBoundsMax": [
+        0.06880629062652588,
+        0.07286734879016876,
+        1.6560993194580078
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Dimple_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1994,
+      "headVerticesAffected": 1994,
+      "maximumDeltaMetres": 0.00903393013368782,
+      "activeBoundsMin": [
+        -0.06300441920757294,
+        -0.08966280519962311,
+        1.4376705884933472
+      ],
+      "activeBoundsMax": [
+        0.09156962484121323,
+        0.05413931980729103,
+        1.6215001344680786
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Dimple_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1996,
+      "headVerticesAffected": 1996,
+      "maximumDeltaMetres": 0.009033760865980508,
+      "activeBoundsMin": [
+        -0.09155561029911041,
+        -0.08966280519962311,
+        1.4376695156097412
+      ],
+      "activeBoundsMax": [
+        0.06323512643575668,
+        0.05415382981300354,
+        1.6214383840560913
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Press_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1029,
+      "headVerticesAffected": 1029,
+      "maximumDeltaMetres": 0.004728991770979837,
+      "activeBoundsMin": [
+        -0.03186732903122902,
+        -0.08966280519962311,
+        1.5009188652038574
+      ],
+      "activeBoundsMax": [
+        0.06634971499443054,
+        -0.008664155378937721,
+        1.5941307544708252
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Press_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1032,
+      "headVerticesAffected": 1032,
+      "maximumDeltaMetres": 0.004729149549018665,
+      "activeBoundsMin": [
+        -0.06621972471475601,
+        -0.08966280519962311,
+        1.5009188652038574
+      ],
+      "activeBoundsMax": [
+        0.03219853341579437,
+        -0.007342753000557423,
+        1.5940546989440918
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Tighten_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1383,
+      "headVerticesAffected": 1383,
+      "maximumDeltaMetres": 0.0057800820171359825,
+      "activeBoundsMin": [
+        -0.03658343851566315,
+        -0.08966280519962311,
+        1.4282505512237549
+      ],
+      "activeBoundsMax": [
+        0.0721115916967392,
+        0.06326066702604294,
+        1.616565465927124
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Tighten_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1386,
+      "headVerticesAffected": 1386,
+      "maximumDeltaMetres": 0.005780034953195727,
+      "activeBoundsMin": [
+        -0.07206173241138458,
+        -0.08966280519962311,
+        1.4282523393630981
+      ],
+      "activeBoundsMax": [
+        0.03693357855081558,
+        0.06327565014362335,
+        1.6165659427642822
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Blow_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1332,
+      "headVerticesAffected": 1332,
+      "maximumDeltaMetres": 0.009788711387783727,
+      "activeBoundsMin": [
+        -0.03658343851566315,
+        -0.08966280519962311,
+        1.4644007682800293
+      ],
+      "activeBoundsMax": [
+        0.06972507387399673,
+        0.024645768105983734,
+        1.616565465927124
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Blow_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1333,
+      "headVerticesAffected": 1333,
+      "maximumDeltaMetres": 0.009788768024815566,
+      "activeBoundsMin": [
+        -0.06971393525600433,
+        -0.08966280519962311,
+        1.4644007682800293
+      ],
+      "activeBoundsMax": [
+        0.03693357855081558,
+        0.024656720459461212,
+        1.6165659427642822
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Pucker_Up_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1307,
+      "headVerticesAffected": 1307,
+      "maximumDeltaMetres": 0.011342380535931859,
+      "activeBoundsMin": [
+        -0.025959355756640434,
+        -0.08966280519962311,
+        1.501454472541809
+      ],
+      "activeBoundsMax": [
+        0.08919789642095566,
+        0.0394892580807209,
+        1.620259165763855
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Pucker_Up_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1309,
+      "headVerticesAffected": 1308,
+      "maximumDeltaMetres": 0.011342322201817464,
+      "activeBoundsMin": [
+        -0.08919360488653183,
+        -0.08966280519962311,
+        1.5014476776123047
+      ],
+      "activeBoundsMax": [
+        0.025949206203222275,
+        0.03957464173436165,
+        1.6202622652053833
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Pucker_Down_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 736,
+      "headVerticesAffected": 736,
+      "maximumDeltaMetres": 0.01193214855881496,
+      "activeBoundsMin": [
+        -0.03658343851566315,
+        -0.0773719847202301,
+        1.4644007682800293
+      ],
+      "activeBoundsMax": [
+        0.06950167566537857,
+        0.028933750465512276,
+        1.5923707485198975
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Pucker_Down_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 736,
+      "headVerticesAffected": 736,
+      "maximumDeltaMetres": 0.011932096193303453,
+      "activeBoundsMin": [
+        -0.06949765235185623,
+        -0.0773223489522934,
+        1.4644007682800293
+      ],
+      "activeBoundsMax": [
+        0.03693357855081558,
+        0.02809787169098854,
+        1.5923700332641602
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Funnel_Up_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 898,
+      "headVerticesAffected": 898,
+      "maximumDeltaMetres": 0.010430416394549306,
+      "activeBoundsMin": [
+        -0.030427085235714912,
+        -0.08966280519962311,
+        1.501454472541809
+      ],
+      "activeBoundsMax": [
+        0.06880629062652588,
+        0.006589857861399651,
+        1.5971269607543945
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Funnel_Up_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 900,
+      "headVerticesAffected": 900,
+      "maximumDeltaMetres": 0.010430428507178015,
+      "activeBoundsMin": [
+        -0.06878487765789032,
+        -0.08966280519962311,
+        1.5014476776123047
+      ],
+      "activeBoundsMax": [
+        0.030414942651987076,
+        0.006572849117219448,
+        1.5971083641052246
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Funnel_Down_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 689,
+      "headVerticesAffected": 689,
+      "maximumDeltaMetres": 0.010731669563076647,
+      "activeBoundsMin": [
+        -0.04289216920733452,
+        -0.0773719847202301,
+        1.480119228363037
+      ],
+      "activeBoundsMax": [
+        0.06848215311765671,
+        0.009414494968950748,
+        1.5889835357666016
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Funnel_Down_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 689,
+      "headVerticesAffected": 689,
+      "maximumDeltaMetres": 0.01073169230113194,
+      "activeBoundsMin": [
+        -0.06847938895225525,
+        -0.0773223489522934,
+        1.480119228363037
+      ],
+      "activeBoundsMax": [
+        0.043085675686597824,
+        0.008909753523766994,
+        1.5889673233032227
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Roll_In_Upper_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1062,
+      "headVerticesAffected": 1062,
+      "maximumDeltaMetres": 0.009042130109636013,
+      "activeBoundsMin": [
+        -0.017098743468523026,
+        -0.08966280519962311,
+        1.493253469467163
+      ],
+      "activeBoundsMax": [
+        0.07159792631864548,
+        0.007087272126227617,
+        1.6168851852416992
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Roll_In_Upper_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1064,
+      "headVerticesAffected": 1064,
+      "maximumDeltaMetres": 0.009042144588751333,
+      "activeBoundsMin": [
+        -0.07160646468400955,
+        -0.08966280519962311,
+        1.493269443511963
+      ],
+      "activeBoundsMax": [
+        0.017084507271647453,
+        0.006572849117219448,
+        1.616697072982788
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Roll_In_Lower_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 574,
+      "headVerticesAffected": 574,
+      "maximumDeltaMetres": 0.013843678603819616,
+      "activeBoundsMin": [
+        -0.014687532559037209,
+        -0.07536807656288147,
+        1.4282505512237549
+      ],
+      "activeBoundsMax": [
+        0.0738445371389389,
+        0.07456128299236298,
+        1.661818504333496
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Roll_In_Lower_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 573,
+      "headVerticesAffected": 573,
+      "maximumDeltaMetres": 0.013843695509898694,
+      "activeBoundsMin": [
+        -0.0738520696759224,
+        -0.07536807656288147,
+        1.4282523393630981
+      ],
+      "activeBoundsMax": [
+        0.014691270887851715,
+        0.07452855259180069,
+        1.661807894706726
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Roll_Out_Upper_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 894,
+      "headVerticesAffected": 894,
+      "maximumDeltaMetres": 0.005909290192362393,
+      "activeBoundsMin": [
+        -0.012855630367994308,
+        -0.08966280519962311,
+        1.502194881439209
+      ],
+      "activeBoundsMax": [
+        0.07366234809160233,
+        0.006522296462208033,
+        1.6346676349639893
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Roll_Out_Upper_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 893,
+      "headVerticesAffected": 893,
+      "maximumDeltaMetres": 0.0059092878328744994,
+      "activeBoundsMin": [
+        -0.07366161048412323,
+        -0.08966280519962311,
+        1.5021823644638062
+      ],
+      "activeBoundsMax": [
+        0.012831653468310833,
+        0.0056518614292144775,
+        1.6346640586853027
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Roll_Out_Lower_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 318,
+      "headVerticesAffected": 318,
+      "maximumDeltaMetres": 0.007709857378162378,
+      "activeBoundsMin": [
+        -0.012855630367994308,
+        -0.07536807656288147,
+        1.500924825668335
+      ],
+      "activeBoundsMax": [
+        0.0419575572013855,
+        -0.003450426971539855,
+        1.5571364164352417
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Roll_Out_Lower_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 317,
+      "headVerticesAffected": 317,
+      "maximumDeltaMetres": 0.007709856934454417,
+      "activeBoundsMin": [
+        -0.04177629575133324,
+        -0.07536807656288147,
+        1.5009188652038574
+      ],
+      "activeBoundsMax": [
+        0.012831653468310833,
+        -0.0034544351510703564,
+        1.5571447610855103
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Push_Upper_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 789,
+      "headVerticesAffected": 789,
+      "maximumDeltaMetres": 0.005871056915911152,
+      "activeBoundsMin": [
+        -0.025962762534618378,
+        -0.08966280519962311,
+        1.502194881439209
+      ],
+      "activeBoundsMax": [
+        0.06608438491821289,
+        -0.008664155378937721,
+        1.5902994871139526
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Push_Upper_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 789,
+      "headVerticesAffected": 789,
+      "maximumDeltaMetres": 0.0058710323406061336,
+      "activeBoundsMin": [
+        -0.06602229923009872,
+        -0.08966280519962311,
+        1.5021823644638062
+      ],
+      "activeBoundsMax": [
+        0.02595481090247631,
+        -0.007342753000557423,
+        1.5902994871139526
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Push_Lower_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 569,
+      "headVerticesAffected": 569,
+      "maximumDeltaMetres": 0.006725974060806807,
+      "activeBoundsMin": [
+        -0.03186732903122902,
+        -0.0773719847202301,
+        1.5009188652038574
+      ],
+      "activeBoundsMax": [
+        0.06608438491821289,
+        -0.008664155378937721,
+        1.5797665119171143
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Push_Lower_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 569,
+      "headVerticesAffected": 569,
+      "maximumDeltaMetres": 0.006725949798371982,
+      "activeBoundsMin": [
+        -0.06602229923009872,
+        -0.0773223489522934,
+        1.5009188652038574
+      ],
+      "activeBoundsMax": [
+        0.03227761387825012,
+        -0.007342753000557423,
+        1.5797572135925293
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Pull_Upper_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 847,
+      "headVerticesAffected": 847,
+      "maximumDeltaMetres": 0.005879840728036397,
+      "activeBoundsMin": [
+        -0.04468514025211334,
+        -0.08966280519962311,
+        1.502194881439209
+      ],
+      "activeBoundsMax": [
+        0.06141914799809456,
+        -0.01658998429775238,
+        1.5971269607543945
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Pull_Upper_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 848,
+      "headVerticesAffected": 848,
+      "maximumDeltaMetres": 0.0058798701010272245,
+      "activeBoundsMin": [
+        -0.061385467648506165,
+        -0.08966280519962311,
+        1.5021823644638062
+      ],
+      "activeBoundsMax": [
+        0.04466961324214935,
+        -0.016487689688801765,
+        1.5971083641052246
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Pull_Lower_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 569,
+      "headVerticesAffected": 569,
+      "maximumDeltaMetres": 0.0067260101608511555,
+      "activeBoundsMin": [
+        -0.03186732903122902,
+        -0.0773719847202301,
+        1.5009188652038574
+      ],
+      "activeBoundsMax": [
+        0.06608438491821289,
+        -0.008664155378937721,
+        1.5789915323257446
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Pull_Lower_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 569,
+      "headVerticesAffected": 569,
+      "maximumDeltaMetres": 0.006726029815669072,
+      "activeBoundsMin": [
+        -0.06602229923009872,
+        -0.0773223489522934,
+        1.5009188652038574
+      ],
+      "activeBoundsMax": [
+        0.03227761387825012,
+        -0.007342753000557423,
+        1.5789817571640015
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Up",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1411,
+      "headVerticesAffected": 1411,
+      "maximumDeltaMetres": 0.006315667742555657,
+      "activeBoundsMin": [
+        -0.06949765235185623,
+        -0.08966280519962311,
+        1.4487509727478027
+      ],
+      "activeBoundsMax": [
+        0.06950167566537857,
+        0.045857954770326614,
+        1.59707510471344
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Down",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 2002,
+      "headVerticesAffected": 2002,
+      "maximumDeltaMetres": 0.005604882701781117,
+      "activeBoundsMin": [
+        -0.0725514143705368,
+        -0.08966280519962311,
+        1.4888792037963867
+      ],
+      "activeBoundsMax": [
+        0.07254528254270554,
+        0.021029379218816757,
+        1.6211180686950684
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 3346,
+      "headVerticesAffected": 2985,
+      "maximumDeltaMetres": 0.022703251391705308,
+      "activeBoundsMin": [
+        -0.09155561029911041,
+        -0.08966280519962311,
+        1.4443755149841309
+      ],
+      "activeBoundsMax": [
+        0.09156962484121323,
+        0.07077175378799438,
+        1.6483229398727417
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 3353,
+      "headVerticesAffected": 2992,
+      "maximumDeltaMetres": 0.022703370903091775,
+      "activeBoundsMin": [
+        -0.09155561029911041,
+        -0.08966280519962311,
+        1.4443755149841309
+      ],
+      "activeBoundsMax": [
+        0.09156962484121323,
+        0.07016611844301224,
+        1.648495078086853
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Upper_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 2074,
+      "headVerticesAffected": 2072,
+      "maximumDeltaMetres": 0.009149798795778577,
+      "activeBoundsMin": [
+        -0.0896432176232338,
+        -0.08966280519962311,
+        1.4528728723526
+      ],
+      "activeBoundsMax": [
+        0.09156962484121323,
+        0.0868237093091011,
+        1.6153981685638428
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Upper_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 2064,
+      "headVerticesAffected": 2062,
+      "maximumDeltaMetres": 0.009149764556685315,
+      "activeBoundsMin": [
+        -0.09155561029911041,
+        -0.08966280519962311,
+        1.4528728723526
+      ],
+      "activeBoundsMax": [
+        0.08973879367113113,
+        0.0868380218744278,
+        1.6153875589370728
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Lower_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1798,
+      "headVerticesAffected": 1798,
+      "maximumDeltaMetres": 0.006993518688701464,
+      "activeBoundsMin": [
+        -0.08134988695383072,
+        -0.08966280519962311,
+        1.4352723360061646
+      ],
+      "activeBoundsMax": [
+        0.08341627568006516,
+        0.06222696229815483,
+        1.5902994871139526
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Lower_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1803,
+      "headVerticesAffected": 1803,
+      "maximumDeltaMetres": 0.006993455089082804,
+      "activeBoundsMin": [
+        -0.08342427015304565,
+        -0.08966280519962311,
+        1.4352723360061646
+      ],
+      "activeBoundsMax": [
+        0.08136779069900513,
+        0.06222696229815483,
+        1.5902994871139526
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Shrug_Upper",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1311,
+      "headVerticesAffected": 1311,
+      "maximumDeltaMetres": 0.004550887493710367,
+      "activeBoundsMin": [
+        -0.0698939710855484,
+        -0.08966280519962311,
+        1.4640429019927979
+      ],
+      "activeBoundsMax": [
+        0.07024794816970825,
+        0.060850050300359726,
+        1.6086630821228027
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Shrug_Lower",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1283,
+      "headVerticesAffected": 1283,
+      "maximumDeltaMetres": 0.005443559163763209,
+      "activeBoundsMin": [
+        -0.06997457891702652,
+        -0.08966280519962311,
+        1.4854767322540283
+      ],
+      "activeBoundsMax": [
+        0.06969334930181503,
+        0.027215279638767242,
+        1.5991692543029785
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Drop_Upper",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1399,
+      "headVerticesAffected": 1399,
+      "maximumDeltaMetres": 0.010322553655647956,
+      "activeBoundsMin": [
+        -0.07160646468400955,
+        -0.08966280519962311,
+        1.5014476776123047
+      ],
+      "activeBoundsMax": [
+        0.07159792631864548,
+        0.0017017554491758347,
+        1.6184614896774292
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Drop_Lower",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1417,
+      "headVerticesAffected": 1417,
+      "maximumDeltaMetres": 0.007302674835707126,
+      "activeBoundsMin": [
+        -0.0698494166135788,
+        -0.08901985734701157,
+        1.4282505512237549
+      ],
+      "activeBoundsMax": [
+        0.0698554515838623,
+        0.05415382981300354,
+        1.6011507511138916
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Up_Upper_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1569,
+      "headVerticesAffected": 1401,
+      "maximumDeltaMetres": 0.008312701358249932,
+      "activeBoundsMin": [
+        -0.04534194990992546,
+        -0.08966280519962311,
+        1.4607986211776733
+      ],
+      "activeBoundsMax": [
+        0.07196078449487686,
+        0.07456128299236298,
+        1.6248900890350342
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Up_Upper_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1571,
+      "headVerticesAffected": 1403,
+      "maximumDeltaMetres": 0.008312014767674682,
+      "activeBoundsMin": [
+        -0.07298324257135391,
+        -0.08966280519962311,
+        1.4607621431350708
+      ],
+      "activeBoundsMax": [
+        0.045321300625801086,
+        0.07452855259180069,
+        1.6248360872268677
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Down_Lower_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 948,
+      "headVerticesAffected": 948,
+      "maximumDeltaMetres": 0.007087284120258034,
+      "activeBoundsMin": [
+        -0.03217720612883568,
+        -0.08901985734701157,
+        1.4359381198883057
+      ],
+      "activeBoundsMax": [
+        0.06881602108478546,
+        0.06326066702604294,
+        1.5898385047912598
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Down_Lower_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 955,
+      "headVerticesAffected": 955,
+      "maximumDeltaMetres": 0.007086947538313763,
+      "activeBoundsMin": [
+        -0.06917866319417953,
+        -0.08901985734701157,
+        1.4359382390975952
+      ],
+      "activeBoundsMax": [
+        0.03221609443426132,
+        0.06327565014362335,
+        1.589777946472168
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Chin_Up",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 414,
+      "headVerticesAffected": 414,
+      "maximumDeltaMetres": 0.0028300555555365032,
+      "activeBoundsMin": [
+        -0.042653899639844894,
+        -0.07536807656288147,
+        1.5009188652038574
+      ],
+      "activeBoundsMax": [
+        0.04313692823052406,
+        -0.009705604985356331,
+        1.5406851768493652
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Close",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 902,
+      "headVerticesAffected": 902,
+      "maximumDeltaMetres": 0.018844439801971175,
+      "activeBoundsMin": [
+        -0.06602229923009872,
+        -0.07899610698223114,
+        1.5016858577728271
+      ],
+      "activeBoundsMax": [
+        0.06608438491821289,
+        -0.007342753000557423,
+        1.5829846858978271
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Mouth_Contract",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 1784,
+      "headVerticesAffected": 1772,
+      "maximumDeltaMetres": 0.005455357652317338,
+      "activeBoundsMin": [
+        -0.0702497586607933,
+        -0.08966280519962311,
+        1.4352723360061646
+      ],
+      "activeBoundsMax": [
+        0.07024794816970825,
+        0.06222696229815483,
+        1.633165717124939
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Tongue_Bulge_L",
+      "category": "facial-expression",
+      "decision": "defer full viseme/tongue library beyond the head gate",
+      "affectedVerticesAbove10Microns": 6769,
+      "headVerticesAffected": 3474,
+      "maximumDeltaMetres": 0.010214111525536718,
+      "activeBoundsMin": [
+        -0.673152506351471,
+        -0.09798455983400345,
+        0.11183004081249237
+      ],
+      "activeBoundsMax": [
+        0.6554691195487976,
+        0.12851960957050323,
+        1.7108218669891357
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Tongue_Bulge_R",
+      "category": "facial-expression",
+      "decision": "defer full viseme/tongue library beyond the head gate",
+      "affectedVerticesAbove10Microns": 6536,
+      "headVerticesAffected": 3422,
+      "maximumDeltaMetres": 0.010214125989501721,
+      "activeBoundsMin": [
+        -0.655445396900177,
+        -0.09798455983400345,
+        0.11183004081249237
+      ],
+      "activeBoundsMax": [
+        0.6660292148590088,
+        0.12852314114570618,
+        1.7108218669891357
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Jaw_Open",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 5175,
+      "headVerticesAffected": 3731,
+      "maximumDeltaMetres": 0.02123888861994622,
+      "activeBoundsMin": [
+        -0.6593924760818481,
+        -0.09798455983400345,
+        1.1155846118927002
+      ],
+      "activeBoundsMax": [
+        0.574661910533905,
+        0.11928938329219818,
+        1.709812045097351
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Jaw_Forward",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 2220,
+      "headVerticesAffected": 1425,
+      "maximumDeltaMetres": 0.005243995733999873,
+      "activeBoundsMin": [
+        -0.3756098747253418,
+        -0.0739324614405632,
+        1.2685301303863525
+      ],
+      "activeBoundsMax": [
+        0.3756468892097473,
+        0.11671599000692368,
+        1.6762168407440186
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Jaw_Backward",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 2050,
+      "headVerticesAffected": 1310,
+      "maximumDeltaMetres": 0.0038262239251046133,
+      "activeBoundsMin": [
+        -0.36580371856689453,
+        -0.049971457570791245,
+        1.2685301303863525
+      ],
+      "activeBoundsMax": [
+        0.36583825945854187,
+        0.11028243601322174,
+        1.6346676349639893
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Jaw_L",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 3145,
+      "headVerticesAffected": 2320,
+      "maximumDeltaMetres": 0.006229216422021781,
+      "activeBoundsMin": [
+        -0.6404634118080139,
+        -0.08966280519962311,
+        1.121329665184021
+      ],
+      "activeBoundsMax": [
+        0.6405383348464966,
+        0.11102902144193649,
+        1.6365019083023071
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Jaw_R",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 3148,
+      "headVerticesAffected": 2320,
+      "maximumDeltaMetres": 0.006229216354707993,
+      "activeBoundsMin": [
+        -0.6404634118080139,
+        -0.08966280519962311,
+        1.121329665184021
+      ],
+      "activeBoundsMax": [
+        0.6405383348464966,
+        0.11102902144193649,
+        1.6364017724990845
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Jaw_Up",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 2882,
+      "headVerticesAffected": 2865,
+      "maximumDeltaMetres": 0.0018007534801399742,
+      "activeBoundsMin": [
+        -0.09332652390003204,
+        -0.08966280519962311,
+        1.3966268301010132
+      ],
+      "activeBoundsMax": [
+        0.0933549702167511,
+        0.08931823819875717,
+        1.648495078086853
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Jaw_Down",
+      "category": "facial-expression",
+      "decision": "candidate only: refit and validate after identity approval",
+      "affectedVerticesAbove10Microns": 4221,
+      "headVerticesAffected": 2974,
+      "maximumDeltaMetres": 0.0037240839414463267,
+      "activeBoundsMin": [
+        -0.16037288308143616,
+        -0.08966280519962311,
+        0.33187198638916016
+      ],
+      "activeBoundsMax": [
+        0.16036571562290192,
+        0.09202360361814499,
+        1.6776639223098755
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Neck_Swallow_Up",
+      "category": "corrective",
+      "decision": "archive for inspection; recreate only if needed for the SilverScreen neck/head bones",
+      "affectedVerticesAbove10Microns": 142,
+      "headVerticesAffected": 142,
+      "maximumDeltaMetres": 0.005310622788479513,
+      "activeBoundsMin": [
+        -0.03904449939727783,
+        -0.04287494719028473,
+        1.4247385263442993
+      ],
+      "activeBoundsMax": [
+        0.03925221040844917,
+        0.030101759359240532,
+        1.5192828178405762
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Neck_Swallow_Down",
+      "category": "corrective",
+      "decision": "archive for inspection; recreate only if needed for the SilverScreen neck/head bones",
+      "affectedVerticesAbove10Microns": 115,
+      "headVerticesAffected": 115,
+      "maximumDeltaMetres": 0.003735177762268019,
+      "activeBoundsMin": [
+        -0.03827107325196266,
+        -0.039400748908519745,
+        1.4443755149841309
+      ],
+      "activeBoundsMax": [
+        0.038285549730062485,
+        0.027773864567279816,
+        1.515692949295044
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Neck_Tighten_L",
+      "category": "corrective",
+      "decision": "archive for inspection; recreate only if needed for the SilverScreen neck/head bones",
+      "affectedVerticesAbove10Microns": 337,
+      "headVerticesAffected": 337,
+      "maximumDeltaMetres": 0.008176728428169449,
+      "activeBoundsMin": [
+        -0.03658343851566315,
+        -0.06674586236476898,
+        1.4247385263442993
+      ],
+      "activeBoundsMax": [
+        0.0721115916967392,
+        0.06959327310323715,
+        1.5700336694717407
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Neck_Tighten_R",
+      "category": "corrective",
+      "decision": "archive for inspection; recreate only if needed for the SilverScreen neck/head bones",
+      "affectedVerticesAbove10Microns": 337,
+      "headVerticesAffected": 337,
+      "maximumDeltaMetres": 0.00816801534855175,
+      "activeBoundsMin": [
+        -0.07206173241138458,
+        -0.06674586236476898,
+        1.4247385263442993
+      ],
+      "activeBoundsMax": [
+        0.03693357855081558,
+        0.0691852867603302,
+        1.5698050260543823
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Head_Turn_Up",
+      "category": "source-specific",
+      "decision": "archive: source head-pose morph; use semantic head/neck bones instead",
+      "affectedVerticesAbove10Microns": 558,
+      "headVerticesAffected": 558,
+      "maximumDeltaMetres": 0.005671078400137604,
+      "activeBoundsMin": [
+        -0.06600819528102875,
+        -0.05942952632904053,
+        1.4247385263442993
+      ],
+      "activeBoundsMax": [
+        0.06600171327590942,
+        0.09654980152845383,
+        1.5659534931182861
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Head_Turn_Down",
+      "category": "source-specific",
+      "decision": "archive: source head-pose morph; use semantic head/neck bones instead",
+      "affectedVerticesAbove10Microns": 455,
+      "headVerticesAffected": 455,
+      "maximumDeltaMetres": 0.014037156376633927,
+      "activeBoundsMin": [
+        -0.0640488862991333,
+        -0.06674586236476898,
+        1.4345121383666992
+      ],
+      "activeBoundsMax": [
+        0.06391674280166626,
+        0.09736497700214386,
+        1.566149115562439
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Head_Turn_L",
+      "category": "source-specific",
+      "decision": "archive: source head-pose morph; use semantic head/neck bones instead",
+      "affectedVerticesAbove10Microns": 557,
+      "headVerticesAffected": 557,
+      "maximumDeltaMetres": 0.015225891886914802,
+      "activeBoundsMin": [
+        -0.06712516397237778,
+        -0.06183892488479614,
+        1.428896188735962
+      ],
+      "activeBoundsMax": [
+        0.06634870916604996,
+        0.10609342157840729,
+        1.5800058841705322
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Head_Turn_R",
+      "category": "source-specific",
+      "decision": "archive: source head-pose morph; use semantic head/neck bones instead",
+      "affectedVerticesAbove10Microns": 558,
+      "headVerticesAffected": 558,
+      "maximumDeltaMetres": 0.015226036448730785,
+      "activeBoundsMin": [
+        -0.06659591197967529,
+        -0.06183892488479614,
+        1.428895115852356
+      ],
+      "activeBoundsMax": [
+        0.06703858822584152,
+        0.10609342157840729,
+        1.5806283950805664
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Head_Tilt_L",
+      "category": "source-specific",
+      "decision": "archive: source head-pose morph; use semantic head/neck bones instead",
+      "affectedVerticesAbove10Microns": 553,
+      "headVerticesAffected": 553,
+      "maximumDeltaMetres": 0.00945014373889804,
+      "activeBoundsMin": [
+        -0.0688915103673935,
+        -0.05942952632904053,
+        1.4443755149841309
+      ],
+      "activeBoundsMax": [
+        0.07322297245264053,
+        0.08928943425416946,
+        1.5679835081100464
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Head_Tilt_R",
+      "category": "source-specific",
+      "decision": "archive: source head-pose morph; use semantic head/neck bones instead",
+      "affectedVerticesAbove10Microns": 553,
+      "headVerticesAffected": 553,
+      "maximumDeltaMetres": 0.009449990778914816,
+      "activeBoundsMin": [
+        -0.07321234792470932,
+        -0.05941003933548927,
+        1.4443755149841309
+      ],
+      "activeBoundsMax": [
+        0.06890714913606644,
+        0.08931823819875717,
+        1.567975401878357
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Head_L",
+      "category": "source-specific",
+      "decision": "archive: source head-pose morph; use semantic head/neck bones instead",
+      "affectedVerticesAbove10Microns": 314,
+      "headVerticesAffected": 314,
+      "maximumDeltaMetres": 0.009457036737650098,
+      "activeBoundsMin": [
+        -0.05825674161314964,
+        -0.07276599854230881,
+        1.4530640840530396
+      ],
+      "activeBoundsMax": [
+        0.05738053098320961,
+        0.10609342157840729,
+        1.5776904821395874
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Head_R",
+      "category": "source-specific",
+      "decision": "archive: source head-pose morph; use semantic head/neck bones instead",
+      "affectedVerticesAbove10Microns": 327,
+      "headVerticesAffected": 327,
+      "maximumDeltaMetres": 0.009456623793946826,
+      "activeBoundsMin": [
+        -0.057556625455617905,
+        -0.07275698333978653,
+        1.4530640840530396
+      ],
+      "activeBoundsMax": [
+        0.06391674280166626,
+        0.10609342157840729,
+        1.577671766281128
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Head_Forward",
+      "category": "source-specific",
+      "decision": "archive: source head-pose morph; use semantic head/neck bones instead",
+      "affectedVerticesAbove10Microns": 454,
+      "headVerticesAffected": 454,
+      "maximumDeltaMetres": 0.01029287263100193,
+      "activeBoundsMin": [
+        -0.0640488862991333,
+        -0.045719798654317856,
+        1.4345121383666992
+      ],
+      "activeBoundsMax": [
+        0.06391674280166626,
+        0.10230264067649841,
+        1.5769333839416504
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    },
+    {
+      "name": "Head_Backward",
+      "category": "source-specific",
+      "decision": "archive: source head-pose morph; use semantic head/neck bones instead",
+      "affectedVerticesAbove10Microns": 1257,
+      "headVerticesAffected": 636,
+      "maximumDeltaMetres": 0.0091793130712878,
+      "activeBoundsMin": [
+        -0.6691341400146484,
+        -0.09198519587516785,
+        1.1131212711334229
+      ],
+      "activeBoundsMax": [
+        0.36709046363830566,
+        0.10609342157840729,
+        1.7052024602890015
+      ],
+      "copiedIntoCandidate": false,
+      "driverContractVerified": false
+    }
+  ],
+  "materials": [
+    {
+      "name": "Std_Skin_Head",
+      "vertices": 4191,
+      "boundsMin": [
+        -0.09155561029911041,
+        -0.08966280519962311,
+        1.4069045782089233
+      ],
+      "boundsMax": [
+        0.09156962484121323,
+        0.11938832700252533,
+        1.7108218669891357
+      ]
+    },
+    {
+      "name": "Std_Skin_Body",
+      "vertices": 2009,
+      "boundsMin": [
+        -0.18118074536323547,
+        -0.09798455983400345,
+        0.8494095206260681
+      ],
+      "boundsMax": [
+        0.18119600415229797,
+        0.1311221867799759,
+        1.4584165811538696
+      ]
+    },
+    {
+      "name": "Std_Skin_Arm",
+      "vertices": 4280,
+      "boundsMin": [
+        -0.6729224324226379,
+        -0.028331855311989784,
+        1.1117721796035767
+      ],
+      "boundsMax": [
+        0.6729360818862915,
+        0.11304452270269394,
+        1.4664455652236938
+      ]
+    },
+    {
+      "name": "Std_Skin_Leg",
+      "vertices": 2330,
+      "boundsMin": [
+        -0.18232624232769012,
+        -0.15838070213794708,
+        0.022966604679822922
+      ],
+      "boundsMax": [
+        0.1823112517595291,
+        0.09702607244253159,
+        0.88502436876297
+      ]
+    },
+    {
+      "name": "Std_Nails",
+      "vertices": 1036,
+      "boundsMin": [
+        -0.6732053756713867,
+        -0.15496698021888733,
+        0.031426891684532166
+      ],
+      "boundsMax": [
+        0.6732218265533447,
+        0.06929784268140793,
+        1.150390863418579
+      ]
+    },
+    {
+      "name": "Std_Eyelash",
+      "vertices": 704,
+      "boundsMin": [
+        -0.06334683299064636,
+        -0.07410804182291031,
+        1.5927242040634155
+      ],
+      "boundsMax": [
+        0.06332025676965714,
+        -0.04424542933702469,
+        1.6241483688354492
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "name": "Head",
+      "sourceObject": "CC_Base_Body",
+      "boundsMin": [
+        -0.09155561029911041,
+        -0.08966280519962311,
+        1.4069045782089233
+      ],
+      "boundsMax": [
+        0.09156962484121323,
+        0.11938832700252533,
+        1.7108218669891357
+      ]
+    },
+    {
+      "name": "Eyes",
+      "sourceObject": "CC_Base_Eye",
+      "boundsMin": [
+        -0.05630308762192726,
+        -0.05650388076901436,
+        1.5869683027267456
+      ],
+      "boundsMax": [
+        0.05641994625329971,
+        -0.013670342974364758,
+        1.629384994506836
+      ]
+    },
+    {
+      "name": "Teeth",
+      "sourceObject": "CC_Base_Teeth",
+      "boundsMin": [
+        -0.0318758599460125,
+        -0.06484819203615189,
+        1.5172899961471558
+      ],
+      "boundsMax": [
+        0.03197680041193962,
+        0.004177680239081383,
+        1.564368724822998
+      ]
+    },
+    {
+      "name": "Tongue",
+      "sourceObject": "CC_Base_Tongue",
+      "boundsMin": [
+        -0.017689667642116547,
+        -0.05606706440448761,
+        1.525891661643982
+      ],
+      "boundsMax": [
+        0.01768997684121132,
+        0.0013680339325219393,
+        1.5480268001556396
+      ]
+    }
+  ]
+}

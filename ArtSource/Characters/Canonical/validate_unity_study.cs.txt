@@ -1,0 +1,34 @@
+var shader=Shader.Find("SilverScreen/Characters/Restrained Realism");
+if(shader==null||!shader.isSupported)throw new System.Exception("Study shader unavailable or unsupported.");
+int shaderErrors=0;
+foreach(var message in ShaderUtil.GetShaderMessages(shader))
+{
+    result.Log("Shader "+message.severity+": "+message.message);
+    if(message.severity.ToString()=="Error")shaderErrors++;
+}
+if(shaderErrors>0)throw new System.Exception("Study shader has compilation errors.");
+var staging=UnityEditor.SceneManagement.EditorSceneManager.NewPreviewScene();
+try
+{
+    var prefab=AssetDatabase.LoadAssetAtPath<GameObject>("Assets/SilverScreen/Art/Characters/Canonical/CanonicalAdult_VisualReview.prefab");
+    var instance=(GameObject)PrefabUtility.InstantiatePrefab(prefab,staging);
+    var renderers=instance.GetComponentsInChildren<SkinnedMeshRenderer>();
+    if(renderers.Length!=1)throw new System.Exception("Expected one authored surface renderer.");
+    var renderer=renderers[0];var mesh=renderer.sharedMesh;
+    if(mesh.blendShapeCount!=1||!mesh.GetBlendShapeName(0).Contains("SilverScreen_ArtStudy01")||Mathf.Abs(renderer.GetBlendShapeWeight(0)-100)>0.001f)
+        throw new System.Exception("Expected exactly one active art-study shape key.");
+    foreach(var material in renderer.sharedMaterials)
+        if(material==null||material.GetTexture("_BaseMap")==null)throw new System.Exception("Missing material or base texture.");
+    var baked=new Mesh();renderer.BakeMesh(baked);baked.RecalculateBounds();
+    var bounds=baked.bounds;
+    result.Log("Study bounds local: "+bounds.ToString("F5"));
+    result.Log("Study geometry: "+mesh.vertexCount+" vertices; "+(mesh.triangles.Length/3)+" triangles; "+mesh.subMeshCount+" submeshes; "+renderer.bones.Length+" bones.");
+    result.Log("Active shape: "+mesh.GetBlendShapeName(0)+"="+renderer.GetBlendShapeWeight(0));
+    if(Mathf.Abs(bounds.min.y)>.003f||bounds.size.y<1.72f||bounds.size.y>1.81f)throw new System.Exception("Invalid feet origin or adult height.");
+    foreach(var v in baked.vertices)
+        if(float.IsNaN(v.x)||float.IsNaN(v.y)||float.IsNaN(v.z)||float.IsInfinity(v.x)||float.IsInfinity(v.y)||float.IsInfinity(v.z))throw new System.Exception("Non-finite geometry.");
+    Object.DestroyImmediate(baked);
+    result.Log("PASS: shader, material references, one active study, finite baked geometry, physical height and feet origin.");
+}
+finally{UnityEditor.SceneManagement.EditorSceneManager.ClosePreviewScene(staging);}
+result.Log("Compiling="+EditorApplication.isCompiling+"; active saved scene="+UnityEngine.SceneManagement.SceneManager.GetActiveScene().path);

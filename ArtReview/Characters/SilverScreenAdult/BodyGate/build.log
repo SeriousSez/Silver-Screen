@@ -1,0 +1,135 @@
+00:02.766  blend            | Read blend: "C:\Repos\Unity\Silver Screen\ArtSource\Characters\SilverScreenAdult\Foundations\SS_MaleHead_Foundation_v1.blend"
+00:23.391  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\BodyGate\front.png'
+00:40.828  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\BodyGate\threequarter.png'
+00:56.563  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\BodyGate\side.png'
+01:14.625  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\BodyGate\back.png'
+01:44.625  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\BodyGate\torso.png'
+02:11.906  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\BodyGate\hands.png'
+02:38.156  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\BodyGate\feet.png'
+03:20.516  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\BodyGate\neck.png'
+03:57.485  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\BodyGate\pelvis.png'
+04:28.860  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\BodyGate\back-closeup.png'
+04:40.516  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\BodyGate\head-hidden-front.png'
+04:52.406  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\BodyGate\head-hidden-threequarter.png'
+05:04.610  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\BodyGate\head-hidden-back.png'
+C:\Repos\Unity\Silver Screen\ArtSource\Characters\SilverScreenAdult\BodyGate\build_body.py:406: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  wm=bpy.data.materials.new('Topology lines');wm.use_nodes=True
+05:15.610  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\BodyGate\topology.png'
+05:33.375  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\BodyGate\topology-torso.png'
+Info: Saved as "SS_MaleBody_Foundation_Candidate.blend"
+{
+  "status": "APPROVED_NEUTRAL_MALE_FOUNDATION",
+  "anatomyRevision": "male-anatomy-03-final-foundation",
+  "technicalTopologyApproved": true,
+  "bodyAnatomyApproved": true,
+  "bodyVisualReference": "Reference/ApprovedMaleBodyReference.png",
+  "headFoundationSHA256": "ad692545e7b10451a5856c78b33695bf33a4f522c0e14cc6b29c292615a48eaf",
+  "headCoordinatesUnchanged": true,
+  "sourceSHA256": "b1680fcf4359488397bf622daa1072cd6d4dcd3fbe5fb1c0ff7d12905e063e7c",
+  "headSeamVertices": 40,
+  "headSeamMaxErrorMetres": 0.0,
+  "bodyVertices": 9309,
+  "bodyFaces": 9288,
+  "bodyQuads": 9288,
+  "boundaryEdges": 40,
+  "degenerateFaces": 0,
+  "nonManifoldEdgesMoreThanTwoFaces": 0,
+  "skinBindingPresent": false,
+  "bodyBoundsMin": [
+    -0.47963138874897826,
+    -0.21125702966660218,
+    0.0
+  ],
+  "bodyBoundsMax": [
+    0.47964660473334564,
+    0.15196933909353583,
+    1.5092321634292603
+  ],
+  "anatomicalHeightMetres": 1.7766315937042236,
+  "limbLandmarks": {
+    "L": {
+      "clavicleRoot": [
+        0.026,
+        0.018,
+        1.45
+      ],
+      "shoulder": [
+        0.205,
+        0.019,
+        1.438
+      ],
+      "elbow": [
+        0.315,
+        0.015,
+        1.19
+      ],
+      "wrist": [
+        0.404,
+        -0.003,
+        0.977
+      ],
+      "hip": [
+        0.088,
+        0.011,
+        0.988
+      ],
+      "knee": [
+        0.1,
+        -0.012,
+        0.515
+      ],
+      "ankle": [
+        0.111,
+        0.005,
+        0.082
+      ]
+    },
+    "R": {
+      "clavicleRoot": [
+        -0.026,
+        0.018,
+        1.45
+      ],
+      "shoulder": [
+        -0.205,
+        0.019,
+        1.438
+      ],
+      "elbow": [
+        -0.315,
+        0.015,
+        1.19
+      ],
+      "wrist": [
+        -0.404,
+        -0.003,
+        0.977
+      ],
+      "hip": [
+        -0.088,
+        0.011,
+        0.988
+      ],
+      "knee": [
+        -0.1,
+        -0.012,
+        0.515
+      ],
+      "ankle": [
+        -0.111,
+        0.005,
+        0.082
+      ]
+    }
+  },
+  "bodyCompleteUnderClothing": true,
+  "garmentsPresent": false,
+  "explicitGenitalGeometry": false,
+  "semanticRestLandmarks": "male-rest-landmarks-v2.json",
+  "rigContractModified": false,
+  "deformationValidated": false,
+  "identityTargetsImplemented": false
+}
+Blender 5.0.1 (hash a3db93c5b259 built 2025-12-16 01:32:30)
+
+Blender quit

@@ -1,0 +1,26 @@
+{
+  "status": "scaffold structure checks passed",
+  "boneCount": 91,
+  "humanoidMappedBoneCount": 55,
+  "meshCount": 0,
+  "animationClipCount": 0,
+  "rootPosition": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "rootScale": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "uniqueBoneNames": true,
+  "finiteNonzeroBones": true,
+  "parentReferencesValid": true,
+  "importedArtSources": [],
+  "skinningValidated": false,
+  "deformationValidated": false,
+  "humanoidAvatarValidated": false,
+  "visualGatePassed": false,
+  "runtimeValidated": false
+}

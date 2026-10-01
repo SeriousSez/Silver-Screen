@@ -1,0 +1,32 @@
+{
+  "revision": "male-anatomy-03-final-foundation",
+  "status": "APPROVED_AFTER_AUTHORIZED_FINAL_REFINEMENT",
+  "visualReference": "../Reference/ApprovedMaleBodyReference.png",
+  "topologyFoundation": "User-approved CC-derived body edge layout; previous anatomy was not approved",
+  "units": "metres",
+  "root": [0, 0, 0],
+  "positiveSideLandmarks": {
+    "clavicleRoot": [0.026, 0.018, 1.450],
+    "shoulder": [0.205, 0.019, 1.438],
+    "elbow": [0.315, 0.015, 1.190],
+    "wrist": [0.404, -0.003, 0.977],
+    "hip": [0.088, 0.011, 0.988],
+    "knee": [0.100, -0.012, 0.515],
+    "ankle": [0.111, 0.005, 0.082]
+  },
+  "axialLandmarks": {
+    "Hips": [0, 0.011, 0.988],
+    "Spine": [0, 0.012, 1.085],
+    "Spine1": [0, 0.018, 1.233],
+    "Spine2": [0, 0.026, 1.378],
+    "Neck": [0, 0.029, 1.482]
+  },
+  "sections": {
+    "sourceZ": [0.83, 0.90, 0.98, 1.055, 1.115, 1.20, 1.28, 1.36, 1.425, 1.475],
+    "halfWidth": [0.111, 0.129, 0.140, 0.135, 0.137, 0.159, 0.185, 0.198, 0.205, 0.063],
+    "halfDepth": [0.077, 0.090, 0.098, 0.092, 0.092, 0.109, 0.112, 0.113, 0.087, 0.057],
+    "centerY": [0.012, 0.013, 0.014, 0.013, 0.012, 0.017, 0.021, 0.026, 0.033, 0.045],
+    "sectionExponent": [2.15, 2.25, 2.25, 2.10, 2.00, 2.15, 2.45, 2.45, 2.10, 2.0]
+  },
+  "contract": "Coordinated rest-anatomy landmarks for the preserved SilverScreen 91-bone architecture; no imported CC skeleton, binding or animation."
+}

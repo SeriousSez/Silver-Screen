@@ -1,0 +1,8 @@
+{
+  "package": "Library\\PackageCache\\com.unity.render-pipelines.universal@d7774c218bdf",
+  "upstream_sha256": {
+    "Lit.shader": "d012fadd60a3e5c19a57d501a3e010ad0ee6067465fee135a421afea08b4da45",
+    "LitInput.hlsl": "0a755082971cd052ea2c3595feefb28d5357db6b47ea406f592ce9d9ca40f0a6"
+  },
+  "lighting": "unchanged URP PBR; material input frequency treatment only"
+}

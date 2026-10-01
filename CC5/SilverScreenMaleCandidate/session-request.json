@@ -1,0 +1,8 @@
+{
+  "id": "stop-second-session",
+  "operations": [
+    {
+      "type": "stop"
+    }
+  ]
+}

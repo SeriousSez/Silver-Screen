@@ -1,0 +1,1 @@
+{"method": "tools/call", "params": {"name": "Unity_GetConsoleLogs", "arguments": {"maxEntries": 30, "logTypes": "Error,Warning", "includeStackTrace": false}}}

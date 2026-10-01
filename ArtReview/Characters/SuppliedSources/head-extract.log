@@ -1,0 +1,174 @@
+Extensions: writing cache failed ([WinError 183] Cannot create a file when that file already exists: 'C:\\Users\\Sez\\AppData\\Roaming\\Blender Foundation\\Blender\\5.0\\extensions\\.cache').
+FBX version: 7200
+ERROR: not enough data in this FBX layer, missing data will be left as default!
+ERROR: not enough data in this FBX layer, missing data will be left as default!
+ERROR: not enough data in this FBX layer, missing data will be left as default!
+ERROR: not enough data in this FBX layer, missing data will be left as default!
+ERROR: not enough data in this FBX layer, missing data will be left as default!
+ERROR: not enough data in this FBX layer, missing data will be left as default!
+ERROR: not enough data in this FBX layer, missing data will be left as default!
+ERROR: not enough data in this FBX layer, missing data will be left as default!
+ERROR: not enough data in this FBX layer, missing data will be left as default!
+ERROR: not enough data in this FBX layer, missing data will be left as default!
+ERROR: not enough data in this FBX layer, missing data will be left as default!
+{
+  "source": "C:\\Users\\Sez\\Downloads\\Blender\\Blender 1\\blender.Fbx",
+  "sourceSHA256": "b1680fcf4359488397bf622daa1072cd6d4dcd3fbe5fb1c0ff7d12905e063e7c",
+  "shapeCount": 148,
+  "classificationBasis": "Name, actual nonzero vertex displacement, and affected region. Corrective means a rig-coupled candidate, not verified corrective behavior; source driver metadata is unavailable. Not a validated deformation test.",
+  "identityBodyCustomizationShapes": 0,
+  "identityNote": "No dedicated identity/body customization morphs identified among the 148 exported names. Local facial action controls are not identity presets.",
+  "categoryCounts": {
+    "identity/body-customization": 0,
+    "facial-expression": 118,
+    "corrective": 12,
+    "source-specific": 18
+  },
+  "materials": [
+    {
+      "name": "Std_Skin_Head",
+      "vertices": 4191,
+      "boundsMin": [
+        -0.09155561029911041,
+        -0.08966280519962311,
+        1.4069045782089233
+      ],
+      "boundsMax": [
+        0.09156962484121323,
+        0.11938832700252533,
+        1.7108218669891357
+      ]
+    },
+    {
+      "name": "Std_Skin_Body",
+      "vertices": 2009,
+      "boundsMin": [
+        -0.18118074536323547,
+        -0.09798455983400345,
+        0.8494095206260681
+      ],
+      "boundsMax": [
+        0.18119600415229797,
+        0.1311221867799759,
+        1.4584165811538696
+      ]
+    },
+    {
+      "name": "Std_Skin_Arm",
+      "vertices": 4280,
+      "boundsMin": [
+        -0.6729224324226379,
+        -0.028331855311989784,
+        1.1117721796035767
+      ],
+      "boundsMax": [
+        0.6729360818862915,
+        0.11304452270269394,
+        1.4664455652236938
+      ]
+    },
+    {
+      "name": "Std_Skin_Leg",
+      "vertices": 2330,
+      "boundsMin": [
+        -0.18232624232769012,
+        -0.15838070213794708,
+        0.022966604679822922
+      ],
+      "boundsMax": [
+        0.1823112517595291,
+        0.09702607244253159,
+        0.88502436876297
+      ]
+    },
+    {
+      "name": "Std_Nails",
+      "vertices": 1036,
+      "boundsMin": [
+        -0.6732053756713867,
+        -0.15496698021888733,
+        0.031426891684532166
+      ],
+      "boundsMax": [
+        0.6732218265533447,
+        0.06929784268140793,
+        1.150390863418579
+      ]
+    },
+    {
+      "name": "Std_Eyelash",
+      "vertices": 704,
+      "boundsMin": [
+        -0.06334683299064636,
+        -0.07410804182291031,
+        1.5927242040634155
+      ],
+      "boundsMax": [
+        0.06332025676965714,
+        -0.04424542933702469,
+        1.6241483688354492
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "name": "Head",
+      "sourceObject": "CC_Base_Body",
+      "boundsMin": [
+        -0.09155561029911041,
+        -0.08966280519962311,
+        1.4069045782089233
+      ],
+      "boundsMax": [
+        0.09156962484121323,
+        0.11938832700252533,
+        1.7108218669891357
+      ]
+    },
+    {
+      "name": "Eyes",
+      "sourceObject": "CC_Base_Eye",
+      "boundsMin": [
+        -0.05630308762192726,
+        -0.05650388076901436,
+        1.5869683027267456
+      ],
+      "boundsMax": [
+        0.05641994625329971,
+        -0.013670342974364758,
+        1.629384994506836
+      ]
+    },
+    {
+      "name": "Teeth",
+      "sourceObject": "CC_Base_Teeth",
+      "boundsMin": [
+        -0.0318758599460125,
+        -0.06484819203615189,
+        1.5172899961471558
+      ],
+      "boundsMax": [
+        0.03197680041193962,
+        0.004177680239081383,
+        1.564368724822998
+      ]
+    },
+    {
+      "name": "Tongue",
+      "sourceObject": "CC_Base_Tongue",
+      "boundsMin": [
+        -0.017689667642116547,
+        -0.05606706440448761,
+        1.525891661643982
+      ],
+      "boundsMax": [
+        0.01768997684121132,
+        0.0013680339325219393,
+        1.5480268001556396
+      ]
+    }
+  ]
+}
+Blender 5.0.1 (hash a3db93c5b259 built 2025-12-16 01:32:30)
+
+Blender quit

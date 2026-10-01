@@ -1,0 +1,98 @@
+{
+  "status": "BODY_FOUNDATION_VISUAL_REVIEW_PENDING",
+  "headFoundationSHA256": "ad692545e7b10451a5856c78b33695bf33a4f522c0e14cc6b29c292615a48eaf",
+  "headCoordinatesUnchanged": true,
+  "sourceSHA256": "b1680fcf4359488397bf622daa1072cd6d4dcd3fbe5fb1c0ff7d12905e063e7c",
+  "headSeamVertices": 40,
+  "headSeamMaxErrorMetres": 0.0,
+  "bodyVertices": 9309,
+  "bodyFaces": 9288,
+  "bodyQuads": 9288,
+  "boundaryEdges": 40,
+  "degenerateFaces": 0,
+  "nonManifoldEdgesMoreThanTwoFaces": 0,
+  "skinBindingPresent": false,
+  "bodyBoundsMin": [
+    -0.8067283767638792,
+    -0.21125014044291984,
+    0.0
+  ],
+  "bodyBoundsMax": [
+    0.8067204937521488,
+    0.13543561040074992,
+    1.5092321634292603
+  ],
+  "anatomicalHeightMetres": 1.7766315937042236,
+  "limbLandmarks": {
+    "L": {
+      "hip": [
+        0.091,
+        0.01,
+        0.982
+      ],
+      "knee": [
+        0.099,
+        -0.012,
+        0.515
+      ],
+      "ankle": [
+        0.098,
+        0.005,
+        0.082
+      ],
+      "shoulder": [
+        0.177,
+        0.028,
+        1.447
+      ],
+      "elbow": [
+        0.428,
+        0.024,
+        1.302
+      ],
+      "wrist": [
+        0.642,
+        0.015000000000000001,
+        1.178
+      ]
+    },
+    "R": {
+      "hip": [
+        -0.091,
+        0.01,
+        0.982
+      ],
+      "knee": [
+        -0.099,
+        -0.012,
+        0.515
+      ],
+      "ankle": [
+        -0.098,
+        0.005,
+        0.082
+      ],
+      "shoulder": [
+        -0.177,
+        0.028,
+        1.447
+      ],
+      "elbow": [
+        -0.428,
+        0.024,
+        1.302
+      ],
+      "wrist": [
+        -0.642,
+        0.015000000000000001,
+        1.178
+      ]
+    }
+  },
+  "bodyCompleteUnderClothing": true,
+  "garmentsPresent": false,
+  "explicitGenitalGeometry": false,
+  "rigContractModified": false,
+  "deformationValidated": false,
+  "identityTargetsImplemented": false
+}

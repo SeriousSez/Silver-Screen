@@ -1,0 +1,18 @@
+[
+  {
+    "Name": "CharacterCreator.exe",
+    "ProcessId": 40660,
+    "ParentProcessId": 59852,
+    "ExecutablePath": "C:\\Program Files\\Reallusion\\Character Creator 5\\Bin64\\CharacterCreator.exe",
+    "CommandLine": "\"C:\\Program Files\\Reallusion\\Character Creator 5\\Bin64\\CharacterCreator.exe\" ",
+    "CreationDate": "2026-09-23T14:09:11.279004+02:00"
+  },
+  {
+    "Name": "blender.exe",
+    "ProcessId": 51348,
+    "ParentProcessId": 40660,
+    "ExecutablePath": "C:\\Program Files\\Blender Foundation\\Blender 4.5\\blender.exe",
+    "CommandLine": "\"C:\\Program Files\\Blender Foundation\\Blender 4.5\\blender.exe\" -P C:\\Users\\Sez\\Documents\\Reallusion\\DataLink\\Untitled\\go_b.py",
+    "CreationDate": "2026-09-23T14:11:29.898398+02:00"
+  }
+]

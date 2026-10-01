@@ -1,0 +1,25 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"success\": true,\n  \"message\": \"Command executed successfully.\",\n  \"data\": {\n    \"isCompilationSuccessful\": true,\n    \"isExecutionSuccessful\": true,\n    \"executionId\": 1,\n    \"compilationLogs\": \"\",\n    \"executionLogs\": \"[Log] Body_LOD0 mat=SS_A_Skin tex=SS_A_Skin_albedo bones=64\\n[Log] Body_LOD1 mat=SS_A_Skin tex=SS_A_Skin_albedo bones=64\\n[Log] Brows mat=SS_A_Brows tex=SS_A_Brows_albedo bones=64\\n[Log] Eyes mat=SS_A_Eyes tex=SS_A_Eyes_albedo bones=64\\n[Log] Hair mat=SS_A_Hair tex=SS_A_Hair_albedo bones=64\\n[Log] Lashes mat=SS_A_Lashes tex=SS_A_Lashes_albedo bones=64\\n[Log] Outfit mat=SS_A_Outfit tex=SS_A_Outfit_albedo bones=64\\n[Log] Shoes mat=SS_A_Shoes tex=SS_A_Shoes_albedo bones=64\\n[Log] Teeth mat=SS_A_Teeth tex=SS_A_Teeth_albedo bones=64\\n[Log] Tongue mat=SS_A_Tongue tex=SS_A_Tongue_albedo bones=64\",\n    \"localFixedCode\": \"using UnityEngine;\\r\\nusing UnityEditor;\\r\\n\\r\\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\\r\\n{\\r\\n    internal class CommandScript : IRunCommand\\r\\n    {\\r\\n        public void Execute(ExecutionResult result)\\r\\n        {\\r\\n            var v = SilverScreen.Editor.Characters.CharacterGateOne.Candidates[0];\\r\\n            foreach (var r in v.Renderers)\\r\\n            {\\r\\n                result.Log(r.name + \\\" mat=\\\" + r.sharedMaterial.name + \\\" tex=\\\" + r.sharedMaterial.mainTexture?.name + \\\" bones=\\\" + r.bones.Length);\\r\\n                r.enabled = r.name == \\\"Eyes\\\";\\r\\n            }\\r\\n\\r\\n            SilverScreen.Editor.Characters.CharacterGateOne.Capture(\\\"eye_diagnostic\\\", v.Eyes + new Vector3(0, 0, .5f), v.Eyes, 25, 1000, 600);\\r\\n        }\\r\\n    }\\r\\n}\",\n    \"result\": \"Command executed successfully.\"\n  }\n}"
+      }
+    ],
+    "structuredContent": {
+      "success": true,
+      "message": "Command executed successfully.",
+      "data": {
+        "isCompilationSuccessful": true,
+        "isExecutionSuccessful": true,
+        "executionId": 1,
+        "compilationLogs": "",
+        "executionLogs": "[Log] Body_LOD0 mat=SS_A_Skin tex=SS_A_Skin_albedo bones=64\n[Log] Body_LOD1 mat=SS_A_Skin tex=SS_A_Skin_albedo bones=64\n[Log] Brows mat=SS_A_Brows tex=SS_A_Brows_albedo bones=64\n[Log] Eyes mat=SS_A_Eyes tex=SS_A_Eyes_albedo bones=64\n[Log] Hair mat=SS_A_Hair tex=SS_A_Hair_albedo bones=64\n[Log] Lashes mat=SS_A_Lashes tex=SS_A_Lashes_albedo bones=64\n[Log] Outfit mat=SS_A_Outfit tex=SS_A_Outfit_albedo bones=64\n[Log] Shoes mat=SS_A_Shoes tex=SS_A_Shoes_albedo bones=64\n[Log] Teeth mat=SS_A_Teeth tex=SS_A_Teeth_albedo bones=64\n[Log] Tongue mat=SS_A_Tongue tex=SS_A_Tongue_albedo bones=64",
+        "localFixedCode": "using UnityEngine;\r\nusing UnityEditor;\r\n\r\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\r\n{\r\n    internal class CommandScript : IRunCommand\r\n    {\r\n        public void Execute(ExecutionResult result)\r\n        {\r\n            var v = SilverScreen.Editor.Characters.CharacterGateOne.Candidates[0];\r\n            foreach (var r in v.Renderers)\r\n            {\r\n                result.Log(r.name + \" mat=\" + r.sharedMaterial.name + \" tex=\" + r.sharedMaterial.mainTexture?.name + \" bones=\" + r.bones.Length);\r\n                r.enabled = r.name == \"Eyes\";\r\n            }\r\n\r\n            SilverScreen.Editor.Characters.CharacterGateOne.Capture(\"eye_diagnostic\", v.Eyes + new Vector3(0, 0, .5f), v.Eyes, 25, 1000, 600);\r\n        }\r\n    }\r\n}",
+        "result": "Command executed successfully."
+      }
+    }
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}

@@ -1,0 +1,12 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"success\": true,\n  \"message\": \"Tool 'GetConsoleLogs' executed successfully\",\n  \"data\": {\n    \"logs\": [\n      {\n        \"message\": \"Assets\\\\Scripts\\\\Domain\\\\Characters\\\\ModularAppearance.cs(117,23): warning UAC1001: Field 'greyFractionOverride' type 'float?' is skipped by serialization (missing the [Serializable] attribute). Refer to the Serialization rules analyzer reference. (https://docs.unity3d.com/6000.5/Documentation/Manual/script-serialization-analyzer.html#uac1001)\\n\",\n        \"stackTrace\": \"\",\n        \"type\": \"Warning\",\n        \"timestamp\": \"[21:20:27]\"\n      }\n    ],\n    \"totalCount\": 1,\n    \"errorCount\": 0,\n    \"warningCount\": 1\n  }\n}"
+      }
+    ]
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}

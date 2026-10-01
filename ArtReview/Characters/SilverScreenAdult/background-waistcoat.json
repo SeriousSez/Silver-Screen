@@ -1,0 +1,13 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"success\": false,\n  \"error\": \"Error executing tool: Error during asset operation: The provided sprite appears to have a transparent background already, background removal is not applicable.\"\n}"
+      }
+    ],
+    "isError": true
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}

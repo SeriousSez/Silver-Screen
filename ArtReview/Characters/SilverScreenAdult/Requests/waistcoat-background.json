@@ -1,0 +1,1 @@
+{"method":"tools/call","params":{"name":"Unity_AssetGeneration_GenerateAsset","arguments":{"command":"RemoveImageBackground","modelId":"photoroom-bg-removal","targetAssetPath":"Assets/Editor/SilverScreenAdultSource/References/Waistcoat.png","waitForCompletion":true}}}

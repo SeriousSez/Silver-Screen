@@ -1,0 +1,951 @@
+{
+  "status": "unapproved geometry checkpoint",
+  "rigBoneCount": 91,
+  "restLandmarksPreserved": true,
+  "sourceHumanModels": [],
+  "modelingShortsInBody": false,
+  "bodyAnatomy": "Complete connected torso, pelvis, limbs, fingers, feet and toes; separate head",
+  "materials": "Flat neutral review colors only; no final textures",
+  "skinned": false,
+  "animationsCreated": false,
+  "unityRuntimeValidated": false,
+  "visualGatePassed": false,
+  "knownReviewItems": [
+    "Body sculpt requires joint retopology review before skinning",
+    "Head/body neck seam requires final matching",
+    "Garment clearances require sculpt/fit review",
+    "Expression deformation not implemented"
+  ],
+  "meshObjects": [
+    {
+      "name": "Belt_LeatherStrap",
+      "vertices": 512,
+      "faces": 384,
+      "boundaryEdges": 256,
+      "nonManifoldEdges": 256,
+      "collections": [
+        "Accessory_Belt"
+      ]
+    },
+    {
+      "name": "Body_CompleteAnatomy",
+      "vertices": 555846,
+      "faces": 555848,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Anatomy_Body"
+      ]
+    },
+    {
+      "name": "Fedora_Brim",
+      "vertices": 1152,
+      "faces": 1024,
+      "boundaryEdges": 256,
+      "nonManifoldEdges": 256,
+      "collections": [
+        "Hat_Fedora"
+      ]
+    },
+    {
+      "name": "Fedora_CreasedTop",
+      "vertices": 1248,
+      "faces": 1152,
+      "boundaryEdges": 192,
+      "nonManifoldEdges": 192,
+      "collections": [
+        "Hat_Fedora"
+      ]
+    },
+    {
+      "name": "Fedora_FeltCrown",
+      "vertices": 1440,
+      "faces": 1344,
+      "boundaryEdges": 192,
+      "nonManifoldEdges": 192,
+      "collections": [
+        "Hat_Fedora"
+      ]
+    },
+    {
+      "name": "Fedora_GrosgrainRibbon",
+      "vertices": 480,
+      "faces": 384,
+      "boundaryEdges": 192,
+      "nonManifoldEdges": 192,
+      "collections": [
+        "Hat_Fedora"
+      ]
+    },
+    {
+      "name": "Fedora_InnerSweatband",
+      "vertices": 288,
+      "faces": 192,
+      "boundaryEdges": 192,
+      "nonManifoldEdges": 192,
+      "collections": [
+        "Hat_Fedora"
+      ]
+    },
+    {
+      "name": "Hair_SeparateScalpGroom",
+      "vertices": 2496,
+      "faces": 2400,
+      "boundaryEdges": 192,
+      "nonManifoldEdges": 192,
+      "collections": [
+        "Hair"
+      ]
+    },
+    {
+      "name": "Head_FacialLoopSurface",
+      "vertices": 4478,
+      "faces": 4049,
+      "boundaryEdges": 222,
+      "nonManifoldEdges": 222,
+      "collections": [
+        "Anatomy_Head"
+      ]
+    },
+    {
+      "name": "Left_Brow",
+      "vertices": 75,
+      "faces": 48,
+      "boundaryEdges": 52,
+      "nonManifoldEdges": 52,
+      "collections": [
+        "Brows"
+      ]
+    },
+    {
+      "name": "Left_Ear_Bowl",
+      "vertices": 480,
+      "faces": 432,
+      "boundaryEdges": 96,
+      "nonManifoldEdges": 96,
+      "collections": [
+        "Anatomy_Head"
+      ]
+    },
+    {
+      "name": "Left_Ear_Canal",
+      "vertices": 362,
+      "faces": 384,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Anatomy_Head"
+      ]
+    },
+    {
+      "name": "Left_Ear_Tragus",
+      "vertices": 362,
+      "faces": 384,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Anatomy_Head"
+      ]
+    },
+    {
+      "name": "Left_Eye",
+      "vertices": 2498,
+      "faces": 2560,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Eye_Left"
+      ]
+    },
+    {
+      "name": "Left_Iris",
+      "vertices": 1474,
+      "faces": 1536,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Eye_Left"
+      ]
+    },
+    {
+      "name": "Left_NostrilInterior",
+      "vertices": 362,
+      "faces": 384,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Anatomy_Head"
+      ]
+    },
+    {
+      "name": "Left_Pupil",
+      "vertices": 914,
+      "faces": 960,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Eye_Left"
+      ]
+    },
+    {
+      "name": "Left_Shoe_Eyelet_-1_0",
+      "vertices": 96,
+      "faces": 96,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Shoe_Left"
+      ]
+    },
+    {
+      "name": "Left_Shoe_Eyelet_-1_1",
+      "vertices": 96,
+      "faces": 96,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Shoe_Left"
+      ]
+    },
+    {
+      "name": "Left_Shoe_Eyelet_-1_2",
+      "vertices": 96,
+      "faces": 96,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Shoe_Left"
+      ]
+    },
+    {
+      "name": "Left_Shoe_Eyelet_-1_3",
+      "vertices": 96,
+      "faces": 96,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Shoe_Left"
+      ]
+    },
+    {
+      "name": "Left_Shoe_Eyelet_-1_4",
+      "vertices": 96,
+      "faces": 96,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Shoe_Left"
+      ]
+    },
+    {
+      "name": "Left_Shoe_Eyelet_1_0",
+      "vertices": 96,
+      "faces": 96,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Shoe_Left"
+      ]
+    },
+    {
+      "name": "Left_Shoe_Eyelet_1_1",
+      "vertices": 96,
+      "faces": 96,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Shoe_Left"
+      ]
+    },
+    {
+      "name": "Left_Shoe_Eyelet_1_2",
+      "vertices": 96,
+      "faces": 96,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Shoe_Left"
+      ]
+    },
+    {
+      "name": "Left_Shoe_Eyelet_1_3",
+      "vertices": 96,
+      "faces": 96,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Shoe_Left"
+      ]
+    },
+    {
+      "name": "Left_Shoe_Eyelet_1_4",
+      "vertices": 96,
+      "faces": 96,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Shoe_Left"
+      ]
+    },
+    {
+      "name": "Left_Shoe_LeatherUpper",
+      "vertices": 1728,
+      "faces": 1632,
+      "boundaryEdges": 192,
+      "nonManifoldEdges": 192,
+      "collections": [
+        "Shoe_Left"
+      ]
+    },
+    {
+      "name": "Left_Shoe_SoleBottom",
+      "vertices": 96,
+      "faces": 1,
+      "boundaryEdges": 96,
+      "nonManifoldEdges": 96,
+      "collections": [
+        "Shoe_Left"
+      ]
+    },
+    {
+      "name": "Left_Shoe_StackedHeel",
+      "vertices": 8,
+      "faces": 6,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Shoe_Left"
+      ]
+    },
+    {
+      "name": "Left_Shoe_WeltSole",
+      "vertices": 480,
+      "faces": 384,
+      "boundaryEdges": 192,
+      "nonManifoldEdges": 192,
+      "collections": [
+        "Shoe_Left"
+      ]
+    },
+    {
+      "name": "Mouth_Interior",
+      "vertices": 124,
+      "faces": 63,
+      "boundaryEdges": 62,
+      "nonManifoldEdges": 62,
+      "collections": [
+        "Anatomy_Head"
+      ]
+    },
+    {
+      "name": "Ribbon_BowKnot",
+      "vertices": 4,
+      "faces": 1,
+      "boundaryEdges": 4,
+      "nonManifoldEdges": 4,
+      "collections": [
+        "Hat_Fedora"
+      ]
+    },
+    {
+      "name": "Ribbon_BowLeaf_-1",
+      "vertices": 35,
+      "faces": 24,
+      "boundaryEdges": 20,
+      "nonManifoldEdges": 20,
+      "collections": [
+        "Hat_Fedora"
+      ]
+    },
+    {
+      "name": "Ribbon_BowLeaf_1",
+      "vertices": 35,
+      "faces": 24,
+      "boundaryEdges": 20,
+      "nonManifoldEdges": 20,
+      "collections": [
+        "Hat_Fedora"
+      ]
+    },
+    {
+      "name": "Right_Brow",
+      "vertices": 75,
+      "faces": 48,
+      "boundaryEdges": 52,
+      "nonManifoldEdges": 52,
+      "collections": [
+        "Brows"
+      ]
+    },
+    {
+      "name": "Right_Ear_Bowl",
+      "vertices": 480,
+      "faces": 432,
+      "boundaryEdges": 96,
+      "nonManifoldEdges": 96,
+      "collections": [
+        "Anatomy_Head"
+      ]
+    },
+    {
+      "name": "Right_Ear_Canal",
+      "vertices": 362,
+      "faces": 384,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Anatomy_Head"
+      ]
+    },
+    {
+      "name": "Right_Ear_Tragus",
+      "vertices": 362,
+      "faces": 384,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Anatomy_Head"
+      ]
+    },
+    {
+      "name": "Right_Eye",
+      "vertices": 2498,
+      "faces": 2560,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Eye_Right"
+      ]
+    },
+    {
+      "name": "Right_Iris",
+      "vertices": 1474,
+      "faces": 1536,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Eye_Right"
+      ]
+    },
+    {
+      "name": "Right_NostrilInterior",
+      "vertices": 362,
+      "faces": 384,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Anatomy_Head"
+      ]
+    },
+    {
+      "name": "Right_Pupil",
+      "vertices": 914,
+      "faces": 960,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Eye_Right"
+      ]
+    },
+    {
+      "name": "Right_Shoe_Eyelet_-1_0",
+      "vertices": 96,
+      "faces": 96,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Shoe_Right"
+      ]
+    },
+    {
+      "name": "Right_Shoe_Eyelet_-1_1",
+      "vertices": 96,
+      "faces": 96,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Shoe_Right"
+      ]
+    },
+    {
+      "name": "Right_Shoe_Eyelet_-1_2",
+      "vertices": 96,
+      "faces": 96,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Shoe_Right"
+      ]
+    },
+    {
+      "name": "Right_Shoe_Eyelet_-1_3",
+      "vertices": 96,
+      "faces": 96,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Shoe_Right"
+      ]
+    },
+    {
+      "name": "Right_Shoe_Eyelet_-1_4",
+      "vertices": 96,
+      "faces": 96,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Shoe_Right"
+      ]
+    },
+    {
+      "name": "Right_Shoe_Eyelet_1_0",
+      "vertices": 96,
+      "faces": 96,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Shoe_Right"
+      ]
+    },
+    {
+      "name": "Right_Shoe_Eyelet_1_1",
+      "vertices": 96,
+      "faces": 96,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Shoe_Right"
+      ]
+    },
+    {
+      "name": "Right_Shoe_Eyelet_1_2",
+      "vertices": 96,
+      "faces": 96,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Shoe_Right"
+      ]
+    },
+    {
+      "name": "Right_Shoe_Eyelet_1_3",
+      "vertices": 96,
+      "faces": 96,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Shoe_Right"
+      ]
+    },
+    {
+      "name": "Right_Shoe_Eyelet_1_4",
+      "vertices": 96,
+      "faces": 96,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Shoe_Right"
+      ]
+    },
+    {
+      "name": "Right_Shoe_LeatherUpper",
+      "vertices": 1728,
+      "faces": 1632,
+      "boundaryEdges": 192,
+      "nonManifoldEdges": 192,
+      "collections": [
+        "Shoe_Right"
+      ]
+    },
+    {
+      "name": "Right_Shoe_SoleBottom",
+      "vertices": 96,
+      "faces": 1,
+      "boundaryEdges": 96,
+      "nonManifoldEdges": 96,
+      "collections": [
+        "Shoe_Right"
+      ]
+    },
+    {
+      "name": "Right_Shoe_StackedHeel",
+      "vertices": 8,
+      "faces": 6,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Shoe_Right"
+      ]
+    },
+    {
+      "name": "Right_Shoe_WeltSole",
+      "vertices": 480,
+      "faces": 384,
+      "boundaryEdges": 192,
+      "nonManifoldEdges": 192,
+      "collections": [
+        "Shoe_Right"
+      ]
+    },
+    {
+      "name": "Shirt_ButtonPlacket",
+      "vertices": 44,
+      "faces": 21,
+      "boundaryEdges": 44,
+      "nonManifoldEdges": 44,
+      "collections": [
+        "Garment_Shirt"
+      ]
+    },
+    {
+      "name": "Shirt_CollarLeaf_-1",
+      "vertices": 4,
+      "faces": 1,
+      "boundaryEdges": 4,
+      "nonManifoldEdges": 4,
+      "collections": [
+        "Garment_Shirt"
+      ]
+    },
+    {
+      "name": "Shirt_CollarLeaf_1",
+      "vertices": 4,
+      "faces": 1,
+      "boundaryEdges": 4,
+      "nonManifoldEdges": 4,
+      "collections": [
+        "Garment_Shirt"
+      ]
+    },
+    {
+      "name": "Shirt_CollarStand",
+      "vertices": 384,
+      "faces": 320,
+      "boundaryEdges": 128,
+      "nonManifoldEdges": 128,
+      "collections": [
+        "Garment_Shirt"
+      ]
+    },
+    {
+      "name": "Shirt_Cuff_-1",
+      "vertices": 192,
+      "faces": 144,
+      "boundaryEdges": 96,
+      "nonManifoldEdges": 96,
+      "collections": [
+        "Garment_Shirt"
+      ]
+    },
+    {
+      "name": "Shirt_Cuff_1",
+      "vertices": 192,
+      "faces": 144,
+      "boundaryEdges": 96,
+      "nonManifoldEdges": 96,
+      "collections": [
+        "Garment_Shirt"
+      ]
+    },
+    {
+      "name": "Shirt_CuffButton_-1",
+      "vertices": 266,
+      "faces": 288,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Garment_Shirt"
+      ]
+    },
+    {
+      "name": "Shirt_CuffButton_1",
+      "vertices": 266,
+      "faces": 288,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Garment_Shirt"
+      ]
+    },
+    {
+      "name": "Shirt_FittedShell",
+      "vertices": 121609,
+      "faces": 120766,
+      "boundaryEdges": 1915,
+      "nonManifoldEdges": 1915,
+      "collections": [
+        "Garment_Shirt"
+      ]
+    },
+    {
+      "name": "Shirt_FrontButton_0",
+      "vertices": 266,
+      "faces": 288,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Garment_Shirt"
+      ]
+    },
+    {
+      "name": "Shirt_FrontButton_1",
+      "vertices": 266,
+      "faces": 288,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Garment_Shirt"
+      ]
+    },
+    {
+      "name": "Shirt_FrontButton_2",
+      "vertices": 266,
+      "faces": 288,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Garment_Shirt"
+      ]
+    },
+    {
+      "name": "Shirt_FrontButton_3",
+      "vertices": 266,
+      "faces": 288,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Garment_Shirt"
+      ]
+    },
+    {
+      "name": "Shirt_FrontButton_4",
+      "vertices": 266,
+      "faces": 288,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Garment_Shirt"
+      ]
+    },
+    {
+      "name": "Shirt_FrontButton_5",
+      "vertices": 266,
+      "faces": 288,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Garment_Shirt"
+      ]
+    },
+    {
+      "name": "Shirt_FrontButton_6",
+      "vertices": 266,
+      "faces": 288,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Garment_Shirt"
+      ]
+    },
+    {
+      "name": "Shirt_FrontButton_7",
+      "vertices": 266,
+      "faces": 288,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Garment_Shirt"
+      ]
+    },
+    {
+      "name": "Tie_FourInHandKnot",
+      "vertices": 168,
+      "faces": 144,
+      "boundaryEdges": 48,
+      "nonManifoldEdges": 48,
+      "collections": [
+        "Accessory_Tie"
+      ]
+    },
+    {
+      "name": "Tie_FrontBlade",
+      "vertices": 35,
+      "faces": 24,
+      "boundaryEdges": 20,
+      "nonManifoldEdges": 20,
+      "collections": [
+        "Accessory_Tie"
+      ]
+    },
+    {
+      "name": "Tie_NeckBand",
+      "vertices": 192,
+      "faces": 128,
+      "boundaryEdges": 128,
+      "nonManifoldEdges": 128,
+      "collections": [
+        "Accessory_Tie"
+      ]
+    },
+    {
+      "name": "Trousers_BeltLoop",
+      "vertices": 4,
+      "faces": 1,
+      "boundaryEdges": 4,
+      "nonManifoldEdges": 4,
+      "collections": [
+        "Garment_Trousers"
+      ]
+    },
+    {
+      "name": "Trousers_BeltLoop.001",
+      "vertices": 4,
+      "faces": 1,
+      "boundaryEdges": 4,
+      "nonManifoldEdges": 4,
+      "collections": [
+        "Garment_Trousers"
+      ]
+    },
+    {
+      "name": "Trousers_BeltLoop.002",
+      "vertices": 4,
+      "faces": 1,
+      "boundaryEdges": 4,
+      "nonManifoldEdges": 4,
+      "collections": [
+        "Garment_Trousers"
+      ]
+    },
+    {
+      "name": "Trousers_BeltLoop.003",
+      "vertices": 4,
+      "faces": 1,
+      "boundaryEdges": 4,
+      "nonManifoldEdges": 4,
+      "collections": [
+        "Garment_Trousers"
+      ]
+    },
+    {
+      "name": "Trousers_BeltLoop.004",
+      "vertices": 4,
+      "faces": 1,
+      "boundaryEdges": 4,
+      "nonManifoldEdges": 4,
+      "collections": [
+        "Garment_Trousers"
+      ]
+    },
+    {
+      "name": "Trousers_BeltLoop.005",
+      "vertices": 4,
+      "faces": 1,
+      "boundaryEdges": 4,
+      "nonManifoldEdges": 4,
+      "collections": [
+        "Garment_Trousers"
+      ]
+    },
+    {
+      "name": "Trousers_FittedShell",
+      "vertices": 141382,
+      "faces": 141044,
+      "boundaryEdges": 687,
+      "nonManifoldEdges": 687,
+      "collections": [
+        "Garment_Trousers"
+      ]
+    },
+    {
+      "name": "Trousers_Waistband",
+      "vertices": 384,
+      "faces": 288,
+      "boundaryEdges": 192,
+      "nonManifoldEdges": 192,
+      "collections": [
+        "Garment_Trousers"
+      ]
+    },
+    {
+      "name": "Waistcoat_Button_0",
+      "vertices": 266,
+      "faces": 288,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Garment_Waistcoat"
+      ]
+    },
+    {
+      "name": "Waistcoat_Button_1",
+      "vertices": 266,
+      "faces": 288,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Garment_Waistcoat"
+      ]
+    },
+    {
+      "name": "Waistcoat_Button_2",
+      "vertices": 266,
+      "faces": 288,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Garment_Waistcoat"
+      ]
+    },
+    {
+      "name": "Waistcoat_Button_3",
+      "vertices": 266,
+      "faces": 288,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Garment_Waistcoat"
+      ]
+    },
+    {
+      "name": "Waistcoat_Button_4",
+      "vertices": 266,
+      "faces": 288,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "collections": [
+        "Garment_Waistcoat"
+      ]
+    },
+    {
+      "name": "Waistcoat_FittedPanels",
+      "vertices": 2896,
+      "faces": 2778,
+      "boundaryEdges": 240,
+      "nonManifoldEdges": 240,
+      "collections": [
+        "Garment_Waistcoat"
+      ]
+    },
+    {
+      "name": "Waistcoat_WeltPocket_-1",
+      "vertices": 4,
+      "faces": 1,
+      "boundaryEdges": 4,
+      "nonManifoldEdges": 4,
+      "collections": [
+        "Garment_Waistcoat"
+      ]
+    },
+    {
+      "name": "Waistcoat_WeltPocket_1",
+      "vertices": 4,
+      "faces": 1,
+      "boundaryEdges": 4,
+      "nonManifoldEdges": 4,
+      "collections": [
+        "Garment_Waistcoat"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"success\": true,\n  \"message\": \"Command executed successfully.\",\n  \"data\": {\n    \"isCompilationSuccessful\": true,\n    \"isExecutionSuccessful\": true,\n    \"executionId\": 1,\n    \"compilationLogs\": \"\",\n    \"executionLogs\": \"[Log] Character_gate1-A eyes=(0.00, 1.65, 0.13) head=(0.00, 1.61, 0.05)\\n[Log] Character_gate1-B eyes=(0.00, 1.48, 0.12) head=(0.00, 1.44, 0.04)\\n[Log] Character_gate1-C eyes=(0.00, 1.89, 0.14) head=(0.00, 1.85, 0.05)\",\n    \"localFixedCode\": \"using UnityEngine;\\r\\nusing UnityEditor;\\r\\n\\r\\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\\r\\n{\\r\\n    internal class CommandScript : IRunCommand\\r\\n    {\\r\\n        public void Execute(ExecutionResult result)\\r\\n        {\\r\\n            SilverScreen.Editor.Characters.CharacterGateOne.Open();\\r\\n            SilverScreen.Editor.Characters.CharacterGateOne.CaptureIdentity();\\r\\n            foreach (var v in SilverScreen.Editor.Characters.CharacterGateOne.Candidates)\\r\\n                result.Log(v.name + \\\" eyes=\\\" + v.transform.InverseTransformPoint(v.Eyes) + \\\" head=\\\" + v.transform.InverseTransformPoint(v.Head));\\r\\n        }\\r\\n    }\\r\\n}\",\n    \"result\": \"Command executed successfully.\"\n  }\n}"
+      }
+    ],
+    "structuredContent": {
+      "success": true,
+      "message": "Command executed successfully.",
+      "data": {
+        "isCompilationSuccessful": true,
+        "isExecutionSuccessful": true,
+        "executionId": 1,
+        "compilationLogs": "",
+        "executionLogs": "[Log] Character_gate1-A eyes=(0.00, 1.65, 0.13) head=(0.00, 1.61, 0.05)\n[Log] Character_gate1-B eyes=(0.00, 1.48, 0.12) head=(0.00, 1.44, 0.04)\n[Log] Character_gate1-C eyes=(0.00, 1.89, 0.14) head=(0.00, 1.85, 0.05)",
+        "localFixedCode": "using UnityEngine;\r\nusing UnityEditor;\r\n\r\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\r\n{\r\n    internal class CommandScript : IRunCommand\r\n    {\r\n        public void Execute(ExecutionResult result)\r\n        {\r\n            SilverScreen.Editor.Characters.CharacterGateOne.Open();\r\n            SilverScreen.Editor.Characters.CharacterGateOne.CaptureIdentity();\r\n            foreach (var v in SilverScreen.Editor.Characters.CharacterGateOne.Candidates)\r\n                result.Log(v.name + \" eyes=\" + v.transform.InverseTransformPoint(v.Eyes) + \" head=\" + v.transform.InverseTransformPoint(v.Head));\r\n        }\r\n    }\r\n}",
+        "result": "Command executed successfully."
+      }
+    }
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}

@@ -1,0 +1,15 @@
+{
+  "method": "tools/call",
+  "params": {
+    "name": "Unity_AssetGeneration_GenerateAsset",
+    "arguments": {
+      "command": "GenerateMesh",
+      "modelId": "model3d-tripo-p2-quad",
+      "prompt": "Create one original adult male body sculpt starting mesh from the supplied technical reference. Preserve the face, separate fingers, bare feet and T pose. Lean slim fit adult proportions, not a bodybuilder. Smooth clean bald scalp. Model the complete back as well as front. This is unrigged source geometry for authored corrections, not a final character. Modeling shorts will be removed and the underlying anatomy authored in Blender; do not bake their color into skin. No extra clothing, hair or accessories. Detailed eyes, lids, lips, nose, ears, hands and toes. Original geometry only.",
+      "savePath": "Assets/Editor/SilverScreenAdultSource/Generated/BodyStudy.prefab",
+      "referenceImageInstanceId": "568105584919147568",
+      "meshFormat": "fbx",
+      "waitForCompletion": true
+    }
+  }
+}

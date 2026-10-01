@@ -1,0 +1,22 @@
+{
+  "study": "SilverScreen_CanonicalDesign",
+  "source_role": "technical construction; source identity is not the target",
+  "design_target": "supplied SilverScreen character concept",
+  "vertices": 41816,
+  "changed_vertices": 39053,
+  "max_displacement_m": 0.06216973443509538,
+  "height_m": 1.779000163078308,
+  "eye_centres_m": {
+    "eye_l": [
+      -0.03227123245596886,
+      0.08664701879024506,
+      1.6572405099868774
+    ],
+    "eye_r": [
+      0.032304514199495316,
+      0.08298368752002716,
+      1.6565113067626953
+    ]
+  },
+  "status": "new canonical identity; visual approval pending"
+}

@@ -1,0 +1,122 @@
+{
+  "status": "concept-driven identity and modular construction; visual review pending",
+  "source": "Renderpeople Eric Rigged 001",
+  "rig_version": "canonical-concept-v1",
+  "height_m": 1.779000163078308,
+  "feet_z": 2.3283064365386963e-10,
+  "vertices": 41816,
+  "triangles": 83316,
+  "bones": 88,
+  "model": "Assets\\SilverScreen\\Art\\Characters\\Canonical\\Models\\CanonicalAdult.fbx",
+  "unity_forward": "+Z",
+  "material": "SS_Canonical_Authored",
+  "limitations": [
+    "One canonical fit only; animation and fit morphs not validated",
+    "Underlying anatomy uses fitted CC0 body regions plus concept-sculpted head and source hands",
+    "No population or gameplay catalog migration"
+  ],
+  "study": "SilverScreen_CanonicalDesign",
+  "authored_base_height_m": 1.7790001628454775,
+  "parts": [
+    {
+      "name": "Identity_Head",
+      "vertices": 14281,
+      "triangles": 28214
+    },
+    {
+      "name": "Identity_Hands",
+      "vertices": 5029,
+      "triangles": 9996
+    },
+    {
+      "name": "Identity_Eyes",
+      "vertices": 3972,
+      "triangles": 7936
+    },
+    {
+      "name": "Groom_Hair",
+      "vertices": 3950,
+      "triangles": 7892
+    },
+    {
+      "name": "Outfit_Shirt",
+      "vertices": 9746,
+      "triangles": 19496
+    },
+    {
+      "name": "Outfit_Waistcoat",
+      "vertices": 6324,
+      "triangles": 12656
+    },
+    {
+      "name": "Outfit_Trousers",
+      "vertices": 16986,
+      "triangles": 33976
+    },
+    {
+      "name": "Outfit_Shoes",
+      "vertices": 2074,
+      "triangles": 4046
+    },
+    {
+      "name": "Outfit_Tie",
+      "vertices": 206,
+      "triangles": 408
+    },
+    {
+      "name": "Outfit_Belt",
+      "vertices": 408,
+      "triangles": 648
+    },
+    {
+      "name": "Outfit_ShirtUnderlay",
+      "vertices": 6596,
+      "triangles": 13200
+    },
+    {
+      "name": "Body_Torso",
+      "vertices": 3990,
+      "triangles": 7604
+    },
+    {
+      "name": "Body_Arms",
+      "vertices": 5843,
+      "triangles": 10756
+    },
+    {
+      "name": "Body_Legs",
+      "vertices": 6835,
+      "triangles": 13192
+    },
+    {
+      "name": "Body_Feet",
+      "vertices": 8978,
+      "triangles": 17848
+    },
+    {
+      "name": "Headwear_FedoraBrim",
+      "vertices": 2304,
+      "triangles": 4608
+    },
+    {
+      "name": "Headwear_FedoraCrown",
+      "vertices": 4354,
+      "triangles": 8704
+    },
+    {
+      "name": "Headwear_FedoraRibbon",
+      "vertices": 512,
+      "triangles": 1024
+    },
+    {
+      "name": "Headwear_FedoraBow",
+      "vertices": 16,
+      "triangles": 24
+    },
+    {
+      "name": "Groom_Brows",
+      "vertices": 200,
+      "triangles": 196
+    }
+  ]
+}

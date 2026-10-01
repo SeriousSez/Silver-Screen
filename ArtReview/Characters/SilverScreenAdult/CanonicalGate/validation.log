@@ -1,0 +1,121 @@
+00:02.609  blend            | Read blend: "C:\Repos\Unity\Silver Screen\ArtSource\Characters\SilverScreenAdult\Foundations\SS_MaleBody_Foundation_v1.blend"
+00:03.625  blend            | Read blend: "C:\Repos\Unity\Silver Screen\ArtSource\Characters\SilverScreenAdult\CanonicalGate\SS_Canonical_Unrigged_Candidate.blend"
+{
+  "candidateSHA256": "7bbd61a01e633571a114c43d3e245f59ea7afcc99f0d6e186514775f350ca709",
+  "foundationBasisGeometryTopologyUVUnchanged": {
+    "SS_MaleBody_Foundation_Candidate": true,
+    "SS_MaleHead_Foundation_v1": true,
+    "SS_Eye_L": true,
+    "SS_Eye_R": true,
+    "SS_Teeth": true,
+    "SS_Tongue": true
+  },
+  "identityTargets": [
+    "Identity.cranial_jaw",
+    "Identity.brow_cheek",
+    "Identity.nose_lips"
+  ],
+  "identityNeckSeamMaxDeltaMetres": 0.0,
+  "modulesPresent": {
+    "Anatomy.Body": true,
+    "Anatomy.Head": true,
+    "Anatomy.Eye.L": true,
+    "Anatomy.Eye.R": true,
+    "Anatomy.Mouth": true,
+    "Module.Hair": true,
+    "Module.Brows": true,
+    "Module.Shirt": true,
+    "Module.Waistcoat": true,
+    "Module.Trousers": true,
+    "Module.Shoe.L": true,
+    "Module.Shoe.R": true,
+    "Module.Fedora": true,
+    "Module.Tie": true,
+    "Module.Belt": true
+  },
+  "counts": {
+    "Anatomy.Body": {
+      "objects": 1,
+      "meshVertices": 9309
+    },
+    "Anatomy.Head": {
+      "objects": 1,
+      "meshVertices": 4211
+    },
+    "Anatomy.Eye.L": {
+      "objects": 1,
+      "meshVertices": 324
+    },
+    "Anatomy.Eye.R": {
+      "objects": 1,
+      "meshVertices": 324
+    },
+    "Anatomy.Mouth": {
+      "objects": 2,
+      "meshVertices": 2951
+    },
+    "Module.Hair": {
+      "objects": 155,
+      "meshVertices": 6940
+    },
+    "Module.Brows": {
+      "objects": 1,
+      "meshVertices": 0
+    },
+    "Module.Shirt": {
+      "objects": 24,
+      "meshVertices": 4509
+    },
+    "Module.Waistcoat": {
+      "objects": 30,
+      "meshVertices": 4587
+    },
+    "Module.Trousers": {
+      "objects": 18,
+      "meshVertices": 2303
+    },
+    "Module.Shoe.L": {
+      "objects": 29,
+      "meshVertices": 3272
+    },
+    "Module.Shoe.R": {
+      "objects": 29,
+      "meshVertices": 3272
+    },
+    "Module.Fedora": {
+      "objects": 11,
+      "meshVertices": 4682
+    },
+    "Module.Tie": {
+      "objects": 2,
+      "meshVertices": 456
+    },
+    "Module.Belt": {
+      "objects": 5,
+      "meshVertices": 512
+    }
+  },
+  "degenerateFacesByObject": {},
+  "bodyFacesRetained": 9288,
+  "bodyVerticesRetained": 9309,
+  "hiddenBodyFaces": 0,
+  "bodyObjectVisible": true,
+  "bodyCollectionVisible": true,
+  "armatureObjects": 0,
+  "armatureModifiers": 0,
+  "animationActions": 0,
+  "preservedFilesUnchanged": {
+    "SS_Adult_Authoring.blend": true,
+    "rig-contract.json": true,
+    "SS_Adult_Accessories.blend": true,
+    "Studio.unity": true,
+    "approvedHeadFoundation": true
+  },
+  "deformationValidated": false,
+  "UnityImported": false,
+  "finalMaterialsValidated": false,
+  "visualGate": "Awaiting first assembled canonical-character review"
+}
+Blender 5.0.1 (hash a3db93c5b259 built 2025-12-16 01:32:30)
+
+Blender quit

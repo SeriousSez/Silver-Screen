@@ -1,0 +1,582 @@
+{
+  "source": "https://files.makehumancommunity.org/asset_packs/makehuman_system_assets/makehuman_system_assets_cc0.zip",
+  "archive_sha256": "b542127a8e25547c7c29c19f2d1d2adb9a664c80396ecd694095dbc8028a0107",
+  "license": "CC0-1.0",
+  "files": [
+    {
+      "path": "skins/young_african_male/young_african_male.thumb",
+      "sha256": "e74c12cd86ffcd59bc496767187f44b149e14f29129357b09aac41b9bcda7461",
+      "bytes": 78682
+    },
+    {
+      "path": "skins/young_african_male/young_darkskinned_male_diffuse.png",
+      "sha256": "e3f0dbb634e4c68561338f0087f7a122444e84ec56df102212f1222aa12e4d50",
+      "bytes": 2976491
+    },
+    {
+      "path": "skins/young_african_male/young_african_male.mhmat",
+      "sha256": "11040111c4735028b473f8ce4bb6b0dc0515b7bf26ea815ead85f2c3cbdd7645",
+      "bytes": 1453
+    },
+    {
+      "path": "skins/young_caucasian_male/young_lightskinned_male_diffuse.png",
+      "sha256": "862a26e335e958b70534cb5f0d7c47ef30ab148a56c42b3e9da969cf76f12963",
+      "bytes": 3693828
+    },
+    {
+      "path": "skins/young_caucasian_male/young_caucasian_male.thumb",
+      "sha256": "9ea46d1b5c4230bcff248b1262eaf4f5b4b14bbffd8fc09d2c20c6058f02e12d",
+      "bytes": 79031
+    },
+    {
+      "path": "skins/young_caucasian_male/young_caucasian_male.mhmat",
+      "sha256": "6eda60b07ff2afbde078a2535ef3913593d84e9de92b2eb76c30f396a181fe2e",
+      "bytes": 1462
+    },
+    {
+      "path": "skins/young_asian_female/young_asian_female.mhmat",
+      "sha256": "2baeded5fdfd31acc187e83b278f9c4e4cbb59a7ffedf50ebcffcc44e4eab220",
+      "bytes": 1459
+    },
+    {
+      "path": "skins/young_asian_female/young_asian_female.thumb",
+      "sha256": "736d4ed1967431c989c5629655aa65f162a3e325d5aed7cd75ca3c2cc8f91a8d",
+      "bytes": 79011
+    },
+    {
+      "path": "skins/young_asian_female/young_lightskinned_female_diffuse3.png",
+      "sha256": "1d82f782b7d2da732229633bd2d14754d873fff53cdb1d088977bcf67ae19dde",
+      "bytes": 3884420
+    },
+    {
+      "path": "skins/middleage_caucasian_male/middleage_lightskinned_male_diffuse.png",
+      "sha256": "3f94f3f6a5cab92dedf5cce392a87332312fc435f1cb44c6e7b897daef9a5fbb",
+      "bytes": 3668589
+    },
+    {
+      "path": "skins/middleage_caucasian_male/middleage_caucasian_male.thumb",
+      "sha256": "0edd08641ae1bc1f832fe17a54d519445c73b8ba1024606e4c25ccaaca6d2279",
+      "bytes": 81315
+    },
+    {
+      "path": "skins/middleage_caucasian_male/middleage_caucasian_male.mhmat",
+      "sha256": "113326b7670cb273610314b91e2597b228711adf5f0666660b16fef269bfbe72",
+      "bytes": 1469
+    },
+    {
+      "path": "clothes/shoes04/shoes04.obj",
+      "sha256": "eac355a842a8eb8ae2f09fac8dd18a877a24ef2521ed2d6bf38559b42ce4b49a",
+      "bytes": 136910
+    },
+    {
+      "path": "clothes/shoes04/shoes04.mhmat",
+      "sha256": "dafb73d722453798f4d501f2bf2d668ba41c34fc252cd76d0716ea23baef8753",
+      "bytes": 1161
+    },
+    {
+      "path": "clothes/shoes04/shoes04_diffuse.png",
+      "sha256": "dc3d3c294ba5bf4a47a7840172154ce7ab587ff0737ace0712c4cc310089c232",
+      "bytes": 714208
+    },
+    {
+      "path": "clothes/shoes04/shoes04_normal.png",
+      "sha256": "a9bfd7223e98b8f93100e89596135e3a94e6044f9db11b4d23cec625c37a4599",
+      "bytes": 875473
+    },
+    {
+      "path": "clothes/shoes04/shoes04.thumb",
+      "sha256": "f6f6f0d30733ac1491072a453a82d105619c2af99228ec51d251cbf4776b8b7c",
+      "bytes": 37350
+    },
+    {
+      "path": "clothes/shoes04/shoes04.mhclo",
+      "sha256": "88223bf0c6168e85fd118015e4ca61612c6b35f42a79d7ce5df1864f1a6f715e",
+      "bytes": 119049
+    },
+    {
+      "path": "clothes/shoes04/shoes04.mhw",
+      "sha256": "02ef7fcd42d6063f3a8b4d22a79bceb02ab9a67e23ee9f2252a63ec3e53e0f27",
+      "bytes": 324727
+    },
+    {
+      "path": "clothes/shoes05/shoes05.mhmat",
+      "sha256": "e59a9cc4d4c9a56cf9025beb26ca549986c97065cdb675d4f59bd9c5a27dbe8d",
+      "bytes": 1184
+    },
+    {
+      "path": "clothes/shoes05/shoes05_diffuse.png",
+      "sha256": "7fe5ea2600f6578cdf017da3392ae13aedabea8e8cc1dd6302a8f57e8fb7e5af",
+      "bytes": 1291907
+    },
+    {
+      "path": "clothes/shoes05/shoes05.thumb",
+      "sha256": "f5d86e0427638e592c787f91a0427ae09df51f0a4d34665a069cfa3fcbc451b8",
+      "bytes": 41218
+    },
+    {
+      "path": "clothes/shoes05/shoes05.obj",
+      "sha256": "5726aabac42ff489998d0a769545dea013961bbb71b9c6024d75170181a98818",
+      "bytes": 125457
+    },
+    {
+      "path": "clothes/shoes05/shoes05.mhw",
+      "sha256": "7963030c66988b4164003b3b02e4ef42a83069fa32fe09362e0c14ae2b730e25",
+      "bytes": 309023
+    },
+    {
+      "path": "clothes/shoes05/shoes05.mhclo",
+      "sha256": "75fc467264b085d7a05ce0c9b5628bb364b246392c59524c556fa09f92b6cb16",
+      "bytes": 110217
+    },
+    {
+      "path": "clothes/male_worksuit01/male_worksuit01.obj",
+      "sha256": "d8ef4bf71aa6bd386958921c17e0eed263ef63abc8b50a2c8be6d482f6e1d3f7",
+      "bytes": 302272
+    },
+    {
+      "path": "clothes/male_worksuit01/male_worksuit01.thumb",
+      "sha256": "fad50094363c841033ae160982bd5570f40140b6381a5a69562a9cbdf0898e7a",
+      "bytes": 33917
+    },
+    {
+      "path": "clothes/male_worksuit01/male_worksuit01_diffuse.png",
+      "sha256": "4b59b50f7a8a0325c33e86e29f160f59b2385a6f413fccc88287a1c951c39901",
+      "bytes": 3230491
+    },
+    {
+      "path": "clothes/male_worksuit01/male_worksuit01_normal.png",
+      "sha256": "53f51fd31ec6760c26d377b250bfcdde84be46953f4c72821892b76d13055073",
+      "bytes": 7345267
+    },
+    {
+      "path": "clothes/male_worksuit01/male_worksuit01.mhmat",
+      "sha256": "9af03afa0f8cf2d24b4fceb0bd0e3c400ae0975b402e0ea491a33fa32c3b560b",
+      "bytes": 1389
+    },
+    {
+      "path": "clothes/male_worksuit01/male_worksuit01.mhclo",
+      "sha256": "77561689f0e9eb13537f67e0582ce4e8b93fc7291ea87f57fd86b38b9114d4e1",
+      "bytes": 254911
+    },
+    {
+      "path": "clothes/male_worksuit01/male_worksuit01_ao.png",
+      "sha256": "1ed5f23c5efab316b98a295e1be7905009e61603657577eb922b4d1c99c46810",
+      "bytes": 1205288
+    },
+    {
+      "path": "clothes/shoes01/shoes01.mhclo",
+      "sha256": "7994e38f7cdcee0bd5f55101660badcce0162fcdfc7f432218dd1eb301626252",
+      "bytes": 119049
+    },
+    {
+      "path": "clothes/shoes01/shoes01_diffuse.png",
+      "sha256": "50c9a406a7f1cb6aa7b42912348e78f09d0252aa3963c8229cf18dfe8353cdbf",
+      "bytes": 1335772
+    },
+    {
+      "path": "clothes/shoes01/shoes01.thumb",
+      "sha256": "a118291fe3e83e3c616febf52fdb480186c816e7cd4d77d331adffd457421cbb",
+      "bytes": 40319
+    },
+    {
+      "path": "clothes/shoes01/shoes01_normal.png",
+      "sha256": "a9bfd7223e98b8f93100e89596135e3a94e6044f9db11b4d23cec625c37a4599",
+      "bytes": 875473
+    },
+    {
+      "path": "clothes/shoes01/shoes01.mhw",
+      "sha256": "b377d91e6d0264521f672c3990c366b2631103accba4921fc3965c2ed5ce395b",
+      "bytes": 324727
+    },
+    {
+      "path": "clothes/shoes01/shoes01.mhmat",
+      "sha256": "db1711e2dfea4dd8c24459643603a190d9a9da603fd26da5542002a73d740be8",
+      "bytes": 1161
+    },
+    {
+      "path": "clothes/shoes01/shoes01.obj",
+      "sha256": "eac355a842a8eb8ae2f09fac8dd18a877a24ef2521ed2d6bf38559b42ce4b49a",
+      "bytes": 136910
+    },
+    {
+      "path": "clothes/shoes03/shoes03_diffuse.png",
+      "sha256": "fe8216fbd0c34ecd3ac0e1a01970a4ccf844417be5fd1d72c527c9209256db93",
+      "bytes": 309009
+    },
+    {
+      "path": "clothes/shoes03/shoes03.obj",
+      "sha256": "b03f46c0b5cdc38e4472e4747ba267f101e1e8ae88656180b1334986646108b2",
+      "bytes": 177420
+    },
+    {
+      "path": "clothes/shoes03/shoes03.thumb",
+      "sha256": "ac461bf40bb9e125526198c6c827c0f5cfa5538ac86f25dd3efbff7d5aaf5a3c",
+      "bytes": 37720
+    },
+    {
+      "path": "clothes/shoes03/shoes03.mhmat",
+      "sha256": "0104a8ecf68aa81bca878c12f909aca45a59e265f8b49cf4e4d5e2667773776e",
+      "bytes": 1184
+    },
+    {
+      "path": "clothes/shoes03/shoes03.mhclo",
+      "sha256": "5a388e18e6759db99bcc8c7d062a2b3bed02eecd32705731ba90063a6e35265b",
+      "bytes": 152873
+    },
+    {
+      "path": "clothes/shoes03/shoes03.mhw",
+      "sha256": "5ea7e817c2db05da540a0d4a71c3fadb422b3560857b8b73873df39ad3e49b5f",
+      "bytes": 410069
+    },
+    {
+      "path": "clothes/shoes02/shoes02.mhw",
+      "sha256": "dba34894b93f102ea64d7ad21968894a9788c7a0770c066584a66a536a3e92b6",
+      "bytes": 309023
+    },
+    {
+      "path": "clothes/shoes02/shoes02.mhclo",
+      "sha256": "0d447fd6b7415d6b2603e91697336ee51ac2f00ef85878d6667e9acfb45a20fe",
+      "bytes": 110217
+    },
+    {
+      "path": "clothes/shoes02/shoes02.mhmat",
+      "sha256": "7f2cb19506784fbe22ba3f766f94bb13d1eee1712dd29ed10b926c5905bab924",
+      "bytes": 1184
+    },
+    {
+      "path": "clothes/shoes02/shoes02_diffuse.png",
+      "sha256": "efef94ea34b0e0c2283095cb47a9e0389b55449c61a4f4972d0ad4d2bf06b4f0",
+      "bytes": 1282057
+    },
+    {
+      "path": "clothes/shoes02/shoes02.obj",
+      "sha256": "5726aabac42ff489998d0a769545dea013961bbb71b9c6024d75170181a98818",
+      "bytes": 125457
+    },
+    {
+      "path": "clothes/shoes02/shoes02.thumb",
+      "sha256": "0e41c095f5ff5a13c0d2b12a6c96d65d907137e1ae3fb120ff14300fc818015d",
+      "bytes": 43978
+    },
+    {
+      "path": "teeth/teeth_base/teeth_base.obj",
+      "sha256": "f55198069e55d360c4b4cc7ecb1cc292b2c7665753ab8b65eabf46a8783f2875",
+      "bytes": 313110
+    },
+    {
+      "path": "teeth/teeth_base/teeth_base.mhclo",
+      "sha256": "9edc3deff3bb97a95c791878064dd069a74a38f95ea6d9707a9ba68d888b3b5c",
+      "bytes": 263220
+    },
+    {
+      "path": "teeth/teeth_base/teeth.mhmat",
+      "sha256": "3baeff72d9eb06ca16c3cff7ca2ab304216717dee247e0d88f1dc33037c8320e",
+      "bytes": 1086
+    },
+    {
+      "path": "teeth/teeth_base/teeth.png",
+      "sha256": "d0afb57869c6fbb56b98f5efc4aec629ee7593e70d8dd2bfb9de923acfb65f43",
+      "bytes": 1799930
+    },
+    {
+      "path": "teeth/teeth_base/teeth_base.thumb",
+      "sha256": "04b97c4fa15c3ba0786e552a4bf5474d47efc1162d9f7f4dbdc2f06d1ae43004",
+      "bytes": 50147
+    },
+    {
+      "path": "eyelashes/eyelashes01/eyelashes01.obj",
+      "sha256": "f78f5b93fea1946fcae103d32c4f082dd9612a1ec2e7e2f90b03ebe59b0baf20",
+      "bytes": 18832
+    },
+    {
+      "path": "eyelashes/eyelashes01/eyelashes01.mhclo",
+      "sha256": "5a86b29c15649273d723084954b7fa7bf199112571d4f58539b46734d397ee6b",
+      "bytes": 2265
+    },
+    {
+      "path": "eyelashes/eyelashes01/eyelashes01.png",
+      "sha256": "4b69c0fff2648874460e9caf80c31413c444218a5c50afebc425aeaa65484a35",
+      "bytes": 91600
+    },
+    {
+      "path": "eyelashes/eyelashes01/eyelashes01.mhmat",
+      "sha256": "8029c99d94f3d87a1e81825fad6b90eec773ae6955a5b2592222ef237377e190",
+      "bytes": 1074
+    },
+    {
+      "path": "eyelashes/eyelashes01/eyelashes01.thumb",
+      "sha256": "34ab06601745c2b74fcfa6f63a374fcea58cb4501e728a3c6935a3a1ed794aa3",
+      "bytes": 140641
+    },
+    {
+      "path": "hair/bob02/bob02.mhclo",
+      "sha256": "a48dcf87c6a618f9c6e90fcb00eed07cd59ab024d8d994606fa1b070da515b96",
+      "bytes": 112326
+    },
+    {
+      "path": "hair/bob02/bob02_diffuse.png",
+      "sha256": "38c88e6f71631356591f09b1f17a1bb5a99c3bb095b1a29003f1dc3d3e839b0d",
+      "bytes": 3373723
+    },
+    {
+      "path": "hair/bob02/bob02.thumb",
+      "sha256": "88bb4a58e5dc55ebb6809bcf99968f8967ba2424b119c10df83ce1afb34bf4e3",
+      "bytes": 54657
+    },
+    {
+      "path": "hair/bob02/bob02.obj",
+      "sha256": "30d44038836d786364eb4134a9259cf93ca0c707f883861b0135ebfb149caa08",
+      "bytes": 109498
+    },
+    {
+      "path": "hair/bob02/bob02.mhmat",
+      "sha256": "32c1712308159f4f5b3775a633352070245bf1ea8b6f837ab4f4ba82b5e9fccd",
+      "bytes": 1319
+    },
+    {
+      "path": "hair/short01/short01.thumb",
+      "sha256": "7e942d29322841a07a8a3feaf438fb9efb6b54f5b733909cecc51e79dcaca995",
+      "bytes": 35055
+    },
+    {
+      "path": "hair/short01/short01.mhclo",
+      "sha256": "ae1ffaa98da5753b803b3a173bede4895d2215e6bb94763f3765a71f0e984f35",
+      "bytes": 201588
+    },
+    {
+      "path": "hair/short01/short01.mhmat",
+      "sha256": "01e2e12ce3f3d3c859225456660acadcdd27d4f4b4d888bcbd6f11998cadd975",
+      "bytes": 1314
+    },
+    {
+      "path": "hair/short01/short01.obj",
+      "sha256": "d998d8416f9b5d5591f1d756f4d292288d000a6951bc0f4d2e8e72727bbc44fa",
+      "bytes": 194450
+    },
+    {
+      "path": "hair/short01/short01_diffuse.png",
+      "sha256": "f34a0957184e3d1e911ed59245f874f8d4843f61ee44ff49f43edb4be0196949",
+      "bytes": 2354146
+    },
+    {
+      "path": "hair/afro01/afro01.thumb",
+      "sha256": "d371c511ce6b4c66ada60c5986d022a2f0113400088da20b532fc950fdf2845e",
+      "bytes": 47414
+    },
+    {
+      "path": "hair/afro01/afro01.mhclo",
+      "sha256": "9977bd4507e2dd1408504b7a39a6f585ffa2d3ba3aa40ad4bdc2844884bbebb5",
+      "bytes": 149574
+    },
+    {
+      "path": "hair/afro01/afro01.mhmat",
+      "sha256": "6da1c6778df2450b135009274ed0145dc2dffbc5d8e287fc1d4c69ba539b483c",
+      "bytes": 1030
+    },
+    {
+      "path": "hair/afro01/afro01.obj",
+      "sha256": "8344fffef15120a05a89219f31184ca2958537223fa885c885137ad1e97edcb8",
+      "bytes": 130040
+    },
+    {
+      "path": "hair/afro01/afro_diffuse.png",
+      "sha256": "dc0db7dd8a13802f02303ca7e49844b219e09db134471b7061538a8af8f7c7fb",
+      "bytes": 4817185
+    },
+    {
+      "path": "hair/short03/short03.thumb",
+      "sha256": "aba276c3ddbcb6b2c5dc29eef595bd2e447bfd8ff530731454319ce301b1b782",
+      "bytes": 39414
+    },
+    {
+      "path": "hair/short03/short03_diffuse.png",
+      "sha256": "fe6ed0bb14498a48a2e8fc07e80e2a6f62c8b67686fcd0a7a570d345faec97da",
+      "bytes": 2392930
+    },
+    {
+      "path": "hair/short03/short03.obj",
+      "sha256": "4a9fc385718f2c46fb328ab99d33e3a946cecdb717987c8b324cf2466b59bd9c",
+      "bytes": 74766
+    },
+    {
+      "path": "hair/short03/short03.mhclo",
+      "sha256": "d80bbb8fd9b06721c481756fb3e1d6dce04fcfc9ca8a379edd4ea3c0d81ed17f",
+      "bytes": 69048
+    },
+    {
+      "path": "hair/short03/short03.mhmat",
+      "sha256": "8dcf42b677301ab6a66f96ff41751ecf88fba6c6cd7c564e6953f9c78e40a8fd",
+      "bytes": 1309
+    },
+    {
+      "path": "hair/bob01/bob01.thumb",
+      "sha256": "f354364f4fbd0d83982ba77d1e8e63e15a3f73a04bd43538d076237602965336",
+      "bytes": 53628
+    },
+    {
+      "path": "hair/bob01/bob01.mhclo",
+      "sha256": "a295b11ab6c7808afa1e01d0c79fb595bbbd7885f65252766486c9fcf6d158c5",
+      "bytes": 352019
+    },
+    {
+      "path": "hair/bob01/bob01.mhmat",
+      "sha256": "9c3015044a832fb9a72a5d2f28218914ebfbdf6725cfd237cc53a3d95f054e3b",
+      "bytes": 1312
+    },
+    {
+      "path": "hair/bob01/bob01_diffuse.png",
+      "sha256": "2b38bc7a028e06e8e633accb7fe2dd1b2bacbb9d32463df73f39f82e63ef9009",
+      "bytes": 4243598
+    },
+    {
+      "path": "hair/bob01/bob01.obj",
+      "sha256": "d7fb73806f47ee37ba3c37bcfadff40a91ba99635d08c3e02d94b4acbf97c231",
+      "bytes": 396190
+    },
+    {
+      "path": "hair/short02/short02.thumb",
+      "sha256": "af21a0e84bfcc294b9840d90a04f1b6655ad909bc09328251886adffbc0727e8",
+      "bytes": 41127
+    },
+    {
+      "path": "hair/short02/short02.obj",
+      "sha256": "48f979114adfa712165a69cc55c45a70831af1fb3cba8e2a89120f0c87407b64",
+      "bytes": 139742
+    },
+    {
+      "path": "hair/short02/short02.mhclo",
+      "sha256": "625736cdb73e6d094df6e5a2df18f371781f1d2cd37b0ae15795c5d7051c3ec2",
+      "bytes": 119240
+    },
+    {
+      "path": "hair/short02/short02.mhmat",
+      "sha256": "2ed04c8aad9c1a35d858ca72091525d32b1da3b61b5a031634dd528fd8530f6d",
+      "bytes": 1323
+    },
+    {
+      "path": "hair/short02/short02_diffuse.png",
+      "sha256": "47fe33831a3929567c733356dd66243116e05df2ace1f884ddca0080b728229f",
+      "bytes": 3553543
+    },
+    {
+      "path": "hair/short02/short02_normal.png",
+      "sha256": "2cfac7619f8eec77dd90df979d912415058f4f0fc16940cba40a8eb1ae6d74b5",
+      "bytes": 1626745
+    },
+    {
+      "path": "hair/short04/short04.mhmat",
+      "sha256": "7a3ac74db8478aa0afdb8a596c6fe3997d1a8a09d12211d70e8f1e9f0b7e0e97",
+      "bytes": 1316
+    },
+    {
+      "path": "hair/short04/short04.obj",
+      "sha256": "676964a133ee35ffcea1195382bf75542da7a298931e4001bc7b0d7b707225de",
+      "bytes": 55152
+    },
+    {
+      "path": "hair/short04/short04.mhclo",
+      "sha256": "d60640aa4c4ffce1aa269647ba436b6ee0bb21bb948f927b84e27a48d2107157",
+      "bytes": 59195
+    },
+    {
+      "path": "hair/short04/short04_diffuse.png",
+      "sha256": "0bef7fc0e403db5a40fabb2111ebfa6f7e8158e204c6e56b8da98e9ef527846e",
+      "bytes": 2308132
+    },
+    {
+      "path": "hair/short04/short04.thumb",
+      "sha256": "a7db8f3db6e2a53194993de73b875d000f928b66a8ac4d6efab51bfd8e6664fd",
+      "bytes": 41792
+    },
+    {
+      "path": "tongue/tongue01/tongue01.thumb",
+      "sha256": "5c995b9b94fa73a080aa24e398cafb971a4e3667e028c33d8857a15dcc35a770",
+      "bytes": 49815
+    },
+    {
+      "path": "tongue/tongue01/tongue01.obj",
+      "sha256": "12f4a6a9f85abae2ce3b4aa42d8119e1f679a437e0e89cb928ec68b29a7a1587",
+      "bytes": 17155
+    },
+    {
+      "path": "tongue/tongue01/tongue01.mhmat",
+      "sha256": "7769df66c69b8c09a0ec713d70d8381abbb08ac82207369f5413970495cd4340",
+      "bytes": 1261
+    },
+    {
+      "path": "tongue/tongue01/tongue01_diffuse.png",
+      "sha256": "3150be398e48e8ba1feac164c3143c16c0b2e959d9ffb6155f0171f59cfb4ea9",
+      "bytes": 625419
+    },
+    {
+      "path": "tongue/tongue01/tongue01.mhclo",
+      "sha256": "61d825899cd78ff3146fa1324118060cb44b095fae1427d408c199ade74e3c9e",
+      "bytes": 2113
+    },
+    {
+      "path": "eyebrows/eyebrow001/eyebrow001.obj",
+      "sha256": "88b13146395133f3901715e11706cdfd293e5d6087ad7c5e01efe1485a26b513",
+      "bytes": 8227
+    },
+    {
+      "path": "eyebrows/eyebrow001/eyebrow001.png",
+      "sha256": "9940f7d0b1b223709a19b05156ba6f6e9e4dbdbced02d7574f4d51d72c58967b",
+      "bytes": 89619
+    },
+    {
+      "path": "eyebrows/eyebrow001/eyebrow001.mhclo",
+      "sha256": "54c8892c2ba577f4152d779ce1f20f7cd323beb8cbd9cb701796165c221b4f5b",
+      "bytes": 9141
+    },
+    {
+      "path": "eyebrows/eyebrow001/eyebrow001.thumb",
+      "sha256": "98b68eccf50977ff00242a33eb1dc6e3eaf4cc262e1f6c4ceca5c1c564f6c745",
+      "bytes": 137534
+    },
+    {
+      "path": "eyebrows/eyebrow001/eyebrow001.mhmat",
+      "sha256": "976e5f4f1d3922d7a11c6e2db233f8b4584b068d00619d5749687e81c92d61fc",
+      "bytes": 1098
+    },
+    {
+      "path": "eyebrows/eyebrow003/eyebrow003.mhmat",
+      "sha256": "91d53fb4fad2927ae412b38aaa8785bb26c6e886be049d5889a276ad3a875ea2",
+      "bytes": 1098
+    },
+    {
+      "path": "eyebrows/eyebrow003/eyebrow003.mhclo",
+      "sha256": "43028df55838152be8568eaa9a736746a2581ca327129a443d8d214554448632",
+      "bytes": 9148
+    },
+    {
+      "path": "eyebrows/eyebrow003/eyebrow003.thumb",
+      "sha256": "f084be4df91306df1b646cfb02cac2feceaa3a0c70caf68af388385c506b8bbe",
+      "bytes": 137706
+    },
+    {
+      "path": "eyebrows/eyebrow003/eyebrow003.png",
+      "sha256": "e98837d77247f2c11a8259f8b265243b9053ba55683bd70223c668110e7dfb62",
+      "bytes": 92174
+    },
+    {
+      "path": "eyebrows/eyebrow003/eyebrow003.obj",
+      "sha256": "dda3828f484f877f011fb8c52b75be0d7870561111739ff4cc5c83fb5ac6acd7",
+      "bytes": 8227
+    },
+    {
+      "path": "eyes/high-poly/high-poly.obj",
+      "sha256": "da2493215b708a344c33dc72f2a9a5b8fa985dcc5a70ad3b208995cf871da8e1",
+      "bytes": 100882
+    },
+    {
+      "path": "eyes/high-poly/high-poly.thumb",
+      "sha256": "97730eb579e1a81a63f38f53125ad8d375556f222882704fbec7dd83d4f24916",
+      "bytes": 21076
+    },
+    {
+      "path": "eyes/high-poly/high-poly.mhclo",
+      "sha256": "b183cfe37120ab726f9b3f2ea6cd3a64c44ce7b4bd91a77c841cf70c04f83a0d",
+      "bytes": 72490
+    }
+  ]
+}

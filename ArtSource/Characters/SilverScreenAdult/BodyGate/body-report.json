@@ -1,0 +1,113 @@
+{
+  "status": "APPROVED_NEUTRAL_MALE_FOUNDATION",
+  "anatomyRevision": "male-anatomy-03-final-foundation",
+  "technicalTopologyApproved": true,
+  "bodyAnatomyApproved": true,
+  "bodyVisualReference": "Reference/ApprovedMaleBodyReference.png",
+  "headFoundationSHA256": "ad692545e7b10451a5856c78b33695bf33a4f522c0e14cc6b29c292615a48eaf",
+  "headCoordinatesUnchanged": true,
+  "sourceSHA256": "b1680fcf4359488397bf622daa1072cd6d4dcd3fbe5fb1c0ff7d12905e063e7c",
+  "headSeamVertices": 40,
+  "headSeamMaxErrorMetres": 0.0,
+  "bodyVertices": 9309,
+  "bodyFaces": 9288,
+  "bodyQuads": 9288,
+  "boundaryEdges": 40,
+  "degenerateFaces": 0,
+  "nonManifoldEdgesMoreThanTwoFaces": 0,
+  "skinBindingPresent": false,
+  "bodyBoundsMin": [
+    -0.47963138874897826,
+    -0.21125702966660218,
+    0.0
+  ],
+  "bodyBoundsMax": [
+    0.47964660473334564,
+    0.15196933909353583,
+    1.5092321634292603
+  ],
+  "anatomicalHeightMetres": 1.7766315937042236,
+  "limbLandmarks": {
+    "L": {
+      "clavicleRoot": [
+        0.026,
+        0.018,
+        1.45
+      ],
+      "shoulder": [
+        0.205,
+        0.019,
+        1.438
+      ],
+      "elbow": [
+        0.315,
+        0.015,
+        1.19
+      ],
+      "wrist": [
+        0.404,
+        -0.003,
+        0.977
+      ],
+      "hip": [
+        0.088,
+        0.011,
+        0.988
+      ],
+      "knee": [
+        0.1,
+        -0.012,
+        0.515
+      ],
+      "ankle": [
+        0.111,
+        0.005,
+        0.082
+      ]
+    },
+    "R": {
+      "clavicleRoot": [
+        -0.026,
+        0.018,
+        1.45
+      ],
+      "shoulder": [
+        -0.205,
+        0.019,
+        1.438
+      ],
+      "elbow": [
+        -0.315,
+        0.015,
+        1.19
+      ],
+      "wrist": [
+        -0.404,
+        -0.003,
+        0.977
+      ],
+      "hip": [
+        -0.088,
+        0.011,
+        0.988
+      ],
+      "knee": [
+        -0.1,
+        -0.012,
+        0.515
+      ],
+      "ankle": [
+        -0.111,
+        0.005,
+        0.082
+      ]
+    }
+  },
+  "bodyCompleteUnderClothing": true,
+  "garmentsPresent": false,
+  "explicitGenitalGeometry": false,
+  "semanticRestLandmarks": "male-rest-landmarks-v2.json",
+  "rigContractModified": false,
+  "deformationValidated": false,
+  "identityTargetsImplemented": false
+}

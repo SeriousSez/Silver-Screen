@@ -1,0 +1,25 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"success\": true,\n  \"message\": \"Command executed successfully.\",\n  \"data\": {\n    \"isCompilationSuccessful\": true,\n    \"isExecutionSuccessful\": true,\n    \"executionId\": 1,\n    \"compilationLogs\": \"\",\n    \"executionLogs\": \"[Log] compiling=False\\n[Log] Stage1_PersonnelLiveParts (21.81, 0.00, -17.83)\\n[Log] StageSchool (-15.00, 0.00, 9.00)\\n[Log] Stage1_CleanCandidate_A (21.81, 0.00, -17.83)\\n[Log] FrontPersonnelRight (27.51, 0.08, -30.33)\\n[Log] InstanceDrivenStageLettering (21.81, 8.00, -29.87)\\n[Log] PersonnelRecessJamb (15.25, 1.25, -29.91)\\n[Log] PersonnelRecessJamb.001 (16.44, 1.25, -29.91)\\n[Log] PersonnelThresholdTraversal (21.81, 0.00, -17.83)\\n[Log] FrontPersonnelLeft (15.84, 0.08, -30.33)\\n[Log] PersonnelHead (15.84, 2.43, -29.91)\\n[Log] Export_PersonnelDoors (21.81, 0.00, -17.83)\\n[Log] ActorMarkC (23.61, 0.08, -16.33)\\n[Log] ActorMarkA (20.01, 0.08, -16.33)\\n[Log] PersonnelHead.001 (27.51, 2.48, -29.91)\\n[Log] SlateMark (21.81, 0.08, -17.63)\\n[Log] FrontRightPersonnelHinge (26.95, 0.00, -30.10)\\n[Log] ActorMarkB (21.81, 0.08, -16.33)\\n[Log] PersonnelRecessJamb.003 (28.16, 1.25, -29.91)\\n[Log] PersonnelRecessJamb.002 (26.87, 1.25, -29.91)\\n[Log] Stage1_Live (21.81, 0.00, -17.83)\\n[Log] PersonnelThreshold (27.63, 0.08, -29.92)\\n[Log] LivePersonnelRemainder (21.81, 0.00, -17.83)\",\n    \"localFixedCode\": \"using UnityEngine;\\r\\nusing UnityEditor;\\r\\n\\r\\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\\r\\n{\\r\\n    internal class CommandScript : IRunCommand\\r\\n    {\\r\\n        public void Execute(ExecutionResult result)\\r\\n        {\\r\\n            result.Log(\\\"compiling=\\\" + EditorApplication.isCompiling);\\r\\n            foreach (var t in Object.FindObjectsByType<Transform>(FindObjectsSortMode.None))\\r\\n                if (t.name.Contains(\\\"Stage\\\") || t.name.Contains(\\\"Mark\\\") || t.name.Contains(\\\"Personnel\\\"))\\r\\n                    result.Log(t.name + \\\" \\\" + t.position);\\r\\n        }\\r\\n    }\\r\\n}\",\n    \"result\": \"Command executed successfully.\"\n  }\n}"
+      }
+    ],
+    "structuredContent": {
+      "success": true,
+      "message": "Command executed successfully.",
+      "data": {
+        "isCompilationSuccessful": true,
+        "isExecutionSuccessful": true,
+        "executionId": 1,
+        "compilationLogs": "",
+        "executionLogs": "[Log] compiling=False\n[Log] Stage1_PersonnelLiveParts (21.81, 0.00, -17.83)\n[Log] StageSchool (-15.00, 0.00, 9.00)\n[Log] Stage1_CleanCandidate_A (21.81, 0.00, -17.83)\n[Log] FrontPersonnelRight (27.51, 0.08, -30.33)\n[Log] InstanceDrivenStageLettering (21.81, 8.00, -29.87)\n[Log] PersonnelRecessJamb (15.25, 1.25, -29.91)\n[Log] PersonnelRecessJamb.001 (16.44, 1.25, -29.91)\n[Log] PersonnelThresholdTraversal (21.81, 0.00, -17.83)\n[Log] FrontPersonnelLeft (15.84, 0.08, -30.33)\n[Log] PersonnelHead (15.84, 2.43, -29.91)\n[Log] Export_PersonnelDoors (21.81, 0.00, -17.83)\n[Log] ActorMarkC (23.61, 0.08, -16.33)\n[Log] ActorMarkA (20.01, 0.08, -16.33)\n[Log] PersonnelHead.001 (27.51, 2.48, -29.91)\n[Log] SlateMark (21.81, 0.08, -17.63)\n[Log] FrontRightPersonnelHinge (26.95, 0.00, -30.10)\n[Log] ActorMarkB (21.81, 0.08, -16.33)\n[Log] PersonnelRecessJamb.003 (28.16, 1.25, -29.91)\n[Log] PersonnelRecessJamb.002 (26.87, 1.25, -29.91)\n[Log] Stage1_Live (21.81, 0.00, -17.83)\n[Log] PersonnelThreshold (27.63, 0.08, -29.92)\n[Log] LivePersonnelRemainder (21.81, 0.00, -17.83)",
+        "localFixedCode": "using UnityEngine;\r\nusing UnityEditor;\r\n\r\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\r\n{\r\n    internal class CommandScript : IRunCommand\r\n    {\r\n        public void Execute(ExecutionResult result)\r\n        {\r\n            result.Log(\"compiling=\" + EditorApplication.isCompiling);\r\n            foreach (var t in Object.FindObjectsByType<Transform>(FindObjectsSortMode.None))\r\n                if (t.name.Contains(\"Stage\") || t.name.Contains(\"Mark\") || t.name.Contains(\"Personnel\"))\r\n                    result.Log(t.name + \" \" + t.position);\r\n        }\r\n    }\r\n}",
+        "result": "Command executed successfully."
+      }
+    }
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}

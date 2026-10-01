@@ -1,0 +1,97 @@
+C:\Repos\Unity\Silver Screen\ArtSource\Characters\Canonical\build_authored_candidate.py:32: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  material=bpy.data.materials.new('SS_Canonical_Authored');material.use_nodes=True
+00:31.171  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\Canonical\authored_candidate_face.png'
+01:04.609  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\Canonical\authored_candidate_body.png'
+FBX version: 7300
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+WARNING: User property type 'Short' is not supported
+Info: Saved as "Canonical_AuthoredCandidate.blend"
+Blender 5.0.1 (hash a3db93c5b259 built 2025-12-16 01:32:30)
+
+Blender quit

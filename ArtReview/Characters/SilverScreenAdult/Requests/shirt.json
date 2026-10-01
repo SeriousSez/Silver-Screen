@@ -1,0 +1,15 @@
+{
+  "method": "tools/call",
+  "params": {
+    "name": "Unity_AssetGeneration_GenerateAsset",
+    "arguments": {
+      "command": "GenerateMesh",
+      "modelId": "model3d-tripo-p2-quad",
+      "prompt": "One standalone ivory 1930s men's shirt matching the supplied reference. Complete front and back, separately modeled collar and button detail where possible, long sleeves and cuffs. An empty wearable garment with neck, wrists and hem openings, no body or mannequin, no skin, no other clothes. Preserve subtle cloth folds and tailoring. This is source geometry for a modular character, not rigged, not fused to a person.",
+      "savePath": "Assets/Editor/SilverScreenAdultSource/Generated/ShirtStudy.prefab",
+      "referenceImageInstanceId": "568105584919147578",
+      "meshFormat": "fbx",
+      "waitForCompletion": true
+    }
+  }
+}

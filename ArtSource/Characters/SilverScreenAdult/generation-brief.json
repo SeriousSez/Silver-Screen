@@ -1,0 +1,18 @@
+{
+  "status": "CLOSED HISTORICAL PROPOSAL. Consent was granted; generation attempted; user selected local authoring, then rejected its body/head. DO NOT SUBMIT. HEAD_GATE.md now governs.",
+  "purpose": "Original sculpt starting points for one character, subject to topology, anatomy, modularity, rig and visual correction; not finished production assets",
+  "visualAuthority": "Reference/ApprovedConcept.png",
+  "sourceRestrictions": "No existing human models, scans, Renderpeople assets or rejected prototype content. No imported identity, mesh, clothing or hair. Generate only from the user's approved concept and newly authored technical references.",
+  "proposedMeshModel": "model3d-tripo-p2-multiview-quad",
+  "proposedFormat": "fbx",
+  "referencePreparation": "Create aligned front, back and side orthographic technical views of this same identity and anatomy. Preserve approved concept features. These derived references are subordinate to the approved concept. Separate anatomy and garment views; do not submit the collage as a single object image.",
+  "anatomyStudy": {
+    "count": 1,
+    "prompt": "One original adult male anatomical sculpt for the approved SilverScreen character, approximately 1.78 metres tall, believable slim/fit adult proportions, strong but natural jaw and brow, the approved concept's face and skull proportions. Neutral symmetrical T pose, open relaxed fingers with five separated digits per hand and all joints, complete bare feet and toes. Anatomically complete nonsexual body for character modeling, including all areas that will be covered by garments. No shirt, trousers, shoes, jewelry, hat, hair or facial hair fused to the skin. Neutral expression, closed relaxed lips, eyes at the approved anatomical landmarks, neutral undirected surface lighting. Preserve distinct eyelid margins, lips, nostril form, ears and neck. Original geometry from the approved reference; never adapt an existing human model. Keep this as an unapproved sculpt study for subsequent facial and joint retopology, complete modular construction and shared-skeleton skinning."
+  },
+  "costumeStudy": {
+    "count": 1,
+    "prompt": "The clothing and grooming of the same single approved SilverScreen male, fitted to the exact same T-pose anatomical landmarks: ivory period shirt with collar and cuffs, charcoal brown tailored waistcoat, dark tie, high-waisted charcoal trousers, brown leather belt, polished dark leather period shoes, brown felt fedora with dark ribbon, swept dark hair. Preserve concept silhouette, material scale and tailoring. Generate separate editable garment and hair parts, open garment interiors with real thickness, no duplicate person and no skin fused into costume. Shirt, waistcoat, trousers, shoes, tie, belt, hat and hair must remain independent modules. Optional suit jacket follows the approved close-up but is removable. This is source for fitting and construction review, not a final rigged character."
+  },
+  "acceptance": "Reject outputs that fail the production contract. Quad output alone is not deformation topology. No generated output becomes the canonical prefab before complete anatomy, facial loops, UV/material separation, shared rig skinning, deformation clips, runtime timing and required Unity camera/Stage 1 checks pass."
+}

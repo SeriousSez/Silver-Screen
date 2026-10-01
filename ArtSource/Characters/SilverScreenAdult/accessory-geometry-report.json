@@ -1,0 +1,404 @@
+{
+  "status": "accessory-only intermediate; not the requested character gate",
+  "rigBoneCount": 91,
+  "rigRestLandmarksPreserved": true,
+  "authoredModules": [
+    "fedora",
+    "left shoe",
+    "right shoe",
+    "tie",
+    "belt"
+  ],
+  "bodyPresent": false,
+  "headPresent": false,
+  "clothingPresent": false,
+  "skinningPerformed": false,
+  "visualGatePassed": false,
+  "objects": [
+    {
+      "name": "Belt_BuckleFrame",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Belt_BuckleProng",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Belt_Edge_-1",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Belt_Edge_1",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Belt_LeatherStrap",
+      "type": "MESH",
+      "vertices": 512
+    },
+    {
+      "name": "Fedora_BoundBrim",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Fedora_Brim",
+      "type": "MESH",
+      "vertices": 1152
+    },
+    {
+      "name": "Fedora_CreasedTop",
+      "type": "MESH",
+      "vertices": 1248
+    },
+    {
+      "name": "Fedora_FeltCrown",
+      "type": "MESH",
+      "vertices": 1440
+    },
+    {
+      "name": "Fedora_GrosgrainRibbon",
+      "type": "MESH",
+      "vertices": 480
+    },
+    {
+      "name": "Fedora_InnerSweatband",
+      "type": "MESH",
+      "vertices": 288
+    },
+    {
+      "name": "Left_Shoe_CapToeSeam_0",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Left_Shoe_CapToeSeam_0.0018",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Left_Shoe_CollarBinding",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Left_Shoe_Eyelet_-1_0",
+      "type": "MESH",
+      "vertices": 96
+    },
+    {
+      "name": "Left_Shoe_Eyelet_-1_1",
+      "type": "MESH",
+      "vertices": 96
+    },
+    {
+      "name": "Left_Shoe_Eyelet_-1_2",
+      "type": "MESH",
+      "vertices": 96
+    },
+    {
+      "name": "Left_Shoe_Eyelet_-1_3",
+      "type": "MESH",
+      "vertices": 96
+    },
+    {
+      "name": "Left_Shoe_Eyelet_-1_4",
+      "type": "MESH",
+      "vertices": 96
+    },
+    {
+      "name": "Left_Shoe_Eyelet_1_0",
+      "type": "MESH",
+      "vertices": 96
+    },
+    {
+      "name": "Left_Shoe_Eyelet_1_1",
+      "type": "MESH",
+      "vertices": 96
+    },
+    {
+      "name": "Left_Shoe_Eyelet_1_2",
+      "type": "MESH",
+      "vertices": 96
+    },
+    {
+      "name": "Left_Shoe_Eyelet_1_3",
+      "type": "MESH",
+      "vertices": 96
+    },
+    {
+      "name": "Left_Shoe_Eyelet_1_4",
+      "type": "MESH",
+      "vertices": 96
+    },
+    {
+      "name": "Left_Shoe_Eyestay_-1",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Left_Shoe_Eyestay_1",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Left_Shoe_Lace_0_-1",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Left_Shoe_Lace_0_1",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Left_Shoe_Lace_1_-1",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Left_Shoe_Lace_1_1",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Left_Shoe_Lace_2_-1",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Left_Shoe_Lace_2_1",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Left_Shoe_Lace_3_-1",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Left_Shoe_Lace_3_1",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Left_Shoe_LaceBow_-1",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Left_Shoe_LaceBow_1",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Left_Shoe_LeatherUpper",
+      "type": "MESH",
+      "vertices": 1728
+    },
+    {
+      "name": "Left_Shoe_SoleBottom",
+      "type": "MESH",
+      "vertices": 96
+    },
+    {
+      "name": "Left_Shoe_StackedHeel",
+      "type": "MESH",
+      "vertices": 8
+    },
+    {
+      "name": "Left_Shoe_WeltSole",
+      "type": "MESH",
+      "vertices": 480
+    },
+    {
+      "name": "Ribbon_BoundEdge_0",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Ribbon_BoundEdge_1",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Ribbon_BowKnot",
+      "type": "MESH",
+      "vertices": 4
+    },
+    {
+      "name": "Ribbon_BowLeaf_-1",
+      "type": "MESH",
+      "vertices": 35
+    },
+    {
+      "name": "Ribbon_BowLeaf_1",
+      "type": "MESH",
+      "vertices": 35
+    },
+    {
+      "name": "Right_Shoe_CapToeSeam_0",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Right_Shoe_CapToeSeam_0.0018",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Right_Shoe_CollarBinding",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Right_Shoe_Eyelet_-1_0",
+      "type": "MESH",
+      "vertices": 96
+    },
+    {
+      "name": "Right_Shoe_Eyelet_-1_1",
+      "type": "MESH",
+      "vertices": 96
+    },
+    {
+      "name": "Right_Shoe_Eyelet_-1_2",
+      "type": "MESH",
+      "vertices": 96
+    },
+    {
+      "name": "Right_Shoe_Eyelet_-1_3",
+      "type": "MESH",
+      "vertices": 96
+    },
+    {
+      "name": "Right_Shoe_Eyelet_-1_4",
+      "type": "MESH",
+      "vertices": 96
+    },
+    {
+      "name": "Right_Shoe_Eyelet_1_0",
+      "type": "MESH",
+      "vertices": 96
+    },
+    {
+      "name": "Right_Shoe_Eyelet_1_1",
+      "type": "MESH",
+      "vertices": 96
+    },
+    {
+      "name": "Right_Shoe_Eyelet_1_2",
+      "type": "MESH",
+      "vertices": 96
+    },
+    {
+      "name": "Right_Shoe_Eyelet_1_3",
+      "type": "MESH",
+      "vertices": 96
+    },
+    {
+      "name": "Right_Shoe_Eyelet_1_4",
+      "type": "MESH",
+      "vertices": 96
+    },
+    {
+      "name": "Right_Shoe_Eyestay_-1",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Right_Shoe_Eyestay_1",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Right_Shoe_Lace_0_-1",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Right_Shoe_Lace_0_1",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Right_Shoe_Lace_1_-1",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Right_Shoe_Lace_1_1",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Right_Shoe_Lace_2_-1",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Right_Shoe_Lace_2_1",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Right_Shoe_Lace_3_-1",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Right_Shoe_Lace_3_1",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Right_Shoe_LaceBow_-1",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Right_Shoe_LaceBow_1",
+      "type": "CURVE",
+      "vertices": null
+    },
+    {
+      "name": "Right_Shoe_LeatherUpper",
+      "type": "MESH",
+      "vertices": 1728
+    },
+    {
+      "name": "Right_Shoe_SoleBottom",
+      "type": "MESH",
+      "vertices": 96
+    },
+    {
+      "name": "Right_Shoe_StackedHeel",
+      "type": "MESH",
+      "vertices": 8
+    },
+    {
+      "name": "Right_Shoe_WeltSole",
+      "type": "MESH",
+      "vertices": 480
+    },
+    {
+      "name": "Tie_FourInHandKnot",
+      "type": "MESH",
+      "vertices": 168
+    },
+    {
+      "name": "Tie_FrontBlade",
+      "type": "MESH",
+      "vertices": 35
+    },
+    {
+      "name": "Tie_NeckBand",
+      "type": "MESH",
+      "vertices": 192
+    }
+  ]
+}

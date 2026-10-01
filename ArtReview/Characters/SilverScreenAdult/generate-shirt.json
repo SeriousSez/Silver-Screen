@@ -1,0 +1,13 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"success\": false,\n  \"error\": \"Error executing tool: Error during asset operation: Reference image with InstanceID 568105584919147600 does not exist. Please provide a valid InstanceID.\"\n}"
+      }
+    ],
+    "isError": true
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}

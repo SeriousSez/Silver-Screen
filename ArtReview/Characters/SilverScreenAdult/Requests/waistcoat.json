@@ -1,0 +1,15 @@
+{
+  "method": "tools/call",
+  "params": {
+    "name": "Unity_AssetGeneration_GenerateAsset",
+    "arguments": {
+      "command": "GenerateMesh",
+      "modelId": "model3d-tripo-p2-quad",
+      "prompt": "One standalone tailored 1930s men's waistcoat matching supplied reference, charcoal brown wool, five buttons, pointed lower fronts, deep V neckline, welt pockets, complete matching dark back panel with small rear adjustment belt. Empty armholes, empty neckline and bottom; real thin cloth shell, no mannequin, no body, no shirt, no tie. Original garment source mesh for fitting over a shirt.",
+      "savePath": "Assets/Editor/SilverScreenAdultSource/Generated/WaistcoatStudy.prefab",
+      "referenceImageInstanceId": "568105584919147572",
+      "meshFormat": "fbx",
+      "waitForCompletion": true
+    }
+  }
+}

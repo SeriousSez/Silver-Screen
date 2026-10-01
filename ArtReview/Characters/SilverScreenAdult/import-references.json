@@ -1,0 +1,25 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"success\": true,\n  \"message\": \"Command executed successfully.\",\n  \"data\": {\n    \"isCompilationSuccessful\": true,\n    \"isExecutionSuccessful\": true,\n    \"executionId\": 1,\n    \"compilationLogs\": \"\",\n    \"executionLogs\": \"[Log] PROJECT=C:/Repos/Unity/Silver Screen/Assets SCENE=Assets/Scenes/Studio.unity DIRTY=True\\n[Log] Assets/Editor/SilverScreenAdultSource/References/ApprovedConcept.png ID=568105584919147580\\n[Log] Assets/Editor/SilverScreenAdultSource/References/BodyModelingShorts.png ID=568105584919147568\\n[Log] Assets/Editor/SilverScreenAdultSource/References/Shirt.png ID=568105584919147578\\n[Log] Assets/Editor/SilverScreenAdultSource/References/Trousers.png ID=568105584919147576\\n[Log] Assets/Editor/SilverScreenAdultSource/References/Waistcoat.png ID=568105584919147572\",\n    \"localFixedCode\": \"using UnityEngine;\\r\\nusing UnityEditor;\\r\\n\\r\\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\\r\\n{\\r\\n    internal class CommandScript : IRunCommand\\r\\n    {\\r\\n        public void Execute(ExecutionResult result)\\r\\n        {\\r\\n            string folder = \\\"Assets/Editor/SilverScreenAdultSource/References\\\";\\r\\n            AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);\\r\\n            result.Log(\\\"PROJECT=\\\" + Application.dataPath + \\\" SCENE=\\\" + UnityEngine.SceneManagement.SceneManager.GetActiveScene().path + \\\" DIRTY=\\\" + UnityEngine.SceneManagement.SceneManager.GetActiveScene().isDirty);\\r\\n            foreach (var path in System.IO.Directory.GetFiles(folder, \\\"*.png\\\"))\\r\\n            {\\r\\n                string normalized = path.Replace('\\\\\\\\', '/');\\r\\n                AssetDatabase.ImportAsset(normalized, ImportAssetOptions.ForceSynchronousImport);\\r\\n                var texture = AssetDatabase.LoadAssetAtPath<Texture2D>(normalized);\\r\\n                result.Log(normalized + \\\" ID=\\\" + EntityId.ToULong(texture.GetEntityId()));\\r\\n            }\\r\\n        }\\r\\n    }\\r\\n}\",\n    \"result\": \"Command executed successfully.\"\n  }\n}"
+      }
+    ],
+    "structuredContent": {
+      "success": true,
+      "message": "Command executed successfully.",
+      "data": {
+        "isCompilationSuccessful": true,
+        "isExecutionSuccessful": true,
+        "executionId": 1,
+        "compilationLogs": "",
+        "executionLogs": "[Log] PROJECT=C:/Repos/Unity/Silver Screen/Assets SCENE=Assets/Scenes/Studio.unity DIRTY=True\n[Log] Assets/Editor/SilverScreenAdultSource/References/ApprovedConcept.png ID=568105584919147580\n[Log] Assets/Editor/SilverScreenAdultSource/References/BodyModelingShorts.png ID=568105584919147568\n[Log] Assets/Editor/SilverScreenAdultSource/References/Shirt.png ID=568105584919147578\n[Log] Assets/Editor/SilverScreenAdultSource/References/Trousers.png ID=568105584919147576\n[Log] Assets/Editor/SilverScreenAdultSource/References/Waistcoat.png ID=568105584919147572",
+        "localFixedCode": "using UnityEngine;\r\nusing UnityEditor;\r\n\r\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\r\n{\r\n    internal class CommandScript : IRunCommand\r\n    {\r\n        public void Execute(ExecutionResult result)\r\n        {\r\n            string folder = \"Assets/Editor/SilverScreenAdultSource/References\";\r\n            AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);\r\n            result.Log(\"PROJECT=\" + Application.dataPath + \" SCENE=\" + UnityEngine.SceneManagement.SceneManager.GetActiveScene().path + \" DIRTY=\" + UnityEngine.SceneManagement.SceneManager.GetActiveScene().isDirty);\r\n            foreach (var path in System.IO.Directory.GetFiles(folder, \"*.png\"))\r\n            {\r\n                string normalized = path.Replace('\\\\', '/');\r\n                AssetDatabase.ImportAsset(normalized, ImportAssetOptions.ForceSynchronousImport);\r\n                var texture = AssetDatabase.LoadAssetAtPath<Texture2D>(normalized);\r\n                result.Log(normalized + \" ID=\" + EntityId.ToULong(texture.GetEntityId()));\r\n            }\r\n        }\r\n    }\r\n}",
+        "result": "Command executed successfully."
+      }
+    }
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}

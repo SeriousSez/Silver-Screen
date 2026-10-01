@@ -1,0 +1,16 @@
+{
+    "schemaVersion": 1,
+    "rigVersion": "adult-v1.0.0",
+    "appearanceId": "gate1-C",
+    "calibrationId": "C",
+    "foundationId": "adult-m",
+    "personalOutfitId": "system/clothes/male_worksuit01",
+    "hairId": "short01",
+    "heightMetres": 2.00933837890625,
+    "jawWidth": 0.0,
+    "noseWidth": 0.0,
+    "noseBridge": 0.0,
+    "mouthWidth": 0.0,
+    "cheekWidth": 0.0,
+    "chinHeight": 0.0
+}

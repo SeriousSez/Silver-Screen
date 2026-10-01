@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d86c30a19b650384aae14935e8498198, type: 3}
+  m_Name: AdultGate1Catalog
+  m_EditorClassIdentifier: Assembly-CSharp::SilverScreen.Presentation.Characters.CharacterCatalog
+  rigVersion: adult-v1.0.0
+  calibrations:
+  - id: A
+    foundationId: adult-m
+    outfitId: suits/clothes/toigo_male_suit_tie_and_jacket
+    hairId: short02
+    referenceHeight: 1.7518731
+    model: {fileID: 919132149155446097, guid: 34a8636cea787dc4d959078e992c9a9c, type: 3}
+    avatar: {fileID: 0}
+  - id: B
+    foundationId: adult-f
+    outfitId: suits/clothes/toigo_female_double-breasted_suit
+    hairId: bob01
+    referenceHeight: 1.5836618
+    model: {fileID: 919132149155446097, guid: 5a4c9489c240e9a42bbe12fa15a7f665, type: 3}
+    avatar: {fileID: 0}
+  - id: C
+    foundationId: adult-m
+    outfitId: system/clothes/male_worksuit01
+    hairId: short01
+    referenceHeight: 2.0093384
+    model: {fileID: 919132149155446097, guid: 253b7c20fd4fc4a47ad55409599b8552, type: 3}
+    avatar: {fileID: 0}

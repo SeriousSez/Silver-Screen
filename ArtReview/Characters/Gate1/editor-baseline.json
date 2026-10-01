@@ -1,0 +1,25 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"success\": true,\n  \"message\": \"Command executed successfully.\",\n  \"data\": {\n    \"isCompilationSuccessful\": true,\n    \"isExecutionSuccessful\": true,\n    \"executionId\": 1,\n    \"compilationLogs\": \"\",\n    \"executionLogs\": \"[Log] PROJECT=C:/Repos/Unity/Silver Screen/Assets version=6000.5.9f1 playing=False compiling=False\\n[Log] SCENE=Assets/Scenes/Studio.unity dirty=False\\n[Log] Cameras=1\",\n    \"localFixedCode\": \"using UnityEngine;\\r\\nusing UnityEditor;\\r\\n\\r\\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\\r\\n{\\r\\n    internal class CommandScript : IRunCommand\\r\\n    {\\r\\n        public void Execute(ExecutionResult result)\\r\\n        {\\r\\n            result.Log(\\\"PROJECT=\\\" + Application.dataPath + \\\" version=\\\" + Application.unityVersion + \\\" playing=\\\" + EditorApplication.isPlaying + \\\" compiling=\\\" + EditorApplication.isCompiling);\\r\\n            for (int i = 0; i < UnityEngine.SceneManagement.SceneManager.sceneCount; i++)\\r\\n            {\\r\\n                var s = UnityEngine.SceneManagement.SceneManager.GetSceneAt(i);\\r\\n                result.Log(\\\"SCENE=\\\" + s.path + \\\" dirty=\\\" + s.isDirty);\\r\\n            }\\r\\n\\r\\n            result.Log(\\\"Cameras=\\\" + UnityEngine.Object.FindObjectsByType<Camera>(FindObjectsInactive.Include).Length);\\r\\n        }\\r\\n    }\\r\\n}\",\n    \"result\": \"Command executed successfully.\"\n  }\n}"
+      }
+    ],
+    "structuredContent": {
+      "success": true,
+      "message": "Command executed successfully.",
+      "data": {
+        "isCompilationSuccessful": true,
+        "isExecutionSuccessful": true,
+        "executionId": 1,
+        "compilationLogs": "",
+        "executionLogs": "[Log] PROJECT=C:/Repos/Unity/Silver Screen/Assets version=6000.5.9f1 playing=False compiling=False\n[Log] SCENE=Assets/Scenes/Studio.unity dirty=False\n[Log] Cameras=1",
+        "localFixedCode": "using UnityEngine;\r\nusing UnityEditor;\r\n\r\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\r\n{\r\n    internal class CommandScript : IRunCommand\r\n    {\r\n        public void Execute(ExecutionResult result)\r\n        {\r\n            result.Log(\"PROJECT=\" + Application.dataPath + \" version=\" + Application.unityVersion + \" playing=\" + EditorApplication.isPlaying + \" compiling=\" + EditorApplication.isCompiling);\r\n            for (int i = 0; i < UnityEngine.SceneManagement.SceneManager.sceneCount; i++)\r\n            {\r\n                var s = UnityEngine.SceneManagement.SceneManager.GetSceneAt(i);\r\n                result.Log(\"SCENE=\" + s.path + \" dirty=\" + s.isDirty);\r\n            }\r\n\r\n            result.Log(\"Cameras=\" + UnityEngine.Object.FindObjectsByType<Camera>(FindObjectsInactive.Include).Length);\r\n        }\r\n    }\r\n}",
+        "result": "Command executed successfully."
+      }
+    }
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}

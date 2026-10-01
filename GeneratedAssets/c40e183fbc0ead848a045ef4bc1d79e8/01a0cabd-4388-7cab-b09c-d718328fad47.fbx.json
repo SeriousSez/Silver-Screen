@@ -1,0 +1,23 @@
+{
+    "asset": "c40e183fbc0ead848a045ef4bc1d79e8",
+    "fileName": "01a0cabd-4388-7cab-b09c-d718328fad47.fbx",
+    "prompt": "One standalone tailored 1930s men's waistcoat matching supplied reference, charcoal brown wool, five buttons, pointed lower fronts, deep V neckline, welt pockets, complete matching dark back panel with small rear adjustment belt. Empty armholes, empty neckline and bottom; real thin cloth shell, no mannequin, no body, no shirt, no tie. Original garment source mesh for fitting over a shirt.",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p2-quad",
+    "modelName": "Tripo P2 (Quad Mesh)",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "3247ef219ddb87e41a94fba304d0dad3",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

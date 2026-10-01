@@ -1,0 +1,34 @@
+00:01.375  blend            | Read blend: "C:\Repos\Unity\Silver Screen\ArtSource\Characters\SilverScreenAdult\Foundations\SS_MaleBody_Foundation_v1.blend"
+C:\Repos\Unity\Silver Screen\ArtSource\Characters\SilverScreenAdult\CanonicalGate\build_canonical.py:72: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  focus=Vector((0,.0,.94));world=scene.world;world.use_nodes=True
+00:14.579  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\CanonicalGate\front.png'
+00:30.141  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\CanonicalGate\threequarter.png'
+00:44.391  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\CanonicalGate\profile.png'
+01:03.454  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\CanonicalGate\back.png'
+01:40.219  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\CanonicalGate\portrait.png'
+02:21.625  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\CanonicalGate\portrait-threequarter.png'
+03:01.782  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\CanonicalGate\tailoring.png'
+03:38.141  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\CanonicalGate\shoes.png'
+04:18.016  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\CanonicalGate\hair-and-identity.png'
+04:41.407  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\CanonicalGate\complete-underlying-body.png'
+Info: Saved as "SS_Canonical_Unrigged_Candidate.blend"
+{
+  "status": "ASSEMBLED_UNRIGGED_VISUAL_REVIEW_PENDING",
+  "foundationSHA256": "682780ad972dc167b4789ff871f3670fa538dd45c7e0683f7143770b454e12b0",
+  "bodyBasisUnchanged": true,
+  "headBasisUnchanged": true,
+  "identityPreset": "silverscreen.canonical.leading_man.v1",
+  "completeAnatomicalBody": true,
+  "hiddenAnatomicalFaces": 0,
+  "bodyVertices": 9309,
+  "bodyFaces": 9288,
+  "armatures": 0,
+  "skinning": false,
+  "animation": false,
+  "materials": "Review palette only, no final PBR or pigmentation claim",
+  "UnityImported": false,
+  "productionReady": false
+}
+Blender 5.0.1 (hash a3db93c5b259 built 2025-12-16 01:32:30)
+
+Blender quit

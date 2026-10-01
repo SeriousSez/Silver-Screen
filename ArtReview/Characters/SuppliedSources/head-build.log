@@ -1,0 +1,91 @@
+C:\Repos\Unity\Silver Screen\ArtSource\Characters\SilverScreenAdult\HeadGate\build_head.py:119: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m=bpy.data.materials.new(name);m.diffuse_color=(*col,1);m.use_nodes=True
+C:\Repos\Unity\Silver Screen\ArtSource\Characters\SilverScreenAdult\HeadGate\build_head.py:257: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  scene.world=bpy.data.worlds.new('Neutral review world');scene.world.use_nodes=True
+00:10.328  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\HeadGate\front.png'
+00:18.953  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\HeadGate\threequarter.png'
+00:27.250  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\HeadGate\profile.png'
+00:37.031  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\HeadGate\closeup.png'
+00:46.234  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\HeadGate\clay-front.png'
+00:56.203  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\HeadGate\topology.png'
+Extensions: writing cache failed ([WinError 183] Cannot create a file when that file already exists: 'C:\\Users\\Sez\\AppData\\Roaming\\Blender Foundation\\Blender\\5.0\\extensions\\.cache').
+Info: Saved as "SS_Head_Candidate.blend"
+{
+  "status": "UNAPPROVED_HEAD_REVIEW",
+  "source": "CC topology explicitly authorized by user",
+  "rigContractUnchanged": true,
+  "shapeKeysCarriedIntoCandidate": 0,
+  "identityAndExpressionSeparate": true,
+  "bodyAuthored": false,
+  "rigged": false,
+  "deformationValidated": false,
+  "headDisplacementFromSourceMetres": {
+    "mean": 0.05706458320096734,
+    "note": "Includes metric placement near the planned adult head landmarks; not a measure of artistic difference."
+  },
+  "parts": [
+    {
+      "name": "SS_Head_Male_Candidate",
+      "vertices": 4211,
+      "faces": 4186,
+      "quads": 4186,
+      "boundaryEdges": 40,
+      "edgesWithMoreThanTwoFaces": 0,
+      "degenerateFaces": 0,
+      "uvLayers": 1,
+      "shapeKeys": 0,
+      "armatureModifiers": 0
+    },
+    {
+      "name": "SS_Eye_L",
+      "vertices": 324,
+      "faces": 320,
+      "quads": 320,
+      "boundaryEdges": 0,
+      "edgesWithMoreThanTwoFaces": 0,
+      "degenerateFaces": 0,
+      "uvLayers": 1,
+      "shapeKeys": 0,
+      "armatureModifiers": 0
+    },
+    {
+      "name": "SS_Eye_R",
+      "vertices": 324,
+      "faces": 320,
+      "quads": 320,
+      "boundaryEdges": 0,
+      "edgesWithMoreThanTwoFaces": 0,
+      "degenerateFaces": 0,
+      "uvLayers": 1,
+      "shapeKeys": 0,
+      "armatureModifiers": 0
+    },
+    {
+      "name": "SS_Teeth",
+      "vertices": 2642,
+      "faces": 2421,
+      "quads": 2421,
+      "boundaryEdges": 374,
+      "edgesWithMoreThanTwoFaces": 0,
+      "degenerateFaces": 0,
+      "uvLayers": 1,
+      "shapeKeys": 0,
+      "armatureModifiers": 0
+    },
+    {
+      "name": "SS_Tongue",
+      "vertices": 309,
+      "faces": 296,
+      "quads": 296,
+      "boundaryEdges": 24,
+      "edgesWithMoreThanTwoFaces": 0,
+      "degenerateFaces": 0,
+      "uvLayers": 1,
+      "shapeKeys": 0,
+      "armatureModifiers": 0
+    }
+  ]
+}
+Blender 5.0.1 (hash a3db93c5b259 built 2025-12-16 01:32:30)
+
+Blender quit

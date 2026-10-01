@@ -1,0 +1,25 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"success\": true,\n  \"message\": \"Command executed successfully.\",\n  \"data\": {\n    \"isCompilationSuccessful\": true,\n    \"isExecutionSuccessful\": true,\n    \"executionId\": 1,\n    \"compilationLogs\": \"\",\n    \"executionLogs\": \"[Log] Preview closed; active scene matches saved bytes=True; dirty=True; compiling=False\",\n    \"localFixedCode\": \"using UnityEngine;\\r\\nusing UnityEditor;\\r\\n\\r\\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\\r\\n{\\r\\n    internal class CommandScript : IRunCommand\\r\\n    {\\r\\n        public void Execute(ExecutionResult result)\\r\\n        {\\r\\n            SilverScreen.Editor.Characters.CanonicalCharacterReview.Close();\\r\\n            var scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();\\r\\n            string copy = \\\"ArtReview/Characters/Canonical/active-scene-verification.unity\\\";\\r\\n            UnityEditor.SceneManagement.EditorSceneManager.SaveScene(scene, copy, true);\\r\\n            bool identical = System.Linq.Enumerable.SequenceEqual(System.IO.File.ReadAllBytes(scene.path), System.IO.File.ReadAllBytes(copy));\\r\\n            result.Log(\\\"Preview closed; active scene matches saved bytes=\\\" + identical + \\\"; dirty=\\\" + scene.isDirty + \\\"; compiling=\\\" + EditorApplication.isCompiling);\\r\\n        }\\r\\n    }\\r\\n}\",\n    \"result\": \"Command executed successfully.\"\n  }\n}"
+      }
+    ],
+    "structuredContent": {
+      "success": true,
+      "message": "Command executed successfully.",
+      "data": {
+        "isCompilationSuccessful": true,
+        "isExecutionSuccessful": true,
+        "executionId": 1,
+        "compilationLogs": "",
+        "executionLogs": "[Log] Preview closed; active scene matches saved bytes=True; dirty=True; compiling=False",
+        "localFixedCode": "using UnityEngine;\r\nusing UnityEditor;\r\n\r\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\r\n{\r\n    internal class CommandScript : IRunCommand\r\n    {\r\n        public void Execute(ExecutionResult result)\r\n        {\r\n            SilverScreen.Editor.Characters.CanonicalCharacterReview.Close();\r\n            var scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();\r\n            string copy = \"ArtReview/Characters/Canonical/active-scene-verification.unity\";\r\n            UnityEditor.SceneManagement.EditorSceneManager.SaveScene(scene, copy, true);\r\n            bool identical = System.Linq.Enumerable.SequenceEqual(System.IO.File.ReadAllBytes(scene.path), System.IO.File.ReadAllBytes(copy));\r\n            result.Log(\"Preview closed; active scene matches saved bytes=\" + identical + \"; dirty=\" + scene.isDirty + \"; compiling=\" + EditorApplication.isCompiling);\r\n        }\r\n    }\r\n}",
+        "result": "Command executed successfully."
+      }
+    }
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}

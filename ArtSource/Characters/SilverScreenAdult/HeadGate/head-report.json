@@ -1,0 +1,82 @@
+{
+  "status": "IDENTITY_PASS_02_REVIEW",
+  "technicalFoundationApproved": true,
+  "artDirectionApproved": false,
+  "foundationSHA256": "9719fd6a564e5a7833fa0d85abbca0e6574b0ffe89afa6d7619749b669e88fb9",
+  "parts": [
+    {
+      "name": "SS_Head_Male_Candidate",
+      "vertices": 4211,
+      "faces": 4186,
+      "quads": 4186,
+      "boundaryEdges": 40,
+      "edgesWithMoreThanTwoFaces": 0,
+      "degenerateFaces": 0,
+      "topologyUVAndSourceIdsUnchanged": true,
+      "meanDisplacementMillimetres": 0.6830924798912384,
+      "maxDisplacementMillimetres": 3.454956928694343
+    },
+    {
+      "name": "SS_Eye_L",
+      "vertices": 324,
+      "faces": 320,
+      "quads": 320,
+      "boundaryEdges": 0,
+      "edgesWithMoreThanTwoFaces": 0,
+      "degenerateFaces": 0,
+      "topologyUVAndSourceIdsUnchanged": true,
+      "meanDisplacementMillimetres": 0.0,
+      "maxDisplacementMillimetres": 0.0
+    },
+    {
+      "name": "SS_Eye_R",
+      "vertices": 324,
+      "faces": 320,
+      "quads": 320,
+      "boundaryEdges": 0,
+      "edgesWithMoreThanTwoFaces": 0,
+      "degenerateFaces": 0,
+      "topologyUVAndSourceIdsUnchanged": true,
+      "meanDisplacementMillimetres": 0.0,
+      "maxDisplacementMillimetres": 0.0
+    },
+    {
+      "name": "SS_Teeth",
+      "vertices": 2642,
+      "faces": 2421,
+      "quads": 2421,
+      "boundaryEdges": 374,
+      "edgesWithMoreThanTwoFaces": 0,
+      "degenerateFaces": 0,
+      "topologyUVAndSourceIdsUnchanged": true,
+      "meanDisplacementMillimetres": 0.2303693926151206,
+      "maxDisplacementMillimetres": 1.385949976905282
+    },
+    {
+      "name": "SS_Tongue",
+      "vertices": 309,
+      "faces": 296,
+      "quads": 296,
+      "boundaryEdges": 24,
+      "edgesWithMoreThanTwoFaces": 0,
+      "degenerateFaces": 0,
+      "topologyUVAndSourceIdsUnchanged": true,
+      "meanDisplacementMillimetres": 0.10045937052340957,
+      "maxDisplacementMillimetres": 0.2673535146683301
+    }
+  ],
+  "lightingAndCameraContract": "Identical to the approved technical-foundation review",
+  "rigContractUnchanged": true,
+  "bodyAuthored": false,
+  "rigged": false,
+  "deformationValidated": false,
+  "shapeKeyAudit": "Existing 148-shape audit preserved; no expression keys introduced",
+  "renderViews": [
+    "front",
+    "threequarter",
+    "profile",
+    "closeup",
+    "clay-front",
+    "topology"
+  ]
+}

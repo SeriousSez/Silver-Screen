@@ -1,0 +1,27 @@
+[
+  {
+    "file": "ArtSource\\Characters\\SilverScreenAdult\\SS_Adult_Authoring.blend",
+    "sha256": "23AAB3CD859F9AFCCDB8C7731E33E83046542232C3AD6C1612CD51AE04E5CBD1",
+    "unchanged": true
+  },
+  {
+    "file": "ArtSource\\Characters\\SilverScreenAdult\\rig-contract.json",
+    "sha256": "62E401ED06F554D13DEFF8C407C03EA5A8D173FEB4B5067BE124021A318912E4",
+    "unchanged": true
+  },
+  {
+    "file": "ArtSource\\Characters\\SilverScreenAdult\\SS_Adult_Accessories.blend",
+    "sha256": "4E50AA2CFD4C22E1764E6D3AF950973FE339D4FB390BF38303C1125AFA629BDD",
+    "unchanged": true
+  },
+  {
+    "file": "Assets\\Scenes\\Studio.unity",
+    "sha256": "1EC4BB0925316ABD4C02D82F374BADB8C993482D9C9D37EFF5463D169343E1D6",
+    "unchanged": true
+  },
+  {
+    "file": "C:\\Users\\Sez\\Downloads\\Blender\\Blender 1\\blender.Fbx",
+    "sha256": "b1680fcf4359488397bf622daa1072cd6d4dcd3fbe5fb1c0ff7d12905e063e7c",
+    "unchanged": true
+  }
+]

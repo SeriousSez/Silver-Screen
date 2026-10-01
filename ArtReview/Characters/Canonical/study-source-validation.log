@@ -1,0 +1,20 @@
+00:01.031  blend            | Read blend: "C:\Repos\Unity\Silver Screen\ArtSource\Characters\Canonical\Baseline_Authored\Canonical_AuthoredCandidate.blend"
+00:01.563  blend            | Read blend: "C:\Repos\Unity\Silver Screen\ArtSource\Characters\Canonical\Canonical_AuthoredCandidate.blend"
+{
+  "passed": true,
+  "checks": {
+    "vertices": true,
+    "faces": true,
+    "topology": true,
+    "uv": true,
+    "weights": true,
+    "bone_parents": true,
+    "basis": true,
+    "one_study_shape_key": true,
+    "no_new_degenerate_faces": true,
+    "no_unweighted_vertices": true
+  }
+}
+Blender 5.0.1 (hash a3db93c5b259 built 2025-12-16 01:32:30)
+
+Blender quit

@@ -1,0 +1,15 @@
+{
+  "method": "tools/call",
+  "params": {
+    "name": "Unity_AssetGeneration_GenerateAsset",
+    "arguments": {
+      "command": "GenerateMesh",
+      "modelId": "model3d-tripo-p2-quad",
+      "prompt": "One standalone pair of high-waisted 1930s men's charcoal wool trousers matching supplied reference. Complete front and back with tailoring, fly, belt loops, subtle center leg creases and cloth drape. Open waistband and ankle cuffs, empty wearable cloth shell, no legs or body or shoes, no belt. Feet hip width, realistic slim fit not skinny. Original modular garment source mesh.",
+      "savePath": "Assets/Editor/SilverScreenAdultSource/Generated/TrousersStudy.prefab",
+      "referenceImageInstanceId": "568105584919147576",
+      "meshFormat": "fbx",
+      "waitForCompletion": true
+    }
+  }
+}

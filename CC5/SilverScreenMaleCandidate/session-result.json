@@ -1,0 +1,27 @@
+{
+  "id": "stop-second-session",
+  "operations": [
+    {
+      "type": "stop"
+    }
+  ],
+  "bounds": {
+    "min": [
+      -19.929244995117188,
+      -14.03452205657959,
+      84.445068359375
+    ],
+    "max": [
+      19.901451110839844,
+      15.788891792297363,
+      180.22471618652344
+    ],
+    "height_cm": 95.77964782714844
+  },
+  "name": "SS_Male_CC5_Candidate_v01",
+  "clothes": [
+    "Boxers"
+  ],
+  "hairs": [],
+  "generation": 3
+}

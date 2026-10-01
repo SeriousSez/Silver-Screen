@@ -1,0 +1,19 @@
+00:01.219  blend            | Read blend: "C:\Repos\Unity\Silver Screen\ArtSource\Characters\SilverScreenAdult\SS_Adult_Accessories.blend"
+BODY 555846
+HEAD 4478
+SHIRT
+GARMENTS
+00:14.828  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\body-front.png'
+00:23.922  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\head-bald.png'
+00:33.625  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\head-hair.png'
+00:43.844  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\outfit-front.png'
+00:54.891  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\outfit-threequarter.png'
+01:05.000  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\outfit-side.png'
+01:16.344  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\body-threequarter.png'
+01:27.250  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\body-back.png'
+01:39.328  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\head-topology.png'
+Info: Saved as "SS_Adult_GeometryCheckpoint.blend"
+GEOMETRY CHECKPOINT BUILT; VISUAL REVIEW REQUIRED
+Blender 5.0.1 (hash a3db93c5b259 built 2025-12-16 01:32:30)
+
+Blender quit

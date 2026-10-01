@@ -1,0 +1,12 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"success\": true,\n  \"message\": \"Tool 'GenerateAsset' executed successfully\",\n  \"data\": {\n    \"AssetName\": \"BodyModelingShorts\",\n    \"AssetType\": 7,\n    \"FileInstanceID\": 568105584919147600,\n    \"SubObjectInstanceID\": 568105584919147600,\n    \"Message\": \"Modification for Image 'BodyModelingShorts' completed successfully.\",\n    \"AssetPath\": \"Assets/Editor/SilverScreenAdultSource/References/BodyModelingShorts.png\",\n    \"AssetGuid\": \"808d91a2dae7d3641a091293d7e7a6a1\"\n  },\n  \"_meta\": {\n    \"ui\": {\n      \"resourceUri\": \"unity://widget/asset_preview\",\n      \"context\": {\n        \"assetGuid\": \"808d91a2dae7d3641a091293d7e7a6a1\",\n        \"assetType\": \"Image\",\n        \"instanceId\": 568105584919147600\n      }\n    }\n  }\n}"
+      }
+    ]
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}

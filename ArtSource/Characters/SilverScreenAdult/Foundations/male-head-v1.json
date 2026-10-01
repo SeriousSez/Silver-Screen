@@ -1,0 +1,20 @@
+{
+  "id": "silverscreen.adult.male.head.v1",
+  "approval": "Male anatomical foundation; user approved technical/artistic direction",
+  "file": "SS_MaleHead_Foundation_v1.blend",
+  "sha256": "ad692545e7b10451a5856c78b33695bf33a4f522c0e14cc6b29c292615a48eaf",
+  "headTopologyUVSourceIdFingerprint": "9e0b421d774e38829d7fc2a7c02bc5ab9de11eb9bb969e56f1825f6fbe03b488",
+  "meshGeometrySignatures": {
+    "SS_Eye_L": "da1ad7bcd06f5ce73eab217ec5b9fb40f546cd0296210e16903f1c246737ec89",
+    "SS_Eye_R": "6a8d3552b0644a504b04680e9355d1ffe08c44a16383d48209544e7cfd016bd4",
+    "SS_Head_Male_Candidate": "423611249a6254bcebb0f8ac197e809d8412de404637b6b44760498c34289ab9",
+    "SS_Teeth": "1af20ee65c832f5688fb242eb522babb44d2238ea43e189cb94c570a08cb10eb",
+    "SS_Tongue": "b458aba8c7a4b5bd43fc3911b9627f83ae2a2d4804a2cb9324abee4d30509125"
+  },
+  "headVertices": 4211,
+  "headQuads": 4186,
+  "identityTargets": [],
+  "expressionTargets": [],
+  "historicalInternalStatus": "The preserved binary predates approval; this manifest records the subsequent user approval.",
+  "doNotOverwriteForIdentityChanges": true
+}

@@ -1,0 +1,16 @@
+Actual Unity URP captures; one candidate; 2026-09-22T19:34:03.6218777Z
+Saved Studio unchanged by review. Isolated preview only. No depth-of-field added.
+Live shots use ProductionCameraLayout.TryFrame; runtime playback integration is not claimed.
+Renderer bounds size=(0.6794, 1.8664, 0.4004)
+Active scene dirty=False
+Render pipeline=PC_RPAsset
+Candidate count=1
+00_warmup; 320x320; fov=31; position=(1000.000, 1.040, 1003.650); target=(1000.000, 0.880, 1000.000)
+01_full_body_front; 1200x1600; fov=31; position=(1000.000, 1.040, 1003.650); target=(1000.000, 0.880, 1000.000)
+02_full_body_side; 1200x1600; fov=31; position=(1003.650, 1.040, 1000.000); target=(1000.000, 0.880, 1000.000)
+03_full_body_three_quarter; 1200x1600; fov=31; position=(1002.250, 1.040, 1002.880); target=(1000.000, 0.880, 1000.000)
+04_head_shoulders_front; 1200x1400; fov=31; position=(1000.000, 1.620, 1001.220); target=(1000.000, 1.490, 1000.000)
+05_face_three_quarter; 1200x1400; fov=28; position=(1000.580, 1.630, 1000.790); target=(1000.000, 1.600, 1000.030)
+06_face_profile; 1200x1400; fov=28; position=(1000.980, 1.630, 1000.000); target=(1000.000, 1.600, 1000.015)
+07_face_closeup; 1400x1400; fov=27; position=(1000.000, 1.630, 1000.860); target=(1000.000, 1.600, 1000.045)
+08_hands; 1200x1400; fov=27; position=(1000.660, 0.800, 1000.600); target=(1000.265, 0.775, 1000.000)

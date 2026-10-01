@@ -1,0 +1,14 @@
+00:01.125  blend            | Read blend: "C:\Repos\Unity\Silver Screen\ArtSource\Characters\SilverScreenAdult\SS_Adult_Authoring.blend"
+C:\Repos\Unity\Silver Screen\ArtSource\Characters\SilverScreenAdult\author_accessories.py:22: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m.use_nodes = True
+C:\Repos\Unity\Silver Screen\ArtSource\Characters\SilverScreenAdult\author_accessories.py:279: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  world.use_nodes=True
+00:08.453  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\accessory-fedora.png'
+00:13.984  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\accessory-shoe.png'
+00:18.312  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\accessory-tie.png'
+00:22.984  render           | Saved: 'C:\Repos\Unity\Silver Screen\ArtReview\Characters\SilverScreenAdult\accessory-belt.png'
+Info: Saved as "SS_Adult_Accessories.blend"
+{"status": "accessory-only intermediate; not the requested character gate", "rigBoneCount": 91, "rigRestLandmarksPreserved": true, "authoredModules": ["fedora", "left shoe", "right shoe", "tie", "belt"], "bodyPresent": false, "headPresent": false, "clothingPresent": false, "skinningPerformed": false, "visualGatePassed": false}
+Blender 5.0.1 (hash a3db93c5b259 built 2025-12-16 01:32:30)
+
+Blender quit
