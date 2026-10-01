@@ -64,8 +64,7 @@ namespace SilverScreen.Presentation.Buildings
         private Vector3 _movementOrigin;
         private Vector3 _movementTarget;
         private float _phaseDuration;
-        private SimulationSpeed _capturedSpeed;
-        private bool _capturedPaused;
+        private IDisposable _strategicPause;
 
         public bool IsViewing { get; private set; }
 
@@ -77,6 +76,7 @@ namespace SilverScreen.Presentation.Buildings
             PrototypeProductionCamera productionCamera,
             string facilityId)
         {
+            Exit();
             _simulationTime = simulationTime;
             _employeeManager = employeeManager;
             _sceneMarks = sceneMarks;
@@ -125,10 +125,12 @@ namespace SilverScreen.Presentation.Buildings
                 }
             }
 
-            _capturedSpeed = _simulationTime.CurrentSpeed;
-            _capturedPaused = _simulationTime.IsPaused;
-            _simulationTime.OnSpeedChanged += KeepAuthoritativeSimulationPaused;
-            _simulationTime.SetSpeed(SimulationSpeed.Paused);
+            if (!(_simulationTime is ISimulationControl control))
+            {
+                ClearReferences();
+                return false;
+            }
+            _strategicPause = control.AcquirePause("live-filming:" + _facilityId, "Focused observational playback");
 
             if (!BuildPlaybackActors() || _productionCamera == null || !_productionCamera.BeginSequence())
             {
@@ -144,18 +146,13 @@ namespace SilverScreen.Presentation.Buildings
 
         public void Exit()
         {
-            bool wasViewingOrCaptured = IsViewing || _simulationTime != null && _movie != null;
             IsViewing = false;
             RestoreSourceRenderers();
             DestroyPlaybackActors();
             _productionCamera?.EndSequence();
 
-            if (_simulationTime != null)
-            {
-                _simulationTime.OnSpeedChanged -= KeepAuthoritativeSimulationPaused;
-                if (wasViewingOrCaptured)
-                    _simulationTime.SetSpeed(_capturedPaused ? SimulationSpeed.Paused : _capturedSpeed);
-            }
+            _strategicPause?.Dispose();
+            _strategicPause = null;
 
             ClearReferences();
         }
@@ -235,6 +232,7 @@ namespace SilverScreen.Presentation.Buildings
 
             var bodyObject = GameObject.CreatePrimitive(PrimitiveType.Capsule);
             bodyObject.name = "Body";
+            bodyObject.GetComponent<MeshFilter>().sharedMesh = EmployeeNavigationProfile.BodyMesh;
             bodyObject.transform.SetParent(root.transform, false);
             bodyObject.transform.localPosition = Vector3.up;
             Destroy(bodyObject.GetComponent<Collider>());
@@ -242,8 +240,8 @@ namespace SilverScreen.Presentation.Buildings
             Renderer sourceRenderer = source.GetComponentInChildren<Renderer>();
             if (sourceRenderer != null) bodyObject.GetComponent<Renderer>().sharedMaterial = sourceRenderer.sharedMaterial;
 
-            Transform leftArm = CreateArm(root.transform, "LeftArm", new Vector3(-0.55f, 1.25f, 0f), sourceRenderer);
-            Transform rightArm = CreateArm(root.transform, "RightArm", new Vector3(0.55f, 1.25f, 0f), sourceRenderer);
+            Transform leftArm = CreateArm(root.transform, "LeftArm", new Vector3(-0.31f, 1.25f, 0f), sourceRenderer);
+            Transform rightArm = CreateArm(root.transform, "RightArm", new Vector3(0.31f, 1.25f, 0f), sourceRenderer);
             return new PlaybackActor
             {
                 CharacterId = characterId,
@@ -428,12 +426,6 @@ namespace SilverScreen.Presentation.Buildings
             if (role == null || string.IsNullOrWhiteSpace(role.AssignedActorId)) return false;
             agent = _employeeManager.GetAgent(role.AssignedActorId);
             return agent != null;
-        }
-
-        private void KeepAuthoritativeSimulationPaused(SimulationSpeed speed)
-        {
-            if (IsViewing && speed != SimulationSpeed.Paused)
-                _simulationTime.SetSpeed(SimulationSpeed.Paused);
         }
 
         private void RestoreSourceRenderers()

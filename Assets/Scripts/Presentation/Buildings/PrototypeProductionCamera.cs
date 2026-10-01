@@ -121,6 +121,10 @@ namespace SilverScreen.Presentation.Buildings
         {
             if (_productionCamera == null) return;
 
+            var authored = GetComponent<ProductionCameraLayout>();
+            if (authored != null && authored.TryFrame(_activeShotType, _subject, out var authoredPosition, out var authoredFocus, out var authoredFov))
+            { ApplyFrame(authoredPosition, authoredFocus, authoredFov); return; }
+
             if (_activeShotType == ShotType.Wide || _subject == null)
             {
                 Vector3 focus = transform.TransformPoint(new Vector3(0f, 1.2f, -11f));

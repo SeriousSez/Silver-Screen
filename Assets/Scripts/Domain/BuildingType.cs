@@ -8,6 +8,7 @@ namespace SilverScreen.Domain
         StageSchool,
         ScriptOffice,
         StreetSet,
-        RestaurantCafeSet
+        RestaurantCafeSet,
+        StudioServices
     }
 }

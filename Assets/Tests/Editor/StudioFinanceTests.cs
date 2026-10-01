@@ -210,12 +210,14 @@ namespace SilverScreen.Tests.EditMode
 
         private static ProductionSetup CreateProductionSetup(Money? startingCash = null)
         {
-            var time = new FakeSimulationTimeService();
+            var time = new SimulationClock();
             var finances = new StudioFinances(StartDate, startingCash);
             var coordinator = new MovieProductionCoordinator(
                 time,
                 new ImmediateRouter(),
-                finances: finances);
+                finances: finances,
+                workService: new SilverScreen.Domain.Work.WorkService(time, new SimulationScheduler(time)),
+                reservations: new SilverScreen.Domain.Resources.ResourceReservationBook());
             return new ProductionSetup(coordinator, finances);
         }
 

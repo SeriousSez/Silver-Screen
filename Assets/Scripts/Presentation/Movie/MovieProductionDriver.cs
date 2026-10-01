@@ -48,7 +48,9 @@ namespace SilverScreen.Presentation.Movie
                         _timeDriver.TimeService,
                         _worldRouter,
                         _genres,
-                        _financeService);
+                        _financeService,
+                        workService: _timeDriver.Work,
+                        reservations: _timeDriver.Reservations);
                     _worldRouter.BindProductionService(_coordinator);
                 }
             }

@@ -67,66 +67,71 @@ namespace SilverScreen.Presentation.UI
 
         public MovieProject DisplayedProject => _observedMovie;
 
-        private void Start()
+        private IMovieProductionService _boundProductionService;
+        private IMovieReleaseService _boundReleaseService;
+        private CandidatePickerUI _boundPicker;
+        private bool _initialized;
+
+        private void Start() => Initialize();
+        private void OnEnable()
+        {
+            if (_initialized) Initialize();
+        }
+
+        // Hosting can happen before Start, including on a saved inactive object.
+        // Rebinding is safe and only removes listeners owned by this panel.
+        public void Initialize()
         {
             if (_productionDriver == null) _productionDriver = FindAnyObjectByType<MovieProductionDriver>(FindObjectsInactive.Include);
             if (_creationDialog == null) _creationDialog = FindAnyObjectByType<MovieCreationDialogUI>(FindObjectsInactive.Include);
             if (_candidatePicker == null) _candidatePicker = FindAnyObjectByType<CandidatePickerUI>(FindObjectsInactive.Include);
-
+            UnbindServices();
             if (_emptyCreateButton != null)
             {
-                _emptyCreateButton.onClick.RemoveAllListeners();
+                _emptyCreateButton.onClick.RemoveListener(OpenCreationDialog);
                 _emptyCreateButton.onClick.AddListener(OpenCreationDialog);
             }
-
             if (_assignDirectorButton != null)
             {
-                _assignDirectorButton.onClick.RemoveAllListeners();
+                _assignDirectorButton.onClick.RemoveListener(HandleAssignDirectorClicked);
                 _assignDirectorButton.onClick.AddListener(HandleAssignDirectorClicked);
             }
-
-            if (_candidatePicker != null)
+            _boundPicker = _candidatePicker;
+            if (_boundPicker != null) _boundPicker.OnAssignmentCompleted += HandleAssignmentCompleted;
+            _boundProductionService = _productionDriver?.ProductionService;
+            if (_boundProductionService != null)
             {
-                _candidatePicker.OnAssignmentCompleted -= HandleAssignmentCompleted;
-                _candidatePicker.OnAssignmentCompleted += HandleAssignmentCompleted;
+                _boundProductionService.OnActiveMovieChanged += HandleMovieChanged;
+                _boundProductionService.OnProductionNotification += HandleNotification;
             }
+            _boundReleaseService = _productionDriver?.ReleaseService;
+            if (_boundReleaseService != null) _boundReleaseService.OnMovieReleaseUpdated += HandleReleaseUpdated;
+            if (!_initialized && _notificationRoot != null) _notificationRoot.SetActive(false);
+            _initialized = true;
+            ObserveMovie(_pinnedMovie ?? _boundProductionService?.ActiveMovie);
+            RefreshUI(_observedMovie);
+        }
 
-            if (_productionDriver != null && _productionDriver.ProductionService != null)
+        private void UnbindServices()
+        {
+            if (_boundPicker != null) _boundPicker.OnAssignmentCompleted -= HandleAssignmentCompleted;
+            if (_boundProductionService != null)
             {
-                EnsureTakeControlUI();
-                _productionDriver.ProductionService.OnActiveMovieChanged += HandleMovieChanged;
-                _productionDriver.ProductionService.OnProductionNotification += HandleNotification;
-                if (_productionDriver.ReleaseService != null)
-                {
-                    _productionDriver.ReleaseService.OnMovieReleaseUpdated += HandleReleaseUpdated;
-                }
-                HandleMovieChanged(_productionDriver.ProductionService.ActiveMovie);
+                _boundProductionService.OnActiveMovieChanged -= HandleMovieChanged;
+                _boundProductionService.OnProductionNotification -= HandleNotification;
             }
-
-            if (_notificationRoot != null)
-            {
-                _notificationRoot.SetActive(false);
-            }
+            if (_boundReleaseService != null) _boundReleaseService.OnMovieReleaseUpdated -= HandleReleaseUpdated;
+            _boundPicker = null;
+            _boundProductionService = null;
+            _boundReleaseService = null;
         }
 
         private void OnDestroy()
         {
             ObserveMovie(null);
-
-            if (_candidatePicker != null)
-            {
-                _candidatePicker.OnAssignmentCompleted -= HandleAssignmentCompleted;
-            }
-
-            if (_productionDriver != null && _productionDriver.ProductionService != null)
-            {
-                _productionDriver.ProductionService.OnActiveMovieChanged -= HandleMovieChanged;
-                _productionDriver.ProductionService.OnProductionNotification -= HandleNotification;
-                if (_productionDriver.ReleaseService != null)
-                {
-                    _productionDriver.ReleaseService.OnMovieReleaseUpdated -= HandleReleaseUpdated;
-                }
-            }
+            UnbindServices();
+            if (_emptyCreateButton != null) _emptyCreateButton.onClick.RemoveListener(OpenCreationDialog);
+            if (_assignDirectorButton != null) _assignDirectorButton.onClick.RemoveListener(HandleAssignDirectorClicked);
         }
 
         private void Update()
@@ -173,31 +178,20 @@ namespace SilverScreen.Presentation.UI
 
             if (_observedMovie != null)
             {
-                _observedMovie.OnProgressChanged -= HandleProgressChanged;
+                _observedMovie.OnProjectUpdated -= HandleProjectUpdated;
             }
 
             _observedMovie = movie;
 
             if (_observedMovie != null)
             {
-                _observedMovie.OnProgressChanged += HandleProgressChanged;
+                _observedMovie.OnProjectUpdated += HandleProjectUpdated;
             }
         }
 
-        private void HandleProgressChanged(MovieProject movie, float progress)
+        private void HandleProjectUpdated(MovieProject movie)
         {
-            if (movie != _observedMovie) return;
-
-            int pct = Mathf.RoundToInt(progress * 100f);
-            if (_progressBarFill != null) _progressBarFill.fillAmount = progress;
-            if (_progressPercentText != null) _progressPercentText.text = $"{pct}%";
-
-            if (_statusText != null)
-            {
-                _statusText.text = movie.CurrentState == MovieProductionState.Filming
-                    ? $"Filming — {pct}%"
-                    : _productionDriver?.ProductionService?.StatusMessage;
-            }
+            if (movie == _observedMovie) RefreshUI(movie);
         }
 
         private void HandleNotification(string message)
@@ -233,7 +227,7 @@ namespace SilverScreen.Presentation.UI
 
         private void HandleAssignDirectorClicked()
         {
-            var movie = _productionDriver?.ProductionService?.ActiveMovie;
+            var movie = _observedMovie;
             if (movie != null && _candidatePicker != null)
             {
                 _candidatePicker.OpenForDirector(movie);
@@ -314,7 +308,9 @@ namespace SilverScreen.Presentation.UI
                 }
                 else
                 {
-                    _statusText.text = _productionDriver.ProductionService.StatusMessage;
+                    _statusText.text = movie == _productionDriver.ProductionService?.ActiveMovie
+                        ? _productionDriver.ProductionService.StatusMessage
+                        : FormatStateBadge(movie.CurrentState);
                     _statusText.fontSize = _statusDefaultFontSize;
                     _statusText.rectTransform.sizeDelta = _statusDefaultSize;
                 }
@@ -345,7 +341,10 @@ namespace SilverScreen.Presentation.UI
             float displayedProgress = GetDisplayedProgress(movie);
             int pct = Mathf.RoundToInt(displayedProgress * 100f);
             if (_progressBarFill != null) _progressBarFill.fillAmount = displayedProgress;
-            if (_progressPercentText != null) _progressPercentText.text = $"{pct}%";
+            if (_progressPercentText != null)
+                _progressPercentText.text = movie.CurrentState == MovieProductionState.Casting
+                    ? $"CASTING {pct}%"
+                    : $"SCENES {movie.CompletedSceneCount}/{movie.Scenes.Count}";
             if (movie.CurrentState == MovieProductionState.Completed && movie.ProductionResult != null)
             {
                 float qualityProgress = movie.ProductionResult.OverallQuality / 100f;
@@ -371,13 +370,17 @@ namespace SilverScreen.Presentation.UI
             // Lifecycle action button
             if (_newMovieButton != null)
             {
-                bool completed = movie.CurrentState == MovieProductionState.Completed;
-                _newMovieButton.gameObject.SetActive(completed);
+                bool completed = movie.CanRelease;
+                var service = _productionDriver?.ProductionService;
+                bool retry = service?.ActiveMovie == movie && movie.ReadyForFilming &&
+                    (service.CurrentProductionPhase == ProductionPhase.Failed || service.CurrentProductionPhase == ProductionPhase.EnvironmentUnresolved);
+                _newMovieButton.gameObject.SetActive(completed || retry);
                 _newMovieButton.onClick.RemoveAllListeners();
                 if (completed) _newMovieButton.onClick.AddListener(HandleReleaseClicked);
+                else if (retry) _newMovieButton.onClick.AddListener(() => service.RetryProduction());
 
                 var label = _newMovieButton.GetComponentInChildren<TextMeshProUGUI>(true);
-                if (label != null) label.text = "RELEASE MOVIE";
+                if (label != null) label.text = completed ? "RELEASE MOVIE" : "RETRY PRODUCTION";
             }
         }
 
@@ -392,94 +395,96 @@ namespace SilverScreen.Presentation.UI
         private void EnsureTakeControlUI()
         {
             if (_takeControlRoot != null || _activeCardRoot == null) return;
-
-            var root = ManagementUIFactory.Rect(
-                "TakeControl",
-                _activeCardRoot.transform,
-                new Vector2(0f, 0f),
-                new Vector2(1f, 0f),
-                new Vector2(0f, 76f),
-                new Vector2(-32f, 136f));
-            ManagementUIFactory.Background(root, new Color(0.035f, 0.043f, 0.05f, 0.98f));
+            // Reserve the bottom 88 points for status, progress and release controls.
+            var root = ManagementUIFactory.Rect("TakeControl", _activeCardRoot.transform,
+                Vector2.zero, new Vector2(1f, 0f), new Vector2(0f, 174f), new Vector2(-32f, 172f));
+            ManagementUIFactory.Background(root, new Color(.035f, .043f, .05f, .98f));
             _takeControlRoot = root.gameObject;
+            var stack = root.gameObject.AddComponent<VerticalLayoutGroup>();
+            stack.padding = new RectOffset(10, 10, 10, 10);
+            stack.spacing = 8f;
+            stack.childControlWidth = stack.childControlHeight = true;
+            stack.childForceExpandWidth = true;
+            stack.childForceExpandHeight = false;
 
-            var labelRect = ManagementUIFactory.Rect(
-                "ModeLabel",
-                root,
-                new Vector2(0f, 1f),
-                new Vector2(0f, 1f),
-                new Vector2(72f, -22f),
-                new Vector2(120f, 28f));
-            ManagementUIFactory.Text(
-                "Text",
-                labelRect,
-                "TAKE CONTROL",
-                12f,
-                TextAlignmentOptions.MidlineLeft,
-                ManagementUIFactory.Muted);
+            var modeRow = TakeRow("Mode", root, 32f);
+            var label = ManagementUIFactory.Text("ModeLabel", modeRow, "TAKE CONTROL", 12f,
+                TextAlignmentOptions.MidlineLeft, ManagementUIFactory.Muted);
+            label.raycastTarget = false;
+            var labelLayout = label.gameObject.AddComponent<LayoutElement>();
+            labelLayout.minWidth = 120f;
+            labelLayout.flexibleWidth = 1f;
+            _automaticModeButton = CreateTakeButton(modeRow, "Automatic", "AUTOMATIC", 112f);
+            _manualModeButton = CreateTakeButton(modeRow, "Manual", "MANUAL", 112f);
+            _automaticModeButton.onClick.AddListener(() => SetProductionControlMode(ProductionControlMode.Automatic));
+            _manualModeButton.onClick.AddListener(() => SetProductionControlMode(ProductionControlMode.Manual));
 
-            _automaticModeButton = CreateTakeButton(
-                root, "Automatic", "AUTOMATIC", new Vector2(196f, -22f), new Vector2(112f, 28f));
-            _manualModeButton = CreateTakeButton(
-                root, "Manual", "MANUAL", new Vector2(318f, -22f), new Vector2(112f, 28f));
-            _automaticModeButton.onClick.AddListener(
-                () => SetProductionControlMode(ProductionControlMode.Automatic));
-            _manualModeButton.onClick.AddListener(
-                () => SetProductionControlMode(ProductionControlMode.Manual));
+            var decision = ManagementUIFactory.Stretch("TakeDecision", root);
+            _takeDecisionRoot = decision.gameObject;
+            decision.gameObject.AddComponent<LayoutElement>().preferredHeight = 104f;
+            var decisionStack = decision.gameObject.AddComponent<VerticalLayoutGroup>();
+            decisionStack.spacing = 8f;
+            decisionStack.childControlWidth = decisionStack.childControlHeight = true;
+            decisionStack.childForceExpandWidth = true;
+            decisionStack.childForceExpandHeight = false;
+            var cut = ManagementUIFactory.Text("CutLabel", decision, "CUT — CHOOSE A TAKE", 14f,
+                TextAlignmentOptions.MidlineLeft, ManagementUIFactory.Gold);
+            cut.raycastTarget = false;
+            cut.gameObject.AddComponent<LayoutElement>().preferredHeight = 24f;
 
-            var decisionRect = ManagementUIFactory.Rect(
-                "TakeDecision",
-                root,
-                new Vector2(0f, 0f),
-                new Vector2(1f, 1f),
-                new Vector2(0f, -18f),
-                new Vector2(-16f, -52f));
-            _takeDecisionRoot = decisionRect.gameObject;
-            var cutText = ManagementUIFactory.Text(
-                "CutLabel",
-                decisionRect,
-                "CUT — CHOOSE A TAKE",
-                14f,
-                TextAlignmentOptions.TopLeft,
-                ManagementUIFactory.Gold);
-            cutText.raycastTarget = false;
+            // More retakes remain reachable without flowing across the action buttons.
+            var takes = ManagementUIFactory.Stretch("Takes", decision);
+            takes.gameObject.AddComponent<LayoutElement>().preferredHeight = 32f;
+            var scroll = takes.gameObject.AddComponent<ScrollRect>();
+            scroll.horizontal = true;
+            scroll.vertical = false;
+            scroll.movementType = ScrollRect.MovementType.Clamped;
+            var viewport = ManagementUIFactory.Stretch("Viewport", takes);
+            viewport.gameObject.AddComponent<RectMask2D>();
+            ManagementUIFactory.Background(viewport, Color.clear);
+            var content = ManagementUIFactory.Rect("Content", viewport, Vector2.zero,
+                new Vector2(0f, 1f), Vector2.zero, Vector2.zero);
+            content.pivot = new Vector2(0f, .5f);
+            ConfigureTakeRow(content);
+            content.gameObject.AddComponent<ContentSizeFitter>().horizontalFit = ContentSizeFitter.FitMode.PreferredSize;
+            _takeButtonsRoot = content;
+            scroll.viewport = viewport;
+            scroll.content = content;
 
-            var takeButtonsRect = ManagementUIFactory.Rect(
-                "Takes",
-                decisionRect,
-                new Vector2(0f, 0f),
-                new Vector2(0f, 0f),
-                new Vector2(132f, 22f),
-                new Vector2(240f, 32f));
-            _takeButtonsRoot = takeButtonsRect;
-            _keepTakeButton = CreateTakeButton(
-                decisionRect, "Keep", "KEEP SELECTED TAKE", new Vector2(330f, 22f), new Vector2(190f, 32f));
-            _shootAgainButton = CreateTakeButton(
-                decisionRect, "Again", "SHOOT AGAIN", new Vector2(440f, 22f), new Vector2(100f, 32f));
+            var actions = TakeRow("Actions", decision, 32f);
+            _keepTakeButton = CreateTakeButton(actions, "Keep", "KEEP SELECTED TAKE", 210f, 1f);
+            _shootAgainButton = CreateTakeButton(actions, "Again", "SHOOT AGAIN", 150f, 1f);
             _keepTakeButton.onClick.AddListener(KeepSelectedTake);
             _shootAgainButton.onClick.AddListener(ShootAgain);
         }
 
-        private static Button CreateTakeButton(
-            Transform parent,
-            string name,
-            string label,
-            Vector2 position,
-            Vector2 size)
+        private static RectTransform TakeRow(string name, Transform parent, float height)
         {
-            var rect = ManagementUIFactory.Rect(
-                name,
-                parent,
-                new Vector2(0f, 1f),
-                new Vector2(0f, 1f),
-                position,
-                size);
-            return ManagementUIFactory.Button(
-                "Button",
-                rect,
-                label,
-                ManagementUIFactory.PanelRaised,
-                Color.white);
+            var row = ManagementUIFactory.Stretch(name, parent);
+            row.gameObject.AddComponent<LayoutElement>().preferredHeight = height;
+            ConfigureTakeRow(row);
+            return row;
+        }
+
+        private static void ConfigureTakeRow(RectTransform row)
+        {
+            var layout = row.gameObject.AddComponent<HorizontalLayoutGroup>();
+            layout.spacing = 8f;
+            layout.childControlWidth = layout.childControlHeight = true;
+            layout.childForceExpandWidth = false;
+            layout.childForceExpandHeight = true;
+        }
+
+        private static Button CreateTakeButton(Transform parent, string name, string label,
+            float width, float flexibleWidth = 0f)
+        {
+            var button = ManagementUIFactory.Button(name, parent, label,
+                ManagementUIFactory.PanelRaised, Color.white);
+            var layout = button.gameObject.AddComponent<LayoutElement>();
+            layout.minWidth = layout.preferredWidth = width;
+            layout.preferredHeight = 32f;
+            layout.flexibleWidth = flexibleWidth;
+            return button;
         }
 
         private void RefreshTakeControlUI(MovieProject movie)
@@ -514,8 +519,12 @@ namespace SilverScreen.Presentation.UI
 
         private void PopulateCompletedTakeButtons(MovieScene scene)
         {
-            foreach (Transform child in _takeButtonsRoot)
+            for (int i = _takeButtonsRoot.childCount - 1; i >= 0; i--)
+            {
+                var child = _takeButtonsRoot.GetChild(i);
+                child.SetParent(null, false);
                 Destroy(child.gameObject);
+            }
             if (scene == null) return;
 
             MovieTake firstCompleted = null;
@@ -528,7 +537,6 @@ namespace SilverScreen.Presentation.UI
             if (scene.GetTake(_selectedTakeId)?.Status != MovieTakeStatus.Completed)
                 _selectedTakeId = firstCompleted?.Id;
 
-            int index = 0;
             foreach (var take in scene.Takes)
             {
                 if (take.Status != MovieTakeStatus.Completed) continue;
@@ -536,12 +544,10 @@ namespace SilverScreen.Presentation.UI
                     _takeButtonsRoot,
                     $"Take{take.TakeNumber}",
                     $"TAKE {take.TakeNumber}",
-                    new Vector2(48f + index * 82f, 16f),
-                    new Vector2(72f, 28f));
+                    84f);
                 string takeId = take.Id;
                 button.onClick.AddListener(() => SelectTake(takeId));
                 SetButtonSelected(button, takeId == _selectedTakeId);
-                index++;
             }
         }
 
@@ -581,6 +587,7 @@ namespace SilverScreen.Presentation.UI
 
         public void ShowProject(MovieProject movie)
         {
+            Initialize();
             _pinnedMovie = movie;
             ObserveMovie(movie);
             SetViewVisible(true);
@@ -589,6 +596,7 @@ namespace SilverScreen.Presentation.UI
 
         public void ShowActiveProject()
         {
+            Initialize();
             _pinnedMovie = null;
             var movie = _productionDriver?.ProductionService?.ActiveMovie;
             ObserveMovie(movie);
@@ -611,15 +619,22 @@ namespace SilverScreen.Presentation.UI
         public void AttachToHost(Transform host)
         {
             if (host == null || _activeCardRoot == null) return;
-            var rect = _activeCardRoot.GetComponent<RectTransform>();
+            Initialize();
+            // Keep view and lifecycle owner together. Moving only the card leaves its
+            // component inactive, so Update/OnDestroy and initial bindings never run.
+            var rect = (RectTransform)transform;
             rect.SetParent(host, false);
-            rect.anchorMin = new Vector2(0f, 1f);
-            rect.anchorMax = new Vector2(0f, 1f);
-            rect.pivot = new Vector2(0f, 1f);
+            rect.anchorMin = rect.anchorMax = rect.pivot = new Vector2(0f, 1f);
             rect.anchoredPosition = new Vector2(28f, -76f);
             rect.sizeDelta = new Vector2(560f, 580f);
+            var card = _activeCardRoot.GetComponent<RectTransform>();
+            card.SetParent(transform, false);
+            card.anchorMin = Vector2.zero;
+            card.anchorMax = Vector2.one;
+            card.offsetMin = card.offsetMax = Vector2.zero;
+            gameObject.SetActive(true);
+            RefreshUI(_observedMovie);
         }
-
 
         private static float GetDisplayedProgress(MovieProject movie)
         {
@@ -636,12 +651,6 @@ namespace SilverScreen.Presentation.UI
                 }
 
                 return Mathf.Clamp01((float)elapsedMinutes / (movie.Roles.Count * 60f));
-            }
-
-            if (movie.CurrentState == MovieProductionState.ReadyToFilm ||
-                movie.CurrentState == MovieProductionState.Completed)
-            {
-                return 1f;
             }
 
             return movie.ProductionProgress;
@@ -847,6 +856,7 @@ namespace SilverScreen.Presentation.UI
             GameObject notificationRoot,
             TextMeshProUGUI notificationText)
         {
+            UnbindServices();
             _productionDriver = driver;
             _creationDialog = creationDialog;
             _candidatePicker = candidatePicker;
@@ -867,33 +877,7 @@ namespace SilverScreen.Presentation.UI
             _notificationRoot = notificationRoot;
             _notificationText = notificationText;
 
-            if (_emptyCreateButton != null)
-            {
-                _emptyCreateButton.onClick.RemoveAllListeners();
-                _emptyCreateButton.onClick.AddListener(OpenCreationDialog);
-            }
-
-            if (_newMovieButton != null)
-            {
-                _newMovieButton.onClick.RemoveAllListeners();
-            }
-
-            if (_assignDirectorButton != null)
-            {
-                _assignDirectorButton.onClick.RemoveAllListeners();
-                _assignDirectorButton.onClick.AddListener(HandleAssignDirectorClicked);
-            }
-
-            if (_candidatePicker != null)
-            {
-                _candidatePicker.OnAssignmentCompleted -= HandleAssignmentCompleted;
-                _candidatePicker.OnAssignmentCompleted += HandleAssignmentCompleted;
-            }
-
-            if (_productionDriver != null && _productionDriver.ProductionService != null)
-            {
-                HandleMovieChanged(_productionDriver.ProductionService.ActiveMovie);
-            }
+            Initialize();
         }
     }
 }

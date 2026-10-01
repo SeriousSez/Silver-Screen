@@ -93,12 +93,11 @@ namespace SilverScreen.Presentation.Buildings
             if (_navAgent != null && _navAgent.isOnNavMesh) _navAgent.isStopped = paused;
             if (paused) return;
 
-            float speedMultiplier = _timeService != null ? _timeService.TimeScaleMultiplier : 1f;
-            float delta = UnityEngine.Time.deltaTime * speedMultiplier;
+            float delta = SilverScreen.Presentation.SimulationTime.LocalPresentationTime.Delta(UnityEngine.Time.unscaledDeltaTime, _timeService);
             if (_navAgent != null && _navAgent.isOnNavMesh)
             {
-                _navAgent.speed = BaseMoveSpeed * speedMultiplier;
-                _navAgent.acceleration = BaseAcceleration * speedMultiplier;
+                _navAgent.speed = BaseMoveSpeed;
+                _navAgent.acceleration = BaseAcceleration;
             }
 
             if (_state == SequenceState.Clapping)
@@ -120,6 +119,8 @@ namespace SilverScreen.Presentation.Buildings
             {
                 if (_state == SequenceState.MovingToMark)
                 {
+                    if (GetComponent<AuthoredProductionLayout>() != null && _layout.TryGetPose(SlatePositionType.SlateMark, out var pose))
+                        _operatorRoot.transform.rotation = pose.rotation;
                     _state = SequenceState.Clapping;
                     _stateElapsed = 0f;
                 }
@@ -196,6 +197,7 @@ namespace SilverScreen.Presentation.Buildings
             _operatorRoot.SetActive(false);
             _operatorRoot.transform.SetParent(transform, true);
             _navAgent = _operatorRoot.AddComponent<NavMeshAgent>();
+            SilverScreen.Presentation.Employees.EmployeeNavigationProfile.Configure(_navAgent, 1.8f);
             _navAgent.speed = BaseMoveSpeed;
             _navAgent.acceleration = BaseAcceleration;
             _navAgent.angularSpeed = 720f;
@@ -264,8 +266,10 @@ namespace SilverScreen.Presentation.Buildings
 
         private void OnDestroy()
         {
-            _onCompleted = null;
-            _onFailed = null;
+            ResetSequence();
         }
+        public bool IsRunning => _state != SequenceState.Idle;
+        public void Cancel() => ResetSequence();
+        private void OnDisable() => ResetSequence();
     }
 }

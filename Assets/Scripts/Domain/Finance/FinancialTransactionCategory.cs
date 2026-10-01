@@ -6,6 +6,7 @@ namespace SilverScreen.Domain.Finance
         ProductionBudget,
         EmployeeSalary,
         BuildingUpkeep,
-        BoxOfficeRevenue
+        BoxOfficeRevenue,
+        BuildingConstruction
     }
 }

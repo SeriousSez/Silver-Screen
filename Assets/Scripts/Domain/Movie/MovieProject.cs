@@ -13,6 +13,7 @@ namespace SilverScreen.Domain.Movie
         public string GenreDisplayName { get; }
         public string Genre => GenreDisplayName;
         public string SourceScreenplayId { get; }
+        public ProductionAuthoringIntent AuthoringIntent { get; internal set; }
         public bool IsScreenplayAdaptation => !string.IsNullOrEmpty(SourceScreenplayId);
         public int Budget { get; set; }
         public string BudgetTierId { get; }
@@ -22,29 +23,53 @@ namespace SilverScreen.Domain.Movie
         public MovieCommercialResult CommercialResult { get; private set; }
         public ProductionControlMode ProductionControlMode { get; private set; }
 
-        public MovieProductionState CurrentState { get; private set; }
+        // A summary of owned facts, never an independently writable completion flag.
+        public MovieProductionState CurrentState => ReleaseDate.HasValue
+            ? MovieProductionState.Released
+            : IsProductionComplete ? MovieProductionState.Completed
+            : IsFilming ? MovieProductionState.Filming
+            : ReadyForFilming ? MovieProductionState.ReadyToFilm
+            : _roles.Exists(role => role.AssignedActorId != null)
+                ? MovieProductionState.Casting : MovieProductionState.Draft;
+        private MovieProductionState _lastNotifiedState;
+        private float _lastNotifiedProgress;
         public Employee AssignedDirector { get; private set; }
         public bool DirectorArrivedAtStage { get; private set; }
 
         private readonly List<MovieRole> _roles = new List<MovieRole>();
-        public IReadOnlyList<MovieRole> CastRoles => _roles;
+        public IReadOnlyList<MovieRole> CastRoles { get; }
         // Compatibility alias retained for the existing casting and production UI.
-        public IReadOnlyList<MovieRole> Roles => _roles;
+        public IReadOnlyList<MovieRole> Roles => CastRoles;
 
         private readonly List<MovieScene> _scenes = new List<MovieScene>();
-        public IReadOnlyList<MovieScene> Scenes => _scenes;
+        public IReadOnlyList<MovieScene> Scenes { get; }
 
-        public float ProductionProgress { get; private set; }
+        // Completed scenes only. Active take work is reported separately by the coordinator.
+        public float ProductionProgress => HasScenes ? (float)CompletedSceneCount / _scenes.Count : 0f;
+        public int CompletedSceneCount
+        {
+            get
+            {
+                int count = 0;
+                foreach (var scene in _scenes) if (scene.IsCompleted) count++;
+                return count;
+            }
+        }
+        public bool HasScenes => _scenes.Count > 0;
+        public bool IsFilming => _scenes.Exists(scene => scene.Status == MovieSceneStatus.Filming);
+        public bool IsProductionComplete => AllScenesCompleted;
+        public bool CanRelease => IsProductionComplete && ProductionResult != null && !ReleaseDate.HasValue;
+        public bool CastingReady => HasDirector && AllRolesCast && AllCastingComplete;
         public SimulationDateTime CreatedDate { get; }
 
         public bool HasDirector => AssignedDirector != null;
         public bool AllRolesCast => _roles.Count > 0 && _roles.TrueForAll(r => r.AssignedActorId != null);
         public bool AllCastingComplete => _roles.Count > 0 && _roles.TrueForAll(r => r.CastingCompleted);
-        public bool ReadyForFilming => HasDirector && AllRolesCast && AllCastingComplete;
+        public bool ReadyForFilming => CastingReady && HasUnfinishedScenes && !IsFilming && !ReleaseDate.HasValue;
         public bool AllParticipantsAtStage => DirectorArrivedAtStage && (_roles.Count == 0 || _roles.TrueForAll(r => r.ArrivedAtStage));
-        public bool HasUnfinishedScenes => _scenes.Exists(scene => scene.Status != MovieSceneStatus.Completed);
+        public bool HasUnfinishedScenes => _scenes.Exists(scene => scene.RequiresFilming);
         public bool AllScenesCompleted =>
-            _scenes.Count > 0 && _scenes.TrueForAll(scene => scene.Status == MovieSceneStatus.Completed);
+            _scenes.Count > 0 && _scenes.TrueForAll(scene => scene.IsCompleted);
 
         public event Action<MovieProject> OnProjectUpdated;
         public event Action<MovieProject, MovieProductionState> OnStateChanged;
@@ -60,6 +85,8 @@ namespace SilverScreen.Domain.Movie
             string budgetTierId = null,
             string sourceScreenplayId = null)
         {
+            CastRoles = _roles.AsReadOnly();
+            Scenes = _scenes.AsReadOnly();
             Id = id ?? Guid.NewGuid().ToString();
             Title = title;
             GenreId = string.IsNullOrWhiteSpace(genreId) ? "drama" : genreId.Trim();
@@ -72,8 +99,6 @@ namespace SilverScreen.Domain.Movie
                 ? BudgetTier.GetIdForAmount(budget)
                 : budgetTierId.Trim();
             CreatedDate = createdDate;
-            CurrentState = MovieProductionState.Draft;
-            ProductionProgress = 0f;
             DirectorArrivedAtStage = false;
             ProductionResult = null;
             ReleaseDate = null;
@@ -92,19 +117,20 @@ namespace SilverScreen.Domain.Movie
             }
 
             ProductionControlMode = mode;
-            OnProjectUpdated?.Invoke(this);
+            NotifyUpdated();
             return true;
         }
 
         public bool AddScene(MovieScene scene)
         {
-            if (scene == null || _scenes.Exists(existing => existing.Id == scene.Id)) return false;
+            if (scene == null || IsProductionComplete || IsFilming ||
+                _scenes.Exists(existing => existing.Id == scene.Id)) return false;
 
             int insertionIndex = Math.Clamp(scene.SceneNumber - 1, 0, _scenes.Count);
             _scenes.Insert(insertionIndex, scene);
             scene.OnSceneUpdated += HandleSceneUpdated;
             RenumberScenes();
-            OnProjectUpdated?.Invoke(this);
+            NotifyUpdated();
             return true;
         }
 
@@ -120,7 +146,7 @@ namespace SilverScreen.Domain.Movie
             _scenes.RemoveAt(currentIndex);
             _scenes.Insert(newIndex, scene);
             RenumberScenes();
-            OnProjectUpdated?.Invoke(this);
+            NotifyUpdated();
             return true;
         }
 
@@ -183,7 +209,7 @@ namespace SilverScreen.Domain.Movie
             if (role == null || _roles.Exists(existing => existing.Id == role.Id)) return false;
             _roles.Add(role);
             role.OnRoleUpdated += HandleRoleUpdated;
-            OnProjectUpdated?.Invoke(this);
+            NotifyUpdated();
             return true;
         }
 
@@ -199,7 +225,7 @@ namespace SilverScreen.Domain.Movie
             {
                 role.OnRoleUpdated -= HandleRoleUpdated;
                 _roles.Remove(role);
-                OnProjectUpdated?.Invoke(this);
+                NotifyUpdated();
             }
         }
 
@@ -219,7 +245,7 @@ namespace SilverScreen.Domain.Movie
             if (AssignedDirector == director) return;
             AssignedDirector = director;
             DirectorArrivedAtStage = false;
-            OnProjectUpdated?.Invoke(this);
+            NotifyUpdated();
         }
 
         public bool AssignActorToCastRole(string roleId, Employee actor)
@@ -234,7 +260,7 @@ namespace SilverScreen.Domain.Movie
             }
 
             if (!role.TryAssignActor(actor)) return false;
-            OnProjectUpdated?.Invoke(this);
+            NotifyUpdated();
             return true;
         }
 
@@ -243,7 +269,7 @@ namespace SilverScreen.Domain.Movie
             var role = GetCastRole(roleId);
             if (role == null || role.AssignedActorId == null) return false;
             role.ClearActor();
-            OnProjectUpdated?.Invoke(this);
+            NotifyUpdated();
             return true;
         }
 
@@ -255,46 +281,28 @@ namespace SilverScreen.Domain.Movie
         public void SetDirectorArrivedAtStage(bool arrived)
         {
             DirectorArrivedAtStage = arrived;
-            OnProjectUpdated?.Invoke(this);
-        }
-
-        public void SetState(MovieProductionState newState)
-        {
-            if (CurrentState == newState) return;
-            CurrentState = newState;
-            OnStateChanged?.Invoke(this, newState);
-            OnProjectUpdated?.Invoke(this);
-        }
-
-        public void SetProgress(float progress)
-        {
-            float clamped = Math.Clamp(progress, 0f, 1f);
-            if (Math.Abs(ProductionProgress - clamped) < 0.0001f) return;
-            ProductionProgress = clamped;
-            OnProgressChanged?.Invoke(this, ProductionProgress);
-            OnProjectUpdated?.Invoke(this);
+            NotifyUpdated();
         }
 
         public bool TrySetProductionResult(MovieProductionResult result)
         {
-            if (result == null || ProductionResult != null) return false;
+            if (result == null || ProductionResult != null || !IsProductionComplete) return false;
             ProductionResult = result;
-            OnProjectUpdated?.Invoke(this);
+            NotifyUpdated();
             return true;
         }
 
         public bool TryRelease(SimulationDateTime releaseDate, MovieTheatricalRun theatricalRun)
         {
-            if (CurrentState != MovieProductionState.Completed ||
-                ReleaseDate.HasValue ||
-                theatricalRun == null)
+            if (!CanRelease || theatricalRun == null || theatricalRun.MovieId != Id ||
+                !theatricalRun.ReleaseDate.Equals(releaseDate))
             {
                 return false;
             }
 
             ReleaseDate = releaseDate;
             TheatricalRun = theatricalRun;
-            SetState(MovieProductionState.Released);
+            NotifyUpdated();
             return true;
         }
 
@@ -306,17 +314,30 @@ namespace SilverScreen.Domain.Movie
             }
 
             CommercialResult = result;
-            OnProjectUpdated?.Invoke(this);
+            NotifyUpdated();
             return true;
+        }
+
+        private void NotifyUpdated()
+        {
+            MovieProductionState state = CurrentState;
+            float progress = ProductionProgress;
+            bool stateChanged = state != _lastNotifiedState;
+            bool progressChanged = progress != _lastNotifiedProgress;
+            _lastNotifiedState = state;
+            _lastNotifiedProgress = progress;
+            if (stateChanged) OnStateChanged?.Invoke(this, state);
+            if (progressChanged) OnProgressChanged?.Invoke(this, progress);
+            OnProjectUpdated?.Invoke(this);
         }
 
         private void HandleSceneUpdated(MovieScene scene)
         {
-            OnProjectUpdated?.Invoke(this);
+            NotifyUpdated();
         }
         private void HandleRoleUpdated(MovieRole role)
         {
-            OnProjectUpdated?.Invoke(this);
+            NotifyUpdated();
         }
     }
 }

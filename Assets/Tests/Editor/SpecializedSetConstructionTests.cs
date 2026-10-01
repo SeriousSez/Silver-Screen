@@ -129,6 +129,30 @@ namespace SilverScreen.Tests.EditMode
                 Has.Some.EqualTo(SetDefinitionIds.Street));
         }
 
+        [Test]
+        public void Generator_ReusesCurrentCapabilitiesAfterProviderReplacementAndRemoval()
+        {
+            var capabilities = new StudioFilmingCapabilities(SetDefinitionCatalog.CreatePrototype(), new[]
+            {
+                new FilmingFacilityCapabilities("office", new[] { SetDefinitionIds.Office })
+            });
+            var generator = new ScreenplayContentGenerator(new SeededScreenplayTitleRandomSource(7), capabilities);
+            ScreenplayContent Generate(string id) => generator.Generate(
+                new ScreenplayProject(id, id, new[] { "writer" }, new[] { "drama" }));
+            var earlier = Generate("earlier");
+            Assert.That(earlier.Scenes.Select(s => s.RequiredSetDefinitionId), Is.All.EqualTo(SetDefinitionIds.Office));
+
+            capabilities.AddFacility(new FilmingFacilityCapabilities("street", new[] { SetDefinitionIds.Street }));
+            capabilities.RemoveFacility("office");
+            var later = Generate("later");
+            Assert.That(later.Scenes.Select(s => s.RequiredSetDefinitionId), Is.All.EqualTo(SetDefinitionIds.Street));
+            Assert.That(earlier.Scenes.Select(s => s.RequiredSetDefinitionId), Is.All.EqualTo(SetDefinitionIds.Office));
+
+            capabilities.RemoveFacility("street");
+            Assert.Throws<ScreenplayContentGenerationException>(() => Generate("empty"));
+            Assert.That(later.Scenes.Select(s => s.RequiredSetDefinitionId), Is.All.EqualTo(SetDefinitionIds.Street));
+        }
+
         private static void CreateServices(out StudioFilmingCapabilities capabilities,
             out SpecializedSetConstructionService construction)
         {

@@ -57,6 +57,8 @@ namespace SilverScreen.Domain.Movie
                 budgetTierId: "unbudgeted",
                 sourceScreenplayId: screenplay.Id);
 
+            if (screenplay.Authoring != null) movie.AuthoringIntent = new ProductionAuthoringIntent(screenplay.Authoring);
+
             var roleIdsByCharacterId = new Dictionary<string, string>();
             for (int index = 0; index < screenplay.Characters.Count; index++)
             {
@@ -64,7 +66,7 @@ namespace SilverScreen.Domain.Movie
                 string roleId = $"{movieId}:role:{index + 1}";
                 var prominence = source.Role == ScreenplayCharacterRole.Protagonist
                     ? MovieRoleProminence.Lead
-                    : MovieRoleProminence.Supporting;
+                    : source.Role == ScreenplayCharacterRole.Bit ? MovieRoleProminence.Minor : MovieRoleProminence.Supporting;
                 var role = new MovieRole(
                     roleId,
                     prominence,
@@ -89,6 +91,7 @@ namespace SilverScreen.Domain.Movie
                     locationTypeId: source.LocationType.ToString().ToLowerInvariant(),
                     timeOfDayId: source.TimeOfDay.ToString().ToLowerInvariant(),
                     requiredSetDefinitionId: source.RequiredSetDefinitionId);
+                if (source.Authoring != null) scene.AuthoringIntent = new ProductionSceneAuthoring(source, roleIdsByCharacterId);
                 if (!movie.AddScene(scene))
                     return ScreenplayGreenlightResult.Failed(
                         ScreenplayGreenlightFailure.InvalidContent,
@@ -129,11 +132,12 @@ namespace SilverScreen.Domain.Movie
                 return ScreenplayGreenlightResult.Failed(ScreenplayGreenlightFailure.InvalidScreenplay, "No screenplay was selected.");
             if (screenplay.Status != ScreenplayStatus.Completed ||
                 screenplay.ContentStatus != ScreenplayContentStatus.Ready ||
-                screenplay.EvaluationStatus != ScreenplayEvaluationStatus.Ready ||
-                screenplay.Evaluation == null)
+                (screenplay.Authoring != null ? !screenplay.Authoring.IsSubmitted :
+                    screenplay.EvaluationStatus != ScreenplayEvaluationStatus.Ready || screenplay.Evaluation == null))
                 return ScreenplayGreenlightResult.Failed(
                     ScreenplayGreenlightFailure.NotReady,
-                    "The screenplay must be completed, finalized, and evaluated before greenlight.");
+                    screenplay.Authoring != null ? "Submit the authored screenplay before greenlight."
+                        : "The screenplay must be completed, finalized, and evaluated before greenlight.");
             if (screenplay.Characters.Count == 0 || screenplay.Scenes.Count == 0)
                 return ScreenplayGreenlightResult.Failed(ScreenplayGreenlightFailure.InvalidContent, "The screenplay has no adaptable content.");
 

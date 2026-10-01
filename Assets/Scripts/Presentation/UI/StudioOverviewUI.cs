@@ -36,6 +36,7 @@ namespace SilverScreen.Presentation.UI
         private Button _streetSetButton;
         private Button _restaurantSetButton;
         private TextMeshProUGUI _setStatusText;
+        private SilverScreen.Domain.Tutorial.TutorialSession _tutorial;
 
         public void Initialize(
             SimulationTimeDriver timeDriver,
@@ -58,6 +59,8 @@ namespace SilverScreen.Presentation.UI
 
         private void Bind()
         {
+            _tutorial = FindAnyObjectByType<SilverScreen.Presentation.Tutorial.StudioGuidanceDriver>()?.Tutorial;
+            if (_tutorial != null) _tutorial.Changed += Refresh;
             if (_timeDriver?.TimeService != null)
             {
                 _timeDriver.TimeService.OnMinutePassed += HandleTimeChanged;
@@ -92,6 +95,7 @@ namespace SilverScreen.Presentation.UI
 
         private void OnDestroy()
         {
+            if (_tutorial != null) _tutorial.Changed -= Refresh;
             if (_timeDriver?.TimeService != null)
             {
                 _timeDriver.TimeService.OnMinutePassed -= HandleTimeChanged;
@@ -391,8 +395,8 @@ namespace SilverScreen.Presentation.UI
             var construction = _setConstructionDriver?.Service;
             bool streetBuilt = construction != null && construction.HasDefinitionConstructed(SpecializedSetFacilityIds.StreetSet);
             bool restaurantBuilt = construction != null && construction.HasDefinitionConstructed(SpecializedSetFacilityIds.RestaurantCafeSet);
-            if (_streetSetButton != null) _streetSetButton.interactable = construction != null && !streetBuilt;
-            if (_restaurantSetButton != null) _restaurantSetButton.interactable = construction != null && !restaurantBuilt;
+            if (_streetSetButton != null) _streetSetButton.interactable = construction != null && !streetBuilt && construction.CanConstruct(SpecializedSetFacilityIds.StreetSet);
+            if (_restaurantSetButton != null) _restaurantSetButton.interactable = construction != null && !restaurantBuilt && construction.CanConstruct(SpecializedSetFacilityIds.RestaurantCafeSet);
             if (_setStatusText != null)
                 _setStatusText.text = $"FILMING SETS  •  Street: {(streetBuilt ? "AVAILABLE" : "NOT BUILT")}  •  Restaurant / Café: {(restaurantBuilt ? "AVAILABLE" : "NOT BUILT")}";
         }

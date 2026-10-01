@@ -27,16 +27,19 @@ namespace SilverScreen.Domain.Movie
         public string SetLocationId { get; private set; }
         public string RequiredSetDefinitionId { get; }
         public string SourceScreenplaySceneId { get; }
+        public ProductionSceneAuthoring AuthoringIntent { get; internal set; }
         public string LocationTypeId { get; }
         public string TimeOfDayId { get; }
         public MovieSceneStatus Status { get; private set; }
+        public bool IsCompleted => Status == MovieSceneStatus.Completed;
+        public bool RequiresFilming => !IsCompleted;
         public IReadOnlyCollection<string> ParticipatingPersonIds => _participatingPersonIds;
         public IReadOnlyCollection<string> ParticipatingCharacterIds => _participatingCharacterIds;
         // Compatibility alias for scenes created before fictional cast roles were explicit.
         public IReadOnlyCollection<string> ParticipatingRoleIds => _participatingCharacterIds;
-        public IReadOnlyList<MovieTake> Takes => _takes;
-        public IReadOnlyList<ScreenplayBeat> Beats => _beats;
-        public IReadOnlyList<SceneShot> Shots => _shots;
+        public IReadOnlyList<MovieTake> Takes { get; }
+        public IReadOnlyList<ScreenplayBeat> Beats { get; }
+        public IReadOnlyList<SceneShot> Shots { get; }
         public MovieTake SelectedTake => _takes.Find(take => take.IsSelectedForFinalCut);
 
         public event Action<MovieScene> OnSceneUpdated;
@@ -52,6 +55,9 @@ namespace SilverScreen.Domain.Movie
             string timeOfDayId = null,
             string requiredSetDefinitionId = SetDefinitionIds.GenericInterior)
         {
+            Takes = _takes.AsReadOnly();
+            Beats = _beats.AsReadOnly();
+            Shots = _shots.AsReadOnly();
             if (sceneNumber < 1) throw new ArgumentOutOfRangeException(nameof(sceneNumber));
             if (string.IsNullOrWhiteSpace(setLocationId))
                 throw new ArgumentException("A scene requires a set or location identifier.", nameof(setLocationId));
@@ -227,12 +233,30 @@ namespace SilverScreen.Domain.Movie
 
         public bool BeginFilming() => TrySetStatus(MovieSceneStatus.Ready, MovieSceneStatus.Filming);
 
-        public bool PrepareForRetake() => TrySetStatus(MovieSceneStatus.Filming, MovieSceneStatus.Ready);
+        public bool PrepareForRetake() =>
+            !_takes.Exists(take => take.Status == MovieTakeStatus.Recording || take.Status == MovieTakeStatus.Preparing) &&
+            TrySetStatus(MovieSceneStatus.Filming, MovieSceneStatus.Ready);
 
-        public bool CompleteFilming() => TrySetStatus(MovieSceneStatus.Filming, MovieSceneStatus.Completed);
+        public bool CompleteFilming() =>
+            SelectedTake?.Status == MovieTakeStatus.Completed &&
+            !_takes.Exists(take => take.Status == MovieTakeStatus.Recording || take.Status == MovieTakeStatus.Preparing) &&
+            TrySetStatus(MovieSceneStatus.Filming, MovieSceneStatus.Completed);
+
+        // Canceling strategic work leaves take history, but the scene still needs filming.
+        public bool CancelFilming()
+        {
+            if (Status != MovieSceneStatus.Filming) return false;
+            foreach (var take in _takes)
+                if (take.Status == MovieTakeStatus.Recording || take.Status == MovieTakeStatus.Preparing) take.Discard();
+            return TrySetStatus(MovieSceneStatus.Filming, MovieSceneStatus.Ready);
+        }
 
         public MovieTake PrepareTake(string takeId = null)
         {
+            if ((Status != MovieSceneStatus.Ready && Status != MovieSceneStatus.Filming) ||
+                (!string.IsNullOrWhiteSpace(takeId) && GetTake(takeId.Trim()) != null) ||
+                _takes.Exists(existing => existing.Status == MovieTakeStatus.Preparing || existing.Status == MovieTakeStatus.Recording))
+                return null;
             var take = new MovieTake(takeId, _takes.Count + 1, MovieTakeStatus.Preparing);
             _takes.Add(take);
             OnSceneUpdated?.Invoke(this);
@@ -242,6 +266,7 @@ namespace SilverScreen.Domain.Movie
         public MovieTake BeginTake(string takeId = null)
         {
             var take = PrepareTake(takeId);
+            if (take == null) return null;
             take.BeginRecording();
             OnSceneUpdated?.Invoke(this);
             return take;
@@ -266,7 +291,7 @@ namespace SilverScreen.Domain.Movie
         public bool DiscardTake(string takeId)
         {
             var take = GetTake(takeId);
-            if (take == null || !take.Discard()) return false;
+            if (take == null || (IsCompleted && take.IsSelectedForFinalCut) || !take.Discard()) return false;
             OnSceneUpdated?.Invoke(this);
             return true;
         }
@@ -274,7 +299,7 @@ namespace SilverScreen.Domain.Movie
         public bool SelectTake(string takeId)
         {
             var selected = GetTake(takeId);
-            if (selected == null || selected.Status != MovieTakeStatus.Completed) return false;
+            if (IsCompleted || selected == null || selected.Status != MovieTakeStatus.Completed) return false;
 
             foreach (var take in _takes)
                 take.SetSelectedForFinalCut(take == selected);

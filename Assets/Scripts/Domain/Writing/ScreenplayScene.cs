@@ -24,14 +24,16 @@ namespace SilverScreen.Domain.Writing
         private readonly List<ScreenplayBeat> _beats = new List<ScreenplayBeat>();
 
         public string Id { get; }
+        public ScreenplaySceneAuthoring Authoring { get; private set; }
+        internal void SetAuthoring(ScreenplaySceneAuthoring authoring) => Authoring = authoring;
         public int SceneNumber { get; internal set; }
         public string Title { get; }
         public string LocationId { get; }
         public string RequiredSetDefinitionId { get; }
         public ScreenplaySceneLocation LocationType { get; }
         public ScreenplayTimeOfDay TimeOfDay { get; }
-        public IReadOnlyList<string> ParticipatingCharacterIds => _participatingCharacterIds;
-        public IReadOnlyList<ScreenplayBeat> Beats => _beats;
+        public IReadOnlyList<string> ParticipatingCharacterIds => _participatingCharacterIds.AsReadOnly();
+        public IReadOnlyList<ScreenplayBeat> Beats => _beats.AsReadOnly();
 
         public ScreenplayScene(string id, int sceneNumber, string locationId,
             ScreenplaySceneLocation locationType, ScreenplayTimeOfDay timeOfDay, string title = null,
@@ -56,6 +58,7 @@ namespace SilverScreen.Domain.Writing
 
         public bool AddCharacter(string characterId)
         {
+            if (Authoring != null) return false;
             string id = NormalizeId(characterId);
             if (id == null || _participatingCharacterIds.Contains(id)) return false;
             _participatingCharacterIds.Add(id);
@@ -64,6 +67,7 @@ namespace SilverScreen.Domain.Writing
 
         public bool AddBeat(ScreenplayBeat beat)
         {
+            if (Authoring != null) return false;
             if (beat == null || _beats.Exists(existing => existing.Id == beat.Id) ||
                 !ReferencesParticipant(beat.PerformingCharacterId) ||
                 !ReferencesParticipant(beat.TargetCharacterId)) return false;

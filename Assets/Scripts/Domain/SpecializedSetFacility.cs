@@ -57,6 +57,9 @@ namespace SilverScreen.Domain
         public IReadOnlyList<SpecializedSetFacility> Facilities => _facilities;
         public event Action<SpecializedSetFacility> FacilityConstructed;
         public event Action<SpecializedSetFacility> FacilityRemoved;
+        public Func<string, bool> AdditionalAvailability { get; set; }
+        public bool CanConstruct(string definitionId) => FindDefinition(definitionId) != null &&
+            (AdditionalAvailability == null || AdditionalAvailability(definitionId));
 
         public SpecializedSetConstructionService(StudioFilmingCapabilities studioCapabilities,
             IEnumerable<SpecializedSetFacilityDefinition> definitions)
@@ -67,6 +70,7 @@ namespace SilverScreen.Domain
 
         public SpecializedSetFacility Construct(string definitionId, string facilityId = null)
         {
+            if (!CanConstruct(definitionId)) return null;
             SpecializedSetFacilityDefinition definition = FindDefinition(definitionId);
             if (definition == null) return null;
             string id = string.IsNullOrWhiteSpace(facilityId) ? Guid.NewGuid().ToString("N") : facilityId.Trim();

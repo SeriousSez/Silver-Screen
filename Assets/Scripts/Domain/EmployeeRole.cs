@@ -6,6 +6,8 @@ namespace SilverScreen.Domain
         Director,
         Extra,
         Crew,
-        Writer
+        Writer,
+        ConstructionWorker,
+        Groundskeeper
     }
 }

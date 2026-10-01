@@ -50,29 +50,24 @@ namespace SilverScreen.Domain.Writing
                 [SetDefinitionIds.Street] = new[] { "downtown-street", "studio-backlot-street", "rainy-side-street" }
             };
         private readonly IScreenplayTitleRandomSource _random;
-        private readonly ISetDefinitionCatalog _setDefinitions;
+        private readonly IStudioFilmingCapabilities _filmingCapabilities;
 
-        public ScreenplayContentGenerator(IScreenplayTitleRandomSource random,
-            ISetDefinitionCatalog setDefinitions)
-        {
-            _random = random ?? throw new ArgumentNullException(nameof(random));
-            _setDefinitions = setDefinitions ?? throw new ArgumentNullException(nameof(setDefinitions));
-        }
-
-        // Compatibility for older callers. Owned facilities no longer constrain screenplay content.
         public ScreenplayContentGenerator(IScreenplayTitleRandomSource random,
             IStudioFilmingCapabilities filmingCapabilities)
-            : this(random, SetDefinitionCatalog.CreatePrototype())
         {
-            _ = filmingCapabilities ?? throw new ArgumentNullException(nameof(filmingCapabilities));
+            _random = random ?? throw new ArgumentNullException(nameof(random));
+            _filmingCapabilities = filmingCapabilities ?? throw new ArgumentNullException(nameof(filmingCapabilities));
         }
 
         public ScreenplayContent Generate(ScreenplayProject screenplay)
         {
             if (screenplay == null) throw new ArgumentNullException(nameof(screenplay));
-            if (_setDefinitions.KnownDefinitions.Count == 0)
+            // Resolve once per screenplay, not once per generator or once per scene.
+            // Later construction/removal affects future content without changing this plan.
+            var availableDefinitions = new List<SetDefinition>(_filmingCapabilities.AvailableDefinitions);
+            if (availableDefinitions.Count == 0)
                 throw new ScreenplayContentGenerationException(
-                    "There are no known filming environments available for screenplay development.");
+                    "There are no filming environments available for screenplay development.");
 
             int characterCount = _random.Next(2, 5);
             var characters = GenerateCharacters(screenplay, characterCount);
@@ -83,7 +78,7 @@ namespace SilverScreen.Domain.Writing
             {
                 int number = sceneIndex + 1;
                 string sceneId = $"{screenplay.Id}:scene:{number}";
-                SetDefinition requiredSet = SelectRequiredSet(screenplay.PrimaryGenreId);
+                SetDefinition requiredSet = SelectRequiredSet(screenplay.PrimaryGenreId, availableDefinitions);
                 string location = ResolveLocation(screenplay, sceneIndex, requiredSet.Id);
                 var locationType = requiredSet.Id == SetDefinitionIds.Street
                     ? ScreenplaySceneLocation.Exterior
@@ -151,11 +146,11 @@ namespace SilverScreen.Domain.Writing
                 partner.Id, protagonist.Id, ReactionFor(screenplay.PrimaryGenreId), intendedIntensity: 0.6d));
         }
 
-        private SetDefinition SelectRequiredSet(string genreId)
+        private SetDefinition SelectRequiredSet(string genreId, IReadOnlyList<SetDefinition> availableDefinitions)
         {
             var weighted = new List<SetDefinition>();
             GenreSetPreferences.TryGetValue(genreId ?? string.Empty, out string[] preferences);
-            foreach (SetDefinition available in _setDefinitions.KnownDefinitions)
+            foreach (SetDefinition available in availableDefinitions)
             {
                 weighted.Add(available);
                 if (preferences == null) continue;

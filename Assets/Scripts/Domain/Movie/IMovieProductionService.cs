@@ -13,6 +13,7 @@ namespace SilverScreen.Domain.Movie
         ProductionEnvironmentResolution ActiveEnvironment { get; }
         MovieScene NextFilmableScene { get; }
         bool HasRemainingScenes { get; }
+        float ActiveTakeProgress { get; }
         string ActiveSlateMovieTitle { get; }
         int? ActiveSlateSceneNumber { get; }
         int? ActiveSlateTakeNumber { get; }
@@ -38,6 +39,7 @@ namespace SilverScreen.Domain.Movie
         bool KeepTake(string takeId);
         bool ShootAgain();
         bool RetryUnresolvedEnvironment();
+        bool RetryProduction();
         void HandleOwnedFacilityRemoved(string facilityId);
 
         event Action<MovieProject> OnActiveMovieChanged;

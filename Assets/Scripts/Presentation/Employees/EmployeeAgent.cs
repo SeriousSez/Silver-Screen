@@ -23,6 +23,65 @@ namespace SilverScreen.Presentation.Employees
 
         public Employee Employee { get; private set; }
         public bool IsSelected { get; private set; }
+        public bool IsHeld { get; private set; }
+        public bool IsReturningAfterDrop { get; private set; }
+        private Vector3 _taskDestination;
+        private bool _hasTaskAnchor;
+        private int _dropFrame = -1;
+        private Bounds? _departingAssignmentArea;
+        private Bounds? _idleBuildingExclusion;
+        public event Action<bool> AvailabilityChanged;
+
+        public void ResumeAfterWorkforcePlacement(Bounds assignmentArea)
+        {
+            // Hiring may already have dispatched real work through OnEmployeeAdded.
+            // Restore its route after carry's Warp/ResetPath; otherwise depart using normal idle locomotion.
+            _dropFrame = UnityEngine.Time.frameCount;
+            IsReturningAfterDrop = _hasTaskAnchor;
+            _homeCenter = transform.position;
+            _departingAssignmentArea = _hasTaskAnchor ? (Bounds?)null : assignmentArea;
+            _idleBuildingExclusion = assignmentArea;
+            _idleWaitTimer = 0;
+            if (!_hasTaskAnchor) { Employee?.SetState(EmployeeState.Idle); Employee?.SetIntent(EmployeeIntent.None); }
+            if (_timeService != null) ApplySimulationSpeed(_timeService.CurrentSpeed);
+        }
+
+        public void SetHeld(bool held)
+        {
+            IsHeld = held;
+            if (held)
+            {
+                // Hide the last gesture frame without canceling the ongoing beat/production obligation.
+                if (_performanceVisual != null) _performanceVisual.SetActive(false);
+                AvailabilityChanged?.Invoke(false);
+            }
+            else
+            {
+                if (_timeService != null) ApplySimulationSpeed(_timeService.CurrentSpeed);
+                _dropFrame = UnityEngine.Time.frameCount;
+                IsReturningAfterDrop = _hasTaskAnchor;
+                _homeCenter = transform.position;
+                _idleWaitTimer = _minWaitTime;
+                if (!_hasTaskAnchor && Employee?.CurrentIntent.Purpose == EmployeeIntentPurpose.IdleWander)
+                { Employee.SetState(EmployeeState.Idle); Employee.SetIntent(EmployeeIntent.None); }
+                if (!IsReturningAfterDrop) AvailabilityChanged?.Invoke(true);
+            }
+        }
+        private bool ResumeAfterDrop()
+        {
+            if (!IsReturningAfterDrop) return false;
+            if (_navAgent == null || !_navAgent.isOnNavMesh) return true;
+            var feet = transform.position - Vector3.up * _navAgent.baseOffset;
+            if (Vector3.Distance(feet, _taskDestination) <= _navAgent.stoppingDistance + .25f)
+            { IsReturningAfterDrop = false; AvailabilityChanged?.Invoke(true); return false; }
+            if (!_navAgent.hasPath && !_navAgent.pathPending)
+            {
+                var path = new NavMeshPath();
+                if (_navAgent.CalculatePath(_taskDestination, path) && path.status == NavMeshPathStatus.PathComplete)
+                    _navAgent.SetPath(path);
+            }
+            return true;
+        }
 
         private ISimulationTimeService _timeService;
         private Vector3 _homeCenter;
@@ -52,6 +111,7 @@ namespace SilverScreen.Presentation.Employees
         private void Awake()
         {
             if (_navAgent == null) _navAgent = GetComponent<NavMeshAgent>();
+            EmployeeNavigationProfile.Apply(gameObject);
             _homeCenter = transform.position;
 
             if (_navAgent != null)
@@ -129,7 +189,7 @@ namespace SilverScreen.Presentation.Employees
 
         private void ApplySimulationSpeed(SimulationSpeed speed)
         {
-            if (_navAgent == null || !_navAgent.isOnNavMesh) return;
+            if (IsHeld || _navAgent == null || !_navAgent.isOnNavMesh) return;
 
             if (speed == SimulationSpeed.Paused)
             {
@@ -139,9 +199,8 @@ namespace SilverScreen.Presentation.Employees
             else
             {
                 _navAgent.isStopped = false;
-                float multiplier = _timeService != null ? _timeService.TimeScaleMultiplier : 1f;
-                _navAgent.speed = _baseSpeed * multiplier;
-                _navAgent.acceleration = _baseAcceleration * multiplier;
+                _navAgent.speed = _baseSpeed;
+                _navAgent.acceleration = _baseAcceleration;
             }
         }
 
@@ -165,7 +224,7 @@ namespace SilverScreen.Presentation.Employees
 
         private void Update()
         {
-            if (Employee == null) return;
+            if (Employee == null || IsHeld || UnityEngine.Time.frameCount == _dropFrame) return;
 
             // When simulation is paused, freeze simulation updates, preserving destinations and intent
             if (_timeService != null && _timeService.IsPaused)
@@ -178,6 +237,7 @@ namespace SilverScreen.Presentation.Employees
                 return;
             }
 
+            if (ResumeAfterDrop()) return;
             UpdatePerformancePresentation();
 
             if (_hasExplicitTask)
@@ -207,8 +267,7 @@ namespace SilverScreen.Presentation.Employees
             EnsurePerformanceVisual();
             _performanceVisual.SetActive(true);
 
-            float speedMultiplier = _timeService != null ? _timeService.TimeScaleMultiplier : 1f;
-            _performanceElapsed += UnityEngine.Time.deltaTime * speedMultiplier;
+            _performanceElapsed += SilverScreen.Presentation.SimulationTime.LocalPresentationTime.Delta(UnityEngine.Time.unscaledDeltaTime, _timeService);
             if (_beatPerformanceActive)
             {
                 UpdateBeatPerformance();
@@ -369,6 +428,18 @@ namespace SilverScreen.Presentation.Employees
             callback?.Invoke();
         }
 
+        public void CancelBeatPresentation() => ResetPerformancePresentation();
+
+        public void CancelPresentationMovement()
+        {
+            _hasTaskAnchor = false;
+            IsReturningAfterDrop = false;
+            if (!IsHeld) AvailabilityChanged?.Invoke(true);
+            _hasExplicitTask = false;
+            _onArrivalCallback = null;
+            if (_navAgent != null && _navAgent.isActiveAndEnabled && _navAgent.isOnNavMesh) _navAgent.ResetPath();
+        }
+
         private void ResetPerformancePresentation()
         {
             if (_beatPerformanceActive) transform.rotation = _beatStartRotation;
@@ -396,8 +467,8 @@ namespace SilverScreen.Presentation.Employees
             _performanceVisual = new GameObject("PrototypePerformanceGesture");
             _performanceVisual.transform.SetParent(transform, false);
 
-            _performanceLeftArm = CreateGestureArm("LeftArm", new Vector3(-0.38f, 0.32f, 0f));
-            _performanceRightArm = CreateGestureArm("RightArm", new Vector3(0.38f, 0.32f, 0f));
+            _performanceLeftArm = CreateGestureArm("LeftArm", new Vector3(-0.31f, 0.32f, 0f));
+            _performanceRightArm = CreateGestureArm("RightArm", new Vector3(0.31f, 0.32f, 0f));
             _performanceVisual.SetActive(false);
         }
 
@@ -422,11 +493,16 @@ namespace SilverScreen.Presentation.Employees
 
         private void UpdateIdleWander()
         {
-            float speedMultiplier = _timeService != null ? _timeService.TimeScaleMultiplier : 1f;
-            _idleWaitTimer -= UnityEngine.Time.deltaTime * speedMultiplier;
+            _idleWaitTimer -= SilverScreen.Presentation.SimulationTime.LocalPresentationTime.Delta(UnityEngine.Time.unscaledDeltaTime, _timeService);
 
             if (_idleWaitTimer <= 0f)
             {
+                if (_departingAssignmentArea.HasValue)
+                {
+                    if (TryDepartAssignmentArea()) _departingAssignmentArea = null;
+                    else _idleWaitTimer = .5f; // Retry in simulation time if temporarily crowded.
+                    return;
+                }
                 if (TryFindRandomNavMeshPoint(_homeCenter, _wanderRadius, out Vector3 destination))
                 {
                     _navAgent.SetDestination(destination);
@@ -438,6 +514,32 @@ namespace SilverScreen.Presentation.Employees
                     _idleWaitTimer = UnityEngine.Random.Range(_minWaitTime, _maxWaitTime);
                 }
             }
+        }
+
+        private bool TryDepartAssignmentArea()
+        {
+            if (_navAgent == null || !_navAgent.isOnNavMesh) return false;
+            var filter = new NavMeshQueryFilter { agentTypeID = _navAgent.agentTypeID, areaMask = _navAgent.areaMask };
+            var origin = transform.position - Vector3.up * _navAgent.baseOffset;
+            var area = _departingAssignmentArea.Value;
+            var path = new NavMeshPath();
+            // Existing idle-wander state; bounded nearby destinations outside the workforce region.
+            for (int ring = 1; ring <= 6; ring++) for (int direction = 0; direction < 12; direction++)
+            {
+                float angle = direction * Mathf.PI / 6;
+                var requested = origin + new Vector3(Mathf.Cos(angle),0,Mathf.Sin(angle)) * (ring*2f);
+                if (!NavMesh.SamplePosition(requested,out var hit,.6f,filter)) continue;
+                var point = hit.position;
+                if (point.x >= area.min.x && point.x <= area.max.x && point.z >= area.min.z && point.z <= area.max.z) continue;
+                if (Vector3.Distance(origin,point) < 1.5f) continue;
+                float radius = _navAgent.radius;
+                if (Physics.CheckCapsule(point+Vector3.up*(radius+.06f),point+Vector3.up*(_navAgent.height-radius),radius,~0,QueryTriggerInteraction.Ignore)) continue;
+                if (!_navAgent.CalculatePath(point,path) || path.status != NavMeshPathStatus.PathComplete || !_navAgent.SetPath(path)) continue;
+                _homeCenter = point;
+                Employee.SetState(EmployeeState.Walking); Employee.SetIntent(EmployeeIntent.IdleWander);
+                return true;
+            }
+            return false;
         }
 
         private void CheckWanderArrival()
@@ -456,6 +558,14 @@ namespace SilverScreen.Presentation.Employees
             {
                 return false;
             }
+            if (IsHeld)
+            {
+                _departingAssignmentArea = null;
+                _taskDestination = destination; _hasTaskAnchor = true; _hasExplicitTask = true;
+                _onArrivalCallback = onArrival;
+                Employee?.SetIntent(intent);
+                return true;
+            }
             var path = new NavMeshPath();
             if (!_navAgent.CalculatePath(destination, path) ||
                 path.status != NavMeshPathStatus.PathComplete ||
@@ -464,6 +574,9 @@ namespace SilverScreen.Presentation.Employees
                 return false;
             }
 
+            _departingAssignmentArea = null; // Accepted real work takes priority over idle departure.
+            _taskDestination = destination;
+            _hasTaskAnchor = true;
             _hasExplicitTask = true;
             _onArrivalCallback = onArrival;
 
@@ -483,6 +596,9 @@ namespace SilverScreen.Presentation.Employees
 
         public void ClearTaskDestination()
         {
+            _hasTaskAnchor = false;
+            IsReturningAfterDrop = false;
+            if (!IsHeld) AvailabilityChanged?.Invoke(true);
             _hasExplicitTask = false;
             _onArrivalCallback = null;
 
@@ -512,7 +628,8 @@ namespace SilverScreen.Presentation.Employees
 
         private void CheckExplicitArrival()
         {
-            if (!_navAgent.pathPending && _navAgent.remainingDistance <= _navAgent.stoppingDistance + 0.2f)
+            if (!IsHeld && _navAgent.isOnNavMesh && !_navAgent.pathPending &&
+                Vector3.Distance(transform.position - Vector3.up * _navAgent.baseOffset, _taskDestination) <= _navAgent.stoppingDistance + 0.25f)
             {
                 ForceCompleteArrival();
             }
@@ -527,6 +644,12 @@ namespace SilverScreen.Presentation.Employees
 
                 if (NavMesh.SamplePosition(candidate, out NavMeshHit hit, 2.5f, NavMesh.AllAreas))
                 {
+                    if (_idleBuildingExclusion.HasValue)
+                    {
+                        var area = _idleBuildingExclusion.Value;
+                        if (hit.position.x >= area.min.x && hit.position.x <= area.max.x &&
+                            hit.position.z >= area.min.z && hit.position.z <= area.max.z) continue;
+                    }
                     result = hit.position;
                     return true;
                 }

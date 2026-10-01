@@ -54,6 +54,7 @@ namespace SilverScreen.Presentation.UI
             new Dictionary<SimulationSpeed, Button>();
         private ManagementPanel _activePanel;
         private bool _changingPanel;
+        public ManagementPanel ActivePanel => _activePanel;
 
         public void Initialize(StudioIdentity studioIdentity)
         {
@@ -80,7 +81,7 @@ namespace SilverScreen.Presentation.UI
 
             Build();
             Bind();
-            SetPanel(ManagementPanel.Productions);
+            SetPanel(ManagementPanel.None);
         }
 
         private void OnDestroy()
@@ -212,7 +213,7 @@ namespace SilverScreen.Presentation.UI
             speedLayout.childControlWidth = true;
             speedLayout.childForceExpandHeight = true;
             speedLayout.childForceExpandWidth = true;
-            CreateSpeedButton(speedRect, SimulationSpeed.Paused, "Ⅱ");
+            CreateSpeedButton(speedRect, SimulationSpeed.Paused, "||");
             CreateSpeedButton(speedRect, SimulationSpeed.Normal, "1x");
             CreateSpeedButton(speedRect, SimulationSpeed.Fast, "2x");
             CreateSpeedButton(speedRect, SimulationSpeed.VeryFast, "3x");
@@ -243,7 +244,11 @@ namespace SilverScreen.Presentation.UI
                 label,
                 ManagementUIFactory.PanelRaised,
                 Color.white);
-            button.onClick.AddListener(() => _timeDriver?.TimeService?.SetSpeed(speed));
+            button.onClick.AddListener(() =>
+            {
+                if (speed == SimulationSpeed.Paused) _timeDriver?.TimeService?.TogglePause();
+                else _timeDriver?.TimeService?.SetSpeed(speed);
+            });
             _speedButtons.Add(speed, button);
         }
 

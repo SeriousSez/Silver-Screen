@@ -17,6 +17,14 @@ namespace SilverScreen.Presentation.Buildings
 
         [SerializeField] private List<Station> _stations = new List<Station>();
 
+        public bool TryGetPose(ProductionStationType type, out Pose pose)
+        {
+            foreach (var entry in _stations)
+                if (entry.Type == type && entry.Point != null)
+                { pose = new Pose(entry.Point.position, entry.Point.rotation); return true; }
+            pose = default; return false;
+        }
+
         public bool TryGetPosition(ProductionStationType stationType, out Vector3 position)
         {
             foreach (var station in _stations)

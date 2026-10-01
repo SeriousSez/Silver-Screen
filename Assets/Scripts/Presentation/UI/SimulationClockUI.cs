@@ -74,35 +74,11 @@ namespace SilverScreen.Presentation.UI
 
         private void SetupButtonCallbacks()
         {
-            if (_pauseButton != null)
-            {
-                _pauseButton.onClick.AddListener(() =>
-                {
-                    if (_timeService != null) _timeService.SetSpeed(SimulationSpeed.Paused);
-                });
-            }
-
-            if (_speed1XButton != null)
-            {
-                _speed1XButton.onClick.AddListener(() =>
-                {
-                    if (_timeService != null) _timeService.SetSpeed(SimulationSpeed.Normal);
-                });
-            }
-
-            if (_speed2XButton != null)
-            {
-                _speed2XButton.onClick.AddListener(() =>
-                {
-                    if (_timeService != null) _speed2XButton.onClick.RemoveAllListeners();
-                });
-            }
-
             // Clean rebinding
             if (_pauseButton != null)
             {
                 _pauseButton.onClick.RemoveAllListeners();
-                _pauseButton.onClick.AddListener(() => _timeService?.SetSpeed(SimulationSpeed.Paused));
+                _pauseButton.onClick.AddListener(() => _timeService?.TogglePause());
             }
             if (_speed1XButton != null)
             {

@@ -45,8 +45,9 @@ namespace SilverScreen.Domain.Writing
         private readonly List<ScreenplayScene> _scenes = new List<ScreenplayScene>();
 
         public string Id { get; }
-        public string Title { get; }
-        public IReadOnlyList<string> GenreIds => _genreIds;
+        public string Title { get; private set; }
+        public ScreenplayAuthoring Authoring { get; }
+        public IReadOnlyList<string> GenreIds => _genreIds.AsReadOnly();
         public string PrimaryGenreId => _genreIds[0];
         public ScreenplayAcquisitionSource AcquisitionSource { get; }
         public string SourceStoryIdeaId { get; }
@@ -56,12 +57,12 @@ namespace SilverScreen.Domain.Writing
         public string ThemeId { get; }
         public ScreenplayStatus Status { get; private set; }
         public double Progress { get; private set; }
-        public IReadOnlyList<ScreenplayWriterContributor> Contributors => _contributors;
-        public IReadOnlyList<string> CreditedWriterIds => _creditedWriterIds;
+        public IReadOnlyList<ScreenplayWriterContributor> Contributors => _contributors.AsReadOnly();
+        public IReadOnlyList<string> CreditedWriterIds => _creditedWriterIds.AsReadOnly();
         public ScreenplayContentStatus ContentStatus { get; private set; }
         public string ContentFailureReason { get; private set; }
-        public IReadOnlyList<ScreenplayCharacter> Characters => _characters;
-        public IReadOnlyList<ScreenplayScene> Scenes => _scenes;
+        public IReadOnlyList<ScreenplayCharacter> Characters => _characters.AsReadOnly();
+        public IReadOnlyList<ScreenplayScene> Scenes => _scenes.AsReadOnly();
         public ScreenplayEvaluationStatus EvaluationStatus { get; private set; }
         public ScreenplayEvaluation Evaluation { get; private set; }
         public event Action<ScreenplayProject> Changed;
@@ -104,10 +105,35 @@ namespace SilverScreen.Domain.Writing
                 if (string.IsNullOrWhiteSpace(writerId) || GetContributor(writerId) != null) continue;
                 _contributors.Add(new ScreenplayWriterContributor(writerId.Trim()));
             }
-            if (_contributors.Count == 0) throw new ArgumentException("A screenplay requires at least one writer.", nameof(writerIds));
+            if (_contributors.Count == 0 && acquisitionSource != ScreenplayAcquisitionSource.PlayerCreated) throw new ArgumentException("A screenplay requires at least one writer.", nameof(writerIds));
+            if (acquisitionSource == ScreenplayAcquisitionSource.PlayerCreated) Authoring = new ScreenplayAuthoring(this);
             Status = ScreenplayStatus.Assigned;
             ContentStatus = ScreenplayContentStatus.Pending;
             EvaluationStatus = ScreenplayEvaluationStatus.Pending;
+        }
+
+        public static ScreenplayProject CreatePlayerAuthored(string id, string title, IEnumerable<string> genreIds) =>
+            new ScreenplayProject(id, title, Array.Empty<string>(), genreIds, ScreenplayAcquisitionSource.PlayerCreated);
+
+        internal void ReplaceAuthoredContent(string title, IEnumerable<ScreenplayCharacter> characters, IEnumerable<ScreenplayScene> scenes)
+        {
+            if (Authoring == null) throw new InvalidOperationException("Only player-created screenplays are editable here.");
+            Title = title;
+            _characters.Clear(); _characters.AddRange(characters);
+            _scenes.Clear(); _scenes.AddRange(scenes);
+            for (int i = 0; i < _scenes.Count; i++) _scenes[i].SceneNumber = i + 1;
+            Status = ScreenplayStatus.Assigned; Progress = 0;
+            ContentStatus = ScreenplayContentStatus.Pending; EvaluationStatus = ScreenplayEvaluationStatus.Pending;
+            Evaluation = null;
+            ContentFailureReason = null;
+            Changed?.Invoke(this);
+        }
+
+        internal void SubmitAuthoredContent()
+        {
+            Status = ScreenplayStatus.Completed; Progress = 1;
+            ContentStatus = ScreenplayContentStatus.Ready;
+            Changed?.Invoke(this);
         }
 
         public bool TryAddGenre(string genreId)
@@ -116,7 +142,8 @@ namespace SilverScreen.Domain.Writing
             string normalized = genreId.Trim().ToLowerInvariant();
             if (_genreIds.Contains(normalized)) return false;
             _genreIds.Add(normalized);
-            Changed?.Invoke(this);
+            if (Authoring != null) Authoring.InvalidateSubmission();
+            else Changed?.Invoke(this);
             return true;
         }
 
@@ -125,6 +152,7 @@ namespace SilverScreen.Domain.Writing
 
         public bool SetParticipation(string writerId, WriterParticipationStatus status)
         {
+            if (Authoring != null) return false;
             if (Status == ScreenplayStatus.Completed) return false;
             var contributor = GetContributor(writerId);
             if (contributor == null) return false;
@@ -136,6 +164,7 @@ namespace SilverScreen.Domain.Writing
 
         public bool AdvanceWritingMinute(IReadOnlyDictionary<string, int> activeWriterSkills)
         {
+            if (Authoring != null) return false;
             if (Status == ScreenplayStatus.Completed || activeWriterSkills == null || activeWriterSkills.Count == 0)
                 return false;
 
@@ -174,6 +203,7 @@ namespace SilverScreen.Domain.Writing
 
         public bool TryFinalizeContent(ScreenplayContent content)
         {
+            if (Authoring != null) return false;
             if (Status != ScreenplayStatus.Completed || ContentStatus != ScreenplayContentStatus.Pending ||
                 content == null || content.Characters.Count == 0 || content.Scenes.Count == 0)
                 return false;
@@ -229,6 +259,7 @@ namespace SilverScreen.Domain.Writing
 
         public bool TrySetEvaluation(ScreenplayEvaluation evaluation)
         {
+            if (Authoring != null) return false;
             if (Status != ScreenplayStatus.Completed || ContentStatus != ScreenplayContentStatus.Ready ||
                 EvaluationStatus != ScreenplayEvaluationStatus.Pending || evaluation == null)
                 return false;
@@ -240,6 +271,7 @@ namespace SilverScreen.Domain.Writing
 
         public bool MarkEvaluationFailed()
         {
+            if (Authoring != null) return false;
             if (Status != ScreenplayStatus.Completed || EvaluationStatus != ScreenplayEvaluationStatus.Pending)
                 return false;
             EvaluationStatus = ScreenplayEvaluationStatus.Failed;

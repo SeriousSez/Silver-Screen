@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using SilverScreen.Domain.Time;
 namespace SilverScreen.Domain
 {
- public enum ProfessionalRole { Actor, Director, Extra, Crew, Writer }
+ public enum ProfessionalRole { Actor, Director, Extra, Crew, Writer, ConstructionWorker, Groundskeeper, Unassigned }
  [Serializable] public sealed class GenreExperience
  {
   public string GenreId { get; }
@@ -19,6 +19,13 @@ namespace SilverScreen.Domain
   public IReadOnlyList<GenreExperience> GenreExperience=>_genreExperience;
   public TalentProfile(int actingAbility,int directingAbility,IEnumerable<GenreExperience> genreExperience=null,int writingAbility=25){ActingAbility=Math.Clamp(actingAbility,0,100);DirectingAbility=Math.Clamp(directingAbility,0,100);WritingAbility=Math.Clamp(writingAbility,0,100);_genreExperience=genreExperience!=null?new List<GenreExperience>(genreExperience):new List<GenreExperience>();}
   public int GetGenreExperience(string genreId){foreach(var entry in _genreExperience)if(string.Equals(entry.GenreId,genreId,StringComparison.OrdinalIgnoreCase))return entry.Experience;return 0;}
+  public void AddGenreExperience(string genreId, int amount)
+  {
+   if (string.IsNullOrWhiteSpace(genreId) || amount <= 0) return;
+   int value = Math.Clamp(GetGenreExperience(genreId) + amount, 0, 100);
+   _genreExperience.RemoveAll(e => string.Equals(e.GenreId, genreId, StringComparison.OrdinalIgnoreCase));
+   _genreExperience.Add(new GenreExperience(genreId, value));
+  }
   public void SetPrimaryAbility(ProfessionalRole role,int value){if(role==ProfessionalRole.Director)DirectingAbility=Math.Clamp(value,0,100);else if(role==ProfessionalRole.Writer)WritingAbility=Math.Clamp(value,0,100);else ActingAbility=Math.Clamp(value,0,100);}
  }
  public static class PersonTraitIds

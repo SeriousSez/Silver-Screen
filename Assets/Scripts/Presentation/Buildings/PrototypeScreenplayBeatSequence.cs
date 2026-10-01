@@ -24,12 +24,9 @@ namespace SilverScreen.Presentation.Buildings
         private StudioEmployeeManager _employeeManager;
         private ISimulationTimeService _timeService;
         private SetBlockingPointLayout _blockingPointLayout;
-        private BeatPerformanceGenerator _performanceGenerator;
         private PrototypeProductionCamera _productionCamera;
         private string _facilityId;
-        private MovieProject _activeMovie;
-        private MovieScene _activeScene;
-        private MovieTake _activeTake;
+        private TakePresentationSnapshot _snapshot;
         private int _currentBeatIndex;
         private bool _beatExecuting;
         private float _beatElapsed;
@@ -41,9 +38,9 @@ namespace SilverScreen.Presentation.Buildings
         private Action _onCompleted;
         private Action<StudioRouteResult> _onFailed;
 
-        public bool IsRunning => _activeScene != null;
-        public MovieScene ActiveScene => _activeScene;
-        public MovieTake ActiveTake => _activeTake;
+        public bool IsRunning => _snapshot != null;
+        public string ActiveSceneId => _snapshot?.SceneId;
+        public string ActiveTakeId => _snapshot?.TakeId;
         public int CurrentBeatIndex => IsRunning ? _currentBeatIndex : -1;
         public bool IsBeatExecuting => _beatExecuting;
 
@@ -51,35 +48,30 @@ namespace SilverScreen.Presentation.Buildings
             StudioEmployeeManager employeeManager,
             ISimulationTimeService timeService,
             SetBlockingPointLayout blockingPointLayout,
-            BeatPerformanceGenerator performanceGenerator,
             PrototypeProductionCamera productionCamera,
             string facilityId)
         {
             _employeeManager = employeeManager;
             _timeService = timeService;
             _blockingPointLayout = blockingPointLayout;
-            _performanceGenerator = performanceGenerator;
             _productionCamera = productionCamera;
             _facilityId = facilityId;
         }
 
         public StudioRouteResult TryBegin(
-            MovieProject movie,
-            MovieScene scene,
-            MovieTake take,
+            TakePresentationSnapshot snapshot,
             Action onCompleted,
             Action<StudioRouteResult> onFailed)
         {
             if (IsRunning) return StudioRouteResult.SequenceInProgress;
-            if (movie == null || scene == null || take == null || scene.Beats.Count == 0)
+            if (snapshot == null || snapshot.Beats.Count == 0)
                 return StudioRouteResult.PerformanceMissing;
             if (_employeeManager == null) return StudioRouteResult.AgentMissing;
 
-            _activeMovie = movie;
-            _activeScene = scene;
-            _activeTake = take;
+            _snapshot = snapshot;
             _beats.Clear();
-            _beats.AddRange(scene.Beats);
+            _beats.AddRange(snapshot.Beats);
+            foreach (var performance in snapshot.Performances) _performances[performance.ScreenplayBeatId] = performance;
             foreach (var beat in _beats)
             {
                 if (!TryResolveAgent(beat.PerformingCharacterId, out EmployeeAgent performer))
@@ -99,23 +91,11 @@ namespace SilverScreen.Presentation.Buildings
                     _participantAgents.Add(target);
                 }
 
-                if (_performanceGenerator == null)
+                if (!_performances.ContainsKey(beat.Id))
                 {
                     ResetSequence();
                     return StudioRouteResult.PerformanceMissing;
                 }
-
-                BeatPerformanceResult performance = _performanceGenerator.Generate(
-                    beat,
-                    performer.Employee,
-                    movie.AssignedDirector,
-                    movie.GenreId);
-                if (!take.RecordPerformanceResult(performance))
-                {
-                    ResetSequence();
-                    return StudioRouteResult.PerformanceMissing;
-                }
-                _performances[beat.Id] = performance;
             }
 
             foreach (var participant in _participantAgents)
@@ -192,10 +172,11 @@ namespace SilverScreen.Presentation.Buildings
                 EmployeeIntentPurpose.PerformTask,
                 $"Moving to blocking point — {beat.BlockingTargetId}",
                 $"{_facilityId}:{beat.BlockingTargetId}");
+            var snapshot = _snapshot;
             bool started = performer.TryAssignTaskDestination(
                 destination,
                 intent,
-                () => HandleBlockingArrival(performer, beat, performance, target));
+                () => { if (ReferenceEquals(snapshot, _snapshot)) HandleBlockingArrival(performer, beat, performance, target); });
             if (started) return StudioRouteResult.Started;
 
             Debug.LogWarning(
@@ -239,12 +220,13 @@ namespace SilverScreen.Presentation.Buildings
             _beatExecuting = true;
             _beatElapsed = 0f;
             _beatTimeout = duration + CompletionGraceSeconds;
+            var snapshot = _snapshot;
             if (!performer.TryBeginBeatPerformance(
                     beat.BeatType,
                     performance,
                     target,
                     duration,
-                    HandleBeatCompleted))
+                    () => { if (ReferenceEquals(snapshot, _snapshot)) HandleBeatCompleted(); }))
             {
                 return StudioRouteResult.PerformanceMissing;
             }
@@ -256,8 +238,7 @@ namespace SilverScreen.Presentation.Buildings
         {
             if (!_beatExecuting || (_timeService != null && _timeService.IsPaused)) return;
 
-            float speedMultiplier = _timeService != null ? _timeService.TimeScaleMultiplier : 1f;
-            _beatElapsed += UnityEngine.Time.deltaTime * speedMultiplier;
+            _beatElapsed += SilverScreen.Presentation.SimulationTime.LocalPresentationTime.Delta(UnityEngine.Time.unscaledDeltaTime, _timeService);
             if (_beatElapsed >= _beatTimeout)
             {
                 if (_awaitingBlockingMovement)
@@ -314,9 +295,8 @@ namespace SilverScreen.Presentation.Buildings
             agent = null;
             if (string.IsNullOrWhiteSpace(characterId)) return false;
 
-            MovieRole role = _activeMovie.GetCastRole(characterId);
-            if (role == null || string.IsNullOrWhiteSpace(role.AssignedActorId)) return false;
-            Employee employee = _employeeManager.GetEmployee(role.AssignedActorId);
+            if (_snapshot == null || !_snapshot.Cast.TryGetValue(characterId, out string personId)) return false;
+            Employee employee = _employeeManager.GetEmployee(personId);
             if (employee == null || employee.Role != EmployeeRole.Actor) return false;
             agent = _employeeManager.GetAgent(employee);
             return agent != null;
@@ -326,7 +306,7 @@ namespace SilverScreen.Presentation.Buildings
         {
             if (_productionCamera == null || !_productionCamera.IsActive) return;
 
-            SceneShot shot = _activeScene.GetShotForBeat(beat.Id);
+            SceneShot shot = _snapshot.GetShotForBeat(beat.Id);
             if (shot == null) return;
 
             Transform subject = null;
@@ -372,15 +352,17 @@ namespace SilverScreen.Presentation.Buildings
 
         private void ResetSequence()
         {
+            if (_movingPerformer != null) _movingPerformer.CancelPresentationMovement();
             foreach (var participant in _participantAgents)
             {
                 if (participant != null)
+                {
+                    participant.CancelBeatPresentation();
                     participant.SetGenericFilmingPresentationEnabled(true);
+                }
             }
             _participantAgents.Clear();
-            _activeMovie = null;
-            _activeScene = null;
-            _activeTake = null;
+            _snapshot = null;
             _beats.Clear();
             _performances.Clear();
             _currentBeatIndex = 0;
@@ -399,5 +381,8 @@ namespace SilverScreen.Presentation.Buildings
         {
             ResetSequence();
         }
+
+        public void Cancel() => ResetSequence();
+        private void OnDisable() => ResetSequence();
     }
 }

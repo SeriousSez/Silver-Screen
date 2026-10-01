@@ -1,14 +1,18 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using SilverScreen.Domain.Time;
+using SilverScreen.Domain.Work;
+using SilverScreen.Domain.Resources;
 
 namespace SilverScreen.Presentation.SimulationTime
 {
+    [DisallowMultipleComponent]
     public class SimulationTimeDriver : MonoBehaviour
     {
         [Header("Time Tuning")]
         [Tooltip("How many real seconds correspond to one simulated minute at 1x speed.")]
         [SerializeField] private float _realSecondsPerSimulatedMinute = 1.0f;
+        [SerializeField] private SimulationPacingSettings _pacingProfile;
 
         [Header("Starting Date & Time")]
         [SerializeField] private int _startYear = 1930;
@@ -18,6 +22,15 @@ namespace SilverScreen.Presentation.SimulationTime
         [SerializeField] private int _startMinute = 0;
 
         private SimulationClock _clock;
+        private SimulationScheduler _scheduler;
+        private WorkService _work;
+        private ResourceReservationBook _reservations;
+        private bool _reportedFailure;
+        private static SimulationTimeDriver _activeDriver;
+        private float _previousUnityTimeScale;
+        public SimulationScheduler Scheduler { get { EnsureClock(); return _scheduler; } }
+        public WorkService Work { get { EnsureClock(); return _work; } }
+        public ResourceReservationBook Reservations { get { EnsureClock(); return _reservations; } }
 
         public ISimulationTimeService TimeService
         {
@@ -37,6 +50,12 @@ namespace SilverScreen.Presentation.SimulationTime
             }
         }
 
+        public void InitializeNewStudioSession(SimulationDateTime start)
+        {
+            EnsureClock();
+            _clock.RestoreState(start, SimulationSpeed.Normal, SimulationSpeed.Normal);
+        }
+
         private void EnsureClock()
         {
             if (_clock == null)
@@ -48,6 +67,10 @@ namespace SilverScreen.Presentation.SimulationTime
                     _startHour,
                     _startMinute,
                     _realSecondsPerSimulatedMinute);
+                if (_pacingProfile != null) _clock.ConfigurePacing(_pacingProfile.CreatePacing());
+                _scheduler = new SimulationScheduler(_clock);
+                _work = new WorkService(_clock, _scheduler);
+                _reservations = new ResourceReservationBook();
             }
         }
 
@@ -56,14 +79,52 @@ namespace SilverScreen.Presentation.SimulationTime
             EnsureClock();
         }
 
+        private void OnEnable()
+        {
+            if (!Application.isPlaying) return;
+            if (_activeDriver != null && _activeDriver != this)
+            {
+                Debug.LogError("Only one active SimulationTimeDriver may own simulation speed.", this);
+                enabled = false;
+                return;
+            }
+
+            EnsureClock();
+            _activeDriver = this;
+            _previousUnityTimeScale = UnityEngine.Time.timeScale;
+            _clock.OnSpeedChanged += ApplyWorldSpeed;
+            ApplyWorldSpeed(_clock.CurrentSpeed);
+        }
+
+        private void ApplyWorldSpeed(SimulationSpeed unused)
+        {
+            // The clock owns speed and pause intent. Unity is its world-time adapter:
+            // NavMesh, ordinary Animators, physics and scaled timers consume this once.
+            if (_activeDriver == this) UnityEngine.Time.timeScale = _clock.TimeScaleMultiplier;
+        }
+
+        private void OnDisable()
+        {
+            if (_activeDriver != this) return;
+            _clock.OnSpeedChanged -= ApplyWorldSpeed;
+            _activeDriver = null;
+            UnityEngine.Time.timeScale = _previousUnityTimeScale;
+        }
+
         private void Update()
         {
-            HandleKeyboardShortcuts();
+            if (_clock == null || _clock.IsBoundaryComplete) HandleKeyboardShortcuts();
 
             if (_clock != null)
             {
-                _clock.RealSecondsPerSimulatedMinute = _realSecondsPerSimulatedMinute;
+                // Advance from real seconds: the clock applies the multiplier itself.
+                // Passing deltaTime here would apply 2x/3x twice.
                 _clock.Advance(UnityEngine.Time.unscaledDeltaTime);
+                if (_clock.AdvanceFailure != null && !_reportedFailure)
+                {
+                    _reportedFailure = true;
+                    Debug.LogError("Strategic simulation stopped: " + _clock.AdvanceFailure, this);
+                }
             }
         }
 
@@ -89,6 +150,7 @@ namespace SilverScreen.Presentation.SimulationTime
                 _clock.SetSpeed(SimulationSpeed.VeryFast);
             }
         }
+
+        private void OnDestroy() => _work?.Dispose();
     }
 }
-

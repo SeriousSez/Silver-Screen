@@ -28,8 +28,23 @@ namespace SilverScreen.Presentation.Buildings
 
         private void Awake()
         {
-            if (transform.Find("OutsideWorld") != null) return;
+            EnsureAuthoredWorld();
+        }
+
+        public void EnsureAuthoredWorld()
+        {
             LocationCatalog = FilmingLocationCatalog.CreatePrototype();
+            var existing = transform.Find("OutsideWorld");
+            if (existing != null)
+            {
+                // Authored scenery stays exactly where the designer placed it. Rebind
+                // only the nonserialized domain identity used by location services.
+                foreach (var view in existing.GetComponentsInChildren<FilmingLocationView>(true))
+                    foreach (var location in LocationCatalog.Locations)
+                        if (view.name == location.DisplayName)
+                        { view.Initialize(location, view.transform.Find("Arrival")); LocationViews.Register(view); break; }
+                return;
+            }
             BuildWorld();
         }
 

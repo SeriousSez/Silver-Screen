@@ -17,6 +17,14 @@ namespace SilverScreen.Presentation.Buildings
 
         [SerializeField] private List<Mark> _marks = new List<Mark>();
 
+        public bool TryGetPose(ActorSceneMarkType type, out Pose pose)
+        {
+            foreach (var entry in _marks)
+                if (entry.Type == type && entry.Point != null)
+                { pose = new Pose(entry.Point.position, entry.Point.rotation); return true; }
+            pose = default; return false;
+        }
+
         public bool TryGetPosition(ActorSceneMarkType markType, out Vector3 position)
         {
             foreach (var mark in _marks)

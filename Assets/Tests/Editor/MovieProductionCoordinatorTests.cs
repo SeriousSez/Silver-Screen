@@ -7,6 +7,8 @@ using SilverScreen.Domain.Finance;
 using SilverScreen.Domain.Movie;
 using SilverScreen.Domain.Time;
 using SilverScreen.Domain.Writing;
+using SilverScreen.Domain.Work;
+using SilverScreen.Domain.Resources;
 
 namespace SilverScreen.Tests.EditMode
 {
@@ -15,19 +17,25 @@ namespace SilverScreen.Tests.EditMode
         private FakeSimulationTimeService _time;
         private FakeStudioWorldRouter _router;
         private MovieProductionCoordinator _coordinator;
+        private WorkService _work;
+        private ResourceReservationBook _reservations;
 
         [SetUp]
         public void SetUp()
         {
             _time = new FakeSimulationTimeService();
             _router = new FakeStudioWorldRouter();
-            _coordinator = new MovieProductionCoordinator(_time, _router);
+            _work = new WorkService(_time, new SimulationScheduler(_time));
+            _reservations = new ResourceReservationBook();
+            _coordinator = new MovieProductionCoordinator(_time, _router, workService: _work, reservations: _reservations,
+                performanceService: new TakePerformanceService(new SystemPerformanceRandomSource(1930)));
         }
 
         [TearDown]
         public void TearDown()
         {
             _coordinator.Dispose();
+            _work.Dispose();
         }
 
         [Test]
@@ -182,7 +190,7 @@ namespace SilverScreen.Tests.EditMode
             Assert.That(_coordinator.ActiveMovie, Is.SameAs(first.Project));
             Assert.That(_coordinator.Slate.AllProjects, Has.Count.EqualTo(1));
 
-            first.Project.SetState(MovieProductionState.Completed);
+            ProductionLifecycleRegressionTests.CompleteMovie(first.Project);
             var afterCompletion = _coordinator.CreateMovie("Second", "comedy", 50000, "Lead", new List<string>());
 
             Assert.That(afterCompletion.Succeeded, Is.True);
@@ -199,8 +207,8 @@ namespace SilverScreen.Tests.EditMode
                 BudgetTier.Low.Amount,
                 "Lead",
                 new List<string>());
+            ProductionLifecycleRegressionTests.CompleteMovie(first.Project);
             first.Project.TrySetProductionResult(new MovieProductionResult(70, 70, 70, 70));
-            first.Project.SetState(MovieProductionState.Completed);
             var run = new MovieTheatricalRun(
                 first.Project.Id,
                 _time.CurrentTime,
@@ -316,13 +324,19 @@ namespace SilverScreen.Tests.EditMode
             Assert.That(scene.RequiredSetDefinitionId, Is.EqualTo("courtroom"));
         }
 
-        [Test]
-        public void ScreenplayBackedProduction_AdvancesAllScenesAndBecomesReleaseEligible()
+        [TestCase(1, false)]
+        [TestCase(4, false)]
+        [TestCase(1, true)]
+        [TestCase(4, true)]
+        public void ScreenplayBackedProduction_AdvancesAllScenesAndBecomesReleaseEligible(int sceneCount, bool manual)
         {
             ScreenplayGreenlightResult result = _coordinator.GreenlightScreenplay(
-                MovieReleaseServiceTests.CreateCompletedScreenplay(4));
+                MovieReleaseServiceTests.CreateCompletedScreenplay(sceneCount));
             Assert.That(result.Succeeded, Is.True);
             MovieProject movie = result.Movie;
+            if (manual) _coordinator.SetProductionControlMode(movie, ProductionControlMode.Manual);
+            using var releaseService = new MovieReleaseService(_time, new StudioFinances(_time.CurrentTime));
+            Assert.That(releaseService.ReleaseMovie(movie).Succeeded, Is.False);
             var lead = CreateEmployee("screenplay-lead", "Lead Actor", EmployeeRole.Actor);
             var support = CreateEmployee("screenplay-support", "Support Actor", EmployeeRole.Actor);
             var director = CreateEmployee("screenplay-director", "Director", EmployeeRole.Director);
@@ -334,13 +348,24 @@ namespace SilverScreen.Tests.EditMode
             _time.PassMinutes(60);
             _coordinator.AssignDirector(movie, director);
 
-            for (int sceneIndex = 0; sceneIndex < 4; sceneIndex++)
+            for (int sceneIndex = 0; sceneIndex < sceneCount; sceneIndex++)
             {
+                Assert.That(movie.CompletedSceneCount, Is.EqualTo(sceneIndex));
+                Assert.That(movie.ProductionProgress, Is.EqualTo((float)sceneIndex / sceneCount));
+                Assert.That(releaseService.ReleaseMovie(movie).Succeeded, Is.False);
                 Assert.That(_coordinator.ActiveScene.SceneNumber, Is.EqualTo(sceneIndex + 1));
                 _router.CompleteRoute(director, BuildingType.SoundStage);
                 _router.CompleteRoute(lead, BuildingType.SoundStage);
                 _router.CompleteRoute(support, BuildingType.SoundStage);
 
+                Assert.That(movie.Scenes[sceneIndex].Status, Is.EqualTo(MovieSceneStatus.Filming));
+                _time.PassMinutes(480);
+                if (manual)
+                {
+                    Assert.That(movie.CanRelease, Is.False);
+                    Assert.That(_coordinator.CurrentProductionPhase, Is.EqualTo(ProductionPhase.AwaitingTakeDecision));
+                    Assert.That(_coordinator.KeepTake(_coordinator.ActiveTake.Id), Is.True);
+                }
                 MovieScene completedScene = movie.Scenes[sceneIndex];
                 Assert.That(completedScene.Status, Is.EqualTo(MovieSceneStatus.Completed));
                 Assert.That(completedScene.Takes, Has.Count.EqualTo(1));
@@ -355,9 +380,76 @@ namespace SilverScreen.Tests.EditMode
             Assert.That(movie.ProductionResult, Is.Not.Null);
             Assert.That(_coordinator.NextFilmableScene, Is.Null);
 
-            var releaseService = new MovieReleaseService(_time, new StudioFinances(_time.CurrentTime));
+            Assert.That(movie.ReadyForFilming, Is.False);
             Assert.That(releaseService.ReleaseMovie(movie).Succeeded, Is.True);
-            releaseService.Dispose();
+            Assert.That(releaseService.ReleaseMovie(movie).Succeeded, Is.False);
+        }
+
+        [Test]
+        public void DuplicateGreenlightRemainsBlockedAfterOriginalProductionCompletes()
+        {
+            var screenplay = MovieReleaseServiceTests.CreateCompletedScreenplay(1);
+            var first = _coordinator.GreenlightScreenplay(screenplay);
+            Assert.That(_coordinator.GreenlightScreenplay(screenplay).Failure, Is.EqualTo(ScreenplayGreenlightFailure.AlreadyGreenlit));
+            ProductionLifecycleRegressionTests.CompleteMovie(first.Movie);
+            Assert.That(_coordinator.GreenlightScreenplay(screenplay).Failure, Is.EqualTo(ScreenplayGreenlightFailure.AlreadyGreenlit));
+            Assert.That(_coordinator.Slate.AllProjects.Count, Is.EqualTo(1));
+        }
+
+        [Test]
+        public void InterruptedFilmingReturnsSceneToFilmableStateWithoutCompletingIt()
+        {
+            var setup = PrepareSingleRoleMovieForFilming();
+            var scene = _coordinator.ActiveScene;
+            var take = _coordinator.ActiveTake;
+            _time.PassMinutes(120);
+            _coordinator.HandleOwnedFacilityRemoved(_coordinator.ActiveEnvironment.FacilityId);
+            Assert.That(take.Status, Is.EqualTo(MovieTakeStatus.Discarded));
+            Assert.That(scene.Status, Is.EqualTo(MovieSceneStatus.Ready));
+            Assert.That(setup.Movie.IsFilming || setup.Movie.CanRelease, Is.False);
+            Assert.That(setup.Movie.GetNextFilmableScene(), Is.SameAs(scene));
+            _time.PassMinutes(600);
+            Assert.That(scene.IsCompleted, Is.False);
+            Assert.That(_coordinator.RetryProduction(), Is.True);
+            _router.CompleteRoute(setup.Director, BuildingType.SoundStage);
+            _router.CompleteRoute(setup.Actor, BuildingType.SoundStage);
+            _time.PassMinutes(480);
+            Assert.That(setup.Movie.CanRelease, Is.True);
+            Assert.That(scene.Takes.Count, Is.EqualTo(2));
+            Assert.That(scene.SelectedTake, Is.Not.SameAs(take));
+        }
+
+        [Test]
+        public void LateArrivalFromCanceledRoutingCannotRestartOrCorruptProduction()
+        {
+            var setup = PrepareSingleRoleMovieForStageTravel();
+            Action oldDirectorArrival = _router.GetPendingArrival(setup.Director);
+            Action oldActorArrival = _router.GetPendingArrival(setup.Actor);
+            _coordinator.HandleOwnedFacilityRemoved(_coordinator.ActiveEnvironment.FacilityId);
+            Assert.DoesNotThrow(() => { oldDirectorArrival(); oldActorArrival(); });
+            Assert.That(_coordinator.CurrentProductionPhase, Is.EqualTo(ProductionPhase.Failed));
+            Assert.That(_coordinator.RetryProduction(), Is.True);
+            oldDirectorArrival(); oldActorArrival();
+            Assert.That(_coordinator.CurrentProductionPhase, Is.EqualTo(ProductionPhase.MovingToStations));
+            Assert.That(_coordinator.ActiveTake, Is.Null);
+            _router.CompleteRoute(setup.Director, BuildingType.SoundStage);
+            _router.CompleteRoute(setup.Actor, BuildingType.SoundStage);
+            Assert.That(_coordinator.CurrentProductionPhase, Is.EqualTo(ProductionPhase.Filming));
+        }
+
+        [Test]
+        public void ActiveWorkProgressRefreshesUiWithoutClaimingSceneCompletion()
+        {
+            var setup = PrepareSingleRoleMovieForFilming();
+            int updates = 0;
+            _coordinator.OnActiveMovieChanged += _ => updates++;
+            _time.PassMinutes(240);
+            Assert.That(updates, Is.GreaterThan(0));
+            Assert.That(_coordinator.ActiveTakeProgress, Is.EqualTo(0.5f));
+            Assert.That(_coordinator.StatusMessage, Does.Contain("50%"));
+            Assert.That(setup.Movie.ProductionProgress, Is.Zero);
+            Assert.That(setup.Movie.CompletedSceneCount, Is.Zero);
+            Assert.That(setup.Movie.CanRelease, Is.False);
         }
 
         [Test]
@@ -377,6 +469,7 @@ namespace SilverScreen.Tests.EditMode
             _router.CompleteRoute(director, BuildingType.SoundStage);
             _router.CompleteRoute(lead, BuildingType.SoundStage);
             _router.CompleteRoute(support, BuildingType.SoundStage);
+            _time.PassMinutes(480);
 
             Assert.That(movie.Scenes[0].Status, Is.EqualTo(MovieSceneStatus.Completed));
             Assert.That(_coordinator.ActiveScene, Is.SameAs(movie.Scenes[1]));
@@ -400,6 +493,7 @@ namespace SilverScreen.Tests.EditMode
             _router.CompleteRoute(director, BuildingType.SoundStage);
             _router.CompleteRoute(lead, BuildingType.SoundStage);
             _router.CompleteRoute(support, BuildingType.SoundStage);
+            _time.PassMinutes(480);
 
             Assert.That(_coordinator.CurrentProductionPhase, Is.EqualTo(ProductionPhase.AwaitingTakeDecision));
             Assert.That(_coordinator.ActiveEnvironment.FacilityId, Is.EqualTo("street-a"));
@@ -449,6 +543,85 @@ namespace SilverScreen.Tests.EditMode
                 new List<string> { "Support" }).Project;
         }
 
+        [TestCase(false)]
+        [TestCase(true)]
+        public void VisualCompletionOrFailureCannotFinishWork(bool fail)
+        {
+            var setup = PrepareSingleRoleMovieForFilming();
+            var take = _coordinator.ActiveTake;
+            var result = take.PerformanceResults[0];
+            if (fail) _router.Visual.Fail(); else _router.Visual.Complete();
+            Assert.That(_coordinator.CurrentProductionPhase, Is.EqualTo(ProductionPhase.Filming));
+            Assert.That(_coordinator.ActiveTakeWork.Completed.Units, Is.Zero);
+            _time.PassMinutes(479);
+            Assert.That(take.Status, Is.EqualTo(MovieTakeStatus.Recording));
+            Assert.That(take.PerformanceResults[0], Is.SameAs(result));
+            _time.PassMinutes(1);
+            Assert.That(take.FilmedDuration, Is.EqualTo(TimeSpan.FromHours(8)));
+            Assert.That(setup.Movie.CurrentState, Is.EqualTo(MovieProductionState.Completed));
+            Assert.That(_reservations.Count, Is.Zero);
+        }
+
+        [TestCase(false)]
+        [TestCase(true)]
+        public void MissingOrThrowingPresentationStillCompletesStrategicTake(bool throws)
+        {
+            _router.NoPresentation = !throws;
+            _router.PresentationThrows = throws;
+            var setup = PrepareSingleRoleMovieForFilming();
+            Assert.That(_coordinator.ActiveTake.PerformanceResults.Count, Is.GreaterThan(0));
+            _time.PassMinutes(480);
+            Assert.That(setup.Movie.CurrentState, Is.EqualTo(MovieProductionState.Completed));
+        }
+
+        [Test]
+        public void ManualRetakeTransfersClaimsAndOldPresentationCannotCompleteNewTake()
+        {
+            var setup = PrepareSingleRoleMovieForStageTravel();
+            _coordinator.SetProductionControlMode(setup.Movie, ProductionControlMode.Manual);
+            _router.CompleteRoute(setup.Director, BuildingType.SoundStage);
+            _router.CompleteRoute(setup.Actor, BuildingType.SoundStage);
+            var oldVisual = _router.Visual;
+            var firstTake = _coordinator.ActiveTake;
+            _time.PassMinutes(480);
+            Assert.That(_coordinator.CanKeepTake, Is.True);
+            Assert.That(_reservations.Count, Is.EqualTo(1));
+            var claimId = _reservations.GetClaims()[0].Id;
+            Assert.That(_coordinator.ShootAgain(), Is.True);
+            Assert.That(_reservations.GetClaims()[0].Id, Is.EqualTo(claimId));
+            var nextTake = _coordinator.ActiveTake;
+            oldVisual.Complete();
+            Assert.That(_coordinator.ActiveTakeWork.Completed.Units, Is.Zero);
+            Assert.That(nextTake, Is.Not.SameAs(firstTake));
+            _time.PassMinutes(480);
+            Assert.That(_coordinator.KeepTake(nextTake.Id), Is.True);
+            Assert.That(_reservations.Count, Is.Zero);
+        }
+
+        [Test]
+        public void FacilityConflictPreventsTakeWorkAndFailureReleasesOwnClaimsOnly()
+        {
+            var setup = PrepareSingleRoleMovieForStageTravel();
+            _reservations.TryAcquire("other-movie", new[] { new ResourceKey("person", setup.Actor.Id) }, out var existing, out _);
+            _router.CompleteRoute(setup.Director, BuildingType.SoundStage);
+            _router.CompleteRoute(setup.Actor, BuildingType.SoundStage);
+            Assert.That(_coordinator.CurrentProductionPhase, Is.EqualTo(ProductionPhase.Failed));
+            Assert.That(_coordinator.ActiveTakeWork, Is.Null);
+            Assert.That(_reservations.GetClaims().Single().Id, Is.EqualTo(existing.Id));
+        }
+
+        [Test]
+        public void TakeSnapshotCannotBeChangedByLaterStoryEditing()
+        {
+            PrepareSingleRoleMovieForFilming();
+            var snapshot = _router.Snapshot;
+            var originalCount = snapshot.Beats.Count;
+            var firstBeatId = snapshot.Beats[0].Id;
+            _coordinator.ActiveScene.ReorderBeat(firstBeatId, originalCount);
+            Assert.That(snapshot.Beats[0].Id, Is.EqualTo(firstBeatId));
+            Assert.That(snapshot.Beats[0].Order, Is.EqualTo(1));
+        }
+
         private ProductionSetup PrepareSingleRoleMovieForStageTravel()
         {
             var movie = _coordinator.CreateMovie("Production", "action", 100000, "Lead", new List<string>()).Project;
@@ -462,6 +635,36 @@ namespace SilverScreen.Tests.EditMode
 
             Assert.That(movie.CurrentState, Is.EqualTo(MovieProductionState.ReadyToFilm));
             return new ProductionSetup(movie, actor, director);
+        }
+
+        [Test]
+        public void ObservedDelayedAndAbsentPresentationHaveIdenticalAuthoritativeOutcomes()
+        {
+            (long end, double[] performances, int quality) Run(int mode)
+            {
+                var time = new FakeSimulationTimeService();
+                var router = new FakeStudioWorldRouter { NoPresentation = mode == 2 };
+                using var work = new WorkService(time, new SimulationScheduler(time));
+                using var coordinator = new MovieProductionCoordinator(time, router, workService: work, reservations: new ResourceReservationBook(),
+                    performanceService: new TakePerformanceService(new SystemPerformanceRandomSource(42)));
+                var movie = coordinator.CreateMovie("Observation", "action", 100000, "Lead", new List<string>()).Project;
+                var actor = CreateEmployee("actor", "Actor", EmployeeRole.Actor);
+                var director = CreateEmployee("director", "Director", EmployeeRole.Director);
+                coordinator.AssignActorToRole(movie, movie.Roles[0], actor);
+                router.CompleteRoute(actor, BuildingType.CastingOffice); time.PassMinutes(60);
+                coordinator.AssignDirector(movie, director);
+                router.CompleteRoute(director, BuildingType.SoundStage); router.CompleteRoute(actor, BuildingType.SoundStage);
+                var take = coordinator.ActiveTake;
+                if (mode == 0) router.Visual.Complete();
+                time.PassMinutes(240);
+                if (mode == 1) router.Visual.Complete();
+                time.PassMinutes(240);
+                return (time.Now.Seconds, take.PerformanceResults.Select(r => r.Confidence).ToArray(), movie.ProductionResult.OverallQuality);
+            }
+            var instant = Run(0); var delayed = Run(1); var absent = Run(2);
+            Assert.That(delayed.end, Is.EqualTo(instant.end)); Assert.That(absent.end, Is.EqualTo(instant.end));
+            Assert.That(delayed.performances, Is.EqualTo(instant.performances)); Assert.That(absent.performances, Is.EqualTo(instant.performances));
+            Assert.That(delayed.quality, Is.EqualTo(instant.quality)); Assert.That(absent.quality, Is.EqualTo(instant.quality));
         }
 
         private ProductionSetup PrepareSingleRoleMovieForFilming()
@@ -492,8 +695,26 @@ namespace SilverScreen.Tests.EditMode
             public Employee Director { get; }
         }
 
-        private sealed class FakeStudioWorldRouter : IStudioWorldRouter
+        private sealed class FakeStudioWorldRouter : IStudioWorldRouter, IProductionPresentation
         {
+            public FakePresentation Visual { get; private set; }
+            public TakePresentationSnapshot Snapshot { get; private set; }
+            public bool NoPresentation;
+            public bool PresentationThrows;
+            public IPresentationSession Begin(TakePresentationSnapshot snapshot)
+            {
+                Snapshot = snapshot;
+                if (PresentationThrows) throw new InvalidOperationException("visual unavailable");
+                if (NoPresentation) return null;
+                return Visual = new FakePresentation();
+            }
+            public sealed class FakePresentation : IPresentationSession
+            {
+                public PresentationStatus Status { get; private set; } = PresentationStatus.Running;
+                public void Complete() => Status = PresentationStatus.Completed;
+                public void Fail() => Status = PresentationStatus.Failed;
+                public void Dispose() => Status = PresentationStatus.Canceled;
+            }
             private readonly List<RouteRequest> _requests = new List<RouteRequest>();
 
             public List<Employee> ReleasedEmployees { get; } = new List<Employee>();
@@ -589,6 +810,8 @@ namespace SilverScreen.Tests.EditMode
                 request.OnArrival?.Invoke();
             }
 
+            public Action GetPendingArrival(Employee employee) => _requests.Find(request => request.Employee == employee).OnArrival;
+
             private sealed class RouteRequest
             {
                 public RouteRequest(Employee employee, BuildingType buildingType, Action onArrival)
@@ -604,41 +827,13 @@ namespace SilverScreen.Tests.EditMode
             }
         }
 
-        private sealed class FakeSimulationTimeService : ISimulationTimeService
+        private sealed class FakeSimulationTimeService : SimulationClock
         {
-            public SimulationDateTime CurrentTime { get; private set; } = new SimulationDateTime(1930, 1, 1, 8, 0);
-            public SimulationSpeed CurrentSpeed { get; private set; } = SimulationSpeed.Normal;
-            public bool IsPaused => CurrentSpeed == SimulationSpeed.Paused;
-            public float TimeScaleMultiplier => CurrentSpeed == SimulationSpeed.Paused ? 0f : (float)CurrentSpeed;
-            public float RealSecondsPerSimulatedMinute { get; set; } = 1f;
-
-            public event Action<SimulationDateTime> OnMinutePassed;
-            public event Action<SimulationDateTime> OnHourPassed { add { } remove { } }
-            public event Action<SimulationDateTime> OnDayPassed { add { } remove { } }
-            public event Action<SimulationDateTime> OnMonthPassed { add { } remove { } }
-            public event Action<SimulationDateTime> OnYearPassed { add { } remove { } }
-            public event Action<SimulationSpeed> OnSpeedChanged;
-
-            public void SetSpeed(SimulationSpeed speed)
-            {
-                CurrentSpeed = speed;
-                OnSpeedChanged?.Invoke(speed);
-            }
-
-            public void TogglePause()
-            {
-                SetSpeed(IsPaused ? SimulationSpeed.Normal : SimulationSpeed.Paused);
-            }
-
             public void PassMinutes(int count)
             {
-                for (int i = 0; i < count; i++)
-                {
-                    var current = CurrentTime;
-                    current.AdvanceMinute(out _, out _, out _, out _);
-                    CurrentTime = current;
-                    OnMinutePassed?.Invoke(CurrentTime);
-                }
+                AdvanceTo(Now + SimulationDuration.FromMinutes(count));
+                while (HasPendingAdvance) Advance(0.0);
+                Assert.That(AdvanceFailure, Is.Null);
             }
         }
     }
@@ -905,8 +1100,11 @@ namespace SilverScreen.Tests.EditMode
                 tier.Amount,
                 new SimulationDateTime(1930, 1, 1, 8, 0),
                 tier.Id);
-            movie.TrySetProductionResult(new MovieProductionResult(quality, quality, quality, quality));
-            if (completed) movie.SetState(MovieProductionState.Completed);
+            if (completed)
+            {
+                ProductionLifecycleRegressionTests.CompleteMovie(movie);
+                movie.TrySetProductionResult(new MovieProductionResult(quality, quality, quality, quality));
+            }
             return movie;
         }
 

@@ -29,6 +29,8 @@ namespace SilverScreen.Domain.Finance
 
         public static BuildingUpkeepDefinition ForType(BuildingType buildingType)
         {
+            // New production facility is charged only when actually built, not in legacy starting defaults.
+            if(buildingType == BuildingType.StageSchool) return new BuildingUpkeepDefinition(BuildingType.StageSchool, "Stage School", Money.FromDollars(2500));
             foreach (var definition in DefaultDefinitions)
             {
                 if (definition.BuildingType == buildingType) return definition;

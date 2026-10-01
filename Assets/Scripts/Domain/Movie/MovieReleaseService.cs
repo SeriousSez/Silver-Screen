@@ -33,7 +33,7 @@ namespace SilverScreen.Domain.Movie
                 return MovieReleaseResult.Failed(MovieReleaseFailure.AlreadyReleased, "This movie has already been released.");
             }
 
-            if (movie.CurrentState != MovieProductionState.Completed)
+            if (!movie.IsProductionComplete)
             {
                 return MovieReleaseResult.Failed(MovieReleaseFailure.ProductionNotCompleted, "Only completed movies can be released.");
             }

@@ -20,6 +20,15 @@ namespace SilverScreen.Presentation.Buildings
         public string FacilityId => _facilityId;
         public int StageNumber => _stageNumber;
 
+        // Only the inactive, newly instantiated construction content can receive a fresh instance identity.
+        private bool _placedIdentityAssigned;
+        public void InitializePlacedClone(string facilityId, int stageNumber)
+        {
+            if (gameObject.activeInHierarchy || _placedIdentityAssigned || string.IsNullOrWhiteSpace(facilityId) || stageNumber < 1)
+                throw new InvalidOperationException("Assign placement identity once, while the new content clone is inactive.");
+            _facilityId = facilityId; _stageNumber = stageNumber; _placedIdentityAssigned = true;
+        }
+
         public void Initialize(string facilityId, int stageNumber, BuildingSign sign)
         {
             if (string.IsNullOrWhiteSpace(facilityId))

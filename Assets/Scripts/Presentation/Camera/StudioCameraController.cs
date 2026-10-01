@@ -49,8 +49,12 @@ namespace SilverScreen.Presentation.Camera
         private float _currentPitch;
 
         private Vector2 _lastMousePosition;
+        private SilverScreen.Presentation.Selection.StudioSelectionController _selection;
+        private SilverScreen.Presentation.Buildings.StudioBuildMode _buildMode;
         private bool _isRightDragging;
         private bool _isMiddleDragging;
+        public Vector3 ManagementTarget => _targetPosition;
+        public float ManagementDistance => _targetDistance;
 
         private void Awake()
         {
@@ -75,6 +79,8 @@ namespace SilverScreen.Presentation.Camera
 
         private void Update()
         {
+            if (_selection == null) _selection = FindAnyObjectByType<SilverScreen.Presentation.Selection.StudioSelectionController>();
+            if (_buildMode == null) _buildMode = FindAnyObjectByType<SilverScreen.Presentation.Buildings.StudioBuildMode>();
             HandlePanInput();
             HandleRotationInput();
             HandleZoomInput();
@@ -145,6 +151,7 @@ namespace SilverScreen.Presentation.Camera
 
         private void HandleRotationInput()
         {
+            if (IsTypingIntoUI()) return;
             float rotationInput = 0f;
 
             var keyboard = Keyboard.current;
@@ -156,6 +163,11 @@ namespace SilverScreen.Presentation.Camera
 
             _targetYaw += rotationInput * _rotationSpeed * UnityEngine.Time.unscaledDeltaTime;
 
+            if (_buildMode?.OwnsRotationGesture == true) { _isRightDragging = false; return; }
+
+            // Only an information-card right-click gesture is claimed by person interaction.
+            // Keyboard rotation, middle pan and zoom remain independent of carrying.
+            if (_selection?.PersonInteraction?.BlocksCameraRightDrag == true) { _isRightDragging = false; return; }
             var mouse = Mouse.current;
             if (mouse != null)
             {
@@ -237,6 +249,14 @@ namespace SilverScreen.Presentation.Camera
         public void FocusOn(Vector3 worldPosition)
         {
             _targetPosition = new Vector3(worldPosition.x, 0f, worldPosition.z);
+        }
+
+        public void FrameManagementView(Vector3 worldPosition, float distance)
+        {
+            _targetPosition = _currentPosition = new Vector3(worldPosition.x, 0f, worldPosition.z);
+            _targetDistance = _currentDistance = Mathf.Clamp(distance, _minZoomDistance, _maxZoomDistance);
+            _currentPitch = CalculatePitchForDistance(_currentDistance);
+            UpdateTransforms();
         }
 
         private float CalculatePitchForDistance(float distance)

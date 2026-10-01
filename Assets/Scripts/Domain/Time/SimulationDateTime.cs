@@ -32,6 +32,8 @@ namespace SilverScreen.Domain.Time
             Minute = Math.Clamp(minute, 0, 59);
         }
 
+        public SimulationInstant ToInstant() => SimulationInstant.FromCalendar(Year, Month, Day, Hour, Minute);
+
         public static bool IsLeapYear(int year)
         {
             return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);

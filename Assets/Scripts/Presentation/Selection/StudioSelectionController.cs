@@ -9,6 +9,7 @@ using SilverScreen.Presentation.Buildings;
 
 namespace SilverScreen.Presentation.Selection
 {
+    [DefaultExecutionOrder(-100)]
     public class StudioSelectionController : MonoBehaviour
     {
         [Header("Layer Masks")]
@@ -20,11 +21,13 @@ namespace SilverScreen.Presentation.Selection
         public EmployeeAgent SelectedAgent { get; private set; }
         public CandidateAgent SelectedCandidate { get; private set; }
         public StageSchoolView SelectedStageSchool { get; private set; }
+        public StudioBuildingView SelectedBuilding { get; private set; }
 
         public event Action<EmployeeAgent> OnSelectionChanged;
         public event Action<CandidateAgent> OnCandidateSelectionChanged;
         public event Action<StageSchoolView> OnStageSchoolSelectionChanged;
 
+        public SilverScreen.Presentation.Interaction.PersonInteractionController PersonInteraction { get; private set; }
         private Vector2 _mouseDownPosition;
         private bool _isMouseDown;
         private UnityEngine.Camera _mainCamera;
@@ -35,10 +38,15 @@ namespace SilverScreen.Presentation.Selection
         private void Awake()
         {
             _mainCamera = UnityEngine.Camera.main;
+            PersonInteraction = GetComponent<SilverScreen.Presentation.Interaction.PersonInteractionController>() ?? gameObject.AddComponent<SilverScreen.Presentation.Interaction.PersonInteractionController>();
+            PersonInteraction.Initialize(this);
         }
 
         private void Update()
         {
+            UpdatePointerReveal();
+            if (FindAnyObjectByType<StudioBuildMode>()?.OwnsWorldInput == true) { _isMouseDown = false; return; }
+            if (PersonInteraction != null && PersonInteraction.HandleInput()) { _isMouseDown = false; return; }
             var mouse = Mouse.current;
             if (mouse == null) return;
 
@@ -106,6 +114,29 @@ namespace SilverScreen.Presentation.Selection
             Deselect();
         }
 
+        private void UpdatePointerReveal()
+        {
+            if (_mainCamera == null) _mainCamera = UnityEngine.Camera.main;
+            if (_mainCamera == null) return;
+            var mouse = Mouse.current;
+            BuildingCutawayController hovered = null;
+            bool allowed = mouse != null && _mainCamera.isActiveAndEnabled &&
+                !(EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()) &&
+                FindAnyObjectByType<StudioBuildMode>()?.IsOpen != true;
+            if (allowed)
+            {
+                var ray = _mainCamera.ScreenPointToRay(mouse.position.ReadValue());
+                float nearest = float.PositiveInfinity;
+                foreach (var building in BuildingCutawayController.Active)
+                    if (building != null && building.Intersects(ray, out float distance) && distance < nearest)
+                    { nearest = distance; hovered = building; }
+                if (hovered != null && Physics.Raycast(ray, out var hit, nearest + .01f, ~0, QueryTriggerInteraction.Ignore) &&
+                    !hit.transform.IsChildOf(hovered.transform)) hovered = null;
+            }
+            foreach (var building in BuildingCutawayController.Active)
+                if (building != null) building.UpdatePointer(building == hovered, _mainCamera.transform.position);
+        }
+
         private void HandleBuildingClick(StudioBuildingView building)
         {
             float now = UnityEngine.Time.unscaledTime;
@@ -114,6 +145,8 @@ namespace SilverScreen.Presentation.Selection
             _lastClickedBuilding = building;
             _lastBuildingClickTime = now;
             Deselect();
+            SelectedBuilding = building;
+            building.GetComponent<BuildingCutawayController>()?.SetReveal(BuildingRevealReason.BuildingFocus, true, _mainCamera.transform.position);
 
             if (isDoubleClick)
             {
@@ -163,7 +196,7 @@ namespace SilverScreen.Presentation.Selection
 
         public void Deselect()
         {
-            bool changed = SelectedAgent != null || SelectedCandidate != null || SelectedStageSchool != null;
+            bool changed = SelectedAgent != null || SelectedCandidate != null || SelectedStageSchool != null || SelectedBuilding != null;
             ClearSelectionVisuals();
             if (!changed) return;
 
@@ -174,6 +207,9 @@ namespace SilverScreen.Presentation.Selection
 
         private void ClearSelectionVisuals()
         {
+            if (SelectedBuilding != null) SelectedBuilding.GetComponent<BuildingCutawayController>()?.SetReveal(
+                BuildingRevealReason.BuildingFocus, false, _mainCamera != null ? _mainCamera.transform.position : Vector3.zero);
+            SelectedBuilding = null;
             if (SelectedAgent != null) SelectedAgent.SetSelected(false);
             if (SelectedCandidate != null) SelectedCandidate.SetSelected(false);
 
@@ -181,5 +217,6 @@ namespace SilverScreen.Presentation.Selection
             SelectedCandidate = null;
             SelectedStageSchool = null;
         }
+        private void OnDisable() => ClearSelectionVisuals();
     }
 }

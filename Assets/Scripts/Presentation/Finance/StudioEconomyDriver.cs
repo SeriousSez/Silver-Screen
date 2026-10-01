@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using SilverScreen.Domain.Finance;
 using SilverScreen.Presentation.Employees;
 using SilverScreen.Presentation.SimulationTime;
@@ -12,6 +14,7 @@ namespace SilverScreen.Presentation.Finance
 
         private StudioFinances _finances;
         private StudioAccountingService _accounting;
+        public Func<IEnumerable<BuildingUpkeepDefinition>> BuildingProvider { get; set; }
 
         public IStudioFinanceService FinanceService
         {
@@ -66,7 +69,7 @@ namespace SilverScreen.Presentation.Finance
                 _timeDriver.TimeService,
                 _finances,
                 () => _employeeManager.AllEmployees,
-                () => BuildingUpkeepDefinition.Defaults);
+                () => BuildingProvider?.Invoke() ?? BuildingUpkeepDefinition.Defaults);
 
             if (GetComponent<StudioFinanceUI>() == null)
             {

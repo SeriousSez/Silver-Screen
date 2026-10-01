@@ -6,7 +6,8 @@ namespace SilverScreen.Domain.Writing
     {
         Protagonist,
         Antagonist,
-        Supporting
+        Supporting,
+        Bit
     }
 
     [Serializable]
