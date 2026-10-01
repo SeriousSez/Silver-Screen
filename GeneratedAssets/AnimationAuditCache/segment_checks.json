@@ -1,0 +1,37 @@
+[
+  {
+    "category": "PARTIAL_OVERLAP_NOT_MERGED",
+    "full_file_id": "file_0661ce56cab35d6b",
+    "segment_file_id": "file_e7f7ab9bb4be61e1",
+    "confidence": "unresolved",
+    "evidence": "Filename identifies a segment candidate; exact contiguous curve samples not established. Retained separately."
+  },
+  {
+    "category": "PARTIAL_OVERLAP_NOT_MERGED",
+    "full_file_id": "file_dee7abc48de12be0",
+    "segment_file_id": "file_07db4f1b1127a035",
+    "confidence": "unresolved",
+    "evidence": "Filename identifies a segment candidate; exact contiguous curve samples not established. Retained separately."
+  },
+  {
+    "category": "PARTIAL_OVERLAP_NOT_MERGED",
+    "full_file_id": "file_9319897c4465ab1d",
+    "segment_file_id": "file_5c91ac11da4da643",
+    "confidence": "unresolved",
+    "evidence": "Filename identifies a segment candidate; exact contiguous curve samples not established. Retained separately."
+  },
+  {
+    "category": "PARTIAL_OVERLAP_NOT_MERGED",
+    "full_file_id": "file_1b6de8dce961c847",
+    "segment_file_id": "file_3e10b9907553c5cc",
+    "confidence": "unresolved",
+    "evidence": "Filename identifies a segment candidate; exact contiguous curve samples not established. Retained separately."
+  },
+  {
+    "category": "PARTIAL_OVERLAP_NOT_MERGED",
+    "full_file_id": "file_21f6e71dccf221cf",
+    "segment_file_id": "file_d22dad9735cdf420",
+    "confidence": "unresolved",
+    "evidence": "Filename identifies a segment candidate; exact contiguous curve samples not established. Retained separately."
+  }
+]
