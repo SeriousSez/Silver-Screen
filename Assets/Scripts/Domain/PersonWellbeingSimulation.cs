@@ -223,7 +223,8 @@ namespace SilverScreen.Domain
 
                 var career = participant.Person.Career;
                 if (!career.IsWorkloadTracking) continue;
-                career.RecordWorkMinute(absoluteMinute, activity == PersonWellbeingActivity.Working, CareerRates);
+                career.RecordWorkMinute(absoluteMinute,
+                    activity == PersonWellbeingActivity.Working && career.CountsAsProfessionalWork, CareerRates);
                 career.AdvanceWorkloadEffects(wellbeing, career.WorkloadState, CareerRates);
                 career.AdvanceRetention(wellbeing, CareerRates);
             }

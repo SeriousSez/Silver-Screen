@@ -36,6 +36,8 @@ namespace SilverScreen.Presentation.Employees
                 var time = GetComponent<SilverScreen.Presentation.SimulationTime.SimulationTimeDriver>();
                 employee.Person.Career.CompleteGoal(PersonCareerGoalType.GetHired, time?.Clock.CurrentTime.Year);
                 time?.Wellbeing.StartCareerTracking(employee.Person);
+                agent.BindAutonomy(time?.Autonomy);
+                time?.Autonomy.Register(employee);
                 if (time != null) agent.AvailabilityChanged += available =>
                 { if (!time.Work.IsDisposed) time.Work.SetResourceAvailable(new SilverScreen.Domain.Resources.ResourceKey("person", employee.Id), available); };
                 OnEmployeeAdded?.Invoke(employee);
@@ -75,6 +77,8 @@ namespace SilverScreen.Presentation.Employees
             BeforeEmploymentChange?.Invoke(employee);
             if (!Workforce.TryDismiss(employee)) return false;
             var wellbeing = GetComponent<SilverScreen.Presentation.SimulationTime.SimulationTimeDriver>()?.Wellbeing;
+            var autonomy = GetComponent<SilverScreen.Presentation.SimulationTime.SimulationTimeDriver>()?.Autonomy;
+            autonomy?.Unregister(employee);
             wellbeing?.StopCareerTracking(employee.Person);
             wellbeing?.Unregister(employee.Person);
             var agent = GetAgent(employee);

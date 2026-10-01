@@ -129,6 +129,7 @@ namespace SilverScreen.Domain
         private decimal _retentionPressureRemainder;
         private bool _workloadTracking;
         private bool _retentionTracking;
+        private bool _countsAsProfessionalWork = true;
 
         public int CareerSatisfaction { get; private set; } = DefaultSatisfaction;
         public int CareerDrive { get; private set; } = DefaultCareerDrive;
@@ -259,6 +260,8 @@ namespace SilverScreen.Domain
         }
 
         internal bool IsWorkloadTracking => _workloadTracking;
+        internal bool CountsAsProfessionalWork => _countsAsProfessionalWork;
+        internal void SetCountsAsProfessionalWork(bool value) => _countsAsProfessionalWork = value;
 
         internal void RecordWorkMinute(long absoluteMinute, bool worked, PersonCareerSimulationRates rates)
         {

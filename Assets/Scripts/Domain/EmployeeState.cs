@@ -10,6 +10,7 @@ namespace SilverScreen.Domain
         Filming,
         Eating,
         Socializing,
+        Recreating,
         Resting,
         Writing,
         DevelopingIdea,
@@ -28,7 +29,8 @@ namespace SilverScreen.Domain
         MovingToWritingStation,
         WriteScreenplay,
         DevelopIdea,
-        Practice
+        Practice,
+        AutonomousActivity
     }
 
     public class EmployeeIntent
