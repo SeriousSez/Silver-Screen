@@ -27,6 +27,11 @@ namespace SilverScreen.Domain.Recruitment
     new TalentProfile(Skill(),Skill(),genres,Skill()),new[]{PersonTraitIds.All[_random.Next(0,PersonTraitIds.All.Length)]});
    return new Candidate(person,600+_random.Next(0,7)*50);
   }
+  public virtual Candidate GenerateForCategory(SimulationDateTime now, RecruitmentCategory category, ProfessionalRole role, bool starter)
+  {
+   if(category==RecruitmentCategory.Talent)return GenerateTalentApplicant(now);
+   return starter?GenerateEntryLevelForRole(now,role):GenerateForRole(now,role);
+  }
   private Candidate GenerateForRole(SimulationDateTime now,ProfessionalRole role,bool entryLevel)
   {
    int age=_random.Next(role==ProfessionalRole.Director?24:18,61);int background=_random.Next(0,entryLevel?2:4);int basis=entryLevel?Math.Clamp(16+background*10+_random.Next(-4,9),10,38):Math.Clamp(24+background*14+_random.Next(-8,10),10,92);int secondaryMax=entryLevel?31:46;int acting=role==ProfessionalRole.Director||role==ProfessionalRole.Writer?_random.Next(10,secondaryMax):basis;int directing=role==ProfessionalRole.Director?basis:_random.Next(8,entryLevel?31:42);int writing=role==ProfessionalRole.Writer?basis:_random.Next(8,entryLevel?31:42);if(role==ProfessionalRole.Extra)acting=Math.Min(acting,58);

@@ -22,6 +22,7 @@ namespace SilverScreen.Tests.EditMode
    public readonly SimulationClock Clock=new SimulationClock();public readonly Router World=new Router();public readonly FacilityApplicantPool Pool=new FacilityApplicantPool();public readonly RecruitmentCoordinator Service;
    public Setup(){Service=new RecruitmentCoordinator(Clock,new CandidateGenerator(new SeededRandomSource(1930)),World);Service.Facilities=Pool;}
    public RecruitmentFacility School(string id="school",bool available=true,int capacity=6,RecruitmentDefinition definition=null){var f=new RecruitmentFacility(id,RecruitmentDestination.StageSchool,new[]{ProfessionalRole.Actor,ProfessionalRole.Director,ProfessionalRole.Extra},capacity,true,definition){IsAvailable=()=>available};Pool.Register(f);return f;}
+   public RecruitmentFacility Services(string id="services",int capacity=6){var f=new RecruitmentFacility(id,RecruitmentDestination.ServiceFacility,new[]{ProfessionalRole.ConstructionWorker,ProfessionalRole.Groundskeeper},capacity);Pool.Register(f);return f;}
    public void Minutes(int n)=>Clock.Advance(n);
    public void Dispose()=>Service.Dispose();
   }
@@ -42,6 +43,27 @@ namespace SilverScreen.Tests.EditMode
    x.Minutes(25);CollectionAssert.AreEqual(new long[]{1,9,17,25},minutes);Assert.That(x.World.Arrivals,Is.EqualTo(4));Assert.That(x.Service.Candidates.All(c=>c.IsTalentApplicant&&c.Status==CandidateStatus.WaitingForRecruitment),Is.True);
    Assert.That(x.Service.Candidates.Select(c=>c.WaitingPositionIndex).Distinct().Count(),Is.EqualTo(4));
   }
+  [Test]public void StudioServicesDeliversExactlySixOnceAcrossReplacement()
+  {
+   using var x=new Setup();var first=x.Services();var times=new List<long>();x.Service.OnCandidateAdded+=c=>times.Add((x.Clock.Now-new SimulationDateTime(1930,1,1,8,0).ToInstant()).Seconds/60);
+   x.Minutes(41);CollectionAssert.AreEqual(new long[]{1,9,17,25,33,41},times);
+   Assert.That(x.Service.Candidates.All(c=>c.IsStarterApplicant&&c.IntakeCategory==RecruitmentCategory.StudioServices),Is.True);
+   Assert.That(x.Service.Capture().Applicants.All(a=>a.HasIntakeCategory&&a.IntakeCategory==RecruitmentCategory.StudioServices&&a.IsStarterApplicant),Is.True);
+   Assert.That(x.Service.StarterRemaining(RecruitmentCategory.StudioServices),Is.Zero);
+   foreach(var c in x.Service.Candidates.ToArray())Assert.That(x.Service.Hire(c,c.JobSought),Is.Not.Null);
+   x.Pool.Remove(first.Id);x.Services("replacement");x.Minutes(180);
+   Assert.That(x.Service.Candidates,Is.Empty);Assert.That(x.Service.CaptureIntakes().Single().StarterTarget,Is.EqualTo(6));
+  }
+  [Test]public void StudioServicesPendingIntakeSurvivesCapacityRouteFailureAndReplacement()
+  {
+   using var x=new Setup();x.World.Complete=false;var first=x.Services(capacity:1);x.Minutes(17);
+   Assert.That(x.Service.StarterRemaining(RecruitmentCategory.StudioServices),Is.EqualTo(6));
+   var inFlight=x.Service.Candidates.Single();x.World.Routes[inFlight.Person.Id](CandidateRouteResult.NavigationRejected,-1);
+   Assert.That(x.Service.StarterRemaining(RecruitmentCategory.StudioServices),Is.EqualTo(6));
+   x.Pool.Remove(first.Id);x.Services("replacement");x.World.Complete=true;x.Minutes(30);
+   Assert.That(x.Service.Candidates.Count,Is.EqualTo(1));
+   Assert.That(x.Service.StarterRemaining(RecruitmentCategory.StudioServices),Is.EqualTo(5));
+  }
   [Test]public void StarterUsesPhysicalWaitingCapacityAndResumesAfterHire()
   {
    using var x=new Setup();var f=x.School(capacity:2);x.Minutes(40);Assert.That(x.Service.Candidates.Count,Is.EqualTo(2));Assert.That(x.Service.StarterRemaining(RecruitmentCategory.Talent),Is.EqualTo(2));
@@ -56,6 +78,18 @@ namespace SilverScreen.Tests.EditMode
   {
    using var x=new Setup();x.World.Complete=false;x.School();x.Minutes(1);var c=x.Service.Candidates.Single();var state=x.Service.CaptureIntakes().Single();Assert.That(state.InFlightPersonIds,Is.EqualTo(new[]{c.Person.Id}));Assert.That(state.RemainingToDispatch,Is.EqualTo(3));
    x.World.Routes[c.Person.Id](CandidateRouteResult.NavigationRejected,-1);Assert.That(x.Service.StarterRemaining(RecruitmentCategory.Talent),Is.EqualTo(4));Assert.That(x.Service.Candidates,Is.Empty);
+  }
+  [Test]public void InFlightStarterReroutesOnFacilityReplacementWithoutLosingItsGrant()
+  {
+   using var x=new Setup();x.World.Complete=false;var old=x.School();x.Minutes(1);var c=x.Service.Candidates.Single();
+   var stale=x.World.Routes[c.Person.Id];var replacement=x.School("replacement");
+   x.Pool.Remove(old.Id);x.Service.FacilityUnavailable(old.Id);
+   stale(CandidateRouteResult.NavigationRejected,-1);
+   Assert.That(c.Status,Is.EqualTo(CandidateStatus.Arriving));
+   x.World.Routes[c.Person.Id](CandidateRouteResult.Started,c.WaitingPositionIndex);
+   Assert.That(c.Status,Is.EqualTo(CandidateStatus.WaitingForRecruitment));
+   Assert.That(old.WaitingReservations,Is.Empty);Assert.That(replacement.WaitingReservations.Count,Is.EqualTo(1));
+   Assert.That(x.Service.StarterRemaining(RecruitmentCategory.Talent),Is.EqualTo(3));
   }
   [Test]public void NormalCadenceWaitsForPhysicalStarterCompletion()
   {

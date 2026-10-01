@@ -95,7 +95,7 @@ namespace SilverScreen.Domain.Recruitment
   private void HandleMinutePassed(SimulationDateTime time)
   {
    AdvanceTalentApplicants();AdvanceCategoryIntakes();
-   for(int i=_candidates.Count-1;i>=0;i--){var c=_candidates[i];if(c.IsTalentApplicant||c.Status!=CandidateStatus.WaitingForRecruitment)continue;c.AdvanceWaitingMinute();if(c.WaitingMinutes>=Configuration.MaximumWaitingMinutes)Reject(c);}
+   for(int i=_candidates.Count-1;i>=0;i--){var c=_candidates[i];if(c.IsTalentApplicant||c.Status!=CandidateStatus.WaitingForRecruitment)continue;if(c.FacilityId!=null&&!CandidateFacilityAvailable(c)){FacilityUnavailable(c.FacilityId);continue;}c.AdvanceWaitingMinute();if(c.WaitingMinutes>=Configuration.MaximumWaitingMinutes)Reject(c);}
    // Existing unconfigured prototype facilities retain their legacy cadence.
    if(--_minutesUntilArrival<=0){TryGenerateArrival(null,true);_minutesUntilArrival=Configuration.ArrivalCadenceMinutes;}
   }
@@ -139,9 +139,10 @@ namespace SilverScreen.Domain.Recruitment
   public void FacilityUnavailable(string id)
   {
    // Called by lifecycle events and reconciled each simulation minute as a safety net.
-   foreach(var candidate in _candidates.Where(c=>c.IsTalentApplicant&&c.FacilityId==id&&c.Status!=CandidateStatus.Departing).ToArray()){
+   foreach(var candidate in _candidates.Where(c=>c.FacilityId==id&&c.Status!=CandidateStatus.Departing).ToArray()){
     ReleaseWaiting(candidate);
-    var next=SelectTalentFacility();
+    var next=candidate.IsTalentApplicant?SelectTalentFacility():Facilities?.Facilities.FirstOrDefault(f=>f.Id!=id&&f.Available&&f.Definition?.Category==candidate.IntakeCategory&&f.Professions.Contains(candidate.JobSought)&&f.HasWaitingCapacity&&
+     (f.IsReachable==null||f.IsReachable()));
     if(next!=null&&next.Id!=id&&next.TryReserve(candidate.Person.Id,out int slot)){
      candidate.Reassign(next,slot);OnCandidateChanged?.Invoke(candidate);RouteTalent(candidate);
     }else Reject(candidate);

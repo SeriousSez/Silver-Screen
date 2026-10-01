@@ -65,8 +65,10 @@ namespace SilverScreen.Tests.EditMode
     foreach(var worker in crew){if(!construction.Service.HasAssignment(worker.Id))construction.Service.AssignWorker(b,worker);construction.Service.WorkerArrived(worker.Id);}
     time.Clock.Advance(60);while(!time.Clock.IsBoundaryComplete){time.Clock.Advance(0);yield return null;}yield return null;
    }
-   Assert.That(b.IsOperational,Is.True);float deadline=Time.realtimeSinceStartup+45;while(construction.NavigationUpdatePending&&Time.realtimeSinceStartup<deadline)yield return null;
+   Assert.That(b.IsOperational,Is.True);time.Clock.SetSpeed(SimulationSpeed.Paused);float deadline=Time.realtimeSinceStartup+45;while(construction.NavigationUpdatePending&&Time.realtimeSinceStartup<deadline)yield return null;
    Assert.That(construction.NavigationUpdatePending,Is.False);Assert.That(root.GetComponent<StageSchoolApplicantFacility>(),Is.Not.Null);Assert.That(employees.AllEmployees,Is.Empty);Note("Operational production A4/B2 school; zero studio employees.");
+   var operationalMinute=time.Clock.Now.Seconds/60;
+   time.Clock.SetSpeed(SimulationSpeed.VeryFast);
 
    float until=Time.realtimeSinceStartup+120;
    while(Time.realtimeSinceStartup<until){
@@ -76,14 +78,23 @@ namespace SilverScreen.Tests.EditMode
    }
    Assert.That(arrivals.Count,Is.EqualTo(4));Assert.That(arrivals.All(c=>c.Status==CandidateStatus.WaitingForRecruitment),Is.True);
    Assert.That(arrivals.Select(c=>c.WaitingPositionIndex).Distinct().Count(),Is.EqualTo(4));
-   for(int i=1;i<times.Count;i++)Assert.That(times[i]-times[i-1],Is.GreaterThanOrEqualTo(8*60));
-   foreach(var c in arrivals){var a=recruitment.WorldRouter.GetAgent(c);Assert.That(Vector3.Distance(sources[c.Person.Id],a.transform.position),Is.GreaterThan(2));Note(c.Person.Id+" source="+sources[c.Person.Id]+" waiting="+a.transform.position+" slot="+c.WaitingPositionIndex);}
+   CollectionAssert.AreEqual(new long[]{1,9,17,25},times.Select(t=>t/60-operationalMinute).ToArray());
+   var area=root.GetComponent<CandidateWaitingAreaView>();
+   foreach(var c in arrivals){var a=recruitment.WorldRouter.GetAgent(c);Assert.That(Vector3.Distance(sources[c.Person.Id],a.transform.position),Is.GreaterThan(2));var waiting=area.WaitingPosition(c.WaitingPositionIndex).position;var tolerance=a.GetComponent<UnityEngine.AI.NavMeshAgent>().stoppingDistance+.25f;Assert.That(Vector2.Distance(new Vector2(a.transform.position.x,a.transform.position.z),new Vector2(waiting.x,waiting.z)),Is.LessThanOrEqualTo(tolerance));Note(c.Person.Id+" source="+sources[c.Person.Id]+" waiting="+a.transform.position+" slot="+c.WaitingPositionIndex);}
    Assert.That(recruitment.Coordinator.StarterRemaining(RecruitmentCategory.Talent),Is.Zero);
+   var intake=recruitment.Coordinator.CaptureIntakes().Single(s=>s.Category==RecruitmentCategory.Talent);
+   Assert.That(intake.RemainingToDispatch,Is.Zero);Assert.That(intake.InFlightPersonIds,Is.Empty);
+   Assert.That(arrivals.All(c=>c.IsStarterApplicant&&c.IntakeCategory==RecruitmentCategory.Talent),Is.True);
+   time.Clock.Advance(8*time.Clock.RealSecondsPerSimulatedMinute/time.Clock.TimeScaleMultiplier);
+   while(!time.Clock.IsBoundaryComplete){time.Clock.Advance(0);yield return null;}
+   Assert.That(arrivals.Count,Is.EqualTo(4),"No fifth starter after the final spacing interval.");
    Assert.That(employees.AllEmployees,Is.Empty);
    Note("Four profession-neutral people navigated from world entry into four distinct authored waiting positions. Simulation timestamps: "+string.Join(",",times));
    var camera=UnityEngine.Camera.main;foreach(var driver in Object.FindObjectsByType<SilverScreen.Presentation.Camera.StudioCameraController>(FindObjectsSortMode.None))driver.enabled=false;
    camera.transform.position=root.transform.TransformPoint(new Vector3(0,23,-16));camera.transform.LookAt(root.transform.TransformPoint(new Vector3(0,0,-5)));camera.orthographic=true;camera.orthographicSize=14;
    SilverScreen.Editor.EnvironmentArt.StudioServicesProductionReview.Capture(camera,Out+"/starter-waiting.png",camera.transform.position,root.transform.TransformPoint(new Vector3(0,0,-5)),45,true,14);
+   Assert.That(recruitment.Coordinator.Hire(arrivals[0],ProfessionalRole.Actor),Is.Not.Null);
+   Assert.That(area.RecruitmentFacility.WaitingReservations.Count,Is.EqualTo(3));
   }
  }
 }

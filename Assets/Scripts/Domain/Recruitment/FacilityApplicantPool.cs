@@ -47,7 +47,13 @@ namespace SilverScreen.Domain.Recruitment
             _facilities.Add(facility);Registered?.Invoke(facility);
         }
         public bool Contains(string id) => _facilities.Any(f => f.Id == id);
-        public void Remove(string id) => _facilities.RemoveAll(f => f.Id == id);
+        public void Remove(string id)
+        {
+            foreach (var facility in _facilities.Where(f => f.Id == id))
+                foreach (var personId in facility.WaitingReservations.Keys.ToArray())
+                    facility.Release(personId);
+            _facilities.RemoveAll(f => f.Id == id);
+        }
         public RecruitmentFacility Select(Func<string, bool> hasCapacity, out ProfessionalRole role)
         {
             role = default;
@@ -85,5 +91,7 @@ namespace SilverScreen.Domain.Recruitment
         public int WaitingMinutes, WaitingPositionIndex, TravelMinutes;
         public RecruitmentDestination Destination;
         public bool ProfessionNeutral;
+        public bool HasIntakeCategory, IsStarterApplicant;
+        public RecruitmentCategory IntakeCategory;
     }
 }

@@ -81,9 +81,9 @@ namespace SilverScreen.Domain.Recruitment
     var authored=definition.StarterProfessionSequence[(state.Target-state.Remaining)%definition.StarterProfessionSequence.Length];
     if(facility.Professions.Contains(authored))role=authored;
    }
-   var candidate=facility.ProfessionNeutral?_generator.GenerateTalentApplicant(_time.CurrentTime):
-    starter?_generator.GenerateEntryLevelForRole(_time.CurrentTime,role):_generator.GenerateForRole(_time.CurrentTime,role);
+   var candidate=_generator.GenerateForCategory(_time.CurrentTime,state.Category,role,starter);
    if(!facility.TryReserve(candidate.Person.Id,out int slot))return null;
+   candidate.AssignIntake(state.Category,starter);
    candidate.AssignFacility(facility);candidate.ReserveWaiting(slot);
    if(starter){state.Remaining--;state.InFlight.Add(candidate.Person.Id);}
    Population.Register(candidate.Person);_history.Add(candidate);_candidates.Add(candidate);OnCandidateAdded?.Invoke(candidate);
@@ -95,7 +95,8 @@ namespace SilverScreen.Domain.Recruitment
   {
    foreach(var state in _intakes.Values){
     if(!state.InFlight.Remove(candidate.Person.Id))continue;
-    var definition=state.Definition;
+    var definition=state.Definition??Facilities?.Facilities.FirstOrDefault(f=>f.Definition?.Category==state.Category)?.Definition;
+    if(definition==null)throw new InvalidOperationException("A starter arrival requires its recruitment category definition.");
     if(!arrived){state.Remaining++;state.Minutes=definition.RetryMinutes;}
     else if(state.Complete)state.Minutes=definition.NormalCadenceMinutes;
     return;
