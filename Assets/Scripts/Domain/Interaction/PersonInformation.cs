@@ -43,6 +43,10 @@ namespace SilverScreen.Domain.Interaction
         public void Collect(PersonInformationContext c, List<PersonInformation> cards)
         {
             if (c.Person == null) return;
+            var wellbeing = c.Person.Wellbeing;
+            string personWellbeing = "Energy: " + wellbeing.Energy + "/100; Stress: " + wellbeing.Stress +
+                "/100; Boredom: " + wellbeing.Boredom + "/100; Mood: " + wellbeing.Mood + "/100";
+            cards.Add(new PersonInformation("Person wellbeing", 0, 25, personWellbeing, personWellbeing));
             var e = c.Employee;
             if (c.Candidate != null)
                 cards.Add(new PersonInformation("Applicant", 0, 100, "Looking for work", (c.Candidate.IsTalentApplicant ? "Talent applicant; no profession chosen" : "Unemployed; seeking " + c.Candidate.JobSought) + "\nExpected salary: $" + c.Candidate.SalaryExpectation + "/month\nAny available profession may be chosen."));
