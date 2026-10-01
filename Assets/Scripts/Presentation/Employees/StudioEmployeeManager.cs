@@ -34,6 +34,7 @@ namespace SilverScreen.Presentation.Employees
             if (added)
             {
                 var time = GetComponent<SilverScreen.Presentation.SimulationTime.SimulationTimeDriver>();
+                employee.Person.Career.CompleteGoal(PersonCareerGoalType.GetHired, time?.Clock.CurrentTime.Year);
                 time?.Wellbeing.StartCareerTracking(employee.Person);
                 if (time != null) agent.AvailabilityChanged += available =>
                 { if (!time.Work.IsDisposed) time.Work.SetResourceAvailable(new SilverScreen.Domain.Resources.ResourceKey("person", employee.Id), available); };

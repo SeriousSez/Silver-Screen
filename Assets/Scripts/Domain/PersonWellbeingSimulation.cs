@@ -13,12 +13,27 @@ namespace SilverScreen.Domain
         public decimal UnderusedThresholdPercent { get; set; } = 20m;
         public decimal OverworkedThresholdPercent { get; set; } = 60m;
         public decimal UnderusedSatisfactionPerDay { get; set; } = -2m;
+        public decimal UnderuseDriveSensitivityPer50 { get; set; } = 1m;
         public decimal HealthySatisfactionPerDay { get; set; } = 1m;
         public decimal HealthySatisfactionCeiling { get; set; } = 80m;
         public decimal OverworkedSatisfactionPerDay { get; set; } = -1m;
         public decimal UnderusedBoredomPerDay { get; set; } = 2m;
         public decimal OverworkedStressPerDay { get; set; } = 2m;
         public decimal OverworkedEnergyPerDay { get; set; } = -2m;
+        public int RetentionLowSatisfactionThreshold { get; set; } = 40;
+        public int RetentionLowMoodThreshold { get; set; } = 35;
+        public int RetentionHighStressThreshold { get; set; } = 75;
+        public int RetentionHighDriveThreshold { get; set; } = 75;
+        public int RetentionHealthySatisfactionThreshold { get; set; } = 60;
+        public int RetentionHealthyMoodThreshold { get; set; } = 50;
+        public int RetentionManageableStressThreshold { get; set; } = 50;
+        public decimal RetentionPressurePerNegativeSignalDay { get; set; } = 1m;
+        public decimal RetentionMaximumPressurePerDay { get; set; } = 3m;
+        public decimal RetentionRecoveryPerDay { get; set; } = 1m;
+
+        internal decimal UnderusedSatisfactionRate(int careerDrive) =>
+            UnderusedSatisfactionPerDay -
+            (Math.Clamp(careerDrive, 0, 100) - 50) * UnderuseDriveSensitivityPer50 / 50m;
 
         internal void Validate()
         {
@@ -27,6 +42,25 @@ namespace SilverScreen.Domain
             if (UnderusedThresholdPercent < 0 || OverworkedThresholdPercent > 100 ||
                 UnderusedThresholdPercent >= OverworkedThresholdPercent)
                 throw new ArgumentOutOfRangeException(nameof(UnderusedThresholdPercent), "Workload thresholds must be ordered within 0-100.");
+            ValidatePercent(RetentionLowSatisfactionThreshold, nameof(RetentionLowSatisfactionThreshold));
+            ValidatePercent(RetentionLowMoodThreshold, nameof(RetentionLowMoodThreshold));
+            ValidatePercent(RetentionHighStressThreshold, nameof(RetentionHighStressThreshold));
+            ValidatePercent(RetentionHighDriveThreshold, nameof(RetentionHighDriveThreshold));
+            ValidatePercent(RetentionHealthySatisfactionThreshold, nameof(RetentionHealthySatisfactionThreshold));
+            ValidatePercent(RetentionHealthyMoodThreshold, nameof(RetentionHealthyMoodThreshold));
+            ValidatePercent(RetentionManageableStressThreshold, nameof(RetentionManageableStressThreshold));
+            if (UnderuseDriveSensitivityPer50 < 0)
+                throw new ArgumentOutOfRangeException(nameof(UnderuseDriveSensitivityPer50));
+            if (RetentionPressurePerNegativeSignalDay < 0 ||
+                RetentionMaximumPressurePerDay < 0 ||
+                RetentionRecoveryPerDay < 0)
+                throw new ArgumentOutOfRangeException(nameof(RetentionPressurePerNegativeSignalDay),
+                    "Career sensitivity and retention rates cannot be negative.");
+        }
+
+        private static void ValidatePercent(int value, string name)
+        {
+            if (value < 0 || value > 100) throw new ArgumentOutOfRangeException(name);
         }
     }
 
@@ -191,6 +225,7 @@ namespace SilverScreen.Domain
                 if (!career.IsWorkloadTracking) continue;
                 career.RecordWorkMinute(absoluteMinute, activity == PersonWellbeingActivity.Working, CareerRates);
                 career.AdvanceWorkloadEffects(wellbeing, career.WorkloadState, CareerRates);
+                career.AdvanceRetention(wellbeing, CareerRates);
             }
         }
 

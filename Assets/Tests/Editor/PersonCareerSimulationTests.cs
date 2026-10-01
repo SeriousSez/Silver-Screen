@@ -280,7 +280,7 @@ namespace SilverScreen.Tests.EditMode
             AdvanceMinutes(clock, 60);
             Assert.That(employee.Person, Is.SameAs(person));
             Assert.That(person.Career.WorkloadObservedMinutes, Is.EqualTo(60));
-            Assert.That(person.Career.CareerSatisfaction, Is.EqualTo(70));
+            Assert.That(person.Career.CareerSatisfaction, Is.EqualTo(75));
         }
 
         [Test]
@@ -379,6 +379,7 @@ namespace SilverScreen.Tests.EditMode
         {
             var person = Person();
             person.Career.SetCareerSatisfaction(62);
+            person.Career.SetCareerDrive(65);
             var information = new List<PersonInformation>();
             new PersonInformationService().Collect(
                 new PersonInformationContext { Person = person, Date = new SimulationDateTime(1930, 1, 1, 0, 0) },
@@ -387,6 +388,350 @@ namespace SilverScreen.Tests.EditMode
             Assert.That(card, Is.Not.Null);
             StringAssert.Contains("62/100", card.Summary);
             StringAssert.Contains("Insufficient history", card.Expanded);
+            StringAssert.Contains("Career drive: 65/100", card.Expanded);
+            StringAssert.Contains("GetHired: Active (0%)", card.Expanded);
+            StringAssert.Contains("Retention: NotEmployed", card.Expanded);
+        }
+
+        [Test]
+        public void CareerDriveDefaultsToNeutralAndClampsToItsDomainRange()
+        {
+            var career = Person().Career;
+            Assert.That(career.CareerDrive, Is.EqualTo(50));
+            career.SetCareerDrive(-1);
+            Assert.That(career.CareerDrive, Is.Zero);
+            career.SetCareerDrive(101);
+            Assert.That(career.CareerDrive, Is.EqualTo(100));
+        }
+
+        [Test]
+        public void CareerDriveSurvivesHiringAndProfessionChanges()
+        {
+            var person = Person("drive-lifecycle", ProfessionalRole.Actor);
+            person.Career.SetCareerDrive(83);
+            var careerSnapshot = person.CaptureCareer();
+            careerSnapshot.RetentionPressure = 37;
+            person.RestoreCareer(careerSnapshot);
+            using var recruitment = Recruitment(person);
+            var applicant = recruitment.TryGenerateArrival();
+            var employee = recruitment.Hire(applicant);
+            Assert.That(employee.Person.Career.CareerDrive, Is.EqualTo(83));
+            employee.ChangeProfession(EmployeeRole.Director);
+            employee.ChangeProfession(EmployeeRole.Extra);
+            Assert.That(person.Career.CareerDrive, Is.EqualTo(83));
+            Assert.That(person.Career.RetentionPressure, Is.EqualTo(37));
+        }
+
+        [TestCase(0, 69)]
+        [TestCase(50, 68)]
+        [TestCase(100, 67)]
+        public void UnderuseSensitivityScalesWithCareerDrive(int drive, int expectedSatisfaction)
+        {
+            var setup = TrackedPerson();
+            using (setup.simulation)
+            {
+                setup.person.Career.SetCareerDrive(drive);
+                AdvanceMinutes(setup.clock, 2 * 1440);
+                Assert.That(setup.person.Career.CareerSatisfaction, Is.EqualTo(expectedSatisfaction));
+            }
+        }
+
+        [Test]
+        public void CareerDriveDoesNotChangeHealthyWorkloadRecovery()
+        {
+            int? expectedSatisfaction = null;
+            for (int i = 0; i <= 100; i += 50)
+            {
+                var clock = new SimulationClock();
+                var person = Person("healthy-drive-person-" + i.ToString());
+                person.Career.SetCareerDrive(i);
+                person.Career.SetCareerSatisfaction(60);
+                using var simulation = new PersonWellbeingSimulation(clock);
+                simulation.StartCareerTracking(person);
+                SustainModerateWork((clock, person, simulation), 9);
+                Assert.That(person.Career.WorkloadState, Is.EqualTo(PersonWorkloadState.Healthy));
+                expectedSatisfaction ??= person.Career.CareerSatisfaction;
+                Assert.That(person.Career.CareerSatisfaction, Is.EqualTo(expectedSatisfaction));
+                Assert.That(person.Career.CareerSatisfaction, Is.GreaterThan(60));
+                Assert.That(person.Career.CareerSatisfaction, Is.LessThanOrEqualTo(80));
+            }
+        }
+
+        [Test]
+        public void GetHiredGoalExistsForApplicantsAndHiringCompletesItOnceWithReward()
+        {
+            var person = Person("goal-hiring", ProfessionalRole.Actor);
+            person.Career.SetCareerSatisfaction(60);
+            var goal = GoalFor(person.Career, PersonCareerGoalType.GetHired);
+            Assert.That(goal.Status, Is.EqualTo(PersonCareerGoalStatus.Active));
+            Assert.That(goal.Progress, Is.Zero);
+
+            using var recruitment = Recruitment(person);
+            var employee = recruitment.Hire(recruitment.TryGenerateArrival());
+            Assert.That(employee, Is.Not.Null);
+            Assert.That(person.Career.CareerSatisfaction, Is.EqualTo(65));
+            Assert.That(person.Wellbeing.Mood, Is.EqualTo(PersonWellbeing.DefaultMood));
+            goal = GoalFor(person.Career, PersonCareerGoalType.GetHired);
+            Assert.That(goal.Status, Is.EqualTo(PersonCareerGoalStatus.Completed));
+            Assert.That(goal.Progress, Is.EqualTo(100));
+            Assert.That(goal.CompletedYear, Is.EqualTo(1930));
+
+            employee.ChangeProfession(EmployeeRole.Director);
+            employee.ChangeProfession(EmployeeRole.Extra);
+            Assert.That(person.Career.CareerSatisfaction, Is.EqualTo(65));
+        }
+
+        [Test]
+        public void GoalCompletionRewardCanBeConfigured()
+        {
+            var person = Person("configured-goal-reward", ProfessionalRole.Actor);
+            person.Career.GoalCompletionSatisfactionReward = 8;
+            using var recruitment = Recruitment(person);
+            Assert.That(recruitment.Hire(recruitment.TryGenerateArrival()), Is.Not.Null);
+            Assert.That(person.Career.CareerSatisfaction, Is.EqualTo(78));
+        }
+
+        [Test]
+        public void FirstProfessionalAssignmentGoalRemainsAnExplicitIncompleteExtensionPoint()
+        {
+            var setup = TrackedPerson();
+            using (setup.simulation)
+            {
+                setup.person.Career.AddGoal(PersonCareerGoalType.GetFirstProfessionalAssignment);
+                setup.person.Wellbeing.SetActivity(PersonWellbeingActivity.Working);
+                AdvanceMinutes(setup.clock, 60);
+                Assert.That(GoalFor(setup.person.Career, PersonCareerGoalType.GetFirstProfessionalAssignment).Status,
+                    Is.EqualTo(PersonCareerGoalStatus.Active));
+            }
+        }
+
+        [Test]
+        public void CareerGoalsAndDriveSurvivePersonCareerSnapshot()
+        {
+            var person = Person("goal-snapshot", ProfessionalRole.Actor);
+            person.Career.SetCareerDrive(91);
+            using (var recruitment = Recruitment(person))
+                Assert.That(recruitment.Hire(recruitment.TryGenerateArrival()), Is.Not.Null);
+            var snapshot = person.CaptureCareer();
+            var restored = Person("goal-snapshot-restored");
+            restored.RestoreCareer(snapshot);
+            Assert.That(restored.Career.CareerDrive, Is.EqualTo(91));
+            Assert.That(GoalFor(restored.Career, PersonCareerGoalType.GetHired).Progress, Is.EqualTo(100));
+            Assert.That(GoalFor(restored.Career, PersonCareerGoalType.GetHired).Status,
+                Is.EqualTo(PersonCareerGoalStatus.Completed));
+            Assert.That(GoalFor(restored.Career, PersonCareerGoalType.GetHired).HasCompletedYear, Is.True);
+            Assert.That(restored.Career.CareerSatisfaction, Is.EqualTo(75));
+        }
+
+        [Test]
+        public void ApplicantDoesNotAccumulateRetentionPressure()
+        {
+            var setup = TrackedPerson(RetentionRates(), NeutralRetentionWellbeingRates());
+            using (setup.simulation)
+            {
+                setup.person.Career.SetCareerSatisfaction(20);
+                setup.person.Wellbeing.ApplyDelta(PersonWellbeingDimension.Mood, -50);
+                setup.person.Wellbeing.ApplyDelta(PersonWellbeingDimension.Stress, 80);
+                setup.simulation.StopCareerTracking(setup.person);
+                setup.simulation.Register(setup.person);
+                AdvanceMinutes(setup.clock, 20 * 1440);
+                Assert.That(setup.person.Career.RetentionPressure, Is.Zero);
+                Assert.That(setup.person.Career.RetentionState, Is.EqualTo(PersonRetentionState.NotEmployed));
+            }
+        }
+
+        [Test]
+        public void HealthyEmployeeAndOneShortNegativePeriodRemainContent()
+        {
+            var healthy = TrackedPerson(RetentionRates(), NeutralRetentionWellbeingRates());
+            using (healthy.simulation)
+            {
+                AdvanceMinutes(healthy.clock, 16 * 60);
+                for (int day = 0; day < 5; day++)
+                {
+                    healthy.person.Wellbeing.SetActivity(PersonWellbeingActivity.Working);
+                    AdvanceMinutes(healthy.clock, 8 * 60);
+                    healthy.person.Wellbeing.SetActivity(PersonWellbeingActivity.Idle);
+                    AdvanceMinutes(healthy.clock, day == 4 ? 16 * 60 - 1 : 16 * 60);
+                }
+                Assert.That(healthy.person.Career.WorkloadState, Is.EqualTo(PersonWorkloadState.Healthy));
+                Assert.That(healthy.person.Career.RetentionPressure, Is.Zero);
+                Assert.That(healthy.person.Career.RetentionState, Is.EqualTo(PersonRetentionState.Content));
+            }
+
+            var shortPeriod = TrackedPerson(RetentionRates(), NeutralRetentionWellbeingRates());
+            using (shortPeriod.simulation)
+            {
+                shortPeriod.person.Career.SetCareerSatisfaction(30);
+                AdvanceMinutes(shortPeriod.clock, 1440);
+                Assert.That(shortPeriod.person.Career.RetentionPressure, Is.LessThan(25));
+                Assert.That(shortPeriod.person.Career.RetentionState, Is.EqualTo(PersonRetentionState.Content));
+            }
+        }
+
+        [TestCase("satisfaction")]
+        [TestCase("stress")]
+        [TestCase("mood")]
+        [TestCase("high-drive-underuse")]
+        public void SustainedNegativeConditionsRaiseRetentionPressure(string condition)
+        {
+            var setup = TrackedPerson(RetentionRates(), NeutralRetentionWellbeingRates());
+            using (setup.simulation)
+            {
+                switch (condition)
+                {
+                    case "satisfaction":
+                        setup.person.Career.SetCareerSatisfaction(30);
+                        break;
+                    case "stress":
+                        setup.person.Wellbeing.ApplyDelta(PersonWellbeingDimension.Stress, 80);
+                        break;
+                    case "mood":
+                        setup.person.Wellbeing.ApplyDelta(PersonWellbeingDimension.Mood, -50);
+                        break;
+                    case "high-drive-underuse":
+                        setup.person.Career.SetCareerDrive(90);
+                        break;
+                }
+
+                AdvanceMinutes(setup.clock, 30 * 1440);
+                Assert.That(setup.person.Career.RetentionPressure, Is.GreaterThanOrEqualTo(25));
+                Assert.That(setup.person.Career.RetentionState, Is.EqualTo(PersonRetentionState.Restless));
+            }
+        }
+
+        [Test]
+        public void RetentionPressureRecoversGraduallyUnderHealthyConditions()
+        {
+            var setup = TrackedPerson(RetentionRates(), NeutralRetentionWellbeingRates());
+            using (setup.simulation)
+            {
+                var snapshot = setup.person.CaptureCareer();
+                snapshot.RetentionPressure = 40;
+                setup.person.RestoreCareer(snapshot);
+                setup.simulation.StartCareerTracking(setup.person);
+                AdvanceMinutes(setup.clock, 16 * 60);
+                for (int day = 0; day < 5; day++)
+                {
+                    setup.person.Wellbeing.SetActivity(PersonWellbeingActivity.Working);
+                    AdvanceMinutes(setup.clock, 8 * 60);
+                    setup.person.Wellbeing.SetActivity(PersonWellbeingActivity.Idle);
+                    AdvanceMinutes(setup.clock, day == 4 ? 16 * 60 - 1 : 16 * 60);
+                }
+                Assert.That(setup.person.Career.WorkloadState, Is.EqualTo(PersonWorkloadState.Healthy));
+                Assert.That(setup.person.Career.RetentionPressure, Is.LessThan(40));
+                Assert.That(setup.person.Career.RetentionPressure, Is.GreaterThan(0));
+            }
+        }
+
+        [Test]
+        public void RetentionPressureClampsAndStateBandsAreDerived()
+        {
+            var person = Person();
+            var career = person.Career;
+            var snapshot = career.Capture();
+            using var simulation = new PersonWellbeingSimulation(new SimulationClock());
+            foreach (var testCase in new[]
+            {
+                (pressure: -10, expected: 0, state: PersonRetentionState.Content),
+                (pressure: 25, expected: 25, state: PersonRetentionState.Restless),
+                (pressure: 50, expected: 50, state: PersonRetentionState.Unhappy),
+                (pressure: 75, expected: 75, state: PersonRetentionState.ConsideringLeaving),
+                (pressure: 110, expected: 100, state: PersonRetentionState.ConsideringLeaving)
+            })
+            {
+                snapshot.RetentionPressure = testCase.pressure;
+                career.Restore(snapshot);
+                simulation.StartCareerTracking(person);
+                Assert.That(career.RetentionPressure, Is.EqualTo(testCase.expected));
+                Assert.That(career.RetentionState, Is.EqualTo(testCase.state));
+            }
+        }
+
+        [Test]
+        public void ConsideringLeavingDoesNotDismissOrDisableAnEmployee()
+        {
+            var person = Person("no-resignation", ProfessionalRole.Actor);
+            var employee = new Employee(person, EmployeeRole.Actor, 1000);
+            var workforce = new WorkforceRoster();
+            Assert.That(workforce.Add(employee), Is.True);
+            var snapshot = person.CaptureCareer();
+            snapshot.RetentionPressure = 90;
+            person.RestoreCareer(snapshot);
+            using var simulation = new PersonWellbeingSimulation(new SimulationClock());
+            simulation.StartCareerTracking(person);
+            Assert.That(person.Career.RetentionState, Is.EqualTo(PersonRetentionState.ConsideringLeaving));
+            Assert.That(employee.IsEmployed, Is.True);
+            Assert.That(workforce.Contains(employee), Is.True);
+        }
+
+        [Test]
+        public void CareerSnapshotPreservesRetentionPressureAndFractionalProgress()
+        {
+            var setup = TrackedPerson(RetentionRates(), NeutralRetentionWellbeingRates());
+            using (setup.simulation)
+            {
+                setup.person.Career.SetCareerSatisfaction(30);
+                AdvanceMinutes(setup.clock, 3 * 1440 + 100);
+                var snapshot = setup.person.CaptureCareer();
+                var restored = Person("retention-restored");
+                restored.RestoreCareer(snapshot);
+                using var restoredSimulation = new PersonWellbeingSimulation(
+                    setup.clock, NeutralRetentionWellbeingRates(), RetentionRates());
+                restoredSimulation.StartCareerTracking(restored);
+                AdvanceMinutes(setup.clock, 1440);
+                Assert.That(restored.Career.RetentionPressure, Is.EqualTo(setup.person.Career.RetentionPressure));
+                Assert.That(restored.Career.RetentionState, Is.EqualTo(setup.person.Career.RetentionState));
+            }
+        }
+
+        [Test]
+        public void PauseStopsRetentionPressureProgression()
+        {
+            var setup = TrackedPerson(RetentionRates(), NeutralRetentionWellbeingRates());
+            using (setup.simulation)
+            {
+                setup.person.Career.SetCareerSatisfaction(30);
+                setup.clock.SetSpeed(SimulationSpeed.Paused);
+                var start = setup.clock.Now;
+                setup.clock.AdvanceTo(start + SimulationDuration.FromDays(30));
+                Assert.That(setup.person.Career.RetentionPressure, Is.Zero);
+            }
+        }
+
+        [TestCase(SimulationSpeed.Normal, 2880)]
+        [TestCase(SimulationSpeed.Fast, 1440)]
+        [TestCase(SimulationSpeed.VeryFast, 960)]
+        public void EqualSimulationTimeProducesEquivalentRetentionResults(SimulationSpeed speed, double realSeconds)
+        {
+            var setup = TrackedPerson(RetentionRates(), NeutralRetentionWellbeingRates());
+            using (setup.simulation)
+            {
+                setup.person.Career.SetCareerSatisfaction(30);
+                setup.clock.SetSpeed(speed);
+                setup.clock.Advance(realSeconds);
+                Assert.That(setup.person.Career.RetentionPressure, Is.EqualTo(1));
+                Assert.That(setup.person.Career.RetentionState, Is.EqualTo(PersonRetentionState.Content));
+            }
+        }
+
+        [Test]
+        public void TwoPeopleMaintainIndependentCareerDriveAndRetentionState()
+        {
+            var clock = new SimulationClock();
+            var pressured = Person("pressure-person");
+            var content = Person("content-person");
+            pressured.Career.SetCareerSatisfaction(30);
+            content.Career.SetCareerDrive(80);
+            using var simulation = new PersonWellbeingSimulation(
+                clock, NeutralRetentionWellbeingRates(), RetentionRates());
+            simulation.StartCareerTracking(pressured);
+            content.Wellbeing.SetActivity(PersonWellbeingActivity.Working);
+            simulation.StartCareerTracking(content);
+            AdvanceMinutes(clock, 30 * 1440);
+            Assert.That(pressured.Career.RetentionPressure, Is.GreaterThan(0));
+            Assert.That(content.Career.RetentionPressure, Is.Zero);
+            Assert.That(content.Career.CareerDrive, Is.EqualTo(80));
         }
 
         private static void SustainModerateWork(
@@ -411,6 +756,44 @@ namespace SilverScreen.Tests.EditMode
             simulation.StartCareerTracking(person);
             return (clock, person, simulation);
         }
+
+        private static PersonCareerGoal GoalFor(PersonCareer career, PersonCareerGoalType type)
+        {
+            foreach (var goal in career.Goals)
+                if (goal.Type == type) return goal;
+            return null;
+        }
+
+        private static PersonCareerSimulationRates RetentionRates() => new PersonCareerSimulationRates
+        {
+            EvaluationDays = 1,
+            GracePeriodMinutes = 1,
+            UnderusedSatisfactionPerDay = 0m,
+            HealthySatisfactionPerDay = 0m,
+            OverworkedSatisfactionPerDay = 0m,
+            UnderusedBoredomPerDay = 0m,
+            OverworkedStressPerDay = 0m,
+            OverworkedEnergyPerDay = 0m
+        };
+
+        private static PersonWellbeingRates NeutralRetentionWellbeingRates() => new PersonWellbeingRates
+        {
+            IdleEnergyPerHour = 0m,
+            IdleStressPerHour = 0m,
+            IdleBoredomPerHour = 0m,
+            WorkingEnergyPerHour = 0m,
+            WorkingStressPerHour = 0m,
+            WorkingBoredomPerHour = 0m,
+            RestingEnergyPerHour = 0m,
+            RestingStressPerHour = 0m,
+            RestingBoredomPerHour = 0m,
+            SocializingEnergyPerHour = 0m,
+            SocializingStressPerHour = 0m,
+            SocializingBoredomPerHour = 0m,
+            RecreationEnergyPerHour = 0m,
+            RecreationStressPerHour = 0m,
+            RecreationBoredomPerHour = 0m
+        };
 
         private static RecruitmentCoordinator Recruitment(PersonProfile person) =>
             new RecruitmentCoordinator(new SimulationClock(), new FixedCandidateGenerator(person), new ImmediateRouter());

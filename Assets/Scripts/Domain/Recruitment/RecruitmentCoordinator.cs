@@ -83,6 +83,7 @@ namespace SilverScreen.Domain.Recruitment
   public Employee Hire(Candidate candidate, ProfessionalRole profession, string hiringFacilityId = null)
   {
    if (!CanHire(candidate, profession, hiringFacilityId) || !candidate.MarkHired()) return null;
+   candidate.Person.Career.CompleteGoal(PersonCareerGoalType.GetHired, _time.CurrentTime.Year);
    candidate.Person.SetProfessionalRole(profession);
    var employee = new Employee(candidate.Person, ToEmployeeRole(profession), candidate.SalaryExpectation, 80);
    ReleaseWaiting(candidate);OnCandidateHired?.Invoke(candidate, employee);

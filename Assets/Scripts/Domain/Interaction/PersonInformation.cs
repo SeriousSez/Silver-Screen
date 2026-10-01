@@ -52,7 +52,15 @@ namespace SilverScreen.Domain.Interaction
                 ? "Insufficient history"
                 : career.WorkloadState.ToString();
             string careerSummary = "Career satisfaction: " + career.CareerSatisfaction + "/100";
-            string careerDetails = careerSummary + "\nRecent workload: " + career.RecentWorkloadPercent.ToString("F1") +
+            PersonCareerGoal activeGoal = null;
+            foreach (var goal in career.Goals)
+                if (goal.Status == PersonCareerGoalStatus.Active) { activeGoal = goal; break; }
+            string goalSummary = activeGoal == null ? "No active career goal" :
+                activeGoal.Type + ": " + activeGoal.Status + " (" + activeGoal.Progress + "%)";
+            string careerDetails = careerSummary + "\nCareer drive: " + career.CareerDrive + "/100" +
+                "\nCareer goal: " + goalSummary +
+                "\nRetention: " + career.RetentionState +
+                "\nRecent workload: " + career.RecentWorkloadPercent.ToString("F1") +
                 "% (" + career.WorkloadWorkedMinutes + "/" + career.WorkloadObservedMinutes + " observed minutes)\nWorkload: " + workload;
             cards.Add(new PersonInformation("Career", 0, 24, careerSummary, careerDetails));
             var e = c.Employee;
