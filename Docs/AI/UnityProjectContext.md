@@ -61,3 +61,87 @@ StudioBuildingView, StudioWorldRouter, Stage identity/sign components, productio
 layout/camera components, Studio daylight document, Administration generator export
 conventions and MCP scene probes. This is focused art-task context, not a full
 architecture or release-readiness audit.
+
+## Fresh character direction — 2026-09-22
+
+- The current character brief supersedes all prior character-art experiments.
+  `ArtSource/Characters/Gate1`, `Canonical`, `ThirdParty` and Renderpeople content
+  are rejected art sources. Do not use their geometry, textures, identity,
+  clothes, hair or body to construct the new canonical character.
+- Fresh source root: `ArtSource/Characters/SilverScreenAdult`. The copied user
+  concept is authoritative. `production-contract.md` records one-character
+  scope, complete underlying anatomy, independent modules, future anatomical
+  customization, facial deformation, rig/clip and Unity visual gates.
+- Current implementation is ONLY an authoring skeleton scaffold: 91 bones,
+  55 semantic Humanoid mappings, root at feet, unit scale. Structural assertions
+  passed in Blender 5.0.1. No meshes, weights or clips exist in this source yet;
+  no character or visual gate has passed. See `authoring-check.json`.
+- `CharacterView.CalibrateScale` uniformly scales prototype geometry and rest
+  positions. That path does not meet the new anatomical customization contract.
+  Keep it separate from future coordinated skeleton/mesh/garment fitting.
+- Existing presentation time is
+  `SilverScreen.Presentation.SimulationTime.LocalPresentationTime.Delta`.
+  Strategic speed never scales local animation time. No Phase 2 travel work.
+- Official Unity relay read verified this project and Editor version, Edit
+  Mode, `Assets/Scenes/Studio.unity` open and dirty. It was not modified.
+  Fresh mesh generation has not been submitted; the connected generation tool
+  requires first-use consent. Tool/model discovery evidence is under
+  `ArtReview/Characters/SilverScreenAdult`.
+
+### Character correction — supersedes the preparation status above
+
+The user explicitly rejected the subsequent locally constructed body/head as
+primitive procedural anatomy, below the SilverScreen concept's quality target.
+The failed meshes, fitted garment shells and renders are quarantined under
+`ArtSource/Characters/SilverScreenAdult/Rejected/LocalAnatomy_20260922`; their
+generator is disabled. Do not reuse, polish, retopologize, fit, skin or animate
+that anatomy. Some fitted-shell renders existed before the stop instruction;
+they are rejected too. No skinning or animation occurred.
+
+Current gate is a **new head only**, with neutral front, three-quarter, profile,
+close-up and wireframe views beside the approved concept, followed by user
+review before further character work. See `HEAD_GATE.md`. Future body design
+must use a neutral continuous pelvis/groin with **no modeled genitalia**.
+The rig scaffold and independent accessory source were preserved byte-for-byte.
+No accepted replacement head exists. The assistant reported that its local
+scripted approach cannot reliably deliver the requested sculpt quality.
+
+Unity generation consent was granted. One waistcoat source study completed;
+other requests failed, including `InsufficientFunds`. The user selected local
+authoring afterward. No new generation is running. The Editor-only generated
+study was never integrated as canonical art. Studio and Stage 1 were not changed.
+
+## Production lifecycle and scene template foundation — 2026-09-27
+
+- Rechecked Unity 6000.5.9f1, URP 17.5.0 and the default first-party assemblies.
+  Domain/Editor tests run through the installed Unity executable; this session
+  exposed no Unity MCP tools. The official provider/package remains unchanged.
+- `MovieProject.CurrentState` and completed-scene progress now derive from
+  scene/cast/release facts. Do not reintroduce arbitrary project state/progress
+  setters. `MovieScene` requires a completed kept take to finish; `CanRelease`
+  also requires finalized quality. Strategic take work remains authoritative.
+- Coordinator retries failed/unresolved production and ignores stale routing
+  callbacks. UI distinguishes casting, completed scenes and active take work.
+- Generic immutable template/role/beat/variant/semantic metadata lives in
+  `Assets/Scripts/Domain/Performance`, without Unity or character dependencies.
+  The first consumer is `HeatedArgumentTemplate` and its Editor silhouette preview
+  under **SilverScreen > Scene Templates > Heated Argument Preview**.
+- Production has no save/load implementation. No full Movie Maker or character,
+  animation, IK, voice or advanced-camera integration was added.
+- See `Docs/ProductionLifecycleAndSceneTemplates.md` for the pre-change audit,
+  authoritative invariants, model boundaries, reproduction and validation evidence.
+
+
+## Person interaction foundation � 2026-09-28
+
+- Rechecked authoritative version: Unity **6000.6.3f1**, URP **17.6.0**, Input System 1.20, Test Framework 1.8.0. Existing official relay connection verified this project in Edit Mode.
+- `PersonProfile` remains the identity owner. `Candidate.JobSought` records original intent; `RecruitmentCoordinator.Hire(candidate, profession, hiringFacilityId)` validates the target facility, never proficiency or applicant origin. Existing one-argument hiring, salary, registration and tutorial events remain.
+- Selection owns hover/right-click/hold gestures through `PersonInteractionController`. `PersonDragSession` places via Warp with 0.15 m maximum NavMesh correction and lot/capsule checks. Employee task anchors survive; routing resumes later from the dropped position. Camera right dragging yields only to person gestures.
+- Semantic `PersonInteractionSpot` anchors register with facility applicant areas. Nearby compatible labels appear only during pickup. Practice is `PersonPracticeService`, backed by existing work/reservation services and genre experience. Work availability prevents earning while displaced; external work assignments cancel practice.
+- Prototype cards use provider urgency/relevance and world projection. Presentation is replaceable. No final art, new character models, scene/prefab serialization, or save framework.
+- See `Docs/PersonInteractionFoundation.md` for the audit, behavior contract, developer proof and focused validation. Subjective interaction/visual approval remains with the user.
+
+
+## Stage School A1 inspection - 2026-09-30
+
+Current configuration: Unity 6000.6.3f1, URP 17.6.0, Input System 1.20.0, Test Framework 1.8.0. Official installed Unity relay verified Edit Mode with Studio.unity active and clean. Earlier version observations are historical. Stage School A1 uses separate source and the established Studio Services semantic mesh-packet workflow, sharing period materials and loose fixtures without changing them. See ArtSource/StageSchoolA1/design.md. No runtime integration.
