@@ -13,6 +13,17 @@ namespace SilverScreen.Domain.Recruitment
   private static readonly ProfessionalRole[] RecruitableRoles={ProfessionalRole.Actor,ProfessionalRole.Director,ProfessionalRole.Extra,ProfessionalRole.Writer};
   private readonly IRandomSource _random; public CandidateGenerator(IRandomSource random)=>_random=random??throw new ArgumentNullException(nameof(random));
   public virtual Candidate Generate(SimulationDateTime now)=>GenerateForRole(now,RecruitableRoles[_random.Next(0,RecruitableRoles.Length)]);
+  public virtual Candidate GenerateForCategory(SimulationDateTime now,RecruitmentCategory category,bool isStarterApplicant)
+  {
+   ProfessionalRole[] roles=category switch
+   {
+    RecruitmentCategory.Crew=>new[]{ProfessionalRole.Crew},
+    RecruitmentCategory.Writing=>new[]{ProfessionalRole.Writer},
+    _=>new[]{ProfessionalRole.Actor,ProfessionalRole.Director,ProfessionalRole.Extra}
+   };
+   var generated=GenerateForRole(now,roles[_random.Next(0,roles.Length)]);
+   return new Candidate(generated.Person,generated.SalaryExpectation,category,isStarterApplicant);
+  }
   public virtual Candidate GenerateForRole(SimulationDateTime now,ProfessionalRole role)
   {
    int age=_random.Next(role==ProfessionalRole.Director?24:18,61);int background=_random.Next(0,4);int basis=Math.Clamp(24+background*14+_random.Next(-8,10),10,92);int acting=role==ProfessionalRole.Director||role==ProfessionalRole.Writer?_random.Next(10,46):basis;int directing=role==ProfessionalRole.Director?basis:_random.Next(8,42);int writing=role==ProfessionalRole.Writer?basis:_random.Next(8,42);if(role==ProfessionalRole.Extra)acting=Math.Min(acting,58);
