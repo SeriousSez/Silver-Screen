@@ -1,0 +1,149 @@
+{
+    "_anchors": [
+        {
+            "instanceID": 1099511931663
+        },
+        {
+            "instanceID": 1099511931664
+        },
+        {
+            "instanceID": 1099511931665
+        },
+        {
+            "instanceID": 1099511962006
+        },
+        {
+            "instanceID": 1099511931666
+        },
+        {
+            "instanceID": 1099511931667
+        },
+        {
+            "instanceID": 1099511931668
+        },
+        {
+            "instanceID": 1099511931669
+        },
+        {
+            "instanceID": 1099511931670
+        },
+        {
+            "instanceID": 1099511931671
+        },
+        {
+            "instanceID": 1099511931672
+        },
+        {
+            "instanceID": 1099511935500
+        },
+        {
+            "instanceID": 1099511931673
+        },
+        {
+            "instanceID": 1099511931674
+        },
+        {
+            "instanceID": 1099511931675
+        },
+        {
+            "instanceID": 1099511931676
+        },
+        {
+            "instanceID": 1099511931677
+        },
+        {
+            "instanceID": 1099511931678
+        },
+        {
+            "instanceID": 1099511931679
+        },
+        {
+            "instanceID": 1099511931680
+        },
+        {
+            "instanceID": 1099511931681
+        },
+        {
+            "instanceID": 1099511931682
+        },
+        {
+            "instanceID": 1099511931683
+        },
+        {
+            "instanceID": 1099511931684
+        },
+        {
+            "instanceID": 1099511931685
+        }
+    ],
+    "_regions": [
+        {
+            "Id": "ACTOR",
+            "LocalBounds": {
+                "m_Center": {
+                    "x": -7.199999809265137,
+                    "y": 0.3799999952316284,
+                    "z": -5.449999809265137
+                },
+                "m_Extent": {
+                    "x": 1.7000000476837158,
+                    "y": 0.009999999776482582,
+                    "z": 1.600000023841858
+                }
+            },
+            "ApplicantContext": "ACTOR",
+            "EmployeeContext": "ACTOR"
+        },
+        {
+            "Id": "DIRECTOR",
+            "LocalBounds": {
+                "m_Center": {
+                    "x": -2.3999996185302734,
+                    "y": 0.3799999952316284,
+                    "z": -5.449999809265137
+                },
+                "m_Extent": {
+                    "x": 1.7000000476837158,
+                    "y": 0.009999999776482582,
+                    "z": 1.600000023841858
+                }
+            },
+            "ApplicantContext": "DIRECTOR",
+            "EmployeeContext": "DIRECTOR"
+        },
+        {
+            "Id": "EXTRA",
+            "LocalBounds": {
+                "m_Center": {
+                    "x": 2.40000057220459,
+                    "y": 0.3799999952316284,
+                    "z": -5.449999809265137
+                },
+                "m_Extent": {
+                    "x": 1.7000000476837158,
+                    "y": 0.009999999776482582,
+                    "z": 1.600000023841858
+                }
+            },
+            "ApplicantContext": "EXTRA",
+            "EmployeeContext": "EXTRA"
+        },
+        {
+            "Id": "TALENT_CONTEXT",
+            "LocalBounds": {
+                "m_Center": {
+                    "x": 7.200000762939453,
+                    "y": 0.3799999952316284,
+                    "z": -5.449999809265137
+                },
+                "m_Extent": {
+                    "x": 1.7000000476837158,
+                    "y": 0.009999999776482582,
+                    "z": 1.600000023841858
+                }
+            },
+            "ApplicantContext": "CREATE_IMPORT_TALENT",
+            "EmployeeContext": "DISMISS"
+        }
+    ]
+}

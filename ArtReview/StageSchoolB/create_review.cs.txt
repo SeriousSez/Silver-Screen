@@ -1,0 +1,6 @@
+var active=UnityEngine.SceneManagement.SceneManager.GetActiveScene();if(active.isDirty&&!active.path.Contains("StageSchoolB"))throw new System.Exception("Preserve dirty scene");
+var scene=UnityEditor.SceneManagement.EditorSceneManager.OpenScene(SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.ScenePath,UnityEditor.SceneManagement.OpenSceneMode.Single);
+foreach(var go in scene.GetRootGameObjects())if(go.name.StartsWith("StageSchool_A3"))UnityEngine.Object.DestroyImmediate(go);
+var root=(UnityEngine.GameObject)UnityEditor.PrefabUtility.InstantiatePrefab(UnityEditor.AssetDatabase.LoadAssetAtPath<UnityEngine.GameObject>(SilverScreen.Editor.EnvironmentArt.StageSchoolRuntimeBuilder.Prefab),scene);
+UnityEditor.SceneManagement.EditorSceneManager.SaveScene(scene,SilverScreen.Editor.EnvironmentArt.StageSchoolRuntimeBuilder.Root+"/StageSchool_RuntimeReview.unity");
+result.Log("Separate runtime review refreshed; source review not saved.");

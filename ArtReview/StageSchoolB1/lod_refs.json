@@ -1,0 +1,25 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"success\": true,\n  \"message\": \"Command executed successfully.\",\n  \"data\": {\n    \"isCompilationSuccessful\": true,\n    \"isExecutionSuccessful\": true,\n    \"executionId\": 1,\n    \"compilationLogs\": \"\",\n    \"executionLogs\": \"[Log] LOD0 [LOD0, 319]\\n[Log] LOD1 [LOD1, 129]\\n[Log] LOD2 [LOD2, 129]\",\n    \"localFixedCode\": \"using UnityEngine;\\r\\nusing UnityEditor;\\r\\n\\r\\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\\r\\n{\\r\\n    internal class CommandScript : IRunCommand\\r\\n    {\\r\\n        public void Execute(ExecutionResult result)\\r\\n        {\\r\\n            var root = UnityEngine.Object.FindAnyObjectByType<SilverScreen.Presentation.Buildings.StageSchoolInfrastructure>().gameObject;\\r\\n            var levels = root.GetComponent<UnityEngine.LODGroup>().GetLODs();\\r\\n            for (int i = 0; i < levels.Length; i++)\\r\\n            {\\r\\n                var counts = new System.Collections.Generic.Dictionary<string, int>();\\r\\n                foreach (var r in levels[i].renderers)\\r\\n                {\\r\\n                    var p = UnityEditor.AnimationUtility.CalculateTransformPath(r.transform, root.transform).Split('/')[0];\\r\\n                    if (!counts.ContainsKey(p))\\r\\n                        counts[p] = 0;\\r\\n                    counts[p]++;\\r\\n                }\\r\\n\\r\\n                result.Log(\\\"LOD\\\" + i + \\\" \\\" + string.Join(\\\",\\\", counts));\\r\\n            }\\r\\n        }\\r\\n    }\\r\\n}\",\n    \"result\": \"Command executed successfully.\"\n  }\n}"
+      }
+    ],
+    "structuredContent": {
+      "success": true,
+      "message": "Command executed successfully.",
+      "data": {
+        "isCompilationSuccessful": true,
+        "isExecutionSuccessful": true,
+        "executionId": 1,
+        "compilationLogs": "",
+        "executionLogs": "[Log] LOD0 [LOD0, 319]\n[Log] LOD1 [LOD1, 129]\n[Log] LOD2 [LOD2, 129]",
+        "localFixedCode": "using UnityEngine;\r\nusing UnityEditor;\r\n\r\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\r\n{\r\n    internal class CommandScript : IRunCommand\r\n    {\r\n        public void Execute(ExecutionResult result)\r\n        {\r\n            var root = UnityEngine.Object.FindAnyObjectByType<SilverScreen.Presentation.Buildings.StageSchoolInfrastructure>().gameObject;\r\n            var levels = root.GetComponent<UnityEngine.LODGroup>().GetLODs();\r\n            for (int i = 0; i < levels.Length; i++)\r\n            {\r\n                var counts = new System.Collections.Generic.Dictionary<string, int>();\r\n                foreach (var r in levels[i].renderers)\r\n                {\r\n                    var p = UnityEditor.AnimationUtility.CalculateTransformPath(r.transform, root.transform).Split('/')[0];\r\n                    if (!counts.ContainsKey(p))\r\n                        counts[p] = 0;\r\n                    counts[p]++;\r\n                }\r\n\r\n                result.Log(\"LOD\" + i + \" \" + string.Join(\",\", counts));\r\n            }\r\n        }\r\n    }\r\n}",
+        "result": "Command executed successfully."
+      }
+    }
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}

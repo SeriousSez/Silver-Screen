@@ -1,0 +1,706 @@
+[
+  [
+    "Ceilings/Pendant00",
+    [
+      [
+        "Ceiling rose",
+        "MESH",
+        40,
+        []
+      ],
+      [
+        "Schoolhouse opal glass",
+        "MESH",
+        222,
+        []
+      ],
+      [
+        "Pendant brass collar",
+        "MESH",
+        40,
+        []
+      ],
+      [
+        "Glass shade equatorial band",
+        "MESH",
+        392,
+        []
+      ],
+      [
+        "Ceiling-seated continuous pendant stem",
+        "MESH",
+        24,
+        []
+      ]
+    ]
+  ],
+  [
+    "Furnishings/Audition/Curtains",
+    [
+      [
+        "Continuous heavy straight velvet wing",
+        "MESH",
+        5330,
+        []
+      ],
+      [
+        "Weighted turned velvet hem",
+        "MESH",
+        520,
+        []
+      ],
+      [
+        "Doubled sewn velvet edge",
+        "MESH",
+        328,
+        []
+      ],
+      [
+        "Doubled sewn velvet edge.001",
+        "MESH",
+        328,
+        []
+      ],
+      [
+        "Curtain slider eye",
+        "MESH",
+        102,
+        []
+      ],
+      [
+        "Sewn suspension heading tab",
+        "MESH",
+        96,
+        []
+      ],
+      [
+        "Curtain slider eye.001",
+        "MESH",
+        102,
+        []
+      ],
+      [
+        "Sewn suspension heading tab.001",
+        "MESH",
+        96,
+        []
+      ],
+      [
+        "Curtain slider eye.002",
+        "MESH",
+        102,
+        []
+      ],
+      [
+        "Sewn suspension heading tab.002",
+        "MESH",
+        96,
+        []
+      ],
+      [
+        "Curtain slider eye.003",
+        "MESH",
+        102,
+        []
+      ],
+      [
+        "Sewn suspension heading tab.003",
+        "MESH",
+        96,
+        []
+      ],
+      [
+        "Curtain slider eye.004",
+        "MESH",
+        102,
+        []
+      ],
+      [
+        "Sewn suspension heading tab.004",
+        "MESH",
+        96,
+        []
+      ],
+      [
+        "Curtain slider eye.005",
+        "MESH",
+        102,
+        []
+      ],
+      [
+        "Sewn suspension heading tab.005",
+        "MESH",
+        96,
+        []
+      ],
+      [
+        "Curtain slider eye.006",
+        "MESH",
+        102,
+        []
+      ],
+      [
+        "Sewn suspension heading tab.006",
+        "MESH",
+        96,
+        []
+      ],
+      [
+        "Curtain slider eye.007",
+        "MESH",
+        102,
+        []
+      ],
+      [
+        "Sewn suspension heading tab.007",
+        "MESH",
+        96,
+        []
+      ],
+      [
+        "Curtain slider eye.008",
+        "MESH",
+        102,
+        []
+      ],
+      [
+        "Sewn suspension heading tab.008",
+        "MESH",
+        96,
+        []
+      ],
+      [
+        "Continuous heavy straight velvet wing.001",
+        "MESH",
+        5330,
+        []
+      ],
+      [
+        "Weighted turned velvet hem.001",
+        "MESH",
+        520,
+        []
+      ],
+      [
+        "Doubled sewn velvet edge.002",
+        "MESH",
+        328,
+        []
+      ],
+      [
+        "Doubled sewn velvet edge.003",
+        "MESH",
+        328,
+        []
+      ],
+      [
+        "Curtain slider eye.009",
+        "MESH",
+        102,
+        []
+      ],
+      [
+        "Sewn suspension heading tab.009",
+        "MESH",
+        96,
+        []
+      ],
+      [
+        "Curtain slider eye.010",
+        "MESH",
+        102,
+        []
+      ],
+      [
+        "Sewn suspension heading tab.010",
+        "MESH",
+        96,
+        []
+      ],
+      [
+        "Curtain slider eye.011",
+        "MESH",
+        102,
+        []
+      ],
+      [
+        "Sewn suspension heading tab.011",
+        "MESH",
+        96,
+        []
+      ],
+      [
+        "Curtain slider eye.012",
+        "MESH",
+        102,
+        []
+      ],
+      [
+        "Sewn suspension heading tab.012",
+        "MESH",
+        96,
+        []
+      ],
+      [
+        "Curtain slider eye.013",
+        "MESH",
+        102,
+        []
+      ],
+      [
+        "Sewn suspension heading tab.013",
+        "MESH",
+        96,
+        []
+      ],
+      [
+        "Curtain slider eye.014",
+        "MESH",
+        102,
+        []
+      ],
+      [
+        "Sewn suspension heading tab.014",
+        "MESH",
+        96,
+        []
+      ],
+      [
+        "Curtain slider eye.015",
+        "MESH",
+        102,
+        []
+      ],
+      [
+        "Sewn suspension heading tab.015",
+        "MESH",
+        96,
+        []
+      ],
+      [
+        "Curtain slider eye.016",
+        "MESH",
+        102,
+        []
+      ],
+      [
+        "Sewn suspension heading tab.016",
+        "MESH",
+        96,
+        []
+      ],
+      [
+        "Curtain slider eye.017",
+        "MESH",
+        102,
+        []
+      ],
+      [
+        "Sewn suspension heading tab.017",
+        "MESH",
+        96,
+        []
+      ],
+      [
+        "Continuous sewn straight pleated velvet valance",
+        "MESH",
+        4350,
+        []
+      ],
+      [
+        "Valance weighted sewn hem",
+        "MESH",
+        1160,
+        []
+      ],
+      [
+        "Restrained walnut track fascia",
+        "MESH",
+        96,
+        []
+      ],
+      [
+        "Continuous curtain suspension track",
+        "MESH",
+        24,
+        []
+      ],
+      [
+        "Track bracket masonry plate",
+        "MESH",
+        96,
+        []
+      ],
+      [
+        "Supported track outrigger",
+        "MESH",
+        96,
+        []
+      ],
+      [
+        "Track bracket masonry plate.001",
+        "MESH",
+        96,
+        []
+      ],
+      [
+        "Supported track outrigger.001",
+        "MESH",
+        96,
+        []
+      ],
+      [
+        "Track bracket masonry plate.002",
+        "MESH",
+        96,
+        []
+      ],
+      [
+        "Supported track outrigger.002",
+        "MESH",
+        96,
+        []
+      ],
+      [
+        "Track bracket masonry plate.003",
+        "MESH",
+        96,
+        []
+      ],
+      [
+        "Supported track outrigger.003",
+        "MESH",
+        96,
+        []
+      ],
+      [
+        "Track bracket masonry plate.004",
+        "MESH",
+        96,
+        []
+      ],
+      [
+        "Supported track outrigger.004",
+        "MESH",
+        96,
+        []
+      ]
+    ]
+  ],
+  [
+    "Roofs/Entrance",
+    [
+      [
+        "Thick boarded hip roof",
+        "MESH",
+        44,
+        []
+      ],
+      [
+        "Batched overlapping clay courses",
+        "MESH",
+        22862,
+        []
+      ],
+      [
+        "Batched fired caps and joints",
+        "MESH",
+        2592,
+        []
+      ],
+      [
+        "Eave fascia",
+        "MESH",
+        96,
+        []
+      ],
+      [
+        "Eave fascia.001",
+        "MESH",
+        128,
+        []
+      ],
+      [
+        "Eave fascia.002",
+        "MESH",
+        96,
+        []
+      ],
+      [
+        "Eave fascia.003",
+        "MESH",
+        96,
+        []
+      ]
+    ]
+  ],
+  [
+    "Shell/Front/Banners",
+    [
+      [
+        "Bronze framed talent banner",
+        "MESH",
+        32,
+        []
+      ],
+      [
+        "Banner gold edging",
+        "MESH",
+        32,
+        []
+      ],
+      [
+        "Banner gold edging.001",
+        "MESH",
+        32,
+        []
+      ],
+      [
+        "Banner gold edging.002",
+        "MESH",
+        32,
+        []
+      ],
+      [
+        "Banner gold edging.003",
+        "MESH",
+        32,
+        []
+      ],
+      [
+        "Individual cast letters TALENT",
+        "MESH",
+        9492,
+        []
+      ],
+      [
+        "Individual cast letters DISCIPLINE",
+        "MESH",
+        19992,
+        []
+      ],
+      [
+        "Individual cast letters OPPORTUNITY",
+        "MESH",
+        21518,
+        []
+      ],
+      [
+        "Banner Art Deco sun",
+        "MESH",
+        100,
+        []
+      ],
+      [
+        "Deco banner ray",
+        "MESH",
+        12,
+        []
+      ],
+      [
+        "Deco banner ray.001",
+        "MESH",
+        12,
+        []
+      ],
+      [
+        "Deco banner ray.002",
+        "MESH",
+        12,
+        []
+      ],
+      [
+        "Deco banner ray.003",
+        "MESH",
+        12,
+        []
+      ],
+      [
+        "Deco banner ray.004",
+        "MESH",
+        12,
+        []
+      ],
+      [
+        "Deco banner ray.005",
+        "MESH",
+        12,
+        []
+      ],
+      [
+        "Deco banner ray.006",
+        "MESH",
+        12,
+        []
+      ],
+      [
+        "Deco banner ray.007",
+        "MESH",
+        12,
+        []
+      ],
+      [
+        "Deco banner ray.008",
+        "MESH",
+        12,
+        []
+      ],
+      [
+        "Deco banner ray.009",
+        "MESH",
+        12,
+        []
+      ],
+      [
+        "Deco banner ray.010",
+        "MESH",
+        12,
+        []
+      ],
+      [
+        "Deco banner ray.011",
+        "MESH",
+        12,
+        []
+      ],
+      [
+        "Deco banner ray.012",
+        "MESH",
+        12,
+        []
+      ],
+      [
+        "Bronze framed talent banner.001",
+        "MESH",
+        32,
+        []
+      ],
+      [
+        "Banner gold edging.004",
+        "MESH",
+        32,
+        []
+      ],
+      [
+        "Banner gold edging.005",
+        "MESH",
+        32,
+        []
+      ],
+      [
+        "Banner gold edging.006",
+        "MESH",
+        32,
+        []
+      ],
+      [
+        "Banner gold edging.007",
+        "MESH",
+        32,
+        []
+      ],
+      [
+        "Individual cast letters ACT",
+        "MESH",
+        5054,
+        []
+      ],
+      [
+        "Individual cast letters DIRECT",
+        "MESH",
+        11998,
+        []
+      ],
+      [
+        "Individual cast letters BELONG",
+        "MESH",
+        13846,
+        []
+      ],
+      [
+        "Banner Art Deco sun.001",
+        "MESH",
+        100,
+        []
+      ],
+      [
+        "Deco banner ray.013",
+        "MESH",
+        12,
+        []
+      ],
+      [
+        "Deco banner ray.014",
+        "MESH",
+        12,
+        []
+      ],
+      [
+        "Deco banner ray.015",
+        "MESH",
+        12,
+        []
+      ],
+      [
+        "Deco banner ray.016",
+        "MESH",
+        12,
+        []
+      ],
+      [
+        "Deco banner ray.017",
+        "MESH",
+        12,
+        []
+      ],
+      [
+        "Deco banner ray.018",
+        "MESH",
+        12,
+        []
+      ],
+      [
+        "Deco banner ray.019",
+        "MESH",
+        12,
+        []
+      ],
+      [
+        "Deco banner ray.020",
+        "MESH",
+        12,
+        []
+      ],
+      [
+        "Deco banner ray.021",
+        "MESH",
+        12,
+        []
+      ],
+      [
+        "Deco banner ray.022",
+        "MESH",
+        12,
+        []
+      ],
+      [
+        "Deco banner ray.023",
+        "MESH",
+        12,
+        []
+      ],
+      [
+        "Deco banner ray.024",
+        "MESH",
+        12,
+        []
+      ],
+      [
+        "Deco banner ray.025",
+        "MESH",
+        12,
+        []
+      ]
+    ]
+  ]
+]

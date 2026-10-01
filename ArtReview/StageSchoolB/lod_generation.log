@@ -1,0 +1,31 @@
+Extensions: writing cache failed ([WinError 183] Cannot create a file when that file already exists: 'C:\\Users\\Sez\\AppData\\Roaming\\Blender Foundation\\Blender\\5.0\\extensions\\.cache').
+LOD 0 0 286
+LOD 0 40 286
+LOD 0 80 286
+LOD 0 120 286
+LOD 0 160 286
+LOD 0 200 286
+LOD 0 240 286
+LOD 0 280 286
+{'level': 0, 'triangles': 640908, 'vertices': 522139}
+LOD 1 0 286
+LOD 1 40 286
+LOD 1 80 286
+LOD 1 120 286
+LOD 1 160 286
+LOD 1 200 286
+LOD 1 240 286
+LOD 1 280 286
+{'level': 1, 'triangles': 305454, 'vertices': 284916}
+LOD 2 0 286
+LOD 2 40 286
+LOD 2 80 286
+LOD 2 120 286
+LOD 2 160 286
+LOD 2 200 286
+LOD 2 240 286
+LOD 2 280 286
+{'level': 2, 'triangles': 163088, 'vertices': 170628}
+Blender 5.0.1 (hash a3db93c5b259 built 2025-12-16 01:32:30)
+
+Blender quit

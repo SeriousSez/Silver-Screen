@@ -1,0 +1,78 @@
+{
+  "protected_groups_checked": 78,
+  "protected_groups_changed": [],
+  "reordered_curved_groups_verified_to_one_mm": [
+    "Furnishings/Waiting/Chair00",
+    "Furnishings/Waiting/Chair01",
+    "Furnishings/Waiting/Chair02",
+    "Furnishings/Waiting/Chair03",
+    "Furnishings/Waiting/Chair04",
+    "Furnishings/Waiting/Chair05",
+    "Furnishings/Waiting/Chair06",
+    "Furnishings/Waiting/Chair07",
+    "Furnishings/Lounge/Chair0",
+    "Furnishings/Lounge/Chair1",
+    "Furnishings/Lounge/Chair2",
+    "Furnishings/Lounge/Chair3",
+    "Furnishings/Interview/GuestA",
+    "Furnishings/Interview/GuestB",
+    "Furnishings/Washroom",
+    "Ceilings/Pendant00",
+    "Ceilings/Pendant01",
+    "Ceilings/Pendant02",
+    "Ceilings/Pendant03",
+    "Ceilings/Pendant04",
+    "Ceilings/Pendant05",
+    "Ceilings/Pendant06",
+    "Ceilings/Pendant07"
+  ],
+  "waiting_seats": 8,
+  "studio_file_unchanged": true,
+  "finite_coordinates": true,
+  "mesh_indices_valid": true,
+  "equipment_instances": [
+    {
+      "asset": "StudioCamera1930",
+      "group": "Furnishings/Audition/Camera",
+      "position": [
+        8.6,
+        0.39,
+        4.45
+      ],
+      "yaw": -33
+    },
+    {
+      "asset": "StudioLamp1930",
+      "group": "Furnishings/Audition/StudioLamp0",
+      "position": [
+        4.15,
+        0.39,
+        5.1
+      ],
+      "yaw": 54
+    },
+    {
+      "asset": "StudioLamp1930",
+      "group": "Furnishings/Audition/StudioLamp1",
+      "position": [
+        9.65,
+        0.39,
+        5.1
+      ],
+      "yaw": -54
+    }
+  ],
+  "new_groups": [
+    "Furnishings/Audition/EvaluationMaterials",
+    "Furnishings/Commons/ReviewMaterials",
+    "Furnishings/Interview/PortfolioReview",
+    "Furnishings/Reception/Accessories",
+    "Furnishings/Reception/Wastebasket",
+    "Furnishings/Waiting/ReadingMaterial"
+  ],
+  "retired_groups": [
+    "Furnishings/Audition/Camera",
+    "Furnishings/Audition/StudioLamp0",
+    "Furnishings/Audition/StudioLamp1"
+  ]
+}

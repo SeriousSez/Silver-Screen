@@ -1,0 +1,12 @@
+agent=0.35 start=True yaw=37
+entrance.primary sampled=True complete=True delta=0.07249999
+reception.approach sampled=True complete=True delta=0.01055041
+waiting.approach.0 sampled=True complete=True delta=0.02249998
+audition.operator sampled=True complete=True delta=0.02416649
+interview.candidate sampled=True complete=True delta=0.02249998
+evaluation.candidate sampled=True complete=True delta=0.1516783
+staff.approach sampled=True complete=True delta=0.02249998
+records.approach sampled=True complete=True delta=0.00999999
+equipment.approach sampled=True complete=True delta=0.00999999
+restroom.approach sampled=True complete=True delta=0.00999999
+service.approach sampled=True complete=True delta=0.01749719

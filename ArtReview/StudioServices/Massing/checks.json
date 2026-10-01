@@ -1,0 +1,175 @@
+{
+    "phase": "Massing only; not production or gameplay approval",
+    "checks": [
+        {
+            "name": "Camera-facing cutaway",
+            "passed": true,
+            "evidence": "Roof/front/right hidden, rear/left/floor/partitions/interior retained"
+        },
+        {
+            "name": "Multiple reveal reasons",
+            "passed": true,
+            "evidence": "Focus remains when developer reason releases"
+        },
+        {
+            "name": "Exact renderer restoration",
+            "passed": true,
+            "evidence": "All original renderer enabled states restored"
+        },
+        {
+            "name": "Physical collision unaffected",
+            "passed": true,
+            "evidence": "127 collider states unchanged during reveal"
+        },
+        {
+            "name": "Anchor clearance: OfficeEntrance",
+            "passed": true,
+            "evidence": "0.70 m diameter / 2.00 m capsule clear in physical study"
+        },
+        {
+            "name": "Anchor clearance: OfficeApproach",
+            "passed": true,
+            "evidence": "0.70 m diameter / 2.00 m capsule clear in physical study"
+        },
+        {
+            "name": "Anchor clearance: WorkshopEntrance",
+            "passed": true,
+            "evidence": "0.70 m diameter / 2.00 m capsule clear in physical study"
+        },
+        {
+            "name": "Anchor clearance: WorkshopApproach",
+            "passed": true,
+            "evidence": "0.70 m diameter / 2.00 m capsule clear in physical study"
+        },
+        {
+            "name": "Anchor clearance: YardAccess",
+            "passed": true,
+            "evidence": "0.70 m diameter / 2.00 m capsule clear in physical study"
+        },
+        {
+            "name": "Anchor clearance: ApplicantArrival",
+            "passed": true,
+            "evidence": "0.70 m diameter / 2.00 m capsule clear in physical study"
+        },
+        {
+            "name": "Anchor clearance: ApplicantExit",
+            "passed": true,
+            "evidence": "0.70 m diameter / 2.00 m capsule clear in physical study"
+        },
+        {
+            "name": "Anchor clearance: ApplicantWaiting_00",
+            "passed": true,
+            "evidence": "0.70 m diameter / 2.00 m capsule clear in physical study"
+        },
+        {
+            "name": "Anchor clearance: ApplicantWaiting_01",
+            "passed": true,
+            "evidence": "0.70 m diameter / 2.00 m capsule clear in physical study"
+        },
+        {
+            "name": "Anchor clearance: ApplicantWaiting_02",
+            "passed": true,
+            "evidence": "0.70 m diameter / 2.00 m capsule clear in physical study"
+        },
+        {
+            "name": "Anchor clearance: ApplicantWaiting_03",
+            "passed": true,
+            "evidence": "0.70 m diameter / 2.00 m capsule clear in physical study"
+        },
+        {
+            "name": "Anchor clearance: ApplicantWaiting_04",
+            "passed": true,
+            "evidence": "0.70 m diameter / 2.00 m capsule clear in physical study"
+        },
+        {
+            "name": "Anchor clearance: HireConstructionWorker",
+            "passed": true,
+            "evidence": "0.70 m diameter / 2.00 m capsule clear in physical study"
+        },
+        {
+            "name": "Anchor clearance: HireGroundskeeper",
+            "passed": true,
+            "evidence": "0.70 m diameter / 2.00 m capsule clear in physical study"
+        },
+        {
+            "name": "Anchor clearance: ConstructionMaterialPickup",
+            "passed": true,
+            "evidence": "0.70 m diameter / 2.00 m capsule clear in physical study"
+        },
+        {
+            "name": "Anchor clearance: ToolPickup",
+            "passed": true,
+            "evidence": "0.70 m diameter / 2.00 m capsule clear in physical study"
+        },
+        {
+            "name": "Anchor clearance: WorkshopWork",
+            "passed": true,
+            "evidence": "0.70 m diameter / 2.00 m capsule clear in physical study"
+        },
+        {
+            "name": "Anchor clearance: GroundskeeperSupply",
+            "passed": true,
+            "evidence": "0.70 m diameter / 2.00 m capsule clear in physical study"
+        },
+        {
+            "name": "Anchor clearance: ApplicantInspection",
+            "passed": true,
+            "evidence": "0.70 m diameter / 2.00 m capsule clear in physical study"
+        },
+        {
+            "name": "Shared lamp prefab references",
+            "passed": true,
+            "evidence": "Nine canonical lamp instances; no copies of source geometry"
+        },
+        {
+            "name": "Study navigation: OfficeEntrance",
+            "passed": true,
+            "evidence": "From office approach; scoped collider bake, existing agent type, 0.035 m voxel; PathComplete; 2 corners"
+        },
+        {
+            "name": "Study navigation: HireConstructionWorker",
+            "passed": true,
+            "evidence": "From office approach; scoped collider bake, existing agent type, 0.035 m voxel; PathComplete; 5 corners"
+        },
+        {
+            "name": "Study navigation: HireGroundskeeper",
+            "passed": true,
+            "evidence": "From office approach; scoped collider bake, existing agent type, 0.035 m voxel; PathComplete; 4 corners"
+        },
+        {
+            "name": "Study navigation: WorkshopEntrance",
+            "passed": true,
+            "evidence": "From office approach; scoped collider bake, existing agent type, 0.035 m voxel; PathComplete; 9 corners"
+        },
+        {
+            "name": "Study navigation: YardAccess",
+            "passed": true,
+            "evidence": "From office approach; scoped collider bake, existing agent type, 0.035 m voxel; PathComplete; 7 corners"
+        },
+        {
+            "name": "Study navigation: ConstructionMaterialPickup",
+            "passed": true,
+            "evidence": "From office approach; scoped collider bake, existing agent type, 0.035 m voxel; PathComplete; 6 corners"
+        },
+        {
+            "name": "Study navigation: ToolPickup",
+            "passed": true,
+            "evidence": "From office approach; scoped collider bake, existing agent type, 0.035 m voxel; PathComplete; 6 corners"
+        },
+        {
+            "name": "Study navigation: WorkshopWork",
+            "passed": true,
+            "evidence": "From office approach; scoped collider bake, existing agent type, 0.035 m voxel; PathComplete; 5 corners"
+        },
+        {
+            "name": "Study navigation: GroundskeeperSupply",
+            "passed": true,
+            "evidence": "From office approach; scoped collider bake, existing agent type, 0.035 m voxel; PathComplete; 5 corners"
+        },
+        {
+            "name": "Fits existing service lot position",
+            "passed": true,
+            "evidence": "Building/yard/approach reserve 20.6 x 13.6 m at existing (-28,-22) origin; requires replacing old 9 x 12 m reservation during integration"
+        }
+    ]
+}

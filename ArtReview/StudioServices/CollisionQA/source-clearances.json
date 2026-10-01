@@ -1,0 +1,162 @@
+{
+  "checks": [
+    {
+      "name": "Bench supports do not cut through wooden slats",
+      "passed": true,
+      "evidence": "Evaluated triangle intersections, excluding fasteners and the seat underside bearing contact checked separately"
+    },
+    {
+      "name": "Bench bearing metal remains below seat surface",
+      "passed": true,
+      "evidence": {
+        "seatUnderside": 0.46149998903274536,
+        "bearingTop": 0.46150004863739014
+      }
+    },
+    {
+      "name": "Workshop drop bolts clear both timber diagonals",
+      "passed": true,
+      "evidence": "Evaluated triangle intersections for backplates, shafts, guides, keepers and diagonal timbers"
+    },
+    {
+      "name": "Storage sacks clear all adjacent crates",
+      "passed": true,
+      "evidence": {
+        "minimumAxisSeparationMetres": 0.39254164695739746,
+        "pairs": 18
+      }
+    },
+    {
+      "name": "Storage sacks clear one another",
+      "passed": true,
+      "evidence": {
+        "axisSeparationMetres": 0.16245603561401367
+      }
+    },
+    {
+      "name": "Yard barrel clears workbench including vise handle",
+      "passed": true,
+      "evidence": {
+        "completeMeshBoundsSeparationMetres": 0.1810004711151123
+      }
+    },
+    {
+      "name": "Yard stacked crates have clear space ahead of bench top",
+      "passed": true,
+      "evidence": {
+        "separationMetres": 0.4492499828338623
+      }
+    },
+    {
+      "name": "Yard stacked crates clear projecting side-window sill",
+      "passed": true,
+      "evidence": {
+        "completeMeshBoundsSeparationMetres": 0.15164422988891602,
+        "crateBounds": [
+          [
+            [
+              7.338500022888184,
+              2.0215001106262207,
+              0.0
+            ],
+            [
+              8.161499977111816,
+              2.6714999675750732,
+              0.5799999833106995
+            ]
+          ],
+          [
+            [
+              7.338500022888184,
+              2.0215001106262207,
+              0.5800000429153442
+            ],
+            [
+              8.161499977111816,
+              2.6714999675750732,
+              1.159999966621399
+            ]
+          ]
+        ],
+        "windowBounds": [
+          [
+            6.684999465942383,
+            0.35500001907348633,
+            0.9984866380691528
+          ],
+          [
+            7.186855792999268,
+            3.194999933242798,
+            3.195000171661377
+          ]
+        ]
+      }
+    },
+    {
+      "name": "Yard stacked crates clear nearby barrels, wheelbarrows and ladder",
+      "passed": true,
+      "evidence": [
+        {
+          "asset": "WheelbarrowSteel_1930",
+          "separationMetres": 0.5446310043334961
+        },
+        {
+          "asset": "WheelbarrowSteel_1930",
+          "separationMetres": 3.755220890045166
+        },
+        {
+          "asset": "BarrelPaintedSteel_1930",
+          "separationMetres": 1.3095000982284546
+        },
+        {
+          "asset": "BarrelPaintedSteel_1930",
+          "separationMetres": 0.5595000982284546
+        },
+        {
+          "asset": "BarrelTimber_1930",
+          "separationMetres": 1.0685005187988281
+        },
+        {
+          "asset": "LadderTimber_260_1930",
+          "separationMetres": 0.7855000495910645
+        }
+      ]
+    },
+    {
+      "name": "Awning mounts clear door architraves on both sides",
+      "passed": true,
+      "evidence": {
+        "minimumHorizontalSeparationMetres": 0.03749990463256836
+      }
+    },
+    {
+      "name": "Awning is centred on personnel opening",
+      "passed": true,
+      "evidence": {
+        "awningCentre": -4.15,
+        "frameCentre": -4.15
+      }
+    },
+    {
+      "name": "Awning supports remain below outer roof skin",
+      "passed": true,
+      "evidence": {
+        "maximumAboveSkinMetres": -0.02261252854000445
+      }
+    },
+    {
+      "name": "Installed bench clears projecting window sill",
+      "passed": true,
+      "evidence": {
+        "completeMeshBoundsSeparationMetres": 0.08325529098510742
+      }
+    },
+    {
+      "name": "Approved semantic anchors unchanged",
+      "passed": true,
+      "evidence": 19
+    }
+  ],
+  "passed": 14,
+  "total": 14
+}

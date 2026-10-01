@@ -1,0 +1,193 @@
+{
+    "unityVersion": "6000.6.3f1",
+    "checks": [
+        {
+            "name": "All visibility groups have renderers",
+            "evidence": "Roof, FrontWall, RightWall, LeftWall, RearWall",
+            "passed": true
+        },
+        {
+            "name": "Cutaway retains finished floor and partitions",
+            "evidence": "Floor, interior-facing wall linings and partition caps are authored geometry",
+            "passed": true
+        },
+        {
+            "name": "Independent reveal owners",
+            "evidence": "Building focus remains after preview release",
+            "passed": true
+        },
+        {
+            "name": "Exact restoration",
+            "evidence": "198 renderer states restored",
+            "passed": true
+        },
+        {
+            "name": "Physical collision remains active",
+            "evidence": "183 collider states unchanged",
+            "passed": true
+        },
+        {
+            "name": "Exact rendered restoration",
+            "evidence": "PNG byte comparison before and after multiple reveal reasons",
+            "passed": true
+        },
+        {
+            "name": "Anchor clearance: OfficeEntrance",
+            "evidence": "0.70 m diameter, 2.00 m height clear",
+            "passed": true
+        },
+        {
+            "name": "Anchor clearance: OfficeApproach",
+            "evidence": "0.70 m diameter, 2.00 m height clear",
+            "passed": true
+        },
+        {
+            "name": "Anchor clearance: WorkshopEntrance",
+            "evidence": "0.70 m diameter, 2.00 m height clear",
+            "passed": true
+        },
+        {
+            "name": "Anchor clearance: WorkshopApproach",
+            "evidence": "0.70 m diameter, 2.00 m height clear",
+            "passed": true
+        },
+        {
+            "name": "Anchor clearance: YardAccess",
+            "evidence": "0.70 m diameter, 2.00 m height clear",
+            "passed": true
+        },
+        {
+            "name": "Anchor clearance: ApplicantArrival",
+            "evidence": "0.70 m diameter, 2.00 m height clear",
+            "passed": true
+        },
+        {
+            "name": "Anchor clearance: ApplicantExit",
+            "evidence": "0.70 m diameter, 2.00 m height clear",
+            "passed": true
+        },
+        {
+            "name": "Anchor clearance: ApplicantWaiting_00",
+            "evidence": "0.70 m diameter, 2.00 m height clear",
+            "passed": true
+        },
+        {
+            "name": "Anchor clearance: ApplicantWaiting_01",
+            "evidence": "0.70 m diameter, 2.00 m height clear",
+            "passed": true
+        },
+        {
+            "name": "Anchor clearance: ApplicantWaiting_02",
+            "evidence": "0.70 m diameter, 2.00 m height clear",
+            "passed": true
+        },
+        {
+            "name": "Anchor clearance: ApplicantWaiting_03",
+            "evidence": "0.70 m diameter, 2.00 m height clear",
+            "passed": true
+        },
+        {
+            "name": "Anchor clearance: ApplicantWaiting_04",
+            "evidence": "0.70 m diameter, 2.00 m height clear",
+            "passed": true
+        },
+        {
+            "name": "Anchor clearance: HireConstructionWorker",
+            "evidence": "0.70 m diameter, 2.00 m height clear",
+            "passed": true
+        },
+        {
+            "name": "Anchor clearance: HireGroundskeeper",
+            "evidence": "0.70 m diameter, 2.00 m height clear",
+            "passed": true
+        },
+        {
+            "name": "Anchor clearance: ConstructionMaterialPickup",
+            "evidence": "0.70 m diameter, 2.00 m height clear",
+            "passed": true
+        },
+        {
+            "name": "Anchor clearance: ToolPickup",
+            "evidence": "0.70 m diameter, 2.00 m height clear",
+            "passed": true
+        },
+        {
+            "name": "Anchor clearance: WorkshopWork",
+            "evidence": "0.70 m diameter, 2.00 m height clear",
+            "passed": true
+        },
+        {
+            "name": "Anchor clearance: GroundskeeperSupply",
+            "evidence": "0.70 m diameter, 2.00 m height clear",
+            "passed": true
+        },
+        {
+            "name": "Anchor clearance: ApplicantInspection",
+            "evidence": "0.70 m diameter, 2.00 m height clear",
+            "passed": true
+        },
+        {
+            "name": "Canonical prefab references",
+            "evidence": "181 instances reference independent reusable assets",
+            "passed": true
+        },
+        {
+            "name": "Live identity",
+            "evidence": "Dedicated building type, no Stage or Headquarters identity",
+            "passed": true
+        },
+        {
+            "name": "Hiring uses interior reveal",
+            "evidence": "Two authored compatible hiring slots; ordinary play hides them",
+            "passed": true
+        },
+        {
+            "name": "Navigation: OfficeEntrance",
+            "evidence": "PathComplete; 2 corners, isolated 0.025 m collider bake with current employee agent",
+            "passed": true
+        },
+        {
+            "name": "Navigation: HireConstructionWorker",
+            "evidence": "PathComplete; 5 corners, isolated 0.025 m collider bake with current employee agent",
+            "passed": true
+        },
+        {
+            "name": "Navigation: HireGroundskeeper",
+            "evidence": "PathComplete; 4 corners, isolated 0.025 m collider bake with current employee agent",
+            "passed": true
+        },
+        {
+            "name": "Navigation: WorkshopEntrance",
+            "evidence": "PathComplete; 12 corners, isolated 0.025 m collider bake with current employee agent",
+            "passed": true
+        },
+        {
+            "name": "Navigation: YardAccess",
+            "evidence": "PathComplete; 9 corners, isolated 0.025 m collider bake with current employee agent",
+            "passed": true
+        },
+        {
+            "name": "Navigation: ConstructionMaterialPickup",
+            "evidence": "PathComplete; 5 corners, isolated 0.025 m collider bake with current employee agent",
+            "passed": true
+        },
+        {
+            "name": "Navigation: ToolPickup",
+            "evidence": "PathComplete; 10 corners, isolated 0.025 m collider bake with current employee agent",
+            "passed": true
+        },
+        {
+            "name": "Navigation: WorkshopWork",
+            "evidence": "PathComplete; 12 corners, isolated 0.025 m collider bake with current employee agent",
+            "passed": true
+        },
+        {
+            "name": "Navigation: GroundskeeperSupply",
+            "evidence": "PathComplete; 5 corners, isolated 0.025 m collider bake with current employee agent",
+            "passed": true
+        }
+    ],
+    "kitCount": 63,
+    "fixtureInstances": 181,
+    "triangles": 790108
+}

@@ -1,0 +1,22 @@
+{
+  "PeriodEnvironment1930": {
+    "sourceUnchanged": true,
+    "sourceSha256": "245bd95c86d751540a463395ae60f42049b4e9a9671702fc8e571cfefba98094",
+    "assemblies": 63,
+    "triangles": {
+      "0": 325262,
+      "1": 95845,
+      "2": 32599
+    }
+  },
+  "StudioServices": {
+    "sourceUnchanged": true,
+    "sourceSha256": "0551f1e669f644575cfa9ab309cb23a027d55f72c276a57e8694702d853ca1fb",
+    "assemblies": 13,
+    "triangles": {
+      "0": 174834,
+      "1": 67224,
+      "2": 28160
+    }
+  }
+}

@@ -1,0 +1,33 @@
+00:09.640  blend            | Read blend: "C:\Repos\Unity\Silver Screen\ArtSource\StageSchoolA3\StageSchool_A3.blend"
+Info: Read library: 'C:\Repos\Unity\Silver Screen\ArtSource\PeriodEnvironment1930\PeriodEnvironment1930.blend', '//..\PeriodEnvironment1930\PeriodEnvironment1930.blend', parent '<direct>'
+Info: Read library: 'C:\Repos\Unity\Silver Screen\ArtSource\ProductionEquipment1930Candidate\ProductionEquipment1930Candidate.blend', '//..\ProductionEquipment1930Candidate\ProductionEquipment1930Candidate.blend', parent '<direct>'
+B1 LOD 0 0
+B1 LOD 0 40
+B1 LOD 0 80
+B1 LOD 0 120
+B1 LOD 0 160
+B1 LOD 0 200
+B1 LOD 0 240
+B1 LOD 0 280
+{'level': 0, 'triangles': 1410563, 'vertices': 2135043}
+B1 LOD 1 0
+B1 LOD 1 40
+B1 LOD 1 80
+B1 LOD 1 120
+B1 LOD 1 160
+B1 LOD 1 200
+B1 LOD 1 240
+B1 LOD 1 280
+{'level': 1, 'triangles': 343742, 'vertices': 482725}
+B1 LOD 2 0
+B1 LOD 2 40
+B1 LOD 2 80
+B1 LOD 2 120
+B1 LOD 2 160
+B1 LOD 2 200
+B1 LOD 2 240
+B1 LOD 2 280
+{'level': 2, 'triangles': 196913, 'vertices': 242629}
+Blender 5.0.1 (hash a3db93c5b259 built 2025-12-16 01:32:30)
+
+Blender quit

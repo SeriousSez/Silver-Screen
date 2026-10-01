@@ -1,0 +1,25 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"success\": true,\n  \"message\": \"Command executed successfully.\",\n  \"data\": {\n    \"isCompilationSuccessful\": true,\n    \"isExecutionSuccessful\": true,\n    \"executionId\": 1,\n    \"compilationLogs\": \"\",\n    \"executionLogs\": \"[Log] Final LOD1 structure-phase floors captured; presentation-only check, not another completion run.\",\n    \"localFixedCode\": \"using UnityEngine;\\r\\nusing UnityEditor;\\r\\n\\r\\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\\r\\n{\\r\\n    internal class CommandScript : IRunCommand\\r\\n    {\\r\\n        public void Execute(ExecutionResult result)\\r\\n        {\\r\\n            var scene = UnityEditor.SceneManagement.EditorSceneManager.OpenPreviewScene(SilverScreen.Editor.EnvironmentArt.StageSchoolB2Review.ScenePath);\\r\\n            try\\r\\n            {\\r\\n                var roots = scene.GetRootGameObjects();\\r\\n                var root = System.Linq.Enumerable.First(roots, g => g.GetComponent<SilverScreen.Presentation.Buildings.StageSchoolInfrastructure>() != null);\\r\\n                var camera = System.Linq.Enumerable.First(System.Linq.Enumerable.SelectMany(roots, g => g.GetComponentsInChildren<UnityEngine.Camera>()));\\r\\n                camera.scene = scene;\\r\\n                root.GetComponent<UnityEngine.LODGroup>().enabled = false;\\r\\n                for (int i = 0; i < 3; i++)\\r\\n                    root.transform.Find(\\\"LOD\\\" + i).gameObject.SetActive(i == 1);\\r\\n                var phase = root.GetComponent<SilverScreen.Presentation.Buildings.ConstructionPhaseVisuals>();\\r\\n                phase.Initialize(root, \\\"content.stage-school.1930\\\", 5.95f);\\r\\n                phase.Apply(SilverScreen.Domain.Buildings.ConstructionPhase.Structure);\\r\\n                SilverScreen.Editor.EnvironmentArt.StageSchoolB2Review.Shot(camera, \\\"11_final_phase_binding_lod1\\\", new UnityEngine.Vector3(27, 19, -30), new UnityEngine.Vector3(0, 2, -1));\\r\\n                result.Log(\\\"Final LOD1 structure-phase floors captured; presentation-only check, not another completion run.\\\");\\r\\n            }\\r\\n            finally\\r\\n            {\\r\\n                UnityEditor.SceneManagement.EditorSceneManager.ClosePreviewScene(scene);\\r\\n            }\\r\\n        }\\r\\n    }\\r\\n}\",\n    \"result\": \"Command executed successfully.\"\n  }\n}"
+      }
+    ],
+    "structuredContent": {
+      "success": true,
+      "message": "Command executed successfully.",
+      "data": {
+        "isCompilationSuccessful": true,
+        "isExecutionSuccessful": true,
+        "executionId": 1,
+        "compilationLogs": "",
+        "executionLogs": "[Log] Final LOD1 structure-phase floors captured; presentation-only check, not another completion run.",
+        "localFixedCode": "using UnityEngine;\r\nusing UnityEditor;\r\n\r\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\r\n{\r\n    internal class CommandScript : IRunCommand\r\n    {\r\n        public void Execute(ExecutionResult result)\r\n        {\r\n            var scene = UnityEditor.SceneManagement.EditorSceneManager.OpenPreviewScene(SilverScreen.Editor.EnvironmentArt.StageSchoolB2Review.ScenePath);\r\n            try\r\n            {\r\n                var roots = scene.GetRootGameObjects();\r\n                var root = System.Linq.Enumerable.First(roots, g => g.GetComponent<SilverScreen.Presentation.Buildings.StageSchoolInfrastructure>() != null);\r\n                var camera = System.Linq.Enumerable.First(System.Linq.Enumerable.SelectMany(roots, g => g.GetComponentsInChildren<UnityEngine.Camera>()));\r\n                camera.scene = scene;\r\n                root.GetComponent<UnityEngine.LODGroup>().enabled = false;\r\n                for (int i = 0; i < 3; i++)\r\n                    root.transform.Find(\"LOD\" + i).gameObject.SetActive(i == 1);\r\n                var phase = root.GetComponent<SilverScreen.Presentation.Buildings.ConstructionPhaseVisuals>();\r\n                phase.Initialize(root, \"content.stage-school.1930\", 5.95f);\r\n                phase.Apply(SilverScreen.Domain.Buildings.ConstructionPhase.Structure);\r\n                SilverScreen.Editor.EnvironmentArt.StageSchoolB2Review.Shot(camera, \"11_final_phase_binding_lod1\", new UnityEngine.Vector3(27, 19, -30), new UnityEngine.Vector3(0, 2, -1));\r\n                result.Log(\"Final LOD1 structure-phase floors captured; presentation-only check, not another completion run.\");\r\n            }\r\n            finally\r\n            {\r\n                UnityEditor.SceneManagement.EditorSceneManager.ClosePreviewScene(scene);\r\n            }\r\n        }\r\n    }\r\n}",
+        "result": "Command executed successfully."
+      }
+    }
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}

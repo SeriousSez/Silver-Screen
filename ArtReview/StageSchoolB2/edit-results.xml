@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="25" result="Passed" total="25" passed="25" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-09-30 18:15:58Z" end-time="2026-09-30 18:15:59Z" duration="1.0878288">
+  <test-suite type="TestSuite" id="1000" name="Silver Screen" fullname="Silver Screen" runstate="Runnable" testcasecount="367" result="Passed" start-time="2026-09-30 18:15:58Z" end-time="2026-09-30 18:15:59Z" duration="1.087829" total="25" passed="25" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1436" name="Assembly-CSharp-Editor.dll" fullname="C:/Repos/Unity/Silver Screen/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" runstate="Runnable" testcasecount="367" result="Passed" start-time="2026-09-30 18:15:58Z" end-time="2026-09-30 18:15:59Z" duration="0.975699" total="25" passed="25" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="46120" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1437" name="SilverScreen" fullname="SilverScreen" runstate="Runnable" testcasecount="367" result="Passed" start-time="2026-09-30 18:15:58Z" end-time="2026-09-30 18:15:59Z" duration="0.969344" total="25" passed="25" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1438" name="Tests" fullname="SilverScreen.Tests" runstate="Runnable" testcasecount="367" result="Passed" start-time="2026-09-30 18:15:58Z" end-time="2026-09-30 18:15:59Z" duration="0.967059" total="25" passed="25" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1440" name="EditMode" fullname="SilverScreen.Tests.EditMode" runstate="Runnable" testcasecount="340" result="Passed" start-time="2026-09-30 18:15:58Z" end-time="2026-09-30 18:15:58Z" duration="0.492758" total="16" passed="16" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1051" name="ConstructionDressingTests" fullname="SilverScreen.Tests.EditMode.ConstructionDressingTests" classname="SilverScreen.Tests.EditMode.ConstructionDressingTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-09-30 18:15:58Z" end-time="2026-09-30 18:15:58Z" duration="0.436847" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1053" name="AllStarterArchitecturesKeepModulesInsideReservationsAndOutsideAccessPads" fullname="SilverScreen.Tests.EditMode.ConstructionDressingTests.AllStarterArchitecturesKeepModulesInsideReservationsAndOutsideAccessPads" methodname="AllStarterArchitecturesKeepModulesInsideReservationsAndOutsideAccessPads" classname="SilverScreen.Tests.EditMode.ConstructionDressingTests" runstate="Runnable" seed="1755985602" result="Passed" start-time="2026-09-30 18:15:58Z" end-time="2026-09-30 18:15:58Z" duration="0.127440" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1052" name="OneLocalPlanFollowsArbitraryInstancesWithoutWorldCoordinateAssumptions" fullname="SilverScreen.Tests.EditMode.ConstructionDressingTests.OneLocalPlanFollowsArbitraryInstancesWithoutWorldCoordinateAssumptions" methodname="OneLocalPlanFollowsArbitraryInstancesWithoutWorldCoordinateAssumptions" classname="SilverScreen.Tests.EditMode.ConstructionDressingTests" runstate="Runnable" seed="969251724" result="Passed" start-time="2026-09-30 18:15:58Z" end-time="2026-09-30 18:15:58Z" duration="0.068058" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1056" name="PhaseReplacementCancellationAndOwnerRemovalCleanUpGeneratedObjects" fullname="SilverScreen.Tests.EditMode.ConstructionDressingTests.PhaseReplacementCancellationAndOwnerRemovalCleanUpGeneratedObjects" methodname="PhaseReplacementCancellationAndOwnerRemovalCleanUpGeneratedObjects" classname="SilverScreen.Tests.EditMode.ConstructionDressingTests" runstate="Runnable" seed="750813217" result="Passed" start-time="2026-09-30 18:15:58Z" end-time="2026-09-30 18:15:58Z" duration="0.022328" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1054" name="PhasesReduceDressingDeterministicallyAndCompleteHasNone" fullname="SilverScreen.Tests.EditMode.ConstructionDressingTests.PhasesReduceDressingDeterministicallyAndCompleteHasNone" methodname="PhasesReduceDressingDeterministicallyAndCompleteHasNone" classname="SilverScreen.Tests.EditMode.ConstructionDressingTests" runstate="Runnable" seed="605396643" result="Passed" start-time="2026-09-30 18:15:58Z" end-time="2026-09-30 18:15:58Z" duration="0.017447" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1055" name="PreviewRevealsRealModelWithoutUnlockingGameplayAndCompletionRestoresIt" fullname="SilverScreen.Tests.EditMode.ConstructionDressingTests.PreviewRevealsRealModelWithoutUnlockingGameplayAndCompletionRestoresIt" methodname="PreviewRevealsRealModelWithoutUnlockingGameplayAndCompletionRestoresIt" classname="SilverScreen.Tests.EditMode.ConstructionDressingTests" runstate="Runnable" seed="285824826" result="Passed" start-time="2026-09-30 18:15:58Z" end-time="2026-09-30 18:15:58Z" duration="0.092280" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1057" name="ConstructionV2APlacementTests" fullname="SilverScreen.Tests.EditMode.ConstructionV2APlacementTests" classname="SilverScreen.Tests.EditMode.ConstructionV2APlacementTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-09-30 18:15:58Z" end-time="2026-09-30 18:15:58Z" duration="0.012008" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1059" name="AffordabilityChangesBetweenSelectionAndConfirmationAreRespected" fullname="SilverScreen.Tests.EditMode.ConstructionV2APlacementTests.AffordabilityChangesBetweenSelectionAndConfirmationAreRespected" methodname="AffordabilityChangesBetweenSelectionAndConfirmationAreRespected" classname="SilverScreen.Tests.EditMode.ConstructionV2APlacementTests" runstate="Runnable" seed="277443489" result="Passed" start-time="2026-09-30 18:15:58Z" end-time="2026-09-30 18:15:58Z" duration="0.001595" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1058" name="ConfirmationRechecksWorldBlockersWithoutChargingOrCreatingASite" fullname="SilverScreen.Tests.EditMode.ConstructionV2APlacementTests.ConfirmationRechecksWorldBlockersWithoutChargingOrCreatingASite" methodname="ConfirmationRechecksWorldBlockersWithoutChargingOrCreatingASite" classname="SilverScreen.Tests.EditMode.ConstructionV2APlacementTests" runstate="Runnable" seed="887341534" result="Passed" start-time="2026-09-30 18:15:58Z" end-time="2026-09-30 18:15:58Z" duration="0.001207" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1060" name="OffsetFootprintRotatesAroundInstanceOriginRatherThanItsOwnCenter" fullname="SilverScreen.Tests.EditMode.ConstructionV2APlacementTests.OffsetFootprintRotatesAroundInstanceOriginRatherThanItsOwnCenter" methodname="OffsetFootprintRotatesAroundInstanceOriginRatherThanItsOwnCenter" classname="SilverScreen.Tests.EditMode.ConstructionV2APlacementTests" runstate="Runnable" seed="830406239" result="Passed" start-time="2026-09-30 18:15:58Z" end-time="2026-09-30 18:15:58Z" duration="0.000443" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1061" name="RotationGestureSnapsTapTurnsToLotOrientationAndAllowsArbitraryYaw" fullname="SilverScreen.Tests.EditMode.ConstructionV2APlacementTests.RotationGestureSnapsTapTurnsToLotOrientationAndAllowsArbitraryYaw" methodname="RotationGestureSnapsTapTurnsToLotOrientationAndAllowsArbitraryYaw" classname="SilverScreen.Tests.EditMode.ConstructionV2APlacementTests" runstate="Runnable" seed="871978136" result="Passed" start-time="2026-09-30 18:15:58Z" end-time="2026-09-30 18:15:58Z" duration="0.001904" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1062" name="RotationMagnetOnlyAssistsNearFifteenDegreeAngles" fullname="SilverScreen.Tests.EditMode.ConstructionV2APlacementTests.RotationMagnetOnlyAssistsNearFifteenDegreeAngles" methodname="RotationMagnetOnlyAssistsNearFifteenDegreeAngles" classname="SilverScreen.Tests.EditMode.ConstructionV2APlacementTests" runstate="Runnable" seed="969756382" result="Passed" start-time="2026-09-30 18:15:58Z" end-time="2026-09-30 18:15:58Z" duration="0.000217" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1063" name="ConstructionV2BWorkforceTests" fullname="SilverScreen.Tests.EditMode.ConstructionV2BWorkforceTests" classname="SilverScreen.Tests.EditMode.ConstructionV2BWorkforceTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-09-30 18:15:58Z" end-time="2026-09-30 18:15:58Z" duration="0.037238" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1068" name="ActiveConstructionBuildsAndPreservesConstructionProficiency" fullname="SilverScreen.Tests.EditMode.ConstructionV2BWorkforceTests.ActiveConstructionBuildsAndPreservesConstructionProficiency" methodname="ActiveConstructionBuildsAndPreservesConstructionProficiency" classname="SilverScreen.Tests.EditMode.ConstructionV2BWorkforceTests" runstate="Runnable" seed="1899896251" result="Passed" start-time="2026-09-30 18:15:58Z" end-time="2026-09-30 18:15:58Z" duration="0.001966" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1067" name="OnlyArrivedWorkersContributeAndStatusReportsCurrentOutput" fullname="SilverScreen.Tests.EditMode.ConstructionV2BWorkforceTests.OnlyArrivedWorkersContributeAndStatusReportsCurrentOutput" methodname="OnlyArrivedWorkersContributeAndStatusReportsCurrentOutput" classname="SilverScreen.Tests.EditMode.ConstructionV2BWorkforceTests" runstate="Runnable" seed="351591833" result="Passed" start-time="2026-09-30 18:15:58Z" end-time="2026-09-30 18:15:58Z" duration="0.000960" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1069" name="PhaseActivityPointsMatchCapacityAndChangePurposefully" fullname="SilverScreen.Tests.EditMode.ConstructionV2BWorkforceTests.PhaseActivityPointsMatchCapacityAndChangePurposefully" methodname="PhaseActivityPointsMatchCapacityAndChangePurposefully" classname="SilverScreen.Tests.EditMode.ConstructionV2BWorkforceTests" runstate="Runnable" seed="1253560070" result="Passed" start-time="2026-09-30 18:15:58Z" end-time="2026-09-30 18:15:58Z" duration="0.016531" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1066" name="PhaseCapacityReservesDistinctReusableWorkSpots" fullname="SilverScreen.Tests.EditMode.ConstructionV2BWorkforceTests.PhaseCapacityReservesDistinctReusableWorkSpots" methodname="PhaseCapacityReservesDistinctReusableWorkSpots" classname="SilverScreen.Tests.EditMode.ConstructionV2BWorkforceTests" runstate="Runnable" seed="806135276" result="Passed" start-time="2026-09-30 18:15:58Z" end-time="2026-09-30 18:15:58Z" duration="0.003744" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1065" name="ProficiencyAndDiminishingReturnsProduceUsefulButBoundedCrews" fullname="SilverScreen.Tests.EditMode.ConstructionV2BWorkforceTests.ProficiencyAndDiminishingReturnsProduceUsefulButBoundedCrews" methodname="ProficiencyAndDiminishingReturnsProduceUsefulButBoundedCrews" classname="SilverScreen.Tests.EditMode.ConstructionV2BWorkforceTests" runstate="Runnable" seed="1641245677" result="Passed" start-time="2026-09-30 18:15:58Z" end-time="2026-09-30 18:15:58Z" duration="0.001257" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1064" name="StarterRequirementsAuthorDistinctWorkPhaseWeightsAndCapacities" fullname="SilverScreen.Tests.EditMode.ConstructionV2BWorkforceTests.StarterRequirementsAuthorDistinctWorkPhaseWeightsAndCapacities" methodname="StarterRequirementsAuthorDistinctWorkPhaseWeightsAndCapacities" classname="SilverScreen.Tests.EditMode.ConstructionV2BWorkforceTests" runstate="Runnable" seed="1828742022" result="Passed" start-time="2026-09-30 18:15:58Z" end-time="2026-09-30 18:15:58Z" duration="0.002372" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+          </test-suite>
+          <test-suite type="TestSuite" id="1439" name="Editor" fullname="SilverScreen.Tests.Editor" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-09-30 18:15:58Z" end-time="2026-09-30 18:15:59Z" duration="0.374341" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1023" name="StageSchoolRuntimeTests" fullname="SilverScreen.Tests.Editor.StageSchoolRuntimeTests" classname="SilverScreen.Tests.Editor.StageSchoolRuntimeTests" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-09-30 18:15:58Z" end-time="2026-09-30 18:15:59Z" duration="0.373740" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1027" name="DefinitionHasOneIdentityAndNoRecruitment" fullname="SilverScreen.Tests.Editor.StageSchoolRuntimeTests.DefinitionHasOneIdentityAndNoRecruitment" methodname="DefinitionHasOneIdentityAndNoRecruitment" classname="SilverScreen.Tests.Editor.StageSchoolRuntimeTests" runstate="Runnable" seed="1770667403" result="Passed" start-time="2026-09-30 18:15:58Z" end-time="2026-09-30 18:15:58Z" duration="0.001366" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1031" name="DoorStateIsConsistentAcrossLods" fullname="SilverScreen.Tests.Editor.StageSchoolRuntimeTests.DoorStateIsConsistentAcrossLods" methodname="DoorStateIsConsistentAcrossLods" classname="SilverScreen.Tests.Editor.StageSchoolRuntimeTests" runstate="Runnable" seed="259249489" result="Passed" start-time="2026-09-30 18:15:58Z" end-time="2026-09-30 18:15:58Z" duration="0.120752" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1024" name="FoundationAppearsAtEveryLodBeforeWallsAndFixtures" fullname="SilverScreen.Tests.Editor.StageSchoolRuntimeTests.FoundationAppearsAtEveryLodBeforeWallsAndFixtures" methodname="FoundationAppearsAtEveryLodBeforeWallsAndFixtures" classname="SilverScreen.Tests.Editor.StageSchoolRuntimeTests" runstate="Runnable" seed="1243199001" result="Passed" start-time="2026-09-30 18:15:58Z" end-time="2026-09-30 18:15:58Z" duration="0.030997" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1026" name="FrontageEndsAtBuildingPocketsWithPassivePathConnection" fullname="SilverScreen.Tests.Editor.StageSchoolRuntimeTests.FrontageEndsAtBuildingPocketsWithPassivePathConnection" methodname="FrontageEndsAtBuildingPocketsWithPassivePathConnection" classname="SilverScreen.Tests.Editor.StageSchoolRuntimeTests" runstate="Runnable" seed="566463942" result="Passed" start-time="2026-09-30 18:15:58Z" end-time="2026-09-30 18:15:58Z" duration="0.002042" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1025" name="PlacementCreatesGatedSiteAndPreservesLodSelection" fullname="SilverScreen.Tests.Editor.StageSchoolRuntimeTests.PlacementCreatesGatedSiteAndPreservesLodSelection" methodname="PlacementCreatesGatedSiteAndPreservesLodSelection" classname="SilverScreen.Tests.Editor.StageSchoolRuntimeTests" runstate="Runnable" seed="22442600" result="Passed" start-time="2026-09-30 18:15:58Z" end-time="2026-09-30 18:15:59Z" duration="0.174780" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1030" name="RevealPersistsAcrossLodsAndRestoresMaterials" fullname="SilverScreen.Tests.Editor.StageSchoolRuntimeTests.RevealPersistsAcrossLodsAndRestoresMaterials" methodname="RevealPersistsAcrossLodsAndRestoresMaterials" classname="SilverScreen.Tests.Editor.StageSchoolRuntimeTests" runstate="Runnable" seed="320235966" result="Passed" start-time="2026-09-30 18:15:59Z" end-time="2026-09-30 18:15:59Z" duration="0.033278" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1028" name="RotatedCompoundPlacementStillExcludesArchitecture" fullname="SilverScreen.Tests.Editor.StageSchoolRuntimeTests.RotatedCompoundPlacementStillExcludesArchitecture" methodname="RotatedCompoundPlacementStillExcludesArchitecture" classname="SilverScreen.Tests.Editor.StageSchoolRuntimeTests" runstate="Runnable" seed="1259305805" result="Passed" start-time="2026-09-30 18:15:59Z" end-time="2026-09-30 18:15:59Z" duration="0.000543" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1032" name="RuntimeAttachmentChainsAndDoorConnectivityAreExplicit" fullname="SilverScreen.Tests.Editor.StageSchoolRuntimeTests.RuntimeAttachmentChainsAndDoorConnectivityAreExplicit" methodname="RuntimeAttachmentChainsAndDoorConnectivityAreExplicit" classname="SilverScreen.Tests.Editor.StageSchoolRuntimeTests" runstate="Runnable" seed="2091426648" result="Passed" start-time="2026-09-30 18:15:59Z" end-time="2026-09-30 18:15:59Z" duration="0.001880" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1029" name="RuntimeLodsReduceGeometryAndRetainIndependentDoors" fullname="SilverScreen.Tests.Editor.StageSchoolRuntimeTests.RuntimeLodsReduceGeometryAndRetainIndependentDoors" methodname="RuntimeLodsReduceGeometryAndRetainIndependentDoors" classname="SilverScreen.Tests.Editor.StageSchoolRuntimeTests" runstate="Runnable" seed="561591818" result="Passed" start-time="2026-09-30 18:15:59Z" end-time="2026-09-30 18:15:59Z" duration="0.002190" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Saving results to: C:/Users/Sez/AppData/LocalLow/DefaultCompany/Silver Screen\TestResults.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

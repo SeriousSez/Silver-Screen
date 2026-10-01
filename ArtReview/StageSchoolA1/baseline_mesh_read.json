@@ -1,0 +1,25 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"success\": true,\n  \"message\": \"Command executed successfully.\",\n  \"data\": {\n    \"isCompilationSuccessful\": true,\n    \"isExecutionSuccessful\": true,\n    \"executionId\": 1,\n    \"compilationLogs\": \"\",\n    \"executionLogs\": \"[Log] Read existing candidate mesh positions for source comparison\",\n    \"localFixedCode\": \"using UnityEngine;\\r\\nusing UnityEditor;\\r\\n\\r\\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\\r\\n{\\r\\n    internal class CommandScript : IRunCommand\\r\\n    {\\r\\n        public void Execute(ExecutionResult result)\\r\\n        {\\r\\n            var files = System.IO.Directory.GetFiles(\\\"Assets/SilverScreen/Environment/StageSchoolA1/Meshes\\\", \\\"*.asset\\\");\\r\\n            using (var writer = new System.IO.StreamWriter(\\\"ArtReview/StageSchoolA1/baseline_mesh_positions.txt\\\"))\\r\\n                foreach (var file in files)\\r\\n                {\\r\\n                    var mesh = UnityEditor.AssetDatabase.LoadAssetAtPath<UnityEngine.Mesh>(file.Replace('\\\\\\\\', '/'));\\r\\n                    if (mesh == null)\\r\\n                        continue;\\r\\n                    writer.Write(mesh.name + \\\"|\\\" + mesh.triangles.Length / 3 + \\\"|\\\");\\r\\n                    foreach (var p in mesh.vertices)\\r\\n                        writer.Write(p.x.ToString(\\\"R\\\", System.Globalization.CultureInfo.InvariantCulture) + \\\",\\\" + p.y.ToString(\\\"R\\\", System.Globalization.CultureInfo.InvariantCulture) + \\\",\\\" + p.z.ToString(\\\"R\\\", System.Globalization.CultureInfo.InvariantCulture) + \\\";\\\");\\r\\n                    writer.WriteLine();\\r\\n                }\\r\\n\\r\\n            result.Log(\\\"Read existing candidate mesh positions for source comparison\\\");\\r\\n        }\\r\\n    }\\r\\n}\",\n    \"result\": \"Command executed successfully.\"\n  }\n}"
+      }
+    ],
+    "structuredContent": {
+      "success": true,
+      "message": "Command executed successfully.",
+      "data": {
+        "isCompilationSuccessful": true,
+        "isExecutionSuccessful": true,
+        "executionId": 1,
+        "compilationLogs": "",
+        "executionLogs": "[Log] Read existing candidate mesh positions for source comparison",
+        "localFixedCode": "using UnityEngine;\r\nusing UnityEditor;\r\n\r\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\r\n{\r\n    internal class CommandScript : IRunCommand\r\n    {\r\n        public void Execute(ExecutionResult result)\r\n        {\r\n            var files = System.IO.Directory.GetFiles(\"Assets/SilverScreen/Environment/StageSchoolA1/Meshes\", \"*.asset\");\r\n            using (var writer = new System.IO.StreamWriter(\"ArtReview/StageSchoolA1/baseline_mesh_positions.txt\"))\r\n                foreach (var file in files)\r\n                {\r\n                    var mesh = UnityEditor.AssetDatabase.LoadAssetAtPath<UnityEngine.Mesh>(file.Replace('\\\\', '/'));\r\n                    if (mesh == null)\r\n                        continue;\r\n                    writer.Write(mesh.name + \"|\" + mesh.triangles.Length / 3 + \"|\");\r\n                    foreach (var p in mesh.vertices)\r\n                        writer.Write(p.x.ToString(\"R\", System.Globalization.CultureInfo.InvariantCulture) + \",\" + p.y.ToString(\"R\", System.Globalization.CultureInfo.InvariantCulture) + \",\" + p.z.ToString(\"R\", System.Globalization.CultureInfo.InvariantCulture) + \";\");\r\n                    writer.WriteLine();\r\n                }\r\n\r\n            result.Log(\"Read existing candidate mesh positions for source comparison\");\r\n        }\r\n    }\r\n}",
+        "result": "Command executed successfully."
+      }
+    }
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}

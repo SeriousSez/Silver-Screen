@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="39" result="Failed(Child)" total="39" passed="38" failed="1" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-09-28 18:06:15Z" end-time="2026-09-28 18:06:26Z" duration="11.060625">
+  <test-suite type="TestSuite" id="1000" name="Silver Screen" fullname="Silver Screen" runstate="Runnable" testcasecount="294" result="Failed" site="Child" start-time="2026-09-28 18:06:15Z" end-time="2026-09-28 18:06:26Z" duration="11.060625" total="39" passed="38" failed="1" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1346" name="Assembly-CSharp-Editor.dll" fullname="C:/Repos/Unity/Silver Screen/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" runstate="Runnable" testcasecount="294" result="Failed" site="Child" start-time="2026-09-28 18:06:15Z" end-time="2026-09-28 18:06:26Z" duration="10.640066" total="39" passed="38" failed="1" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="47084" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1347" name="SilverScreen" fullname="SilverScreen" runstate="Runnable" testcasecount="294" result="Failed" site="Child" start-time="2026-09-28 18:06:15Z" end-time="2026-09-28 18:06:26Z" duration="10.618834" total="39" passed="38" failed="1" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1348" name="Tests" fullname="SilverScreen.Tests" runstate="Runnable" testcasecount="294" result="Failed" site="Child" start-time="2026-09-28 18:06:16Z" end-time="2026-09-28 18:06:26Z" duration="10.613712" total="39" passed="38" failed="1" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestSuite" id="1349" name="EditMode" fullname="SilverScreen.Tests.EditMode" runstate="Runnable" testcasecount="280" result="Failed" site="Child" start-time="2026-09-28 18:06:16Z" end-time="2026-09-28 18:06:26Z" duration="10.586361" total="25" passed="24" failed="1" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-suite type="TestFixture" id="1016" name="BuildingPlacementAndConstructionTests" fullname="SilverScreen.Tests.EditMode.BuildingPlacementAndConstructionTests" classname="SilverScreen.Tests.EditMode.BuildingPlacementAndConstructionTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-09-28 18:05:05Z" end-time="2026-09-28 18:05:05Z" duration="0.179531" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1019" name="ConstructionRequiresArrivalAndCompletionAloneUnlocksApplicants" fullname="SilverScreen.Tests.EditMode.BuildingPlacementAndConstructionTests.ConstructionRequiresArrivalAndCompletionAloneUnlocksApplicants" methodname="ConstructionRequiresArrivalAndCompletionAloneUnlocksApplicants" classname="SilverScreen.Tests.EditMode.BuildingPlacementAndConstructionTests" runstate="Runnable" seed="340842385" result="Passed" start-time="2026-09-28 18:05:05Z" end-time="2026-09-28 18:05:05Z" duration="0.116707" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1020" name="CrewCapacityDiminishesAndCancellationReleasesWorkersWithoutRefund" fullname="SilverScreen.Tests.EditMode.BuildingPlacementAndConstructionTests.CrewCapacityDiminishesAndCancellationReleasesWorkersWithoutRefund" methodname="CrewCapacityDiminishesAndCancellationReleasesWorkersWithoutRefund" classname="SilverScreen.Tests.EditMode.BuildingPlacementAndConstructionTests" runstate="Runnable" seed="1317518029" result="Passed" start-time="2026-09-28 18:05:05Z" end-time="2026-09-28 18:05:05Z" duration="0.008393" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1018" name="InvalidPlacementDoesNotChargeAndCommittedPlacementChargesOnce" fullname="SilverScreen.Tests.EditMode.BuildingPlacementAndConstructionTests.InvalidPlacementDoesNotChargeAndCommittedPlacementChargesOnce" methodname="InvalidPlacementDoesNotChargeAndCommittedPlacementChargesOnce" classname="SilverScreen.Tests.EditMode.BuildingPlacementAndConstructionTests" runstate="Runnable" seed="330801966" result="Passed" start-time="2026-09-28 18:05:05Z" end-time="2026-09-28 18:05:05Z" duration="0.001710" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1021" name="StarterPoolContainsOnlyServiceProfessionsAndHonoursFacilityCapacity" fullname="SilverScreen.Tests.EditMode.BuildingPlacementAndConstructionTests.StarterPoolContainsOnlyServiceProfessionsAndHonoursFacilityCapacity" methodname="StarterPoolContainsOnlyServiceProfessionsAndHonoursFacilityCapacity" classname="SilverScreen.Tests.EditMode.BuildingPlacementAndConstructionTests" runstate="Runnable" seed="710423144" result="Passed" start-time="2026-09-28 18:05:05Z" end-time="2026-09-28 18:05:05Z" duration="0.001454" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1017" name="TransformsBelongToInstancesAndRotateLocalEntrance" fullname="SilverScreen.Tests.EditMode.BuildingPlacementAndConstructionTests.TransformsBelongToInstancesAndRotateLocalEntrance" methodname="TransformsBelongToInstancesAndRotateLocalEntrance" classname="SilverScreen.Tests.EditMode.BuildingPlacementAndConstructionTests" runstate="Runnable" seed="1022570985" result="Passed" start-time="2026-09-28 18:05:05Z" end-time="2026-09-28 18:05:05Z" duration="0.002825" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1022" name="TutorialObservesRealCompletedConstruction" fullname="SilverScreen.Tests.EditMode.BuildingPlacementAndConstructionTests.TutorialObservesRealCompletedConstruction" methodname="TutorialObservesRealCompletedConstruction" classname="SilverScreen.Tests.EditMode.BuildingPlacementAndConstructionTests" runstate="Runnable" seed="112224674" result="Passed" start-time="2026-09-28 18:05:05Z" end-time="2026-09-28 18:05:05Z" duration="0.008797" asserts="0">
+                <properties />
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1034" name="HeldPersonPresentationTests" fullname="SilverScreen.Tests.EditMode.HeldPersonPresentationTests" classname="SilverScreen.Tests.EditMode.HeldPersonPresentationTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-28 18:05:05Z" end-time="2026-09-28 18:05:05Z" duration="0.015411" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1036" name="MotionIsBoundedTrailsAndSettlesAtDifferentFrameRates" fullname="SilverScreen.Tests.EditMode.HeldPersonPresentationTests.MotionIsBoundedTrailsAndSettlesAtDifferentFrameRates" methodname="MotionIsBoundedTrailsAndSettlesAtDifferentFrameRates" classname="SilverScreen.Tests.EditMode.HeldPersonPresentationTests" runstate="Runnable" seed="782585168" result="Passed" start-time="2026-09-28 18:05:05Z" end-time="2026-09-28 18:05:05Z" duration="0.005596" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1035" name="PlaceholderIsVisualOnlyAndEveryReleaseRestoresRenderer" fullname="SilverScreen.Tests.EditMode.HeldPersonPresentationTests.PlaceholderIsVisualOnlyAndEveryReleaseRestoresRenderer" methodname="PlaceholderIsVisualOnlyAndEveryReleaseRestoresRenderer" classname="SilverScreen.Tests.EditMode.HeldPersonPresentationTests" runstate="Runnable" seed="1196744046" result="Passed" start-time="2026-09-28 18:05:05Z" end-time="2026-09-28 18:05:05Z" duration="0.003761" asserts="0">
+                <properties />
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1168" name="PersonInteractionTests" fullname="SilverScreen.Tests.EditMode.PersonInteractionTests" classname="SilverScreen.Tests.EditMode.PersonInteractionTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-09-28 18:05:05Z" end-time="2026-09-28 18:05:05Z" duration="0.034488" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1175" name="DisplacedResourcePreservesWorkAndCannotEarnUntilAvailable" fullname="SilverScreen.Tests.EditMode.PersonInteractionTests.DisplacedResourcePreservesWorkAndCannotEarnUntilAvailable" methodname="DisplacedResourcePreservesWorkAndCannotEarnUntilAvailable" classname="SilverScreen.Tests.EditMode.PersonInteractionTests" runstate="Runnable" seed="1393598137" result="Passed" start-time="2026-09-28 18:05:05Z" end-time="2026-09-28 18:05:05Z" duration="0.003139" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1176" name="ExpandedInformationIsReadOnlyAndUrgencyIsContextual" fullname="SilverScreen.Tests.EditMode.PersonInteractionTests.ExpandedInformationIsReadOnlyAndUrgencyIsContextual" methodname="ExpandedInformationIsReadOnlyAndUrgencyIsContextual" classname="SilverScreen.Tests.EditMode.PersonInteractionTests" runstate="Runnable" seed="714055729" result="Passed" start-time="2026-09-28 18:05:05Z" end-time="2026-09-28 18:05:05Z" duration="0.003679" asserts="0">
+                <properties />
+              </test-case>
+              <test-suite type="ParameterizedMethod" id="1171" name="FacilityOriginNeverRestrictsProfessionAndIdentitySurvives" fullname="SilverScreen.Tests.EditMode.PersonInteractionTests.FacilityOriginNeverRestrictsProfessionAndIdentitySurvives" classname="SilverScreen.Tests.EditMode.PersonInteractionTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-28 18:05:05Z" end-time="2026-09-28 18:05:05Z" duration="0.014210" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1169" name="FacilityOriginNeverRestrictsProfessionAndIdentitySurvives(ConstructionWorker,Actor)" fullname="SilverScreen.Tests.EditMode.PersonInteractionTests.FacilityOriginNeverRestrictsProfessionAndIdentitySurvives(ConstructionWorker,Actor)" methodname="FacilityOriginNeverRestrictsProfessionAndIdentitySurvives" classname="SilverScreen.Tests.EditMode.PersonInteractionTests" runstate="Runnable" seed="282066583" result="Passed" start-time="2026-09-28 18:05:05Z" end-time="2026-09-28 18:05:05Z" duration="0.007437" asserts="0">
+                  <properties />
+                </test-case>
+                <test-case id="1170" name="FacilityOriginNeverRestrictsProfessionAndIdentitySurvives(Actor,Groundskeeper)" fullname="SilverScreen.Tests.EditMode.PersonInteractionTests.FacilityOriginNeverRestrictsProfessionAndIdentitySurvives(Actor,Groundskeeper)" methodname="FacilityOriginNeverRestrictsProfessionAndIdentitySurvives" classname="SilverScreen.Tests.EditMode.PersonInteractionTests" runstate="Runnable" seed="708335407" result="Passed" start-time="2026-09-28 18:05:05Z" end-time="2026-09-28 18:05:05Z" duration="0.000365" asserts="0">
+                  <properties />
+                </test-case>
+              </test-suite>
+              <test-case id="1174" name="NewObligationInterruptsPracticeWithoutLosingTheAssignment" fullname="SilverScreen.Tests.EditMode.PersonInteractionTests.NewObligationInterruptsPracticeWithoutLosingTheAssignment" methodname="NewObligationInterruptsPracticeWithoutLosingTheAssignment" classname="SilverScreen.Tests.EditMode.PersonInteractionTests" runstate="Runnable" seed="2107045528" result="Passed" start-time="2026-09-28 18:05:05Z" end-time="2026-09-28 18:05:05Z" duration="0.003226" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1173" name="PracticeUsesNormalWorkCapacityProgressAndReleasesItsSlot" fullname="SilverScreen.Tests.EditMode.PersonInteractionTests.PracticeUsesNormalWorkCapacityProgressAndReleasesItsSlot" methodname="PracticeUsesNormalWorkCapacityProgressAndReleasesItsSlot" classname="SilverScreen.Tests.EditMode.PersonInteractionTests" runstate="Runnable" seed="1244201040" result="Passed" start-time="2026-09-28 18:05:05Z" end-time="2026-09-28 18:05:05Z" duration="0.001523" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1172" name="SpotsRequireHoldProximityCompatibilityAndOperationalFacility" fullname="SilverScreen.Tests.EditMode.PersonInteractionTests.SpotsRequireHoldProximityCompatibilityAndOperationalFacility" methodname="SpotsRequireHoldProximityCompatibilityAndOperationalFacility" classname="SilverScreen.Tests.EditMode.PersonInteractionTests" runstate="Runnable" seed="1972300449" result="Passed" start-time="2026-09-28 18:05:05Z" end-time="2026-09-28 18:05:05Z" duration="0.001329" asserts="0">
+                <properties />
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1177" name="PersonManipulationRuntimeTests" fullname="SilverScreen.Tests.EditMode.PersonManipulationRuntimeTests" classname="SilverScreen.Tests.EditMode.PersonManipulationRuntimeTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-28 18:05:43Z" end-time="2026-09-28 18:05:44Z" duration="0.877643" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1179" name="CarryRequiresSeparateClickAndInvalidAttemptsKeepPresentation" fullname="SilverScreen.Tests.EditMode.PersonManipulationRuntimeTests.CarryRequiresSeparateClickAndInvalidAttemptsKeepPresentation" methodname="CarryRequiresSeparateClickAndInvalidAttemptsKeepPresentation" classname="SilverScreen.Tests.EditMode.PersonManipulationRuntimeTests" runstate="Runnable" seed="2066638850" result="Passed" start-time="2026-09-28 18:05:05Z" end-time="2026-09-28 18:05:25Z" duration="19.970656" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+              <test-case id="1178" name="GroundDropWarpsImmediatelyRejectsWallsAndRetainsWorkObligation" fullname="SilverScreen.Tests.EditMode.PersonManipulationRuntimeTests.GroundDropWarpsImmediatelyRejectsWallsAndRetainsWorkObligation" methodname="GroundDropWarpsImmediatelyRejectsWallsAndRetainsWorkObligation" classname="SilverScreen.Tests.EditMode.PersonManipulationRuntimeTests" runstate="Runnable" seed="319693896" result="Passed" start-time="2026-09-28 18:05:25Z" end-time="2026-09-28 18:05:44Z" duration="18.906871" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1329" name="StudioServicesProductionTests" fullname="SilverScreen.Tests.EditMode.StudioServicesProductionTests" classname="SilverScreen.Tests.EditMode.StudioServicesProductionTests" runstate="Runnable" testcasecount="8" result="Failed" site="Child" start-time="2026-09-28 18:06:16Z" end-time="2026-09-28 18:06:26Z" duration="10.542513" total="8" passed="7" failed="1" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <failure>
+                <message><![CDATA[One or more child tests had errors]]></message>
+              </failure>
+              <test-case id="1338" name="ActualStudioArrivalCarryCutawayHireAndInteriorRoute" fullname="SilverScreen.Tests.EditMode.StudioServicesProductionTests.ActualStudioArrivalCarryCutawayHireAndInteriorRoute" methodname="ActualStudioArrivalCarryCutawayHireAndInteriorRoute" classname="SilverScreen.Tests.EditMode.StudioServicesProductionTests" runstate="Runnable" seed="1958118305" result="Failed" start-time="2026-09-28 18:05:44Z" end-time="2026-09-28 18:06:26Z" duration="41.394161" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  Physical route contacts Workbench at (-23.04, 0.02, -20.54)
+  Expected: null
+  But was:  <Workbench (UnityEngine.BoxCollider)>
+]]></message>
+                  <stack-trace><![CDATA[at SilverScreen.Tests.EditMode.StudioServicesProductionTests+<RuntimeProof>d__10.MoveNext () [0x00c12] in C:\Repos\Unity\Silver Screen\Assets\Tests\Editor\StudioServicesProductionTests.cs:166
+at UnityEngine.TestTools.TestEnumerator+<Execute>d__8.MoveNext () [0x0003a] in .\Library\PackageCache\com.unity.test-framework@80f691d4262b\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:52
+]]></stack-trace>
+                </failure>
+                <output><![CDATA[Services proof: arrival complete; resolving applicant view. Candidate=Gideon North router=StudioSystems
+Services proof: applicant resolved; acquiring pause.
+Services proof: input owners ready.
+]]></output>
+              </test-case>
+              <test-case id="1332" name="CutawayRestoresInitiallyDisabledRenderersAndDoesNotDisablePhysics" fullname="SilverScreen.Tests.EditMode.StudioServicesProductionTests.CutawayRestoresInitiallyDisabledRenderersAndDoesNotDisablePhysics" methodname="CutawayRestoresInitiallyDisabledRenderersAndDoesNotDisablePhysics" classname="SilverScreen.Tests.EditMode.StudioServicesProductionTests" runstate="Runnable" seed="953098325" result="Passed" start-time="2026-09-28 18:06:26Z" end-time="2026-09-28 18:06:26Z" duration="0.258046" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-suite type="ParameterizedMethod" id="1337" name="HiringOriginDoesNotRestrictDestinationProfession" fullname="SilverScreen.Tests.EditMode.StudioServicesProductionTests.HiringOriginDoesNotRestrictDestinationProfession" classname="SilverScreen.Tests.EditMode.StudioServicesProductionTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-28 18:06:26Z" end-time="2026-09-28 18:06:26Z" duration="0.019626" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1334" name="HiringOriginDoesNotRestrictDestinationProfession(Actor,ConstructionWorker)" fullname="SilverScreen.Tests.EditMode.StudioServicesProductionTests.HiringOriginDoesNotRestrictDestinationProfession(Actor,ConstructionWorker)" methodname="HiringOriginDoesNotRestrictDestinationProfession" classname="SilverScreen.Tests.EditMode.StudioServicesProductionTests" runstate="Runnable" seed="634282540" result="Passed" start-time="2026-09-28 18:06:26Z" end-time="2026-09-28 18:06:26Z" duration="0.001130" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1335" name="HiringOriginDoesNotRestrictDestinationProfession(Director,Groundskeeper)" fullname="SilverScreen.Tests.EditMode.StudioServicesProductionTests.HiringOriginDoesNotRestrictDestinationProfession(Director,Groundskeeper)" methodname="HiringOriginDoesNotRestrictDestinationProfession" classname="SilverScreen.Tests.EditMode.StudioServicesProductionTests" runstate="Runnable" seed="1442910813" result="Passed" start-time="2026-09-28 18:06:26Z" end-time="2026-09-28 18:06:26Z" duration="0.000147" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1336" name="HiringOriginDoesNotRestrictDestinationProfession(Groundskeeper,Actor)" fullname="SilverScreen.Tests.EditMode.StudioServicesProductionTests.HiringOriginDoesNotRestrictDestinationProfession(Groundskeeper,Actor)" methodname="HiringOriginDoesNotRestrictDestinationProfession" classname="SilverScreen.Tests.EditMode.StudioServicesProductionTests" runstate="Runnable" seed="1957542503" result="Passed" start-time="2026-09-28 18:06:26Z" end-time="2026-09-28 18:06:26Z" duration="0.000098" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+              </test-suite>
+              <test-case id="1330" name="IndependentCatalogHasStableIdsSharedMaterialsAndEra" fullname="SilverScreen.Tests.EditMode.StudioServicesProductionTests.IndependentCatalogHasStableIdsSharedMaterialsAndEra" methodname="IndependentCatalogHasStableIdsSharedMaterialsAndEra" classname="SilverScreen.Tests.EditMode.StudioServicesProductionTests" runstate="Runnable" seed="1238672919" result="Passed" start-time="2026-09-28 18:06:26Z" end-time="2026-09-28 18:06:26Z" duration="0.037225" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1331" name="LocalAnchorsAndProductionIdentityAreComplete" fullname="SilverScreen.Tests.EditMode.StudioServicesProductionTests.LocalAnchorsAndProductionIdentityAreComplete" methodname="LocalAnchorsAndProductionIdentityAreComplete" classname="SilverScreen.Tests.EditMode.StudioServicesProductionTests" runstate="Runnable" seed="123066774" result="Passed" start-time="2026-09-28 18:06:26Z" end-time="2026-09-28 18:06:26Z" duration="0.001733" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1333" name="ReviewPreflightHasNoBlockedAnchorsOrRoutes" fullname="SilverScreen.Tests.EditMode.StudioServicesProductionTests.ReviewPreflightHasNoBlockedAnchorsOrRoutes" methodname="ReviewPreflightHasNoBlockedAnchorsOrRoutes" classname="SilverScreen.Tests.EditMode.StudioServicesProductionTests" runstate="Runnable" seed="1265627853" result="Passed" start-time="2026-09-28 18:06:26Z" end-time="2026-09-28 18:06:26Z" duration="0.001924" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+          </test-suite>
+          <test-suite type="TestFixture" id="1001" name="RecruitmentTests" fullname="SilverScreen.Tests.RecruitmentTests" classname="SilverScreen.Tests.RecruitmentTests" runstate="Runnable" testcasecount="14" result="Passed" start-time="2026-09-28 18:06:26Z" end-time="2026-09-28 18:06:26Z" duration="0.018966" total="14" passed="14" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1012" name="ArrivalRoutingFailureRemovesCandidateSafely" fullname="SilverScreen.Tests.RecruitmentTests.ArrivalRoutingFailureRemovesCandidateSafely" methodname="ArrivalRoutingFailureRemovesCandidateSafely" classname="SilverScreen.Tests.RecruitmentTests" runstate="Runnable" seed="751216015" result="Passed" start-time="2026-09-28 18:06:26Z" end-time="2026-09-28 18:06:26Z" duration="0.001337" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1010" name="CandidateIsNotPayrollUntilHiredAndSalaryProcessesOnce" fullname="SilverScreen.Tests.RecruitmentTests.CandidateIsNotPayrollUntilHiredAndSalaryProcessesOnce" methodname="CandidateIsNotPayrollUntilHiredAndSalaryProcessesOnce" classname="SilverScreen.Tests.RecruitmentTests" runstate="Runnable" seed="927448705" result="Passed" start-time="2026-09-28 18:06:26Z" end-time="2026-09-28 18:06:26Z" duration="0.002666" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1007" name="CandidateLifecycleAcceptsOnlyValidTransitions" fullname="SilverScreen.Tests.RecruitmentTests.CandidateLifecycleAcceptsOnlyValidTransitions" methodname="CandidateLifecycleAcceptsOnlyValidTransitions" classname="SilverScreen.Tests.RecruitmentTests" runstate="Runnable" seed="1584389568" result="Passed" start-time="2026-09-28 18:06:26Z" end-time="2026-09-28 18:06:26Z" duration="0.000219" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1014" name="CapacityIsRespectedAndWaitingSlotsAreUnique" fullname="SilverScreen.Tests.RecruitmentTests.CapacityIsRespectedAndWaitingSlotsAreUnique" methodname="CapacityIsRespectedAndWaitingSlotsAreUnique" classname="SilverScreen.Tests.RecruitmentTests" runstate="Runnable" seed="206823054" result="Passed" start-time="2026-09-28 18:06:26Z" end-time="2026-09-28 18:06:26Z" duration="0.000385" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1013" name="DepartureRoutingFailureRemovesCandidateSafely" fullname="SilverScreen.Tests.RecruitmentTests.DepartureRoutingFailureRemovesCandidateSafely" methodname="DepartureRoutingFailureRemovesCandidateSafely" classname="SilverScreen.Tests.RecruitmentTests" runstate="Runnable" seed="241426528" result="Passed" start-time="2026-09-28 18:06:26Z" end-time="2026-09-28 18:06:26Z" duration="0.000620" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1009" name="DirectorAndExtraMapToCorrectEmployeeRoles" fullname="SilverScreen.Tests.RecruitmentTests.DirectorAndExtraMapToCorrectEmployeeRoles" methodname="DirectorAndExtraMapToCorrectEmployeeRoles" classname="SilverScreen.Tests.RecruitmentTests" runstate="Runnable" seed="1830297599" result="Passed" start-time="2026-09-28 18:06:26Z" end-time="2026-09-28 18:06:26Z" duration="0.000164" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1005" name="GeneratedCandidatesHaveValidRoleSalaryAndTraits" fullname="SilverScreen.Tests.RecruitmentTests.GeneratedCandidatesHaveValidRoleSalaryAndTraits" methodname="GeneratedCandidatesHaveValidRoleSalaryAndTraits" classname="SilverScreen.Tests.RecruitmentTests" runstate="Runnable" seed="1549916111" result="Passed" start-time="2026-09-28 18:06:26Z" end-time="2026-09-28 18:06:26Z" duration="0.001145" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1006" name="GeneratorCanProduceVaryingExperience" fullname="SilverScreen.Tests.RecruitmentTests.GeneratorCanProduceVaryingExperience" methodname="GeneratorCanProduceVaryingExperience" classname="SilverScreen.Tests.RecruitmentTests" runstate="Runnable" seed="1468186093" result="Passed" start-time="2026-09-28 18:06:26Z" end-time="2026-09-28 18:06:26Z" duration="0.002085" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1004" name="GeneratorIsDeterministicForKnownSeed" fullname="SilverScreen.Tests.RecruitmentTests.GeneratorIsDeterministicForKnownSeed" methodname="GeneratorIsDeterministicForKnownSeed" classname="SilverScreen.Tests.RecruitmentTests" runstate="Runnable" seed="1676318286" result="Passed" start-time="2026-09-28 18:06:26Z" end-time="2026-09-28 18:06:26Z" duration="0.000364" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1008" name="HirePreservesPersonIdentityAndCreatesEmployee" fullname="SilverScreen.Tests.RecruitmentTests.HirePreservesPersonIdentityAndCreatesEmployee" methodname="HirePreservesPersonIdentityAndCreatesEmployee" classname="SilverScreen.Tests.RecruitmentTests" runstate="Runnable" seed="1310143334" result="Passed" start-time="2026-09-28 18:06:26Z" end-time="2026-09-28 18:06:26Z" duration="0.000266" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1002" name="PersonAgeUsesSimulationDate" fullname="SilverScreen.Tests.RecruitmentTests.PersonAgeUsesSimulationDate" methodname="PersonAgeUsesSimulationDate" classname="SilverScreen.Tests.RecruitmentTests" runstate="Runnable" seed="604892815" result="Passed" start-time="2026-09-28 18:06:26Z" end-time="2026-09-28 18:06:26Z" duration="0.000128" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1011" name="RejectionRoutesCandidateToGone" fullname="SilverScreen.Tests.RecruitmentTests.RejectionRoutesCandidateToGone" methodname="RejectionRoutesCandidateToGone" classname="SilverScreen.Tests.RecruitmentTests" runstate="Runnable" seed="1414343814" result="Passed" start-time="2026-09-28 18:06:26Z" end-time="2026-09-28 18:06:26Z" duration="0.000195" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1003" name="TalentStoresStableGenreExperienceAndTraits" fullname="SilverScreen.Tests.RecruitmentTests.TalentStoresStableGenreExperienceAndTraits" methodname="TalentStoresStableGenreExperienceAndTraits" classname="SilverScreen.Tests.RecruitmentTests" runstate="Runnable" seed="177669234" result="Passed" start-time="2026-09-28 18:06:26Z" end-time="2026-09-28 18:06:26Z" duration="0.000640" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1015" name="WaitingCandidateAutomaticallyExpires" fullname="SilverScreen.Tests.RecruitmentTests.WaitingCandidateAutomaticallyExpires" methodname="WaitingCandidateAutomaticallyExpires" classname="SilverScreen.Tests.RecruitmentTests" runstate="Runnable" seed="1833194722" result="Passed" start-time="2026-09-28 18:06:26Z" end-time="2026-09-28 18:06:26Z" duration="0.000289" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Saving results to: C:/Users/Sez/AppData/LocalLow/DefaultCompany/Silver Screen\TestResults.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

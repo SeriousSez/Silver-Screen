@@ -1,0 +1,65 @@
+{
+  "changed_mesh_groups": [],
+  "changed_fixtures": [
+    {
+      "group": "Exterior/ApplicantBench-1",
+      "before": [
+        -7.2,
+        0.05,
+        -9.38
+      ],
+      "after": [
+        -7.2,
+        0.05,
+        -9.58
+      ],
+      "yaw": 180
+    },
+    {
+      "group": "Exterior/ApplicantBench1",
+      "before": [
+        7.2,
+        0.05,
+        -9.38
+      ],
+      "after": [
+        7.2,
+        0.05,
+        -9.58
+      ],
+      "yaw": 180
+    }
+  ],
+  "protected_count": 1405,
+  "changed_protected_files": [],
+  "changed_existing_meta": [],
+  "materials_unchanged": true,
+  "equipment_unchanged": true,
+  "scope_status": "PASS",
+  "unity_geometry": [
+    {
+      "bench": "Exterior/ApplicantBench-1/BenchSlatted_210_1930/Geometry",
+      "nearest_facade_group": "Shell/Front/AddedArticulation",
+      "facade_front_z": -9.0725,
+      "bench_rear_z": -9.1901,
+      "minimum_separation_metres": 0.1176,
+      "overlapping_facade_triangles": 970
+    },
+    {
+      "bench": "Exterior/ApplicantBench1/BenchSlatted_210_1930/Geometry",
+      "nearest_facade_group": "Shell/Front/AddedArticulation",
+      "facade_front_z": -9.0725,
+      "bench_rear_z": -9.1901,
+      "minimum_separation_metres": 0.1176,
+      "overlapping_facade_triangles": 970
+    }
+  ],
+  "geometry_status": "PASS",
+  "visual_review": [
+    "13_right_bench_clearance",
+    "14_left_bench_clearance"
+  ],
+  "visual_status": "Both imported bench backs are continuous and clear of the projecting wall trim in actual Unity URP captures.",
+  "compilation_failed": false,
+  "scope": "Static art geometry; no Play Mode or runtime physics behavior changed or tested."
+}

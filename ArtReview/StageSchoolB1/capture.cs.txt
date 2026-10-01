@@ -1,0 +1,21 @@
+var scene=UnityEngine.SceneManagement.SceneManager.GetActiveScene();
+var root=System.Linq.Enumerable.First(scene.GetRootGameObjects(),g=>g.GetComponent<SilverScreen.Presentation.Buildings.StageSchoolInfrastructure>()!=null);
+root.transform.SetPositionAndRotation(UnityEngine.Vector3.zero,UnityEngine.Quaternion.identity);
+var camera=System.Linq.Enumerable.First(scene.GetRootGameObjects(),g=>g.GetComponent<UnityEngine.Camera>()!=null).GetComponent<UnityEngine.Camera>();
+var lod=root.GetComponent<UnityEngine.LODGroup>();var reveal=root.GetComponent<SilverScreen.Presentation.Buildings.BuildingCutawayController>();reveal.Restore();
+System.Action<string,UnityEngine.Vector3,UnityEngine.Vector3,float> shot=(n,p,t,f)=>SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Capture(camera,"../StageSchoolB1/"+n,p,t,f);
+root.SetActive(false);
+var master=(UnityEngine.GameObject)UnityEditor.PrefabUtility.InstantiatePrefab(UnityEditor.AssetDatabase.LoadAssetAtPath<UnityEngine.GameObject>(SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Prefab),scene);
+shot("01_master_close",new UnityEngine.Vector3(21,13,-24),new UnityEngine.Vector3(0,2,0),54);
+UnityEngine.Object.DestroyImmediate(master);root.SetActive(true);
+System.Action<int> select=i=>{lod.ForceLOD(i);for(int j=0;j<3;j++)root.transform.Find("LOD"+j).gameObject.SetActive(j==i);};select(0);shot("02_runtime_close",new UnityEngine.Vector3(21,13,-24),new UnityEngine.Vector3(0,2,0),54);
+shot("03_roof_detail",new UnityEngine.Vector3(14,17,-13),new UnityEngine.Vector3(1,5,0),48);
+select(1);shot("04_management_lod1",new UnityEngine.Vector3(24,27,-28),new UnityEngine.Vector3(0,3.8f,2.5f),49);
+select(2);shot("05_distant_lod2",new UnityEngine.Vector3(36,38,-42),new UnityEngine.Vector3(0,3,2.5f),49);
+var observer=new UnityEngine.Vector3(24,25,-28);reveal.SetReveal(SilverScreen.Presentation.Buildings.BuildingRevealReason.BuildingFocus,true,observer);
+select(1);shot("06_reveal_lod1",observer,new UnityEngine.Vector3(0,1,2),49);
+select(2);shot("07_reveal_lod2",observer,new UnityEngine.Vector3(0,1,2),49);
+reveal.Restore();for(int j=0;j<3;j++)root.transform.Find("LOD"+j).gameObject.SetActive(true);lod.ForceLOD(-1);
+UnityEditor.SceneManagement.EditorSceneManager.SaveScene(scene,SilverScreen.Editor.EnvironmentArt.StageSchoolRuntimeBuilder.Root+"/StageSchool_RuntimeReview.unity");
+result.Log("Fixed-camera master comparison and final B1 captures saved.");
+

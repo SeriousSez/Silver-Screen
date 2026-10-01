@@ -1,0 +1,281 @@
+{
+  "unexpected_changed_groups": [],
+  "changed_groups": [
+    "Ceilings/Pendant00",
+    "Ceilings/Pendant01",
+    "Ceilings/Pendant02",
+    "Ceilings/Pendant03",
+    "Ceilings/Pendant04",
+    "Ceilings/Pendant05",
+    "Ceilings/Pendant06",
+    "Ceilings/Pendant07",
+    "Furnishings/Washroom",
+    "Structure/EntranceSteps",
+    "Roofs/Entrance",
+    "Roofs/Waiting",
+    "Roofs/Preparation",
+    "Roofs/Hall",
+    "Roofs/WestEvaluation",
+    "Roofs/WestService",
+    "Roofs/CommonBay",
+    "Roofs/Interview",
+    "Roofs/Audition",
+    "Roofs/Waiting/Flashing",
+    "Roofs/Hall/Flashing",
+    "Roofs/CommonBay/Flashing",
+    "Roofs/Interview/Flashing",
+    "Roofs/Waiting/Rainwater",
+    "Roofs/Preparation/Rainwater",
+    "Roofs/CommonBay/Rainwater",
+    "Roofs/WestEvaluation/Rainwater",
+    "Roofs/WestService/Rainwater",
+    "Roofs/Audition/Rainwater",
+    "Roofs/Interview/Rainwater",
+    "Roofs/Entrance/Rainwater",
+    "Ceilings/SupportPendant0",
+    "Ceilings/SupportPendant1",
+    "Ceilings/SupportPendant2",
+    "Ceilings/SupportPendant3",
+    "Doors/Cubicle0",
+    "Doors/Cubicle1",
+    "Roofs/WestEvaluation/Flashing",
+    "Roofs/Entrance/Flashing",
+    "Roofs/Audition/Flashing",
+    "Shell/Raised/HallRevealFinish",
+    "Roofs/Hall/Rainwater"
+  ],
+  "unchanged_groups": 223,
+  "fixtures_unchanged": true,
+  "equipment_unchanged": true,
+  "pendant_mounts": 12,
+  "nine_roofs_reach_ground": true,
+  "roof_routes": [
+    {
+      "roof": "Entrance",
+      "destination": "ground gully",
+      "outlet": [
+        3.3440001010894775,
+        -9.539999961853027
+      ],
+      "type": "wall-supported downpipe with open shoe"
+    },
+    {
+      "roof": "Entrance",
+      "destination": "Preparation",
+      "outlet": [
+        3.940000057220459,
+        -2.631999969482422
+      ],
+      "type": "supported spreader onto lower roof"
+    },
+    {
+      "roof": "Entrance",
+      "destination": "Hall",
+      "outlet": [
+        2.819451093673706,
+        -2.059999942779541
+      ],
+      "type": "supported spreader onto lower roof"
+    },
+    {
+      "roof": "Entrance",
+      "destination": "Waiting",
+      "outlet": [
+        -3.7374117374420166,
+        -2.059999942779541
+      ],
+      "type": "supported spreader onto lower roof"
+    },
+    {
+      "roof": "Entrance",
+      "destination": "Waiting",
+      "outlet": [
+        -3.940000057220459,
+        -8.967999458312988
+      ],
+      "type": "supported spreader onto lower roof"
+    },
+    {
+      "roof": "Waiting",
+      "destination": "ground gully",
+      "outlet": [
+        -6.342800140380859,
+        -9.390000343322754
+      ],
+      "type": "wall-supported downpipe with open shoe"
+    },
+    {
+      "roof": "Waiting",
+      "destination": "ground gully",
+      "outlet": [
+        -11.440000534057617,
+        -8.651785850524902
+      ],
+      "type": "wall-supported downpipe with open shoe"
+    },
+    {
+      "roof": "Preparation",
+      "destination": "ground gully",
+      "outlet": [
+        10.814000129699707,
+        -9.49000072479248
+      ],
+      "type": "wall-supported downpipe with open shoe"
+    },
+    {
+      "roof": "Preparation",
+      "destination": "ground gully",
+      "outlet": [
+        11.440000534057617,
+        0.05386310815811157
+      ],
+      "type": "wall-supported downpipe with open shoe"
+    },
+    {
+      "roof": "Hall",
+      "destination": "Preparation",
+      "outlet": [
+        3.5400002002716064,
+        0.4091269373893738
+      ],
+      "type": "supported spreader onto lower roof"
+    },
+    {
+      "roof": "Hall",
+      "destination": "Waiting",
+      "outlet": [
+        -3.5400002002716064,
+        -1.9405454397201538
+      ],
+      "type": "supported spreader onto lower roof"
+    },
+    {
+      "roof": "WestEvaluation",
+      "destination": "Waiting",
+      "outlet": [
+        -4.055179595947266,
+        2.809999942779541
+      ],
+      "type": "supported spreader onto lower roof"
+    },
+    {
+      "roof": "WestEvaluation",
+      "destination": "WestService",
+      "outlet": [
+        -13.739691734313965,
+        8.59000015258789
+      ],
+      "type": "supported spreader onto lower roof"
+    },
+    {
+      "roof": "WestEvaluation",
+      "destination": "ground gully",
+      "outlet": [
+        -14.539999961853027,
+        3.2799999713897705
+      ],
+      "type": "wall-supported downpipe with open shoe"
+    },
+    {
+      "roof": "WestService",
+      "destination": "ground gully",
+      "outlet": [
+        -2.6599998474121094,
+        14.275908470153809
+      ],
+      "type": "wall-supported downpipe with open shoe"
+    },
+    {
+      "roof": "WestService",
+      "destination": "ground gully",
+      "outlet": [
+        -13.703999519348145,
+        14.539999961853027
+      ],
+      "type": "wall-supported downpipe with open shoe"
+    },
+    {
+      "roof": "WestService",
+      "destination": "ground gully",
+      "outlet": [
+        -14.539999961853027,
+        8.289999961853027
+      ],
+      "type": "wall-supported downpipe with open shoe"
+    },
+    {
+      "roof": "CommonBay",
+      "destination": "ground gully",
+      "outlet": [
+        -11.382222175598145,
+        0.46000003814697266
+      ],
+      "type": "wall-supported downpipe with open shoe"
+    },
+    {
+      "roof": "CommonBay",
+      "destination": "ground gully",
+      "outlet": [
+        -14.539999961853027,
+        0.7919999957084656
+      ],
+      "type": "wall-supported downpipe with open shoe"
+    },
+    {
+      "roof": "Interview",
+      "destination": "WestService",
+      "outlet": [
+        -3.0363478660583496,
+        12.539999961853027
+      ],
+      "type": "supported spreader onto lower roof"
+    },
+    {
+      "roof": "Interview",
+      "destination": "WestService",
+      "outlet": [
+        -3.5400002002716064,
+        8.643759727478027
+      ],
+      "type": "supported spreader onto lower roof"
+    },
+    {
+      "roof": "Audition",
+      "destination": "ground gully",
+      "outlet": [
+        13.7278470993042,
+        0.46000003814697266
+      ],
+      "type": "wall-supported downpipe with open shoe"
+    },
+    {
+      "roof": "Audition",
+      "destination": "ground gully",
+      "outlet": [
+        14.539999961853027,
+        14.51200008392334
+      ],
+      "type": "wall-supported downpipe with open shoe"
+    },
+    {
+      "roof": "Audition",
+      "destination": "ground gully",
+      "outlet": [
+        3.308000087738037,
+        15.539999961853027
+      ],
+      "type": "wall-supported downpipe with open shoe"
+    },
+    {
+      "roof": "Audition",
+      "destination": "Interview",
+      "outlet": [
+        2.4599997997283936,
+        5.703757286071777
+      ],
+      "type": "supported spreader onto lower roof"
+    }
+  ],
+  "valley_segments": 5,
+  "finite_meshes_valid_indices": true
+}

@@ -1,0 +1,12 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"success\": true,\n  \"message\": \"Tool 'GetConsoleLogs' executed successfully\",\n  \"data\": {\n    \"logs\": [\n      {\n        \"message\": \"'SilverScreen.Editor.NewStudioSceneAuthoring' is missing the class attribute 'ExtensionOfNativeClass'!\\n\",\n        \"stackTrace\": \"\",\n        \"type\": \"Error\",\n        \"timestamp\": \"[13:35:54]\"\n      }\n    ],\n    \"totalCount\": 1,\n    \"errorCount\": 1,\n    \"warningCount\": 0\n  }\n}"
+      }
+    ]
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}

@@ -1,0 +1,449 @@
+{
+  "originalAssetCount": 57,
+  "assets": [
+    {
+      "asset": "WindowSteel_195x212_1930",
+      "initialClass": "B",
+      "finding": "Latch is on the exterior face; sash and glazing seating need construction clarity.",
+      "action": "Rebuild rebates/top-hung sash, move functional latch inside, retain dimensions and pivot.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "WindowSteel_200x210_1930",
+      "initialClass": "B",
+      "finding": "Latch is on the exterior face; sash and glazing seating need construction clarity.",
+      "action": "Rebuild rebates/top-hung sash, move functional latch inside, retain dimensions and pivot.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "WindowSteel_190x180_1930",
+      "initialClass": "B",
+      "finding": "Latch is on the exterior face; sash and glazing seating need construction clarity.",
+      "action": "Rebuild rebates/top-hung sash, move functional latch inside, retain dimensions and pivot.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "WindowSteel_200x180_1930",
+      "initialClass": "B",
+      "finding": "Latch is on the exterior face; sash and glazing seating need construction clarity.",
+      "action": "Rebuild rebates/top-hung sash, move functional latch inside, retain dimensions and pivot.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "WindowSteel_310x195_1930",
+      "initialClass": "B",
+      "finding": "Latch is on the exterior face; sash and glazing seating need construction clarity.",
+      "action": "Rebuild rebates/top-hung sash, move functional latch inside, retain dimensions and pivot.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "WindowSteel_265x205_1930",
+      "initialClass": "B",
+      "finding": "Latch is on the exterior face; sash and glazing seating need construction clarity.",
+      "action": "Rebuild rebates/top-hung sash, move functional latch inside, retain dimensions and pivot.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "DoorGlazedTimber_110x258_1930",
+      "initialClass": "B",
+      "finding": "Usable silhouette; exposed joints, mounts or operating hardware need refinement.",
+      "action": "Refine functional construction in canonical source, retain existing identity and dimensions; validate all placements.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "DoorUtilityTimber_150x260_1930",
+      "initialClass": "B",
+      "finding": "Usable silhouette; exposed joints, mounts or operating hardware need refinement.",
+      "action": "Refine functional construction in canonical source, retain existing identity and dimensions; validate all placements.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "DoorFrameTimber_120x262_1930",
+      "initialClass": "A",
+      "finding": "Existing construction is sufficiently legible; preserve geometry.",
+      "action": "Retain and inspect canonical and installed views.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "ServiceDoorPair_485x346_1930",
+      "initialClass": "B",
+      "finding": "Usable silhouette; exposed joints, mounts or operating hardware need refinement.",
+      "action": "Refine functional construction in canonical source, retain existing identity and dimensions; validate all placements.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "DeskPedestal_1930",
+      "initialClass": "B",
+      "finding": "Usable silhouette; exposed joints, mounts or operating hardware need refinement.",
+      "action": "Refine functional construction in canonical source, retain existing identity and dimensions; validate all placements.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "ChairBentwood_1930",
+      "initialClass": "B",
+      "finding": "Usable silhouette; exposed joints, mounts or operating hardware need refinement.",
+      "action": "Refine functional construction in canonical source, retain existing identity and dimensions; validate all placements.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "BenchSlatted_210_1930",
+      "initialClass": "B",
+      "finding": "Usable silhouette; exposed joints, mounts or operating hardware need refinement.",
+      "action": "Refine functional construction in canonical source, retain existing identity and dimensions; validate all placements.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "FilingCabinet_4Drawer_1930",
+      "initialClass": "B",
+      "finding": "Usable silhouette; exposed joints, mounts or operating hardware need refinement.",
+      "action": "Refine functional construction in canonical source, retain existing identity and dimensions; validate all placements.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "ShelfSteelTimber_170_1930",
+      "initialClass": "B",
+      "finding": "Usable silhouette; exposed joints, mounts or operating hardware need refinement.",
+      "action": "Refine functional construction in canonical source, retain existing identity and dimensions; validate all placements.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "CupboardUtility_1930",
+      "initialClass": "B",
+      "finding": "Usable silhouette; exposed joints, mounts or operating hardware need refinement.",
+      "action": "Refine functional construction in canonical source, retain existing identity and dimensions; validate all placements.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "NoticeBoardTimber_173_1930",
+      "initialClass": "C",
+      "finding": "Insert undersizes framed display area.",
+      "action": "Complete inset backing, mounting cleats, separately placed readable content.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "TelephoneDesk_1930",
+      "initialClass": "B",
+      "finding": "Usable silhouette; exposed joints, mounts or operating hardware need refinement.",
+      "action": "Refine functional construction in canonical source, retain existing identity and dimensions; validate all placements.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "DeskPaperwork_1930",
+      "initialClass": "A",
+      "finding": "Existing construction is sufficiently legible; preserve geometry.",
+      "action": "Retain and inspect canonical and installed views.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "DeskLampBanker_1930",
+      "initialClass": "B",
+      "finding": "Usable silhouette; exposed joints, mounts or operating hardware need refinement.",
+      "action": "Refine functional construction in canonical source, retain existing identity and dimensions; validate all placements.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "ToolTrayCarpenter_1930",
+      "initialClass": "B",
+      "finding": "Tray is sound; hammer and plane need clearer working features.",
+      "action": "Refine the claw hammer and plane iron/adjuster while preserving tray and placement.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "WorkbenchJoiner_225_1930",
+      "initialClass": "C",
+      "finding": "Vise mechanics and bench joinery are underdeveloped.",
+      "action": "Mortised frame, bolted stretchers, solid laminated top, fixed/moving vise jaws, slide, screw and tommy bar. Workshop ground-prop bake-only clearance follows the existing wall-guard convention; physical collider dimensions unchanged.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "ToolRackCarpenter_1930",
+      "initialClass": "C",
+      "finding": "Repeated abstract heads fail recognition.",
+      "action": "Seven distinct supported tools: claw hammer, mallet, spanner, pliers, screwdriver, hand saw and try square.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "LadderTimber_260_1930",
+      "initialClass": "B",
+      "finding": "Usable silhouette; exposed joints, mounts or operating hardware need refinement.",
+      "action": "Refine functional construction in canonical source, retain existing identity and dimensions; validate all placements.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "WheelbarrowSteel_1930",
+      "initialClass": "C",
+      "finding": "Primitive tray, wheel and disconnected structural cues.",
+      "action": "Rounded thin tray, folded rim, timber runners, saddle brackets, bearing blocks, axle, spoked wheel and tyre.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "CrateTimber_075_1930",
+      "initialClass": "B",
+      "finding": "Usable silhouette; exposed joints, mounts or operating hardware need refinement.",
+      "action": "Refine functional construction in canonical source, retain existing identity and dimensions; validate all placements.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "CrateTimber_045_1930",
+      "initialClass": "B",
+      "finding": "Usable silhouette; exposed joints, mounts or operating hardware need refinement.",
+      "action": "Refine functional construction in canonical source, retain existing identity and dimensions; validate all placements.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "ArchiveBox_1930",
+      "initialClass": "A",
+      "finding": "Existing construction is sufficiently legible; preserve geometry.",
+      "action": "Retain and inspect canonical and installed views.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "PaintCan_1930",
+      "initialClass": "A",
+      "finding": "Existing construction is sufficiently legible; preserve geometry.",
+      "action": "Retain and inspect canonical and installed views.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "GroundsToolRack_1930",
+      "initialClass": "B",
+      "finding": "Usable silhouette; exposed joints, mounts or operating hardware need refinement.",
+      "action": "Refine functional construction in canonical source, retain existing identity and dimensions; validate all placements.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "BarrelTimber_1930",
+      "initialClass": "B",
+      "finding": "Usable silhouette; exposed joints, mounts or operating hardware need refinement.",
+      "action": "Refine functional construction in canonical source, retain existing identity and dimensions; validate all placements.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "BarrelPaintedSteel_1930",
+      "initialClass": "B",
+      "finding": "Usable silhouette; exposed joints, mounts or operating hardware need refinement.",
+      "action": "Refine functional construction in canonical source, retain existing identity and dimensions; validate all placements.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "SackCanvas_1930",
+      "initialClass": "C",
+      "finding": "Rigid neck reads as a bottle.",
+      "action": "Asymmetric weighted fabric volume, flattened base, folds, seams and gathered fabric/twine; one slumped sibling.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "LumberStack_240_1930",
+      "initialClass": "D",
+      "finding": "Lumber is sound; rack contact needs correction.",
+      "action": "Preserve stack; seat dunnage on the actual rack rail tops.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "MaterialRackTimber_400_1930",
+      "initialClass": "B",
+      "finding": "Usable silhouette; exposed joints, mounts or operating hardware need refinement.",
+      "action": "Refine functional construction in canonical source, retain existing identity and dimensions; validate all placements.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "ScaffoldBayTimber_200_1930",
+      "initialClass": "B",
+      "finding": "Usable silhouette; exposed joints, mounts or operating hardware need refinement.",
+      "action": "Refine functional construction in canonical source, retain existing identity and dimensions; validate all placements.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "FenceWire_200_1930",
+      "initialClass": "C",
+      "finding": "Wire/frame connection and gate mechanics lack convincing construction.",
+      "action": "Woven diamond mesh, tension bars/ties, tubular frame, real hinge post/pin and latch.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "FenceWire_175_1930",
+      "initialClass": "C",
+      "finding": "Wire/frame connection and gate mechanics lack convincing construction.",
+      "action": "Woven diamond mesh, tension bars/ties, tubular frame, real hinge post/pin and latch.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "FenceWire_135_1930",
+      "initialClass": "C",
+      "finding": "Wire/frame connection and gate mechanics lack convincing construction.",
+      "action": "Woven diamond mesh, tension bars/ties, tubular frame, real hinge post/pin and latch.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "FenceWire_065_1930",
+      "initialClass": "C",
+      "finding": "Wire/frame connection and gate mechanics lack convincing construction.",
+      "action": "Woven diamond mesh, tension bars/ties, tubular frame, real hinge post/pin and latch.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "FenceGateWire_180_1930",
+      "initialClass": "C",
+      "finding": "Wire/frame connection and gate mechanics lack convincing construction.",
+      "action": "Woven diamond mesh, tension bars/ties, tubular frame, real hinge post/pin and latch.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "GutterHalfRound_200_1930",
+      "initialClass": "A",
+      "finding": "Open trough, rolled lips, saddles and outlet geometry are usable; audit assembled joins.",
+      "action": "Retain and inspect canonical and installed views. Curved trough normals refined; open channel and connections inspected in Unity.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "GutterHalfRound_175_1930",
+      "initialClass": "A",
+      "finding": "Open trough, rolled lips, saddles and outlet geometry are usable; audit assembled joins.",
+      "action": "Retain and inspect canonical and installed views. Curved trough normals refined; open channel and connections inspected in Unity.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "GutterHalfRound_165_1930",
+      "initialClass": "A",
+      "finding": "Open trough, rolled lips, saddles and outlet geometry are usable; audit assembled joins.",
+      "action": "Retain and inspect canonical and installed views. Curved trough normals refined; open channel and connections inspected in Unity.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "GutterHalfRound_155_1930",
+      "initialClass": "A",
+      "finding": "Open trough, rolled lips, saddles and outlet geometry are usable; audit assembled joins.",
+      "action": "Retain and inspect canonical and installed views. Curved trough normals refined; open channel and connections inspected in Unity.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "GutterHalfRound_060_1930",
+      "initialClass": "A",
+      "finding": "Open trough, rolled lips, saddles and outlet geometry are usable; audit assembled joins.",
+      "action": "Retain and inspect canonical and installed views. Curved trough normals refined; open channel and connections inspected in Unity.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "GutterHalfRound_040_1930",
+      "initialClass": "A",
+      "finding": "Open trough, rolled lips, saddles and outlet geometry are usable; audit assembled joins.",
+      "action": "Retain and inspect canonical and installed views. Curved trough normals refined; open channel and connections inspected in Unity.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "GutterHalfRound_040Plain_1930",
+      "initialClass": "A",
+      "finding": "Open trough, rolled lips, saddles and outlet geometry are usable; audit assembled joins.",
+      "action": "Retain and inspect canonical and installed views. Curved trough normals refined; open channel and connections inspected in Unity.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "GutterCorner90_1930",
+      "initialClass": "A",
+      "finding": "Open trough, rolled lips, saddles and outlet geometry are usable; audit assembled joins.",
+      "action": "Retain and inspect canonical and installed views. Curved trough normals refined; open channel and connections inspected in Unity.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "DownpipeHollow_300_1930",
+      "initialClass": "B",
+      "finding": "Usable silhouette; exposed joints, mounts or operating hardware need refinement.",
+      "action": "Refine functional construction in canonical source, retain existing identity and dimensions; validate all placements.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "DownpipeElbow90_1930",
+      "initialClass": "A",
+      "finding": "Existing construction is sufficiently legible; preserve geometry.",
+      "action": "Retain and inspect canonical and installed views.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "DownpipeShoe_1930",
+      "initialClass": "D",
+      "finding": "Open shoe is usable but installed discharge clips splash bed.",
+      "action": "Raise complete connected pipe/shoe run 70 mm; add canonical socket collar and connection anchors. Corrected shared sweep-frame inversion; regression check confirms unchanged bore radius through bend.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "SplashBlockConcrete_1930",
+      "initialClass": "A",
+      "finding": "Existing construction is sufficiently legible; preserve geometry.",
+      "action": "Retain and inspect canonical and installed views.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "ConduitStraight_100_1930",
+      "initialClass": "A",
+      "finding": "Existing construction is sufficiently legible; preserve geometry.",
+      "action": "Retain and inspect canonical and installed views.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "ConduitElbow90_1930",
+      "initialClass": "A",
+      "finding": "Existing construction is sufficiently legible; preserve geometry.",
+      "action": "Retain and inspect canonical and installed views.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "AwningCurved_164_1930",
+      "initialClass": "B",
+      "finding": "Usable silhouette; exposed joints, mounts or operating hardware need refinement.",
+      "action": "Refine functional construction in canonical source, retain existing identity and dimensions; validate all placements.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    },
+    {
+      "asset": "EmploymentPorchTimber_232_1930",
+      "initialClass": "B",
+      "finding": "Usable silhouette; exposed joints, mounts or operating hardware need refinement.",
+      "action": "Refine functional construction in canonical source, retain existing identity and dimensions; validate all placements. Remove only its competing Studio Services placement.",
+      "validation": "Inspected in final Unity canonical catalog; used placements also reviewed in the assembly exterior, cutaway, room and connection captures."
+    }
+  ],
+  "newSupportingAssets": [
+    "ClockSchoolhouse_1930",
+    "CoatStandTimber_1930",
+    "SackCanvasSlumped_1930",
+    "WastebasketWire_1930"
+  ],
+  "sharedExistingFixtures": [
+    {
+      "asset": "GooseneckLamp_1930",
+      "class": "D",
+      "finding": "Canonical geometry has backplate, fasteners, continuous arm, spun shade and bulb. Three sign mounts incorrectly placed above wall; correct instance heights/planes only."
+    },
+    {
+      "asset": "PendantWorkLamp_1930",
+      "class": "D",
+      "finding": "Canonical stem/shade usable. Office/storage low edge was 2.4605 m. Raise their mount to 3.40 m for 2.7105 m low edge; workshop remains 3.0105 m."
+    },
+    {
+      "asset": "MeterCabinet_1930 and JunctionBox_Shallow_1930",
+      "class": "A",
+      "finding": "Keep canonical fixtures; verify installed conduit connects existing service sockets and wall penetration."
+    }
+  ],
+  "status": "Refinement implemented; Unity visual inspection performed; user visual approval pending.",
+  "review": "review.html",
+  "tools": {
+    "Carpenter board": [
+      "claw hammer",
+      "wooden mallet",
+      "open-ended spanner",
+      "pliers",
+      "screwdriver",
+      "hand saw",
+      "try square"
+    ],
+    "Grounds rack": [
+      "D-grip spade",
+      "rake",
+      "broom"
+    ],
+    "Carrying tray": [
+      "claw hammer",
+      "bench hand plane"
+    ]
+  }
+}

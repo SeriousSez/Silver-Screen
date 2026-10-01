@@ -1,0 +1,1205 @@
+{
+    "evidence": "120 real URP camera renders over separate Editor updates. UnityStats are Editor observations, not isolated player/GPU timings; render duration includes readback and PNG encoding.",
+    "frames": [
+        {
+            "frame": 0,
+            "distance": 12.0,
+            "yaw": 0.0,
+            "pitch": 15.0,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 176.2036
+        },
+        {
+            "frame": 1,
+            "distance": 13.491525650024414,
+            "yaw": 3.02521014213562,
+            "pitch": 15.9766845703125,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 162.473
+        },
+        {
+            "frame": 2,
+            "distance": 14.983051300048828,
+            "yaw": 6.05042028427124,
+            "pitch": 16.952688217163086,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 125.94470000000001
+        },
+        {
+            "frame": 3,
+            "distance": 16.474576950073242,
+            "yaw": 9.075630187988281,
+            "pitch": 17.927330017089844,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 128.2979
+        },
+        {
+            "frame": 4,
+            "distance": 17.966102600097656,
+            "yaw": 12.10084056854248,
+            "pitch": 18.899932861328125,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 112.867
+        },
+        {
+            "frame": 5,
+            "distance": 19.457626342773438,
+            "yaw": 15.12605094909668,
+            "pitch": 19.86981773376465,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 107.5404
+        },
+        {
+            "frame": 6,
+            "distance": 20.94915199279785,
+            "yaw": 18.151260375976563,
+            "pitch": 20.8363094329834,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 100.93780000000001
+        },
+        {
+            "frame": 7,
+            "distance": 22.440677642822266,
+            "yaw": 21.176469802856445,
+            "pitch": 21.79873275756836,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 105.16770000000001
+        },
+        {
+            "frame": 8,
+            "distance": 23.93220329284668,
+            "yaw": 24.20168113708496,
+            "pitch": 22.756418228149414,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 101.506
+        },
+        {
+            "frame": 9,
+            "distance": 25.423728942871094,
+            "yaw": 27.226892471313477,
+            "pitch": 23.708698272705078,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 95.1549
+        },
+        {
+            "frame": 10,
+            "distance": 26.915254592895508,
+            "yaw": 30.25210189819336,
+            "pitch": 24.654909133911133,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 104.85610000000001
+        },
+        {
+            "frame": 11,
+            "distance": 28.406780242919922,
+            "yaw": 33.277313232421875,
+            "pitch": 25.594390869140625,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 95.6108
+        },
+        {
+            "frame": 12,
+            "distance": 29.898303985595703,
+            "yaw": 36.302520751953125,
+            "pitch": 26.5264892578125,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 91.8182
+        },
+        {
+            "frame": 13,
+            "distance": 31.38983154296875,
+            "yaw": 39.32773208618164,
+            "pitch": 27.45055389404297,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 96.85520000000001
+        },
+        {
+            "frame": 14,
+            "distance": 32.88135528564453,
+            "yaw": 42.35293960571289,
+            "pitch": 28.365942001342773,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 100.08850000000001
+        },
+        {
+            "frame": 15,
+            "distance": 34.37288284301758,
+            "yaw": 45.37815475463867,
+            "pitch": 29.272016525268555,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 94.07820000000001
+        },
+        {
+            "frame": 16,
+            "distance": 35.86440658569336,
+            "yaw": 48.40336227416992,
+            "pitch": 30.168142318725586,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 79.3809
+        },
+        {
+            "frame": 17,
+            "distance": 37.35593032836914,
+            "yaw": 51.42857360839844,
+            "pitch": 31.053699493408203,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 79.2741
+        },
+        {
+            "frame": 18,
+            "distance": 38.84745788574219,
+            "yaw": 54.45378494262695,
+            "pitch": 31.92806625366211,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 75.968
+        },
+        {
+            "frame": 19,
+            "distance": 40.338985443115234,
+            "yaw": 57.4789924621582,
+            "pitch": 32.7906379699707,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 79.4821
+        },
+        {
+            "frame": 20,
+            "distance": 41.830509185791016,
+            "yaw": 60.50420379638672,
+            "pitch": 33.640811920166016,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 78.8184
+        },
+        {
+            "frame": 21,
+            "distance": 43.3220329284668,
+            "yaw": 63.529415130615234,
+            "pitch": 34.477989196777344,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 73.4875
+        },
+        {
+            "frame": 22,
+            "distance": 44.813560485839844,
+            "yaw": 66.55462646484375,
+            "pitch": 35.301597595214844,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 75.5642
+        },
+        {
+            "frame": 23,
+            "distance": 46.305084228515625,
+            "yaw": 69.579833984375,
+            "pitch": 36.111053466796875,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 73.8284
+        },
+        {
+            "frame": 24,
+            "distance": 47.796607971191406,
+            "yaw": 72.60504150390625,
+            "pitch": 36.90580368041992,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 76.5691
+        },
+        {
+            "frame": 25,
+            "distance": 49.28813552856445,
+            "yaw": 75.63025665283203,
+            "pitch": 37.685279846191406,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 79.12230000000001
+        },
+        {
+            "frame": 26,
+            "distance": 50.7796630859375,
+            "yaw": 78.65546417236328,
+            "pitch": 38.44894790649414,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 74.8036
+        },
+        {
+            "frame": 27,
+            "distance": 52.27118682861328,
+            "yaw": 81.68067169189453,
+            "pitch": 39.19627380371094,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 73.01440000000001
+        },
+        {
+            "frame": 28,
+            "distance": 53.76271057128906,
+            "yaw": 84.70587921142578,
+            "pitch": 39.92673873901367,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 73.1782
+        },
+        {
+            "frame": 29,
+            "distance": 55.254234313964844,
+            "yaw": 87.73109436035156,
+            "pitch": 40.63983154296875,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 73.7783
+        },
+        {
+            "frame": 30,
+            "distance": 56.745765686035156,
+            "yaw": 90.75630950927734,
+            "pitch": 41.33505630493164,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 72.3096
+        },
+        {
+            "frame": 31,
+            "distance": 58.23728561401367,
+            "yaw": 93.7815170288086,
+            "pitch": 42.01192855834961,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 71.13770000000001
+        },
+        {
+            "frame": 32,
+            "distance": 59.72881317138672,
+            "yaw": 96.80672454833984,
+            "pitch": 42.66997146606445,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 75.64970000000001
+        },
+        {
+            "frame": 33,
+            "distance": 61.220340728759766,
+            "yaw": 99.83193969726563,
+            "pitch": 43.30873489379883,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 70.59740000000001
+        },
+        {
+            "frame": 34,
+            "distance": 62.71186447143555,
+            "yaw": 102.85714721679688,
+            "pitch": 43.927764892578125,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 74.27770000000001
+        },
+        {
+            "frame": 35,
+            "distance": 64.2033920288086,
+            "yaw": 105.88235473632813,
+            "pitch": 44.52663803100586,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 69.8544
+        },
+        {
+            "frame": 36,
+            "distance": 65.69491577148438,
+            "yaw": 108.9075698852539,
+            "pitch": 45.10493469238281,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 69.5352
+        },
+        {
+            "frame": 37,
+            "distance": 67.18643951416016,
+            "yaw": 111.93277740478516,
+            "pitch": 45.66225051879883,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 72.2343
+        },
+        {
+            "frame": 38,
+            "distance": 68.67797088623047,
+            "yaw": 114.9579849243164,
+            "pitch": 46.19819259643555,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 70.92830000000001
+        },
+        {
+            "frame": 39,
+            "distance": 70.16949462890625,
+            "yaw": 117.98320007324219,
+            "pitch": 46.71239471435547,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 71.7332
+        },
+        {
+            "frame": 40,
+            "distance": 71.66101837158203,
+            "yaw": 121.00840759277344,
+            "pitch": 47.204498291015625,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 76.2773
+        },
+        {
+            "frame": 41,
+            "distance": 73.15254211425781,
+            "yaw": 124.03361511230469,
+            "pitch": 47.674156188964844,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 75.9965
+        },
+        {
+            "frame": 42,
+            "distance": 74.6440658569336,
+            "yaw": 127.05883026123047,
+            "pitch": 48.12104034423828,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 69.5523
+        },
+        {
+            "frame": 43,
+            "distance": 76.1355972290039,
+            "yaw": 130.0840301513672,
+            "pitch": 48.54484558105469,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 70.9864
+        },
+        {
+            "frame": 44,
+            "distance": 77.62712097167969,
+            "yaw": 133.1092529296875,
+            "pitch": 48.945274353027344,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 70.9839
+        },
+        {
+            "frame": 45,
+            "distance": 79.11864471435547,
+            "yaw": 136.13446044921875,
+            "pitch": 49.32204055786133,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 69.7247
+        },
+        {
+            "frame": 46,
+            "distance": 80.61016845703125,
+            "yaw": 139.15966796875,
+            "pitch": 49.67489242553711,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 69.9925
+        },
+        {
+            "frame": 47,
+            "distance": 82.10169219970703,
+            "yaw": 142.18487548828125,
+            "pitch": 50.00357437133789,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 76.73400000000001
+        },
+        {
+            "frame": 48,
+            "distance": 83.59321594238281,
+            "yaw": 145.2100830078125,
+            "pitch": 50.307865142822266,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 69.2564
+        },
+        {
+            "frame": 49,
+            "distance": 85.08474731445313,
+            "yaw": 148.23529052734375,
+            "pitch": 50.58755111694336,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 83.3043
+        },
+        {
+            "frame": 50,
+            "distance": 86.5762710571289,
+            "yaw": 151.26051330566406,
+            "pitch": 50.842430114746094,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 68.0275
+        },
+        {
+            "frame": 51,
+            "distance": 88.06779479980469,
+            "yaw": 154.2857208251953,
+            "pitch": 51.07233428955078,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 71.8785
+        },
+        {
+            "frame": 52,
+            "distance": 89.559326171875,
+            "yaw": 157.31092834472656,
+            "pitch": 51.277095794677734,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 68.4413
+        },
+        {
+            "frame": 53,
+            "distance": 91.05084228515625,
+            "yaw": 160.3361358642578,
+            "pitch": 51.45657730102539,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 67.1696
+        },
+        {
+            "frame": 54,
+            "distance": 92.54237365722656,
+            "yaw": 163.36134338378906,
+            "pitch": 51.61064910888672,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 67.4332
+        },
+        {
+            "frame": 55,
+            "distance": 94.03389739990234,
+            "yaw": 166.3865509033203,
+            "pitch": 51.73921203613281,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 70.2386
+        },
+        {
+            "frame": 56,
+            "distance": 95.52542114257813,
+            "yaw": 169.41175842285156,
+            "pitch": 51.8421630859375,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 68.8165
+        },
+        {
+            "frame": 57,
+            "distance": 97.01695251464844,
+            "yaw": 172.43698120117188,
+            "pitch": 51.9194450378418,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 13410.6789
+        },
+        {
+            "frame": 58,
+            "distance": 98.50846862792969,
+            "yaw": 175.46218872070313,
+            "pitch": 51.97099304199219,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 90.6165
+        },
+        {
+            "frame": 59,
+            "distance": 100.0,
+            "yaw": 178.48739624023438,
+            "pitch": 51.99677658081055,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 90.2077
+        },
+        {
+            "frame": 60,
+            "distance": 12.0,
+            "yaw": 181.5126190185547,
+            "pitch": 51.99677658081055,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 160.1626
+        },
+        {
+            "frame": 61,
+            "distance": 20.800003051757813,
+            "yaw": 184.53782653808594,
+            "pitch": 51.97099304199219,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 79.1661
+        },
+        {
+            "frame": 62,
+            "distance": 29.599998474121094,
+            "yaw": 187.5630340576172,
+            "pitch": 51.91944122314453,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 73.5655
+        },
+        {
+            "frame": 63,
+            "distance": 38.400001525878906,
+            "yaw": 190.58824157714844,
+            "pitch": 51.8421630859375,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 67.1425
+        },
+        {
+            "frame": 64,
+            "distance": 47.19999694824219,
+            "yaw": 193.6134490966797,
+            "pitch": 51.73920822143555,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 64.5453
+        },
+        {
+            "frame": 65,
+            "distance": 56.0,
+            "yaw": 196.638671875,
+            "pitch": 51.61064910888672,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 66.6847
+        },
+        {
+            "frame": 66,
+            "distance": 64.80000305175781,
+            "yaw": 199.66387939453125,
+            "pitch": 51.45657730102539,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 65.3067
+        },
+        {
+            "frame": 67,
+            "distance": 73.5999984741211,
+            "yaw": 202.6890869140625,
+            "pitch": 51.277095794677734,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 62.323100000000004
+        },
+        {
+            "frame": 68,
+            "distance": 82.4000015258789,
+            "yaw": 205.71429443359375,
+            "pitch": 51.07233428955078,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 63.414100000000005
+        },
+        {
+            "frame": 69,
+            "distance": 91.19999694824219,
+            "yaw": 208.739501953125,
+            "pitch": 50.842430114746094,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 57.165000000000006
+        },
+        {
+            "frame": 70,
+            "distance": 100.0,
+            "yaw": 211.76470947265625,
+            "pitch": 50.587547302246094,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 57.7978
+        },
+        {
+            "frame": 71,
+            "distance": 91.19999694824219,
+            "yaw": 214.7899169921875,
+            "pitch": 50.307865142822266,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 59.6831
+        },
+        {
+            "frame": 72,
+            "distance": 82.39999389648438,
+            "yaw": 217.8151397705078,
+            "pitch": 50.00357437133789,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 58.321200000000005
+        },
+        {
+            "frame": 73,
+            "distance": 73.60000610351563,
+            "yaw": 220.84034729003906,
+            "pitch": 49.674888610839844,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 62.159400000000005
+        },
+        {
+            "frame": 74,
+            "distance": 64.80000305175781,
+            "yaw": 223.8655548095703,
+            "pitch": 49.32204055786133,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 61.6747
+        },
+        {
+            "frame": 75,
+            "distance": 56.0,
+            "yaw": 226.89076232910156,
+            "pitch": 48.94527053833008,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 62.966300000000004
+        },
+        {
+            "frame": 76,
+            "distance": 47.19999694824219,
+            "yaw": 229.9159698486328,
+            "pitch": 48.54484558105469,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 73.17920000000001
+        },
+        {
+            "frame": 77,
+            "distance": 38.399993896484375,
+            "yaw": 232.94117736816406,
+            "pitch": 48.12104034423828,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 66.1232
+        },
+        {
+            "frame": 78,
+            "distance": 29.600004196166992,
+            "yaw": 235.96640014648438,
+            "pitch": 47.674156188964844,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 76.0851
+        },
+        {
+            "frame": 79,
+            "distance": 20.800003051757813,
+            "yaw": 238.99160766601563,
+            "pitch": 47.20449447631836,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 98.0865
+        },
+        {
+            "frame": 80,
+            "distance": 12.0,
+            "yaw": 242.01681518554688,
+            "pitch": 46.7123908996582,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 114.46310000000001
+        },
+        {
+            "frame": 81,
+            "distance": 20.799991607666016,
+            "yaw": 245.04202270507813,
+            "pitch": 46.19819259643555,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 87.66040000000001
+        },
+        {
+            "frame": 82,
+            "distance": 29.600004196166992,
+            "yaw": 248.06723022460938,
+            "pitch": 45.6622428894043,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 90.7312
+        },
+        {
+            "frame": 83,
+            "distance": 38.399993896484375,
+            "yaw": 251.09243774414063,
+            "pitch": 45.10493087768555,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 80.0956
+        },
+        {
+            "frame": 84,
+            "distance": 47.200008392333984,
+            "yaw": 254.11766052246094,
+            "pitch": 44.52663803100586,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 74.1429
+        },
+        {
+            "frame": 85,
+            "distance": 56.0,
+            "yaw": 257.1428527832031,
+            "pitch": 43.92776107788086,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 72.03880000000001
+        },
+        {
+            "frame": 86,
+            "distance": 64.79998779296875,
+            "yaw": 260.1680603027344,
+            "pitch": 43.3087272644043,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 78.93900000000001
+        },
+        {
+            "frame": 87,
+            "distance": 73.60000610351563,
+            "yaw": 263.19329833984375,
+            "pitch": 42.66996765136719,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 65.0763
+        },
+        {
+            "frame": 88,
+            "distance": 82.39999389648438,
+            "yaw": 266.218505859375,
+            "pitch": 42.01192092895508,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 62.8239
+        },
+        {
+            "frame": 89,
+            "distance": 91.20001220703125,
+            "yaw": 269.24371337890625,
+            "pitch": 41.335052490234375,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 62.5275
+        },
+        {
+            "frame": 90,
+            "distance": 100.0,
+            "yaw": 272.2689208984375,
+            "pitch": 40.63983154296875,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 62.573600000000006
+        },
+        {
+            "frame": 91,
+            "distance": 91.20001220703125,
+            "yaw": 275.29412841796875,
+            "pitch": 39.926734924316406,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 65.43650000000001
+        },
+        {
+            "frame": 92,
+            "distance": 82.39999389648438,
+            "yaw": 278.3193359375,
+            "pitch": 39.19627380371094,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 66.3993
+        },
+        {
+            "frame": 93,
+            "distance": 73.60000610351563,
+            "yaw": 281.34454345703125,
+            "pitch": 38.44894027709961,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 66.0111
+        },
+        {
+            "frame": 94,
+            "distance": 64.79998779296875,
+            "yaw": 284.3697509765625,
+            "pitch": 37.68527603149414,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 68.593
+        },
+        {
+            "frame": 95,
+            "distance": 56.0,
+            "yaw": 287.39495849609375,
+            "pitch": 36.90579605102539,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 73.02510000000001
+        },
+        {
+            "frame": 96,
+            "distance": 47.200008392333984,
+            "yaw": 290.420166015625,
+            "pitch": 36.11104965209961,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 80.6991
+        },
+        {
+            "frame": 97,
+            "distance": 38.399993896484375,
+            "yaw": 293.44537353515625,
+            "pitch": 35.30159378051758,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 76.108
+        },
+        {
+            "frame": 98,
+            "distance": 29.600004196166992,
+            "yaw": 296.4705810546875,
+            "pitch": 34.477989196777344,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 85.39030000000001
+        },
+        {
+            "frame": 99,
+            "distance": 20.799991607666016,
+            "yaw": 299.49578857421875,
+            "pitch": 33.640804290771484,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 94.97540000000001
+        },
+        {
+            "frame": 100,
+            "distance": 12.0,
+            "yaw": 302.5210266113281,
+            "pitch": 32.79063415527344,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 139.22650000000002
+        },
+        {
+            "frame": 101,
+            "distance": 20.799991607666016,
+            "yaw": 305.5462341308594,
+            "pitch": 31.92806625366211,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 90.7497
+        },
+        {
+            "frame": 102,
+            "distance": 29.59998321533203,
+            "yaw": 308.5714416503906,
+            "pitch": 31.053693771362305,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 83.36930000000001
+        },
+        {
+            "frame": 103,
+            "distance": 38.40001678466797,
+            "yaw": 311.5966491699219,
+            "pitch": 30.168140411376953,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 72.4072
+        },
+        {
+            "frame": 104,
+            "distance": 47.200008392333984,
+            "yaw": 314.6218566894531,
+            "pitch": 29.27200698852539,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 72.6922
+        },
+        {
+            "frame": 105,
+            "distance": 56.0,
+            "yaw": 317.6470642089844,
+            "pitch": 28.365938186645508,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 73.03580000000001
+        },
+        {
+            "frame": 106,
+            "distance": 64.79998779296875,
+            "yaw": 320.6722717285156,
+            "pitch": 27.450551986694336,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 74.7193
+        },
+        {
+            "frame": 107,
+            "distance": 73.59998321533203,
+            "yaw": 323.6974792480469,
+            "pitch": 26.52648162841797,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 60.4589
+        },
+        {
+            "frame": 108,
+            "distance": 82.40001678466797,
+            "yaw": 326.7226867675781,
+            "pitch": 25.594385147094727,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 61.730700000000006
+        },
+        {
+            "frame": 109,
+            "distance": 91.20001220703125,
+            "yaw": 329.7478942871094,
+            "pitch": 24.6549072265625,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 58.4101
+        },
+        {
+            "frame": 110,
+            "distance": 100.0,
+            "yaw": 332.7731018066406,
+            "pitch": 23.708690643310547,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 57.0456
+        },
+        {
+            "frame": 111,
+            "distance": 91.20001220703125,
+            "yaw": 335.7983093261719,
+            "pitch": 22.75641441345215,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 57.6
+        },
+        {
+            "frame": 112,
+            "distance": 82.40001678466797,
+            "yaw": 338.8235168457031,
+            "pitch": 21.79873275756836,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 57.8517
+        },
+        {
+            "frame": 113,
+            "distance": 73.59998321533203,
+            "yaw": 341.8487548828125,
+            "pitch": 20.8363037109375,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 60.8601
+        },
+        {
+            "frame": 114,
+            "distance": 64.79998779296875,
+            "yaw": 344.87396240234375,
+            "pitch": 19.869815826416016,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 66.6234
+        },
+        {
+            "frame": 115,
+            "distance": 56.0,
+            "yaw": 347.899169921875,
+            "pitch": 18.899925231933594,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 59.598800000000004
+        },
+        {
+            "frame": 116,
+            "distance": 47.200008392333984,
+            "yaw": 350.92437744140625,
+            "pitch": 17.927326202392578,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 66.0622
+        },
+        {
+            "frame": 117,
+            "distance": 38.40001678466797,
+            "yaw": 353.9495849609375,
+            "pitch": 16.952686309814453,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 63.9011
+        },
+        {
+            "frame": 118,
+            "distance": 29.59998321533203,
+            "yaw": 356.97479248046875,
+            "pitch": 15.976677894592285,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 80.7847
+        },
+        {
+            "frame": 119,
+            "distance": 20.799991607666016,
+            "yaw": 360.0,
+            "pitch": 14.99999713897705,
+            "triangles": 392054,
+            "drawCalls": 203,
+            "setPassCalls": 4,
+            "renderMilliseconds": 78.5372
+        }
+    ]
+}

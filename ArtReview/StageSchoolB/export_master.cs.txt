@@ -1,0 +1,18 @@
+var prefab=UnityEditor.AssetDatabase.LoadAssetAtPath<UnityEngine.GameObject>(SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Prefab);
+var parts=new System.Collections.Generic.List<SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Part>();
+var seen=new System.Collections.Generic.HashSet<UnityEngine.Mesh>();
+foreach(var f in prefab.GetComponentsInChildren<UnityEngine.MeshFilter>(true)){
+ var m=f.sharedMesh;if(m==null||!seen.Add(m))continue;
+ var p=new SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Part();
+ p.name=UnityEditor.AssetDatabase.AssetPathToGUID(UnityEditor.AssetDatabase.GetAssetPath(m));p.pivot=new float[]{0,0,0};
+ p.positions=System.Linq.Enumerable.ToArray(System.Linq.Enumerable.SelectMany(m.vertices,v=>new float[]{v.x,v.y,v.z}));
+ p.normals=System.Linq.Enumerable.ToArray(System.Linq.Enumerable.SelectMany(m.normals,v=>new float[]{v.x,v.y,v.z}));
+ p.uv=System.Linq.Enumerable.ToArray(System.Linq.Enumerable.SelectMany(m.uv,v=>new float[]{v.x,v.y}));
+ p.materials=System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Select(f.GetComponent<UnityEngine.Renderer>().sharedMaterials,x=>UnityEditor.AssetDatabase.GetAssetPath(x)));
+ p.submeshes=new SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Submesh[m.subMeshCount];
+ for(int i=0;i<m.subMeshCount;i++)p.submeshes[i]=new SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Submesh{indices=m.GetTriangles(i)};
+ parts.Add(p);
+}
+var data=new SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Packet{parts=parts.ToArray()};
+System.IO.File.WriteAllText("ArtExports/StageSchoolB/master_meshes.json",UnityEngine.JsonUtility.ToJson(data));
+result.Log("Frozen mesh input: "+parts.Count+" shared mesh assets. Scene="+UnityEngine.SceneManagement.SceneManager.GetActiveScene().path);

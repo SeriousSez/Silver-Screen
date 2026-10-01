@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="1" result="Failed(Child)" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-09-30 17:40:08Z" end-time="2026-09-30 17:40:28Z" duration="20.0132934">
+  <test-suite type="TestSuite" id="1000" name="Silver Screen" fullname="Silver Screen" runstate="Runnable" testcasecount="364" result="Failed" site="Child" start-time="2026-09-30 17:40:08Z" end-time="2026-09-30 17:40:28Z" duration="20.013293" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1432" name="Assembly-CSharp-Editor.dll" fullname="C:/Repos/Unity/Silver Screen/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" runstate="Runnable" testcasecount="364" result="Failed" site="Child" start-time="2026-09-30 17:40:09Z" end-time="2026-09-30 17:40:28Z" duration="19.543337" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="46120" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1433" name="SilverScreen" fullname="SilverScreen" runstate="Runnable" testcasecount="364" result="Failed" site="Child" start-time="2026-09-30 17:40:09Z" end-time="2026-09-30 17:40:28Z" duration="19.537657" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1434" name="Tests" fullname="SilverScreen.Tests" runstate="Runnable" testcasecount="364" result="Failed" site="Child" start-time="2026-09-30 17:40:09Z" end-time="2026-09-30 17:40:28Z" duration="19.528982" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestSuite" id="1435" name="Editor" fullname="SilverScreen.Tests.Editor" runstate="Runnable" testcasecount="9" result="Failed" site="Child" start-time="2026-09-30 17:40:09Z" end-time="2026-09-30 17:40:28Z" duration="19.489404" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-suite type="TestFixture" id="1019" name="StageSchoolB2Validation" fullname="SilverScreen.Tests.Editor.StageSchoolB2Validation" classname="SilverScreen.Tests.Editor.StageSchoolB2Validation" runstate="Runnable" testcasecount="1" result="Failed" site="Child" start-time="2026-09-30 17:40:09Z" end-time="2026-09-30 17:40:28Z" duration="19.476611" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <failure>
+                <message><![CDATA[One or more child tests had errors]]></message>
+              </failure>
+              <test-case id="1020" name="LiveRuntime" fullname="SilverScreen.Tests.Editor.StageSchoolB2Validation.LiveRuntime" methodname="LiveRuntime" classname="SilverScreen.Tests.Editor.StageSchoolB2Validation" runstate="Runnable" seed="1843208696" result="Failed" start-time="2026-09-30 17:39:39Z" end-time="2026-09-30 17:40:28Z" duration="49.373171" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[Expected log did not appear: [Error] Regex: .*NewStudioSceneAuthoring.*ExtensionOfNativeClass.*]]></message>
+                </failure>
+                <output><![CDATA[Saving results to: C:/Users/Sez/AppData/LocalLow/DefaultCompany/Silver Screen\TestResults.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

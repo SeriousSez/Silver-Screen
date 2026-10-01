@@ -1,0 +1,234 @@
+{
+  "roof_masses": 9,
+  "exposed_internal_cascade_components": [],
+  "recessed_liners": 24,
+  "visible_perimeter_downpipes": 7,
+  "rainwater_triangles_before": 111966.0,
+  "rainwater_triangles_after": 59880,
+  "rainwater_triangles_removed": 52086.0,
+  "conceptual_routes": [
+    {
+      "roof": "Entrance",
+      "destination": "concealed entrance cornice to wing collection",
+      "type": "boxed fascia return; shared perimeter outlet"
+    },
+    {
+      "roof": "Entrance",
+      "destination": "perimeter rainwater via concealed box collection",
+      "type": "recessed internal liner; no exposed cascade fittings"
+    },
+    {
+      "roof": "Entrance",
+      "destination": "perimeter rainwater via concealed box collection",
+      "type": "recessed internal liner; no exposed cascade fittings"
+    },
+    {
+      "roof": "Entrance",
+      "destination": "perimeter rainwater via concealed box collection",
+      "type": "recessed internal liner; no exposed cascade fittings"
+    },
+    {
+      "roof": "Entrance",
+      "destination": "perimeter rainwater via concealed box collection",
+      "type": "recessed internal liner; no exposed cascade fittings"
+    },
+    {
+      "roof": "Waiting",
+      "destination": "west side outlet",
+      "type": "boxed fascia return; shared perimeter outlet"
+    },
+    {
+      "roof": "Waiting",
+      "destination": "perimeter rainwater via concealed box collection",
+      "type": "recessed internal liner; no exposed cascade fittings"
+    },
+    {
+      "roof": "Waiting",
+      "destination": "perimeter rainwater via concealed box collection",
+      "type": "recessed internal liner; no exposed cascade fittings"
+    },
+    {
+      "roof": "Waiting",
+      "destination": "ground gully",
+      "outlet": [
+        -11.440000534057617,
+        -8.669642448425293
+      ],
+      "type": "wall-supported downpipe with open shoe"
+    },
+    {
+      "roof": "Preparation",
+      "destination": "perimeter rainwater via concealed box collection",
+      "type": "recessed internal liner; no exposed cascade fittings"
+    },
+    {
+      "roof": "Preparation",
+      "destination": "east side outlet",
+      "type": "boxed fascia return; shared perimeter outlet"
+    },
+    {
+      "roof": "Preparation",
+      "destination": "ground gully",
+      "outlet": [
+        11.440000534057617,
+        -0.22684946656227112
+      ],
+      "type": "wall-supported downpipe with open shoe"
+    },
+    {
+      "roof": "Preparation",
+      "destination": "perimeter rainwater via concealed box collection",
+      "type": "recessed internal liner; no exposed cascade fittings"
+    },
+    {
+      "roof": "Hall",
+      "destination": "perimeter rainwater via concealed box collection",
+      "type": "recessed internal liner; no exposed cascade fittings"
+    },
+    {
+      "roof": "Hall",
+      "destination": "perimeter rainwater via concealed box collection",
+      "type": "recessed internal liner; no exposed cascade fittings"
+    },
+    {
+      "roof": "WestEvaluation",
+      "destination": "perimeter rainwater via concealed box collection",
+      "type": "recessed internal liner; no exposed cascade fittings"
+    },
+    {
+      "roof": "WestEvaluation",
+      "destination": "perimeter rainwater via concealed box collection",
+      "type": "recessed internal liner; no exposed cascade fittings"
+    },
+    {
+      "roof": "WestEvaluation",
+      "destination": "perimeter rainwater via concealed box collection",
+      "type": "recessed internal liner; no exposed cascade fittings"
+    },
+    {
+      "roof": "WestEvaluation",
+      "destination": "perimeter rainwater via concealed box collection",
+      "type": "recessed internal liner; no exposed cascade fittings"
+    },
+    {
+      "roof": "WestEvaluation",
+      "destination": "perimeter rainwater via concealed box collection",
+      "type": "recessed internal liner; no exposed cascade fittings"
+    },
+    {
+      "roof": "WestService",
+      "destination": "perimeter rainwater via concealed box collection",
+      "type": "recessed internal liner; no exposed cascade fittings"
+    },
+    {
+      "roof": "WestService",
+      "destination": "rear outlet",
+      "type": "boxed fascia return; shared perimeter outlet"
+    },
+    {
+      "roof": "WestService",
+      "destination": "ground gully",
+      "outlet": [
+        -13.703999519348145,
+        14.539999961853027
+      ],
+      "type": "wall-supported downpipe with open shoe"
+    },
+    {
+      "roof": "WestService",
+      "destination": "rear outlet",
+      "type": "boxed fascia return; shared perimeter outlet"
+    },
+    {
+      "roof": "WestService",
+      "destination": "perimeter rainwater via concealed box collection",
+      "type": "recessed internal liner; no exposed cascade fittings"
+    },
+    {
+      "roof": "CommonBay",
+      "destination": "west side outlet",
+      "type": "boxed fascia return; shared perimeter outlet"
+    },
+    {
+      "roof": "CommonBay",
+      "destination": "perimeter rainwater via concealed box collection",
+      "type": "recessed internal liner; no exposed cascade fittings"
+    },
+    {
+      "roof": "CommonBay",
+      "destination": "perimeter rainwater via concealed box collection",
+      "type": "recessed internal liner; no exposed cascade fittings"
+    },
+    {
+      "roof": "CommonBay",
+      "destination": "ground gully",
+      "outlet": [
+        -14.539999961853027,
+        0.7309091091156006
+      ],
+      "type": "wall-supported downpipe with open shoe"
+    },
+    {
+      "roof": "Interview",
+      "destination": "perimeter rainwater via concealed box collection",
+      "type": "recessed internal liner; no exposed cascade fittings"
+    },
+    {
+      "roof": "Interview",
+      "destination": "ground gully",
+      "outlet": [
+        -0.5129562616348267,
+        12.539999961853027
+      ],
+      "type": "wall-supported downpipe with open shoe"
+    },
+    {
+      "roof": "Interview",
+      "destination": "perimeter rainwater via concealed box collection",
+      "type": "recessed internal liner; no exposed cascade fittings"
+    },
+    {
+      "roof": "Interview",
+      "destination": "perimeter rainwater via concealed box collection",
+      "type": "recessed internal liner; no exposed cascade fittings"
+    },
+    {
+      "roof": "Audition",
+      "destination": "perimeter rainwater via concealed box collection",
+      "type": "recessed internal liner; no exposed cascade fittings"
+    },
+    {
+      "roof": "Audition",
+      "destination": "east and rear outlets",
+      "type": "boxed fascia return; shared perimeter outlet"
+    },
+    {
+      "roof": "Audition",
+      "destination": "ground gully",
+      "outlet": [
+        14.539999961853027,
+        14.51200008392334
+      ],
+      "type": "wall-supported downpipe with open shoe"
+    },
+    {
+      "roof": "Audition",
+      "destination": "ground gully",
+      "outlet": [
+        3.308000087738037,
+        15.539999961853027
+      ],
+      "type": "wall-supported downpipe with open shoe"
+    },
+    {
+      "roof": "Audition",
+      "destination": "east and rear outlets",
+      "type": "boxed fascia return; shared perimeter outlet"
+    },
+    {
+      "roof": "Audition",
+      "destination": "perimeter rainwater via concealed box collection",
+      "type": "recessed internal liner; no exposed cascade fittings"
+    }
+  ]
+}

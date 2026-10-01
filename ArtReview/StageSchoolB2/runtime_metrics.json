@@ -1,0 +1,38 @@
+{
+    "levels": [
+        {
+            "level": 0,
+            "triangles": 466700,
+            "vertices": 629079,
+            "renderers": 110,
+            "materials": 35,
+            "materialSlots": 294,
+            "meshBytes": 33802848
+        },
+        {
+            "level": 1,
+            "triangles": 151934,
+            "vertices": 254097,
+            "renderers": 75,
+            "materials": 35,
+            "materialSlots": 254,
+            "meshBytes": 13155864
+        },
+        {
+            "level": 2,
+            "triangles": 111322,
+            "vertices": 191308,
+            "renderers": 75,
+            "materials": 35,
+            "materialSlots": 239,
+            "meshBytes": 9849984
+        }
+    ],
+    "thresholds": [
+        0.3799999952316284,
+        0.1599999964237213,
+        0.00800000037997961
+    ],
+    "anchors": 25,
+    "revealGroups": 82
+}

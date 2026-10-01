@@ -1,0 +1,24 @@
+00:01.031  blend            | Read blend: "C:\Repos\Unity\Silver Screen\ArtSource\StageSchoolA3\StageSchool_A3.blend"
+Info: Read library: 'C:\Repos\Unity\Silver Screen\ArtSource\PeriodEnvironment1930\PeriodEnvironment1930.blend', '//..\PeriodEnvironment1930\PeriodEnvironment1930.blend', parent '<direct>'
+Info: Read library: 'C:\Repos\Unity\Silver Screen\ArtSource\ProductionEquipment1930Candidate\ProductionEquipment1930Candidate.blend', '//..\ProductionEquipment1930Candidate\ProductionEquipment1930Candidate.blend', parent '<direct>'
+{
+  "cap_gutter": [
+    {
+      "roof": "Hall",
+      "gutter": "Pitched half-round rainwater gutter.024",
+      "overlaps": 0,
+      "cap_faces": []
+    },
+    {
+      "roof": "Interview",
+      "gutter": "Pitched half-round rainwater gutter.024",
+      "overlaps": 0,
+      "cap_faces": []
+    }
+  ],
+  "scoring_count": 89,
+  "scoring_above_stone": []
+}
+Blender 5.0.1 (hash a3db93c5b259 built 2025-12-16 01:32:30)
+
+Blender quit

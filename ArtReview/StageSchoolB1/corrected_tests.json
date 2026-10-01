@@ -1,0 +1,25 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"success\": true,\n  \"message\": \"Command executed successfully.\",\n  \"data\": {\n    \"isCompilationSuccessful\": true,\n    \"isExecutionSuccessful\": true,\n    \"executionId\": 1,\n    \"compilationLogs\": \"\",\n    \"executionLogs\": \"[Log] PASS PlacementCreatesGatedSiteAndPreservesLodSelection\\nPASS DefinitionHasOneIdentityAndNoRecruitment\\nPASS RotatedCompoundPlacementStillExcludesArchitecture\\nPASS RuntimeLodsReduceGeometryAndRetainIndependentDoors\\nPASS RevealPersistsAcrossLodsAndRestoresMaterials\\nPASS DoorStateIsConsistentAcrossLods\\nPASS RuntimeAttachmentChainsAndDoorConnectivityAreExplicit\",\n    \"localFixedCode\": \"using UnityEngine;\\r\\nusing UnityEditor;\\r\\n\\r\\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\\r\\n{\\r\\n    internal class CommandScript : IRunCommand\\r\\n    {\\r\\n        public void Execute(ExecutionResult result)\\r\\n        {\\r\\n            var methods = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Where(typeof(SilverScreen.Tests.Editor.StageSchoolRuntimeTests).GetMethods(), m => System.Linq.Enumerable.Any(m.GetCustomAttributes(false), a => a.GetType().Name == \\\"TestAttribute\\\")));\\r\\n            var tests = new SilverScreen.Tests.Editor.StageSchoolRuntimeTests();\\r\\n            var results = new System.Collections.Generic.List<string>();\\r\\n            foreach (var method in methods)\\r\\n            {\\r\\n                try\\r\\n                {\\r\\n                    method.Invoke(tests, null);\\r\\n                    results.Add(\\\"PASS \\\" + method.Name);\\r\\n                }\\r\\n                catch (System.Exception e)\\r\\n                {\\r\\n                    results.Add(\\\"FAIL \\\" + method.Name + \\\": \\\" + (e.InnerException ?? e).Message);\\r\\n                }\\r\\n            }\\r\\n\\r\\n            System.IO.File.WriteAllLines(\\\"ArtReview/StageSchoolB1/focused_tests.txt\\\", results);\\r\\n            result.Log(string.Join(\\\"\\\\n\\\", results));\\r\\n        }\\r\\n    }\\r\\n}\",\n    \"result\": \"Command executed successfully.\"\n  }\n}"
+      }
+    ],
+    "structuredContent": {
+      "success": true,
+      "message": "Command executed successfully.",
+      "data": {
+        "isCompilationSuccessful": true,
+        "isExecutionSuccessful": true,
+        "executionId": 1,
+        "compilationLogs": "",
+        "executionLogs": "[Log] PASS PlacementCreatesGatedSiteAndPreservesLodSelection\nPASS DefinitionHasOneIdentityAndNoRecruitment\nPASS RotatedCompoundPlacementStillExcludesArchitecture\nPASS RuntimeLodsReduceGeometryAndRetainIndependentDoors\nPASS RevealPersistsAcrossLodsAndRestoresMaterials\nPASS DoorStateIsConsistentAcrossLods\nPASS RuntimeAttachmentChainsAndDoorConnectivityAreExplicit",
+        "localFixedCode": "using UnityEngine;\r\nusing UnityEditor;\r\n\r\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\r\n{\r\n    internal class CommandScript : IRunCommand\r\n    {\r\n        public void Execute(ExecutionResult result)\r\n        {\r\n            var methods = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Where(typeof(SilverScreen.Tests.Editor.StageSchoolRuntimeTests).GetMethods(), m => System.Linq.Enumerable.Any(m.GetCustomAttributes(false), a => a.GetType().Name == \"TestAttribute\")));\r\n            var tests = new SilverScreen.Tests.Editor.StageSchoolRuntimeTests();\r\n            var results = new System.Collections.Generic.List<string>();\r\n            foreach (var method in methods)\r\n            {\r\n                try\r\n                {\r\n                    method.Invoke(tests, null);\r\n                    results.Add(\"PASS \" + method.Name);\r\n                }\r\n                catch (System.Exception e)\r\n                {\r\n                    results.Add(\"FAIL \" + method.Name + \": \" + (e.InnerException ?? e).Message);\r\n                }\r\n            }\r\n\r\n            System.IO.File.WriteAllLines(\"ArtReview/StageSchoolB1/focused_tests.txt\", results);\r\n            result.Log(string.Join(\"\\n\", results));\r\n        }\r\n    }\r\n}",
+        "result": "Command executed successfully."
+      }
+    }
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}

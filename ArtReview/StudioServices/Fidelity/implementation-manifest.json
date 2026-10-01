@@ -1,0 +1,1700 @@
+{
+  "milestone": "Studio Services — Canonical Environment Kit Fidelity + Final Visual Polish",
+  "recordedUtc": "2026-09-28T18:28:01.576500+00:00",
+  "baselineFileCount": 9135,
+  "baselineSha256": "a8296884b05c6fc57ac4c65b5741f01dbea3d1bf30fa761ada348eb8e168e169",
+  "baselineLocation": "C:\\Users\\Sez\\AppData\\Local\\Temp\\SilverScreenStudioServices\\Fidelity\\baseline.json",
+  "scope": "Refinement after original production integration; consult Production/implementation-manifest.json for the preceding pass.",
+  "visualApproval": "Pending user review",
+  "modifiedCount": 166,
+  "addedCountIncludingThisManifest": 131,
+  "changed": [
+    {
+      "path": "ArtExports/PeriodEnvironment1930/kit_manifest.json",
+      "before": "05f945b8107464209596b68d5456ed29a4b2731473050dd5712aa3f4a46f40f3",
+      "after": "760f4013213848bb959b07d687ed02dc56c3c7038981cb7ec4879b6910ba6633",
+      "size": 37969
+    },
+    {
+      "path": "ArtExports/PeriodEnvironment1930/kit_meshes.json.gz",
+      "before": "ed05d4019c97ed83694f4616ad18d5d3d6141cac67f9c30caa00399b3608ceb1",
+      "after": "e9c483ac85642c6a4fa0b6f253a44b03ee36ff33b87cb1148be5bff808c71624",
+      "size": 3619741
+    },
+    {
+      "path": "ArtExports/StudioServices/Production/production_manifest.json",
+      "before": "b5ea9ce6153b78c828cae463d6a1095b38ed3cf9a8f53596168d728af1113a4e",
+      "after": "660d083a1dfcbcef051cc0bc8686c9bcfff5c0458df520e4c27da0bed3bbbaf6",
+      "size": 66712
+    },
+    {
+      "path": "ArtExports/StudioServices/Production/production_meshes.json.gz",
+      "before": "7541bed50c83be1f5778e80703132785c99103fc44c392dc0db295824a2bf762",
+      "after": "8cf032b86228dc88333546ab104d2ba6aa30b558b1f6210563c7cfc567a16aba",
+      "size": 2418753
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/01_front_three_quarter.png",
+      "before": "3677c44753d09ed05f4de54990ec3f8a0af0536a26845015b8501b30417526eb",
+      "after": "70d90872b847e1c036fff788ad3ef1a8acda4ee0d78e666b57dd80a26d48e465",
+      "size": 1389138
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/02_front.png",
+      "before": "ed66ab2ffc3947b33b871efacc6371a455ba4bf2000abc02a6248c7c5c836f73",
+      "after": "0cfd6195904bbcdc126b246276d21c4ce3630f82aa7fb94ce28896e1883ca912",
+      "size": 797822
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/03_rear_yard.png",
+      "before": "958bc6f2c92dd3ce1d1c956fcd4f76fa8a99bf7871295ea6974e19c73ef99c30",
+      "after": "a715e5d20445869514c0ea0d89ed48985500f213829d6b689b203853c9df6428",
+      "size": 1273096
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/04_management.png",
+      "before": "bb7ec39a9711de6c101940ca9d18f977fd9b8450933dbf0cfaa4ef6841622f59",
+      "after": "93374b9976cc86f877eb245f4b8fc97946a98534cf592641b97aa9bbadc580ce",
+      "size": 1365161
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/05_employment.png",
+      "before": "89278489043a1b5ac52035a51304899db6509939d584d63374fee7f37e164825",
+      "after": "5cbf57f8e1a871463f69d6fcb54c11dc6aa2bb3e690863f6e882612b78ee1ed3",
+      "size": 1941106
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/06_workshop_doors.png",
+      "before": "c1f32ab84391a8c8572a7c62ad3d887a46e5af9d2ba8e4309dcca7e6a42d325a",
+      "after": "bac3e7b066c2349265bae339e117ec0c3fa2611386a4934690d83e7800f03448",
+      "size": 2238066
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/07_working_yard.png",
+      "before": "3500c224ce15eb10ecdfde61a18dfe6844a6c3d1afe60ef7af0049094532b8b2",
+      "after": "a2593662537d54091449c8ad63a6128d88a2e9e35987e4aabfc9254e7d43bcf6",
+      "size": 2062980
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/08_cutaway.png",
+      "before": "5fddf395b102603e130b2b7ed50f5c410af7b0004fab2006ea7ac54aa6eb2d2a",
+      "after": "01a770569aa81ee5ce32f278c70b80f5e58938de505bcc453305fa1c595c405b",
+      "size": 1550688
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/09_plan.png",
+      "before": "8cf692464093453e7417d9eb94198f51270954a869221e8601df0b895c7de4c0",
+      "after": "72fc81b12898bb9ba01f380c2d8ee17a7fc6212210d111dc47214ca0d438ee30",
+      "size": 2066905
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/10_office.png",
+      "before": "268c72f348980100dc7d682e99190438b30c943f24de6920fbf7fb4c55745fcd",
+      "after": "21a7fc87d6a44f41881dce7ba7783b8693a371a7bbc01ce37bdbe543636c77d6",
+      "size": 2324189
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/11_workshop.png",
+      "before": "0b4b2e6e0556fde922a4c54ee9fdcb21fa564b344bb6e0e3e173f596c8311f0e",
+      "after": "2ce93cb55e52beb48108e51c1491bd9374d918b4186cda57f2de320c85dfa03e",
+      "size": 2335169
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/12_storage.png",
+      "before": "bd018615068b73be5503e955e6a12148dc22e29128018851a57f41c8943c02e9",
+      "after": "e4a86dad4ae6ab6f09d296502343b5038dc00cc2d80097676aa143b61252990a",
+      "size": 2228431
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/13_restored.png",
+      "before": "3677c44753d09ed05f4de54990ec3f8a0af0536a26845015b8501b30417526eb",
+      "after": "70d90872b847e1c036fff788ad3ef1a8acda4ee0d78e666b57dd80a26d48e465",
+      "size": 1389138
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/14_live_held_cutaway.png",
+      "before": "9ba60f45bb187626834ab6f49f9c4cd22e1fbc7962f192b21845f611b93cdf68",
+      "after": "a692ee1f69769449b8159d6bd699385a851929d297c65bf1a16ee14dee22c3c3",
+      "size": 915641
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/15_drainage_corner.png",
+      "before": "3c70605bdcceeb713580af457d27d6416e4cfe55e9596c66055a2fc8391634cf",
+      "after": "7823d5095ecb0e545da7c5431ce89faa5e9edd1172f8b7e9ad43701d06cd4bef",
+      "size": 2263560
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/16_left_eave.png",
+      "before": "61ba6ac5a3c4e07b142bc42d610651033432357b52d763eb68c01e33f0a2f066",
+      "after": "2fc376d7a24a2465dadb3d7636ef3c782f3fd68e91a390fe8125bb610defa7fc",
+      "size": 1948920
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/17_live_exterior.png",
+      "before": "1d423900a5a4e21cc91cf211c95cef651830a1d6cdffa853915d62184f401f26",
+      "after": "66ccd0ca3593412b1e8250c1426e34f645bd8ea28835748b98eddf53830249df",
+      "size": 863240
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/checks.json",
+      "before": "f8ecbd3d7d84168f447a36eacfe22c0ec75c5effaadd5dd32e65505792ce52f1",
+      "after": "23a6c9da828b32d3bc39e120d38ab0e72d59ead28bdd5f2f50353b1b6e7dffdb",
+      "size": 6883
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/mesh-validation.json",
+      "before": "7990279f318ec6e33a993bd954b7e0712bdbc437a2cd0765dee9c630b72d6b71",
+      "after": "531d425ccc3ca77617bd82f14817eaca89a971ac7ee17d171994d356f021cc78",
+      "size": 533
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/review.html",
+      "before": "5e41b0c30d93c0fafab4958e74f940accd125430a7ae48438bcf46a11d11eba6",
+      "after": "7bec799abfb621122aebcccc7734cb82e004ae097e500d0ead354895f230886c",
+      "size": 16804
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/tests.xml",
+      "before": "7f7d4aa8dfb471efca3eae4d85e7a74aafed42b609d1fe1faa0ea1307cec574e",
+      "after": "6a03233ba2099c5a4eb2f50228da97ccb4d11f616f4ad5160712ee37245f729f",
+      "size": 32065
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/validation.md",
+      "before": "f2519b7f0412b4bbdfabc4382f0778afff617d744948b9e58dc75e9517053a07",
+      "after": "cc22a38fdcceaad15c2f13109f17a479e68754ed31da6197758bf8815ece02ee",
+      "size": 1697
+    },
+    {
+      "path": "ArtSource/PeriodEnvironment1930/PeriodEnvironment1930.blend",
+      "before": "7fe2121d1c5387c0f66f4afed777bc5793f57e772c6bac267f03968e173d7764",
+      "after": "d9f2fbc93e7422aca832ac596f30e21673e9aa05bb5db0b5c2e559a07fe4672f",
+      "size": 1739466
+    },
+    {
+      "path": "ArtSource/PeriodEnvironment1930/README.md",
+      "before": "80527cbdc939a1a8efeaabc865dbf8ff9b2e9dd9a32fdd722b6df8b1f3bff2ab",
+      "after": "f0ded98904db03a31ea6ee390b5186b5965430e637707179c46d66518f5b4ae3",
+      "size": 4117
+    },
+    {
+      "path": "ArtSource/PeriodEnvironment1930/__pycache__/geometry.cpython-311.pyc",
+      "before": "5fb16908c7cacae30ba8748263498e4227b9a0556d4a60b6dae3d322373e3435",
+      "after": "fbecf7d55ec43d2084efa0c330693b3b1fb209306cb7a374bb2b149b6bae890b",
+      "size": 24174
+    },
+    {
+      "path": "ArtSource/PeriodEnvironment1930/build_kit.py",
+      "before": "ef5e573e358f5873521f825aea1f40f430b3ba3d9d5e84e78fdaf35057eb563b",
+      "after": "56099fa3c3e4ca87de0de848dfa7795d3085bf8edea7a5d4c1e8df210e04c987",
+      "size": 28084
+    },
+    {
+      "path": "ArtSource/PeriodEnvironment1930/geometry.py",
+      "before": "ac30f9952494a90d4b08e6e8c3cbb39c7c14421d1baf14e20efe4f287402f730",
+      "after": "a080d44f1ffcf2d8851be45dab959cd1ac9c77ecf147c7d78e824f1436896a89",
+      "size": 8058
+    },
+    {
+      "path": "ArtSource/StudioServices/README.md",
+      "before": "a07b9bf110b9cfb07602493250535f5a8302f13a34834db559a221688d423d7f",
+      "after": "7276ce493454b0b07f937c4dba4c331d9c5120abe3574e5a2cba9556c0237144",
+      "size": 9802
+    },
+    {
+      "path": "ArtSource/StudioServices/StudioServices_Production.blend",
+      "before": "7b58512b35441a0173b6cc7ae5c4c4f3008fdc21f1c3ef467a2389d7f3bcee22",
+      "after": "0e90c0f7080e05931797b9c3ef65e2615b3317ddc66e62ca745fce80cade4b8a",
+      "size": 1966507
+    },
+    {
+      "path": "ArtSource/StudioServices/build_review.py",
+      "before": "838c69bc8795cc9e203e70c68dc6630385cf0dbd884c6c05d23686afe28c671b",
+      "after": "c33bb038599340d0667852b878a33de0aebad58fba4e7391281429fc442185b1",
+      "size": 8948
+    },
+    {
+      "path": "ArtSource/StudioServices/generate_production.py",
+      "before": "9520b5244354603652073918e1470dc7010f334cca726359f12e7f9edcc2684f",
+      "after": "8f6730d1783bd52794901100a400f96a8deb56845ccf5b980267eca05248ac21",
+      "size": 25491
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/AwningCurved_164_1930.asset",
+      "before": "1a375732184f921670bda6b52968b619df84d3e94199616112bed102f0483072",
+      "after": "f1e95adc8be9869a20e71f370e071b0cacbaba5296e0b07d27dddc98fc5ec532",
+      "size": 1473
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/BarrelPaintedSteel_1930.asset",
+      "before": "379232f01f6010c6c6261a024b57ae3ce32c47680c02808b888e927617fff055",
+      "after": "3c9fdf02ed6ebd462acb4bd788d7ac9cdfb366ca43aed2e47a1c0e091759144b",
+      "size": 1436
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/BarrelTimber_1930.asset",
+      "before": "288624fa7feaf44cdbec631e1ba1de3befcf6b7dfe88f9ae4d6d2e13d0cf2102",
+      "after": "de3430b733ad221030bc97c9cd4930c780aeec4f427438d44ca9592297fc7160",
+      "size": 1458
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/BenchSlatted_210_1930.asset",
+      "before": "959b052a527fee2a30dafe4bd2a0acee942b34b47c8fb54df43f49d4e59db81b",
+      "after": "6802760c4a03e8c7909448eb3d839892e46c599c12750668425c2d1f6a144b7f",
+      "size": 1441
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/CrateTimber_045_1930.asset",
+      "before": "38d0065fdd5f5a9b4b1321c30f2c1974d8a0b35626fecbce119a66110445b413",
+      "after": "11df67530b80e15d6961b100389024281abd33b319997616d752d33094386b16",
+      "size": 1424
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/CrateTimber_075_1930.asset",
+      "before": "eb19d37f8f603ac5d3e840c76a8c56fb473b26748fd2f1bb26be7d49421279fd",
+      "after": "31ccf5cc96ecdbddef47e9a04e692d2eb91015d2e9cea623075b36c1f72a4252",
+      "size": 1421
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/CupboardUtility_1930.asset",
+      "before": "1c11ca2a0022f31e189c492a49391abf2017a5e1402bf65eb0f5381a72d5faef",
+      "after": "69d769c6179ffbfd756b02647235a0cf65b1466c394f3f4613aee3192c4ccd6d",
+      "size": 1479
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/DeskLampBanker_1930.asset",
+      "before": "d09de39b0f5c0e23820dfe35253bcb97859211093dbde59b32bf33ddf604a2f2",
+      "after": "8b21709fd1ac3060e693de660c11bd10c11618e53730d26713aa46d66c84141e",
+      "size": 1447
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/DoorGlazedTimber_110x258_1930.asset",
+      "before": "7b372f121d703b97ff12de6f7d515cba74bd50aee09f0e306bb5100327375302",
+      "after": "b89db8298e1f9a3fdb0eeeda3d2d465d80d1ab6e91c85f283056db3e44a80030",
+      "size": 1492
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/DoorUtilityTimber_150x260_1930.asset",
+      "before": "f2026905e74cae69621c1837720cc2396466eddc21e188e6f2f2043f0e530d78",
+      "after": "e7df1580b479a20ee39fea7cd1baad9aa9a9db2be8d04fe0928c35d882c02e55",
+      "size": 1485
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/DownpipeShoe_1930.asset",
+      "before": "4fb5ad26e31e594af5ff510db503a66d58e9fef0d0c18a34b6d6f43bca020fdc",
+      "after": "8deb02580b78fd578a4eabed625a0f81bc473a35be2702980b9694053be02376",
+      "size": 1401
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/EmploymentPorchTimber_232_1930.asset",
+      "before": "c37912978ab56b0db19477335508bc8323f865fda5560a9ff762cf3ce0815027",
+      "after": "4af71c26da5a0fe4d99e8a66d6dde691da0bb0ca718ba9c0f8c444a0a177efbc",
+      "size": 1498
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/FenceGateWire_180_1930.asset",
+      "before": "afd7db82954a6918eb4d9d6e057aa76d185061fb856ab0cf8fb544e0b34e8668",
+      "after": "44d4f04afd96f8b73c35868c174d18bdc6663fc62920ea97fcfdfa9e5e0583bd",
+      "size": 1453
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/FenceWire_065_1930.asset",
+      "before": "338a44f97c9e9f843800b069156696c3fd4fb03c1ea7517839562e3630782df2",
+      "after": "2032e40de792361979db572f5c56e2a9f8aa6dfa8b51f7f28f4ce2ffa0732e42",
+      "size": 1402
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/FenceWire_135_1930.asset",
+      "before": "eeef928d7ac2e823b8795092ec49925da42e520c280c2bcccc2ee395c8a392b8",
+      "after": "6fc772fd23b7fff026bef122cdb9688a03488a16f2f84d1c0d691838a5809280",
+      "size": 1402
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/FenceWire_175_1930.asset",
+      "before": "3b88676e786878f73efd00ff79ba86673407281de03566f3abd22bf0371265d4",
+      "after": "2314fe53c42f1280def7665ba4cd1edd8daa4410c344d2af9f57db3fb4bf8781",
+      "size": 1402
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/FenceWire_200_1930.asset",
+      "before": "973a310445e847aa012b23b6042f686a5d3989c50c469cda5e6c57dd861ca41b",
+      "after": "d3e0263146b4596c7ce558b33ace7da566f12165d53412b425c7637ad5957cca",
+      "size": 1401
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/GroundsToolRack_1930.asset",
+      "before": "28ea0d7589240bcd70ed4075493e9a16b906f45fd42a4bfabd055454dc74e20b",
+      "after": "026a9e462b7958b1345a5210f0aaccbb88b3488a31cf9ccb6be55b9c97e15648",
+      "size": 1476
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/LadderTimber_260_1930.asset",
+      "before": "364f8bee1a246e2501b53f62a68bb425aaeeb935aa23316366f66516d1445058",
+      "after": "ecc030162fe9b3df6cb6d04522ff9e00600db79e0ef82f4eadaed17211af44d5",
+      "size": 1429
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/MaterialRackTimber_400_1930.asset",
+      "before": "381d77c4cf11d4b3285295757e5821a8525b1a66e1da9edbcb6f8e36423aaa08",
+      "after": "4ae617d6c684a86ed6744bc14f6c5a9697e294f935c3e5ede97c2c612dcfd4c8",
+      "size": 1409
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/NoticeBoardTimber_173_1930.asset",
+      "before": "ab3b35a5d5c89d905600ed8bf03db75ea4a8b3da660188bfac62183e506594a3",
+      "after": "1262e4580d4fcbc42cbb43b477399823f61ec4415e2b6605086808396693d133",
+      "size": 1462
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/SackCanvas_1930.asset",
+      "before": "aad571ad286f75e5d8ac69d0fb3d1297d21714a4ef26dd7cacaa8426672aa07c",
+      "after": "423626140e78cb8a77f0cf7d604c04540d7e80e47d3e616b0d36901fae892627",
+      "size": 1453
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/ScaffoldBayTimber_200_1930.asset",
+      "before": "154237b3eb0b3b21a45415c8bfc05ea71b4afe81502ff2e138353486328b10c3",
+      "after": "c804a8ae2f3b3286b1dbf71e8ea2b7e448e9383f4d84aaf7f206ca7efa226e1d",
+      "size": 1430
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/ServiceDoorPair_485x346_1930.asset",
+      "before": "0d0e396c06090dc2c2a5f5090435fa9f3bca98cdbcf1eeb8a11a5fea09b0579a",
+      "after": "8a01164484c3c3f6d154792828bf93f30b0912d65bfbbf55d533c5f88f7a466b",
+      "size": 1502
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/ShelfSteelTimber_170_1930.asset",
+      "before": "8303e0e923033ae068fdafcbb84804a6536c1ef5cd9beb9e79d34e469d197906",
+      "after": "1196aa1815bcf3df9c36d2969e9987b21c904e3fcbd2050b785a01778ce7f631",
+      "size": 1423
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/TelephoneDesk_1930.asset",
+      "before": "6e2318eb6e80d2700fae91c99e4d3c137d08cab8fbe883623a8f9ae532863f74",
+      "after": "a774c70ed2304b7d9774e51b6284dbfbeaab18b4f2c8979427b6a4675ad52173",
+      "size": 1447
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/ToolRackCarpenter_1930.asset",
+      "before": "2c9ee2ee67c1ae721eba56b1770a8e8b4bf6d1efaf06c4c4e17ec7bfac9bc616",
+      "after": "b35ec0fcc928693a3b5ed4926ff848ad045deae758056cceced13743c3085248",
+      "size": 1506
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/ToolTrayCarpenter_1930.asset",
+      "before": "ac4a52f9401c8c6c01103985c627efef4ada5c03aa4e1eecd53ab5b619f87050",
+      "after": "90493878448e57a411d4d1131c8363dae804c8750f0020d5f75638c127b670e3",
+      "size": 1468
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/WheelbarrowSteel_1930.asset",
+      "before": "77fd5bd00e193dabcd92da064947b191c263ca6e234363122f79d8f46a75200e",
+      "after": "74479022b5b65eaa860b23c48cda65351d20428d069317577139cee0767cfa17",
+      "size": 1496
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/WindowSteel_190x180_1930.asset",
+      "before": "2139b688c99b2ad779f21a09afca318bb3d01fa19d4efb2804533ad302fccf44",
+      "after": "0f02572387d26b85193120079ffcea590a1eece21506cecfc8a7e2a7b9fb0e80",
+      "size": 1492
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/WindowSteel_195x212_1930.asset",
+      "before": "c14c50a03da88ed581e39ac06fc788d29c8c17ea27fe22a41a808ce77c4b2785",
+      "after": "cf976e3e31d2d620adc2834b975b3c16deb0c5aa78c3aa7699dff212d7719f8c",
+      "size": 1490
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/WindowSteel_200x180_1930.asset",
+      "before": "1cd8d7f75d075c90c2fb85c6df43f2e64aab504ef3ee868bc5c0529b4ad4e5ca",
+      "after": "f6be0442b6b64e8a576a1e4adb7678d0f0809e312983028cf754100a2801bdd7",
+      "size": 1492
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/WindowSteel_200x210_1930.asset",
+      "before": "375805d99d72b07c8dcc13d846d04991b71c86fd7627a8855fc634e98fc40fdc",
+      "after": "af5440829246eb57161027b7f9c1f62e4ec3c097686eba419a4e0da73113c5c8",
+      "size": 1492
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/WindowSteel_265x205_1930.asset",
+      "before": "15de8eaa364ff931e3c7c6944b0090b375a1af7c2e8a91d23bd0a3ee79172cd2",
+      "after": "df6ed744599fe73670695c310d0c424a491123c959580f362edb6349a57372a1",
+      "size": 1490
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/WindowSteel_310x195_1930.asset",
+      "before": "33dee5af4cbebca9263fe74fad00282bf796f90bff68c445dabbc627e625d667",
+      "after": "38c6e3de0974c7c7826d6d54101acacc1475e722ff4fb977236d5194a07443e8",
+      "size": 1491
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/WorkbenchJoiner_225_1930.asset",
+      "before": "62e8d4808f593d34a83fc46fff3ec0a9c857c26a01f9a95ff1f480010f1f5d86",
+      "after": "b2ce0b97662ad16ef4b25c6a7f70205757fac11d2b4839bca43d3028aff0c9b9",
+      "size": 1473
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/AwningCurved_164_1930.asset",
+      "before": "f5af250cb7fbeb006397c098c66c91343a787ad3d4c1abed222c994c5cade045",
+      "after": "a895420c8e3f28c7640aacb7952e64a1862f4ce79cb9cfc35dc738ebe734472a",
+      "size": 343640
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/BarrelPaintedSteel_1930.asset",
+      "before": "d41510213a741225dae68c2eac66e3ef775b903e3e4baf540f1648003481e873",
+      "after": "13fe4de3cf5028e69d1fae9c5ac228c588a9699d9797500a24fbd3db2c0f5896",
+      "size": 278602
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/BarrelTimber_1930.asset",
+      "before": "f6dfb206a32784f16159e03f6c2ed8264fd1d1a614a484b07b125e7e78c1d89d",
+      "after": "eaafd96f00463728e582c7605633425a17fa52233e169cbfb1a7b1b881954bb7",
+      "size": 472900
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/BenchSlatted_210_1930.asset",
+      "before": "aa43a751959fbd4ae1cc6b5268aa23967fc131d6a32572de3c781ba33bed0695",
+      "after": "898630c5c7fcc8c74ddcc18dfd0cc96ef1d52afc43d655de1c0e33396a73e23d",
+      "size": 702132
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/ChairBentwood_1930.asset",
+      "before": "b40dfb6a6d417499d344cb007eb75269b817a6033b3690db07a596fe9ff45834",
+      "after": "dba5203d60a59a2369b6619c1d254411f57929ddc821fd4748c1e00c5b2345dd",
+      "size": 356437
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/ConduitElbow90_1930.asset",
+      "before": "5f7ae28d2bdcf497bee1158464d0b479da3b948d26218d9a167fb544dd32413e",
+      "after": "98e75d105aa6f1ced5efd8a5bbde0b26dc5506ab21a5311926b081c4ab06b672",
+      "size": 38099
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/CrateTimber_045_1930.asset",
+      "before": "933f28551e9f50424217518a6638ffc8878e74e781a90fe8245df191397f1d52",
+      "after": "ccb8d1ad7dea0f2ec14bdcd0d210022fe6a1ca7e4bd526f4d1a15f3d24e2421a",
+      "size": 906849
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/CrateTimber_075_1930.asset",
+      "before": "c873d8d904f60eb17764f34ef1bf21577adc34a46c7e355dab63e3e2404aba79",
+      "after": "62d345a2d4338ddf9349f467ac807956ff52d18b5a22f1979e2b72b139effabf",
+      "size": 906854
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/CupboardUtility_1930.asset",
+      "before": "35b0d68ef922464ed26e8aedda307429e49b93279eb236ce48b3a3ca149fd86a",
+      "after": "8baacc3ca1c56dfc13ab884dcff8845022f727fd1b6bb11c887967dc47d47eaf",
+      "size": 363468
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/DeskLampBanker_1930.asset",
+      "before": "b68a59a03854ed3d6ffc5bd404d964637689e547f3f18b9051ed6727e4851fdb",
+      "after": "ff075168eab5090e1726d52ee498e20fe6aad3d9057ee312fab3a874723511a8",
+      "size": 132044
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/DeskPedestal_1930.asset",
+      "before": "2de297ed64bc73aea942cd51503b4b12f621392bc2ab00fd36bfb4f41ea7a90c",
+      "after": "c6b724945861a882f408b06bc32438767d868bd6a07310f4efd1de51320eebec",
+      "size": 941708
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/DoorGlazedTimber_110x258_1930.asset",
+      "before": "3708522f12bae622d9804ed4bad72f1c8e4afa67892769fafffa9279f4b21743",
+      "after": "c029164e2c842ab09bf3627243bc1c5957c6417b2351546e8e764fc0dafdee4f",
+      "size": 541620
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/DoorUtilityTimber_150x260_1930.asset",
+      "before": "36e382a7f235681acc0a6a8e2dcbcd0cac9373c9c03f8eefe7553a099209bbcc",
+      "after": "0305c3672f52a9666c17d7dcb8fe12fc1abfec06e2a72ccf1eb56aede069bec7",
+      "size": 560840
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/DownpipeElbow90_1930.asset",
+      "before": "24d1ad5abc8af4fa4b868376e228743b9062446ce28d4a7159571db29eca7716",
+      "after": "d542c09f57e81ffb9d7468d471ae9163d361bb9509e61430ecba506d282fc97e",
+      "size": 53460
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/DownpipeHollow_300_1930.asset",
+      "before": "73ac9f289974214139cd6b353a4d51b3206662f7c8f10b42187196e7d9eba073",
+      "after": "da5545fba3072ccc6d863527e53ea659d5d83ed7822a9afb40998ee68d1c5139",
+      "size": 249256
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/DownpipeShoe_1930.asset",
+      "before": "f4abd717740e9774b29a83ce1070fe3bb5d4760bbd8ad454f3afd17fad123454",
+      "after": "8196645a75f61a67213af5cef7e8f4b2d128613015c90fc64677a3d986cda609",
+      "size": 30385
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/EmploymentPorchTimber_232_1930.asset",
+      "before": "e764c0980f6604a9923d0b1de02343989cec1c34c392a72bd11ad163e94cdbfb",
+      "after": "a83f16002b6108261d0895f04a408b39220b70b90c9a5167608005c216fa1c78",
+      "size": 1207176
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/FenceGateWire_180_1930.asset",
+      "before": "9ef5254da5a7d1d2777f50b4140c73b4bcf1d337eadb12a8adc51e9820c3a639",
+      "after": "9a79f5277af8dbbe9784ceb4f43882c93d6721d3f2ee79064249608fdb2c7871",
+      "size": 904644
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/FenceWire_065_1930.asset",
+      "before": "6f4a38f867150e08af2103ceee2364be5136b740b649fe16227ea92af40cea58",
+      "after": "2a375ee14cf877d21692696eff074480c23581027061966f19b1eb3186329c81",
+      "size": 836090
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/FenceWire_135_1930.asset",
+      "before": "335ae9e79b3e40505ca0c53283ef1468adebac4e0b28506c1c32c5f4a846d218",
+      "after": "75bab1721cd59a205be1d94eaa139bfb667d35921c917f892d89e4aa527f8b33",
+      "size": 1088762
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/FenceWire_175_1930.asset",
+      "before": "5785a67e8d782e8d3925b60c140591c22107070a12836641be2c08bdc4713f23",
+      "after": "43742a31161dfcc3f2db4744c5e4c0547fb93e899697769eb6d9b1c5a6079d82",
+      "size": 1223548
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/FenceWire_200_1930.asset",
+      "before": "e90bd35c9648cfbd163b6bcebf245cbe4486ee7c33847bc34dbb1a0cc7930532",
+      "after": "45387bb3343a1b8fa51ea31ff97850462a3577f7b390a64a5b1dbffbe4421c24",
+      "size": 1303998
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/FilingCabinet_4Drawer_1930.asset",
+      "before": "5575548f909687407cc5cca0caf4b981c730f5c7c766e15d90844c5d442cb93a",
+      "after": "673a573acbd18d40d8fec8ff9654cb65fd88fbd2c20804aa73a9071778549426",
+      "size": 561239
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/GroundsToolRack_1930.asset",
+      "before": "0622791a1a987a9e3622dc3b5e98c1fe32e86a59520eda46ce72d1f78ea9f7aa",
+      "after": "678885fc49060b31efe10fabe089348bc6590c54ca453628296c08a0898f9284",
+      "size": 460535
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/GutterCorner90_1930.asset",
+      "before": "5688b49124a92d89bdbf2e8c4719951258addbaf96fdbf521a44f767f1c8a522",
+      "after": "b1147047ca6295c4841889f27765d75d84f2e6638ab8fbc840b7ed9a7b324941",
+      "size": 93309
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/GutterHalfRound_040Plain_1930.asset",
+      "before": "e2ca8cb63ea2a9d994cf090551e17959e2c320a8d35c11dee55f0ce78dc33587",
+      "after": "b6ac004757fe24d8a8b960191d1180458fd6150c4a91b481713ff90f027aefd2",
+      "size": 36192
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/GutterHalfRound_040_1930.asset",
+      "before": "3960629fff4c7362d853f00fce03fb0203b3722ef773705837cb6b69c97be612",
+      "after": "b930f62630683ebefdff7b7e12e3fcac0d9c4c9415312f1430d08d95c812c5a9",
+      "size": 58079
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/GutterHalfRound_060_1930.asset",
+      "before": "0e7e73d89c394aa20adebc9dd72d7202f90523082ec39b42c3c0366864f9c4d1",
+      "after": "85fa31fc6d24ba275f8c8b8f5c38e5fe7deb22878a82302026075d5e51a1816c",
+      "size": 36187
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/GutterHalfRound_155_1930.asset",
+      "before": "7260780cd445cd7fcc6046d08acfcedcc367ceaf20580f6ab257f373cbb13dd5",
+      "after": "c3e843466b8b2ff68f79183b5e27c57dd2f770c70c296f5d48aee52c5b5a29c9",
+      "size": 36191
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/GutterHalfRound_165_1930.asset",
+      "before": "7b36864eac7ab9870ff51057a2d97e72e20df490aa870c7e29fa77cf3fddd959",
+      "after": "ebe537c4357f10a900ad3537ed9b5dacd99e4cc2bb6d4cd38348adab8c63efbb",
+      "size": 36191
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/GutterHalfRound_175_1930.asset",
+      "before": "4ee002cb9ae7f516c998e0bd72a2e50138fd9f3dd599ded199c033fcf838f032",
+      "after": "6d7a91ff6427dde5bd19c0f15ff50f4dbeb9cdb564a10fcfb85a3bf5e13c02f8",
+      "size": 36190
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/GutterHalfRound_200_1930.asset",
+      "before": "10f9eda3502a44514ccedce7e1dd0c032e3282ece8b1d322422f2d877d6c01bb",
+      "after": "45bce52acee904915e6b92d48b00f1fef1eb89870b0f5dcb0b9b3273014594b7",
+      "size": 36182
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/LadderTimber_260_1930.asset",
+      "before": "dec4a5d67d8ba0cb3ea40d728f2840657f54ad3ef0ff81c6dcb65c6de80d9395",
+      "after": "b8f7a4e81ed5827be5967fe4aa223e4b0f28e44b318eb8ac89ceb812447cb46e",
+      "size": 200901
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/MaterialRackTimber_400_1930.asset",
+      "before": "1176366392ad43d74dfbdf522caf1f196a478ffcc8de87c55fc34522a0b2c331",
+      "after": "74fd506b357adc0f5801ad320798414600379d8e0143bb55b75eb48447cf196b",
+      "size": 790447
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/NoticeBoardTimber_173_1930.asset",
+      "before": "a58371f6cd07972e31ed622c53852c9d7a97e39293803b17189c627eaab4ebfd",
+      "after": "ab0a931b8ac83e2dfb6a19b4cd63fdc2316aa73cace31d5738855a7dac708a2c",
+      "size": 214706
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/PaintCan_1930.asset",
+      "before": "2b7ddcba8a0d7739b7a8af92061aa893e8ac68088d03a2adfa6970dee1bddf62",
+      "after": "4fec3860e9412490e9158a214f1e570433adc5891cfb821a1d01d1a8dc7f86ac",
+      "size": 50254
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/SackCanvas_1930.asset",
+      "before": "b80052ed7f6181e54d35aa22a1c23cce74b9e8e42ebae5c5cc81eba59f585670",
+      "after": "5023b540269e60412b1edee219e1148e700363608466ca5044741df503a485a0",
+      "size": 98680
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/ScaffoldBayTimber_200_1930.asset",
+      "before": "e26ee3238261c517267fb02f53cbb3cc85361e930c86faf7a2589b709a0bb374",
+      "after": "b2b3cffac4fee7bfdcc1bcdfbca36150548290821969e81f186b1616e8134a1e",
+      "size": 476075
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/ServiceDoorPair_485x346_1930.asset",
+      "before": "a2984caf16bb0d81b422686868cb24ece3b17101dbc1fe68949ef5add2d4c4e7",
+      "after": "a2526d24c1032ae9f29c43596feb4935b147b9c00797397128fd66d9dae35e8f",
+      "size": 1818003
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/ShelfSteelTimber_170_1930.asset",
+      "before": "cda39a7f867786a99486b9e52c123db8970343bd1d915ebafa3b69181b5a2b4d",
+      "after": "f019bb8fa2877a300e5b3a15724a452f3776ab18cdf0f42f0a6c56f3093b231b",
+      "size": 1051648
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/TelephoneDesk_1930.asset",
+      "before": "8c9a1a26204f6a582451f244b279597f2bca39ea69cd2aea1a67e04cab64f688",
+      "after": "70f49f1f0f8d4f930881688cdde022bf44e41afac5b3880488f0eadef290d900",
+      "size": 265845
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/ToolRackCarpenter_1930.asset",
+      "before": "be3a3101e8d733dc88004cbb2cf17e839f54236dc9fa45bf5b453b77727af448",
+      "after": "9628260f516d5d87bedbc2f6a4e576d8cf42579e56947544f61a003560d0080a",
+      "size": 650236
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/ToolTrayCarpenter_1930.asset",
+      "before": "b1390eae98bc24944129b703a6857e9bc78c59ea03091e069f455944c2b8edde",
+      "after": "af9d0c5e42b809c57e147df9eda4324ad2c854893515017a5733502d18c3d16a",
+      "size": 262941
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/WheelbarrowSteel_1930.asset",
+      "before": "a1ea354a015f67de8f25dd018729fdece222c111357bf3b9923c694c27b6124a",
+      "after": "124af58ae7a139832dc58cb72223a0c18df5302121d59b185c168d1706ecef7e",
+      "size": 720966
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/WindowSteel_190x180_1930.asset",
+      "before": "14a51f000fc2219a6843e4c423d9b09cfe361b5642ba6e9f5b73d0df2a649aac",
+      "after": "96f39532b939134db862e6946bc32c11f18ca9b6a300ad2cc57908b06872bf27",
+      "size": 1999522
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/WindowSteel_195x212_1930.asset",
+      "before": "7d7ea6a32cfb7ddc436fa6434dcc8e8d377c5e34cd681f9bd69be1016b737e0f",
+      "after": "2c54412fb1bf81138a814829f7a28290ea7f7611924dd4d66d284b690f2d23d8",
+      "size": 1999521
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/WindowSteel_200x180_1930.asset",
+      "before": "c0d834c8adcda842c7212b3f7ca1159bc5f6601173411dbc190d6622fe590631",
+      "after": "c8bae578a62e7cdbd82123d00c94425d693f9ed8a5aec614cde7965678225bd2",
+      "size": 1999521
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/WindowSteel_200x210_1930.asset",
+      "before": "e30cceeb2cab3e1238a4924ddc8216d4be6e415f150cbef1f42e471747caacaa",
+      "after": "65e803f9ccf0f93adf1b4c29fa08b9e7b5d5ecb5601d2a47381c13fcf9541a46",
+      "size": 1999525
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/WindowSteel_265x205_1930.asset",
+      "before": "11635ed16e28aced63299c6875ab84a7835f0151c4ef51d4682611107c9a5bf8",
+      "after": "7847a92989f48264dfed3d651025bc40105da3b1ce781499986c97e6f86b0595",
+      "size": 2768200
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/WindowSteel_310x195_1930.asset",
+      "before": "7969b33e24a387d30796eb13f09f8b5783c7eb842d9ce3c03e21518828f66a75",
+      "after": "52fe48102cf05163478c2d6dc75ba75da734e606cc7ca4351c7ea29daa031a10",
+      "size": 3152529
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/WorkbenchJoiner_225_1930.asset",
+      "before": "caeaaca89bbdd4e94c24f549b099ee4d0910635fe04197dcedc458e2a3a8c32b",
+      "after": "6ea7a9e0d8a94cb78d7023a43f832dddca18334478017a9977823dd6cfc0d1dd",
+      "size": 952325
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/AwningCurved_164_1930.prefab",
+      "before": "b7d6f80221a4add18a918a8c4b17e2cfd9a993bdd7e84965afaf6efe4465fe9c",
+      "after": "102e70dd3a4e7fa619ffaeb667283b664b2cfa2349cdc2e40b33b963ff4f5600",
+      "size": 6701
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/BarrelPaintedSteel_1930.prefab",
+      "before": "6e6de1af090e4fa922fda6d7ed0d937bad68cc02a2eda4d66c222f40ce7e8cad",
+      "after": "f3695469b4f7041cda55a241a579056505ca5ddc2e9d344d02b9847bed4b90ef",
+      "size": 8195
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/BarrelTimber_1930.prefab",
+      "before": "b259ccdc23a0f261fb8d05b1683329c351403becb2abbd76e4ded8abe964c61c",
+      "after": "130b7af5ef9bcbdd9bd104b1d8c3436cd2ac62aa00253e16f50d8bc23f9ad461",
+      "size": 8263
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/CupboardUtility_1930.prefab",
+      "before": "1af165f4224c6ad72e845d203d64ba612c2ceff65c03b7542331d0a9be0489ae",
+      "after": "0d7203f8ff770cf8db57b902a5eb0b01ec6d515e54eb5e2f5f671facadd33734",
+      "size": 8344
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/DeskLampBanker_1930.prefab",
+      "before": "92dbd986d3428ff1c74c5f92586bd7736a5f1c90bc84cfb0f1b90e4ea150d3df",
+      "after": "5a2ef354aa54153eec3a9bb14d0b9bfc71a1e8bbcd0d2e2ada1c5acd4a8c8dd9",
+      "size": 6702
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/DownpipeShoe_1930.prefab",
+      "before": "10a2a617c06c967ab6dd19b18d7bc5f6c3bd63331f2abe7e80ea0d77a5da6c0b",
+      "after": "f9a4f3f63bae2d0e2a843bd9854a49cc55bdf18a5a5b290e1ad735197fbd1d69",
+      "size": 9373
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/EmploymentPorchTimber_232_1930.prefab",
+      "before": "aba88c471e6a5964301344d5d66daa4b05d0043e4f4866334ce88d99c775a8f6",
+      "after": "9dd97be5302155cc9b9655148181243663a01c1cfbb03e8ed7082a64c88209e6",
+      "size": 9781
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/FenceGateWire_180_1930.prefab",
+      "before": "50c61a743b69ccc93e42640dcb84184b3893df3be7996bf71ad6f2545a54f26d",
+      "after": "d4daf7281f33c40e0c613885436930f3fb277ad9de6f7f054be1dfb567355a9b",
+      "size": 11705
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/FenceWire_065_1930.prefab",
+      "before": "cedd0bc2b2fda757308a76f47ad6c688dad5a8144f16f2a863bc728f2a3f5f7e",
+      "after": "5c584bcc5e7809f414455f949505b99e24f52e0696370959af046ae4f8cbe148",
+      "size": 8674
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/FenceWire_135_1930.prefab",
+      "before": "45eb900296d0fa3ee669c1025f7bd3cfa2349a84f3dae1679bdd3fc6c15982f5",
+      "after": "c67e657cf5c4f301aeea949cb080ebd533d2c5dbc59db873c28330d269af3443",
+      "size": 8664
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/FenceWire_175_1930.prefab",
+      "before": "e1616ee2ca95b5ade484b985aafe9a94905d7cbaea383ffcb1cbf89824c7cd45",
+      "after": "480055266a03425956845c0e40d694c533179506d8217b50d8bb276b8de9d43d",
+      "size": 8670
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/FenceWire_200_1930.prefab",
+      "before": "fd166443929455c57fd9390adfd636a6c7c652e884e2ef3690df1e2e241f36c9",
+      "after": "7ece3e955a11f2f9659350782004479fdc8ec0e165854df0671ccac75038c7b7",
+      "size": 8668
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/GroundsToolRack_1930.prefab",
+      "before": "be03fa6c3db69c47f9ff17fd948a39aa1032767caa1a32f055891951b952eb5c",
+      "after": "90ca0990d49a59bc7fab0670af1108e234b7b65d0b29d8148199dcfdfb73f6dd",
+      "size": 6765
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/LadderTimber_260_1930.prefab",
+      "before": "dc5671672a2158a53cc27a67da181f25820121b39eb9a88f4c97759510ddb7bf",
+      "after": "2d0ecc9766ecd2e0905a5118aec325f7cbe04d0fa28655bca831655c6cfaa0a6",
+      "size": 8746
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/MaterialRackTimber_400_1930.prefab",
+      "before": "7f11bce6bfd5b5f8cf24f0d3ec4acdebcc75d5a0c20f412f65f2d6e43cb2dc07",
+      "after": "0ddd00682898f608e7ac3f57c58ee960b098fc04d14a6b226b955cb8e0a3f433",
+      "size": 8119
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/NoticeBoardTimber_173_1930.prefab",
+      "before": "fb2fdc7f555ca0265d36de871c41582c0a639be663ed201e37e596993fa60426",
+      "after": "a2a58dc9689a6ae46027632891065fd4b1e10aecc3fd7d2c2f1b63f25fdbc89a",
+      "size": 6709
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/SackCanvas_1930.prefab",
+      "before": "c3668f7999347ba812f0a0031dfdefecff00ae853686bb477ac3a465fbfdd342",
+      "after": "bd696995c7c73eb06524429f428e02f9b5cb2b20b85eadc5d3040094eeb0b0c5",
+      "size": 8116
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/ScaffoldBayTimber_200_1930.prefab",
+      "before": "690b90e2135afd023f713c5a6d8b960c39ebe9b974ffc166cb3e0aefc475b329",
+      "after": "8e56e9f67882cd61ed266feea22724ecf44a9e1bd0e81ab9ac63874b131432e5",
+      "size": 8132
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/ServiceDoorPair_485x346_1930.prefab",
+      "before": "d2b57e2121a7e86ebf8c74de1683f77592162a8a7498ea60d2c599e8a289c198",
+      "after": "76e94c28d50fc7405be8c7c9ed0bf951eee6ed547041a50c58e9a0e4af891091",
+      "size": 9864
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/ShelfSteelTimber_170_1930.prefab",
+      "before": "fb2ac6abdba2bce8281dcd6ab83ab6204025afaa1d3a2fccbd6e1949d94bf3b9",
+      "after": "1271c73437dee72f21277f94692b9af0475a813312c330a1526b5c2373f9933b",
+      "size": 8129
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/TelephoneDesk_1930.prefab",
+      "before": "3a6009ea40191f4d6808f6f7091bfdc65936caeb5a132e5236a4d97c033b583c",
+      "after": "b33a9367ce958b35b04eae088378d98c791885dd69620fd599a5adc64b95fcb4",
+      "size": 6621
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/ToolRackCarpenter_1930.prefab",
+      "before": "fba7cf38d38f28b8d505ae4535df4c3cab88d5b3c6719a3261a238ef245b91d7",
+      "after": "6b9952b11d06e65b1ba6015eac74115c28872a33af4641023ce8ef5759bce8e1",
+      "size": 6982
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/ToolTrayCarpenter_1930.prefab",
+      "before": "b7fe61dc17dcc513bae15d19adf7fb90516a578d51e06788ed638ce10d33a865",
+      "after": "e69526f17bb7145756af2af19c57aaa8c5da9510b300035a8eb66a141d8b6b34",
+      "size": 6843
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/WheelbarrowSteel_1930.prefab",
+      "before": "1a0270ab275ff25758b2a21986904639bfd7a733943dd7290fb1aef2a858d13e",
+      "after": "45c03ea91d7f4644cd0377bd3782c9f7e4e2a4bb63eb616012ad394220410705",
+      "size": 9046
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/WindowSteel_190x180_1930.prefab",
+      "before": "25e007e97a8165ec90b07c9abf1d8788401db568c37850883803f1ef8946ce3f",
+      "after": "90735edc906da61e3c541cee9c54b86ddcb798733d801c4ad207b274a6400662",
+      "size": 6774
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/WindowSteel_195x212_1930.prefab",
+      "before": "925f6429f720e14c6b3c2b6583975bc4cb5fba1a7f6486a7ce581c21552a4798",
+      "after": "86db60f3ee25be7c39ef5e86bb171b6cb5c3e9edd662dda992ce52cd28b589fd",
+      "size": 6774
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/WindowSteel_200x180_1930.prefab",
+      "before": "b698559e2dddeef17cb12f9686829052a9ec3f37b745ffe804eacd942e28a5b8",
+      "after": "9eeade7bea47efd1942ca94d04ceb8725e847f9ce581bc81beb4eb7505109eac",
+      "size": 6776
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/WindowSteel_200x210_1930.prefab",
+      "before": "13580109ffa24c746fb92f6b89f3f6450bbc64cb6da462dcbd197a011cc5a298",
+      "after": "4180bd1355be876ce045d25a20c74d9b4b2e5fe252bdb79030cb73d6d5aea57d",
+      "size": 6775
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/WindowSteel_265x205_1930.prefab",
+      "before": "ce4c9e74c8e73ad41bc91f9089a0d8add5532d992dab20ee3d5a0f8f48f587a3",
+      "after": "db8240c4feb6139b6a9efff79f68d4e7f34d7f68ace59fd0bf3ac4b1b591e066",
+      "size": 6772
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/WindowSteel_310x195_1930.prefab",
+      "before": "bbaf7074e3b6405a3435391f5c176a54279b7d2f136917fb682e374583e99a96",
+      "after": "c9ccff85b6f0f624a251003f31652250957ae36ae817a862cb16b5e55d7ddd56",
+      "size": 6769
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/WorkbenchJoiner_225_1930.prefab",
+      "before": "92133c3ff6450a6294032931779334e0b277c8114927bb1c979c341647321df8",
+      "after": "7d65b711b9a5b0f10897cc57cc80873f2a6ad5611d65dd7b3e8d6f4aca660592",
+      "size": 8906
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Editor/StudioServicesProductionBuilder.cs",
+      "before": "e030bdeb420b71f8340f84d3f3e8a65086db019ceb5256342aacc8483ca0e61a",
+      "after": "6d5022710005172b7871402d93c47e388e9ed9b7fa2021fbecf0e12f7f8a7edf",
+      "size": 15862
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/EmploymentBoard.asset",
+      "before": "b37952533eef55e0f3bd11ba77aa1927038eda0974686399517ae3d4427b8b64",
+      "after": "9e847e1bfbbf146aa39670c5659e42aab59900a6e2955351648d46234d245507",
+      "size": 1933391
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/FrontWall.asset",
+      "before": "03f302e9ebc8d81497b5262362f8d42eecd5e05f3175a6b72d2169fd76e05fa2",
+      "after": "ac1d27166546a607baa651a33f07cfe8d616b1595e214b083e70981dd8ba735b",
+      "size": 17968308
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/InteriorProps.asset",
+      "before": "4db4d1adf021ca0682df6644027895bd869c2a3b6c88b2ee34ef1ae533dac908",
+      "after": "7c2979f29b3814bc79f7e213091eb7b61df12028deb0a3b394c731ff684fba81",
+      "size": 837027
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/LeftWall.asset",
+      "before": "aaf93091f2341937b58098500a3f40db9a3ef41a97d3e904530945fc28ce809a",
+      "after": "a8f25cb1ccd830b66fc51ea2ebde3a3bbca0774adb3dbc6ecfec37d05444a04b",
+      "size": 335347
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/RearWall.asset",
+      "before": "a644f49bce20b0e8683a92f525f16efd0c291d4b82a5e7763a70f7304156dca2",
+      "after": "b425d5645190d30868ce8aa7941a48c335ad7b2dfb0aa2cd3bfd251d39e3b699",
+      "size": 463853
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/RightWall.asset",
+      "before": "a1de9a665c3e1bd9c932aafe0935d8c61f157c2b0d977cf1110102415de5471d",
+      "after": "e756fb2879d64f088c4b3b980a43e52dcb48d2973b1b9f1ed625a48a85db80ea",
+      "size": 311898
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/Roof.asset",
+      "before": "3f8c867b572640ae87155a2eeaa2e4bfbc37aec8197805fce720f64ca4eff058",
+      "after": "c3cb60fd83b29c39bfa6fdfa6dd05717b42ffccdd0b0a6c5fa344345e33f115e",
+      "size": 3052751
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/YardShelter.asset",
+      "before": "f01cece60fc6b44a5f6b7a6326d2a907bc212342e08b42d09942add399b97726",
+      "after": "9cf9bc420db8064b4731030399f630405da6a82ebad64a9d59c0cf41c76975ed",
+      "size": 436842
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/YardShelterRoof.asset",
+      "before": "f73c8b280384b19188801c2a49607b2ec20ece49104a0a51834d406c5fe3efff",
+      "after": "0987d0473adeb0f983548d4e382c297535cde426955753ef7966226e25994163",
+      "size": 1370757
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/StudioServices_ProductionReview.unity",
+      "before": "3f7a9e4fcdb9c5b484038a19b2926451080dd484851ded0a5475eba3c2b2c25a",
+      "after": "a3ba0fdd27b79a822c72b373ed128efc4ea8214d79cdcfeddef1ebd3f8b348f3",
+      "size": 198664
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Resources/StudioServices_Live.prefab",
+      "before": "7fa76ac9916d4581d2f74db870c3853bce9c306230f3c41517ae396238c6455a",
+      "after": "5c1962857f8233fc6016393969818fcfbd0effc4a8be4b6146d2176461adf54c",
+      "size": 754420
+    },
+    {
+      "path": "Assets/Tests/Editor/StudioServicesProductionTests.cs",
+      "before": "0579c3bef9a6f92f430866cecfc1c55e7cafb16284639e2b0cbaab40a74e1f3f",
+      "after": "da6713827b97d15af0312df11ef5b9a4ad4b36a4d57c9d8b088b0b19d011e866",
+      "size": 19574
+    }
+  ],
+  "added": [
+    {
+      "path": "ArtReview/StudioServices/Fidelity/18_window_exterior.png",
+      "after": "050bc401c8e0bc33701303e7353c0c7442b1bb05ca13413fa3bd6b4f3c594f3c",
+      "size": 2035150
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/19_window_interior.png",
+      "after": "cf039d8cc59494d8384149def8f5ac9c9d7b0cf14ce06362e02c8074b198b78f",
+      "size": 1464787
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/20_notice_and_awning.png",
+      "after": "09b147e5e085cc37b738dc4e7f5d92109f9f18bf3d1e522ab2f3512c41c17f8f",
+      "size": 1881997
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/21_parapet_left.png",
+      "after": "dd6d4bc526aebe8b49778f1a8606acaa65ea5ea970411c2deb9ab31ce9ccd73e",
+      "size": 1521264
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/22_parapet_right.png",
+      "after": "8013e149c8033aad90886c1d6d0d926c41410cee65eb22628bd44ce5890d662c",
+      "size": 1575278
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/23_rooflights.png",
+      "after": "aef19db74cdc21d4183b50e01aec47b6023bc95061e34de87f5e7508c01d338b",
+      "size": 1507356
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/24_drain_right_low.png",
+      "after": "1404d004eaf139ac1304ecfba430452fce56b0b502ad67ce689b0f4ef62cbd95",
+      "size": 2373227
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/25_drain_left_low.png",
+      "after": "6d3bdba847b6867bde822a8c43ff9e4edd686a19ad3ed509c6697013a1eabbca",
+      "size": 1160074
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/26_gate_left.png",
+      "after": "09981342827bc139caecadfd4af8a7f8508f8a318982f7004fe6212b71f0d74c",
+      "size": 2522294
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/27_gate_right.png",
+      "after": "e3ecb80d8ef56595c49ae2c9b064065697b5fa87d243d167656c18891e4e9a9f",
+      "size": 2441017
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/28_fence_join.png",
+      "after": "e42d7a317dc0ea9dd898d5a3d43cb41a53582db3077d62665ba023391cb740a8",
+      "size": 2751956
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/29_sign_lamp.png",
+      "after": "b1d606f41996ec34461dab732c10ed587f2ca7717853c7e9cb9fa660f55f5084",
+      "size": 1504266
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/30_canonical_window_interior.png",
+      "after": "38ddcbea460419ebeb168774ddfa8d51bcbe45606987d1880ad2c3d1773f5964",
+      "size": 398110
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/31_shelter_drain.png",
+      "after": "937210c45b2502f0ab607b490fb37201c42b2467a2a9e1ab90accf344fbb597c",
+      "size": 2988046
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/32_rear_electrical.png",
+      "after": "ecea7e5869bb5782648f9c67e41b304d0dafac3cbb81ba6601571be4e9d5c63b",
+      "size": 1880113
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/33_bench_vise.png",
+      "after": "fc673926c7ed1944060d2318eb1ad688b9db71d2e799428df979fec69b7cbdfc",
+      "size": 1211839
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/34_roof_hip_close.png",
+      "after": "09dc6ab366e970628c1dddd4f09df746902503e4dbda920418a6b8584a8eace8",
+      "size": 1710660
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/ArchiveBox_1930.png",
+      "after": "e03227b9b88146ceff91b24a83def9960ace387ffd21527ba653ed34097fabf0",
+      "size": 643388
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/AwningCurved_164_1930.png",
+      "after": "24afdf1b5c00ad8a99594fbaff0bf58d70fed66fd0dcedc3eaa435427ae18150",
+      "size": 396230
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/BarrelPaintedSteel_1930.png",
+      "after": "27f770eba67bced0d9aaf16c6a9c3758692ad0a44a1f5085a870a1322189121e",
+      "size": 419853
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/BarrelTimber_1930.png",
+      "after": "4f234f651fa3a568cdfe113883d72dda42811587dc51476cb34b6bd89bb29493",
+      "size": 494935
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/BenchSlatted_210_1930.png",
+      "after": "4c78f820cb25ec4e18d39528d2192fb7ef5459bc8eb47e77b1c1af3ef94ab608",
+      "size": 374235
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/ChairBentwood_1930.png",
+      "after": "f8f0fadba51a6397edd0f97ec32fbcc3a7f50ca43d805c134e0b2518123ef817",
+      "size": 348939
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/ClockSchoolhouse_1930.png",
+      "after": "fefcc587c5e1d456efd788004499bb6eb36868ef0f916b15b610fb818e1c9c7c",
+      "size": 517319
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/CoatStandTimber_1930.png",
+      "after": "5035cde35ff0c345c8a1e80b9692dbe200d8c193e11877c9de7a1ef23ac0ed65",
+      "size": 163771
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/ConduitElbow90_1930.png",
+      "after": "a5859a293e2e7fecfcf6ead3d49701f30468ebc367ac90c449287864861bf7ec",
+      "size": 255602
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/ConduitStraight_100_1930.png",
+      "after": "ef00ea4e6921d3d6d80484b2126302d291151e97fea347662dc1a6790be65087",
+      "size": 131643
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/CrateTimber_045_1930.png",
+      "after": "761b44d36c73679224379c14050d212aa90c124b6cd7c860f9a117cfdaad122e",
+      "size": 579122
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/CrateTimber_075_1930.png",
+      "after": "fc7ddbecab5106c676cb9bfaf5fe9c05693545f65123801221e4bd26a2ee19f1",
+      "size": 598189
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/CupboardUtility_1930.png",
+      "after": "6ee8a023c853eb40d13d54d7570e169da3634ead2250bd395f2b5e7257de86e2",
+      "size": 384438
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/DeskLampBanker_1930.png",
+      "after": "6d5f36da8a28f486a9e03688570b7b51c66cc0157639db8b578ab45fd42db436",
+      "size": 314788
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/DeskPaperwork_1930.png",
+      "after": "ebf20845d7be7e9381e8c9a0ee6c480d6fd51418b3efa5d526e6c9c36b009a0a",
+      "size": 199251
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/DeskPedestal_1930.png",
+      "after": "cfc5e65e945de655d2823190c63dcc6e761033c0bf4b90f921295af67433f613",
+      "size": 421983
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/DoorFrameTimber_120x262_1930.png",
+      "after": "ae7db29c84aaba936324d70fb3a834a1a28bc954b361845f7b4cab08f7572f03",
+      "size": 227583
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/DoorGlazedTimber_110x258_1930.png",
+      "after": "873f0efeb0575cc3e9289f1bf1cd9dca97f15e44ee63c6b46462b54ec01f9caf",
+      "size": 207291
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/DoorUtilityTimber_150x260_1930.png",
+      "after": "486b14b94b617d44e84ee289ba0d319e8f6854db75ef9a8d09040890913bf9a4",
+      "size": 237093
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/DownpipeElbow90_1930.png",
+      "after": "eeb18a131f54d3a268acbc60cde1c55901c78d6d17ef3fba1d67d6ddf0326f40",
+      "size": 364974
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/DownpipeHollow_300_1930.png",
+      "after": "709ffefcc0a31bb151719377c2f27ffc458b0910e20de54dacf16ba4e773ccfb",
+      "size": 139765
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/DownpipeShoe_1930.png",
+      "after": "4d13e2dcc6e35399f3cc4d937b4157e9d68f4a7f13bd28c92ab32a69ac49298c",
+      "size": 346944
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/EmploymentPorchTimber_232_1930.png",
+      "after": "a84bd41692254a7cd6640ba796c9cc52d99c018a2eb6277af5519de642f9a5b5",
+      "size": 340365
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/FenceGateWire_180_1930.png",
+      "after": "379a9c8e4289ce56fb55ec477a2fb316663c19473632ec1d281c920f6dc2057b",
+      "size": 534315
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/FenceWire_065_1930.png",
+      "after": "c2bee7eb87f11096a55a3b23d21545cc90cf27a8c070563fbdff1eba2e9cc04a",
+      "size": 280056
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/FenceWire_135_1930.png",
+      "after": "a7b8709a5a4c8699e31609568b7342f830b25e9721bbd53306220a08245625a7",
+      "size": 421164
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/FenceWire_175_1930.png",
+      "after": "6774addd8d1b5901226bbbeebb6079e2364321be4224233c80cfc5d5bbe4e652",
+      "size": 502269
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/FenceWire_200_1930.png",
+      "after": "65680f392a1f95ea532a702f8e8304864a31c87c3268f1de1b2ea99854717132",
+      "size": 531001
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/FilingCabinet_4Drawer_1930.png",
+      "after": "1ed640b1e9945a5045a18134ea8dcc65ed11bb0dde137e6b2af43d073754704d",
+      "size": 411843
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/GroundsToolRack_1930.png",
+      "after": "580b709caa96de7228ea1802e0d750ee4909fa1dc2b54392dc59f1c9f4b94760",
+      "size": 231555
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/GutterCorner90_1930.png",
+      "after": "769b971d17c0d517228008e99eaa863ef86ffe16a325349b358480f8d20ac208",
+      "size": 320158
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/GutterHalfRound_040Plain_1930.png",
+      "after": "50486f68480dd6e781728d39328c80802bd78857b8fc9904949981494abd6034",
+      "size": 321650
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/GutterHalfRound_040_1930.png",
+      "after": "2100e38a97acfc7b97c1843a3d7f0a6919ac4deb83d9c4766792278c947d0ba4",
+      "size": 399781
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/GutterHalfRound_060_1930.png",
+      "after": "88d10829fdb95a8bfef21ce5ee58c5e351f17402479f12acda45b82140d81197",
+      "size": 263563
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/GutterHalfRound_155_1930.png",
+      "after": "d9cc9f8f9097b43e86828a8d4cdcfb2d6f3a7d3a256e9de8bf86733af5c86902",
+      "size": 187086
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/GutterHalfRound_165_1930.png",
+      "after": "7659e60b2a8d28421bf7392853f63467c3e8a7d550caa5f72968eab0df48be1f",
+      "size": 184092
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/GutterHalfRound_175_1930.png",
+      "after": "1e46296b7917329e4652e4e4eaa7bab7a2e90d7984223d0d60bb82a152dc3055",
+      "size": 180928
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/GutterHalfRound_200_1930.png",
+      "after": "2ddd775c022d334e2084b7b2868a771db2047f18c696ca2d7916cf56ef02a01f",
+      "size": 174769
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/LadderTimber_260_1930.png",
+      "after": "83a29e77ea3b458e58103db21bccbea919372e25c64e9b1cb9dd12bcb975ae44",
+      "size": 179935
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/LumberStack_240_1930.png",
+      "after": "487d59d2590145b7fa379d0bc6dafa98df7c1d0f0e6b611fbabcbf9ccaa0ee34",
+      "size": 351251
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/MaterialRackTimber_400_1930.png",
+      "after": "4e71cc931de1755eb14164c4513cdbb4025bbb1ccc46fe7216b654c679cdefc0",
+      "size": 361975
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/NoticeBoardTimber_173_1930.png",
+      "after": "3ed08081d89c48b221d1032643f4f5e88304f7922162781982bf88bf96d9c79a",
+      "size": 376609
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/PaintCan_1930.png",
+      "after": "c94ec022ce2e10cd6c992bdd86ef49f768124dd3c64179b4fc9d4f9283759650",
+      "size": 290129
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/SackCanvasSlumped_1930.png",
+      "after": "ee36a53d46a51a2ce50f2ec0d0dae5d7fa0aa8106e103194b6b0195e0ca8c571",
+      "size": 490207
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/SackCanvas_1930.png",
+      "after": "c4f666c45b544a98e216590a6fb2d860890a23dcd9c559c69b9985777d67ce6b",
+      "size": 438246
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/ScaffoldBayTimber_200_1930.png",
+      "after": "41992df827a002742ee178e5ab6c244bfb5b13d01b95bdff672314838f046b3d",
+      "size": 468317
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/ServiceDoorPair_485x346_1930.png",
+      "after": "c5eb715333a3c8cdac62165e9ca5c64323b6fbc5c692024f779cdbea25908892",
+      "size": 322190
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/ShelfSteelTimber_170_1930.png",
+      "after": "8e9ec0f265b6b86e1999cf1e7e10b8fe439e4f0658140e3e5ce7592c14747c21",
+      "size": 665171
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/SplashBlockConcrete_1930.png",
+      "after": "c3c1eefdfae696989d1abc275cb07926dcc7e9bd57f0f37d8e591cd3e35faf3d",
+      "size": 392873
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/TelephoneDesk_1930.png",
+      "after": "9ed3b7e6187a1eac581ff9023c0ae79f773730c9c4ebc7b064a19833b33c1a91",
+      "size": 372777
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/ToolRackCarpenter_1930.png",
+      "after": "09b63e4aab49cd53af4ff4b72ec5d0d236c987a6fad1ba3ce85da11c853850ed",
+      "size": 438789
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/ToolTrayCarpenter_1930.png",
+      "after": "dacd4a0321fdffa446eac03e94ab9b9eaf6841ba3a2661c1123c79d5aaaa930c",
+      "size": 389508
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/WastebasketWire_1930.png",
+      "after": "444d5b95d94666a1b29b7902b8a7dfbe5b504d76f4b02859e172e9c3b3b94a45",
+      "size": 568490
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/WheelbarrowSteel_1930.png",
+      "after": "79e05adc6b59a51ee252538236e77c543e734ed318c9b8329007bdf47d707153",
+      "size": 322569
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/WindowSteel_190x180_1930.png",
+      "after": "860e479b4b33884c1e2eec322eaaba69ddd23595d570ceb20719a64aa20f3c79",
+      "size": 402554
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/WindowSteel_195x212_1930.png",
+      "after": "794e25cdf8bc497d5890916b812c8466c382cd9bb4caff9978458ff71fa68bd0",
+      "size": 385205
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/WindowSteel_200x180_1930.png",
+      "after": "a26f674b39e75f8505f587584d10a8ff09887923acdb0e6c6c3e3f3330b8c212",
+      "size": 386218
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/WindowSteel_200x210_1930.png",
+      "after": "0bc687d0e9c365eaead3317c0e177141e26a7bbdb1d3cf8f4699412242ff89a1",
+      "size": 393475
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/WindowSteel_265x205_1930.png",
+      "after": "8120f0ad14572cc96c062fd62e7e40329a7b08bf28d88a0f7099d991ccbc144e",
+      "size": 356870
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/WindowSteel_310x195_1930.png",
+      "after": "2cb32b2b441030a9223084163a1e2fdf07e95a88f465078082a9d00a1d374a77",
+      "size": 331642
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Assets/WorkbenchJoiner_225_1930.png",
+      "after": "e77d7b2b618112caaad2705f728075432df646496a68821ea423da7d1eab6236",
+      "size": 421847
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Before/01_front_three_quarter.png",
+      "after": "3677c44753d09ed05f4de54990ec3f8a0af0536a26845015b8501b30417526eb",
+      "size": 1365202
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Before/05_employment.png",
+      "after": "89278489043a1b5ac52035a51304899db6509939d584d63374fee7f37e164825",
+      "size": 1969662
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Before/07_working_yard.png",
+      "after": "3500c224ce15eb10ecdfde61a18dfe6844a6c3d1afe60ef7af0049094532b8b2",
+      "size": 1942080
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Before/10_office.png",
+      "after": "268c72f348980100dc7d682e99190438b30c943f24de6920fbf7fb4c55745fcd",
+      "size": 2289031
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Before/11_workshop.png",
+      "after": "0b4b2e6e0556fde922a4c54ee9fdcb21fa564b344bb6e0e3e173f596c8311f0e",
+      "size": 2297296
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Before/12_storage.png",
+      "after": "bd018615068b73be5503e955e6a12148dc22e29128018851a57f41c8943c02e9",
+      "size": 2217111
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/Before/15_drainage_corner.png",
+      "after": "3c70605bdcceeb713580af457d27d6416e4cfe55e9596c66055a2fc8391634cf",
+      "size": 2264768
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/asset-capture-order.txt",
+      "after": "be2b28fc072e853d1db0127c11916f8acb4724c6b25603d1b92c8ee383d27272",
+      "size": 1462
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/canonical-audit.json",
+      "after": "1b63f0b3ac7fbdfdeb75594109273d5d0002e8fa74525858911cde5b099c68a5",
+      "size": 28198
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/catalog_1.png",
+      "after": "cedf08eea4150380433c2a2fbe0697dd38d77256511cd23fb8e4a8e82614fac4",
+      "size": 421763
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/catalog_2.png",
+      "after": "d6537e2fb374bf9947b7c49ce51ad7e3552ce8e9f3f5dd1bd9b05cb9abcda4ab",
+      "size": 348534
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/catalog_3.png",
+      "after": "289068da296b3ecf42d6280164b3f283c9418dcd1aa9aa6d851cf36c32c42dbf",
+      "size": 363940
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/catalog_4.png",
+      "after": "ff45d88d807e1aad0e6a46f2ee1334bc34c1f7164def2fe0a17399036908e578",
+      "size": 374084
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/catalog_5.png",
+      "after": "3970d65a75044152b3b8ea7f1470c40a33b1dd8d514e5cd4f3523924554f0806",
+      "size": 448902
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/catalog_6.png",
+      "after": "cf4755992789ed3f9b528e96ac3acef5424a6675473985abd3d7e9a0d6dec203",
+      "size": 56042
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/construction-validation.json",
+      "after": "7afe2e5074f9fb46bb2f22b626dcd09542b71ace1b029e530af3318d16aebaa1",
+      "size": 233
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/review.html",
+      "after": "1a5bcb438ce116845615c3277b0798418ce2cc61b2cc9473ba8b2e6430102a3a",
+      "size": 33187
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/sweep-validation.json",
+      "after": "12694cfec7e1dfca911f6daa7759591d391f3a08a8687ccb282817e13267c03c",
+      "size": 156
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/tests-before-clearance-fix.xml",
+      "after": "a1f7f3fed3722ccdb9f8d8d39aa20a41d5d5415d131269316dc9666a789655e0",
+      "size": 33570
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/validation.md",
+      "after": "2366ec0426a3d0be46dfa462e54a5f3e38cf7125122aa6a2b7c30569fbd07fc0",
+      "size": 9450
+    },
+    {
+      "path": "ArtSource/PeriodEnvironment1930/__pycache__/build_kit.cpython-311.pyc",
+      "after": "d2fe8d8581486e856b2cd2abc0f6699518d6bbc9674031a16ed5eaa5a57ac125",
+      "size": 66954
+    },
+    {
+      "path": "ArtSource/PeriodEnvironment1930/__pycache__/fidelity.cpython-311.pyc",
+      "after": "5ea1b374e016b3987aef1c46b32afaf5ef8ba85657d73c7f9b90242d8a2367b0",
+      "size": 63477
+    },
+    {
+      "path": "ArtSource/PeriodEnvironment1930/fidelity.py",
+      "after": "f60bcd0e39341519857aa7a4cd7dfe1910d503571d4e01cb3f856b0f0c204fb5",
+      "size": 27046
+    },
+    {
+      "path": "ArtSource/PeriodEnvironment1930/validate_sweeps.py",
+      "after": "941f9cd24b0c662d285dc928f1d4c5036115876452eaaf604c6c04dad13c3b8c",
+      "size": 1776
+    },
+    {
+      "path": "ArtSource/StudioServices/build_fidelity_review.py",
+      "after": "eb3b559d0a08bae2e85845b50ea8883bf5c0036cc13d7d0e93380cf48e6c941b",
+      "size": 4421
+    },
+    {
+      "path": "ArtSource/StudioServices/validate_production_source.py",
+      "after": "712bafc595847c13067fbcd97a1a3629f16a9a1c7678bb275f57e77da0b3a4db",
+      "size": 1222
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/ClockSchoolhouse_1930.asset",
+      "after": "25e26bfefef3450111b792297d1909569d72dccfc64bcfc9a0cf357d85d18543",
+      "size": 1444
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/ClockSchoolhouse_1930.asset.meta",
+      "after": "d16c50215ded40320d1c614d4d2d4dba3751c0b093c96ca1b291d2ff9ee9d4fc",
+      "size": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/CoatStandTimber_1930.asset",
+      "after": "0ce657d3b5f5268e5edb95af40338d90259c1f4672b303d7ab57efd0f7d2e4ba",
+      "size": 1416
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/CoatStandTimber_1930.asset.meta",
+      "after": "1ce89645bda5c790556a5986936466dbbf1d49b1ed1802efd8297e5cfb5d2b01",
+      "size": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/SackCanvasSlumped_1930.asset",
+      "after": "8dab05df9aecb21a79e5b52f8744e74b401906a5c253a48366f341e1fbb53d45",
+      "size": 1479
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/SackCanvasSlumped_1930.asset.meta",
+      "after": "2e42a13fb46cf74e469b2a31e08a88c5ad51a0cea626dc5cdc3493abc06be846",
+      "size": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/WastebasketWire_1930.asset",
+      "after": "79aa0744a471d8f7fbb4699a4ec759ddbc07d989ae351ce820152d434cbeafad",
+      "size": 1402
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/WastebasketWire_1930.asset.meta",
+      "after": "81c14cd57b3025f5ae5a0b95fcec1920be8cd1f0a8e737ded1f7ca50f149619e",
+      "size": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/ClockSchoolhouse_1930.asset",
+      "after": "80010364294263932dd4a9afd91e649413dce06bcc2dc61f992dd5621da9a115",
+      "size": 410038
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/ClockSchoolhouse_1930.asset.meta",
+      "after": "2a8ff2be5cc4d6aa05fd3ccdc7cbf5d35c782b8fbf07782bbc63f3e7e9063a0f",
+      "size": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/CoatStandTimber_1930.asset",
+      "after": "ac6e68a99381426180d1096474d7c79769d9393d871949aefeeb4f3bb2b9fc18",
+      "size": 98489
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/CoatStandTimber_1930.asset.meta",
+      "after": "98de36e4cdeaab791bafe9d4beda9c6710dc77d3e9d2c4aeb6f212e4c0161c10",
+      "size": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/SackCanvasSlumped_1930.asset",
+      "after": "637f5f73a782aab793c28b8983b0715208fb77d8580f718722e28a46080166e0",
+      "size": 98700
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/SackCanvasSlumped_1930.asset.meta",
+      "after": "bd61e2470991b61dc275fe3519c80301bf24943b4fe3b5c37cc94541d3aa47b0",
+      "size": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/WastebasketWire_1930.asset",
+      "after": "03c0b805ceeaf0993a4415efe8a7e242e365ca1633700255ea8ed5c43ca59c07",
+      "size": 203109
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/WastebasketWire_1930.asset.meta",
+      "after": "6d7299a3b9759dcce93fbe099bdeb71a2805df586db37e1a54cab1be50a88ac2",
+      "size": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/ClockSchoolhouse_1930.prefab",
+      "after": "fb633b815acce290e8f32eb97edb8fa583d22bcaa6a7e9f913b3014de071c3a9",
+      "size": 6699
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/ClockSchoolhouse_1930.prefab.meta",
+      "after": "68e12aac81586c0227efce4ec637da54b1bf2f33cdbbb3fd0ac13b6e16aaf90a",
+      "size": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/CoatStandTimber_1930.prefab",
+      "after": "5dee9326750ea4d71ec6f917af719c00ce400b0736851219c53152be686de8fd",
+      "size": 8057
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/CoatStandTimber_1930.prefab.meta",
+      "after": "f503d5fb0870bb6848194821df4cf566d003feab8c89bc18dac45fa2d3db4dec",
+      "size": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/SackCanvasSlumped_1930.prefab",
+      "after": "cf5d46f44147677136a1105f6b7783e6fd966e174aec89676d6906aa05a7f98e",
+      "size": 8127
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/SackCanvasSlumped_1930.prefab.meta",
+      "after": "16696e9e1c402736d7747c6cca89b615ffc6a3ded0965b330c67f7ea7c3a5eb4",
+      "size": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/WastebasketWire_1930.prefab",
+      "after": "d3b9ecaee888d4847ae1929988764b95d9fa8969619fa219dc47829739effff4",
+      "size": 8052
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/WastebasketWire_1930.prefab.meta",
+      "after": "29c5ad22b170112780c8a018b326b313b23e31c75a408cfafdc8f3228bf7d5a6",
+      "size": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Editor/StudioServicesFidelityReview.cs",
+      "after": "d967b7010a4eb9ae716b2f3ea69ca72fb2930cebce70ad30878cb065d08d7668",
+      "size": 7141
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Editor/StudioServicesFidelityReview.cs.meta",
+      "after": "246ecacf56561d023cae20a743bf8e6aa7bb570b112701a60864ab81890b3623",
+      "size": 59
+    },
+    {
+      "path": "ArtReview/StudioServices/Fidelity/implementation-manifest.json",
+      "after": null,
+      "note": "This manifest excludes its own recursive content hash."
+    }
+  ],
+  "preservation": {
+    "missingBaselineFiles": 0,
+    "unexpectedChangedOrAddedPaths": 0,
+    "changedExistingMetaFiles": 0,
+    "stage1AdministrationStudioSceneGameplayScriptsUnchanged": true,
+    "approvedMassingSourceExportsReviewUnchanged": true,
+    "approvedSemanticAnchorsUnchanged": true,
+    "employeeNavigationDimensionsUnchanged": true,
+    "original57CanonicalIdentitiesRetained": true
+  },
+  "tests": {
+    "unity": "6000.6.3f1",
+    "focusedPassed": 39,
+    "focusedFailed": 0,
+    "preflightPassed": 37,
+    "preflightFailed": 0,
+    "runtime": "Actual Studio applicant/carry/cancel/both hires/personnel route/workshop/storage capsule proof passed",
+    "evidence": "../Production/tests.xml"
+  },
+  "scopedIntegrationCorrection": "Bake-only 60 mm horizontal clearance guards for tall ground workshop props and fence/gate corners; physical geometry/colliders, station anchors and agent size unchanged.",
+  "incidentalGeneratedCacheFiles": [
+    "ArtSource/PeriodEnvironment1930/__pycache__/geometry.cpython-311.pyc",
+    "ArtSource/PeriodEnvironment1930/__pycache__/build_kit.cpython-311.pyc",
+    "ArtSource/PeriodEnvironment1930/__pycache__/fidelity.cpython-311.pyc"
+  ],
+  "cacheCommitGuidance": "Generated Python bytecode is incidental and should be excluded from any later authorized milestone commit.",
+  "limitations": [
+    "Visual approval pending",
+    "No final LODs",
+    "No dense-lot performance qualification",
+    "No standalone player build",
+    "Fixed authored door/gate states; no generalized interaction or water simulation"
+  ],
+  "commitOrPushPerformed": false
+}

@@ -1,0 +1,1275 @@
+{
+  "unity": {
+    "unityVersion": "6000.6.3f1",
+    "renderPipeline": "PC_RPAsset",
+    "renderers": 115,
+    "vertices": 1030747,
+    "triangles": 866696,
+    "materials": 36,
+    "missingMaterials": 0,
+    "missingMeshes": 0,
+    "boundsMin": {
+      "x": -11.510000228881836,
+      "y": 0.0,
+      "z": -10.708499908447266
+    },
+    "boundsMax": {
+      "x": 11.510000228881836,
+      "y": 7.454999923706055,
+      "z": 10.225000381469727
+    },
+    "scaleValid": true,
+    "noRuntimeBuildingComponents": true
+  },
+  "source": {
+    "candidate": "StageSchool_A1",
+    "status": "MANUAL_ART_REVIEW_PENDING",
+    "footprint": [
+      22,
+      18
+    ],
+    "floor": 0.36,
+    "wall_eave": 4.65,
+    "central_eave": 5.97,
+    "roof_crown": 7.455,
+    "source_groups": 87,
+    "source_objects": 6298,
+    "unique_materials": 29,
+    "triangles": 739982,
+    "vertices": 890361,
+    "fixtures": 28,
+    "invalid_coordinates": [],
+    "parts": [
+      {
+        "name": "Structure/Foundation",
+        "vertices": 96,
+        "triangles": 60
+      },
+      {
+        "name": "Interior/Floors",
+        "vertices": 96,
+        "triangles": 60
+      },
+      {
+        "name": "Interior/Floors/Waiting",
+        "vertices": 18825,
+        "triangles": 10200
+      },
+      {
+        "name": "Interior/Floors/Audition",
+        "vertices": 19185,
+        "triangles": 10440
+      },
+      {
+        "name": "Interior/Floors/Interview",
+        "vertices": 11690,
+        "triangles": 6360
+      },
+      {
+        "name": "Interior/Floors/Commons",
+        "vertices": 12481,
+        "triangles": 6660
+      },
+      {
+        "name": "Interior/Floors/HallInlay",
+        "vertices": 601,
+        "triangles": 312
+      },
+      {
+        "name": "Structure/EntranceSteps",
+        "vertices": 1636,
+        "triangles": 1204
+      },
+      {
+        "name": "Shell/Front",
+        "vertices": 3752,
+        "triangles": 2100
+      },
+      {
+        "name": "Shell/Front/Windows",
+        "vertices": 3239,
+        "triangles": 1888
+      },
+      {
+        "name": "Shell/Rear",
+        "vertices": 4525,
+        "triangles": 2820
+      },
+      {
+        "name": "Shell/Rear/Windows",
+        "vertices": 7803,
+        "triangles": 4720
+      },
+      {
+        "name": "Doors/RearService",
+        "vertices": 1370,
+        "triangles": 952
+      },
+      {
+        "name": "Structure/RearStep",
+        "vertices": 207,
+        "triangles": 120
+      },
+      {
+        "name": "Shell/Left",
+        "vertices": 2555,
+        "triangles": 1536
+      },
+      {
+        "name": "Shell/Left/Windows",
+        "vertices": 6302,
+        "triangles": 3776
+      },
+      {
+        "name": "Shell/Right",
+        "vertices": 2573,
+        "triangles": 1536
+      },
+      {
+        "name": "Shell/Right/Windows",
+        "vertices": 6394,
+        "triangles": 3776
+      },
+      {
+        "name": "Shell/Front/Portal",
+        "vertices": 4251,
+        "triangles": 2600
+      },
+      {
+        "name": "Shell/Front/Signage",
+        "vertices": 26606,
+        "triangles": 45124
+      },
+      {
+        "name": "Shell/Front/Fanlight",
+        "vertices": 2673,
+        "triangles": 1812
+      },
+      {
+        "name": "Doors/EntranceLeft",
+        "vertices": 1062,
+        "triangles": 784
+      },
+      {
+        "name": "Shell/Front/EntranceLanterns",
+        "vertices": 1744,
+        "triangles": 1188
+      },
+      {
+        "name": "Shell/Front/Banners",
+        "vertices": 86044,
+        "triangles": 141724
+      },
+      {
+        "name": "Doors/EntranceRight",
+        "vertices": 1065,
+        "triangles": 784
+      },
+      {
+        "name": "Roofs/LeftWing",
+        "vertices": 172628,
+        "triangles": 97724
+      },
+      {
+        "name": "Roofs/RightWing",
+        "vertices": 172122,
+        "triangles": 97724
+      },
+      {
+        "name": "Shell/CentralUpper",
+        "vertices": 300,
+        "triangles": 180
+      },
+      {
+        "name": "Roofs/Central",
+        "vertices": 149522,
+        "triangles": 87660
+      },
+      {
+        "name": "Shell/Left/Rainwater",
+        "vertices": 1332,
+        "triangles": 1468
+      },
+      {
+        "name": "Shell/Right/Rainwater",
+        "vertices": 1330,
+        "triangles": 1468
+      },
+      {
+        "name": "Partitions/RearRooms",
+        "vertices": 1059,
+        "triangles": 612
+      },
+      {
+        "name": "Partitions/WestSpine",
+        "vertices": 255,
+        "triangles": 132
+      },
+      {
+        "name": "Partitions/EastSpine",
+        "vertices": 255,
+        "triangles": 132
+      },
+      {
+        "name": "Partitions/Staff",
+        "vertices": 550,
+        "triangles": 300
+      },
+      {
+        "name": "Partitions/Washroom",
+        "vertices": 540,
+        "triangles": 300
+      },
+      {
+        "name": "Partitions/WashroomSide",
+        "vertices": 241,
+        "triangles": 132
+      },
+      {
+        "name": "Partitions/DoorTrim",
+        "vertices": 1672,
+        "triangles": 900
+      },
+      {
+        "name": "Doors/Interview",
+        "vertices": 1484,
+        "triangles": 952
+      },
+      {
+        "name": "Doors/Audition",
+        "vertices": 1493,
+        "triangles": 952
+      },
+      {
+        "name": "Doors/Commons",
+        "vertices": 1494,
+        "triangles": 952
+      },
+      {
+        "name": "Doors/Staff",
+        "vertices": 1489,
+        "triangles": 952
+      },
+      {
+        "name": "Doors/Washroom",
+        "vertices": 1487,
+        "triangles": 952
+      },
+      {
+        "name": "Shell/Rear/InteriorTrim",
+        "vertices": 4789,
+        "triangles": 2760
+      },
+      {
+        "name": "Partitions/InterviewTrim",
+        "vertices": 1080,
+        "triangles": 600
+      },
+      {
+        "name": "Partitions/CommonsTrim",
+        "vertices": 1689,
+        "triangles": 960
+      },
+      {
+        "name": "Furnishings/Reception/Counter",
+        "vertices": 1541,
+        "triangles": 1204
+      },
+      {
+        "name": "Furnishings/Reception/Details",
+        "vertices": 15404,
+        "triangles": 25674
+      },
+      {
+        "name": "Furnishings/Waiting/Chair00",
+        "vertices": 1752,
+        "triangles": 1920
+      },
+      {
+        "name": "Furnishings/Waiting/Chair01",
+        "vertices": 1736,
+        "triangles": 1920
+      },
+      {
+        "name": "Furnishings/Waiting/Chair02",
+        "vertices": 1726,
+        "triangles": 1920
+      },
+      {
+        "name": "Furnishings/Waiting/Chair03",
+        "vertices": 1791,
+        "triangles": 1920
+      },
+      {
+        "name": "Furnishings/Waiting/Chair04",
+        "vertices": 1767,
+        "triangles": 1920
+      },
+      {
+        "name": "Furnishings/Waiting/Chair05",
+        "vertices": 1770,
+        "triangles": 1920
+      },
+      {
+        "name": "Furnishings/Waiting/Chair06",
+        "vertices": 1746,
+        "triangles": 1920
+      },
+      {
+        "name": "Furnishings/Waiting/Chair07",
+        "vertices": 1779,
+        "triangles": 1920
+      },
+      {
+        "name": "Furnishings/Waiting/CoffeeTable",
+        "vertices": 570,
+        "triangles": 300
+      },
+      {
+        "name": "Furnishings/Waiting/Notices",
+        "vertices": 63079,
+        "triangles": 89984
+      },
+      {
+        "name": "Furnishings/Waiting/PortraitGallery",
+        "vertices": 2037,
+        "triangles": 1092
+      },
+      {
+        "name": "Furnishings/Commons/PortfolioTable",
+        "vertices": 546,
+        "triangles": 300
+      },
+      {
+        "name": "Furnishings/Lounge/Chair0",
+        "vertices": 1760,
+        "triangles": 1920
+      },
+      {
+        "name": "Furnishings/Lounge/Chair1",
+        "vertices": 1756,
+        "triangles": 1920
+      },
+      {
+        "name": "Furnishings/Lounge/Chair2",
+        "vertices": 1749,
+        "triangles": 1920
+      },
+      {
+        "name": "Furnishings/Lounge/Chair3",
+        "vertices": 1743,
+        "triangles": 1920
+      },
+      {
+        "name": "Furnishings/Lounge/Table",
+        "vertices": 590,
+        "triangles": 300
+      },
+      {
+        "name": "Furnishings/Interview/GuestA",
+        "vertices": 1746,
+        "triangles": 1920
+      },
+      {
+        "name": "Furnishings/Interview/GuestB",
+        "vertices": 1746,
+        "triangles": 1920
+      },
+      {
+        "name": "Furnishings/Interview/Bookcase",
+        "vertices": 10864,
+        "triangles": 5760
+      },
+      {
+        "name": "Shell/Rear/OfficeClock",
+        "vertices": 546,
+        "triangles": 648
+      },
+      {
+        "name": "Furnishings/Audition/Rostrum",
+        "vertices": 2696,
+        "triangles": 1440
+      },
+      {
+        "name": "Furnishings/Audition/Curtains",
+        "vertices": 8924,
+        "triangles": 15728
+      },
+      {
+        "name": "Furnishings/Audition/Backdrop",
+        "vertices": 24,
+        "triangles": 12
+      },
+      {
+        "name": "Furnishings/Audition/EvaluationTable",
+        "vertices": 564,
+        "triangles": 300
+      },
+      {
+        "name": "Furnishings/Audition/Camera",
+        "vertices": 1111,
+        "triangles": 888
+      },
+      {
+        "name": "Furnishings/Audition/StudioLamp0",
+        "vertices": 692,
+        "triangles": 748
+      },
+      {
+        "name": "Furnishings/Audition/StudioLamp1",
+        "vertices": 688,
+        "triangles": 748
+      },
+      {
+        "name": "Furnishings/Staff/ArchiveBoxes",
+        "vertices": 1754,
+        "triangles": 960
+      },
+      {
+        "name": "Furnishings/Washroom",
+        "vertices": 3224,
+        "triangles": 4784
+      },
+      {
+        "name": "Ceilings/Pendant00",
+        "vertices": 854,
+        "triangles": 1448
+      },
+      {
+        "name": "Ceilings/Pendant01",
+        "vertices": 854,
+        "triangles": 1448
+      },
+      {
+        "name": "Ceilings/Pendant02",
+        "vertices": 854,
+        "triangles": 1448
+      },
+      {
+        "name": "Ceilings/Pendant03",
+        "vertices": 854,
+        "triangles": 1448
+      },
+      {
+        "name": "Ceilings/Pendant04",
+        "vertices": 854,
+        "triangles": 1448
+      },
+      {
+        "name": "Ceilings/Pendant05",
+        "vertices": 854,
+        "triangles": 1448
+      },
+      {
+        "name": "Ceilings/Pendant06",
+        "vertices": 854,
+        "triangles": 1448
+      },
+      {
+        "name": "Ceilings/Pendant07",
+        "vertices": 854,
+        "triangles": 1448
+      },
+      {
+        "name": "Ceilings/Plaster",
+        "vertices": 522,
+        "triangles": 300
+      }
+    ],
+    "materials": [
+      {
+        "name": "Black",
+        "linearRGB": [
+          0.012,
+          0.014,
+          0.012
+        ],
+        "metallic": 0.15,
+        "roughness": 0.38,
+        "texture": "",
+        "shared": true
+      },
+      {
+        "name": "Brass",
+        "linearRGB": [
+          0.36,
+          0.24,
+          0.08
+        ],
+        "metallic": 0.82,
+        "roughness": 0.33,
+        "texture": "metal",
+        "shared": true
+      },
+      {
+        "name": "Canvas",
+        "linearRGB": [
+          0.35,
+          0.29,
+          0.17
+        ],
+        "metallic": 0,
+        "roughness": 0.93,
+        "texture": "canvas",
+        "shared": true
+      },
+      {
+        "name": "Concrete",
+        "linearRGB": [
+          0.29,
+          0.27,
+          0.235
+        ],
+        "metallic": 0,
+        "roughness": 0.85,
+        "texture": "concrete",
+        "shared": true
+      },
+      {
+        "name": "Galvanized",
+        "linearRGB": [
+          0.3,
+          0.32,
+          0.3
+        ],
+        "metallic": 0.78,
+        "roughness": 0.48,
+        "texture": "metal",
+        "shared": true
+      },
+      {
+        "name": "Glass",
+        "linearRGB": [
+          0.12,
+          0.17,
+          0.17
+        ],
+        "metallic": 0,
+        "roughness": 0.12,
+        "texture": "",
+        "shared": true
+      },
+      {
+        "name": "InteriorPlaster",
+        "linearRGB": [
+          0.59,
+          0.535,
+          0.43
+        ],
+        "metallic": 0,
+        "roughness": 0.88,
+        "texture": "stucco",
+        "shared": true
+      },
+      {
+        "name": "Leather",
+        "linearRGB": [
+          0.13,
+          0.052,
+          0.024
+        ],
+        "metallic": 0,
+        "roughness": 0.73,
+        "texture": "canvas",
+        "shared": true
+      },
+      {
+        "name": "Mortar",
+        "linearRGB": [
+          0.3,
+          0.28,
+          0.235
+        ],
+        "metallic": 0,
+        "roughness": 0.9,
+        "texture": "stone",
+        "shared": true
+      },
+      {
+        "name": "PaperLight",
+        "linearRGB": [
+          0.85,
+          0.79,
+          0.63
+        ],
+        "metallic": 0,
+        "roughness": 0.88,
+        "texture": "",
+        "shared": true
+      },
+      {
+        "name": "SS_Bronze",
+        "linearRGB": [
+          0.065,
+          0.048,
+          0.029
+        ],
+        "metallic": 0.7,
+        "roughness": 0.37,
+        "texture": "metal",
+        "shared": false
+      },
+      {
+        "name": "SS_ClearGlass",
+        "linearRGB": [
+          0.14,
+          0.18,
+          0.17
+        ],
+        "metallic": 0,
+        "roughness": 0.15,
+        "texture": "",
+        "shared": false
+      },
+      {
+        "name": "SS_Curtain",
+        "linearRGB": [
+          0.18,
+          0.029,
+          0.024
+        ],
+        "metallic": 0,
+        "roughness": 0.96,
+        "texture": "cloth",
+        "shared": false
+      },
+      {
+        "name": "SS_FloorOak",
+        "linearRGB": [
+          0.25,
+          0.15,
+          0.073
+        ],
+        "metallic": 0,
+        "roughness": 0.64,
+        "texture": "timber",
+        "shared": false
+      },
+      {
+        "name": "SS_FloorOakLight",
+        "linearRGB": [
+          0.27,
+          0.165,
+          0.084
+        ],
+        "metallic": 0,
+        "roughness": 0.64,
+        "texture": "timber",
+        "shared": false
+      },
+      {
+        "name": "SS_Headshots",
+        "linearRGB": [
+          1,
+          1,
+          1
+        ],
+        "metallic": 0,
+        "roughness": 0.88,
+        "texture": "headshots",
+        "shared": false
+      },
+      {
+        "name": "SS_Ivory",
+        "linearRGB": [
+          0.73,
+          0.67,
+          0.53
+        ],
+        "metallic": 0,
+        "roughness": 0.71,
+        "texture": "stone",
+        "shared": false
+      },
+      {
+        "name": "SS_Lamp",
+        "linearRGB": [
+          0.92,
+          0.71,
+          0.39
+        ],
+        "metallic": 0,
+        "roughness": 0.22,
+        "texture": "",
+        "shared": false
+      },
+      {
+        "name": "SS_Sage",
+        "linearRGB": [
+          0.125,
+          0.17,
+          0.125
+        ],
+        "metallic": 0,
+        "roughness": 0.91,
+        "texture": "cloth",
+        "shared": false
+      },
+      {
+        "name": "SS_Stone",
+        "linearRGB": [
+          0.7,
+          0.625,
+          0.51
+        ],
+        "metallic": 0,
+        "roughness": 0.77,
+        "texture": "stone",
+        "shared": false
+      },
+      {
+        "name": "SS_Stucco",
+        "linearRGB": [
+          0.64,
+          0.56,
+          0.44
+        ],
+        "metallic": 0,
+        "roughness": 0.86,
+        "texture": "stucco",
+        "shared": false
+      },
+      {
+        "name": "SS_Terrazzo",
+        "linearRGB": [
+          0.45,
+          0.4,
+          0.315
+        ],
+        "metallic": 0,
+        "roughness": 0.49,
+        "texture": "concrete",
+        "shared": false
+      },
+      {
+        "name": "SS_Tile",
+        "linearRGB": [
+          0.34,
+          0.105,
+          0.045
+        ],
+        "metallic": 0,
+        "roughness": 0.78,
+        "texture": "stone",
+        "shared": false
+      },
+      {
+        "name": "SS_TileDark",
+        "linearRGB": [
+          0.3,
+          0.087,
+          0.037
+        ],
+        "metallic": 0,
+        "roughness": 0.81,
+        "texture": "stone",
+        "shared": false
+      },
+      {
+        "name": "SS_TileLight",
+        "linearRGB": [
+          0.38,
+          0.123,
+          0.055
+        ],
+        "metallic": 0,
+        "roughness": 0.78,
+        "texture": "stone",
+        "shared": false
+      },
+      {
+        "name": "SS_Walnut",
+        "linearRGB": [
+          0.105,
+          0.05,
+          0.024
+        ],
+        "metallic": 0,
+        "roughness": 0.48,
+        "texture": "timber",
+        "shared": false
+      },
+      {
+        "name": "Steel",
+        "linearRGB": [
+          0.032,
+          0.038,
+          0.033
+        ],
+        "metallic": 0.65,
+        "roughness": 0.51,
+        "texture": "paint",
+        "shared": true
+      },
+      {
+        "name": "Timber",
+        "linearRGB": [
+          0.22,
+          0.125,
+          0.052
+        ],
+        "metallic": 0,
+        "roughness": 0.73,
+        "texture": "timber",
+        "shared": true
+      },
+      {
+        "name": "TimberDark",
+        "linearRGB": [
+          0.095,
+          0.05,
+          0.022
+        ],
+        "metallic": 0,
+        "roughness": 0.7,
+        "texture": "timber",
+        "shared": true
+      }
+    ],
+    "ground_datum": 0,
+    "notes": [
+      "Mesh packet excludes linked furnishings; Unity counts include them.",
+      "No runtime building components, LODs, construction states or contextual overlays."
+    ]
+  },
+  "parts": {
+    "Structure/Foundation": "ab9e257cd094b77911afe293827fa12a6de35d42eef9e4f640453fa0e537d75d",
+    "Interior/Floors": "d372d630dc434ae89e3816f21c8dd455d6d36abb4baf724ac0df648aa83f74bd",
+    "Interior/Floors/Waiting": "77dfc7eda5cf9c829fe2b9de9a2f48a4431ccae1c4d1d048f13e1835a7608fcf",
+    "Interior/Floors/Audition": "b3a3a42937aa7cbad41c3225d096e796366a996c6d3d3638dd194f9fddb28051",
+    "Interior/Floors/Interview": "d7db26154ba6383e5fd5e6f353b5bb4b109f41a1dbd2bcf0be8b7cebad942901",
+    "Interior/Floors/Commons": "780e913a6022d09c9e940722b870252bfd8cc8f064286697f92ea6a9c4395944",
+    "Interior/Floors/HallInlay": "d217feb020afcf9e6cccfa6a6441b8449d359b6b0f2ac6f2ce9d03f4cb33a4bf",
+    "Structure/EntranceSteps": "41e11858e7a6707d5e822398d38582dae249c924cb7f0e2466998415c0a489c8",
+    "Shell/Front": "06c3be65c4e70bfb88ea8d0de332ca4c5d122b01cf334fb3877de7a389ec7222",
+    "Shell/Front/Windows": "5900aa16dee1726e05322ba4f8360e69516720821e75f26c7e8e28a71532936b",
+    "Shell/Rear": "2fce88504cf3a73ae86a05771d0c09303d82aa673d05383920dafb86ccbd3c38",
+    "Shell/Rear/Windows": "189a3576ccb4e81a35ef5ba0f44b4323e23d4930d822a67cf4d4a6be6297c3ed",
+    "Doors/RearService": "8dd390c952a935770e978c0f2c9da2758185ebf4542e4f731914318f14f6dfed",
+    "Structure/RearStep": "637b36df6eb41be03efc2bd512d3e2e189127ee98123c00abeec25601bd9e56e",
+    "Shell/Left": "61697b09dfeb93df4db6f8192287be9ccdbab8791ac86f4fdc90870150e91266",
+    "Shell/Left/Windows": "14dd041fb90497a3ee5fea02fb373ed498ef130774cc279dbaed20fe2fb7c170",
+    "Shell/Right": "f7cc71507c7b3a1cd3dbecd755705f9e9cb21f47b5d39550036d3de8d184c5da",
+    "Shell/Right/Windows": "35adf88a4bdf95fcac7b1ce9900aa01bdaee81ec7f1595ab20703bb2aa9ff5fe",
+    "Shell/Front/Portal": "094446b6cbecc50b76765aae9701e5223c14becbdbc3e0dbad9489b2e8299363",
+    "Shell/Front/Signage": "b9a601e0105dae0143192f36acf466f257031bf10ffab3fbe3bd7799b996a552",
+    "Shell/Front/Fanlight": "939a94f7acaa37df19edaab901ddcdb510bdcc272758956bcc0ea6ab88bd5929",
+    "Doors/EntranceLeft": "66bbda53060d64d523020600a1e471102969d15c6fe5f5ab8df51b380ed6ff60",
+    "Shell/Front/EntranceLanterns": "7da7d3211470ac29e68d1d7a7cd3eee7a5b4fc2063720f55eeec17e84d165fc4",
+    "Shell/Front/Banners": "dc362849ac20a40bc56bfa32f66c62964054bc451c6487eb3f704c1a1e0b314c",
+    "Doors/EntranceRight": "921ee2a99dc763704c21128901ecbd03cf695140743823fc2e58eb03eccf7f6b",
+    "Roofs/LeftWing": "49a18204f4133633c33b3d88ab0340ad95f3eafd35108429a99467a223ff6721",
+    "Roofs/RightWing": "83988e1b743d6d84d684b5d9d61cbc53209f436f226dee5384981298bf33b10a",
+    "Shell/CentralUpper": "bb02c230eb6ed77ebedd8a7074069e49527cb5a83f6f3ee8c8d01c4a1d636912",
+    "Roofs/Central": "3f6c19e346dfac23d01363dc5b6677bb0e409aa32627c9709e79f02842b995b5",
+    "Shell/Left/Rainwater": "d3dba277abfd955f2da2a4c6f09d6a52ab5fcdf6bfae16256a0326dc234659f6",
+    "Shell/Right/Rainwater": "418a5b9bb5c77a449162cf2fdaa3ef72804705f6dc369b9fd3cf3dcfe38c8242",
+    "Partitions/RearRooms": "f3e81ef6655c0accde2a8594731edb815e49d72d793a09dd884497984f358c6c",
+    "Partitions/WestSpine": "e49ba6b8e458336a964df674dc5b8c743ba088fae5b698f05ce642c26d9324a1",
+    "Partitions/EastSpine": "8c3c11e6be8734fed480ad3f32afa1c6e0db5db61822dc2930db78958c949a47",
+    "Partitions/Staff": "83c84e551499e9c85ccbb12d635108cd471df079b3c625a7f26e95d87754dce9",
+    "Partitions/Washroom": "a7b325ee81f1601247c87d66ee49a7773ead0cd00d548a9ea5b3b2be137e630b",
+    "Partitions/WashroomSide": "3f72187b64cf6b8f4fb3401e156c6833b82bca133fdbc9443b47b09698484a84",
+    "Partitions/DoorTrim": "db791274294f3f30b0c353a54123668fdb26a1017d168f3e5e602fa4a121a508",
+    "Doors/Interview": "922dc55458a049e0037032f69a1825d19985968256bc585c307de783fbc5fc5d",
+    "Doors/Audition": "9cbdeab7d9746f4fdedc582cd3328784a31a287c42c0095e5bfe0d36f895b210",
+    "Doors/Commons": "77a0853aba430445e02ed5a6c27dfd40589218de4d54d63a1c259a98095c2427",
+    "Doors/Staff": "d185a55d1edb9a2187eeb5c4cfe0155e5e57caf726875214bb2c9e97ef70b5a1",
+    "Doors/Washroom": "2f959c7ed7e9ce668bf37d9133f4a8893d89ba43c329f5108a87340117e56a87",
+    "Shell/Rear/InteriorTrim": "93961048a60827d59cafe08a70d7920236d332dd53823f4266c977caf667fa63",
+    "Partitions/InterviewTrim": "4aba4ea1d4816afdf36f01de721baaee8dcb0d291c725c363d9580c2cc90bb60",
+    "Partitions/CommonsTrim": "4712581ef4bf537b0e3858d79a9df1bd57c4d0f0646129ad7b79b650e7f052b6",
+    "Furnishings/Reception/Counter": "5d891f2951208b2f75faa6b80c178502086e09c01ff1d741fdc0221e39822828",
+    "Furnishings/Reception/Details": "bd2bd1aea93a7f3964ea690cc3fd41970f88f93af9954dec91aba7da020f1cca",
+    "Furnishings/Waiting/Chair00": "45d6b57766f87491bc17bb874394227460090d1643ab9f777cf0819d1ee4bf6b",
+    "Furnishings/Waiting/Chair01": "45dbe0cbdbe3607506c587196ea45a0889050f7ed1f4d1dcef73106f8f99b3c1",
+    "Furnishings/Waiting/Chair02": "07aa0f85e8d80bf3c2264f86fdd6612deb26080243b0f50f670ac6418068ff86",
+    "Furnishings/Waiting/Chair03": "2a04ec0f688b7c47a5e2528bb9be88c33a34601ddfade3086c62f02f459d9560",
+    "Furnishings/Waiting/Chair04": "885a363e7e0124cdaf967cfacdfc74ca4eb61e9898022901503a1ecc769957f0",
+    "Furnishings/Waiting/Chair05": "b7e3ca687e4057b9b5327aa4925589a8b6240a46c50fd1685c64737285c3d637",
+    "Furnishings/Waiting/Chair06": "fd67b0049f71f14bfe35d71d6d0edafddfe13981c91e8ff666b6d5f4f3ff766d",
+    "Furnishings/Waiting/Chair07": "98c35c1fef07ca38c723378daf18a8e8946487a92fae4c21096962668a841b0d",
+    "Furnishings/Waiting/CoffeeTable": "161ca2aae034d5a98d41d1b62e278ffc5a663505805e80c9b98f72a6067b6922",
+    "Furnishings/Waiting/Notices": "486b8199951f9582530283b95483464f602576557963d5492bd7379ac3f0c955",
+    "Furnishings/Waiting/PortraitGallery": "2c3063e0a2b845dd74eabbc1c1b2761b68c5845ad09695c4e97a8906bf19c4ec",
+    "Furnishings/Commons/PortfolioTable": "a755096d09b4031eabac052e14509eb9e7fed989db81d7d221e06fd72fda11e1",
+    "Furnishings/Lounge/Chair0": "cf686322e2df49583496fda63b6f890799f9eadecbb5ee5ff8665f2c864c1fcc",
+    "Furnishings/Lounge/Chair1": "ea884dd6ff6d87b556d54834cc2252f7678b933e8601d6d341c07f85a0e5000b",
+    "Furnishings/Lounge/Chair2": "6c531075ad183667d6b338a81500e68cc404cbcd7eebe3532390f223a8391546",
+    "Furnishings/Lounge/Chair3": "e33a8c3fecb0f1f804c82500f4d03c317107ac88bf173a66d2674d6d325e9390",
+    "Furnishings/Lounge/Table": "29ef3fcf8508e664ebb2a3d768d0f815031cfe5455234d2a7f475cc9e75a8494",
+    "Furnishings/Interview/GuestA": "80b64d063d125d6ede8c3ca130d2bcb9c04f42a1a60f89445adb39d0b7b84d2a",
+    "Furnishings/Interview/GuestB": "74329db127e47d3c7cc7bcc0a05a40ed4715d687272c3abd1eab3cb21f9696ee",
+    "Furnishings/Interview/Bookcase": "89cd7a13deb016984e878c7fde7ead361c44a469b7c59a68348c2fcc311282ee",
+    "Shell/Rear/OfficeClock": "3645822b25483442703acf63d8dd1c49eaf49f4a99091cdf0c34e730372f1422",
+    "Furnishings/Audition/Rostrum": "865996b1600be2bc8de0171252bd4faded4e6a8ed6b4a0bac4211866addb619f",
+    "Furnishings/Audition/Curtains": "fbf3c6c74530559f6c9a5b5567370e798632845c32f635c504cb57cefbb35579",
+    "Furnishings/Audition/Backdrop": "6d61afbe2b8bed02151437e12cac0876ea4f819ee94e4e908e10515c76a393c0",
+    "Furnishings/Audition/EvaluationTable": "291b3273ea7bdce05620c92b21ad4398e3dd5fb4a7592d26430360328d54fb73",
+    "Furnishings/Audition/Camera": "731406df3d5dab826f04f4ebf415fd6bbdbc7081a5c6e522ca02d718a86e879e",
+    "Furnishings/Audition/StudioLamp0": "bb076578544956da3915a8a0f498a6968e08b18f30f50ae7f2af5fb2f6d65cde",
+    "Furnishings/Audition/StudioLamp1": "76870bb1bc64f3b3c933dd5a40616fa9e42d45d252a66b99fc53326f37654559",
+    "Furnishings/Staff/ArchiveBoxes": "ee9ea67ea46bc5e0a30f2d7e0001ea6b91047e498b375c88afd79f5fd990dc69",
+    "Furnishings/Washroom": "06ff425b8cfdf86db383dfeaef342a96b7d6b25cd599f08aadb957ddf078b73a",
+    "Ceilings/Pendant00": "f783938f64ba7f6767e522ee6c394945d0ff1552daf497e6dd23d0a4cecd6bd3",
+    "Ceilings/Pendant01": "0824727c1619d352ded57396acb077c890582373e5af7ae4338bec505fbf39dd",
+    "Ceilings/Pendant02": "a0ce212f38cffb8b10f6884af5e268306938589625ca052ecb172abde4416ad3",
+    "Ceilings/Pendant03": "06d1a3cdef7506e13d475467826ce7f0e92894dde13fa811f62680acaaa20823",
+    "Ceilings/Pendant04": "6f98970de66309732aaf498c6458a6023f1a8571cf609865cfe52eb2b0c03381",
+    "Ceilings/Pendant05": "11e0d8c3b41a36c9001ed81ed2a9c215a7a67b5d75ccddee4db3b1eb7ecdb68b",
+    "Ceilings/Pendant06": "3d304f12e644536bae004b777299e6dd946ce00895e918fbedab1856b8b12408",
+    "Ceilings/Pendant07": "776fd5b3de93f246eabc221fcc34eb8839209b27598df7a9e5f2a7421fd72c87",
+    "Ceilings/Plaster": "a4137b66d8285d64b4d17e5c4e1a6278caa619fd81f247c9a98218deae15c172"
+  },
+  "studio_sha256": "b7465a1fb51baccbf29445d734f7302e18bf38a68b238132a8be90cb579155fb",
+  "geometry": {
+    "Ceilings_Pendant00": {
+      "triangles": 1448,
+      "vertices_sha256": "f2934ad195edee4e39e98d5bd3b8ae0da43b64c18c29176c446311284e34e366"
+    },
+    "Ceilings_Pendant01": {
+      "triangles": 1448,
+      "vertices_sha256": "5aacf4c2d6ccec792ab055f5f9a51c21a24ec6d7879d59a26338de1cb606cc00"
+    },
+    "Ceilings_Pendant02": {
+      "triangles": 1448,
+      "vertices_sha256": "8a07647873709fc8c212f14b911ffc2cf40c5d0bcc0f6574ea06bda6f6a29c5f"
+    },
+    "Ceilings_Pendant03": {
+      "triangles": 1448,
+      "vertices_sha256": "5e81381f46cc9f7113e37b3a22457c5b3ee62b216f150d5e7f8bf4ac3f541df5"
+    },
+    "Ceilings_Pendant04": {
+      "triangles": 1448,
+      "vertices_sha256": "8f7a8641500d33440166fb0112f4c620e8813466731a70ba5edb1a75c6467b68"
+    },
+    "Ceilings_Pendant05": {
+      "triangles": 1448,
+      "vertices_sha256": "b5d4db19bdd2ce08dd0dcfd88a23ce96c63e6b17f3139826bec946f7665244b4"
+    },
+    "Ceilings_Pendant06": {
+      "triangles": 1448,
+      "vertices_sha256": "7b738b8506e7f79390c825ad3ef29105555d400d99b7c14f246d77f293b3d2c7"
+    },
+    "Ceilings_Pendant07": {
+      "triangles": 1448,
+      "vertices_sha256": "52ee0242bbc7056397bfaeec913c3a7ba54d9e8d19b8e5ab08132861c9cb23d4"
+    },
+    "Ceilings_Plaster": {
+      "triangles": 300,
+      "vertices_sha256": "d2e146cf948f17930db09190bc3eac434c0662e6e83725f6367a35f47704ae31"
+    },
+    "Doors_Audition": {
+      "triangles": 952,
+      "vertices_sha256": "6bc7b63dddba24ffa6ed356611b707c610e8744c054f893801e8792ad54354b2"
+    },
+    "Doors_Commons": {
+      "triangles": 952,
+      "vertices_sha256": "29c4f6dbf9103ca4393a548318ff6d13fc13e2c2f58950f098b11db6b25b70e5"
+    },
+    "Doors_EntranceLeft": {
+      "triangles": 784,
+      "vertices_sha256": "58c739a0ffdb9b14973034e877adff16104810f816c01514a2ba83259ce74613"
+    },
+    "Doors_EntranceRight": {
+      "triangles": 784,
+      "vertices_sha256": "bcf5a564c0691114b3ac406bec67ed1ec7862d57af2d4faa7e9f4ad7d274ce8a"
+    },
+    "Doors_Interview": {
+      "triangles": 952,
+      "vertices_sha256": "29c4f6dbf9103ca4393a548318ff6d13fc13e2c2f58950f098b11db6b25b70e5"
+    },
+    "Doors_RearService": {
+      "triangles": 952,
+      "vertices_sha256": "64848cb8245e45191c849d9c077d9e3abed856616a9f8a2ba4abd904b90da273"
+    },
+    "Doors_Staff": {
+      "triangles": 952,
+      "vertices_sha256": "7163ac76ef907b33e79ffe577c9851b41fba1b6a0e13d8efa5650786c7b0c5cb"
+    },
+    "Doors_Washroom": {
+      "triangles": 952,
+      "vertices_sha256": "6005aaa7b884fdf47d15aaaa42827890d4409b777c061ad129d35c8badf8d4fb"
+    },
+    "Furnishings_Audition_Backdrop": {
+      "triangles": 12,
+      "vertices_sha256": "ce048876bc448dc149ebc5d1e9900cb455669cf39d3876fe899c4cd763e345e9"
+    },
+    "Furnishings_Audition_Camera": {
+      "triangles": 888,
+      "vertices_sha256": "94631c8256c5fb1ff9f791a3e7050ae3ee05bb1fe49a2929be08bea05a5f4ba4"
+    },
+    "Furnishings_Audition_Curtains": {
+      "triangles": 15728,
+      "vertices_sha256": "8035157c4c37fa8a34695797b6eb7f440132a532b6fc410b57b551b6868e6daf"
+    },
+    "Furnishings_Audition_EvaluationTable": {
+      "triangles": 300,
+      "vertices_sha256": "78dc60f8b6338b3d1209a1c56e0d8f15a261a29382ba53d6f77ebac2be11bbb5"
+    },
+    "Furnishings_Audition_Rostrum": {
+      "triangles": 1440,
+      "vertices_sha256": "e4d60f9a089afc34b2226973c56d3e509a53e86821476d7becdb53decdd11644"
+    },
+    "Furnishings_Audition_StudioLamp0": {
+      "triangles": 748,
+      "vertices_sha256": "8b6082950ec04c1ca5d17f49745528a380d64a3f733fb21ce16c68022d834e60"
+    },
+    "Furnishings_Audition_StudioLamp1": {
+      "triangles": 748,
+      "vertices_sha256": "749123ccf321000b38a46bb3173b84413a5929f2f72e13828a54dbbbc0dff51e"
+    },
+    "Furnishings_Commons_PortfolioTable": {
+      "triangles": 300,
+      "vertices_sha256": "c5fe44bfc8653f43a36793f44e5314512040a161596e1eb27f9f52a4de0af58f"
+    },
+    "Furnishings_Interview_Bookcase": {
+      "triangles": 5760,
+      "vertices_sha256": "75526fb929f97077dd333c9f342d5df4154dcda46ad8614e47dd6331e8ebd9d7"
+    },
+    "Furnishings_Interview_GuestA": {
+      "triangles": 1920,
+      "vertices_sha256": "06955fd381602c08bff2fae61fbbc29ab7fb17b9050c8f0811b18c3d55fabdef"
+    },
+    "Furnishings_Interview_GuestB": {
+      "triangles": 1920,
+      "vertices_sha256": "8548f1675e50622dd558ddb5bf2160e97ba00261d3c3ee969bc01af79f0ba2e7"
+    },
+    "Furnishings_Lounge_Chair0": {
+      "triangles": 1920,
+      "vertices_sha256": "37168f75da342a2ece341c2ab068f64e213b95512b3058ea45ccfaaded2ade14"
+    },
+    "Furnishings_Lounge_Chair1": {
+      "triangles": 1920,
+      "vertices_sha256": "bd194021b598b1eeb998e466cac52098bffbc313ed4ed4906f38632cb4f8bbff"
+    },
+    "Furnishings_Lounge_Chair2": {
+      "triangles": 1920,
+      "vertices_sha256": "1da5beab021cfd7522c936600eef32a4ba125f2354e39f86f493e9b235738f74"
+    },
+    "Furnishings_Lounge_Chair3": {
+      "triangles": 1920,
+      "vertices_sha256": "92741f1216a3fb96f35db018bd7efc9fe4866ca3ab8dbba4bf88f5a4c7c08e98"
+    },
+    "Furnishings_Lounge_Table": {
+      "triangles": 300,
+      "vertices_sha256": "4c1cbd603ae53aeb1ed306b192cf16ddca69d17b06f83753cce28a0796a40e4d"
+    },
+    "Furnishings_Reception_Counter": {
+      "triangles": 1204,
+      "vertices_sha256": "13592c4fe3a13cab18496ab2058d623f58692e60bb282845c8f7cbb24ff302b9"
+    },
+    "Furnishings_Reception_Details": {
+      "triangles": 25674,
+      "vertices_sha256": "5228854ab03dcac4ab2045ec2fceaeb6460371ec2c273cee17169f46fec3b49d"
+    },
+    "Furnishings_Staff_ArchiveBoxes": {
+      "triangles": 960,
+      "vertices_sha256": "3028613e2bcc75a3c60755e32ef07492fc92475837b4602fd33bcb654b43d4e3"
+    },
+    "Furnishings_Waiting_Chair00": {
+      "triangles": 1920,
+      "vertices_sha256": "067130a6854439fc8e2689fa771a15be08a3452de3738ef2179abc09655104b8"
+    },
+    "Furnishings_Waiting_Chair01": {
+      "triangles": 1920,
+      "vertices_sha256": "9fae991b350509d8be6cb69bc487ea029c9fe1ddeaf62ab8c1384f1b610de198"
+    },
+    "Furnishings_Waiting_Chair02": {
+      "triangles": 1920,
+      "vertices_sha256": "b36f18f8d3ed2990f90de2fda2cef3e016c59e0a039dd5ec2a0e3c67cf5e1f93"
+    },
+    "Furnishings_Waiting_Chair03": {
+      "triangles": 1920,
+      "vertices_sha256": "85d9bb2818d371bda4cbbc3ee45e014ccf52d94cd1ce2001a0e4203f5ebee854"
+    },
+    "Furnishings_Waiting_Chair04": {
+      "triangles": 1920,
+      "vertices_sha256": "84c7214f0d1d73b0fe9615f49c600f49ade306e21a72d6ed8609a284ae372e92"
+    },
+    "Furnishings_Waiting_Chair05": {
+      "triangles": 1920,
+      "vertices_sha256": "dc0a5e19949d2173db0cbd2e18ef4f828244ef6964605843d83186a61a460560"
+    },
+    "Furnishings_Waiting_Chair06": {
+      "triangles": 1920,
+      "vertices_sha256": "7db988b479051ef836e76f174ca1a7e742dae43f00f946fbb434265ba57b68b0"
+    },
+    "Furnishings_Waiting_Chair07": {
+      "triangles": 1920,
+      "vertices_sha256": "33b0bb5dfb90f84e55a6b1dcb7ee139836ac80b4485679bae484715752964296"
+    },
+    "Furnishings_Waiting_CoffeeTable": {
+      "triangles": 300,
+      "vertices_sha256": "4cbddc1ef959c13c2f623bf4c1cf1f3f4d09338863d169280d147462c4d37bd9"
+    },
+    "Furnishings_Waiting_Notices": {
+      "triangles": 89984,
+      "vertices_sha256": "c672ea23273b168c65c4405572704999943b4f1a09c4c0a98592efb563d3bb9e"
+    },
+    "Furnishings_Waiting_PortraitGallery": {
+      "triangles": 1092,
+      "vertices_sha256": "8efea7ade08c11a9edfce93fa028971a9a5d8700ded70311fd8628d76146eb02"
+    },
+    "Furnishings_Washroom": {
+      "triangles": 4784,
+      "vertices_sha256": "5a7d6a3139ae376997b13506ca18320841dc95e832ee877f1958d16bcced4b03"
+    },
+    "Interior_Floors": {
+      "triangles": 60,
+      "vertices_sha256": "b4f03c0df38c9d4fa12321a5c5e7b076e2ba4aa63e4de4b87ea493f5ce704a5e"
+    },
+    "Interior_Floors_Audition": {
+      "triangles": 10440,
+      "vertices_sha256": "bc57170a3cc73fb6ed70e78004e45543bef6496d5816dbeed20160e739460211"
+    },
+    "Interior_Floors_Commons": {
+      "triangles": 6660,
+      "vertices_sha256": "53fc3588b54f885440cc9f5ef136c0d49897bd671d3f1b1b02bb5b4bc5e22bfd"
+    },
+    "Interior_Floors_HallInlay": {
+      "triangles": 312,
+      "vertices_sha256": "a18ef0c8373943bf156702efc36ad1a378815971b18f91ac6ed687cbf2ac05cb"
+    },
+    "Interior_Floors_Interview": {
+      "triangles": 6360,
+      "vertices_sha256": "66a30c6a3dcef42eefb514e1778400d237ccf9cc539a7e61a2a4ea6470591618"
+    },
+    "Interior_Floors_Waiting": {
+      "triangles": 10200,
+      "vertices_sha256": "2d3a800b2288ed1f2f33e41bc79be830c4fb97673db4bc15eaa12bde06331488"
+    },
+    "Partitions_CommonsTrim": {
+      "triangles": 960,
+      "vertices_sha256": "4b3b6849b2395eab1cf05ec82f67a14064197b61542489f7ea78403798f9b4a9"
+    },
+    "Partitions_DoorTrim": {
+      "triangles": 900,
+      "vertices_sha256": "91a4bcd407eff0e520c453a1258d5f504a8f7531df8218d81fd23400c1283466"
+    },
+    "Partitions_EastSpine": {
+      "triangles": 132,
+      "vertices_sha256": "d18e4df7ab8840f18cf214870f11a8c9508c0f4303d5f31be78f1455a74b2b01"
+    },
+    "Partitions_InterviewTrim": {
+      "triangles": 600,
+      "vertices_sha256": "df4e0825f84260d5e9e954afdaa6eee10b5dc086877b27d6a75160708c73d973"
+    },
+    "Partitions_RearRooms": {
+      "triangles": 612,
+      "vertices_sha256": "09bee43027e0751a3e02eb1cbb14f2c065c93eb39f57f65656407a49e63c85ae"
+    },
+    "Partitions_Staff": {
+      "triangles": 300,
+      "vertices_sha256": "14519ef22d89ac58a531a1c852775ab5c74593f7133662c62da7597467470825"
+    },
+    "Partitions_Washroom": {
+      "triangles": 300,
+      "vertices_sha256": "6f59c4d5be20c877dd7a5871af0f963911992ca776fab365cdf8c75e06fc765f"
+    },
+    "Partitions_WashroomSide": {
+      "triangles": 132,
+      "vertices_sha256": "41dcbc289a1ba3356728fc396f9a14193b2c1ea96858e6f440f08268d40ad965"
+    },
+    "Partitions_WestSpine": {
+      "triangles": 132,
+      "vertices_sha256": "4339f292abead389a8bb37437f95470aecf70df6c5fa6187d76cf7a8580fec10"
+    },
+    "Roofs_Central": {
+      "triangles": 87660,
+      "vertices_sha256": "a01831cc37704b065e2a141b9a7aaa610fce861956a9b7c6fd340b98b474cc0e"
+    },
+    "Roofs_LeftWing": {
+      "triangles": 97724,
+      "vertices_sha256": "59cfcc2882bf84fa0a97b119f71bd86c85fd4577861322d564d601a1f9ab98e8"
+    },
+    "Roofs_RightWing": {
+      "triangles": 97724,
+      "vertices_sha256": "ef944afcc76e301e8634b896a4ae183b3957f41d87213a138c5c80f49cee41fc"
+    },
+    "Shell_CentralUpper": {
+      "triangles": 180,
+      "vertices_sha256": "1b050ed6927566c7d628d7197021683286f542c2bcfc61335f0eef34e38684f6"
+    },
+    "Shell_Front": {
+      "triangles": 2100,
+      "vertices_sha256": "d4226c7e17cf35f80dc5e70773ad790f334e33490ea80661c48f81929169d78b"
+    },
+    "Shell_Front_Banners": {
+      "triangles": 141724,
+      "vertices_sha256": "964159fbebd5665477d8680650d2daaa63e4e814b237bac1d2ce15c8f1626c0e"
+    },
+    "Shell_Front_EntranceLanterns": {
+      "triangles": 1188,
+      "vertices_sha256": "7cfc49726f0b9afc4831c344bab219c4317041732720b235b0f1b073f0288a76"
+    },
+    "Shell_Front_Fanlight": {
+      "triangles": 1812,
+      "vertices_sha256": "c77421b78e0983c1537724dafa9567311b9207b16c991717a903183c25231646"
+    },
+    "Shell_Front_Portal": {
+      "triangles": 2600,
+      "vertices_sha256": "906c58893b21929646861171b37e11394537d88dcd0abbefda8628d8a24acc13"
+    },
+    "Shell_Front_Signage": {
+      "triangles": 45124,
+      "vertices_sha256": "56c8eabf0526fa6d28452b23e6449995dcc47869fa96fac0773457f490847721"
+    },
+    "Shell_Front_Windows": {
+      "triangles": 1888,
+      "vertices_sha256": "6e08772d61952c9677f87c432b401b4b2f671e026453fae97ba6e8b643c78bf3"
+    },
+    "Shell_Left": {
+      "triangles": 1536,
+      "vertices_sha256": "6b1b51679f9f68485a0379474c4560cdd1b16b08fc8c779b8ec2e3ccf06cbfcb"
+    },
+    "Shell_Left_Rainwater": {
+      "triangles": 1468,
+      "vertices_sha256": "02314e3fcfc73ddc68e58485a75831e03574889831be10ef3e0e1779e4caf00f"
+    },
+    "Shell_Left_Windows": {
+      "triangles": 3776,
+      "vertices_sha256": "ab9d9a20516e838a9c0ceb6f380eb8ffaec61cc524a6bae9ef1937b2c2cab99f"
+    },
+    "Shell_Rear": {
+      "triangles": 2820,
+      "vertices_sha256": "c3b9bd86acf82d5ee403dcaa965ef64d13028d78c272287a4a2ba21734f3c2ba"
+    },
+    "Shell_Rear_InteriorTrim": {
+      "triangles": 2760,
+      "vertices_sha256": "0faeda77b55bb5de77d811523128fdf10ea8bcaee24fff4160a1b25181566e9c"
+    },
+    "Shell_Rear_OfficeClock": {
+      "triangles": 648,
+      "vertices_sha256": "62902e34561264681478ecf00b423f4d9ee157d726abb0aeca4d03739d9db05f"
+    },
+    "Shell_Rear_Windows": {
+      "triangles": 4720,
+      "vertices_sha256": "8a775353d70718dc849044c6cc1ac08eb156159319b4ce357ad4637200c999b5"
+    },
+    "Shell_Right": {
+      "triangles": 1536,
+      "vertices_sha256": "b19ae6ba16ccec00d8c35215b8139ad135547595e938b7a5e73cc2781ab389de"
+    },
+    "Shell_Right_Rainwater": {
+      "triangles": 1468,
+      "vertices_sha256": "1296334bcd0901bb00f527ceb6bb33f0be012908e92afc336cec4049b089a19e"
+    },
+    "Shell_Right_Windows": {
+      "triangles": 3776,
+      "vertices_sha256": "63b4cb681c25240c32f4b6ade68e3454d265b97b5401519221a862e7ddfff625"
+    },
+    "Structure_EntranceSteps": {
+      "triangles": 1204,
+      "vertices_sha256": "e681bc8a539fecf69ce3aec14a3f43c7bd43128537ae49465ba8c14f0b6fca8e"
+    },
+    "Structure_Foundation": {
+      "triangles": 60,
+      "vertices_sha256": "59a8654b4bc412d244268eb1c7e804c90243259d7db8753adc930a3625f6652d"
+    },
+    "Structure_RearStep": {
+      "triangles": 120,
+      "vertices_sha256": "9f430861b1d3e7b7e6d415c13487152dcf3764cfe7433566464a61a50552f81d"
+    }
+  }
+}

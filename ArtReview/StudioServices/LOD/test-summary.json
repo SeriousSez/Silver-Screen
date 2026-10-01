@@ -1,0 +1,32 @@
+{
+  "runs": [
+    {
+      "file": "tests-first-run.xml",
+      "passed": "50",
+      "failed": "1",
+      "skipped": "0",
+      "start-time": "2026-09-29 13:18:54Z",
+      "end-time": "2026-09-29 13:19:16Z"
+    },
+    {
+      "file": "tests-second-run.xml",
+      "passed": "50",
+      "failed": "1",
+      "skipped": "0",
+      "start-time": "2026-09-29 13:25:23Z",
+      "end-time": "2026-09-29 13:25:44Z"
+    },
+    {
+      "file": "runtime-tests.xml",
+      "passed": "1",
+      "failed": "0",
+      "skipped": "0",
+      "start-time": "2026-09-29 13:27:51Z",
+      "end-time": "2026-09-29 13:28:29Z"
+    }
+  ],
+  "distinctTests": 51,
+  "latestPassed": 51,
+  "latestUnresolved": {},
+  "note": "Latest full suite: 50 passed, 1 failed. Failed runtime case passed in isolation; 51 distinct tests have passing latest evidence. Earlier failures are retained, not erased."
+}

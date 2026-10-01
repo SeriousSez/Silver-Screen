@@ -1,0 +1,41 @@
+Entered runtime: scene=Assets/SilverScreen/Environment/StageSchoolB/StageSchool_B1IntegrationReview.unity playing=True
+Runtime dependencies: construction=True clock=True
+PASS Placement creates gated site; yaw 37
+PASS LODGroup remains enabled during construction
+PASS Zero workers means zero progress
+PASS Compound construction blockers and dressing leave legal recess neighbour clear at yaw37
+PASS Placement async navigation completes
+Phase SitePreparation capacity=5
+PASS Four workers use real V2B productivity
+Phase Foundation capacity=6
+Phase Structure capacity=7
+Phase Exterior capacity=5
+Phase Finishing capacity=6
+PASS Real shared construction reaches completion
+PASS All five phases traversed
+PASS Completion enables production building and removes dressing
+PASS Builder assignments and person reservations released
+PASS Actual completion schedules asynchronous navigation
+PASS Selected simulation speed and world adapter preserved
+Worst dev clock Advance call ms=31.31 (not a frame profiler)
+PASS Completion async navigation settles
+PASS Agent exterior -> reception.approach using door interaction; status=PathComplete
+PASS Agent exterior -> waiting.approach.0 using door interaction; status=PathComplete
+PASS Agent exterior -> audition.operator using door interaction; status=PathComplete
+PASS Agent exterior -> interview.candidate using door interaction; status=PathComplete
+PASS Flexible Evaluation precise anchor delta=0.02749979
+PASS Agent exterior -> evaluation.candidate using door interaction; status=PathComplete
+PASS Agent exterior -> staff.approach using door interaction; status=PathComplete
+PASS Agent exterior -> records.approach using door interaction; status=PathComplete
+PASS Agent exterior -> equipment.approach using door interaction; status=PathComplete
+PASS Agent exterior -> service.approach using door interaction; status=PathComplete
+PASS Agent exterior -> exit using door interaction; status=PathComplete
+PASS Agent automatically opened a closed authored door
+PASS Hover intent does not reveal immediately
+PASS Actual pointer hover intent and fade in
+PASS Actual mouse click pins building
+PASS Pinned reveal survives pointer departure
+PASS Orbit/rapid zoom/automatic LOD while pinned keeps roofs hidden
+PASS Actual Escape releases and fades out
+PASS Closed LOD transitions restore visibility
+Runtime checks finished; screenshots are actual site/completed state.

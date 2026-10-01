@@ -1,0 +1,39 @@
+00:01.422  blend            | Read blend: "C:\Repos\Unity\Silver Screen\ArtSource\StageSchoolA1\StageSchool_A1.blend"
+C:\Repos\Unity\Silver Screen\ArtSource\StageSchoolA3\generate_stage_school_a3.py:25: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mirror=bpy.data.materials.new('SS_Mirror');mirror.use_nodes=True
+Info: Read library: 'C:\Repos\Unity\Silver Screen\ArtSource\PeriodEnvironment1930\PeriodEnvironment1930.blend', '//../PeriodEnvironment1930/PeriodEnvironment1930.blend', parent '<direct>'
+Info: Read library: 'C:\Repos\Unity\Silver Screen\ArtSource\ProductionEquipment1930Candidate\ProductionEquipment1930Candidate.blend', '//../ProductionEquipment1930Candidate/ProductionEquipment1930Candidate.blend', parent '<direct>'
+A3 foundations, floors and articulated shell
+A3 stepped roofs and connected drainage
+A3 room furnishings and ceilings
+A3 continuous opening-aware wall joinery
+A3 reusable armchair and functional furnishing audit
+A3 audition performance installation
+A3 complete period washroom fixtures
+A3 entrance stonework, handrails and cast letters
+A3 waiting/common wall composition
+A3 roof/occupied-volume intersection correction
+A3 source finish complete; clipped roof faces: 11581
+A3.1 local roof junctions and supported drainage
+A3.1 pendant mounts and restroom hardware
+A3.1 finished: twelve ceiling mounts, nine roofs routed, local junctions
+A3.2 fitted reception, cubicle leaves and local circulation
+A3.2 source corrections complete
+A3 semantic packet export
+03:17.453  blend.readfile   | WARNING Append: ID 'GRCoatStandTimber_1930' is already linked
+03:17.453  blend.readfile   | WARNING Append: ID 'GRShelfSteelTimber_170_1930' is already linked
+03:17.453  blend.readfile   | WARNING Append: ID 'GRFilingCabinet_4Drawer_1930' is already linked
+03:17.453  blend.readfile   | WARNING Append: ID 'GRDeskLampBanker_1930' is already linked
+03:17.453  blend.readfile   | WARNING Append: ID 'GRDeskPedestal_1930' is already linked
+03:17.453  blend.readfile   | WARNING Append: ID 'GRCupboardUtility_1930' is already linked
+03:17.453  blend.readfile   | WARNING Append: ID 'GRNoticeBoardTimber_173_1930' is already linked
+03:17.453  blend.readfile   | WARNING Append: ID 'GRChairBentwood_1930' is already linked
+03:17.453  blend.readfile   | WARNING Append: ID 'GRDeskPaperwork_1930' is already linked
+03:17.453  blend.readfile   | WARNING Append: ID 'GRTelephoneDesk_1930' is already linked
+03:17.515  blend.readfile   | WARNING Append: ID 'GRStudioCamera1930' is already linked
+03:17.515  blend.readfile   | WARNING Append: ID 'GRStudioLamp1930' is already linked
+Info: Saved as "StageSchool_A3.blend"
+STAGE_SCHOOL_A3 {"candidate": "StageSchool_A3", "status": "PRODUCTION_QA_PENDING", "footprint": [28, 24], "masonry_area": 583.0, "floor": 0.36, "occupied_floors": 1, "source_groups": 264, "source_objects": 5965, "triangles": 1636116, "vertices": 2449228, "unique_materials": 31, "fixtures": 37, "equipment_instances": [{"asset": "StudioCamera1930", "group": "Furnishings/Audition/Camera", "position": [8.5, 0.39, 7.8], "yaw": 0}, {"asset": "StudioLamp1930", "group": "Furnishings/Audition/StudioLamp0", "position": [5.3, 0.39, 10.5], "yaw": 48}, {"asset": "StudioLamp1930", "group": "Furnishings/Audition/StudioLamp1", "position": [11.7, 0.39, 10.5], "yaw": -48}]}
+Blender 5.0.1 (hash a3db93c5b259 built 2025-12-16 01:32:30)
+
+Blender quit

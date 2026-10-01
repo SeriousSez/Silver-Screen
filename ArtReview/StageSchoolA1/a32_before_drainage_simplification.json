@@ -1,0 +1,51 @@
+{
+  "parts": [
+    {
+      "name": "Roofs/Waiting/Rainwater",
+      "triangles": 12176,
+      "vertices": 17381
+    },
+    {
+      "name": "Roofs/Preparation/Rainwater",
+      "triangles": 12412,
+      "vertices": 17345
+    },
+    {
+      "name": "Roofs/CommonBay/Rainwater",
+      "triangles": 8880,
+      "vertices": 12632
+    },
+    {
+      "name": "Roofs/WestEvaluation/Rainwater",
+      "triangles": 12940,
+      "vertices": 17699
+    },
+    {
+      "name": "Roofs/WestService/Rainwater",
+      "triangles": 16460,
+      "vertices": 23478
+    },
+    {
+      "name": "Roofs/Audition/Rainwater",
+      "triangles": 26818,
+      "vertices": 37306
+    },
+    {
+      "name": "Roofs/Interview/Rainwater",
+      "triangles": 4472,
+      "vertices": 6112
+    },
+    {
+      "name": "Roofs/Entrance/Rainwater",
+      "triangles": 13964,
+      "vertices": 18802
+    },
+    {
+      "name": "Roofs/Hall/Rainwater",
+      "triangles": 3844,
+      "vertices": 5130
+    }
+  ],
+  "rainwaterTriangles": 111966.0,
+  "rainwaterVertices": 155885.0
+}

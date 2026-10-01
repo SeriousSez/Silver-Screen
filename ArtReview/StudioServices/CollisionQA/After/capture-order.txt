@@ -1,0 +1,15 @@
+collision_storage_front
+collision_storage_above
+collision_storage_clearance
+collision_yard_vise
+collision_yard_crates
+collision_yard_spacing
+collision_yard_sill
+collision_awning_front
+collision_awning_left
+collision_awning_right
+collision_awning_above
+collision_bench_top
+collision_bench_back
+collision_door_bolts
+collision_door_bolts_oblique

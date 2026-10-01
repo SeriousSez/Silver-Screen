@@ -1,0 +1,7 @@
+if(UnityEditor.EditorApplication.isCompiling)throw new System.Exception("Compilation in progress");
+var root=UnityEditor.AssetDatabase.LoadAssetAtPath<UnityEngine.GameObject>(SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Prefab);
+foreach(var renderer in root.GetComponentsInChildren<UnityEngine.MeshRenderer>(true))foreach(var material in renderer.sharedMaterials)if(material==null||material.shader==null||!material.shader.isSupported)throw new System.Exception("Unsupported or missing material: "+renderer.name);
+SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Exteriors();
+SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Interiors();
+SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.AuditViews();
+result.Log("A3 final 36-view capture set complete; all material shaders supported; Edit Mode only.");

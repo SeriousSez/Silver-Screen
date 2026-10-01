@@ -1,0 +1,31 @@
+{
+  "status": "Massing gate ready; production milestone incomplete",
+  "unity": "6000.6.3f1",
+  "automatedPreflightChecks": {
+    "passed": 34,
+    "total": 34,
+    "type": "Unity Editor validation, not NUnit or gameplay tests"
+  },
+  "restoredExteriorCaptureIdentical": true,
+  "actualInspectedCaptures": [
+    "01_front_three_quarter",
+    "02_front",
+    "03_rear_yard",
+    "05_cutaway",
+    "06_plan"
+  ],
+  "studioScene": "Assets/Scenes/Studio.unity, active, not dirty, Edit Mode; review scene closed",
+  "browserControlCheck": "File URL policy blocked automated browser inspection. Native Unity captures were inspected directly.",
+  "baselineVerification": {
+    "baselineFiles": 8559,
+    "changedPreExisting": [
+      "ProjectSettings/ProjectSettings.asset"
+    ],
+    "missingPreExisting": [],
+    "head": "7f6a75aa718088501c220ed8ed0dcb357dbb24ea"
+  },
+  "settingsCaveat": "ProjectSettings/ProjectSettings.asset hash changed during the session. No task code or command writes it; exact cause/before-after hunk not established. Preserved current contents rather than reverting unrelated pre-existing settings. Exclude from milestone-owned files.",
+  "liveIntegration": "Not activated; original runtime facility, person interaction and hiring remain unchanged",
+  "noCommit": true,
+  "noPush": true
+}

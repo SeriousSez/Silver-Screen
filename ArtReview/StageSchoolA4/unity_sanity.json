@@ -1,0 +1,30 @@
+{
+    "unityVersion": "6000.6.3f1",
+    "renderPipeline": "PC_RPAsset",
+    "triangles": 586206,
+    "vertices": 697917,
+    "uniqueMeshTriangles": 559106,
+    "uniqueMeshVertices": 663164,
+    "renderers": 110,
+    "materials": 35,
+    "uniqueMeshes": 92,
+    "missingMeshes": 0,
+    "missingMaterials": 0,
+    "sharedA3Renderers": 31,
+    "equipmentInstances": 3,
+    "scaleValid": true,
+    "noGameplayComponents": true,
+    "noLods": true,
+    "compilationFailed": false,
+    "renderSupportComponents": [],
+    "boundsMin": {
+        "x": -11.215002059936523,
+        "y": 0.0,
+        "z": -11.55000114440918
+    },
+    "boundsMax": {
+        "x": 11.215002059936523,
+        "y": 5.949999809265137,
+        "z": 7.569999694824219
+    }
+}

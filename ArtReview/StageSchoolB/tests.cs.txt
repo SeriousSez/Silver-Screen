@@ -1,0 +1,6 @@
+var methods=System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Where(typeof(SilverScreen.Tests.Editor.StageSchoolRuntimeTests).GetMethods(),m=>System.Linq.Enumerable.Any(m.GetCustomAttributes(false),a=>a.GetType().Name=="TestAttribute")));
+var tests=new SilverScreen.Tests.Editor.StageSchoolRuntimeTests();var results=new System.Collections.Generic.List<string>();
+foreach(var method in methods){try{method.Invoke(tests,null);results.Add("PASS "+method.Name);}catch(System.Exception e){results.Add("FAIL "+method.Name+": "+(e.InnerException??e).Message);}}
+System.IO.File.WriteAllLines("ArtReview/StageSchoolB/focused_tests.txt",results);result.Log(string.Join("\n",results));
+
+

@@ -1,0 +1,14 @@
+if(UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)throw new System.InvalidOperationException("Edit Mode required");
+var active=UnityEngine.SceneManagement.SceneManager.GetActiveScene();
+if(active.isDirty)throw new System.InvalidOperationException("Active scene is dirty; preserve it");
+UnityEditor.SceneManagement.EditorSceneManager.OpenScene("Assets/Scenes/Studio.unity",UnityEditor.SceneManagement.OpenSceneMode.Single);
+SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Build();
+SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.CreateReview();
+var prefab=UnityEditor.AssetDatabase.LoadAssetAtPath<UnityEngine.GameObject>(SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Prefab);
+var a=prefab.transform.Find("Furnishings/Audition/StudioLamp0").GetComponentsInChildren<UnityEngine.MeshFilter>(true);
+var b=prefab.transform.Find("Furnishings/Audition/StudioLamp1").GetComponentsInChildren<UnityEngine.MeshFilter>(true);
+if(a.Length!=b.Length)throw new System.Exception("Lamp part mismatch");
+for(int i=0;i<a.Length;i++)if(a[i].sharedMesh!=b[i].sharedMesh)throw new System.Exception("Lamp mesh not shared");
+result.Log("Both lamp instances share all "+a.Length+" semantic meshes. Import and reference sanity completed. Capture in a subsequent editor command after the scene initializes.");
+result.Log("Studio dirty: "+UnityEngine.SceneManagement.SceneManager.GetActiveScene().isDirty);
+UnityEditor.SceneManagement.EditorSceneManager.OpenScene(SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.ScenePath,UnityEditor.SceneManagement.OpenSceneMode.Single);

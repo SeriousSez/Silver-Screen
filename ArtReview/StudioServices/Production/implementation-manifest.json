@@ -1,0 +1,2976 @@
+{
+  "milestone": "Studio Services production detailing and reusable environment kit",
+  "capturedUtc": "2026-09-28T16:49:19.058693+00:00",
+  "head": "7f6a75aa718088501c220ed8ed0dcb357dbb24ea",
+  "baselineFilesCompared": 8654,
+  "unchangedBaselineFiles": 8646,
+  "changedBaselineFiles": [
+    "ArtSource/StudioServices/README.md",
+    "Assets/Scripts/Presentation/Buildings/StudioConstructionDriver.cs",
+    "Assets/Scripts/Presentation/Interaction/PersonInteractionController.cs",
+    "Assets/Scripts/Presentation/Interaction/PersonInteractionSpot.cs",
+    "Assets/SilverScreen/Environment/StudioServices/Runtime/BuildingCutawayController.cs",
+    "Assets/Scenes/Studio.unity",
+    "Assets/Scripts/Domain/BuildingType.cs",
+    "Assets/Scripts/Presentation/Bootstrap/StudioBootstrap.cs"
+  ],
+  "missingBaselineFiles": [],
+  "stage1AndAdministrationArtPreserved": true,
+  "approvedMassingPreserved": true,
+  "focusedTests": {
+    "total": "39",
+    "passed": "39",
+    "failed": "0",
+    "skipped": "0",
+    "start-time": "2026-09-28 16:30:58Z",
+    "end-time": "2026-09-28 16:31:11Z"
+  },
+  "finalPreflight": {
+    "passed": 37,
+    "total": 37,
+    "triangles": 414639
+  },
+  "gitShortStatusEntryCount": 737,
+  "ownedFileCountExcludingThisManifest": 487,
+  "files": [
+    {
+      "path": "ArtExports/PeriodEnvironment1930/kit_manifest.json",
+      "status": "added",
+      "sha256": "05f945b8107464209596b68d5456ed29a4b2731473050dd5712aa3f4a46f40f3",
+      "bytes": 34258
+    },
+    {
+      "path": "ArtExports/PeriodEnvironment1930/kit_meshes.json.gz",
+      "status": "added",
+      "sha256": "ed05d4019c97ed83694f4616ad18d5d3d6141cac67f9c30caa00399b3608ceb1",
+      "bytes": 1347639
+    },
+    {
+      "path": "ArtExports/StudioServices/Production/production_manifest.json",
+      "status": "added",
+      "sha256": "b5ea9ce6153b78c828cae463d6a1095b38ed3cf9a8f53596168d728af1113a4e",
+      "bytes": 64570
+    },
+    {
+      "path": "ArtExports/StudioServices/Production/production_meshes.json.gz",
+      "status": "added",
+      "sha256": "7541bed50c83be1f5778e80703132785c99103fc44c392dc0db295824a2bf762",
+      "bytes": 2388727
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/01_front_three_quarter.png",
+      "status": "added",
+      "sha256": "3677c44753d09ed05f4de54990ec3f8a0af0536a26845015b8501b30417526eb",
+      "bytes": 1365202
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/02_front.png",
+      "status": "added",
+      "sha256": "ed66ab2ffc3947b33b871efacc6371a455ba4bf2000abc02a6248c7c5c836f73",
+      "bytes": 784228
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/03_rear_yard.png",
+      "status": "added",
+      "sha256": "958bc6f2c92dd3ce1d1c956fcd4f76fa8a99bf7871295ea6974e19c73ef99c30",
+      "bytes": 1261524
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/04_management.png",
+      "status": "added",
+      "sha256": "bb7ec39a9711de6c101940ca9d18f977fd9b8450933dbf0cfaa4ef6841622f59",
+      "bytes": 1359048
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/05_employment.png",
+      "status": "added",
+      "sha256": "89278489043a1b5ac52035a51304899db6509939d584d63374fee7f37e164825",
+      "bytes": 1969662
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/06_workshop_doors.png",
+      "status": "added",
+      "sha256": "c1f32ab84391a8c8572a7c62ad3d887a46e5af9d2ba8e4309dcca7e6a42d325a",
+      "bytes": 2221809
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/07_working_yard.png",
+      "status": "added",
+      "sha256": "3500c224ce15eb10ecdfde61a18dfe6844a6c3d1afe60ef7af0049094532b8b2",
+      "bytes": 1942080
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/08_cutaway.png",
+      "status": "added",
+      "sha256": "5fddf395b102603e130b2b7ed50f5c410af7b0004fab2006ea7ac54aa6eb2d2a",
+      "bytes": 1538072
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/09_plan.png",
+      "status": "added",
+      "sha256": "8cf692464093453e7417d9eb94198f51270954a869221e8601df0b895c7de4c0",
+      "bytes": 2046897
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/10_office.png",
+      "status": "added",
+      "sha256": "268c72f348980100dc7d682e99190438b30c943f24de6920fbf7fb4c55745fcd",
+      "bytes": 2289031
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/11_workshop.png",
+      "status": "added",
+      "sha256": "0b4b2e6e0556fde922a4c54ee9fdcb21fa564b344bb6e0e3e173f596c8311f0e",
+      "bytes": 2297296
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/12_storage.png",
+      "status": "added",
+      "sha256": "bd018615068b73be5503e955e6a12148dc22e29128018851a57f41c8943c02e9",
+      "bytes": 2217111
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/13_restored.png",
+      "status": "added",
+      "sha256": "3677c44753d09ed05f4de54990ec3f8a0af0536a26845015b8501b30417526eb",
+      "bytes": 1365202
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/14_live_held_cutaway.png",
+      "status": "added",
+      "sha256": "9ba60f45bb187626834ab6f49f9c4cd22e1fbc7962f192b21845f611b93cdf68",
+      "bytes": 905176
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/15_drainage_corner.png",
+      "status": "added",
+      "sha256": "3c70605bdcceeb713580af457d27d6416e4cfe55e9596c66055a2fc8391634cf",
+      "bytes": 2264768
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/16_left_eave.png",
+      "status": "added",
+      "sha256": "61ba6ac5a3c4e07b142bc42d610651033432357b52d763eb68c01e33f0a2f066",
+      "bytes": 1933455
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/17_live_exterior.png",
+      "status": "added",
+      "sha256": "1d423900a5a4e21cc91cf211c95cef651830a1d6cdffa853915d62184f401f26",
+      "bytes": 851706
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/checks.json",
+      "status": "added",
+      "sha256": "f8ecbd3d7d84168f447a36eacfe22c0ec75c5effaadd5dd32e65505792ce52f1",
+      "bytes": 6881
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/mesh-validation.json",
+      "status": "added",
+      "sha256": "7990279f318ec6e33a993bd954b7e0712bdbc437a2cd0765dee9c630b72d6b71",
+      "bytes": 532
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/review.html",
+      "status": "added",
+      "sha256": "5e41b0c30d93c0fafab4958e74f940accd125430a7ae48438bcf46a11d11eba6",
+      "bytes": 15867
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/runtime.txt",
+      "status": "added",
+      "sha256": "1b74c68272f04554733ef3166f126a032ab1232b8af5f9f2e7753c4771ce47fb",
+      "bytes": 385
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/tests.xml",
+      "status": "added",
+      "sha256": "7f7d4aa8dfb471efca3eae4d85e7a74aafed42b609d1fe1faa0ea1307cec574e",
+      "bytes": 32068
+    },
+    {
+      "path": "ArtReview/StudioServices/Production/validation.md",
+      "status": "added",
+      "sha256": "f2519b7f0412b4bbdfabc4382f0778afff617d744948b9e58dc75e9517053a07",
+      "bytes": 4853
+    },
+    {
+      "path": "ArtSource/PeriodEnvironment1930/PeriodEnvironment1930.blend",
+      "status": "added",
+      "sha256": "7fe2121d1c5387c0f66f4afed777bc5793f57e772c6bac267f03968e173d7764",
+      "bytes": 865874
+    },
+    {
+      "path": "ArtSource/PeriodEnvironment1930/README.md",
+      "status": "added",
+      "sha256": "80527cbdc939a1a8efeaabc865dbf8ff9b2e9dd9a32fdd722b6df8b1f3bff2ab",
+      "bytes": 3499
+    },
+    {
+      "path": "ArtSource/PeriodEnvironment1930/build_kit.py",
+      "status": "added",
+      "sha256": "ef5e573e358f5873521f825aea1f40f430b3ba3d9d5e84e78fdaf35057eb563b",
+      "bytes": 27811
+    },
+    {
+      "path": "ArtSource/PeriodEnvironment1930/geometry.py",
+      "status": "added",
+      "sha256": "ac30f9952494a90d4b08e6e8c3cbb39c7c14421d1baf14e20efe4f287402f730",
+      "bytes": 7662
+    },
+    {
+      "path": "ArtSource/StudioServices/README.md",
+      "status": "changed",
+      "sha256": "a07b9bf110b9cfb07602493250535f5a8302f13a34834db559a221688d423d7f",
+      "bytes": 8215,
+      "baselineSha256": "a038d58d816589180ab03a0df5de491f94be7f7af7451b8a7a8f782be80785f9"
+    },
+    {
+      "path": "ArtSource/StudioServices/StudioServices_Production.blend",
+      "status": "added",
+      "sha256": "7b58512b35441a0173b6cc7ae5c4c4f3008fdc21f1c3ef467a2389d7f3bcee22",
+      "bytes": 1977524
+    },
+    {
+      "path": "ArtSource/StudioServices/build_review.py",
+      "status": "added",
+      "sha256": "838c69bc8795cc9e203e70c68dc6630385cf0dbd884c6c05d23686afe28c671b",
+      "bytes": 8727
+    },
+    {
+      "path": "ArtSource/StudioServices/generate_production.py",
+      "status": "added",
+      "sha256": "9520b5244354603652073918e1470dc7010f334cca726359f12e7f9edcc2684f",
+      "bytes": 21480
+    },
+    {
+      "path": "ArtSource/StudioServices/validate_exports.py",
+      "status": "added",
+      "sha256": "f931814962fd52d6bfd611cff474bfe43da39f738a5170ab610c68f76979d606",
+      "bytes": 2240
+    },
+    {
+      "path": "Assets/Scenes/Studio.unity",
+      "status": "changed",
+      "sha256": "cf67bba36af2f2cc9677432e9bc22d0fc1fb6b8f34204a401f786d639e81d4bb",
+      "bytes": 486483,
+      "baselineSha256": "1ec4bb0925316abd4c02d82f374badb8c993482d9c9d37eff5463d169343e1d6"
+    },
+    {
+      "path": "Assets/Scripts/Domain/BuildingType.cs",
+      "status": "changed",
+      "sha256": "ca4438870054ad4fe81bcc8e5b8cd0ea5527362cd4a55685f6f59909495dc177",
+      "bytes": 261,
+      "baselineSha256": "26754a6ae683477fef1b66b82f2e03bf899b8565eb92fa31112739dc0072add5"
+    },
+    {
+      "path": "Assets/Scripts/Presentation/Bootstrap/StudioBootstrap.cs",
+      "status": "changed",
+      "sha256": "18410f11530f24f751e221cf1a58fe955c750af39f3fba0a73bbe27a88aeceb2",
+      "bytes": 6355,
+      "baselineSha256": "a450c59e1a090cdf17ae604ffa66eff62537951c8d14dbf3fcc79f430fb9b78f"
+    },
+    {
+      "path": "Assets/Scripts/Presentation/Buildings/StudioConstructionDriver.cs",
+      "status": "changed",
+      "sha256": "10737df3db5d994e8b6072cf4b4f40eeff67ed9e84fdc6434ef2d53c0e376fde",
+      "bytes": 17593,
+      "baselineSha256": "2330da1edca46a17e07a227ccd3562f22278f03da85f8bd22bc71b859c142734"
+    },
+    {
+      "path": "Assets/Scripts/Presentation/Interaction/PersonInteractionController.cs",
+      "status": "changed",
+      "sha256": "0f04f4491c615689fe8b282c526563010dfe844548648b4072f1a48a8923f412",
+      "bytes": 18599,
+      "baselineSha256": "894c9ba0fcf9518aa05fff572ecf3098bd52eddb5e5011e9de08506b0a44b918"
+    },
+    {
+      "path": "Assets/Scripts/Presentation/Interaction/PersonInteractionSpot.cs",
+      "status": "changed",
+      "sha256": "4eff713273daad40397484c59a9c74b078a44e3c5d61300e146215374135852c",
+      "bytes": 4196,
+      "baselineSha256": "16aebd7eee77507287acd1cbb61d3fbe1ffcd40236c1b8226af964898620a2e3"
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930.meta",
+      "status": "added",
+      "sha256": "d6898081b82204dbb72a5fdbf48175aec7a18979bae023def47ffd10973bcc9d",
+      "bytes": 172
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions.meta",
+      "status": "added",
+      "sha256": "07490f08797f9dd61e76d55c75f10e6ccf6211a6199e7598223cf4eac57bc83f",
+      "bytes": 172
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/ArchiveBox_1930.asset",
+      "status": "added",
+      "sha256": "06e72fe058330fb3b2a736f48081e296b705ab260540d7af63761dc17b14cc5c",
+      "bytes": 1432
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/ArchiveBox_1930.asset.meta",
+      "status": "added",
+      "sha256": "d01cc6404c1081ef4d9ad6de45b1c9709b4da3cd965cc98bcdb216ee3f69025a",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/AwningCurved_164_1930.asset",
+      "status": "added",
+      "sha256": "1a375732184f921670bda6b52968b619df84d3e94199616112bed102f0483072",
+      "bytes": 1441
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/AwningCurved_164_1930.asset.meta",
+      "status": "added",
+      "sha256": "a7df883bc0bf0e8bfc62c0a127a4d85351b99a97d2bccc96d799d1c67b03ba5d",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/BarrelPaintedSteel_1930.asset",
+      "status": "added",
+      "sha256": "379232f01f6010c6c6261a024b57ae3ce32c47680c02808b888e927617fff055",
+      "bytes": 1446
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/BarrelPaintedSteel_1930.asset.meta",
+      "status": "added",
+      "sha256": "aa1ab748dc6817f5150c96f856343ce6bfb028d3bd3e03238ae7e74f447660d8",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/BarrelTimber_1930.asset",
+      "status": "added",
+      "sha256": "288624fa7feaf44cdbec631e1ba1de3befcf6b7dfe88f9ae4d6d2e13d0cf2102",
+      "bytes": 1437
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/BarrelTimber_1930.asset.meta",
+      "status": "added",
+      "sha256": "5fc4cfc8aa35768b27b6a74191642925de4fb62b806f92b205b3768147836131",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/BenchSlatted_210_1930.asset",
+      "status": "added",
+      "sha256": "959b052a527fee2a30dafe4bd2a0acee942b34b47c8fb54df43f49d4e59db81b",
+      "bytes": 1431
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/BenchSlatted_210_1930.asset.meta",
+      "status": "added",
+      "sha256": "33d6a76de6a7261407b1bf43d051ab459b9f1106fe76a677c0c55d78b308f242",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/ChairBentwood_1930.asset",
+      "status": "added",
+      "sha256": "0377c41bba34a5bf655c231aa861a46fb8323a151216c1534296daded34e47bd",
+      "bytes": 1434
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/ChairBentwood_1930.asset.meta",
+      "status": "added",
+      "sha256": "46fbf16ccafd20e643aece538ca509739fa512146c9390d67accf8ff5e7d58da",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/ConduitElbow90_1930.asset",
+      "status": "added",
+      "sha256": "abd70def86d4f1f23fc1e66b9d15d580ba7f473bbb77db15427525c27bb730f7",
+      "bytes": 1432
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/ConduitElbow90_1930.asset.meta",
+      "status": "added",
+      "sha256": "01e294bd26d61b82aedbd34a825c70eefd2799110c67d3fb86b7974cbb3a2572",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/ConduitStraight_100_1930.asset",
+      "status": "added",
+      "sha256": "19e38968061c269c9b56ce9d79779c2ba580b2cf596e8012494ecbb311274c7c",
+      "bytes": 1430
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/ConduitStraight_100_1930.asset.meta",
+      "status": "added",
+      "sha256": "79f18af7448380463074718747053db18750e3da9a848b0b04c53c4c0a17c863",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/CrateTimber_045_1930.asset",
+      "status": "added",
+      "sha256": "38d0065fdd5f5a9b4b1321c30f2c1974d8a0b35626fecbce119a66110445b413",
+      "bytes": 1424
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/CrateTimber_045_1930.asset.meta",
+      "status": "added",
+      "sha256": "7e0c6bf1b7ac5f528333d2e5efa69bfa83cb92f453d48f19d37e5ff1be815234",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/CrateTimber_075_1930.asset",
+      "status": "added",
+      "sha256": "eb19d37f8f603ac5d3e840c76a8c56fb473b26748fd2f1bb26be7d49421279fd",
+      "bytes": 1421
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/CrateTimber_075_1930.asset.meta",
+      "status": "added",
+      "sha256": "d7c537f9a7a27ffaae875af2c8a1ddebfbdde95010de5a9c4c39324e1edeec2b",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/CupboardUtility_1930.asset",
+      "status": "added",
+      "sha256": "1c11ca2a0022f31e189c492a49391abf2017a5e1402bf65eb0f5381a72d5faef",
+      "bytes": 1470
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/CupboardUtility_1930.asset.meta",
+      "status": "added",
+      "sha256": "ea1ba0e069792b5b0d64b68224a91972a805dd0135ce0f7b69257e07608756f1",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/DeskLampBanker_1930.asset",
+      "status": "added",
+      "sha256": "d09de39b0f5c0e23820dfe35253bcb97859211093dbde59b32bf33ddf604a2f2",
+      "bytes": 1435
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/DeskLampBanker_1930.asset.meta",
+      "status": "added",
+      "sha256": "8eaaebcfb09814eabd641b77b9e600e2c5f1ccfc45b062557d74362665dd9057",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/DeskPaperwork_1930.asset",
+      "status": "added",
+      "sha256": "fe2a1af50f1a226f9cd0cc8b3d4463c6dbd2bfef86696f71796ee69d553b8d51",
+      "bytes": 1474
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/DeskPaperwork_1930.asset.meta",
+      "status": "added",
+      "sha256": "eb5ff718edfc5ebda428dfa9c45fc1a2e0f1bcb746e22a32fc1428edc1dd334b",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/DeskPedestal_1930.asset",
+      "status": "added",
+      "sha256": "622b57909e102bf988b82048b4eca0545b7c3dd8f7af43edc79172f4d7061f96",
+      "bytes": 1423
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/DeskPedestal_1930.asset.meta",
+      "status": "added",
+      "sha256": "47f88c1166b6057f3fb37cd05fc1159dea2aebca2d997b092e033d14da899a2d",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/DoorFrameTimber_120x262_1930.asset",
+      "status": "added",
+      "sha256": "d653ed4249febdb1121ad51956fc5c96f94764447b32cb127c28e583037fe857",
+      "bytes": 1451
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/DoorFrameTimber_120x262_1930.asset.meta",
+      "status": "added",
+      "sha256": "d8799af8d5ea771f67a570ba74863b3b6fed74704dc6743e7f56f2cb2396b096",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/DoorGlazedTimber_110x258_1930.asset",
+      "status": "added",
+      "sha256": "7b372f121d703b97ff12de6f7d515cba74bd50aee09f0e306bb5100327375302",
+      "bytes": 1488
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/DoorGlazedTimber_110x258_1930.asset.meta",
+      "status": "added",
+      "sha256": "5b8a86c20564beea9b54cee9ffeeb4a917246d472fa71c3103500d818f95f816",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/DoorUtilityTimber_150x260_1930.asset",
+      "status": "added",
+      "sha256": "f2026905e74cae69621c1837720cc2396466eddc21e188e6f2f2043f0e530d78",
+      "bytes": 1481
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/DoorUtilityTimber_150x260_1930.asset.meta",
+      "status": "added",
+      "sha256": "987a66c30d50f6ec38e9a22a52020e17afc9854feef0ce3dea7a9864e898ecba",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/DownpipeElbow90_1930.asset",
+      "status": "added",
+      "sha256": "a97e10e8ab42b572b75b892a4d758fbead3053a427bab9b62677dc9d8553f6c5",
+      "bytes": 1438
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/DownpipeElbow90_1930.asset.meta",
+      "status": "added",
+      "sha256": "8dd48d9c88ee146101d9395cd9947ac8579eb031b69936106907e4fef7aa0cc9",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/DownpipeHollow_300_1930.asset",
+      "status": "added",
+      "sha256": "5f15b6fbf7fe385fb3f6f30aaf53a0198bac6248bb34045ffd879b395816c9ac",
+      "bytes": 1442
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/DownpipeHollow_300_1930.asset.meta",
+      "status": "added",
+      "sha256": "c97af69018b04faafee9ab05e00e945a02d761b46e9dcd9b4e3e08a27273a5cf",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/DownpipeShoe_1930.asset",
+      "status": "added",
+      "sha256": "4fb5ad26e31e594af5ff510db503a66d58e9fef0d0c18a34b6d6f43bca020fdc",
+      "bytes": 1411
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/DownpipeShoe_1930.asset.meta",
+      "status": "added",
+      "sha256": "2eafe2449f14ee90469c433ac3b52b72c647ac377f799045da53a847dcd148c1",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/EmploymentPorchTimber_232_1930.asset",
+      "status": "added",
+      "sha256": "c37912978ab56b0db19477335508bc8323f865fda5560a9ff762cf3ce0815027",
+      "bytes": 1489
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/EmploymentPorchTimber_232_1930.asset.meta",
+      "status": "added",
+      "sha256": "813889f45c4e98a4e8eb0b3ca4f6b09a8145ecbacf8f1599769aeb814afa8ff9",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/FenceGateWire_180_1930.asset",
+      "status": "added",
+      "sha256": "afd7db82954a6918eb4d9d6e057aa76d185061fb856ab0cf8fb544e0b34e8668",
+      "bytes": 1453
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/FenceGateWire_180_1930.asset.meta",
+      "status": "added",
+      "sha256": "b048d196b291d6f67c739397fc8742c9bf9060c3dff7eb7b69e7ceb50bf727cf",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/FenceWire_065_1930.asset",
+      "status": "added",
+      "sha256": "338a44f97c9e9f843800b069156696c3fd4fb03c1ea7517839562e3630782df2",
+      "bytes": 1382
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/FenceWire_065_1930.asset.meta",
+      "status": "added",
+      "sha256": "9612a348efbf8141f7c8c2ed03e848bcfaae8d1de478bea0793551603b2e7edf",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/FenceWire_135_1930.asset",
+      "status": "added",
+      "sha256": "eeef928d7ac2e823b8795092ec49925da42e520c280c2bcccc2ee395c8a392b8",
+      "bytes": 1382
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/FenceWire_135_1930.asset.meta",
+      "status": "added",
+      "sha256": "79a2af273f121fc081445989839663cb82ed0f4756e38dc9e853d296ac4b5320",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/FenceWire_175_1930.asset",
+      "status": "added",
+      "sha256": "3b88676e786878f73efd00ff79ba86673407281de03566f3abd22bf0371265d4",
+      "bytes": 1382
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/FenceWire_175_1930.asset.meta",
+      "status": "added",
+      "sha256": "dc05ac0180bc3b62d415494a2070e51aa3459dbf914a41c42acd5c3c5dc4bc2c",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/FenceWire_200_1930.asset",
+      "status": "added",
+      "sha256": "973a310445e847aa012b23b6042f686a5d3989c50c469cda5e6c57dd861ca41b",
+      "bytes": 1381
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/FenceWire_200_1930.asset.meta",
+      "status": "added",
+      "sha256": "451ea837e54dc9273d338b6c8618a580c6be448dfac30edd5b1bd0a4e7353cd3",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/FilingCabinet_4Drawer_1930.asset",
+      "status": "added",
+      "sha256": "6e673e4fc63a16fa8d679a245e2bc9345f5cf6c9e0f36fd6448e499cd9c72ce3",
+      "bytes": 1465
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/FilingCabinet_4Drawer_1930.asset.meta",
+      "status": "added",
+      "sha256": "01f084cef33342b147ffaccbc28a6ea08e6d61af6709fc211f38c3635ab44981",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/GroundsToolRack_1930.asset",
+      "status": "added",
+      "sha256": "28ea0d7589240bcd70ed4075493e9a16b906f45fd42a4bfabd055454dc74e20b",
+      "bytes": 1465
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/GroundsToolRack_1930.asset.meta",
+      "status": "added",
+      "sha256": "0039b849544b0b3ac14107e6117169d31b203f6d1bca3c6a246944b4b581261f",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/GutterCorner90_1930.asset",
+      "status": "added",
+      "sha256": "b366c0b0eed5625ca0944884ed890d3bdeb2deefdc3dc1e48cbc616e1bb191ac",
+      "bytes": 1434
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/GutterCorner90_1930.asset.meta",
+      "status": "added",
+      "sha256": "1c5c54943b5e998d2770e138d184c5de1ff472397deb7f32a9d988d67fd3efc3",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/GutterHalfRound_040Plain_1930.asset",
+      "status": "added",
+      "sha256": "8a3a56a01b9306649c32ff04e36f7b75c2d9e1fe7310e4555d838fedee9b8b00",
+      "bytes": 1467
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/GutterHalfRound_040Plain_1930.asset.meta",
+      "status": "added",
+      "sha256": "8c22237da77ae6b19e4e8a595614bd669b941d6cf2d7d6a1cd05ab158080905f",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/GutterHalfRound_040_1930.asset",
+      "status": "added",
+      "sha256": "0dd9c5d82ead421cc072a6499e072d303c3c9b3995972c499c848e56209e0475",
+      "bytes": 1452
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/GutterHalfRound_040_1930.asset.meta",
+      "status": "added",
+      "sha256": "1d9bf0a1d3f87094275917e5663ce82d201bedd29d8a9ad2d1d5c9873891dc92",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/GutterHalfRound_060_1930.asset",
+      "status": "added",
+      "sha256": "e9d3b7e447ae1a2b7ddeec50ca0b6fbf018b24693d9fd7ff7fa3f158ffabe501",
+      "bytes": 1452
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/GutterHalfRound_060_1930.asset.meta",
+      "status": "added",
+      "sha256": "1cb4336e3c862ce7b130d7c21d0ac569029ecd3d109a60b0a36c3ec6d9890b2e",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/GutterHalfRound_155_1930.asset",
+      "status": "added",
+      "sha256": "539213ce1b06ad77db025cc3d772c71f6493bceed6f7d51d82abbc038479fff6",
+      "bytes": 1456
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/GutterHalfRound_155_1930.asset.meta",
+      "status": "added",
+      "sha256": "1c33492fd579e42ac81f844e4e9ca4b843fd54b99bd77422b1bf27875dafdd3f",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/GutterHalfRound_165_1930.asset",
+      "status": "added",
+      "sha256": "6c3dc746decc982332aa0b7ffa5eb22f3c7278e935a2d0d9c8d095073bcfcfb8",
+      "bytes": 1456
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/GutterHalfRound_165_1930.asset.meta",
+      "status": "added",
+      "sha256": "286a7254daf6a09d5987a84c6a71d0ada4ea2378633ef89df84a102639b54861",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/GutterHalfRound_175_1930.asset",
+      "status": "added",
+      "sha256": "7cc44cc3008507f7086e861e02eca71783ee2288b5e608ef05022ff1c1a1cdc0",
+      "bytes": 1456
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/GutterHalfRound_175_1930.asset.meta",
+      "status": "added",
+      "sha256": "5dc482a7119c16d82739f348f916a40ecc2fafeece1e0cf00d290f82146d7f30",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/GutterHalfRound_200_1930.asset",
+      "status": "added",
+      "sha256": "6890ef34a2480c575d38994903c206ecd19d4af7a11a3eebd0afa2cac8fe56a6",
+      "bytes": 1448
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/GutterHalfRound_200_1930.asset.meta",
+      "status": "added",
+      "sha256": "d3b0d774a094ddd37739f4b6a9353195575fadaff0a53c8110210af8166bf40e",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/LadderTimber_260_1930.asset",
+      "status": "added",
+      "sha256": "364f8bee1a246e2501b53f62a68bb425aaeeb935aa23316366f66516d1445058",
+      "bytes": 1409
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/LadderTimber_260_1930.asset.meta",
+      "status": "added",
+      "sha256": "d0caf8e4c1f974419122dc0ae7f7c4b7849ead3a828cb5bb8ae71a98c9bda361",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/LumberStack_240_1930.asset",
+      "status": "added",
+      "sha256": "4b05869f3dc4ba9f9b7dc2caa5cfbdb4a4f4c8ed177266e6fd7211efb079c937",
+      "bytes": 1446
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/LumberStack_240_1930.asset.meta",
+      "status": "added",
+      "sha256": "d015c0a82279dba8f80d0325cac97ffe3a227f2201893c78776454232e7feb16",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/MaterialRackTimber_400_1930.asset",
+      "status": "added",
+      "sha256": "381d77c4cf11d4b3285295757e5821a8525b1a66e1da9edbcb6f8e36423aaa08",
+      "bytes": 1400
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/MaterialRackTimber_400_1930.asset.meta",
+      "status": "added",
+      "sha256": "716d8a63ef01d5f088e2c47a3ce466824ccb53b2d7550da0f6bb5c99f0b915c4",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/NoticeBoardTimber_173_1930.asset",
+      "status": "added",
+      "sha256": "ab3b35a5d5c89d905600ed8bf03db75ea4a8b3da660188bfac62183e506594a3",
+      "bytes": 1454
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/NoticeBoardTimber_173_1930.asset.meta",
+      "status": "added",
+      "sha256": "174f68e283ea8c46d22c998540c5fc8eb723e3793642235e526cf8ab7a15f97b",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/PaintCan_1930.asset",
+      "status": "added",
+      "sha256": "0c8a3e063c8b79369efa3d4ea40debb733259bb5ae3364371766b4a04f8c7abf",
+      "bytes": 1405
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/PaintCan_1930.asset.meta",
+      "status": "added",
+      "sha256": "e515e4dffe105bb66ef213673a426dca726e0f5082bf3c3540ab9558e8a03272",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/SackCanvas_1930.asset",
+      "status": "added",
+      "sha256": "aad571ad286f75e5d8ac69d0fb3d1297d21714a4ef26dd7cacaa8426672aa07c",
+      "bytes": 1435
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/SackCanvas_1930.asset.meta",
+      "status": "added",
+      "sha256": "e2d1bfe443bed8c9cfe88105ee872efccc7cf6497b0820a39bed12d2e16423fc",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/ScaffoldBayTimber_200_1930.asset",
+      "status": "added",
+      "sha256": "154237b3eb0b3b21a45415c8bfc05ea71b4afe81502ff2e138353486328b10c3",
+      "bytes": 1425
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/ScaffoldBayTimber_200_1930.asset.meta",
+      "status": "added",
+      "sha256": "7a176d0e3fc9a4c6fea87b7da82c48f78c68dbfe1735c0305a1e29abfcb4d91d",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/ServiceDoorPair_485x346_1930.asset",
+      "status": "added",
+      "sha256": "0d0e396c06090dc2c2a5f5090435fa9f3bca98cdbcf1eeb8a11a5fea09b0579a",
+      "bytes": 1494
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/ServiceDoorPair_485x346_1930.asset.meta",
+      "status": "added",
+      "sha256": "6a5353d04f76a70d8099ec39adc84bacf43d6d476239aa8da804f5cdf85840bd",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/ShelfSteelTimber_170_1930.asset",
+      "status": "added",
+      "sha256": "8303e0e923033ae068fdafcbb84804a6536c1ef5cd9beb9e79d34e469d197906",
+      "bytes": 1424
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/ShelfSteelTimber_170_1930.asset.meta",
+      "status": "added",
+      "sha256": "d15f2949073dc8d5b1dc9ebacbaaa26907a25194d9b15eb65484bdfa56718089",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/SplashBlockConcrete_1930.asset",
+      "status": "added",
+      "sha256": "8fa26201c698fbfbc2b58126e1443846ef6d97705dd29cf7aaeb036844ed5555",
+      "bytes": 1414
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/SplashBlockConcrete_1930.asset.meta",
+      "status": "added",
+      "sha256": "9a6f4951aae2b86f13790622b67c20daeed5e557a2d6fc67fdfc81414a41d533",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/TelephoneDesk_1930.asset",
+      "status": "added",
+      "sha256": "6e2318eb6e80d2700fae91c99e4d3c137d08cab8fbe883623a8f9ae532863f74",
+      "bytes": 1428
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/TelephoneDesk_1930.asset.meta",
+      "status": "added",
+      "sha256": "c85f40f7c6ebfdffbcc584b8a6694ff3c1219543ecd621a74e3b48cfe2b5b456",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/ToolRackCarpenter_1930.asset",
+      "status": "added",
+      "sha256": "2c9ee2ee67c1ae721eba56b1770a8e8b4bf6d1efaf06c4c4e17ec7bfac9bc616",
+      "bytes": 1481
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/ToolRackCarpenter_1930.asset.meta",
+      "status": "added",
+      "sha256": "ce537c22e5c9196f65a88c022f5eb0c0c7a243f4ac17662c83f9b021f373bf85",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/ToolTrayCarpenter_1930.asset",
+      "status": "added",
+      "sha256": "ac4a52f9401c8c6c01103985c627efef4ada5c03aa4e1eecd53ab5b619f87050",
+      "bytes": 1437
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/ToolTrayCarpenter_1930.asset.meta",
+      "status": "added",
+      "sha256": "9a381bf53db373f5e6033ea703a55d0868ba03f668c2f6772d3222a94381c2f6",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/WheelbarrowSteel_1930.asset",
+      "status": "added",
+      "sha256": "77fd5bd00e193dabcd92da064947b191c263ca6e234363122f79d8f46a75200e",
+      "bytes": 1471
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/WheelbarrowSteel_1930.asset.meta",
+      "status": "added",
+      "sha256": "7ff495b0ea6476a65c4f168b73e5e3f9391a27b950b1a3c6fdee3b59d97ac2e0",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/WindowSteel_190x180_1930.asset",
+      "status": "added",
+      "sha256": "2139b688c99b2ad779f21a09afca318bb3d01fa19d4efb2804533ad302fccf44",
+      "bytes": 1475
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/WindowSteel_190x180_1930.asset.meta",
+      "status": "added",
+      "sha256": "aa516e6700013a2e305978ddc9bfd81dec38faf7cbd5ec1775bb07c882f1e193",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/WindowSteel_195x212_1930.asset",
+      "status": "added",
+      "sha256": "c14c50a03da88ed581e39ac06fc788d29c8c17ea27fe22a41a808ce77c4b2785",
+      "bytes": 1475
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/WindowSteel_195x212_1930.asset.meta",
+      "status": "added",
+      "sha256": "7749a60088f42b005fd40efc3c5c1be460ba5574aa97f1bb8b4e341e34dbeeda",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/WindowSteel_200x180_1930.asset",
+      "status": "added",
+      "sha256": "1cd8d7f75d075c90c2fb85c6df43f2e64aab504ef3ee868bc5c0529b4ad4e5ca",
+      "bytes": 1473
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/WindowSteel_200x180_1930.asset.meta",
+      "status": "added",
+      "sha256": "2e793ab558faa937a1c2ed07042ef8f773353b4d5b127028adf6c28dac7fc0a2",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/WindowSteel_200x210_1930.asset",
+      "status": "added",
+      "sha256": "375805d99d72b07c8dcc13d846d04991b71c86fd7627a8855fc634e98fc40fdc",
+      "bytes": 1471
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/WindowSteel_200x210_1930.asset.meta",
+      "status": "added",
+      "sha256": "51b35198d2e0b929e26f884460e2cc8eb6a3687a7ec16631b280b44aa8274c97",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/WindowSteel_265x205_1930.asset",
+      "status": "added",
+      "sha256": "15de8eaa364ff931e3c7c6944b0090b375a1af7c2e8a91d23bd0a3ee79172cd2",
+      "bytes": 1475
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/WindowSteel_265x205_1930.asset.meta",
+      "status": "added",
+      "sha256": "7e0272f7e010ba9eeac466ba3819b3ac4afdc506dbf721609600b3cdb8512b6f",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/WindowSteel_310x195_1930.asset",
+      "status": "added",
+      "sha256": "33dee5af4cbebca9263fe74fad00282bf796f90bff68c445dabbc627e625d667",
+      "bytes": 1474
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/WindowSteel_310x195_1930.asset.meta",
+      "status": "added",
+      "sha256": "28232da7d829aa7e48dd09c910f9e975cbef1643b9f31a61494008ccda75f801",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/WorkbenchJoiner_225_1930.asset",
+      "status": "added",
+      "sha256": "62e8d4808f593d34a83fc46fff3ec0a9c857c26a01f9a95ff1f480010f1f5d86",
+      "bytes": 1461
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/WorkbenchJoiner_225_1930.asset.meta",
+      "status": "added",
+      "sha256": "0472c8d9991187db60ab616ecd94d60b30ded9c43d1556f563705290fd16e777",
+      "bytes": 189
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials.meta",
+      "status": "added",
+      "sha256": "898d923894241bc104f83c4af809b2972890a200e0299c85fb1fae677334918f",
+      "bytes": 172
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/Black.mat",
+      "status": "added",
+      "sha256": "76463dfba7989463328be389bc619ce1e418ebfc457757d113f8ee04a290f169",
+      "bytes": 3946
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/Black.mat.meta",
+      "status": "added",
+      "sha256": "8ce0cb344bca9252756354fe5f0144af69866e29f4e2db1e8908d40443397261",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/Brass.mat",
+      "status": "added",
+      "sha256": "e0e2bc57d7c864bdef22393186fdea54aa0ff5d8bde97aa7a1d065492d563cb6",
+      "bytes": 4124
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/Brass.mat.meta",
+      "status": "added",
+      "sha256": "b6ea4171a45cfcacc3a8d15d215f39c0c5a8706cebfa1ce64c52a2a20956ccab",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/Brick.mat",
+      "status": "added",
+      "sha256": "d64df7c25e6db1ad0e62a12228f03a67f9a8a3a36472c3bdabc5cc8a146026f7",
+      "bytes": 4124
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/Brick.mat.meta",
+      "status": "added",
+      "sha256": "aa3080dc38b1e5e631454b2c9383c896a88302a5c96043187e3495ff7389b2ba",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/BrickDark.mat",
+      "status": "added",
+      "sha256": "bf4e845130b59bfa2d62e841343668a0ee3a2cdcf7cf68a3bd965abab18bc83a",
+      "bytes": 4122
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/BrickDark.mat.meta",
+      "status": "added",
+      "sha256": "1a4bd32a4d3f73588e73e21c1164657e4295a04ff76d8e277c7da5615b5e6b58",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/BrickLight.mat",
+      "status": "added",
+      "sha256": "332a73ec27c9b2fbdcd35ab660ab1769c500474785f293ae618a477d75092fdb",
+      "bytes": 4125
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/BrickLight.mat.meta",
+      "status": "added",
+      "sha256": "f97750862da4a4fdf6b8a3e27b9cd2789bb13ab60be9326221382611e4471293",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/Canvas.mat",
+      "status": "added",
+      "sha256": "72dff29ed3c481fcbe848f150b1e3f0c7c998ad66baf8425424c395c151e5990",
+      "bytes": 4123
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/Canvas.mat.meta",
+      "status": "added",
+      "sha256": "e827db53f9b7abcc8e6c5b589cd44013db623c240f12f6279043f6b9e0dfbe37",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/Concrete.mat",
+      "status": "added",
+      "sha256": "3fbb860bd24b5684d27b6084491a85dfdc2286187401f2e69b0eaeeae8ed05b0",
+      "bytes": 4124
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/Concrete.mat.meta",
+      "status": "added",
+      "sha256": "800da980f0e9fb2de9f22991ee51f1a83ca47c6cc9087d865ddbf2c363d87405",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/ContactPatina.mat",
+      "status": "added",
+      "sha256": "3206b6082146dc86d1d9c19efdae4c20cd693f3a38185f245a553184f7e76d91",
+      "bytes": 4113
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/ContactPatina.mat.meta",
+      "status": "added",
+      "sha256": "90eb7fd0bf271633209fbbe1169ac0140b90db4d76303e7029f48344e3824b1c",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/Galvanized.mat",
+      "status": "added",
+      "sha256": "40e0b971daf480934b994a3bf62fdad95f577b6a48f9fb958ab199e701e939cf",
+      "bytes": 4125
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/Galvanized.mat.meta",
+      "status": "added",
+      "sha256": "71b335d385283d6d99f07e4c2743900c0f97471a1067eb5774ce1a93fd4c5bf6",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/Glass.mat",
+      "status": "added",
+      "sha256": "00a153b78a4958bed183f33ba538faae198abb7d33e73d3313259c36df8b649b",
+      "bytes": 4037
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/Glass.mat.meta",
+      "status": "added",
+      "sha256": "258c3e01c79c3655faa209af983b13277c37eed5ad8650c2fa1f9f10337ab6f7",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/InteriorPlaster.mat",
+      "status": "added",
+      "sha256": "0e2723f84ad2147daa438810b1e7b9a62e3ba80f2c8d8e293d696707bb49803e",
+      "bytes": 4131
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/InteriorPlaster.mat.meta",
+      "status": "added",
+      "sha256": "88c64634710adcd11edcbdbd30573dda9363e7cc8ea5d40531c9584e6b438b05",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/Iron.mat",
+      "status": "added",
+      "sha256": "9826e1ba5e31ddd931f384cf99a92b11e15df3de3feb46f7b8e8b6fab2209021",
+      "bytes": 4122
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/Iron.mat.meta",
+      "status": "added",
+      "sha256": "38506f6de7b67209673e053421c921b0ba0d812e6e641b8d41f028b037a73999",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/Leather.mat",
+      "status": "added",
+      "sha256": "957c6640d0aa9b35b7b7dfdc44c9dc833df0fe7a81619ffa159af4c4e78353ff",
+      "bytes": 4127
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/Leather.mat.meta",
+      "status": "added",
+      "sha256": "79b81e14236cf94a3e80122788c12a1236de2549b0074bacbba56a65106cc7c5",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/LimestoneTrim.mat",
+      "status": "added",
+      "sha256": "e1cf4e796f66ba304ddd178319d9ff4050613d2764946cd33c2ab447f7f382c0",
+      "bytes": 4129
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/LimestoneTrim.mat.meta",
+      "status": "added",
+      "sha256": "c485e4972f600ca4bbeb656547a504907b5258b6e840589b464bbcdd5974c9e0",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/Mortar.mat",
+      "status": "added",
+      "sha256": "68ff326a943dfb066bbfd6bfceff723961c62657c6859f8e8b6ee7a09ad5e662",
+      "bytes": 4124
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/Mortar.mat.meta",
+      "status": "added",
+      "sha256": "ea9d6fb6839eea9171981c41ce9b1393ca75731416f20aee407e74c085b462b2",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/OfficeFloor.mat",
+      "status": "added",
+      "sha256": "116c6ff383516e25552e60eedeaa9d8a6d652a2617451afc3d3970d7bf791f1b",
+      "bytes": 4122
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/OfficeFloor.mat.meta",
+      "status": "added",
+      "sha256": "1147c619eec05cc2ef14da826a79dc9ffd16e0acd57fcfb211cdf83ee2035e2c",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/PaintWear.mat",
+      "status": "added",
+      "sha256": "4e080ae5354c4ea11015458b5f3862f644c8062aebac16ec885c903af3c9429a",
+      "bytes": 4129
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/PaintWear.mat.meta",
+      "status": "added",
+      "sha256": "d6d2c88d21f7f6caa4b9089e574a82a6de5117436a6ecdb2299ccf106447fd04",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/Paper.mat",
+      "status": "added",
+      "sha256": "ff3cd4ab22776dc3488deefa0ad9d356ef74e69942197c00e3386793eceb25da",
+      "bytes": 3942
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/Paper.mat.meta",
+      "status": "added",
+      "sha256": "f89da195e5207bb36d1a2e7631021c5cfba80da51fd3ec57cbb48bc64d1715e4",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/PaperLight.mat",
+      "status": "added",
+      "sha256": "02ac9a51ef5398932fb0bf4884559940475e9647eace07cd885867d09f03db47",
+      "bytes": 3953
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/PaperLight.mat.meta",
+      "status": "added",
+      "sha256": "856b9b78a921152db9a7c2c4a661d4476c25d5fba7448416b0874f9dab0cef64",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/RoofMetal.mat",
+      "status": "added",
+      "sha256": "409f63a88af254b60a68856008c0b93e7b4a3bc0abc6f6882844a82759c0f2c8",
+      "bytes": 4131
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/RoofMetal.mat.meta",
+      "status": "added",
+      "sha256": "9071d3bc4f0b2a0ce7640a381e720d396baefe96b7f7689b57808ace93f75e37",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/RunoffPatina.mat",
+      "status": "added",
+      "sha256": "15ee608b8f9eaf2f20575ca42c18fdca94cd0d1b8da39570cb2bd534712bbae7",
+      "bytes": 4111
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/RunoffPatina.mat.meta",
+      "status": "added",
+      "sha256": "2665f47a63a1b378208d139e7b597db72aded7887d531b5de7976709db8ebf70",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/Steel.mat",
+      "status": "added",
+      "sha256": "239a8826a5205fc55454e383c401b3b0d20bf8f6a52c2cb5a43be855b53e1942",
+      "bytes": 4122
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/Steel.mat.meta",
+      "status": "added",
+      "sha256": "5282732caf07d09d17e8eb4a129463643411777b7e9777e103702b25a5184fb5",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/Timber.mat",
+      "status": "added",
+      "sha256": "35ec80e4ae294c3d84f6f595349efce78d08d13a2b1ac073ebe58cf366573eaf",
+      "bytes": 4125
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/Timber.mat.meta",
+      "status": "added",
+      "sha256": "92606555a670939b9b0839706110667a615051767c790157930aa0f6fb3e75fc",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/TimberDark.mat",
+      "status": "added",
+      "sha256": "54f843e2ecbcce636b2232c5549980bdd8005f768e1a8f6d00968c931d809a98",
+      "bytes": 4122
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/TimberDark.mat.meta",
+      "status": "added",
+      "sha256": "1471a1cf65b61f6750517cf1d6fce4b30772063827aa62257069de2c2192ed65",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/TimberLight.mat",
+      "status": "added",
+      "sha256": "b9c6b43edfea1b7466294d830aedd3846b810f9b57de2acb83c23b773f10fa1a",
+      "bytes": 4128
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/TimberLight.mat.meta",
+      "status": "added",
+      "sha256": "39e8a8620a32ae24f4214628ec46504b46a65447f905363751d451b219dc58d6",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/ToolRed.mat",
+      "status": "added",
+      "sha256": "c7a914dc1e03828bdc030f9bb6db4302f2ca0d4d29e47d47be03611167a2de7f",
+      "bytes": 4128
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/ToolRed.mat.meta",
+      "status": "added",
+      "sha256": "ab7f920407e53736f2d1b8b5b732dbfd3adef88f2c833f1cb7ab547f91200a86",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/WarmStucco.mat",
+      "status": "added",
+      "sha256": "5a90d6a81c5fd6f581f847352e36e359bddd912da3eb6d2448e9b2fb56d570ac",
+      "bytes": 4118
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/WarmStucco.mat.meta",
+      "status": "added",
+      "sha256": "8bd9ae92d9e9ffb213a2a72a691f7eb8bd98831ed4c09313c78dd56acd2cd39a",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/WorkshopPaint.mat",
+      "status": "added",
+      "sha256": "d123fe9be80fbefdea7a0320995da877f11f23f209269e7cd43e6ef6a67ac654",
+      "bytes": 4123
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Materials/WorkshopPaint.mat.meta",
+      "status": "added",
+      "sha256": "045fd1765fc5297d7c42a8a0f0b8b53f7e64a598295de37971e9713be918217f",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes.meta",
+      "status": "added",
+      "sha256": "78a50b7c79b3186ae33b473323e84d8542508ca942e4ae3603ba08290e93bee5",
+      "bytes": 172
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/ArchiveBox_1930.asset",
+      "status": "added",
+      "sha256": "d3ea3b252ed2f2af90fe1d813961f9861e8f2f565ef5ca967a49021022e99e41",
+      "bytes": 122411
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/ArchiveBox_1930.asset.meta",
+      "status": "added",
+      "sha256": "274c198fcfc9e50b3b4056c799556c822acb36ee9874175fcf184075152cbea1",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/AwningCurved_164_1930.asset",
+      "status": "added",
+      "sha256": "f5af250cb7fbeb006397c098c66c91343a787ad3d4c1abed222c994c5cade045",
+      "bytes": 279431
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/AwningCurved_164_1930.asset.meta",
+      "status": "added",
+      "sha256": "6207b8285504474e4bb70a4a1fd87ff49d3ee24af50ee7e19b920d98dba3ee2d",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/BarrelPaintedSteel_1930.asset",
+      "status": "added",
+      "sha256": "d41510213a741225dae68c2eac66e3ef775b903e3e4baf540f1648003481e873",
+      "bytes": 126426
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/BarrelPaintedSteel_1930.asset.meta",
+      "status": "added",
+      "sha256": "69dedc32b8f033fe28df1d24f81c5d720372a92a95d3aeba8515f287f37d4ff1",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/BarrelTimber_1930.asset",
+      "status": "added",
+      "sha256": "f6dfb206a32784f16159e03f6c2ed8264fd1d1a614a484b07b125e7e78c1d89d",
+      "bytes": 112220
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/BarrelTimber_1930.asset.meta",
+      "status": "added",
+      "sha256": "ea5b4d1c55157ec9b27a391ee51246e48ac54969fbfedb23b6a8280e939ac004",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/BenchSlatted_210_1930.asset",
+      "status": "added",
+      "sha256": "aa43a751959fbd4ae1cc6b5268aa23967fc131d6a32572de3c781ba33bed0695",
+      "bytes": 426501
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/BenchSlatted_210_1930.asset.meta",
+      "status": "added",
+      "sha256": "30c93f3eaa07e2450b4d20f33959520cc75ae7a48058fd8dc569adca0b926596",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/ChairBentwood_1930.asset",
+      "status": "added",
+      "sha256": "b40dfb6a6d417499d344cb007eb75269b817a6033b3690db07a596fe9ff45834",
+      "bytes": 268309
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/ChairBentwood_1930.asset.meta",
+      "status": "added",
+      "sha256": "439b2a77b06789366a20f78f52d11e1677a88c08ecabf159dbe5bb7b5698f971",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/ConduitElbow90_1930.asset",
+      "status": "added",
+      "sha256": "5f7ae28d2bdcf497bee1158464d0b479da3b948d26218d9a167fb544dd32413e",
+      "bytes": 38099
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/ConduitElbow90_1930.asset.meta",
+      "status": "added",
+      "sha256": "bcc8628f3c40547e0956d9678c8e3ef833635eb94e051e0a672eacc0a154290b",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/ConduitStraight_100_1930.asset",
+      "status": "added",
+      "sha256": "d8c5bfb951e5c922c0901371a5a42e178c24c0790e7b769325c93226199a9d54",
+      "bytes": 55614
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/ConduitStraight_100_1930.asset.meta",
+      "status": "added",
+      "sha256": "b3f5322eabccdbb6ad5c95ff2fa03e4df270048b1f27e154ce302c1a89b5a3d0",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/CrateTimber_045_1930.asset",
+      "status": "added",
+      "sha256": "933f28551e9f50424217518a6638ffc8878e74e781a90fe8245df191397f1d52",
+      "bytes": 699392
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/CrateTimber_045_1930.asset.meta",
+      "status": "added",
+      "sha256": "cd56e5323bc2cbc92e9f71c451b1d15a8144cca25488d9d17850f340e5f28bea",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/CrateTimber_075_1930.asset",
+      "status": "added",
+      "sha256": "c873d8d904f60eb17764f34ef1bf21577adc34a46c7e355dab63e3e2404aba79",
+      "bytes": 699397
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/CrateTimber_075_1930.asset.meta",
+      "status": "added",
+      "sha256": "985d34897d94b19e736b593949ecf09ed291f680e5beea3231e2fb6d959c238e",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/CupboardUtility_1930.asset",
+      "status": "added",
+      "sha256": "35b0d68ef922464ed26e8aedda307429e49b93279eb236ce48b3a3ca149fd86a",
+      "bytes": 240590
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/CupboardUtility_1930.asset.meta",
+      "status": "added",
+      "sha256": "27a9058c55d4e57b83d4d19940d5ec47de5a3aa1c3d72b98b4a7717ecea262da",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/DeskLampBanker_1930.asset",
+      "status": "added",
+      "sha256": "b68a59a03854ed3d6ffc5bd404d964637689e547f3f18b9051ed6727e4851fdb",
+      "bytes": 85199
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/DeskLampBanker_1930.asset.meta",
+      "status": "added",
+      "sha256": "4a1e7be0e2942cce1f9f79a4c797d7570b820a4752ad52a6a54719d0180c1628",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/DeskPaperwork_1930.asset",
+      "status": "added",
+      "sha256": "d09a14f0698c4faad574fb945da3854c67efb56f8ad50c1d45e61cb26c5f85fd",
+      "bytes": 108317
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/DeskPaperwork_1930.asset.meta",
+      "status": "added",
+      "sha256": "918ff6a84b73e988f7e266e2a8f1fbdcdda45bc1c60dc115ad604ee4fc7a05c3",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/DeskPedestal_1930.asset",
+      "status": "added",
+      "sha256": "2de297ed64bc73aea942cd51503b4b12f621392bc2ab00fd36bfb4f41ea7a90c",
+      "bytes": 652559
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/DeskPedestal_1930.asset.meta",
+      "status": "added",
+      "sha256": "dc6939f179ac02752250cf97593ea16c4316d348a1dee60c393dfbd02c3c827a",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/DoorFrameTimber_120x262_1930.asset",
+      "status": "added",
+      "sha256": "29ecdbf38e03c273fdd3d14d01da676c535c57fb41851c30a70a599e9b0d5d3e",
+      "bytes": 202168
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/DoorFrameTimber_120x262_1930.asset.meta",
+      "status": "added",
+      "sha256": "c3efaedbce837621ce326a4e4395201c06ca70718a7b2b8c4a7806b21da9e6f1",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/DoorGlazedTimber_110x258_1930.asset",
+      "status": "added",
+      "sha256": "3708522f12bae622d9804ed4bad72f1c8e4afa67892769fafffa9279f4b21743",
+      "bytes": 563649
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/DoorGlazedTimber_110x258_1930.asset.meta",
+      "status": "added",
+      "sha256": "d57392acfa84b5d25b68f0d4570565172887c678f2929f87d08b6c0136eba519",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/DoorUtilityTimber_150x260_1930.asset",
+      "status": "added",
+      "sha256": "36e382a7f235681acc0a6a8e2dcbcd0cac9373c9c03f8eefe7553a099209bbcc",
+      "bytes": 582864
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/DoorUtilityTimber_150x260_1930.asset.meta",
+      "status": "added",
+      "sha256": "b920f93838f601813c73db90f208e0e54cecf3fb192cf1bf028cccf8b0dd7ed6",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/DownpipeElbow90_1930.asset",
+      "status": "added",
+      "sha256": "24d1ad5abc8af4fa4b868376e228743b9062446ce28d4a7159571db29eca7716",
+      "bytes": 53460
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/DownpipeElbow90_1930.asset.meta",
+      "status": "added",
+      "sha256": "ad37f50663b9703974629f5bd28955223a6bfc258f2af7c0503649e0145db5f8",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/DownpipeHollow_300_1930.asset",
+      "status": "added",
+      "sha256": "73ac9f289974214139cd6b353a4d51b3206662f7c8f10b42187196e7d9eba073",
+      "bytes": 126704
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/DownpipeHollow_300_1930.asset.meta",
+      "status": "added",
+      "sha256": "4909841657882d295bee986f3bc340edf8e54d6a1621b7478691b15d4da79a8f",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/DownpipeShoe_1930.asset",
+      "status": "added",
+      "sha256": "f4abd717740e9774b29a83ce1070fe3bb5d4760bbd8ad454f3afd17fad123454",
+      "bytes": 22715
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/DownpipeShoe_1930.asset.meta",
+      "status": "added",
+      "sha256": "f3e4b1047e6be770bb6fb379655ec4f516f9bf0c1e74390f2e6fb928980cd97e",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/EmploymentPorchTimber_232_1930.asset",
+      "status": "added",
+      "sha256": "e764c0980f6604a9923d0b1de02343989cec1c34c392a72bd11ad163e94cdbfb",
+      "bytes": 1084278
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/EmploymentPorchTimber_232_1930.asset.meta",
+      "status": "added",
+      "sha256": "6da102c73d6e757ca03d547c34c5eb9951973439efb1b10cbdc6d39d82f118e7",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/FenceGateWire_180_1930.asset",
+      "status": "added",
+      "sha256": "9ef5254da5a7d1d2777f50b4140c73b4bcf1d337eadb12a8adc51e9820c3a639",
+      "bytes": 222880
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/FenceGateWire_180_1930.asset.meta",
+      "status": "added",
+      "sha256": "cd64799b86e4fdd4e478a9750b08a1366f7a29e797a8d3318dbf6cdd0c1b9860",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/FenceWire_065_1930.asset",
+      "status": "added",
+      "sha256": "6f4a38f867150e08af2103ceee2364be5136b740b649fe16227ea92af40cea58",
+      "bytes": 67785
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/FenceWire_065_1930.asset.meta",
+      "status": "added",
+      "sha256": "95a362e46aeb66d8d9439bf6801a3bb8d3af143f9300f31bb362385bbba76a3a",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/FenceWire_135_1930.asset",
+      "status": "added",
+      "sha256": "335ae9e79b3e40505ca0c53283ef1468adebac4e0b28506c1c32c5f4a846d218",
+      "bytes": 79305
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/FenceWire_135_1930.asset.meta",
+      "status": "added",
+      "sha256": "b5389e48fe066d57564cb456abecf060e234e30e42588b1dcf1ce5a6ea1f8bc3",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/FenceWire_175_1930.asset",
+      "status": "added",
+      "sha256": "5785a67e8d782e8d3925b60c140591c22107070a12836641be2c08bdc4713f23",
+      "bytes": 86217
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/FenceWire_175_1930.asset.meta",
+      "status": "added",
+      "sha256": "77cc8d26d924a28f2ffb769d472068168cb7163e62394e6729f1810d402011a6",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/FenceWire_200_1930.asset",
+      "status": "added",
+      "sha256": "e90bd35c9648cfbd163b6bcebf245cbe4486ee7c33847bc34dbb1a0cc7930532",
+      "bytes": 88521
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/FenceWire_200_1930.asset.meta",
+      "status": "added",
+      "sha256": "403a61bddbeefbb42388ba9a7bd30e2debd492afbd6a64bdb14ea09c7261cc56",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/FilingCabinet_4Drawer_1930.asset",
+      "status": "added",
+      "sha256": "5575548f909687407cc5cca0caf4b981c730f5c7c766e15d90844c5d442cb93a",
+      "bytes": 463937
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/FilingCabinet_4Drawer_1930.asset.meta",
+      "status": "added",
+      "sha256": "1e6ff3018e86c5bfb98b225f387e4f905e488daeb4fbf07fa5630ecc69068680",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/GroundsToolRack_1930.asset",
+      "status": "added",
+      "sha256": "0622791a1a987a9e3622dc3b5e98c1fe32e86a59520eda46ce72d1f78ea9f7aa",
+      "bytes": 370504
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/GroundsToolRack_1930.asset.meta",
+      "status": "added",
+      "sha256": "54cc275e657e8b521904c99d63902fd329a8672c26d855d2538075bb3677e1c9",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/GutterCorner90_1930.asset",
+      "status": "added",
+      "sha256": "5688b49124a92d89bdbf2e8c4719951258addbaf96fdbf521a44f767f1c8a522",
+      "bytes": 176447
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/GutterCorner90_1930.asset.meta",
+      "status": "added",
+      "sha256": "25ec8faea3ec3f986de6e11c58491e1005ca2fd7472abf04a08fc0b0b0870750",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/GutterHalfRound_040Plain_1930.asset",
+      "status": "added",
+      "sha256": "e2ca8cb63ea2a9d994cf090551e17959e2c320a8d35c11dee55f0ce78dc33587",
+      "bytes": 41184
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/GutterHalfRound_040Plain_1930.asset.meta",
+      "status": "added",
+      "sha256": "7f4489f47872109a3a18b78ef082c7e1a208784a7d7feb0fd6c79a79d4ee4a8a",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/GutterHalfRound_040_1930.asset",
+      "status": "added",
+      "sha256": "3960629fff4c7362d853f00fce03fb0203b3722ef773705837cb6b69c97be612",
+      "bytes": 61919
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/GutterHalfRound_040_1930.asset.meta",
+      "status": "added",
+      "sha256": "ef846bc854b97190c5bcbf5d04a11461879b570620fbdb2f5157bf0a00393e46",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/GutterHalfRound_060_1930.asset",
+      "status": "added",
+      "sha256": "0e7e73d89c394aa20adebc9dd72d7202f90523082ec39b42c3c0366864f9c4d1",
+      "bytes": 41179
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/GutterHalfRound_060_1930.asset.meta",
+      "status": "added",
+      "sha256": "cf6864979a5ff09010dd13692d8c0cc77f5c7943635f895134f0c19a63c01c5a",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/GutterHalfRound_155_1930.asset",
+      "status": "added",
+      "sha256": "7260780cd445cd7fcc6046d08acfcedcc367ceaf20580f6ab257f373cbb13dd5",
+      "bytes": 41183
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/GutterHalfRound_155_1930.asset.meta",
+      "status": "added",
+      "sha256": "3e1b7a26b474b261c2a5ea985c8e015d4198c0f5c7dd225163e24f7a0623af0f",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/GutterHalfRound_165_1930.asset",
+      "status": "added",
+      "sha256": "7b36864eac7ab9870ff51057a2d97e72e20df490aa870c7e29fa77cf3fddd959",
+      "bytes": 41183
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/GutterHalfRound_165_1930.asset.meta",
+      "status": "added",
+      "sha256": "057881028189fd0d80070109a167a20532606ee48e970e245d7dcbab95e45c52",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/GutterHalfRound_175_1930.asset",
+      "status": "added",
+      "sha256": "4ee002cb9ae7f516c998e0bd72a2e50138fd9f3dd599ded199c033fcf838f032",
+      "bytes": 41182
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/GutterHalfRound_175_1930.asset.meta",
+      "status": "added",
+      "sha256": "6df951e3cd27c576dcbc4a11cd6327acec9d0fbd360ff3de1c046a5760471914",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/GutterHalfRound_200_1930.asset",
+      "status": "added",
+      "sha256": "10f9eda3502a44514ccedce7e1dd0c032e3282ece8b1d322422f2d877d6c01bb",
+      "bytes": 41174
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/GutterHalfRound_200_1930.asset.meta",
+      "status": "added",
+      "sha256": "cbfce0d53797d6328f06ffeb34b70bbf866877a2a68acaa11cd1441c2f815756",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/LadderTimber_260_1930.asset",
+      "status": "added",
+      "sha256": "dec4a5d67d8ba0cb3ea40d728f2840657f54ad3ef0ff81c6dcb65c6de80d9395",
+      "bytes": 125245
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/LadderTimber_260_1930.asset.meta",
+      "status": "added",
+      "sha256": "28b3186cda9f14e967d090d8cbdc7bea48d703bd7f7f4cd51c934cffa8a70a95",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/LumberStack_240_1930.asset",
+      "status": "added",
+      "sha256": "1568ddfbfee2cea81ca223185a598ca77c91bc7773e80621788bac0f0fc4a037",
+      "bytes": 488993
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/LumberStack_240_1930.asset.meta",
+      "status": "added",
+      "sha256": "ad81e93942a5f8b5b7073175000ca4d5e52f9b37b799df44ac9d28702dc53a06",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/MaterialRackTimber_400_1930.asset",
+      "status": "added",
+      "sha256": "1176366392ad43d74dfbdf522caf1f196a478ffcc8de87c55fc34522a0b2c331",
+      "bytes": 488545
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/MaterialRackTimber_400_1930.asset.meta",
+      "status": "added",
+      "sha256": "be3b859f571c5aed043ce4f3f0db6f081de04bbb6a1b46e9ead8d8af0424a878",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/NoticeBoardTimber_173_1930.asset",
+      "status": "added",
+      "sha256": "a58371f6cd07972e31ed622c53852c9d7a97e39293803b17189c627eaab4ebfd",
+      "bytes": 132608
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/NoticeBoardTimber_173_1930.asset.meta",
+      "status": "added",
+      "sha256": "a3d7fd0951dce3bbebd8d992d78d6857d237a7938b5824cf9aaddcb27f2446da",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/PaintCan_1930.asset",
+      "status": "added",
+      "sha256": "2b7ddcba8a0d7739b7a8af92061aa893e8ac68088d03a2adfa6970dee1bddf62",
+      "bytes": 50254
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/PaintCan_1930.asset.meta",
+      "status": "added",
+      "sha256": "1b3be2728e8c9cf1a603efb5f6e40bce37db92dd880d94bd2a0360a346358411",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/SackCanvas_1930.asset",
+      "status": "added",
+      "sha256": "b80052ed7f6181e54d35aa22a1c23cce74b9e8e42ebae5c5cc81eba59f585670",
+      "bytes": 32342
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/SackCanvas_1930.asset.meta",
+      "status": "added",
+      "sha256": "df09387b4395826dc5f62a24f426010ace818bc92d4701029233a1cdad814fff",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/ScaffoldBayTimber_200_1930.asset",
+      "status": "added",
+      "sha256": "e26ee3238261c517267fb02f53cbb3cc85361e930c86faf7a2589b709a0bb374",
+      "bytes": 312320
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/ScaffoldBayTimber_200_1930.asset.meta",
+      "status": "added",
+      "sha256": "845933dfd440b0dea34dc53895a74eb9c802356efa12e3bcc77a3e133fd6f446",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/ServiceDoorPair_485x346_1930.asset",
+      "status": "added",
+      "sha256": "a2984caf16bb0d81b422686868cb24ece3b17101dbc1fe68949ef5add2d4c4e7",
+      "bytes": 1473362
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/ServiceDoorPair_485x346_1930.asset.meta",
+      "status": "added",
+      "sha256": "25fca3bea57d599f1371acc7844e2e72c2af266789e6b73da3571d6c6d30888b",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/ShelfSteelTimber_170_1930.asset",
+      "status": "added",
+      "sha256": "cda39a7f867786a99486b9e52c123db8970343bd1d915ebafa3b69181b5a2b4d",
+      "bytes": 774992
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/ShelfSteelTimber_170_1930.asset.meta",
+      "status": "added",
+      "sha256": "b5fcb8f988f9ec98aa74f415758df0a189e21e46971d0e120625b68d0baf1e50",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/SplashBlockConcrete_1930.asset",
+      "status": "added",
+      "sha256": "0832f5e4dee48595dce63b866b0f5c382979c60d705424000e7d2876b3fe4bfd",
+      "bytes": 91636
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/SplashBlockConcrete_1930.asset.meta",
+      "status": "added",
+      "sha256": "ba8911a527ceeece762a8fb57585ce6a2e03ce9daf900592e7247642590c21a4",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/TelephoneDesk_1930.asset",
+      "status": "added",
+      "sha256": "8c9a1a26204f6a582451f244b279597f2bca39ea69cd2aea1a67e04cab64f688",
+      "bytes": 179254
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/TelephoneDesk_1930.asset.meta",
+      "status": "added",
+      "sha256": "60ddb71492471cd22ad437c340657420c66faf4962f80bb9adc43983127c9e84",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/ToolRackCarpenter_1930.asset",
+      "status": "added",
+      "sha256": "be3a3101e8d733dc88004cbb2cf17e839f54236dc9fa45bf5b453b77727af448",
+      "bytes": 515798
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/ToolRackCarpenter_1930.asset.meta",
+      "status": "added",
+      "sha256": "ede8b1340ad9cfed1698003150778b1ac2d311fa0fe2bb42164cb33bbb08e6d0",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/ToolTrayCarpenter_1930.asset",
+      "status": "added",
+      "sha256": "b1390eae98bc24944129b703a6857e9bc78c59ea03091e069f455944c2b8edde",
+      "bytes": 211513
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/ToolTrayCarpenter_1930.asset.meta",
+      "status": "added",
+      "sha256": "d5ca8c212c4699efa6cb6cc332d1514fdf3f31d264b44a5e2df36b428a0b56d6",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/WheelbarrowSteel_1930.asset",
+      "status": "added",
+      "sha256": "a1ea354a015f67de8f25dd018729fdece222c111357bf3b9923c694c27b6124a",
+      "bytes": 161790
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/WheelbarrowSteel_1930.asset.meta",
+      "status": "added",
+      "sha256": "a940e4cf21ed1c009129014240e8902d9b7c53cc5e30c92f0bdb56a96a6bfa1f",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/WindowSteel_190x180_1930.asset",
+      "status": "added",
+      "sha256": "14a51f000fc2219a6843e4c423d9b09cfe361b5642ba6e9f5b73d0df2a649aac",
+      "bytes": 404357
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/WindowSteel_190x180_1930.asset.meta",
+      "status": "added",
+      "sha256": "942cc2abeb2a221e735cda02c1fd2f75bfbbad1f81ab2f26b8d5e77085a8a481",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/WindowSteel_195x212_1930.asset",
+      "status": "added",
+      "sha256": "7d7ea6a32cfb7ddc436fa6434dcc8e8d377c5e34cd681f9bd69be1016b737e0f",
+      "bytes": 404364
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/WindowSteel_195x212_1930.asset.meta",
+      "status": "added",
+      "sha256": "0eb2255912dc15dad4cf8bd0b37504bb23073e403f6f0bfc8bafc3f6c86b4b19",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/WindowSteel_200x180_1930.asset",
+      "status": "added",
+      "sha256": "c0d834c8adcda842c7212b3f7ca1159bc5f6601173411dbc190d6622fe590631",
+      "bytes": 404358
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/WindowSteel_200x180_1930.asset.meta",
+      "status": "added",
+      "sha256": "8878d2a496c2aa8ff4cd7eacd19da839d235d67a54b60187869620948b5902f3",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/WindowSteel_200x210_1930.asset",
+      "status": "added",
+      "sha256": "e30cceeb2cab3e1238a4924ddc8216d4be6e415f150cbef1f42e471747caacaa",
+      "bytes": 404366
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/WindowSteel_200x210_1930.asset.meta",
+      "status": "added",
+      "sha256": "9611fe74256f4bdc090687a342a6b224ca01fbc67f200545032cf22f23065283",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/WindowSteel_265x205_1930.asset",
+      "status": "added",
+      "sha256": "11635ed16e28aced63299c6875ab84a7835f0151c4ef51d4682611107c9a5bf8",
+      "bytes": 468021
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/WindowSteel_265x205_1930.asset.meta",
+      "status": "added",
+      "sha256": "65d7d50bff38b96b8fc4c0fe7a82f6cf66d593918af25ac198b0cdfa7d9554e1",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/WindowSteel_310x195_1930.asset",
+      "status": "added",
+      "sha256": "7969b33e24a387d30796eb13f09f8b5783c7eb842d9ce3c03e21518828f66a75",
+      "bytes": 499835
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/WindowSteel_310x195_1930.asset.meta",
+      "status": "added",
+      "sha256": "697e97172b6c3d071044eed85a8f7ddf87e378ce2043b69f98fecfadd617be2e",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/WorkbenchJoiner_225_1930.asset",
+      "status": "added",
+      "sha256": "caeaaca89bbdd4e94c24f549b099ee4d0910635fe04197dcedc458e2a3a8c32b",
+      "bytes": 439707
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/WorkbenchJoiner_225_1930.asset.meta",
+      "status": "added",
+      "sha256": "554e2bf15dc1070bdd26aeac2c90a3c0a80177a699a3092c9f191a2758abe64e",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs.meta",
+      "status": "added",
+      "sha256": "2bc2ca3b5651f8eb44c790f655482a85be54ab5e2c5d5ca313769e0b2f7afbd4",
+      "bytes": 172
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/ArchiveBox_1930.prefab",
+      "status": "added",
+      "sha256": "84d94a38c08ce829ef1490fd0329dd35e8a09e2c720ec90c2c57f20b64aaff4f",
+      "bytes": 6695
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/ArchiveBox_1930.prefab.meta",
+      "status": "added",
+      "sha256": "0c852b3a9a719c932f64f985b257038632d2f96f4514082be620748eeecbe763",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/AwningCurved_164_1930.prefab",
+      "status": "added",
+      "sha256": "b7d6f80221a4add18a918a8c4b17e2cfd9a993bdd7e84965afaf6efe4465fe9c",
+      "bytes": 6559
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/AwningCurved_164_1930.prefab.meta",
+      "status": "added",
+      "sha256": "a2aff9839c634412fe89e4496eb87acc16be9702d902692b9b6c31134d0298f1",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/BarrelPaintedSteel_1930.prefab",
+      "status": "added",
+      "sha256": "6e6de1af090e4fa922fda6d7ed0d937bad68cc02a2eda4d66c222f40ce7e8cad",
+      "bytes": 8195
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/BarrelPaintedSteel_1930.prefab.meta",
+      "status": "added",
+      "sha256": "05aa28f4c5c30155d9804b49c593f4fe4e66870550b27b71b028b4d846f9cda0",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/BarrelTimber_1930.prefab",
+      "status": "added",
+      "sha256": "b259ccdc23a0f261fb8d05b1683329c351403becb2abbd76e4ded8abe964c61c",
+      "bytes": 8192
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/BarrelTimber_1930.prefab.meta",
+      "status": "added",
+      "sha256": "95c86dfd3448beb228a34dd1b557571ad8a42eba39b392eb1a1e8402b32312a3",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/BenchSlatted_210_1930.prefab",
+      "status": "added",
+      "sha256": "8fdbe3fb216a8a1c971ca099a79a1763b4ffc0aa5105e9439325dd6378c439de",
+      "bytes": 8120
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/BenchSlatted_210_1930.prefab.meta",
+      "status": "added",
+      "sha256": "e59c54ca4388d51447d43aedbed206db30f5103ef366a3970757fef989fcb9b3",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/ChairBentwood_1930.prefab",
+      "status": "added",
+      "sha256": "9d728db7b08037586d8b87b3a13c03d20d640cd7c34b29ad25514c154bad8ae1",
+      "bytes": 8052
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/ChairBentwood_1930.prefab.meta",
+      "status": "added",
+      "sha256": "6ae631559583f3c0b75d5d8a6bf00f94a3d8e0eae5501cea51c9d1cec20de4f7",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/ConduitElbow90_1930.prefab",
+      "status": "added",
+      "sha256": "9914b8df75724e29ee35ae681953c9ccbea5005d1148254b7f72d79f63c8b04f",
+      "bytes": 6484
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/ConduitElbow90_1930.prefab.meta",
+      "status": "added",
+      "sha256": "ce38cdade935c2e6fde5186d113ecdaa2a329eae997432bbf1bffc7cede31c44",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/ConduitStraight_100_1930.prefab",
+      "status": "added",
+      "sha256": "ab2984c59ab14e7c586b3c99df45c89423a4f0708822fdbf5329b3013ed7cfd8",
+      "bytes": 6561
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/ConduitStraight_100_1930.prefab.meta",
+      "status": "added",
+      "sha256": "1ed0782b53a525e53ca73f4454edc95ef49846150338efa65cd8a4c477394c3f",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/CrateTimber_045_1930.prefab",
+      "status": "added",
+      "sha256": "57ac244530d3729f616672c59099920f7c0061312c78be90ff1cbdde70975809",
+      "bytes": 8122
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/CrateTimber_045_1930.prefab.meta",
+      "status": "added",
+      "sha256": "c4c1fd2597cd1fb918c0172816672888e166cee3ffca22fb2278ac83d0c9f939",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/CrateTimber_075_1930.prefab",
+      "status": "added",
+      "sha256": "6e4f698890f6af817e31f34ed3c9fb6464a0ad9ff672d38bdbb068a372204a27",
+      "bytes": 8124
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/CrateTimber_075_1930.prefab.meta",
+      "status": "added",
+      "sha256": "84ec23e68647948884963495c1bad9cd2a78504799e2bc4da48f79fb8e9e709c",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/CupboardUtility_1930.prefab",
+      "status": "added",
+      "sha256": "1af165f4224c6ad72e845d203d64ba612c2ceff65c03b7542331d0a9be0489ae",
+      "bytes": 8273
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/CupboardUtility_1930.prefab.meta",
+      "status": "added",
+      "sha256": "f62a4c7490dceb5ce33bd1c2a06c14afec00799da7e93e4ee9177e11313a8965",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/DeskLampBanker_1930.prefab",
+      "status": "added",
+      "sha256": "92dbd986d3428ff1c74c5f92586bd7736a5f1c90bc84cfb0f1b90e4ea150d3df",
+      "bytes": 6631
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/DeskLampBanker_1930.prefab.meta",
+      "status": "added",
+      "sha256": "1edb6c452e14d9660af3198b739ef20a1f40ab851eae7440d88026e425e76559",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/DeskPaperwork_1930.prefab",
+      "status": "added",
+      "sha256": "12cdaf2381f340a96620d588cd1302b42f13bd09599977abfe9cadc380ac84e2",
+      "bytes": 6840
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/DeskPaperwork_1930.prefab.meta",
+      "status": "added",
+      "sha256": "ebc802f49e50e2078e562e1069450a5265238e531982f0bcb7db89d1593327d0",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/DeskPedestal_1930.prefab",
+      "status": "added",
+      "sha256": "bf929a96a722d2b624493396ce35c48627154a5827c75151910923b868315631",
+      "bytes": 8116
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/DeskPedestal_1930.prefab.meta",
+      "status": "added",
+      "sha256": "1ef25e1b5daaefc7371f601a77ef8b36e1b8db9e8c98e1d87afab39fd8ec32b9",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/DoorFrameTimber_120x262_1930.prefab",
+      "status": "added",
+      "sha256": "02b1811b5ae7851e0c16eb0906bbd1ec2ead1b07e89396e233ed0ae8d721fdbb",
+      "bytes": 6569
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/DoorFrameTimber_120x262_1930.prefab.meta",
+      "status": "added",
+      "sha256": "3859d2737d8be7ba78d42371cad09803735022f6b8bef84830e0b034ddbb92ab",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/DoorGlazedTimber_110x258_1930.prefab",
+      "status": "added",
+      "sha256": "a86219ff99efa383845eb8e249abb327561ae1bad23d5bb3cbf99df1d1e4f3b2",
+      "bytes": 8205
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/DoorGlazedTimber_110x258_1930.prefab.meta",
+      "status": "added",
+      "sha256": "71a0e1df8535ccdef1722f20926519703aaecf3a51fc84036b35cb3a7be53895",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/DoorUtilityTimber_150x260_1930.prefab",
+      "status": "added",
+      "sha256": "63b793a410afb93b8179cc967e62669f91f300363267f55acaf6b9f38de33a33",
+      "bytes": 8136
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/DoorUtilityTimber_150x260_1930.prefab.meta",
+      "status": "added",
+      "sha256": "b0d9726f00fcd5255298ffc2e80a5b5c57d6909e0a65f515e4ad46e0ec741fc9",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/DownpipeElbow90_1930.prefab",
+      "status": "added",
+      "sha256": "f3431a01a09a3f39ae73cb69c646d7ee52929d2f49b867c7f2155530307d5cda",
+      "bytes": 6490
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/DownpipeElbow90_1930.prefab.meta",
+      "status": "added",
+      "sha256": "4647ad36e2887f5d0a5c5c327b331bc1e69eac0c240a0a96a9f6eecdb70477f1",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/DownpipeHollow_300_1930.prefab",
+      "status": "added",
+      "sha256": "1ddfe2f973fa16d6909a09e495877bb1ad89661deddf8fc58b9aec3b16ee5a4c",
+      "bytes": 9512
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/DownpipeHollow_300_1930.prefab.meta",
+      "status": "added",
+      "sha256": "630bb2854585fa16de1c38ea2f3b3586b9cb6b855af2ca68eba6187a6e87747f",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/DownpipeShoe_1930.prefab",
+      "status": "added",
+      "sha256": "10a2a617c06c967ab6dd19b18d7bc5f6c3bd63331f2abe7e80ea0d77a5da6c0b",
+      "bytes": 6485
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/DownpipeShoe_1930.prefab.meta",
+      "status": "added",
+      "sha256": "91e53453d0bb96b2d3510b0631d1b33cdd0720d83a9b34f5b006aaf605ea8af2",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/EmploymentPorchTimber_232_1930.prefab",
+      "status": "added",
+      "sha256": "aba88c471e6a5964301344d5d66daa4b05d0043e4f4866334ce88d99c775a8f6",
+      "bytes": 9713
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/EmploymentPorchTimber_232_1930.prefab.meta",
+      "status": "added",
+      "sha256": "5a70e406e55defd8c6f3596f5438e763f80e0bf19f4f1df102779bcfccec54de",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/FenceGateWire_180_1930.prefab",
+      "status": "added",
+      "sha256": "50c61a743b69ccc93e42640dcb84184b3893df3be7996bf71ad6f2545a54f26d",
+      "bytes": 8191
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/FenceGateWire_180_1930.prefab.meta",
+      "status": "added",
+      "sha256": "611bb2f312ecb6101f359860270c8357a72908d84d1970fa774c78525b3edc82",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/FenceWire_065_1930.prefab",
+      "status": "added",
+      "sha256": "cedd0bc2b2fda757308a76f47ad6c688dad5a8144f16f2a863bc728f2a3f5f7e",
+      "bytes": 8048
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/FenceWire_065_1930.prefab.meta",
+      "status": "added",
+      "sha256": "80d1d9d1bafbf6b712d03b5b807c3a349928d1164b49508f133efa34879c901c",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/FenceWire_135_1930.prefab",
+      "status": "added",
+      "sha256": "45eb900296d0fa3ee669c1025f7bd3cfa2349a84f3dae1679bdd3fc6c15982f5",
+      "bytes": 8038
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/FenceWire_135_1930.prefab.meta",
+      "status": "added",
+      "sha256": "b80a22987114d5f80e6b06ed6ed2e0ac93915806f3092dfa22a8118a90f4f0cc",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/FenceWire_175_1930.prefab",
+      "status": "added",
+      "sha256": "e1616ee2ca95b5ade484b985aafe9a94905d7cbaea383ffcb1cbf89824c7cd45",
+      "bytes": 8044
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/FenceWire_175_1930.prefab.meta",
+      "status": "added",
+      "sha256": "e0196a0e7e3182277eb6e0a0db3918089d3e5140b0ed7684dcadcb2dec0afc4f",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/FenceWire_200_1930.prefab",
+      "status": "added",
+      "sha256": "fd166443929455c57fd9390adfd636a6c7c652e884e2ef3690df1e2e241f36c9",
+      "bytes": 8042
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/FenceWire_200_1930.prefab.meta",
+      "status": "added",
+      "sha256": "ff1302b2507238c4b736818d1989a176a02276db002ebcf17e4f323bb809c00b",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/FilingCabinet_4Drawer_1930.prefab",
+      "status": "added",
+      "sha256": "3c6601f2c4bcc02dc4607904dd7a431d9005d597089ebd4c105313f81053af8b",
+      "bytes": 8266
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/FilingCabinet_4Drawer_1930.prefab.meta",
+      "status": "added",
+      "sha256": "a8748d13d951b56136a3e08187c668b81b1f8210f3613886b6aaba9656a31446",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/GroundsToolRack_1930.prefab",
+      "status": "added",
+      "sha256": "be03fa6c3db69c47f9ff17fd948a39aa1032767caa1a32f055891951b952eb5c",
+      "bytes": 6694
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/GroundsToolRack_1930.prefab.meta",
+      "status": "added",
+      "sha256": "4e35f9b6274088381e9763e2fa33bfec7979e190a151586b6ab36455d2d41a19",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/GutterCorner90_1930.prefab",
+      "status": "added",
+      "sha256": "aeaf69e6d2cf501e168a7f42c564c84e7b915e76bcf05bfc9c877c68afe9bb4b",
+      "bytes": 9366
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/GutterCorner90_1930.prefab.meta",
+      "status": "added",
+      "sha256": "b2183d3b6c55dd1d852f0eca640b58bd4c6b9efdb30f1320c1ba1ba7375701d7",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/GutterHalfRound_040Plain_1930.prefab",
+      "status": "added",
+      "sha256": "672703fc93a6b61448799462ab4db99749425b855d11487a6ec1117d2c8efe4a",
+      "bytes": 9445
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/GutterHalfRound_040Plain_1930.prefab.meta",
+      "status": "added",
+      "sha256": "af4f050c605ca4afbfe0a8b887fc43319eda31acbfdcdfec73fd942fee88b1ef",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/GutterHalfRound_040_1930.prefab",
+      "status": "added",
+      "sha256": "7d0e5739fc91c9ec8ce5bec215b71462b0f8591e6ecaa4d24ddafbc95056d163",
+      "bytes": 9443
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/GutterHalfRound_040_1930.prefab.meta",
+      "status": "added",
+      "sha256": "250c4932938e70388c563d74688b0ad7e044da746f7dae2f3c70a3e4db687964",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/GutterHalfRound_060_1930.prefab",
+      "status": "added",
+      "sha256": "ae6d1dfa1ddfa06098565a97b5e4910d73f4e497b157c49b45a29c2f197a36f0",
+      "bytes": 9444
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/GutterHalfRound_060_1930.prefab.meta",
+      "status": "added",
+      "sha256": "641a00cf6666ffc04deb924c05a355a1a01d927199888d3eabd01d297968d0c9",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/GutterHalfRound_155_1930.prefab",
+      "status": "added",
+      "sha256": "f17d4881b8bcdddc5bc748f19fd7ee819daeb2fe20bc278fdc1b442794998cf5",
+      "bytes": 9441
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/GutterHalfRound_155_1930.prefab.meta",
+      "status": "added",
+      "sha256": "abf12158cd99b937925067ee8a1ccecee8486b5c476894899e0e670fa0b6796e",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/GutterHalfRound_165_1930.prefab",
+      "status": "added",
+      "sha256": "ec1c89f56fccb6575b9927f33db8730b2bc4f13745f3b9a545eb29ec7b195ed9",
+      "bytes": 9438
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/GutterHalfRound_165_1930.prefab.meta",
+      "status": "added",
+      "sha256": "1c33a3599355e7cb1096badc83569bb88e218f2f3f83b5706d059e43a8c657f9",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/GutterHalfRound_175_1930.prefab",
+      "status": "added",
+      "sha256": "9ba276195ee4bd1dea4298ea7377511a94ae7d5ba6a8a5f42930d1ccab3b820c",
+      "bytes": 9450
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/GutterHalfRound_175_1930.prefab.meta",
+      "status": "added",
+      "sha256": "fc07d0742c5cc450218049227f5478f31fb0c49966e42dcd497c423563bb7a58",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/GutterHalfRound_200_1930.prefab",
+      "status": "added",
+      "sha256": "e457f36e900fc413d6e918103203addbdc77a40a1130feff0ac6b40398cd167c",
+      "bytes": 9439
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/GutterHalfRound_200_1930.prefab.meta",
+      "status": "added",
+      "sha256": "4486b2a8798aeedc95689b5da348e5d0de2f582847292a2d7e2c0ba3c371da83",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/LadderTimber_260_1930.prefab",
+      "status": "added",
+      "sha256": "dc5671672a2158a53cc27a67da181f25820121b39eb9a88f4c97759510ddb7bf",
+      "bytes": 8048
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/LadderTimber_260_1930.prefab.meta",
+      "status": "added",
+      "sha256": "9b24f1c0d7a154c7059f543993b69921ddc35239c0a6ff77801958417764c1e2",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/LumberStack_240_1930.prefab",
+      "status": "added",
+      "sha256": "d755eb4aa348364556db320687dc1a55f95537a078cb36651cf49f35d2e2118d",
+      "bytes": 8118
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/LumberStack_240_1930.prefab.meta",
+      "status": "added",
+      "sha256": "f61f1da7c881c6b2389817b92cf9d6d239102a35742a96ad8bb15fc502819bab",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/MaterialRackTimber_400_1930.prefab",
+      "status": "added",
+      "sha256": "7f11bce6bfd5b5f8cf24f0d3ec4acdebcc75d5a0c20f412f65f2d6e43cb2dc07",
+      "bytes": 8048
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/MaterialRackTimber_400_1930.prefab.meta",
+      "status": "added",
+      "sha256": "901aa8c2c9fb2136e1f488121dd0e56cb4961720d3810be0b898fb0f1d1c0851",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/NoticeBoardTimber_173_1930.prefab",
+      "status": "added",
+      "sha256": "fb2fdc7f555ca0265d36de871c41582c0a639be663ed201e37e596993fa60426",
+      "bytes": 6638
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/NoticeBoardTimber_173_1930.prefab.meta",
+      "status": "added",
+      "sha256": "1472817a71370d1ae76e680139a123ee8717936735bbac36c1d33ac99dfd8c13",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/PaintCan_1930.prefab",
+      "status": "added",
+      "sha256": "b1afd83a69d29b0f156d8ee01276e450a4cf76e1eb2c05f6ff1139c67e7432be",
+      "bytes": 6625
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/PaintCan_1930.prefab.meta",
+      "status": "added",
+      "sha256": "f3d8c05596af5d5137c0e7a3f2e23772a647eb6387eea7cdc1a3862f04c232ac",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/SackCanvas_1930.prefab",
+      "status": "added",
+      "sha256": "c3668f7999347ba812f0a0031dfdefecff00ae853686bb477ac3a465fbfdd342",
+      "bytes": 8045
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/SackCanvas_1930.prefab.meta",
+      "status": "added",
+      "sha256": "d8edd9e623e2f7a949ddcbadcb4f8a834a854e459aa9356ff29ad4f05ce1e83d",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/ScaffoldBayTimber_200_1930.prefab",
+      "status": "added",
+      "sha256": "690b90e2135afd023f713c5a6d8b960c39ebe9b974ffc166cb3e0aefc475b329",
+      "bytes": 8061
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/ScaffoldBayTimber_200_1930.prefab.meta",
+      "status": "added",
+      "sha256": "53a80fd8519151b5a366292bfbf076c3686bebd6ea5855ac0f0a073a0b4344a7",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/ServiceDoorPair_485x346_1930.prefab",
+      "status": "added",
+      "sha256": "d2b57e2121a7e86ebf8c74de1683f77592162a8a7498ea60d2c599e8a289c198",
+      "bytes": 9864
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/ServiceDoorPair_485x346_1930.prefab.meta",
+      "status": "added",
+      "sha256": "bcd921cdb84de81f042ae40b39ccbff140c63ffb1a934e181333c4f5dae86e34",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/ShelfSteelTimber_170_1930.prefab",
+      "status": "added",
+      "sha256": "fb2ac6abdba2bce8281dcd6ab83ab6204025afaa1d3a2fccbd6e1949d94bf3b9",
+      "bytes": 8058
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/ShelfSteelTimber_170_1930.prefab.meta",
+      "status": "added",
+      "sha256": "2e2993b4a95c0f68e05653e92ebb490289a2529b802eeb85af202ec563b47f9e",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/SplashBlockConcrete_1930.prefab",
+      "status": "added",
+      "sha256": "d57eccc6b60d9b6b7212d4bde92704bd203220705055060ee377f09ab42031e8",
+      "bytes": 6492
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/SplashBlockConcrete_1930.prefab.meta",
+      "status": "added",
+      "sha256": "6d8277d1e9ab1f16966fd5c9dec912e7071b2b02a819579a9139a18d72575416",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/TelephoneDesk_1930.prefab",
+      "status": "added",
+      "sha256": "3a6009ea40191f4d6808f6f7091bfdc65936caeb5a132e5236a4d97c033b583c",
+      "bytes": 6550
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/TelephoneDesk_1930.prefab.meta",
+      "status": "added",
+      "sha256": "4f2a0fb37a64033a8207a2fd3929ef3efac296834ab8cacc5269ab22fe65423d",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/ToolRackCarpenter_1930.prefab",
+      "status": "added",
+      "sha256": "fba7cf38d38f28b8d505ae4535df4c3cab88d5b3c6719a3261a238ef245b91d7",
+      "bytes": 6769
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/ToolRackCarpenter_1930.prefab.meta",
+      "status": "added",
+      "sha256": "b686ad435bcb816c6df49d910c4897c0d0d7d8d610af37332c0a5e7d09c581f4",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/ToolTrayCarpenter_1930.prefab",
+      "status": "added",
+      "sha256": "b7fe61dc17dcc513bae15d19adf7fb90516a578d51e06788ed638ce10d33a865",
+      "bytes": 6701
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/ToolTrayCarpenter_1930.prefab.meta",
+      "status": "added",
+      "sha256": "754ab627b336c3478e23bb4d3e2bdfab72b57fd1af85aaa951f6fb5fec46e02f",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/WheelbarrowSteel_1930.prefab",
+      "status": "added",
+      "sha256": "1a0270ab275ff25758b2a21986904639bfd7a733943dd7290fb1aef2a858d13e",
+      "bytes": 8277
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/WheelbarrowSteel_1930.prefab.meta",
+      "status": "added",
+      "sha256": "a3a9f7b65d5e592b35aa716c4f25e8c7e97d2812aa1197ad9b1578ac652b8625",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/WindowSteel_190x180_1930.prefab",
+      "status": "added",
+      "sha256": "25e007e97a8165ec90b07c9abf1d8788401db568c37850883803f1ef8946ce3f",
+      "bytes": 6774
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/WindowSteel_190x180_1930.prefab.meta",
+      "status": "added",
+      "sha256": "eaa2dc0e782939d929dd4c426017276383916ddc9efd1b3ecfd5262082536a17",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/WindowSteel_195x212_1930.prefab",
+      "status": "added",
+      "sha256": "925f6429f720e14c6b3c2b6583975bc4cb5fba1a7f6486a7ce581c21552a4798",
+      "bytes": 6774
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/WindowSteel_195x212_1930.prefab.meta",
+      "status": "added",
+      "sha256": "7f25aca36344f11ae4b338c3526b621e0cf291a8403e1cf9ecc627d59b0a4b74",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/WindowSteel_200x180_1930.prefab",
+      "status": "added",
+      "sha256": "b698559e2dddeef17cb12f9686829052a9ec3f37b745ffe804eacd942e28a5b8",
+      "bytes": 6776
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/WindowSteel_200x180_1930.prefab.meta",
+      "status": "added",
+      "sha256": "5bcfa6b9c5ec4989b8fdff20e3cc5c5cfc3d61d78c5127dd47d5b6f9b612ff3a",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/WindowSteel_200x210_1930.prefab",
+      "status": "added",
+      "sha256": "13580109ffa24c746fb92f6b89f3f6450bbc64cb6da462dcbd197a011cc5a298",
+      "bytes": 6775
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/WindowSteel_200x210_1930.prefab.meta",
+      "status": "added",
+      "sha256": "b9aa5900719f79d1b700c35f1367768d98222f50a0c26d1d8498c34a9ff238c0",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/WindowSteel_265x205_1930.prefab",
+      "status": "added",
+      "sha256": "ce4c9e74c8e73ad41bc91f9089a0d8add5532d992dab20ee3d5a0f8f48f587a3",
+      "bytes": 6772
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/WindowSteel_265x205_1930.prefab.meta",
+      "status": "added",
+      "sha256": "3e59023db423a0af8e318c52fdea7a68e393eb2f6e120b65ae73e7618bb1d230",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/WindowSteel_310x195_1930.prefab",
+      "status": "added",
+      "sha256": "bbaf7074e3b6405a3435391f5c176a54279b7d2f136917fb682e374583e99a96",
+      "bytes": 6769
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/WindowSteel_310x195_1930.prefab.meta",
+      "status": "added",
+      "sha256": "38921faaa2b6ee521829292939a44163c8ce427ff9cf82e33c64bf1e8df7efcf",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/WorkbenchJoiner_225_1930.prefab",
+      "status": "added",
+      "sha256": "92133c3ff6450a6294032931779334e0b277c8114927bb1c979c341647321df8",
+      "bytes": 8280
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/WorkbenchJoiner_225_1930.prefab.meta",
+      "status": "added",
+      "sha256": "3edfa7e4e3d0d569782e4c597138944d79780b71adce7f51c5f8ff1f187fdc68",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Editor/StudioServicesProductionBuilder.cs",
+      "status": "added",
+      "sha256": "e030bdeb420b71f8340f84d3f3e8a65086db019ceb5256342aacc8483ca0e61a",
+      "bytes": 15103
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Editor/StudioServicesProductionBuilder.cs.meta",
+      "status": "added",
+      "sha256": "d4990b8fb94c2111151354a3a4ff907bf2ce1fb7b479f5cc6f6b723f0eff8b95",
+      "bytes": 59
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Editor/StudioServicesProductionReview.cs",
+      "status": "added",
+      "sha256": "970b158c1dda49cf9f40089470316088bf1ec36998331d2f0b2fb9b5f370c4e1",
+      "bytes": 12639
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Editor/StudioServicesProductionReview.cs.meta",
+      "status": "added",
+      "sha256": "3784fe47e92e9b090603e3d2f884755e6da277f27c4e4b7e6f5690eb2d0114eb",
+      "bytes": 59
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production.meta",
+      "status": "added",
+      "sha256": "47830eecdbf958d4d349ed3eaa159a4eb8e07b0fb728e323cda50c2a3d498165",
+      "bytes": 172
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes.meta",
+      "status": "added",
+      "sha256": "2767593ea434d1a807774fa01d3664be930c97e6513977d855bd053c9be13d7e",
+      "bytes": 172
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/EmploymentBoard.asset",
+      "status": "added",
+      "sha256": "b37952533eef55e0f3bd11ba77aa1927038eda0974686399517ae3d4427b8b64",
+      "bytes": 1935436
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/EmploymentBoard.asset.meta",
+      "status": "added",
+      "sha256": "80806b347eda3deaa3fc611bce6236a1713af8044283f10fbf998eb8852d49d5",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/ExteriorGround.asset",
+      "status": "added",
+      "sha256": "60b43946182336e67abd748d615d11542b698ad06fcc2fe27e1acbfbb36aa963",
+      "bytes": 47581
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/ExteriorGround.asset.meta",
+      "status": "added",
+      "sha256": "1c5145d216e053dbc006c2dfb53025d2f961bebd394bbe92dec933180530ff5a",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/Floor.asset",
+      "status": "added",
+      "sha256": "44c4b6c67d7cd6f8aaf71a49aa9285ec7f41a44d32146cb03eef657f07bf5e1b",
+      "bytes": 38477
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/Floor.asset.meta",
+      "status": "added",
+      "sha256": "65ddb452827ac334a2f634e572855f947cec44b607a6c545eb4a0634cf4cc1f4",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/FrontWall.asset",
+      "status": "added",
+      "sha256": "03f302e9ebc8d81497b5262362f8d42eecd5e05f3175a6b72d2169fd76e05fa2",
+      "bytes": 18030324
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/FrontWall.asset.meta",
+      "status": "added",
+      "sha256": "3d03982424dd6116608b021b122daef40e6c5b6511a9510a8cba4b33adeb080a",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/InteriorPartitions.asset",
+      "status": "added",
+      "sha256": "4f647e8e4f3963979f6ab5564290d1dc36092f3c035f38c2ae7f8f092736f430",
+      "bytes": 563841
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/InteriorPartitions.asset.meta",
+      "status": "added",
+      "sha256": "e07bb420488c20be3ffefdd08a47d684cf7406ab342fa4b71aff6a2ff3f21ba3",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/InteriorProps.asset",
+      "status": "added",
+      "sha256": "4db4d1adf021ca0682df6644027895bd869c2a3b6c88b2ee34ef1ae533dac908",
+      "bytes": 793677
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/InteriorProps.asset.meta",
+      "status": "added",
+      "sha256": "5367e1eb25e6b76cd092fb7b5bb455e3f983fafb05aaa169d220a3f007a121cf",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/LeftWall.asset",
+      "status": "added",
+      "sha256": "aaf93091f2341937b58098500a3f40db9a3ef41a97d3e904530945fc28ce809a",
+      "bytes": 335344
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/LeftWall.asset.meta",
+      "status": "added",
+      "sha256": "2d66b3e0c2774bb0139e8a126598c53c617b1a6f2e9ba503b748a0083f9c64e9",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/RearWall.asset",
+      "status": "added",
+      "sha256": "a644f49bce20b0e8683a92f525f16efd0c291d4b82a5e7763a70f7304156dca2",
+      "bytes": 463853
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/RearWall.asset.meta",
+      "status": "added",
+      "sha256": "d6b8e47e17093e15700aba80181c42e6451abc165bc8ff89f09cf03fd00e3307",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/RightWall.asset",
+      "status": "added",
+      "sha256": "a1de9a665c3e1bd9c932aafe0935d8c61f157c2b0d977cf1110102415de5471d",
+      "bytes": 311895
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/RightWall.asset.meta",
+      "status": "added",
+      "sha256": "8ddd0f76a63ee3224be258414f40dac4dc4f118898be0c60fdce558246d5770b",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/Roof.asset",
+      "status": "added",
+      "sha256": "3f8c867b572640ae87155a2eeaa2e4bfbc37aec8197805fce720f64ca4eff058",
+      "bytes": 3077165
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/Roof.asset.meta",
+      "status": "added",
+      "sha256": "4dc6b081f76617629f41ec5fbe2a21db21eec380711417479fdbfb2589c45a57",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/ServiceYard.asset",
+      "status": "added",
+      "sha256": "9eed75d34c33cb53604efb1e5ab0581f7ab6b6877113747ac3db62a0e4ed1f6d",
+      "bytes": 25524
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/ServiceYard.asset.meta",
+      "status": "added",
+      "sha256": "9ad3f562b5a393e246257574a9b39f358477a309482c2bded88655c9246a62e6",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/YardShelter.asset",
+      "status": "added",
+      "sha256": "f01cece60fc6b44a5f6b7a6326d2a907bc212342e08b42d09942add399b97726",
+      "bytes": 246271
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/YardShelter.asset.meta",
+      "status": "added",
+      "sha256": "7fc472b0e688656129c9989bf84833b321d807e5c877a403c07c08596ce9a970",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/YardShelterRoof.asset",
+      "status": "added",
+      "sha256": "f73c8b280384b19188801c2a49607b2ec20ece49104a0a51834d406c5fe3efff",
+      "bytes": 1172070
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/Meshes/YardShelterRoof.asset.meta",
+      "status": "added",
+      "sha256": "f8ff5d76716e1b9314735b7210583c705094da48b15c6ec538f631d105ee916d",
+      "bytes": 188
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/StudioServices_ProductionReview.unity",
+      "status": "added",
+      "sha256": "3f7a9e4fcdb9c5b484038a19b2926451080dd484851ded0a5475eba3c2b2c25a",
+      "bytes": 188199
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Production/StudioServices_ProductionReview.unity.meta",
+      "status": "added",
+      "sha256": "1a2769c62ee6c5e6c8af3afe999e1e444f9b14d29dcff45fc8179197826622c1",
+      "bytes": 155
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Resources.meta",
+      "status": "added",
+      "sha256": "d0694c45100c2b7e269273d5625e8b6f572d926055287d991bba78c3475c89fd",
+      "bytes": 172
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Resources/StudioServices_Live.prefab",
+      "status": "added",
+      "sha256": "7fa76ac9916d4581d2f74db870c3853bce9c306230f3c41517ae396238c6455a",
+      "bytes": 726139
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Resources/StudioServices_Live.prefab.meta",
+      "status": "added",
+      "sha256": "981800bcc31cc870117a27808f576af1af3b20936f3e325a2bf98dc94e656192",
+      "bytes": 154
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Runtime/BuildingCutawayController.cs",
+      "status": "changed",
+      "sha256": "ecae599ab72954deb73e49a301cb0c79360619d8ba47ab03423c06fc097b1f4f",
+      "bytes": 3924,
+      "baselineSha256": "0c990875cd16f18cbf52701cba82783585eac44c2f95df0e5eeb3902b00a5c5a"
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Runtime/StudioServicesFacility.cs",
+      "status": "added",
+      "sha256": "cc1a41d2a3f86885a8a69a6aca0386ec1c43990708129d861fdd96dfd44fcde8",
+      "bytes": 2512
+    },
+    {
+      "path": "Assets/SilverScreen/Environment/StudioServices/Runtime/StudioServicesFacility.cs.meta",
+      "status": "added",
+      "sha256": "81b0df9100c9bdaf2d33905fdb5636a8dd4b698eed751499320a144257447f66",
+      "bytes": 59
+    },
+    {
+      "path": "Assets/Tests/Editor/StudioServicesProductionTests.cs",
+      "status": "added",
+      "sha256": "0579c3bef9a6f92f430866cecfc1c55e7cafb16284639e2b0cbaab40a74e1f3f",
+      "bytes": 19574
+    },
+    {
+      "path": "Assets/Tests/Editor/StudioServicesProductionTests.cs.meta",
+      "status": "added",
+      "sha256": "971864f57294f1a88e27470e40238f469f521123d46cb84b564d982fa8149e80",
+      "bytes": 59
+    }
+  ],
+  "limitations": [
+    "No final LOD chain or populated-lot performance qualification",
+    "Doors use fixed authored states",
+    "Maintenance/inventory simulation and later-era upgrades not implemented",
+    "Browser tool rejected file:// review navigation; Unity images inspected directly",
+    "User visual approval remains separate from technical validation"
+  ],
+  "commitCreated": false,
+  "pushed": false
+}

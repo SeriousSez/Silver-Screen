@@ -1,0 +1,29 @@
+{
+  "StudioCamera1930": {
+    "triangles": 14752,
+    "vertices": 12535,
+    "renderers": 6,
+    "materials": [
+      "Black",
+      "Brass",
+      "Galvanized",
+      "Glass",
+      "Paper",
+      "Steel",
+      "TimberDark"
+    ]
+  },
+  "StudioLamp1930": {
+    "triangles": 6856,
+    "vertices": 5919,
+    "renderers": 6,
+    "materials": [
+      "Black",
+      "Brass",
+      "Galvanized",
+      "Glass",
+      "Paper",
+      "Steel"
+    ]
+  }
+}

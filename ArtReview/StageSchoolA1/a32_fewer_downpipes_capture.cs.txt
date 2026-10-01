@@ -1,0 +1,18 @@
+var scene=UnityEngine.SceneManagement.SceneManager.GetActiveScene();
+if(scene.path!=SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.ScenePath)throw new System.Exception("Isolated review required");
+var roots=scene.GetRootGameObjects();
+var root=System.Array.Find(roots,o=>o.name.StartsWith("StageSchool_A3"));
+var camera=System.Array.Find(roots,o=>o.GetComponent<UnityEngine.Camera>()!=null).GetComponent<UnityEngine.Camera>();
+var pos=camera.transform.position;var rot=camera.transform.rotation;var fov=camera.fieldOfView;var orth=camera.orthographic;var size=camera.orthographicSize;
+System.Action<string,UnityEngine.Vector3,UnityEngine.Vector3,float> shot=(n,p,t,f)=>SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Capture(camera,n,p,t,f);
+try {
+shot("a32_entrance_pipe",new UnityEngine.Vector3(6.3f,3.3f,-14.5f),new UnityEngine.Vector3(3.34f,2.9f,-9.5f),74);
+shot("a32_pipe_offset",new UnityEngine.Vector3(4.8f,5.9f,-11.5f),new UnityEngine.Vector3(3.34f,5.45f,-9.55f),52);
+shot("a32_roof_management",new UnityEngine.Vector3(24,27,-28),new UnityEngine.Vector3(0,3.8f,2.5f),49);
+shot("a32_roof_rear_management",new UnityEngine.Vector3(-26,28,32),new UnityEngine.Vector3(0,4,3),49);
+SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Capture(camera,"a3_04_rear",new UnityEngine.Vector3(0,6,44),new UnityEngine.Vector3(0,3,3),43,true,10.4f);
+SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Capture(camera,"a3_01_front",new UnityEngine.Vector3(0,5,-39),new UnityEngine.Vector3(0,3,0),43,true,10.4f);
+SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Capture(camera,"a3_02_left",new UnityEngine.Vector3(-40,6,3),new UnityEngine.Vector3(0,3,3),43,true,10.2f);
+SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Capture(camera,"a3_03_right",new UnityEngine.Vector3(40,6,3),new UnityEngine.Vector3(0,3,3),43,true,10.2f);
+}finally{camera.transform.SetPositionAndRotation(pos,rot);camera.fieldOfView=fov;camera.orthographic=orth;camera.orthographicSize=size;}
+result.Log("Consolidated drainage: eight exterior review views refreshed.");

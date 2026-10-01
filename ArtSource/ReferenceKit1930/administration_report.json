@@ -1,0 +1,80 @@
+{
+  "asset": "StudioAdministration_01",
+  "blender": "5.0.1",
+  "unit": "metre",
+  "dimensions_m": [
+    18.64,
+    16.5,
+    11.03
+  ],
+  "triangles": 148232,
+  "source_mesh_count": 1294,
+  "export_mesh_count": 9,
+  "root_location": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "materials": [
+    "ADM_Stucco",
+    "ADM_Limestone",
+    "ADM_Bronze",
+    "ADM_WindowSteel",
+    "ADM_CanopyEnamel",
+    "ADM_DoorWood",
+    "ADM_Interior",
+    "ADM_Roof",
+    "ADM_LampDiffuser",
+    "ADM_Clay",
+    "ADM_ClearGlass"
+  ],
+  "door": {
+    "landing_height_m": 0.6,
+    "clear_leaf_height_m": 2.15,
+    "pull_center_above_landing_m": 1.05,
+    "hinges": "connected leaf and jamb plates, exterior axis",
+    "opening": "outward toward landing",
+    "center_seam_m": 0.006,
+    "outer_jamb_gap_m": 0.003,
+    "grip_clearance_m": 0.064,
+    "glass_aperture_m": [
+      0.784,
+      1.24
+    ]
+  },
+  "glass": {
+    "thickness_m": 0.006,
+    "ior": 1.46,
+    "transmission": 1.0,
+    "roughness": 0.095,
+    "window_recess_m": 0.235,
+    "backing_front_depth_m": 0.785,
+    "clear_cavity_m": 0.547
+  },
+  "export_groups": [
+    "ExteriorShell",
+    "TemporaryWindowBackings",
+    "Windows",
+    "Glass",
+    "Doors",
+    "ArchitecturalDetails",
+    "SignageArea",
+    "Roof",
+    "FireEscape"
+  ],
+  "signage": {
+    "baked_text": false,
+    "usable_width_m": 3.8,
+    "usable_height_m": 0.86
+  },
+  "rear_access": {
+    "upper_threshold_m": 3.93,
+    "lower_threshold_m": 0.54,
+    "stair_riser_m": 0.17842105263157895,
+    "stair_going_m": 0.26,
+    "clear_width_m": 1.05,
+    "guard_height_m": 1.1,
+    "final_riser_m": 0.18,
+    "ladder_rung_spacing_m": 0.28
+  }
+}

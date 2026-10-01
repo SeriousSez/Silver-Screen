@@ -1,0 +1,25 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"success\": true,\n  \"message\": \"Command executed successfully.\",\n  \"data\": {\n    \"isCompilationSuccessful\": true,\n    \"isExecutionSuccessful\": true,\n    \"executionId\": 1,\n    \"compilationLogs\": \"\",\n    \"executionLogs\": \"\",\n    \"localFixedCode\": \"using UnityEngine;\\r\\nusing UnityEditor;\\r\\n\\r\\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\\r\\n{\\r\\n    internal class CommandScript : IRunCommand\\r\\n    {\\r\\n        public void Execute(ExecutionResult result)\\r\\n        {\\r\\n            var s = UnityEditor.SceneManagement.EditorSceneManager.OpenPreviewScene(SilverScreen.Editor.EnvironmentArt.StageSchoolA4Review.ScenePath);\\r\\n            try\\r\\n            {\\r\\n                foreach (var r in s.GetRootGameObjects())\\r\\n                    if (r.name.StartsWith(\\\"StageSchool_A4\\\"))\\r\\n                        foreach (var b in r.GetComponentsInChildren<MonoBehaviour>(true))\\r\\n                            result.Log(b.GetType().FullName + \\\" on \\\" + b.name);\\r\\n            }\\r\\n            finally\\r\\n            {\\r\\n                UnityEditor.SceneManagement.EditorSceneManager.ClosePreviewScene(s);\\r\\n            }\\r\\n        }\\r\\n    }\\r\\n}\",\n    \"result\": \"Command executed successfully.\"\n  }\n}"
+      }
+    ],
+    "structuredContent": {
+      "success": true,
+      "message": "Command executed successfully.",
+      "data": {
+        "isCompilationSuccessful": true,
+        "isExecutionSuccessful": true,
+        "executionId": 1,
+        "compilationLogs": "",
+        "executionLogs": "",
+        "localFixedCode": "using UnityEngine;\r\nusing UnityEditor;\r\n\r\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\r\n{\r\n    internal class CommandScript : IRunCommand\r\n    {\r\n        public void Execute(ExecutionResult result)\r\n        {\r\n            var s = UnityEditor.SceneManagement.EditorSceneManager.OpenPreviewScene(SilverScreen.Editor.EnvironmentArt.StageSchoolA4Review.ScenePath);\r\n            try\r\n            {\r\n                foreach (var r in s.GetRootGameObjects())\r\n                    if (r.name.StartsWith(\"StageSchool_A4\"))\r\n                        foreach (var b in r.GetComponentsInChildren<MonoBehaviour>(true))\r\n                            result.Log(b.GetType().FullName + \" on \" + b.name);\r\n            }\r\n            finally\r\n            {\r\n                UnityEditor.SceneManagement.EditorSceneManager.ClosePreviewScene(s);\r\n            }\r\n        }\r\n    }\r\n}",
+        "result": "Command executed successfully."
+      }
+    }
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}

@@ -1,0 +1,13 @@
+if(UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)throw new System.InvalidOperationException("Edit Mode required");
+if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().isDirty)throw new System.InvalidOperationException("Preserve dirty active scene");
+UnityEditor.SceneManagement.EditorSceneManager.OpenScene("Assets/Scenes/Studio.unity",UnityEditor.SceneManagement.OpenSceneMode.Single);
+SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Build();
+SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.CreateReview();
+var root=UnityEditor.AssetDatabase.LoadAssetAtPath<UnityEngine.GameObject>(SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Prefab);
+var a=root.transform.Find("Furnishings/Audition/StudioLamp0").GetComponentsInChildren<UnityEngine.MeshFilter>();
+var b=root.transform.Find("Furnishings/Audition/StudioLamp1").GetComponentsInChildren<UnityEngine.MeshFilter>();
+if(a.Length!=6||a.Length!=b.Length)throw new System.Exception("Lamp semantic groups changed");
+for(int i=0;i<a.Length;i++)if(a[i].sharedMesh!=b[i].sharedMesh)throw new System.Exception("Duplicated lamp geometry");
+result.Log("A2 import and material/reference checks complete. Approved lamps share six meshes.");
+result.Log("Studio dirty: "+UnityEngine.SceneManagement.SceneManager.GetActiveScene().isDirty);
+UnityEditor.SceneManagement.EditorSceneManager.OpenScene(SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.ScenePath,UnityEditor.SceneManagement.OpenSceneMode.Single);

@@ -1,0 +1,47 @@
+{
+    "unity": "6000.6.3f1",
+    "lodBias": 2.0,
+    "referenceSize": 5.619124412536621,
+    "referencePoint": {
+        "x": 2.3299994468688965,
+        "y": 2.6295621395111084,
+        "z": -0.6740002632141113
+    },
+    "levels": [
+        {
+            "level": 0,
+            "triangles": 790108,
+            "vertices": 995872,
+            "renderers": 198,
+            "materialSlots": 623,
+            "uniqueMaterials": 37,
+            "shadowCasters": 198,
+            "threshold": 0.7200000286102295
+        },
+        {
+            "level": 1,
+            "triangles": 265109,
+            "vertices": 448652,
+            "renderers": 97,
+            "materialSlots": 97,
+            "uniqueMaterials": 37,
+            "shadowCasters": 85,
+            "threshold": 0.2800000011920929
+        },
+        {
+            "level": 2,
+            "triangles": 110875,
+            "vertices": 184093,
+            "renderers": 94,
+            "materialSlots": 94,
+            "uniqueMaterials": 36,
+            "shadowCasters": 85,
+            "threshold": 0.00800000037997961
+        }
+    ],
+    "physicsUnchanged": true,
+    "anchorsUnchanged": true,
+    "cutawayRestored": true,
+    "allLevelsRespectReveal": true,
+    "canonicalVariants": 63
+}

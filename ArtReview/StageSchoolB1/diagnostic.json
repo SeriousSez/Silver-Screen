@@ -1,0 +1,25 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"success\": true,\n  \"message\": \"Command executed successfully.\",\n  \"data\": {\n    \"isCompilationSuccessful\": true,\n    \"isExecutionSuccessful\": true,\n    \"executionId\": 1,\n    \"compilationLogs\": \"\",\n    \"executionLogs\": \"[Log] Isolated branch diagnostic only; not saved\",\n    \"localFixedCode\": \"using UnityEngine;\\r\\nusing UnityEditor;\\r\\n\\r\\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\\r\\n{\\r\\n    internal class CommandScript : IRunCommand\\r\\n    {\\r\\n        public void Execute(ExecutionResult result)\\r\\n        {\\r\\n            var root = UnityEngine.Object.FindAnyObjectByType<SilverScreen.Presentation.Buildings.StageSchoolInfrastructure>().gameObject;\\r\\n            var camera = UnityEngine.Camera.main;\\r\\n            root.GetComponent<UnityEngine.LODGroup>().ForceLOD(0);\\r\\n            root.transform.Find(\\\"LOD1\\\").gameObject.SetActive(false);\\r\\n            root.transform.Find(\\\"LOD2\\\").gameObject.SetActive(false);\\r\\n            SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Capture(camera, \\\"../StageSchoolB1/diagnostic_single_lod\\\", new UnityEngine.Vector3(21, 13, -24), new UnityEngine.Vector3(0, 2, 0), 54);\\r\\n            root.transform.Find(\\\"LOD1\\\").gameObject.SetActive(true);\\r\\n            root.transform.Find(\\\"LOD2\\\").gameObject.SetActive(true);\\r\\n            result.Log(\\\"Isolated branch diagnostic only; not saved\\\");\\r\\n        }\\r\\n    }\\r\\n}\",\n    \"result\": \"Command executed successfully.\"\n  }\n}"
+      }
+    ],
+    "structuredContent": {
+      "success": true,
+      "message": "Command executed successfully.",
+      "data": {
+        "isCompilationSuccessful": true,
+        "isExecutionSuccessful": true,
+        "executionId": 1,
+        "compilationLogs": "",
+        "executionLogs": "[Log] Isolated branch diagnostic only; not saved",
+        "localFixedCode": "using UnityEngine;\r\nusing UnityEditor;\r\n\r\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\r\n{\r\n    internal class CommandScript : IRunCommand\r\n    {\r\n        public void Execute(ExecutionResult result)\r\n        {\r\n            var root = UnityEngine.Object.FindAnyObjectByType<SilverScreen.Presentation.Buildings.StageSchoolInfrastructure>().gameObject;\r\n            var camera = UnityEngine.Camera.main;\r\n            root.GetComponent<UnityEngine.LODGroup>().ForceLOD(0);\r\n            root.transform.Find(\"LOD1\").gameObject.SetActive(false);\r\n            root.transform.Find(\"LOD2\").gameObject.SetActive(false);\r\n            SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Capture(camera, \"../StageSchoolB1/diagnostic_single_lod\", new UnityEngine.Vector3(21, 13, -24), new UnityEngine.Vector3(0, 2, 0), 54);\r\n            root.transform.Find(\"LOD1\").gameObject.SetActive(true);\r\n            root.transform.Find(\"LOD2\").gameObject.SetActive(true);\r\n            result.Log(\"Isolated branch diagnostic only; not saved\");\r\n        }\r\n    }\r\n}",
+        "result": "Command executed successfully."
+      }
+    }
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}

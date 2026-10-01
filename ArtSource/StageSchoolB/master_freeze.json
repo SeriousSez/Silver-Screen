@@ -1,0 +1,2194 @@
+[
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\ArtSource\\StageSchoolA3\\StageSchool_A3.blend",
+    "sha256": "4B228E1BFF4A757321B5F1B3CF8ACDC472FB88D9932F4796B465821E1F5414FD"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\ArtSource\\StageSchoolA3\\generation_report.json",
+    "sha256": "309A82D510F460BBC7F098250CE1A81CA8E4BBBD363A1AAAF2334B08B5D389F5"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\ArtExports\\StageSchoolA3\\stage_school_meshes.json.gz",
+    "sha256": "18CB9E42C967236996358CBA678F25C3C607A1694D5A59EDCF80B5212E0B1255"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Materials.meta",
+    "sha256": "9C7212A301F24202F0D607B207116FF87206D770EF81524CBEB8E280005CB978"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes.meta",
+    "sha256": "51407AD60D87621F43F6353DA1E28C6CCF65ECBBB3B70F6E32DC48D022011E92"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\StageSchool_A3_Review.unity",
+    "sha256": "92076E0C407245E6CC106CB353B22ED1665042A912FFE7E25E926BD19BE20E37"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\StageSchool_A3_Review.unity.meta",
+    "sha256": "2B7458727ED74F7412434799F9520DBE00899B773070A1CA99C837B6B05B8F47"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\StageSchool_A3.prefab",
+    "sha256": "F7E4F77997E06E88F9E1B4CE4E0943C48A077124CD1C6769249E72AE4D9A5A86"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\StageSchool_A3.prefab.meta",
+    "sha256": "7CB501036CEB5523225C537DF158A6010C097DB2AD78935143830A376E2E88C0"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Textures.meta",
+    "sha256": "34ECAB0600769D12F4A4FD8B0E43BE1795B71A180733136E2EFA022F32BAA672"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Materials\\SS_Mirror.mat",
+    "sha256": "D659D2F726846B69C2C28882666412974FF4ABC84D5E56DAE3DD341D9F282900"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Materials\\SS_Mirror.mat.meta",
+    "sha256": "D4ECD3B47CFB32ECFABF4DA7EC4EC28A1E8F9E146A26D53182CF60E2FA9381CF"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_Audition.asset",
+    "sha256": "A90DE43829CB78DEF6C4D19B8D204BA9B02794586B1EDA4EA861D48C736CDA84"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_Audition.asset.meta",
+    "sha256": "5A91CE95D5731C104AF95CEDEB7C78B58B86FC988CA0641B3B0CFA521EAB51DE"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_CommonBay.asset",
+    "sha256": "13C4F7F44E93224D613177A29D5F9A8B6B81B7C40C5D19A058AB9910BF2FBDF7"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_CommonBay.asset.meta",
+    "sha256": "3033BCF3C0897660FA5730A57E8CA878D1BE27011AEA8FD986E2E381D57EE7C0"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_Hall.asset",
+    "sha256": "5F0E7028C6BBA52755ED9E48148F9328C35A4E239E3025BF480539B605C11944"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_Hall.asset.meta",
+    "sha256": "4268787425B2AD95DC9C1CD9DDB035B15C85EF9EABE5E888B210F4766021E045"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_Interview.asset",
+    "sha256": "94922C7AFB7D38E02DD5FD2DD94E638BAB03FE1484EFB81AF3CCF79CEA24AC58"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_Interview.asset.meta",
+    "sha256": "A1C8CE42E7B824E8B282915658B00132E0F0FDCFCCF5B1076FEAF1DFEBB0A881"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_Pendant00.asset",
+    "sha256": "CB807E1623FE54E49F19849E751A193BE65CDB6F539D732B44FA8A04AC7504A7"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_Pendant00.asset.meta",
+    "sha256": "03600B54DAB8AE57ED3839953C5FDBCE344EF982BC50B186C533784F4443FFBF"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_Pendant01.asset",
+    "sha256": "991323D0E5D330B323F752F995EAC99382C9AB18D80058C8A7CC6C2BC2243F5F"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_Pendant01.asset.meta",
+    "sha256": "DD316E9F1AB35DEC6F5E9BD8EB36B47E0BFF08A3890C2C48F9A279414C94FDD8"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_Pendant02.asset",
+    "sha256": "F733B9ECC79BEE58EF2C76859335B16CF0E0EE45E3B720E55EB91B7DBB43559A"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_Pendant02.asset.meta",
+    "sha256": "61F86EDD561F3893BA1CDF9CF7DCD0163FE6969C711E5F2E769EAD2318E7C830"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_Pendant03.asset",
+    "sha256": "27ADB858900915815E238650D4658B80C9284BC6CC0F7696534BFE906F9B1212"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_Pendant03.asset.meta",
+    "sha256": "216F621978A1435A0CAF6A38DD003B6F26333C5B903FB5CAABE90FA73C6682C5"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_Pendant04.asset",
+    "sha256": "7BE83FE1592136DC7E9D7C2F25B21E61F00CB1723AAE8BEE85D81D24F4AEF9B3"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_Pendant04.asset.meta",
+    "sha256": "271E3957151C64836B40DA984DA90388FC3513730E999BC225505390015B7080"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_Pendant05.asset",
+    "sha256": "8AE809E80147232F3838559D323A45000E916A951880F5007DC35CF374B6A215"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_Pendant05.asset.meta",
+    "sha256": "F140E6E66E3B17AF707B4E9F29E7E1137A9EF9BCA8D770B76D01BDAF0AFB94D4"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_Pendant06.asset",
+    "sha256": "6B2021D053A4008115B9CFB8F156074AE0D6DB932BE60BB17CF00112873DC583"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_Pendant06.asset.meta",
+    "sha256": "78E9DB64E190C0FE604F690586A1605F3E4544BEF26154A67B10304082DD20A5"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_Pendant07.asset",
+    "sha256": "E66E235EFFE7F4034527BBB7CF07BAD0C9282894DEC35F37439C88E5681D3104"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_Pendant07.asset.meta",
+    "sha256": "1341592778F1B672B1823391D242D51BE9F1E2E11D04A8505CC09F311A5930DC"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_Preparation.asset",
+    "sha256": "63B957B347E0F04A25DFC72DE7B052DBAEA4D95D6992567CDBB3243E8F3A3A2F"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_Preparation.asset.meta",
+    "sha256": "9E96E80E27A49A77515B7CC1F3BE4E59C980246E354CCB06DBB6FAAC8B0480DC"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_Reception.asset",
+    "sha256": "0A829D3F77490770AC428EA13ACAB9D3B74EDA0B98DD0D106E36261967BCC5FB"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_Reception.asset.meta",
+    "sha256": "77A755F0A2F3F39EDD9ACEA60FFFC8BFA6625D3099DC42E298EC1EAE3C42B6A2"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_Service.asset",
+    "sha256": "EC3842EAFAA1D8CC52F6A97B7C230C49F740CCB9906841E9D5023A7E449AB2D6"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_Service.asset.meta",
+    "sha256": "BEEE87EAD61F607AA7A97002761E130EEA405B203D7C504C118B550B2A4F4680"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_SupportPendant0.asset",
+    "sha256": "759BC3169DFBFF5D020506DA299EACA17570F68CDD03C2CB3BF982535BCFB73A"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_SupportPendant0.asset.meta",
+    "sha256": "5B7DF05CF4330BD987E0A2A618BFAFC10CEED913D8C94BA9735D3BBCE7F8BD6E"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_SupportPendant1.asset",
+    "sha256": "80CF332A08EB752C1E9BC20ED6CBF2477BD552DA7CA2090C7EBD50CB1A241B7C"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_SupportPendant1.asset.meta",
+    "sha256": "10696A3CE69110AFAB6F0AE181DA25149CEAC85BAC83B251632BBF0C0892AC4A"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_SupportPendant2.asset",
+    "sha256": "DB240344448062AB3E4D3E989DA52D68C08FA5DEF97B35E63CBFFC7B5F518DFE"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_SupportPendant2.asset.meta",
+    "sha256": "D21D6A692B3DCEE7C7A557C9FB09442893388A98213D84C02FEB2AC110EC9F29"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_SupportPendant3.asset",
+    "sha256": "36C2D25831F31AD23CE8EDAACFEB9CD12812779FF42F8A00AB94BB2D29514EE8"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_SupportPendant3.asset.meta",
+    "sha256": "3CE222A8F58AD6740D9583F4285E9A6A6D8B427A3BC12B7AEDD23D8E16B20D8D"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_Waiting.asset",
+    "sha256": "44C3D227D69382BB017D950F992DB2B00E39B7A00295EB3EECCFD7A6BF17C9FD"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_Waiting.asset.meta",
+    "sha256": "F1D740427038E2083F935FC01412FBFE4C931E5836032787D431291A87AD9231"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_WestWork.asset",
+    "sha256": "B21755462D7CE8A9731A0D92C75BBC263191D58FDD5356354F91F8FFC408DAA5"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Ceilings_WestWork.asset.meta",
+    "sha256": "6C8CBCAD80CDBA13801E0E90F5FC35775CB128C2EC8089CFDEB30FD423174B36"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Doors_AuditionA2.asset",
+    "sha256": "11E61C3356CC242DC0A7D508CB26C1FC927F68E8F2D43CDBF600DDDBC0D87BAE"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Doors_AuditionA2.asset.meta",
+    "sha256": "1D8723C681EE3CCF0DE32C23C7DA85698CCF2683A12369B1026769B7B923EC7A"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Doors_Cubicle0.asset",
+    "sha256": "918157C0E4108492750CF5957C19F3E564C9424027C642A863D0E4E1915566E0"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Doors_Cubicle0.asset.meta",
+    "sha256": "32EA451EFFBAA1C98F8B3FD7739125AF20BEABEC11EA691318C9F2C40A4FDF9F"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Doors_Cubicle1.asset",
+    "sha256": "4311E1BE8F4603726FEC5E55BFB10710D00314D451F9476DE7A4DC7ABB5F4415"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Doors_Cubicle1.asset.meta",
+    "sha256": "B087A91F39544482AB3CA80D6F72F2BB3A483091A36308FA5E88ABD1DC412AB5"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Doors_EntranceLeft.asset",
+    "sha256": "B3079B2155BE1E84BA2CD026D9A8CB3A0512ECBB72A9468EF71959AEB751E83E"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Doors_EntranceLeft.asset.meta",
+    "sha256": "E11A623DD2E2EE6D5F302BD7CEF9868D5C937C03E59A84A0B3AB50900BF0223B"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Doors_EntranceRight.asset",
+    "sha256": "E4479D11671035C56FEDC76330AF248F3BF6AE9D9E49A653F8C8BBC3A4CB2FB0"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Doors_EntranceRight.asset.meta",
+    "sha256": "46023F9D090C01ED335DA6C032F6D7155B13E3EF3D4F5250FB807E4824B7D486"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Doors_FlexibleA2.asset",
+    "sha256": "7A68C1B5DB4E1C9A2116B0D813F0CB78795E85AAD9F565F80751B9E108F97584"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Doors_FlexibleA2.asset.meta",
+    "sha256": "3274C42039098DCE1B96269D1EAB60DEB5E7E545D0551BDB1A30BD2102C84692"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Doors_FlexibleService.asset",
+    "sha256": "14384E624A45E16EA871A22725EF1FA71F2AC1D697C518726B34B17C89942D16"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Doors_FlexibleService.asset.meta",
+    "sha256": "041F3D19D83A97C5C99ABEBB911CF529781A5553F3BB43AF2F3F3507C60E7468"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Doors_InterviewA2.asset",
+    "sha256": "D0130BDE4084F8E4C1301DBC7C39A41FB5340C1880B473A11012B60DD1A2A73A"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Doors_InterviewA2.asset.meta",
+    "sha256": "0715E85E5891E89C4108D68421A9697E4EE11577537A9CA7993346B655024830"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Doors_RearServiceA2.asset",
+    "sha256": "0D16033DFBEC018F5F140BFD8301EA3A2044FA34FB6EA51AB3C5E8958246337E"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Doors_RearServiceA2.asset.meta",
+    "sha256": "7845DC01BA08152B307BEA9063848040B98399689107F1B807033B4BB8DC9A6A"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Doors_RecordsA2.asset",
+    "sha256": "5761D9B4A6D5E2510985DD9A4F21BF5FBEF18FA1004F38AB9A5D18A2994270D7"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Doors_RecordsA2.asset.meta",
+    "sha256": "4677D05BCDE497A46C6DDF75B666427E4F6EB526867989003FDA0CFDE4A98E86"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Doors_StaffA2.asset",
+    "sha256": "D61C9349FE7045D1C9574D84D091D890D7C51FF7F958996A94E4FB57F2EA539A"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Doors_StaffA2.asset.meta",
+    "sha256": "9DA5519D981DED38F84017F8668B12962D1F01D6A65D23BF88E64FE5CBAAAFB6"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Doors_StaffInterviewLink.asset",
+    "sha256": "37245CE49BC0BBD761B5A80E99001537F61DCC21AC5BD13942B13E4930284407"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Doors_StaffInterviewLink.asset.meta",
+    "sha256": "2381B9C8398DF8CA81A481B005F00728512BDE3CD04E2617AAFE4836159A85FB"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Doors_StaffService.asset",
+    "sha256": "F84DED11BB858194D488A5690DCC3F9D11B973F4A3F31DA24FF8D066F0CED2FA"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Doors_StaffService.asset.meta",
+    "sha256": "8C24AEC310E15EAA24ECDBCA64EF949D29DA08917E5548039ED1387F1656D15E"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Doors_StoreA2.asset",
+    "sha256": "5C29B77AAE17793FBE101482335CC6A120DE50636F5A3ABDBA894CA5BCE59A87"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Doors_StoreA2.asset.meta",
+    "sha256": "13B736ADB702585CB19E80A5A6574A76D054BBEBC97C99A3B0840D20FAF9E525"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Doors_Washroom.asset",
+    "sha256": "8AD7208505FC2074B999968756F041E5A71847DEB89B04F74DC2CD9ABC4D7C2A"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Doors_Washroom.asset.meta",
+    "sha256": "85142797ED191C94F6DDF518A9CD124A5A0F29F6D0731EB16B7047300FF0C73B"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Audition_Backdrop.asset",
+    "sha256": "0B0F1697AAAAA2C2317C3CD91BC208E1CB9E6AF3DC70DB7BD64A9411A30B14B0"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Audition_Backdrop.asset.meta",
+    "sha256": "611990C11386DFB21D2107394575DAE8F1D075C4C238B3FABE8222470731E2AB"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Audition_Curtains.asset",
+    "sha256": "E841E673F67F624CF21339729C71FB7A202A168143690F7AA9D9C9BB2B130D58"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Audition_Curtains.asset.meta",
+    "sha256": "7814AB05911FBD2E07DB5B94420DC1959E03AD41D81B4B61769C6E6CB4BECD63"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Audition_EvaluationMaterials.asset",
+    "sha256": "F0AC6174B0715228E551EBEA8B856B2D9FF44A797D97F64E9AC7477C17E7595B"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Audition_EvaluationMaterials.asset.meta",
+    "sha256": "49127F7E71882A288D7D7AD92CE4F4BDB46DA949D64BD16A1707A8DE8E7CEF9F"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Audition_EvaluationTable.asset",
+    "sha256": "832D018E162EDDA6045BCF8397AF5A5F917A2B6916934671D5723019F55AD022"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Audition_EvaluationTable.asset.meta",
+    "sha256": "470D3310BD56E5AF7E395F3A7B6170B73579928F0BB31C8B2A4783313AB400B4"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Audition_Rostrum.asset",
+    "sha256": "F9C9EB19BA65BE87E5662B29D833493C8241E3B1A6AC3EB51E77F43A4319568C"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Audition_Rostrum.asset.meta",
+    "sha256": "F45F3F165C6F72A181CB43CA2540249D60B259A00C64E37D31699B374F9774A2"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Commons_PortfolioTable.asset",
+    "sha256": "8C5933ECC1C673CEE661DF12E147B77CDB4C823150598805CA32F304CC7A8D1B"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Commons_PortfolioTable.asset.meta",
+    "sha256": "877FCEF595F880766EC92652265C3CA5E167F1427DE7ED1AB71DB8F16CEEBC21"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Commons_ReviewMaterials.asset",
+    "sha256": "57E0237C055A561E242ED29F593EB8E782A500179E25088B53F43D1718952B1B"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Commons_ReviewMaterials.asset.meta",
+    "sha256": "2CD93DADFBA5A2AC8CFB784678F06CA46A08EDDEDE11BD699DC4D427AEE51D35"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Flexible_ReviewTable.asset",
+    "sha256": "949E35342E75E590DAA5EAC05007A79FDEA8AB34774B6C8EFED0B3519889B227"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Flexible_ReviewTable.asset.meta",
+    "sha256": "CD71D9397CF440C7BA6269EC5D69919194A732D87B9B41C8A22CE8324F9CBCEF"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Interview_Bookcase.asset",
+    "sha256": "4F16B1FD3B93833913C86A110D21D6F2EEAC591378ACF439EC7CD68D2681CCED"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Interview_Bookcase.asset.meta",
+    "sha256": "377ECFB3D70C4367D7D4E4EC876840ED0C68E70D32BC22F8F91CD90A543500CB"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Interview_GuestA.asset",
+    "sha256": "D6C43E612ABE5C2838C97672C3ADD58D9A3C4498C361AB6C1A51959906955BFC"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Interview_GuestA.asset.meta",
+    "sha256": "1519D3F7EC36595BBEC171656F776B53BB250E21BC7E2EA87F74C5A610AA13CE"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Interview_GuestB.asset",
+    "sha256": "47B3125983F3352F45532048E9736D3BFD7B6B8980C7B8D36F34B7F6AEC42CD8"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Interview_GuestB.asset.meta",
+    "sha256": "B378622451A15B9253BAC979C71931CA58FF939597FE1B5D6E7122035087AAD4"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Interview_PortfolioReview.asset",
+    "sha256": "F7F34FB1AC925BC1577E25497CD5ABB185EFBDC31C62835F61ADE3C44AAA623F"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Interview_PortfolioReview.asset.meta",
+    "sha256": "667928DF0FC2D0E1CCD14B30D6529673124E76C5F10EC32789D6EF89E236F274"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Lounge_Chair0.asset",
+    "sha256": "D9731EACF5776B3FA8DD14CE6ECB75E9DBA770EA3FEAE2BDFBA051B502119BE8"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Lounge_Chair0.asset.meta",
+    "sha256": "DBFEA2533F4DAE5C7DB52164AD3F54FAD73DE6191E4E7185EAFD3AE0212AD409"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Lounge_Chair1.asset",
+    "sha256": "5BCDE65F769C4D70E86EB3E25C866736C7087ABC53E6AF89C2DBE8733FC5730E"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Lounge_Chair1.asset.meta",
+    "sha256": "9659A8637263F8BE75492EE1C782514618BD7192BA582212125C6D326C8671EE"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Lounge_Chair2.asset",
+    "sha256": "2445164B2057E7A63D7CFE225A60257454A0DFD0E71957172D7DAE43F6CD86DD"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Lounge_Chair2.asset.meta",
+    "sha256": "3C332832EFB5799E11148AE43499B95936F093382DEC0C1BA70962376DC5DFE6"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Lounge_Chair3.asset",
+    "sha256": "B58BEE98F14694D0C6093AE70DDC0960DF0D7FF8C9F4DDE2B0423852A8E86AE7"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Lounge_Chair3.asset.meta",
+    "sha256": "5E5B1C71811DCB509BDF5332882A1FA6CC42B281F0E2EF0F49B0EC071FBAF7B5"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Lounge_Table.asset",
+    "sha256": "8D2551D8262E34AF11A6A174342C62C4D9A758663B31791D566C461375FEF2F7"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Lounge_Table.asset.meta",
+    "sha256": "20EA13A103C6055C54B5FA51254B41158D20F0841033913C36563AAAC433B703"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Reception_Accessories.asset",
+    "sha256": "7D59E747EC2EC028032465A8B72D1AFBDA3FDBCC0D3395E5FCC23DA31C814C48"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Reception_Accessories.asset.meta",
+    "sha256": "CB15526B2ADC113C280105E576A3034072CF61814B6C355CDAB6E3C33AD1F969"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Reception_Counter.asset",
+    "sha256": "EAEA19D0E9C08B81C9B02373E1AABFAAC19B2FFEDF75F6DEC615931616B99118"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Reception_Counter.asset.meta",
+    "sha256": "9994AB0EFD0D6C4FD8D3B77519F85803F6352C2DB82AA1E70444A4F2A5BD9C52"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Reception_Details.asset",
+    "sha256": "27F3378BBF2D97A02E20D26B126715ED0143280450EFF7A97FF8A18BB2DB494B"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Reception_Details.asset.meta",
+    "sha256": "59B95B8C3D0DAE11539559687F1A564CCEA08CEF86BB64A791F1FFC4D97C1C8E"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Reception_Wastebasket.asset",
+    "sha256": "CA78034A86CF3DE374E27528B83539F8929DDE32ACEC3FC686B5799D6B6703F6"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Reception_Wastebasket.asset.meta",
+    "sha256": "9D0915C78E12AC1FC250F6D91EE77CB617C22225CD10F868D78973D38E438025"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Staff_ArchiveBoxes.asset",
+    "sha256": "4C827AA4DF6296D4A7247100C1A04FEAB797C408437EB7C2A4FEB583138B2350"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Staff_ArchiveBoxes.asset.meta",
+    "sha256": "277FCD517A0D7A4878FCFAF1169C4183F8650B410A30266EF7C5A25D18856A8E"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Waiting_Chair00.asset",
+    "sha256": "DBC6578D08793783158801482D61F7C2D58D9F7A24BAB3A087D9F7F527AED0AE"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Waiting_Chair00.asset.meta",
+    "sha256": "591917916442CC0A0A344577EE9E2D4334B6F8BEB267A55FB3D9F5ACF6A2682A"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Waiting_Chair01.asset",
+    "sha256": "D6EDB4ACEEBACCA540C17CB672F4410AD3D016BB0925AE631A684BEAA7CE5429"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Waiting_Chair01.asset.meta",
+    "sha256": "273A0E0CE023D9A41A7A3F767C4DD97BA0457641797C728204E7A71DF276BF28"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Waiting_Chair02.asset",
+    "sha256": "AEB269ED4A4128047FCD6BF2EAC36A409C10A7522F80FFC4AF57DC914C89E16F"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Waiting_Chair02.asset.meta",
+    "sha256": "E5C3AA75594162D688D5799DD939D682F28332D36DCD25F5224E3740E58B4D1C"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Waiting_Chair03.asset",
+    "sha256": "52A4C7BF4DE545CB8CFFF972663891D5AA693677B8A42519FFE4C2A0862D0792"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Waiting_Chair03.asset.meta",
+    "sha256": "C25B700069C3143AF8AD87A0B97C59D80B5B4E9930B6652A75D98AFCFD549124"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Waiting_Chair04.asset",
+    "sha256": "926634F471FC9FB4F7BCD86E84A35F09D4BC7F3A3CDD20406CA8F447CA1DA35B"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Waiting_Chair04.asset.meta",
+    "sha256": "B730406ECD485BCCF2B0CC57355DAF7A523FB59B72C7CE63F714F961CED08ABC"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Waiting_Chair05.asset",
+    "sha256": "B70498907673E279D9BCF712B5EAF10A973A39437CDE4E6701C4590232BB26F6"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Waiting_Chair05.asset.meta",
+    "sha256": "E8BACC8793ACC9AAF9C2565FB47EFBA5BD7154C4B2AA167EC7180849ACAF33C8"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Waiting_Chair06.asset",
+    "sha256": "C7FB79BA453F922BE4628B0F233F53B00ADFD50C275ED723BA2DD0B81426E5E4"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Waiting_Chair06.asset.meta",
+    "sha256": "790BA331F44456889FD9A1C36A60BBD629D2909004AA9C0C0003904757186D69"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Waiting_Chair07.asset",
+    "sha256": "C4BB5D38A0BB87BE84CD9ADAF18DD74963D83963C80097959E480E3ED46F0461"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Waiting_Chair07.asset.meta",
+    "sha256": "34D25BAEC5CC9AD3881F0AC13AA6391012AD5ACE599A6F87E798591054747887"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Waiting_CoffeeTable.asset",
+    "sha256": "3A03AD819334C13B4D7CD04F5526AD6E07B94EC4992725A226E13860E3CC3189"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Waiting_CoffeeTable.asset.meta",
+    "sha256": "6ADDFD8E5448B20554A3C3C6B6B2F2D17F56CD9FF80E2C0AE4EF90E542C1F2EF"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Waiting_Notices.asset",
+    "sha256": "3210EE02D9CB7CE856C51630E5D2476D93E0A94B67FAACC4EB7A39EA6686209E"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Waiting_Notices.asset.meta",
+    "sha256": "82F30C92094C75EDE67F8C138E44959EF84E8FA60C5AC6B8EB636C60F3FF9150"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Waiting_PortraitGallery.asset",
+    "sha256": "7651BEB918FC9A0B22C721C70B131EA2FFA5F53678F49B00217D4B4A483AC8F2"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Waiting_PortraitGallery.asset.meta",
+    "sha256": "0ED1EDA3D1C03D3D57387E59D9A3D99618CC4E3E41717212B432682DA20D2C91"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Waiting_ReadingMaterial.asset",
+    "sha256": "0B84A5EF3B381941E1EBF641F16CECBF55A96952263BE107C07935EAA41F6420"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Waiting_ReadingMaterial.asset.meta",
+    "sha256": "67EE3AA467AF40E12E463F4F733E0C2024A01B528223321F8AC22E7D3F1D0F06"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Washroom.asset",
+    "sha256": "27ED850F09C00E1E3285D1581879DBA6D7BC72D56A553F1F14E8EAB1B09C2556"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Furnishings_Washroom.asset.meta",
+    "sha256": "5E32FF3BF38E1D4CDEA265D518322E38B1D3D3D15536E4D08D984D1C911F320E"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Interior_Floors_Audition.asset",
+    "sha256": "FE67A8BC17AAD37629A6733F919819B65A3FB2DEBB481D57E54DB5370D26C447"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Interior_Floors_Audition.asset.meta",
+    "sha256": "BB25C6492DA10A6F202FAB366213EB7DDAF8FBFF7348CDF29A2611AD95C7A605"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Interior_Floors_AuditionBase.asset",
+    "sha256": "CBD93CAC1CB3E557590CF7A3441DE003F8D0C303E29E4E66B69DD095C81ADB3B"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Interior_Floors_AuditionBase.asset.meta",
+    "sha256": "50AD08B47BBA58898149E20FC40A2B89B7C2A71C838FECB7689E96FF3D50534E"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Interior_Floors_Commons.asset",
+    "sha256": "1E6EFBEC658ABA09FA9BFF6E4415BBB1D2A71AE0104134F47261F92FD4DCE30F"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Interior_Floors_Commons.asset.meta",
+    "sha256": "CF44909E8367275A5F476EFF7A4BCD923813DF2A7CAD1375E2F770EAB95880FF"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Interior_Floors_CommonsBay.asset",
+    "sha256": "862DB7EE1CD3144AB6E2D4B8F7BA19F2D8F36DC096F4C1BF36A9F2EEF37DF1A5"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Interior_Floors_CommonsBay.asset.meta",
+    "sha256": "8B493D3C82707B7ECBDBE4BE1C4AC62CA2D5C55FB5945A8EFF26B38784FFEE25"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Interior_Floors_Flexible.asset",
+    "sha256": "D771113075374E9366FB5849F731BCD60BE46D10387623E55FFD1F9B2B0C5002"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Interior_Floors_Flexible.asset.meta",
+    "sha256": "72A5817097D42EE46B6F79B170923809B2E6A921FC0D58D2CFB2F51556C6E9E7"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Interior_Floors_FrontBase.asset",
+    "sha256": "F277AEC494C244EBBF04D49C7E89B00F85E01EAA1AB8AD383B4BDE75DEF16514"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Interior_Floors_FrontBase.asset.meta",
+    "sha256": "2B99B215A989F84BB1244E426D978D4BDD86AA08920744E9DC7D43F27364BBAA"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Interior_Floors_HallBase.asset",
+    "sha256": "1C6B8E472EC3042E8CBC3CB5F4683282DB562183EFBD9F2814E7ABD274B00D28"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Interior_Floors_HallBase.asset.meta",
+    "sha256": "804CC2A574DFF6F29F9C2DCD4BFD316C5501A10F10A6FB23679DA162C6BA6F5E"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Interior_Floors_HallInlay.asset",
+    "sha256": "4F448498FFCB736049C8319B35149065AF82F9C7483339D65679B27CDA33F2F7"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Interior_Floors_HallInlay.asset.meta",
+    "sha256": "6EC7E285F7E292CE161A071EB67A1DEBBF8CC021D88D4D276F77E145CBD8E05C"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Interior_Floors_Interview.asset",
+    "sha256": "7093BAF72B24DADF47FD97D60416E5896CFB1352DFC511D31C44E323F34BBDCA"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Interior_Floors_Interview.asset.meta",
+    "sha256": "17908FB6341AD5F777A97A0903EED35C2FF87590C87C68D2FA9F8ECB37823FBB"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Interior_Floors_InterviewBase.asset",
+    "sha256": "822DC3647CB168D126ADDC8868169A22B5AC37B4189B651C1A3B5B319E1C4C30"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Interior_Floors_InterviewBase.asset.meta",
+    "sha256": "3FD12B1116527C8422979A307E7ADF53B1DBFED0AD800373271D6DEE52AE18D6"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Interior_Floors_Staff.asset",
+    "sha256": "561C52F6A318D8F5E80E7322EA46B4FBE59A43B06132D36A7930B177E6154797"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Interior_Floors_Staff.asset.meta",
+    "sha256": "18AB77B3761EA6AA130B3570B13E3EB520092654988007812A858D27D6893668"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Interior_Floors_Waiting.asset",
+    "sha256": "E3AA3B3A74A733837CB6EC26F9A8857456E19FB207D5EDD0B73248E0067F4210"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Interior_Floors_Waiting.asset.meta",
+    "sha256": "56A2C1483AC43115FEEA36309B0DCB200A01F44F93A8911F9EF535F8F2856617"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Interior_Floors_WestCommonsBase.asset",
+    "sha256": "3EE3CBBAC57A86EC5F884D06E7D00B883BC4C903E67D9BE6027308ACD4ED3495"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Interior_Floors_WestCommonsBase.asset.meta",
+    "sha256": "88DE42CC43443415921DEF26D365EF3449415D08630822BDAB6B1BC8EDC5D85D"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Interior_Floors_WestWorkBase.asset",
+    "sha256": "4520C5EB0016CD656BA91C88F931BAA08F8C2D493C1D8A1FEE5948F5AAFF6D30"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Interior_Floors_WestWorkBase.asset.meta",
+    "sha256": "F716C1A03DE61A52438927FFCD79B320E9DB899B6DF26A8FEB6800B5FE74939F"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_AuditionFront_InteriorFinishA.asset",
+    "sha256": "B001373DA308D0688B821A82425E288D5A3B646034F986C1CB8A0623B00B68B7"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_AuditionFront_InteriorFinishA.asset.meta",
+    "sha256": "83171DA0D0B346554F083F81A07E4493BAFD2C4E2B3BBCA0BF6423D48116DCBE"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_AuditionFront_InteriorFinishB.asset",
+    "sha256": "B6733F5C81217C92A98BC6266E5A8D344920165E39D9BF8A648D3CA759E57947"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_AuditionFront_InteriorFinishB.asset.meta",
+    "sha256": "86032D09F7EE9A771BC083D5EE3B9D377D9503BA053018F7E18BCEA0DF25ACB8"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_AuditionFront_Trim.asset",
+    "sha256": "BCAB1421D8068F148538DFD1361B74C281F572C53F1EFDCBA8085E18DDB4800F"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_AuditionFront_Trim.asset.meta",
+    "sha256": "1BCED1CC649627BFA930B285B4A891DF180CA8E470DF10999B01A1DB622BC703"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_AuditionFront.asset",
+    "sha256": "BBC49C89E81066052ECBFCB9722F2236FB57A9B4DD29D48A86D23584B4C6B38F"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_AuditionFront.asset.meta",
+    "sha256": "7D5B0950B43FB23973FB0F5CE3823BBAAC02E4AF8A1B261B7AF737FFCF41693A"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_AuditionWest_InteriorFinishA.asset",
+    "sha256": "E5BC95018221F5ACFFA7F4B1A83B578BF9928ACD6D70356C7D98B0EDDD72DF2B"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_AuditionWest_InteriorFinishA.asset.meta",
+    "sha256": "0F89E25CAD13A87BA005259C9521ACC11E70AFDD969A6D7F4371CD63B1400EEC"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_AuditionWest_InteriorFinishB.asset",
+    "sha256": "21ABFA6FE5C72E6443F856B80AF6D7A7A15242569A07D05253C072A93D572893"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_AuditionWest_InteriorFinishB.asset.meta",
+    "sha256": "4B09342B537DC48B566083E8EC5C449A21BF9A27F009B178F0F61E95828DEA97"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_AuditionWest.asset",
+    "sha256": "097730AD171AD97ABD998845936FE8181151FF183AB01E19C956CDFECAD6F34F"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_AuditionWest.asset.meta",
+    "sha256": "0C2A8CDE5B939C078C08A20DDC591EB1B50BFAEF02B830014E61F33BB0C40E97"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_InterviewFront_InteriorFinishA.asset",
+    "sha256": "9B2EA4C50D0E6F7947A734456F21B4D71998860A34EB79A97FA6D54DCC204AE2"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_InterviewFront_InteriorFinishA.asset.meta",
+    "sha256": "DAE7632BE0FA0BF06FCC2F9B85DA880EDE5022F348B9C4D103DF97B257BFDD7A"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_InterviewFront_InteriorFinishB.asset",
+    "sha256": "4C30DB182CFB53CFB6DDB6ABC469B657FF42398596CB4E7A4864CA55A65209B5"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_InterviewFront_InteriorFinishB.asset.meta",
+    "sha256": "5F0B6088F814907B49137FCF97D2E8FC72E9120193D7B343BEF22F4ACB033D58"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_InterviewFront_Trim.asset",
+    "sha256": "69F9E9B7FDC83A36393C28CD3068629A998A64C10458897CC2B0524FDA1BD368"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_InterviewFront_Trim.asset.meta",
+    "sha256": "F9A762BE2C88F3B94127CFFB762114DDAFE5804DB96D3113C9DF5ED0CDD76243"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_InterviewFront.asset",
+    "sha256": "3A310773C71BCAE7FBB30F273EAA71E1C52D5E8D80C7C5D0F9156C5817BF9879"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_InterviewFront.asset.meta",
+    "sha256": "2C2FF0D8F704C6FAA64DA0FD5A79A8A57ACC8FCA31EA4AEA5ACEE2E207BDBC21"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_RecordsFront_InteriorFinishA.asset",
+    "sha256": "83F4C7FB40827D6AADD16D94E1F4B12E5C8831927D581ADC9C6D181255685DC8"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_RecordsFront_InteriorFinishA.asset.meta",
+    "sha256": "6EDB282D6BAAE7F674DB3DBACA8A0DB57D6263207D35A4AFCBC241A8B6AE0F4E"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_RecordsFront_InteriorFinishB.asset",
+    "sha256": "88B4E96091C85AF6768C0FEAC745F849AB0CD1ED63958BBBD6975D414BA242BC"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_RecordsFront_InteriorFinishB.asset.meta",
+    "sha256": "2A1D67A1209C1181AEB2552FAEBE50EBB08A930DEF82FFAA68BD6D2B4F1961FE"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_RecordsFront_Trim.asset",
+    "sha256": "6AA20C6A173238DBCD00140229FF94A68E0F0DF7B05E66FD6742763F0B36B95A"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_RecordsFront_Trim.asset.meta",
+    "sha256": "AEE32DE080FFDC6430F4E33D9293015FC288F4BEECD9A2E4DEBC4BE3D0A3A935"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_RecordsFront.asset",
+    "sha256": "FFB790AB3948EBEB710995F5E91D7DE1E11A6E580FAD2E2DFEA8EB10D77F6364"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_RecordsFront.asset.meta",
+    "sha256": "C42AE45E979BE1701B4876DB9EB191BC3F2C318376683743DCC8A229B57B5EBE"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_RecordsPassage_InteriorFinishA.asset",
+    "sha256": "DC3AE2AA5C9BAA8B8ED9F107786364F5CDAE88CA24435B224D8E9789C050B59B"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_RecordsPassage_InteriorFinishA.asset.meta",
+    "sha256": "4739E4FAEAEEFBCFDE0637E2DC3A7943B1F5133B14AB0BF73BAE2A1B3FD75F71"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_RecordsPassage_InteriorFinishB.asset",
+    "sha256": "DAC60D03B9985CA359BB87FB71A11601F129D6B1C519C20B29C43BCDABDE2B28"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_RecordsPassage_InteriorFinishB.asset.meta",
+    "sha256": "608F1CCD85CDC9266A7B77C2DA54F6542E80F3967FC0CBF86FFE77F19E09FFAF"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_RecordsPassage.asset",
+    "sha256": "80A6314B9548757D5797FC952FFB183669334C8E1100F128AD3CF20E6AC851FB"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_RecordsPassage.asset.meta",
+    "sha256": "3ED6F4BBE13E7C340931A04B9C8B1EEE1278155EE214999094273828A8A95E69"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_ServiceFront_InteriorFinishA.asset",
+    "sha256": "260B3D3B1D79C432F79C31CE294BA2AFAE8935F089D316FA2C5213BA55843FEC"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_ServiceFront_InteriorFinishA.asset.meta",
+    "sha256": "EF9F3E4EB04FAFDB9FED84D7963A41F9B91E591E91C39BB47A6D5CD3863A64A6"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_ServiceFront_InteriorFinishB.asset",
+    "sha256": "E567C448F0F3CA505D445097EDE3A682666D57357B8280CBF4880A558A6DC6AD"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_ServiceFront_InteriorFinishB.asset.meta",
+    "sha256": "2AE418877BF9AFBE79528D8B2DBBCC5129337C4992F23F1BE46136D92FFAF12C"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_ServiceFront_Trim.asset",
+    "sha256": "D6436ACB70C901F476C181C855385A0E0EAE46436FCD9DB3EC97A90A208AEDD7"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_ServiceFront_Trim.asset.meta",
+    "sha256": "ABFA3FA8BF2B896E003E00DE2428DC1FF317430494F66DD3B6BAAD04B4C8ABBD"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_ServiceFront.asset",
+    "sha256": "253914FEB10BDAB8738E2412F77CE6C67337535D38EC1E38322588B4C8E364B6"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_ServiceFront.asset.meta",
+    "sha256": "0212F1D8D54FBC8CEC442322C4B02F7AED1C11C0FE8E6F62BE84814B3D70F77F"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_StaffDivider_InteriorFinishA.asset",
+    "sha256": "8860656788BAF2B84840705D71D0326A3287C7A9136AE1266FF69360198B7DC1"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_StaffDivider_InteriorFinishA.asset.meta",
+    "sha256": "322A8569EA8604309BD315D2481706A3FE3C6C4BA926D493E2801B6FB31FA556"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_StaffDivider_InteriorFinishB.asset",
+    "sha256": "6979DFC575D662BEA4D3C2C3C2C1364FBC27FEF4376D815A5446796C077B1435"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_StaffDivider_InteriorFinishB.asset.meta",
+    "sha256": "D87E22CBB53A8A9054A7BCE42C0E29B80C529D933B40D2AF32813C6712895320"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_StaffDivider.asset",
+    "sha256": "B1DB549DC43956B943683C60F1D41C86BD996D1FEB76FEF514FFCB5894259811"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_StaffDivider.asset.meta",
+    "sha256": "495CED06C383FFC8135A961F4EB242D76A15E7ECAB0C44B6C99672BB87F996D2"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_StoreFront_InteriorFinishA.asset",
+    "sha256": "8FF5BD2566479E7FE485629707AAC9791C0C7202C2B394DFEFAAB57761F1F85B"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_StoreFront_InteriorFinishA.asset.meta",
+    "sha256": "45A4D25C4C84AFB2901A44C646108662D1E53238D90D7BE661FB08C380A727D1"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_StoreFront_InteriorFinishB.asset",
+    "sha256": "8209AE53B05AD121613A73AE95C2142FE094BA8E27B32535BA8914E541671ACC"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_StoreFront_InteriorFinishB.asset.meta",
+    "sha256": "618F6AAD867C844C0E7357B3C65A0B0FF7598DCAFCD0210628AB3B990F4B1411"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_StoreFront_Trim.asset",
+    "sha256": "CA677A957395B3687D5121234136DD17505940DE09C33CDC170FC96EA36B1BD8"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_StoreFront_Trim.asset.meta",
+    "sha256": "24D8899E23BE0235DC86AE221EFAC53D89ED9750733647D079A7F4F37D09ACA4"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_StoreFront.asset",
+    "sha256": "56A2CC97C5DF33DA27F8CB335FEB4853BCBC711319FAA25DB076EEF6EC4AEC17"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_StoreFront.asset.meta",
+    "sha256": "6B8E28592E990FF62AC0DA15767809B06202F976E127C539E07E8875ED2DD85A"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_StorePassage_InteriorFinishA.asset",
+    "sha256": "0764704CBD3599B70413D19EDADCA48AB9F1F86A5C68D950317949A86F63A3A4"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_StorePassage_InteriorFinishA.asset.meta",
+    "sha256": "7E6F5F88BE2087A1A707B7DC5B121E530AF374151B83E14CC35F0E47BEEEB8BA"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_StorePassage_InteriorFinishB.asset",
+    "sha256": "FD2AF8C538D533994548A63E57D2ED20C242848B61F17044BF25122A6ACE7232"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_StorePassage_InteriorFinishB.asset.meta",
+    "sha256": "A5DE482DE909F90928227766BD3CC7EBBCA9205B5C39961E4A78FC47E78DDB01"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_StorePassage.asset",
+    "sha256": "8786E4C9116432FD5776BE1EC869767ADF0DC0E36ABFA7618AC03900D867FFA9"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_StorePassage.asset.meta",
+    "sha256": "F52E41A11CD937B7515F29EAFC051DF65CDB4EA726E7D8C7B0D4AFF7010AB6F8"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_Washroom_InteriorFinishA.asset",
+    "sha256": "893782510BEA2841E102C3256A13B4373DB117DB9D3D84E5128478A37572BEB1"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_Washroom_InteriorFinishA.asset.meta",
+    "sha256": "E33E4181444230BC24F16327B71BB5C9F94D0742E4E3F6DF83D5823231D9E4EC"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_Washroom_InteriorFinishB.asset",
+    "sha256": "206206EF96BD1DB21E6391A96B949B63FE0031DBCD713506EE104ADFEBE89199"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_Washroom_InteriorFinishB.asset.meta",
+    "sha256": "47C4976261F196837EDE876F024D8B3F9771A5962C408222F59AC6E5AE091958"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_Washroom.asset",
+    "sha256": "F8118EDFD81EE9BC74749A2CE38CD301DE37E57D71D679539CCFCD52CCFEB4B7"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_Washroom.asset.meta",
+    "sha256": "26E230D109937AB9C0F844AE5962F35D629A216A6AB5116244585553B5046CAA"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_WashroomSide_InteriorFinishA.asset",
+    "sha256": "51C820E93B35E42511D107C05684E4C3093AECBC592FC96196B7DB7E16685991"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_WashroomSide_InteriorFinishA.asset.meta",
+    "sha256": "750A3DFC2855DFFDDB04422AC6DD9991D6DFA866248A1DF125907E596CE71EBC"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_WashroomSide_InteriorFinishB.asset",
+    "sha256": "F85951F318C35723DB46431E61E0EC618EA430EC99E200BABD8E64C95ECFFF33"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_WashroomSide_InteriorFinishB.asset.meta",
+    "sha256": "9538E4CC1E8EA9FFCD773D68058C651B032AF115AC5C834101B7FA860106D1E2"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_WashroomSide.asset",
+    "sha256": "F93549AF0376036C24D9E5F768CF5CDA71D230FAF476078ABE6E596BDADA1649"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_WashroomSide.asset.meta",
+    "sha256": "B86552C2801F1C6D5343329250065D3F17C796731BB8D1FEAD3E31012AB62977"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_WashroomTrim.asset",
+    "sha256": "EF1D84E28954D75CB3017678FEAF2D60D0AAD7C0F2964E155A90D7A9A2AD2422"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_WashroomTrim.asset.meta",
+    "sha256": "404366E2C3FC7CF98CEA81944DC25780756D046D26DC6A1AC8C85664E4FB707B"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_WestRoomFront_InteriorFinishA.asset",
+    "sha256": "B9969C2E987D91D6812BF9185497BE8C14A1C7097F453DC34AA46DF1A94CAB4F"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_WestRoomFront_InteriorFinishA.asset.meta",
+    "sha256": "0404873F4CAE240C1053D710972D9E4CDF9F64629E056DCD55CA17B3D95155B1"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_WestRoomFront_InteriorFinishB.asset",
+    "sha256": "7967D369449FF22827081592AA9775D42C801C42D9715C2DAB1A68F0808E630C"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_WestRoomFront_InteriorFinishB.asset.meta",
+    "sha256": "41782A0B533C042B497854933B4B00D501D05A249521E754F53520ACB623C808"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_WestRoomFront_Trim.asset",
+    "sha256": "F53D8AEAA981917224155E03A60C12D1A7225584196F99E9A14A4D1FE6A41833"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_WestRoomFront_Trim.asset.meta",
+    "sha256": "3BF8153CEF57B5D37C90C98660440237C5EE12ECD17CCA9104CFBE057C9F207F"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_WestRoomFront.asset",
+    "sha256": "FE1679D458107B63B0FFB095A311E53F65DDDB3DBAA0CF40EEBF979D80D55900"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_WestRoomFront.asset.meta",
+    "sha256": "1F3D36B7A0047D576E06A85714311F286B400EC32627F586D2DD4D236B130E1D"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_WestSpine_InteriorFinishA.asset",
+    "sha256": "CCC573499B658CD6EB7B196610172235F66154B431C4967F29B0DBB0731E6753"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_WestSpine_InteriorFinishA.asset.meta",
+    "sha256": "7FBAF75CF705272C8DD17D43654D2011185BB7715E8E4465840A07736DC9D214"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_WestSpine_InteriorFinishB.asset",
+    "sha256": "C82A8E808209E9FA9B60ABE58914C036DACD95A98C45C5C1EFCD10836002FFE0"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_WestSpine_InteriorFinishB.asset.meta",
+    "sha256": "0D15AB326DF22A60B1FED0431398621BCACDCFD26E0ED13033542DB8EB245270"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_WestSpine_Trim.asset",
+    "sha256": "FC70747FB0FEC4CB3C8C95494EF1F46E91DD4B02B0C4F5F8CF80FADB488730D6"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_WestSpine_Trim.asset.meta",
+    "sha256": "AB97F1A31D89CDD03B5C851598833D2C97A0A63621513A3A905391AB8159E1E4"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_WestSpine.asset",
+    "sha256": "321CC5E22EDB1B68F91278D3ED81BFA59BF1BEB1B82725788F01A234649FFFCB"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Partitions_WestSpine.asset.meta",
+    "sha256": "2E09F5C93C5AAAEE262E02F15C874A4369DB0C02D7AD0767413D0CFF8C4B2F8B"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Audition_Flashing.asset",
+    "sha256": "0F19229345AA8863E474A5D719F2FA08495B0270AFC542EBC9DECC3391DC95C4"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Audition_Flashing.asset.meta",
+    "sha256": "F0CE917B36123E6DAF026E27C35DF4F64B84C4BCC34CAA145D7C96FA8F598492"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Audition_Rainwater.asset",
+    "sha256": "9E7C756BBD453B602E4974EB01969CABF612E38995F27E93AE3C04FF49DC480C"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Audition_Rainwater.asset.meta",
+    "sha256": "D62BC06AFCD5082286EF36ED121BC3F77C3805DD20E276192D0DC061655CFF14"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Audition.asset",
+    "sha256": "FBAC1CBB03555DC9ED5F55C2AB9CD58CDFF9419D30789850FF28E624D96B8096"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Audition.asset.meta",
+    "sha256": "6C3F5C54AF9882B41D87D183F5477633924432EE84D3E8EFA2A26695BEEE4061"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_CommonBay_Flashing.asset",
+    "sha256": "F0EFA2F2A7F79880E912F964C29571B59AECF5ECD3268FE5DB97CE18FA8AC94C"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_CommonBay_Flashing.asset.meta",
+    "sha256": "4FD8EA2AA0E119F7DFE745C8D1D168104EEE4E25CD9DE462E938ACA3FA408BFA"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_CommonBay_Rainwater.asset",
+    "sha256": "57083D7E0B60D8EBBE947363DC6780951A3703320E057B14F96E36C4C5B904C6"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_CommonBay_Rainwater.asset.meta",
+    "sha256": "BA3AF5A7DA637BA208EFEA3A567EDA7871CD2559A61954072AF4BAFE0883AE09"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_CommonBay.asset",
+    "sha256": "B64113B21D98CB371339EA47EB97044095E9C15A33D55066D92D6269A12B7E15"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_CommonBay.asset.meta",
+    "sha256": "1E58FE488A986F03B435E2DD36A1B41535C8D2AB15F29B6F63BEA3D25B4B5F29"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Entrance_Flashing.asset",
+    "sha256": "8948C77A405B76DAE6E0FD6FF0DE507A1711CA71EF7B73C269516FE6A49B0056"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Entrance_Flashing.asset.meta",
+    "sha256": "3AEBB817CEBF47EF876F448836896C2F75C1B12528D864764AEA02F28FF9314B"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Entrance_Rainwater.asset",
+    "sha256": "81D5A6F4CAB44E2F9A4FB4F59A048D726984E7C3A1AF3FFD4E5E8EDB21F00787"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Entrance_Rainwater.asset.meta",
+    "sha256": "2CC7FB565E96D0B062CC5B1CBA1155A2EDE933F9D22B7752CB06145F5629F656"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Entrance.asset",
+    "sha256": "C463090570D30D2B10473B1234FB493A121E108A78147D3A7784A707DF196E16"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Entrance.asset.meta",
+    "sha256": "AE51487070B2E828FBC2C959CAC04CA25B139E1355EDBDE1C3236AC5472BC20C"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Hall_Flashing.asset",
+    "sha256": "7EBEC2BE931AF04BD911DCF75A79FDAEA6110477718CF4E4D7FE5ED98445E278"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Hall_Flashing.asset.meta",
+    "sha256": "F0A44B2592E4018AF788808770B35BB23A0FED419C58BF73DE2ED3AD9B16FAFA"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Hall_Rainwater.asset",
+    "sha256": "104D6E8D82C96AE5ADE59BF7B4A464F28D5F26F315A39D867334D514A1DADD8F"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Hall_Rainwater.asset.meta",
+    "sha256": "9447DD645DAAD395FEA29D46A3A85815275A7AE12F328E6F10196695798A640B"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Hall.asset",
+    "sha256": "20DE02B217144C82589FB089B4E5CACDD0DA2490E65408D46B5ADC8B48697CEC"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Hall.asset.meta",
+    "sha256": "DF15F231BF2914A9F0BA1CF7AEB6C39364908FD72036E17F9282A8DBACD3F8EF"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Interview_Flashing.asset",
+    "sha256": "6A0F02537C9534193BA278A91D496B9B20AAA8C96D729EF5EB08D9B8EFA31428"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Interview_Flashing.asset.meta",
+    "sha256": "E8501ED51254D5BF65BCED43743DEF0884BB35A0715101362275765C5771583C"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Interview_Rainwater.asset",
+    "sha256": "66E4B80E06FA9E0D71D75DBACE6F9A9FF420323C7A0DB9E57C0E256460374F46"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Interview_Rainwater.asset.meta",
+    "sha256": "4E64B4322D0BCE20B2DFC46A50FD47ABD7EC5E98E37017D8B1D1D7119F247897"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Interview.asset",
+    "sha256": "4C0B7F011ADF38612C9B6E77FB3A5D277B07BD6291E5707E9AD3E94B1D66A52B"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Interview.asset.meta",
+    "sha256": "52281B1CA81CDACA162EB2F030D0DDBDA3AE58771CA0E75143FD34F71299F5EC"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Preparation_Flashing.asset",
+    "sha256": "1305D56FF6837C18CB0057751220E66A8F63281B43A4B502A62CC10986D0232E"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Preparation_Flashing.asset.meta",
+    "sha256": "09786EF0C9D8EA6E85E3081777935C259426030E82D7274EC6051CB2603132A2"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Preparation_Rainwater.asset",
+    "sha256": "F68ED660508A6AD17E79850D230B064139FC9731A36529E1D79A3AE32CEA0C81"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Preparation_Rainwater.asset.meta",
+    "sha256": "2AF371184B82CE7405AAB82ED9DA02014779CC781D708FD63E49DAEA335C04B0"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Preparation.asset",
+    "sha256": "C42BAB29F8EE6FBA6CDFC129D3172A5BFB7C6493B731D929BAD46655482133AD"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Preparation.asset.meta",
+    "sha256": "F8D35B5E4EEBF17C315C3037D8C739036BE241B219203EEE40827E19B1ED8E34"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Waiting_Flashing.asset",
+    "sha256": "E79B4F8F8AEA7AF3F1EE98F5E335FBDBA1913282D32BF531F62175C33B1C6343"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Waiting_Flashing.asset.meta",
+    "sha256": "0AA70545CE45AA9C7F6E47B661B4534B77654B02E2BCB3108DF6A9770714ACB7"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Waiting_Rainwater.asset",
+    "sha256": "B2AB76F0557E1C05CB73E6707C6DB71E26FFDC767F2184FBEC44E174F62A7C22"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Waiting_Rainwater.asset.meta",
+    "sha256": "E47FBB7AF1FA00324DA07F1BC0DA3F55AD41EF047B69AB723EEDD60DA1D37F8A"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Waiting.asset",
+    "sha256": "CCDF28BB0B5313B6659384F7BE48707324D16E6D71FA947D25DEA0A96437297B"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_Waiting.asset.meta",
+    "sha256": "6D261DFAE6E05A0271B8120DDE038B8A922DC9B609D2CC30DF02CE519CEEC848"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_WestEvaluation_Flashing.asset",
+    "sha256": "3EFD902C56E372FB76E49238F49D6FCFB6B32217D93E3F3FED35DA08CE867CFB"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_WestEvaluation_Flashing.asset.meta",
+    "sha256": "88DD08C555A20BEDB2AE467F4A49C6CF606D00AD71B66DF786DD37623971233A"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_WestEvaluation_Rainwater.asset",
+    "sha256": "35E16156CD59ECD00381A67205F2E738A81702891EDBE9FB9E7EEB608DEA277E"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_WestEvaluation_Rainwater.asset.meta",
+    "sha256": "E3DDE4C46B246CEA25C8CCB1684177DFEAE8358B73AB1579E330C37290D91811"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_WestEvaluation.asset",
+    "sha256": "E1E7EA97F856C3BC744835A07DE521B9E7D796465EA7F0B7E45743ACAB7E6580"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_WestEvaluation.asset.meta",
+    "sha256": "649197B0EA99AB4AF3E5733C946AEFA58842EFB029CB95AA060D762A263B82C5"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_WestService_Flashing.asset",
+    "sha256": "3555BE2DFB3A458D4692BC710042C122053DFC55CA65FB4BFCC561508B8881D6"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_WestService_Flashing.asset.meta",
+    "sha256": "BAFC2A7C59A6D14E737AC959EC059D30FE1CF391F980BC9ECECBBE2E5B49E08C"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_WestService_Rainwater.asset",
+    "sha256": "00009C92A8D9568FBFA8F768C49EB031A82154050BC86032732711898AA9E43C"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_WestService_Rainwater.asset.meta",
+    "sha256": "DD146B4E0660BBEC6217AC8075FB0DA8CBDC1FB99DCD55E0B33956BC921CDF84"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_WestService.asset",
+    "sha256": "869EABF5CD3BBD289760A1AE237E77E6ECFBFDE3BFDB7E37675ADB9935AE8079"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Roofs_WestService.asset.meta",
+    "sha256": "CB1B4DEA509C9361B364436C1D3568E54E57BF646BEE2BDEE42CA1B0340219E7"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Front_AddedArticulation.asset",
+    "sha256": "E7371525E6254B631058558583EF9AA22797F9A192E8E6E9FB5847F6D627FEA7"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Front_AddedArticulation.asset.meta",
+    "sha256": "180C90DDB6AF86F6B65E74D8B3DB3DC1B35B4CD66A730BC740D5CC6A8232CDB9"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Front_Banners.asset",
+    "sha256": "30DF4E0049826112AB02CD599905F283468F0D55454F3E5C34614626486F6F47"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Front_Banners.asset.meta",
+    "sha256": "A5850FF14F6E8600F764A542B2C0BD316E58B116D21559F0882C84651CDF10E0"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Front_EntranceLanterns.asset",
+    "sha256": "38979387329A9DEEE66BEA6F7D66F3BC6370F9225D36973C735A29FF81620C78"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Front_EntranceLanterns.asset.meta",
+    "sha256": "3B695E91F3308780E8EAF5873E2979EB499B19663C4FFE030C9BBC06C9099C9D"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Front_Fanlight.asset",
+    "sha256": "055E37B32EDD418EAE74213980196C0051D63DA4A04D8DF5FDFCA45868195593"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Front_Fanlight.asset.meta",
+    "sha256": "D0022600156C731D14FE5EDAD8EF3CEACDC4E6689C8A00B778AA35A5ADE4DE46"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Front_InteriorFinishA.asset",
+    "sha256": "5B07A88940C6A0A6F7F39244450FDC7BF4E872E63960C22B74FEAD8761CA2B48"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Front_InteriorFinishA.asset.meta",
+    "sha256": "A7DEAAB915256716CD5F90E648D74E5EABDCD2473660068BE981BD58376F47C2"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Front_Portal.asset",
+    "sha256": "9C69FAD0E213A213B0B08E76BCC8DDAC23641A02ED3E97B6ED3DED813DCA3FFC"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Front_Portal.asset.meta",
+    "sha256": "94015DA3B40ECA219E0216DFCBE63B1EBCDDB5844F0382ACC51D4E20EDBC7302"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Front_Signage.asset",
+    "sha256": "CE27FD3E4B5D18FF251B25CF1AE5F3AA8D23BF53B0D9A4B75BA8E356E83A404C"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Front_Signage.asset.meta",
+    "sha256": "2FAD3BD68AF28386E26056EE392DE9EEA2E602001E30AFF334D5F02519B9FA7B"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Front_Windows.asset",
+    "sha256": "6D4C8B68CF42269BF37F94816131D173F21701F26571264B5B39BBE5A1D40757"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Front_Windows.asset.meta",
+    "sha256": "CBDDFBEEF604A74FD924C4D3380D1A5B8857A81FE4BEB6E41AAB611BD21356B4"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Front.asset",
+    "sha256": "DD23D1339E5DEB9E9F8522C839F377CB0319A021FE21B57E56E5150CB42EF1F0"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Front.asset.meta",
+    "sha256": "DBBFE534B94D93C33B2252E5934A9BA7929F2E293C58EE17D247BFC6B14EC0BC"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_CommonBay_Articulation.asset",
+    "sha256": "5BDD2EED2E4BC00124526DA8875989EF09CE2FADE35AE6948123E53E2D73DAEB"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_CommonBay_Articulation.asset.meta",
+    "sha256": "F670FC8836879F74F81B90CBE96B8ECE09ABE12C9E8C8B984E94ACE249966004"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_CommonBay_InteriorFinishA.asset",
+    "sha256": "9DBF2AE370DCF58A832A8A04DA5BA6466CA2BC4B72285AE957F0BC994D4605EB"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_CommonBay_InteriorFinishA.asset.meta",
+    "sha256": "7E882AABA3DAE66163CE32F41281DC80B770A80D1C9C981D748EC282AA834767"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_CommonBay_Windows.asset",
+    "sha256": "2E161D36747CB9DEFA3920FBD5613BB1F1B66C66FE57F9D5E2BA7FC8BEE61D91"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_CommonBay_Windows.asset.meta",
+    "sha256": "705FAA552D6BCE7770EEC724423CAE4164D1A842ED17C09E0739242028BC615F"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_CommonBay.asset",
+    "sha256": "3444E25E52344DF12DE65C804D4A8903468D3B09EB9E0B4B91ADDE58718F5D82"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_CommonBay.asset.meta",
+    "sha256": "101015A8A7D564A6C268900E2B4C7DA99DAC6E447C87CD8413C9F90889522849"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_CommonShoulder_Articulation.asset",
+    "sha256": "8DB802662B92344778B6D58C8B21A237BDFF51D2509664964526B601DD4381E6"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_CommonShoulder_Articulation.asset.meta",
+    "sha256": "0674641CE8ACF0E908C8C1A70FABC19878131AD56A267899FB04B90C185B38A9"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_CommonShoulder_InteriorFinishA.asset",
+    "sha256": "19FA1CB8E0EF8891B79ADBC2549106E4C6E3EAAD10EE8D33903CDA5FB3E5D168"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_CommonShoulder_InteriorFinishA.asset.meta",
+    "sha256": "6348BE2CE2502CFDC7155103AACD899CD17341FC329F27761E74867224F8745A"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_CommonShoulder_Windows.asset",
+    "sha256": "CCE6FE402FC007AD9458C333B4AA511BF29DCD6ED7B314BEB0D8418F85FB83D5"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_CommonShoulder_Windows.asset.meta",
+    "sha256": "4E0478CCBEEC674C7F986957CC684D6F11C1473354B119DA5D7E92D9D41AD2FA"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_CommonShoulder.asset",
+    "sha256": "83B5B8C7E1E837D678702B2719AE4649B4E3E18803F6BC51C7F7E1FA4BE94F1F"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_CommonShoulder.asset.meta",
+    "sha256": "1F384CA7C5FD50382D335B1C0E9C597AAC3A5FBCC87C68E21EA3523EA18EB914"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_Evaluation_Articulation.asset",
+    "sha256": "014AD4AE638DCBFC51386EA982123E9A42E7F269E36998F02EEF3ACABF69A724"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_Evaluation_Articulation.asset.meta",
+    "sha256": "B0C39B476108EF9CC0375F79C1FC511925C7A4AC16E4935003AD9D99DA082B96"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_Evaluation_InteriorFinishA.asset",
+    "sha256": "5A61FF602ABF712BF5C8575496767C0110170A60D0C2165C398A3997F2AC8978"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_Evaluation_InteriorFinishA.asset.meta",
+    "sha256": "F274E49C9CEC02616AB228458959777466D8137A127AAC73F892CDE0CA7E9973"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_Evaluation_Windows.asset",
+    "sha256": "2695FE0E7D1EA05B95AEAE892872CB046739DC37FC2276B32536A290BE6681F1"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_Evaluation_Windows.asset.meta",
+    "sha256": "0C8DF5B01AC7840848078E8310FAFB037AF083B638A47AC11C59021E2BD188CA"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_Evaluation.asset",
+    "sha256": "42F444ED1D3725B22BD1B7AF5C28CB8D6CA698AC64FAFBAADAADB894B3864C2F"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_Evaluation.asset.meta",
+    "sha256": "258A0A37497612E881E08F85A691B359C55408075BC523BC1BAC897E00963BE8"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_Records_Articulation.asset",
+    "sha256": "0888C29D2550F69A3DFA731AE52043CB256EEAC1CC87476DCA0CC91E64FAD95A"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_Records_Articulation.asset.meta",
+    "sha256": "BE869689FAC796800C7B49F31693AB90E2BC8D998ED63512EE5B634A7C713BF4"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_Records_InteriorFinishA.asset",
+    "sha256": "96647E9AD96A93FE56893EBFDCA0A88DBAC3C19B1FB8C9EDAD1C27E146297EB9"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_Records_InteriorFinishA.asset.meta",
+    "sha256": "0D3E8E1A52C5003748E75909D17095052B8C640DB824E4F864B2EFAA7056F62A"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_Records_Windows.asset",
+    "sha256": "154E3A267A080254859840F8F37F64E5D60056FC85A0F665110B0B4AC4B820F6"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_Records_Windows.asset.meta",
+    "sha256": "BA0C17C649063EFFCCB04EDA4A4F74BD5FD5E5088D7818A87A0AC3B7ABE13A1E"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_Records.asset",
+    "sha256": "DCE1A7326FDEBD45097042BC72C286045B395D36E851456EB38242F009BAD1A7"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_Records.asset.meta",
+    "sha256": "9C17CB064ACE99FC0BAEEDBB16D574BEB251125F712840D059FDC15A23098B7D"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_Waiting_Articulation.asset",
+    "sha256": "A35704A1CEF80F3C3B69F2EC27F68440EA9B593AEAE341CF6C4E0205B3F447D7"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_Waiting_Articulation.asset.meta",
+    "sha256": "2428917C40C0B29FF748919DCD7764B6913F31A9231BB15199CE3177C5CF6030"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_Waiting_InteriorFinishA.asset",
+    "sha256": "69B83B0E5F21402C7CF998FE7AB5CD659EC72EF8C1FEA0AF189C0017CCC2D5CE"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_Waiting_InteriorFinishA.asset.meta",
+    "sha256": "2FA0D7AE2484863F54826D9AD8427DECE9082F5095653C4441A9758768FC11EB"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_Waiting_Windows.asset",
+    "sha256": "2E04E833F6F09975E514BAA251DA22026C952CA789C0A31FE8057643DD78CC2E"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_Waiting_Windows.asset.meta",
+    "sha256": "C39344B3B022640786480EE838858E9B580FB47F4A8FAACC98B59B228CFB3560"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_Waiting.asset",
+    "sha256": "7DF5AC90F2F3B089F61BF69C79667264F980DB26B05FC03E858E803B41C81DE6"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Left_Waiting.asset.meta",
+    "sha256": "550629C86A2CE06AF5B9A26A602443F918515D79F8806F8341BEB6F5398E2820"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_AuditionFront_Cornice.asset",
+    "sha256": "5C147A38272180AE4ACC338F364504822879D0B961E471F84537CBEC63C806F2"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_AuditionFront_Cornice.asset.meta",
+    "sha256": "DE293EEA9DF6ECA7DB25EFC33C8818AE4A18CA0FCE8E361AF17A8E028CBEE42A"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_AuditionFront_Windows.asset",
+    "sha256": "3615733C698621140FA3EBDF46030D85E256D86FD722D8C686675826150D1D65"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_AuditionFront_Windows.asset.meta",
+    "sha256": "29446842A7577DB5C4FEEBD64BBD0BEE192C1169D98FF7E637368AE3D2D06571"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_AuditionFront.asset",
+    "sha256": "91B09FCBA255BC2A40E927E6DCABAD3B7825F6B487CD8AE40BF32ED614D256C4"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_AuditionFront.asset.meta",
+    "sha256": "365517A98F08C04564E75D4DECC26F88F90157C02866436F1CD866E4FDC55DB8"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_AuditionWest_Cornice.asset",
+    "sha256": "BD2774309258A6DFD10D05D7224DDA8D68A7ECDFC4286921B658566AF581B925"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_AuditionWest_Cornice.asset.meta",
+    "sha256": "5D9F2E89A6C59F9FE93D370E1E6F4CC7B4B99E6704CDEED1D4A2A18BD2D17B0D"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_AuditionWest_Windows.asset",
+    "sha256": "32F3E774487DAAAFA8EFC07A6FCE715BE78E23763C46F99A92FC01899CC4A8E4"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_AuditionWest_Windows.asset.meta",
+    "sha256": "BDA1E03BEA557BF97AFC734822F93EF80792034228A71EB17B18C2BA6E24DAA6"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_AuditionWest.asset",
+    "sha256": "4C999B4ECCF89918F9C6FCD7D15547E90E9FE232889192BF4A87FED6F0B7C5B7"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_AuditionWest.asset.meta",
+    "sha256": "4DF8E22502ABA584DA4E98032C970E4F25F46C3BFC80DF66988DAD97D3F14546"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_EntryLeft_Cornice.asset",
+    "sha256": "3970D4ED8A6DC628B908A95E762D703CDDFDA556E7534413CC26B62F1D637DA7"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_EntryLeft_Cornice.asset.meta",
+    "sha256": "21389A968F8DF7E6C2D7A6F8F8BEBB385FA0E1D328E29F4B8180BDC973ED73C5"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_EntryLeft_Windows.asset",
+    "sha256": "3A03583ACE762B5DEAA5D26D15363A037CDF670B026A7C7A8CC29DAEB0D03017"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_EntryLeft_Windows.asset.meta",
+    "sha256": "0A4C2D19CD1B7979F9DF14C00F3631D0091A0B1ECA8AC237F5178243C3134588"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_EntryLeft.asset",
+    "sha256": "E5555CCA25DD54598F9325EF6BDEAC7777C313371309200BB9EA29D65EB3E6F8"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_EntryLeft.asset.meta",
+    "sha256": "E6F35FF308D6D18C6A2D56FB0167FB463AA357FB26B0E5F7BE0DE3000AE84EF2"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_EntryRear_Cornice.asset",
+    "sha256": "39891E734EDD7D7965D816A8EDCF05DAE62640CAC9A46C683A82A6A0E742905C"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_EntryRear_Cornice.asset.meta",
+    "sha256": "0FD6BC231E42DDB2DAC7D61837E16EDAFDF056887891C339F070DB6D2B576E22"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_EntryRear.asset",
+    "sha256": "D64A6B5488F5DB228EAC4CF26EBB483A636B8C78FCF6C441553A96137056760A"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_EntryRear.asset.meta",
+    "sha256": "AEDAB7E3791B0FAF96DC0D47F8921579EAA69B618802892324135C0C59F79E27"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_EntryRight_Cornice.asset",
+    "sha256": "BE8C6C314CAFCFB4F95A535AEB213C9556ACC2F62B37DC068E745B81620D9761"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_EntryRight_Cornice.asset.meta",
+    "sha256": "176EDE7D61FFBCDD65CC8F74B68AB4B5A0BD283B197E66EBA3B6AADE406FFE80"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_EntryRight_Windows.asset",
+    "sha256": "AE8B380C3846B768094EA471D889F079DD89C9A1A52A78D09A95AD7E2E1184C4"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_EntryRight_Windows.asset.meta",
+    "sha256": "C8C98C27D09B4583B287CC57350C7C4774A2BB4F3E61BA26A2963F7E0C881D9B"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_EntryRight.asset",
+    "sha256": "B5D61BC9CC164F5DB34DB694D228E44E8228DB32C5FBFA52A6B3F7E6D0E2477F"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_EntryRight.asset.meta",
+    "sha256": "002AC86F39B9F13CAB779DBE1ADE4DC73C1AC02DB87B27512158E1208149783B"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_HallLeft_Cornice.asset",
+    "sha256": "03DDD3B7E088D86C6AE58EB78528C78D89F182779C734AEBDC9CE2883B1060EF"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_HallLeft_Cornice.asset.meta",
+    "sha256": "50423125643AD60DEC3BDE6D58BA95338B7A1E04BD8142FEC6ED5FFD848DC4D0"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_HallLeft_Windows.asset",
+    "sha256": "AEB8A975DF6986A0010C522548F0DD75BA789F7AE6505EA65FFA6F3F9D3986E5"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_HallLeft_Windows.asset.meta",
+    "sha256": "49D77FFD7F1C2A5CBB12D8767FE9CA9B33B548964A2F4D532DC4485F8DFA5C07"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_HallLeft.asset",
+    "sha256": "BD032D55BC33CE52F5E4D15EFB3CFC4B67496D0BF30DD006A4B883F1F92E78B3"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_HallLeft.asset.meta",
+    "sha256": "9D58CB6C88A5FD5A9C79DFD38BFF5F57DDEC1A70458411CCC3B2317CD3D64D5C"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_HallRear_Cornice.asset",
+    "sha256": "3A22A3CF6F98A87AAB55695BB61204211D18C4D4A1F532B99C88D5EE079AA142"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_HallRear_Cornice.asset.meta",
+    "sha256": "D0559409E8D595108636450059136F527AE2E5B198B866F78B9FD9B27D0837B6"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_HallRear.asset",
+    "sha256": "46347EBF2ABBB25DE7EC2F2284941B997892BA51CEB1FB34B9213AD332DAE017"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_HallRear.asset.meta",
+    "sha256": "A661EC11F3FE6FB8253BE99770DD1457F75DB57B2D8618AB53C281B7BCA7447A"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_HallRevealFinish.asset",
+    "sha256": "A159B2C4CBC7DC166FA86A3FA5C824E4BBB01EF34D0CD833D2587D23627551A4"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_HallRevealFinish.asset.meta",
+    "sha256": "32322C9415BB905BE6F6EB68F1AF46E6D431673B6B5A767B81854A209D318A86"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_HallRight_Cornice.asset",
+    "sha256": "200D00070AFF9E9550D5C29C64CBEFE7DD6C50D1B6C7139E11A7471F1DAB9E8D"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_HallRight_Cornice.asset.meta",
+    "sha256": "4EE40E3A2D86027176FAC68DC76E332E0153BFBCD276A590BECE894236590269"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_HallRight_Windows.asset",
+    "sha256": "81BAB08E2990A7D668F2526FF3B5B4B6A81AF140073CACE9778B3B0EBB4A1448"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_HallRight_Windows.asset.meta",
+    "sha256": "700135C7364433E8ED9C86A73A08C1682C4AB56788D08A2E8797D110201B279C"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_HallRight.asset",
+    "sha256": "7EB63B9814A8F6FB46E89A48E562D17859CF662ED1255678A16B329022D9AD3A"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_HallRight.asset.meta",
+    "sha256": "2E46AC36877DA338096DC721B7CC2DE7EB83B55E9638560E28E19E7F97417B34"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_InterviewLeft_Cornice.asset",
+    "sha256": "1A2DF36D62FEA41DB91AAEDB2CA02987D18752DC3730E5704A7936EE8D56DB1F"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_InterviewLeft_Cornice.asset.meta",
+    "sha256": "CF7DBA55DA3BF8A457A00E033F811E10D36D1DC116164E290909F0F7278384A5"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_InterviewLeft.asset",
+    "sha256": "9AD418F4DDFAE897BA271F7EBD0E1C929F3E4005CE563373489EB516134EB93F"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_InterviewLeft.asset.meta",
+    "sha256": "6E70194EE1027850653244818A0550A9C643725DEB03E71343CDAD0D2000EC71"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_WaitingBay_Cornice.asset",
+    "sha256": "60662E68E937D43DDDBD841C3C7128B3195DF60CE81AA28FBF2D93AC70851F9E"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_WaitingBay_Cornice.asset.meta",
+    "sha256": "29BA09B5798E85B8AEFAD109687DD5BDAD557D16F2E640E2FF3078F7A2435F9D"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_WaitingBay.asset",
+    "sha256": "4810D88D9B5F32D75D1E79B57C648C4B94EBDA75508339B63B044F39E5E801BE"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_WaitingBay.asset.meta",
+    "sha256": "FED30A14D5B92EA8448FC1D03A96AC8C58E81E9B047D5010D9BBAA816BD93530"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_WestFront_Cornice.asset",
+    "sha256": "2853A1B27DEA0ECC8E86920585BC5EB82F6C44C061F697ACE0F40C1C083E1F13"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_WestFront_Cornice.asset.meta",
+    "sha256": "4030843D54E2876E81489866A2C4F87F0284655A99701BED584741DB3A4A03EC"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_WestFront.asset",
+    "sha256": "3D9ACD84DF1AB51AAFF83FF5E7796012732931776577CA62338E63CE6822B20C"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_WestFront.asset.meta",
+    "sha256": "04E474202C1D556DF2E607B66CC4F46B5F8C879123F376C80B855BDD79C1A7A4"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_WestRear_Cornice.asset",
+    "sha256": "DFA7AAAEA084C54669C85289640220552191070B749857671E40365FF7F9361B"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_WestRear_Cornice.asset.meta",
+    "sha256": "0E1438E123F7E1B21895D99132E3C091DB0E8AD568800140E521784B8936A8AC"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_WestRear.asset",
+    "sha256": "04E98F1896123709FB4018218098CE8D4446947A531F2143022FEFB1F6587628"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_WestRear.asset.meta",
+    "sha256": "F9EF46C8A09E34D1BD5FBF05BB547108E8B40B0B8BD27361CE4204568CBE3084"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_WestSide_Cornice.asset",
+    "sha256": "B500DDF551441866445800A962160541F60270424EC5466737D2878A17C43FA2"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_WestSide_Cornice.asset.meta",
+    "sha256": "02775BC4AA596FD8C703F20895F745FE1C47881C9286CA2225D452D16070C9FA"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_WestSide.asset",
+    "sha256": "755AA537B55466F522E2F79839A7B23EEC3CD15B52B810D32494CF9B86437A5B"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Raised_WestSide.asset.meta",
+    "sha256": "70AFB80112421298D92FE51BA0A7F7F5F49E997957C0A44B9E787F45271A4776"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Audition_Articulation.asset",
+    "sha256": "D3B6B1ECD0E01395B1C1C37DE41D6E2CEE69B9E5F5510C7D194667B68420F7F1"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Audition_Articulation.asset.meta",
+    "sha256": "AD9F5DF8F717B338A6452D3C578B0399F2A6D365CFC7C186D6B7BC2614F1AE41"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Audition_BlindBays.asset",
+    "sha256": "A5777980B09D26769B0CC57EAB29FAE4AE51C1B29BAC599B1738E39F330DB9A1"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Audition_BlindBays.asset.meta",
+    "sha256": "6B8B223D779A1C6CAE0DF805286054552F2F2C8E94A06939357D7CEB130605D1"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Audition_CurtainSupports.asset",
+    "sha256": "9CEEABBF4EB7FC8BE8CCCF6819B92C8803D44A43DAF47901843D176FF6048C2B"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Audition_CurtainSupports.asset.meta",
+    "sha256": "3E58FE3D70F4C56C99A8CBD1EF80525CF43A91BA6CECED388F7F464EC3E1935C"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Audition_InteriorFinishA.asset",
+    "sha256": "F209FE14E46645DA36D43990E82350835A33088E64DFDB9350095E0C744D883C"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Audition_InteriorFinishA.asset.meta",
+    "sha256": "4040ACAAC269A1DD4BCE2149DF639A06C4E7D259EEEDDC44DBA37D41CDB6A746"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Audition_Windows.asset",
+    "sha256": "C7EDE544860A53492B2D89A9C6DEF2E920D872227ACF162A35B9ECA784367985"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Audition_Windows.asset.meta",
+    "sha256": "C19EB4115975CA846C700B7E84879A7C1C59C458E51A9E1E0AE01766F3669813"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Audition.asset",
+    "sha256": "3B8121191F786F1E19D763A84FD902843C276B64804320EAF948BA5630D2B050"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Audition.asset.meta",
+    "sha256": "CD43AEC3D44FE5BD763C626E533957744673471175D7902A3FD488432C74C0EC"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_AuditionReturn_Articulation.asset",
+    "sha256": "A30B7933AB80453E553CD2CBEE138DCBC8A055E1996B5983334CDDA9F534FCB0"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_AuditionReturn_Articulation.asset.meta",
+    "sha256": "5013D9D59ADF771118904E266E9CA52A8754AC717B9DACF097B8039238BCCB61"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_AuditionReturn_InteriorFinishA.asset",
+    "sha256": "BDD5EA798CF1BBC4AC862D1CC6FEAD76915A643964DD4FB77659DB4DF1725E5E"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_AuditionReturn_InteriorFinishA.asset.meta",
+    "sha256": "884E365C2F627BCD3A8D468BF6F67619440C23E1AF1F854D86BC88A0E7EE6F8D"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_AuditionReturn_Windows.asset",
+    "sha256": "FA3E4F5FF594562805BFE1A94AD4A6DEAD630072D7DA0C5A080A448C4C835C20"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_AuditionReturn_Windows.asset.meta",
+    "sha256": "C7BB8E57DB877CDA810E748F6159C8049A284C10039217BC7931E0E5E5C354C0"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_AuditionReturn.asset",
+    "sha256": "7CD4DE19A3FEBF80EDE770D1DF5F3BBC7F2527420569B67C71AFC3D22F2181D5"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_AuditionReturn.asset.meta",
+    "sha256": "971E68E1675FA6AB8F71E3289697741A213A188E925FBF5137FB01AAD1AE573A"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Interview_Articulation.asset",
+    "sha256": "FDE67B330B6A69A4F40CA9EE95A00F32B55AFE98DA45D48C014B04BC17FE7E07"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Interview_Articulation.asset.meta",
+    "sha256": "C661452C3DC33CBE329BD807438D429E4CE5B8A051C856E042049EFA0C47E1BB"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Interview_InteriorFinishA.asset",
+    "sha256": "10502890955DEA67DC4EDA4D6312A0FE77225B60B480A77F9345E4E4665ABA7C"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Interview_InteriorFinishA.asset.meta",
+    "sha256": "E94FB0942E4E3D78A074225F0AC2C11F8609FF08580389E8821730046507D2C7"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Interview_Windows.asset",
+    "sha256": "C2C61D118C0F79819D510DCCC4A29ECEE11D2DAE0568C84EFC08BAF6D6F5A262"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Interview_Windows.asset.meta",
+    "sha256": "DE1A43FCC0FE737A8E1554694A0AF01E4EFA7539961EC54BA296C4EA1C02657F"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Interview.asset",
+    "sha256": "0FB6D32D5E4C0F0914AAFE8AF0E6DD375C36981F1C42BCABC3C8482777EE505B"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Interview.asset.meta",
+    "sha256": "9A7095B5D554DA3E57A86E81B9D9CFA660EFE042A1B4239E7FAA5346DB06A433"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_OfficeClock.asset",
+    "sha256": "F927E5EEEC3F62DE1F919510634FFB470BA722DA68B015F1E4436400BABA4089"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_OfficeClock.asset.meta",
+    "sha256": "5373937461EF4A7CF376A18090F897A19BE5B91A2FE50C70F369B26962A0AC01"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Service_Articulation.asset",
+    "sha256": "8B71F33491A3EA04A52B3D40C816E37609E19BF0A9C641E72A8AFA506C8C7CA7"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Service_Articulation.asset.meta",
+    "sha256": "BB185431DDD9D61D3C7ACEDE1BC79D93D1C15D3470A5E2ECAC778D1F8BD4FCCD"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Service_DoorSurrounds.asset",
+    "sha256": "22ED6D8183F6F58132C29434871F7017F9506753D256D7B8A8558664F9503190"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Service_DoorSurrounds.asset.meta",
+    "sha256": "E7A66BD89E1B5A0BAB8C7D28EB788018BAD2C5419F4D798D64E8B8F9FAD5AF80"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Service_InteriorFinishA.asset",
+    "sha256": "ED14DE22CDB8B7053FBB55B9D9FD766A665E9D4CD0AA5877DD8C10950C22DA2B"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Service_InteriorFinishA.asset.meta",
+    "sha256": "EF8C97822F77130F1C8DED4FC220B9160DCB86FF47570F121AD5A94A092472EB"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Service_Light.asset",
+    "sha256": "2567F9C8E903C23F8A4A5166E726FCCB039E12E71FB6B384407F20A465A2C06E"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Service_Light.asset.meta",
+    "sha256": "636F2749784D58EAACDCEF5110F0E2AAB7196EBF04D6BE1B2213B11C4A8A805C"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Service_Utilities.asset",
+    "sha256": "572AD9470F10C135DC5E29984CD1701B7272B84919DFD6FA8B5A64018F2A4EAA"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Service_Utilities.asset.meta",
+    "sha256": "3F42E348D69E3AD55C70B85858F153969AC3C2886D18BF6E1DB3A17F03D3D2E5"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Service_Windows.asset",
+    "sha256": "0323CACB2B37535C143D53A356E51F0FB61B4E22FBDB72D9729B2A233D59490C"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Service_Windows.asset.meta",
+    "sha256": "EE989CCFA0837ABCB17DA2B640AF83DA7F3EDAB8ED543172EF95764711A9ADB0"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Service.asset",
+    "sha256": "98D66B84BED7A7122ACFE5E2048C1512E3C8F0F94560042F35EBECD1E92EB422"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_Service.asset.meta",
+    "sha256": "1768FDE51ED7D230BB76982A4DBC9A9402DA557BE25A353BDF353FD5A82554E1"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_ServiceCanopy.asset",
+    "sha256": "03B4CF86B257C54536567BD1D6E24FF4CBBDFB1D706E6D58CC190550900F5FB8"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_ServiceCanopy.asset.meta",
+    "sha256": "CB212D6AC3BDEDC005EB8E6E597C89BF85645FC17F6434ECBBBBE49776DE7E35"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_WestSetback_Articulation.asset",
+    "sha256": "F5C19FB7998673A0FD0664FC30E7254401D0445C01AA70D257A2D74C9F1E074D"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_WestSetback_Articulation.asset.meta",
+    "sha256": "F159736D21ACEA5B4E0B1C036776F9E70DE47D4029FFA75195DCE6397DD265D2"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_WestSetback_InteriorFinishA.asset",
+    "sha256": "846DF7E2E45CDA5EC1EDE70D140BA8D67B7E9587E68598C87022FB7AEB064123"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_WestSetback_InteriorFinishA.asset.meta",
+    "sha256": "1B849FC5081A4B47F6A8B8DB8B514223DA7C7D11BFF8C89DED30A44006959353"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_WestSetback.asset",
+    "sha256": "E3F23A0D8E005CED17B2E3883C916702994AA2D1B3B644779FBCF4F20433F3E1"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Rear_WestSetback.asset.meta",
+    "sha256": "EB30152CD1BE6A63D71F5BD63C633954E644F9F626A158C24366CBDF4D31BE73"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Right_Audition_Articulation.asset",
+    "sha256": "B743791E113305D17D9CBFA399E05F6DCBA4293F20D2F5B444F70C45BAA26901"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Right_Audition_Articulation.asset.meta",
+    "sha256": "F7939D4C5FF59880B374F97FFF8F45A53813CC8EFF666F9FCE6D6EB42BBF5E80"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Right_Audition_InteriorFinishA.asset",
+    "sha256": "FED48396B602D56F0C2F1F740E9DFDBF2A8F74DDDD434153E6D31C3654469CD1"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Right_Audition_InteriorFinishA.asset.meta",
+    "sha256": "B1C5A1387B2524AE10DD97B7E966D5FCB5A7554637CEA0F1BC4AB2592FF31664"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Right_Audition_Windows.asset",
+    "sha256": "FBA809D9D7308329F3BE892A8D329F2246C5D5BBD69094B463ACC8100EC4FDE5"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Right_Audition_Windows.asset.meta",
+    "sha256": "948CBD7BE7C5D3F52C3311A5877AA4F450B4678776A8AAE99C903B17D2369512"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Right_Audition.asset",
+    "sha256": "30808F379EA711D097A4BA98D2A78EE2F11EB608278652EF6F238A376CA420BF"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Right_Audition.asset.meta",
+    "sha256": "CA18D25417E65F6542F2F1AB52EE9F92F63D64E49A3BED5060F48AD1B054CD3A"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Right_AuditionShoulder_Articulation.asset",
+    "sha256": "F96E84F58F0F321826D66ED9C04FE68B1DB96621A8E3EFFEBBFAE7793E51013F"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Right_AuditionShoulder_Articulation.asset.meta",
+    "sha256": "19635C7C754CCF64CC9ECAEF13814C9DFEBAA0CA4B4C0E8A5FBA2DC4B0A49715"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Right_AuditionShoulder_InteriorFinishA.asset",
+    "sha256": "DB7ACBEDB329B3D150E3D3F3397206C968179020F5C315906A4360C85F51E101"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Right_AuditionShoulder_InteriorFinishA.asset.meta",
+    "sha256": "CF2D83CC8850084E7BC86DDB703994E0879805E250C523598E4E2BC362F8BBC2"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Right_AuditionShoulder_Windows.asset",
+    "sha256": "92D9AABE67F1B2DCD953D157AD2F052FBB8609B9EE6A63F9F8C5E45145FDA5E6"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Right_AuditionShoulder_Windows.asset.meta",
+    "sha256": "0989D95B4E3E9964F3227199E30B2397B5770A5D6F83EE0F4210E573E9C19EA5"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Right_AuditionShoulder.asset",
+    "sha256": "37B561C2ABDC9F21F56C2FE8C57ABB0014A9D69855C5BF1A13F0CC6D0BB70994"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Right_AuditionShoulder.asset.meta",
+    "sha256": "91D9F3324D29BE2657F0231B30F8F955D770FAF16180350EA2BF5459B89ED6BC"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Right_Preparation_Articulation.asset",
+    "sha256": "DCBDCEC74F8CE41DB411FBC06B9C7750F32E5FEFF211961F84DCA99BB763662D"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Right_Preparation_Articulation.asset.meta",
+    "sha256": "C32659291E3981D7E4179A0757FE0977FDE46EA51591D5B28BD90599A557E7B8"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Right_Preparation_InteriorFinishA.asset",
+    "sha256": "3E2DA23B7870CFBDD6F20EC431F0B196850DA634DEA97648089034185D2CD57D"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Right_Preparation_InteriorFinishA.asset.meta",
+    "sha256": "683C00D81E7C0AF1DD40B8F10426EC07CF53D8589BCCBD673252254F6E80EF9E"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Right_Preparation_Windows.asset",
+    "sha256": "35617CBAA3D4E7A95A383C2E09DE2B4A25A047DC288607F86E462FB058493571"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Right_Preparation_Windows.asset.meta",
+    "sha256": "3687F3D16B0F6366F41C249ADE677288C3A1F4BC1AC9572FA7BEA1F07542854C"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Right_Preparation.asset",
+    "sha256": "6912072DD5AA9A3669CC8643E5EFD4F2CDEA9410CC4644FED175F3CE5E57490D"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Shell_Right_Preparation.asset.meta",
+    "sha256": "9C9AD3C2E56DE857F9F565232BA4281DD87BEEEC9B8F0F2660D3CBB64DEA44FC"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Structure_EntranceSteps.asset",
+    "sha256": "FACC88774A5983C9BB92CBCF89A74E421D36A62BB7878028F71192E4B50FB10B"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Structure_EntranceSteps.asset.meta",
+    "sha256": "C9396B90E8971AE8559D00965C6688BFFA3CEEE8B04B136BCDDAA64CAB431F9A"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Structure_Foundation_Audition.asset",
+    "sha256": "3181EB9187F8C95BC423903044F6FFE2D0C321FDEEADC30875A7DB967B5721B6"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Structure_Foundation_Audition.asset.meta",
+    "sha256": "5BD90032BC081652B45DD7D7C8DA7837948129A844A817EE010B9D2DB01AC51F"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Structure_Foundation_Front.asset",
+    "sha256": "0880B004B94F437A13D4B3ACEA5E2C8E2257A8C0A1B5B40C7C97DC604B75B8D6"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Structure_Foundation_Front.asset.meta",
+    "sha256": "8F903341D697D9D169A6A9B95D051B0892B58534E4226FA5BDE7F78CC91D6733"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Structure_Foundation_Hall.asset",
+    "sha256": "EB1AE0886F5D19075DA46AAC9F766C07CEA14CB164998F716BD231808D0C935C"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Structure_Foundation_Hall.asset.meta",
+    "sha256": "5636F2F8D017D218C1A11F3F15D78593DBBA51088FC46460F82734CE2F16BD0D"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Structure_Foundation_Interview.asset",
+    "sha256": "0832F5BBAE6A7AD74DF86E7E80C85A36D1F2A9BCC1DFF31A5E190E9B65AEF881"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Structure_Foundation_Interview.asset.meta",
+    "sha256": "30C606032B206FC937E52BD20F1A07BFB4BA9DB10ED70A7DD896963AEC6D5FFA"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Structure_Foundation_WestCommons.asset",
+    "sha256": "7A0D706292120401C7EF9339686C22E189A7D968B6BD18C3B237F239CAC4B63C"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Structure_Foundation_WestCommons.asset.meta",
+    "sha256": "C6EAFD38F5AE4B19E325F49282B0E408C4E5912365A2ED5618F503BFDBF55A71"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Structure_Foundation_WestWork.asset",
+    "sha256": "7CB0A29A8DFCB6A8CB08DEC11223BD7EB67B0857BE1DF7B0B74238D6B8B1EE42"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Structure_Foundation_WestWork.asset.meta",
+    "sha256": "D408B3606F96A62DEB49849F9DA04D4E83A200943E345A0738B929C96BCD4BA6"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Structure_RearServiceSteps.asset",
+    "sha256": "9A32E3972133A08F570B973DCDCB69AE207832370C980394D2EB7C36F87AAFB1"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Meshes\\Structure_RearServiceSteps.asset.meta",
+    "sha256": "27EBB0F3CDF3F9BFE3FEC1E6B2E4AA50202575AD9ACCF88821EE9BABDEBD6F5C"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Textures\\WashroomReflection.exr",
+    "sha256": "297AD9773CBD0CD304D764EECFA6BBA230DF76D1C9E3ADD93210A4D9EB1F2465"
+  },
+  {
+    "path": "C:\\Repos\\Unity\\Silver Screen\\Assets\\SilverScreen\\Environment\\StageSchoolA3\\Textures\\WashroomReflection.exr.meta",
+    "sha256": "7E3F4E71845F099FF47206E611AA3E10B6E427DF0F4AC85576496A5EC148EB37"
+  }
+]

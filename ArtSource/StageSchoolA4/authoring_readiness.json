@@ -1,0 +1,149 @@
+{
+  "coordinate_system": "Unity X/Y/Z metres; documentation only, not runtime anchors",
+  "hall_regions": [
+    {
+      "center": [
+        -7.2,
+        0.38,
+        -5.45
+      ],
+      "size": [
+        3.4,
+        3.2
+      ]
+    },
+    {
+      "center": [
+        -2.4,
+        0.38,
+        -5.45
+      ],
+      "size": [
+        3.4,
+        3.2
+      ]
+    },
+    {
+      "center": [
+        2.4,
+        0.38,
+        -5.45
+      ],
+      "size": [
+        3.4,
+        3.2
+      ]
+    },
+    {
+      "center": [
+        7.2,
+        0.38,
+        -5.45
+      ],
+      "size": [
+        3.4,
+        3.2
+      ]
+    }
+  ],
+  "fourth_region_contexts": [
+    "Applicant: CREATE / IMPORT TALENT",
+    "Employee: DISMISS"
+  ],
+  "performers": [
+    [
+      -4.85,
+      0.73,
+      4.7
+    ],
+    [
+      -3.15,
+      0.73,
+      4.7
+    ]
+  ],
+  "camera": [
+    -4,
+    0.39,
+    1.1
+  ],
+  "operator": [
+    -4,
+    0.39,
+    -0.05
+  ],
+  "screen_test": [
+    -0.7,
+    0.38,
+    1.25
+  ],
+  "interview_applicants": [
+    [
+      5.85,
+      0.38,
+      2.3
+    ],
+    [
+      7.35,
+      0.38,
+      2.3
+    ]
+  ],
+  "interviewer": [
+    6.6,
+    0.39,
+    4.6
+  ],
+  "interview_marker": [
+    4.6,
+    0.38,
+    1.4
+  ],
+  "applicants_outside": [
+    [
+      -9.2,
+      0.05,
+      -10.55
+    ],
+    [
+      -7.2,
+      0.05,
+      -10.55
+    ],
+    [
+      -5.2,
+      0.05,
+      -10.55
+    ],
+    [
+      5.2,
+      0.05,
+      -10.55
+    ],
+    [
+      7.2,
+      0.05,
+      -10.55
+    ],
+    [
+      9.2,
+      0.05,
+      -10.55
+    ]
+  ],
+  "central_approach_clear_width": 7.6,
+  "path_connection": {
+    "id": "path.connection.main",
+    "position": [
+      0,
+      0.05,
+      -11.55
+    ],
+    "forward": [
+      0,
+      0,
+      -1
+    ],
+    "purpose": "Future player-built spline path connection at entrance landing edge; metadata only"
+  }
+}

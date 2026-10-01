@@ -1,0 +1,248 @@
+{
+  "checks": [
+    {
+      "check": "Exactly three occupied rooms",
+      "passed": true
+    },
+    {
+      "check": "Single main roof mass",
+      "passed": true
+    },
+    {
+      "check": "No legacy roof masses",
+      "passed": true
+    },
+    {
+      "check": "No unwanted room program",
+      "passed": true
+    },
+    {
+      "check": "Finite vertex/normal data and valid indices",
+      "passed": true
+    },
+    {
+      "check": "No degenerate exported triangles",
+      "passed": true
+    },
+    {
+      "check": "Reused assemblies retain source geometry",
+      "passed": true
+    },
+    {
+      "check": "Approved equipment identity",
+      "passed": true
+    },
+    {
+      "check": "No exported contextual floor text",
+      "passed": true
+    },
+    {
+      "check": "Four context regions with shared fourth state",
+      "passed": true
+    },
+    {
+      "check": "Six documented exterior applicant positions",
+      "passed": true
+    },
+    {
+      "check": "Four region envelopes fit the hall",
+      "passed": true
+    },
+    {
+      "check": "Roof stays above occupied ceiling",
+      "passed": true
+    }
+  ],
+  "reused_assemblies": [
+    {
+      "group": "Doors/EntranceLeft",
+      "source": "Doors/EntranceLeft",
+      "max_deviation_metres": 0.0,
+      "translation_only": true
+    },
+    {
+      "group": "Doors/EntranceRight",
+      "source": "Doors/EntranceRight",
+      "max_deviation_metres": 0.0,
+      "translation_only": true
+    },
+    {
+      "group": "Furnishings/Audition/Backdrop",
+      "source": "Furnishings/Audition/Backdrop",
+      "max_deviation_metres": 1.2560739669470201e-15,
+      "translation_only": true
+    },
+    {
+      "group": "Furnishings/Audition/Curtains",
+      "source": "Furnishings/Audition/Curtains",
+      "max_deviation_metres": 1.2560739669470201e-15,
+      "translation_only": true
+    },
+    {
+      "group": "Furnishings/Audition/EvaluationMaterials",
+      "source": "Furnishings/Audition/EvaluationMaterials",
+      "max_deviation_metres": 9.930136612989092e-16,
+      "translation_only": true
+    },
+    {
+      "group": "Furnishings/Audition/EvaluationTable",
+      "source": "Furnishings/Audition/EvaluationTable",
+      "max_deviation_metres": 9.999999992515995e-07,
+      "translation_only": true
+    },
+    {
+      "group": "Furnishings/Audition/Rostrum",
+      "source": "Furnishings/Audition/Rostrum",
+      "max_deviation_metres": 1.2560739669470201e-15,
+      "translation_only": true
+    },
+    {
+      "group": "Furnishings/Interview/Bookcase",
+      "source": "Furnishings/Interview/Bookcase",
+      "max_deviation_metres": 1.000000000139778e-06,
+      "translation_only": true
+    },
+    {
+      "group": "Furnishings/Interview/GuestA",
+      "source": "Furnishings/Interview/GuestA",
+      "max_deviation_metres": 1.0000000010279564e-06,
+      "translation_only": true
+    },
+    {
+      "group": "Furnishings/Interview/GuestB",
+      "source": "Furnishings/Interview/GuestB",
+      "max_deviation_metres": 1.0000000010279564e-06,
+      "translation_only": true
+    },
+    {
+      "group": "Furnishings/Interview/PortfolioReview",
+      "source": "Furnishings/Interview/PortfolioReview",
+      "max_deviation_metres": 1.2560739669470201e-15,
+      "translation_only": true
+    },
+    {
+      "group": "Shell/Front",
+      "source": "Shell/Front",
+      "max_deviation_metres": 0.0,
+      "translation_only": true
+    },
+    {
+      "group": "Shell/Front/AddedArticulation",
+      "source": "Shell/Front/AddedArticulation",
+      "max_deviation_metres": 0.0,
+      "translation_only": true
+    },
+    {
+      "group": "Shell/Front/Banners",
+      "source": "Shell/Front/Banners",
+      "max_deviation_metres": 0.0,
+      "translation_only": true
+    },
+    {
+      "group": "Shell/Front/EntranceLanterns",
+      "source": "Shell/Front/EntranceLanterns",
+      "max_deviation_metres": 0.0,
+      "translation_only": true
+    },
+    {
+      "group": "Shell/Front/Fanlight",
+      "source": "Shell/Front/Fanlight",
+      "max_deviation_metres": 0.0,
+      "translation_only": true
+    },
+    {
+      "group": "Shell/Front/InteriorFinishA",
+      "source": "Shell/Front/InteriorFinishA",
+      "max_deviation_metres": 0.0,
+      "translation_only": true
+    },
+    {
+      "group": "Shell/Front/Portal",
+      "source": "Shell/Front/Portal",
+      "max_deviation_metres": 0.0,
+      "translation_only": true
+    },
+    {
+      "group": "Shell/Front/Signage",
+      "source": "Shell/Front/Signage",
+      "max_deviation_metres": 0.0,
+      "translation_only": true
+    },
+    {
+      "group": "Shell/Front/Windows",
+      "source": "Shell/Front/Windows",
+      "max_deviation_metres": 0.0,
+      "translation_only": true
+    },
+    {
+      "group": "Structure/EntranceSteps",
+      "source": "Structure/EntranceSteps",
+      "max_deviation_metres": 0.0,
+      "translation_only": true
+    },
+    {
+      "group": "Furnishings/HiringHall/PortraitGallery0",
+      "source": "Furnishings/Waiting/PortraitGallery",
+      "max_deviation_metres": 1.0000000010279564e-06,
+      "translation_only": true
+    },
+    {
+      "group": "Furnishings/HiringHall/PortraitGallery1",
+      "source": "Furnishings/Waiting/PortraitGallery",
+      "max_deviation_metres": 1.0000000010279564e-06,
+      "translation_only": true
+    },
+    {
+      "group": "Furnishings/HiringHall/PortraitGallery2",
+      "source": "Furnishings/Waiting/PortraitGallery",
+      "max_deviation_metres": 9.999999992515995e-07,
+      "translation_only": true
+    },
+    {
+      "group": "Furnishings/HiringHall/Clock",
+      "source": "Shell/Rear/OfficeClock",
+      "max_deviation_metres": 1.4142135622567524e-06,
+      "translation_only": true
+    },
+    {
+      "group": "Ceilings/PendantA4_00",
+      "source": "Ceilings/Pendant02",
+      "max_deviation_metres": 1.0000000010279564e-06,
+      "translation_only": true
+    },
+    {
+      "group": "Ceilings/PendantA4_01",
+      "source": "Ceilings/Pendant02",
+      "max_deviation_metres": 1.000000000139778e-06,
+      "translation_only": true
+    },
+    {
+      "group": "Ceilings/PendantA4_02",
+      "source": "Ceilings/Pendant02",
+      "max_deviation_metres": 9.999999996956888e-07,
+      "translation_only": true
+    },
+    {
+      "group": "Ceilings/PendantA4_03",
+      "source": "Ceilings/Pendant02",
+      "max_deviation_metres": 1.000000000139778e-06,
+      "translation_only": true
+    },
+    {
+      "group": "Ceilings/PendantA4_04",
+      "source": "Ceilings/Pendant02",
+      "max_deviation_metres": 1.4142135625707708e-06,
+      "translation_only": true
+    },
+    {
+      "group": "Ceilings/PendantA4_05",
+      "source": "Ceilings/Pendant02",
+      "max_deviation_metres": 1.4142135628847895e-06,
+      "translation_only": true
+    }
+  ],
+  "invalid_meshes": [],
+  "degenerate_meshes": [],
+  "status": "PASS",
+  "limitations": "Geometry and bounds evidence only; no general collision proof, navigation simulation or hydraulic simulation."
+}

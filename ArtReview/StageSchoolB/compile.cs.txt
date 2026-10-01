@@ -1,0 +1,1 @@
+UnityEditor.Compilation.CompilationPipeline.RequestScriptCompilation(); result.Log("Requested compile. Current failure="+UnityEditor.EditorUtility.scriptCompilationFailed);

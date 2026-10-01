@@ -1,0 +1,33 @@
+{
+  "FenceGateWire_180_1930": {
+    "sourceBoundsMetres": [
+      1.921661138534546,
+      0.23393436521291733,
+      2.0280001163482666
+    ],
+    "humanScaleHardware": true
+  },
+  "FenceGateWire_180_RH_1930": {
+    "sourceBoundsMetres": [
+      1.996999979019165,
+      0.2549343779683113,
+      2.0280001163482666
+    ],
+    "humanScaleHardware": true
+  },
+  "rightGateLatchCapMetres": [
+    0.019999980926513672,
+    0.02000001072883606,
+    0.026000022888183594
+  ],
+  "outletCentreOpenThroughTroughAndThroat": true,
+  "outletObjectsChecked": [
+    "Rolled gutter edge.010",
+    "Rolled gutter edge.011",
+    "Gutter saddle.010",
+    "Gutter saddle.011",
+    "Hollow trough with circular outlet aperture",
+    "Drawn round open gutter outlet"
+  ],
+  "lampClosedEndsAndSeparateInnerGlass": true
+}

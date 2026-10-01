@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="1" result="Failed(Child)" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-09-30 18:11:46Z" end-time="2026-09-30 18:12:08Z" duration="21.5915673">
+  <test-suite type="TestSuite" id="1000" name="Silver Screen" fullname="Silver Screen" runstate="Runnable" testcasecount="367" result="Failed" site="Child" start-time="2026-09-30 18:11:46Z" end-time="2026-09-30 18:12:08Z" duration="21.591567" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1436" name="Assembly-CSharp-Editor.dll" fullname="C:/Repos/Unity/Silver Screen/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" runstate="Runnable" testcasecount="367" result="Failed" site="Child" start-time="2026-09-30 18:11:47Z" end-time="2026-09-30 18:12:08Z" duration="20.985678" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="46120" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1437" name="SilverScreen" fullname="SilverScreen" runstate="Runnable" testcasecount="367" result="Failed" site="Child" start-time="2026-09-30 18:11:47Z" end-time="2026-09-30 18:12:08Z" duration="20.968142" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1438" name="Tests" fullname="SilverScreen.Tests" runstate="Runnable" testcasecount="367" result="Failed" site="Child" start-time="2026-09-30 18:11:47Z" end-time="2026-09-30 18:12:08Z" duration="20.962807" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestSuite" id="1439" name="Editor" fullname="SilverScreen.Tests.Editor" runstate="Runnable" testcasecount="12" result="Failed" site="Child" start-time="2026-09-30 18:11:47Z" end-time="2026-09-30 18:12:08Z" duration="20.951836" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-suite type="TestFixture" id="1021" name="StageSchoolB2Validation" fullname="SilverScreen.Tests.Editor.StageSchoolB2Validation" classname="SilverScreen.Tests.Editor.StageSchoolB2Validation" runstate="Runnable" testcasecount="1" result="Failed" site="Child" start-time="2026-09-30 18:11:47Z" end-time="2026-09-30 18:12:08Z" duration="20.936932" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <failure>
+                <message><![CDATA[One or more child tests had errors]]></message>
+              </failure>
+              <test-case id="1022" name="LiveRuntime" fullname="SilverScreen.Tests.Editor.StageSchoolB2Validation.LiveRuntime" methodname="LiveRuntime" classname="SilverScreen.Tests.Editor.StageSchoolB2Validation" runstate="Runnable" seed="2107089551" result="Failed" start-time="2026-09-30 18:11:11Z" end-time="2026-09-30 18:12:08Z" duration="57.395936" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  FAIL Actual sustained pointer hover intent and fade in
+FAIL Actual mouse click pins building
+FAIL Pinned reveal survives pointer departure
+FAIL Orbit/rapid zoom/automatic LOD while pinned keeps roofs hidden
+  Expected: <empty>
+  But was:  < "FAIL Actual sustained pointer hover intent and fade in", "FAIL Actual mouse click pins building", "FAIL Pinned reveal survives pointer departure", "FAIL Orbit/rapid zoom/automatic LOD while pinned keeps roofs hidden" >
+]]></message>
+                  <stack-trace><![CDATA[at SilverScreen.Tests.Editor.StageSchoolB2Validation+<LiveRuntime>d__8.MoveNext () [0x00195] in C:\Repos\Unity\Silver Screen\Assets\Tests\Editor\StageSchoolB2Validation.cs:68
+at UnityEngine.TestTools.TestEnumerator+<Execute>d__8.MoveNext () [0x0003a] in .\Library\PackageCache\com.unity.test-framework@80f691d4262b\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:52
+]]></stack-trace>
+                </failure>
+                <output><![CDATA[Saving results to: C:/Users/Sez/AppData/LocalLow/DefaultCompany/Silver Screen\TestResults.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

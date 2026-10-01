@@ -1,0 +1,532 @@
+{
+  "status": "Source corrections and Unity inspection completed; user visual approval pending",
+  "originalCount": 61,
+  "classMeaning": {
+    "A": "acceptable, retained",
+    "B": "minor refinement",
+    "C": "substantial refinement",
+    "D": "canonical asset retained, placement/connection correction"
+  },
+  "assets": [
+    {
+      "asset": "ArchiveBox_1930",
+      "initialClass": "A",
+      "finding": "Lid, labelled front, pull and shelf seating.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/ArchiveBox_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "AwningCurved_164_1930",
+      "initialClass": "B",
+      "finding": "Both diagonal braces terminate below the curved hood.",
+      "action": "Connect braces to the hood underside without changing its envelope.",
+      "canonicalEvidence": "../Fidelity/Assets/AwningCurved_164_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "BarrelPaintedSteel_1930",
+      "initialClass": "A",
+      "finding": "Rolled body ribs, lid/rims, bungs and ground contact.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/BarrelPaintedSteel_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "BarrelTimber_1930",
+      "initialClass": "A",
+      "finding": "Staves, hoops, head boards, bung and ground contact.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/BarrelTimber_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "BenchSlatted_210_1930",
+      "initialClass": "A",
+      "finding": "Separate seat/back slats, frame, feet and bolts.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/BenchSlatted_210_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "ChairBentwood_1930",
+      "initialClass": "A",
+      "finding": "Seat thickness, back/leg joints, stretchers and floor contact.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/ChairBentwood_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "ClockSchoolhouse_1930",
+      "initialClass": "A",
+      "finding": "Case, dial, spindle, hands and wall seating.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/ClockSchoolhouse_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "CoatStandTimber_1930",
+      "initialClass": "A",
+      "finding": "Continuous stem, splayed feet and hooks.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/CoatStandTimber_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "ConduitElbow90_1930",
+      "initialClass": "A",
+      "finding": "Open tubular section/bend and mounting saddles; source sweep test retained.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/ConduitElbow90_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "ConduitStraight_100_1930",
+      "initialClass": "A",
+      "finding": "Open tubular section/bend and mounting saddles; source sweep test retained.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/ConduitStraight_100_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "CrateTimber_045_1930",
+      "initialClass": "A",
+      "finding": "Boards, battens, corners, fasteners and supported stacks.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/CrateTimber_045_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "CrateTimber_075_1930",
+      "initialClass": "A",
+      "finding": "Boards, battens, corners, fasteners and supported stacks.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/CrateTimber_075_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "CupboardUtility_1930",
+      "initialClass": "A",
+      "finding": "Door seams, hinges, knobs and base.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/CupboardUtility_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "DeskLampBanker_1930",
+      "initialClass": "C",
+      "finding": "User close-up exposed an open-ended shade and primitive supports.",
+      "action": "Rebuilt turned brass base, curved yoke and pivots, closed green glass shade with white inner liner, recessed bulb, pull chain and cord.",
+      "canonicalEvidence": "../Fidelity/Assets/DeskLampBanker_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "DeskPaperwork_1930",
+      "initialClass": "A",
+      "finding": "Separate blotter, ledger and pen/ink holder at desktop scale.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/DeskPaperwork_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "DeskPedestal_1930",
+      "initialClass": "A",
+      "finding": "Drawers, rounded pulls, pedestal plinths and tabletop.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/DeskPedestal_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "DoorFrameTimber_120x262_1930",
+      "initialClass": "A",
+      "finding": "Leaf/frame depth, glazing, hinges, latch/pulls and installed clear opening.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/DoorFrameTimber_120x262_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "DoorGlazedTimber_110x258_1930",
+      "initialClass": "A",
+      "finding": "Leaf/frame depth, glazing, hinges, latch/pulls and installed clear opening.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/DoorGlazedTimber_110x258_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "DoorUtilityTimber_150x260_1930",
+      "initialClass": "A",
+      "finding": "Leaf/frame depth, glazing, hinges, latch/pulls and installed clear opening.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/DoorUtilityTimber_150x260_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "DownpipeElbow90_1930",
+      "initialClass": "A",
+      "finding": "Hollow bore, curved return, collars and shoe-to-splash alignment.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/DownpipeElbow90_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "DownpipeHollow_300_1930",
+      "initialClass": "D",
+      "finding": "Canonical straight pipe is sound; building-specific offset meets it at an oblique/pinched joint.",
+      "action": "Retain canonical pipe; rebuild the three installed offset/socket connections.",
+      "canonicalEvidence": "../Fidelity/Assets/DownpipeHollow_300_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "DownpipeShoe_1930",
+      "initialClass": "A",
+      "finding": "Hollow bore, curved return, collars and shoe-to-splash alignment.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/DownpipeShoe_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "EmploymentPorchTimber_232_1930",
+      "initialClass": "A",
+      "finding": "Posts, knees, ledger and roof; intentionally absent from this entrance.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/EmploymentPorchTimber_232_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "FenceGateWire_180_1930",
+      "initialClass": "C",
+      "finding": "Basic latch; paired placements reverse the operating face; duplicated adjacent post.",
+      "action": "Rounded return pulls, passive keeper/drop bolt, separately authored right-hand active latch leaf; explicit yard-face convention.",
+      "canonicalEvidence": "../Fidelity/Assets/FenceGateWire_180_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "FenceWire_065_1930",
+      "initialClass": "B",
+      "finding": "Each panel carries full end posts, duplicating shared junction posts.",
+      "action": "Separate canonical junction post; retain woven wire, tension bars, ties and rails; instantiate one post per junction.",
+      "canonicalEvidence": "../Fidelity/Assets/FenceWire_065_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "FenceWire_135_1930",
+      "initialClass": "B",
+      "finding": "Each panel carries full end posts, duplicating shared junction posts.",
+      "action": "Separate canonical junction post; retain woven wire, tension bars, ties and rails; instantiate one post per junction.",
+      "canonicalEvidence": "../Fidelity/Assets/FenceWire_135_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "FenceWire_175_1930",
+      "initialClass": "B",
+      "finding": "Each panel carries full end posts, duplicating shared junction posts.",
+      "action": "Separate canonical junction post; retain woven wire, tension bars, ties and rails; instantiate one post per junction.",
+      "canonicalEvidence": "../Fidelity/Assets/FenceWire_175_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "FenceWire_200_1930",
+      "initialClass": "B",
+      "finding": "Each panel carries full end posts, duplicating shared junction posts.",
+      "action": "Separate canonical junction post; retain woven wire, tension bars, ties and rails; instantiate one post per junction.",
+      "canonicalEvidence": "../Fidelity/Assets/FenceWire_200_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "FilingCabinet_4Drawer_1930",
+      "initialClass": "A",
+      "finding": "Drawers/seams, label holders, pulls and plinth.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/FilingCabinet_4Drawer_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "GroundsToolRack_1930",
+      "initialClass": "C",
+      "finding": "Cuboid broom, primitive rake, spade/shaft geometry and rack overlapping rear window/shelving.",
+      "action": "Round shafts, curved closed spade, D grip, separated rake tines, bristle bundles/socket; move to storage-facing solid partition.",
+      "canonicalEvidence": "../Fidelity/Assets/GroundsToolRack_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "GutterCorner90_1930",
+      "initialClass": "A",
+      "finding": "Open trough, rolled lips, saddle supports and continuous installed runs/corners.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/GutterCorner90_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "GutterHalfRound_040Plain_1930",
+      "initialClass": "A",
+      "finding": "Open trough, rolled lips, saddle supports and continuous installed runs/corners.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/GutterHalfRound_040Plain_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "GutterHalfRound_040_1930",
+      "initialClass": "B",
+      "finding": "Long rectangular catchbox and poorly aligned outlet connection.",
+      "action": "Open round drain aperture and drawn hollow throat with coaxial offset connections.",
+      "canonicalEvidence": "../Fidelity/Assets/GutterHalfRound_040_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "GutterHalfRound_060_1930",
+      "initialClass": "A",
+      "finding": "Open trough, rolled lips, saddle supports and continuous installed runs/corners.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/GutterHalfRound_060_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "GutterHalfRound_155_1930",
+      "initialClass": "A",
+      "finding": "Open trough, rolled lips, saddle supports and continuous installed runs/corners.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/GutterHalfRound_155_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "GutterHalfRound_165_1930",
+      "initialClass": "A",
+      "finding": "Open trough, rolled lips, saddle supports and continuous installed runs/corners.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/GutterHalfRound_165_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "GutterHalfRound_175_1930",
+      "initialClass": "A",
+      "finding": "Open trough, rolled lips, saddle supports and continuous installed runs/corners.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/GutterHalfRound_175_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "GutterHalfRound_200_1930",
+      "initialClass": "A",
+      "finding": "Open trough, rolled lips, saddle supports and continuous installed runs/corners.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/GutterHalfRound_200_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "LadderTimber_260_1930",
+      "initialClass": "A",
+      "finding": "Rails, individual rungs, end bearing and installed lean.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/LadderTimber_260_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "LumberStack_240_1930",
+      "initialClass": "A",
+      "finding": "Individual boards and supporting sleepers/rails.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/LumberStack_240_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "MaterialRackTimber_400_1930",
+      "initialClass": "A",
+      "finding": "Posts, bearing rails, end crossmembers, rear brace and grounded feet.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/MaterialRackTimber_400_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "NoticeBoardTimber_173_1930",
+      "initialClass": "A",
+      "finding": "Backing fills rebate; frame/cleats; installed employment heading/pinned varied notices.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/NoticeBoardTimber_173_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "PaintCan_1930",
+      "initialClass": "A",
+      "finding": "Lid/rim, body, wire handle and seating.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/PaintCan_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "SackCanvasSlumped_1930",
+      "initialClass": "A",
+      "finding": "Compressed foot, asymmetric fabric body, gathered top and seam.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/SackCanvasSlumped_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "SackCanvas_1930",
+      "initialClass": "A",
+      "finding": "Compressed foot, asymmetric fabric body, gathered top and seam.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/SackCanvas_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "ScaffoldBayTimber_200_1930",
+      "initialClass": "A",
+      "finding": "Deck planks, end/diagonal bracing and base shoes.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/ScaffoldBayTimber_200_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "ServiceDoorPair_485x346_1930",
+      "initialClass": "A",
+      "finding": "Braced timber leaves, jamb hardware, drop bolts and glazing.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/ServiceDoorPair_485x346_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "ShelfSteelTimber_170_1930",
+      "initialClass": "A",
+      "finding": "Timber shelves, steel angles, fasteners and end bracing.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/ShelfSteelTimber_170_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "SplashBlockConcrete_1930",
+      "initialClass": "A",
+      "finding": "Closed bed, kerbs/backstop and discharge alignment.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/SplashBlockConcrete_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "TelephoneDesk_1930",
+      "initialClass": "C",
+      "finding": "Body obscures dial; finger holes read as buttons; receiver is poorly supported.",
+      "action": "Oval moulded base, supported receiver, unobstructed pierced rotary dial and cord.",
+      "canonicalEvidence": "../Fidelity/Assets/TelephoneDesk_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "ToolRackCarpenter_1930",
+      "initialClass": "C",
+      "finding": "Saw grip/blade insufficient; generic hooks do not support all tools; unsupported yard placement crosses rail.",
+      "action": "Closed saw grip/tapered toothed plate, specific supports and shaped hafts; seat interior battens, remove exterior placement.",
+      "canonicalEvidence": "../Fidelity/Assets/ToolRackCarpenter_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "ToolTrayCarpenter_1930",
+      "initialClass": "C",
+      "finding": "Hand plane remains a box with a block on top in close inspection.",
+      "action": "Distinct sole, side cheeks, angled iron/lever cap, front knob and open rear tote.",
+      "canonicalEvidence": "../Fidelity/Assets/ToolTrayCarpenter_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "WastebasketWire_1930",
+      "initialClass": "A",
+      "finding": "Closed base and tied wire body/rims.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/WastebasketWire_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "WheelbarrowSteel_1930",
+      "initialClass": "B",
+      "finding": "Thick beam handles end in abrupt oversized cylindrical grips.",
+      "action": "Continuous shaped hardwood runners, gradual elliptical grip taper, connected tray saddles.",
+      "canonicalEvidence": "../Fidelity/Assets/WheelbarrowSteel_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "WindowSteel_190x180_1930",
+      "initialClass": "A",
+      "finding": "Interior cockspur/hinges, exterior putty, frame depth, sill and installed wall seating.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/WindowSteel_190x180_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "WindowSteel_195x212_1930",
+      "initialClass": "A",
+      "finding": "Interior cockspur/hinges, exterior putty, frame depth, sill and installed wall seating.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/WindowSteel_195x212_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "WindowSteel_200x180_1930",
+      "initialClass": "A",
+      "finding": "Interior cockspur/hinges, exterior putty, frame depth, sill and installed wall seating.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/WindowSteel_200x180_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "WindowSteel_200x210_1930",
+      "initialClass": "A",
+      "finding": "Interior cockspur/hinges, exterior putty, frame depth, sill and installed wall seating.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/WindowSteel_200x210_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "WindowSteel_265x205_1930",
+      "initialClass": "A",
+      "finding": "Interior cockspur/hinges, exterior putty, frame depth, sill and installed wall seating.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/WindowSteel_265x205_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "WindowSteel_310x195_1930",
+      "initialClass": "A",
+      "finding": "Interior cockspur/hinges, exterior putty, frame depth, sill and installed wall seating.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/WindowSteel_310x195_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    },
+    {
+      "asset": "WorkbenchJoiner_225_1930",
+      "initialClass": "A",
+      "finding": "Thick planked top, mortised frame, lower shelf, brace; vise slide/jaws/screw/bar.",
+      "action": "Retain geometry; inspect linked placements.",
+      "canonicalEvidence": "../Fidelity/Assets/WorkbenchJoiner_225_1930.png",
+      "reviewStatus": "Inspected in final Unity canonical capture and applicable assembled views; no further correction identified in this pass"
+    }
+  ],
+  "newAssemblies": [
+    "FenceGateWire_180_RH_1930",
+    "FencePostTubular_1930"
+  ],
+  "reviewedCanonicalCount": 63,
+  "regressions": [
+    {
+      "asset": "FenceGateWire_180_RH_1930",
+      "cause": "Stale Blender dependency-graph transform during mirror baking left the last UV sphere at its 2 m primitive size.",
+      "fix": "Evaluate transforms before and after mirror baking. Source and Unity bounds regressions now enforce correctly sized hardware; thumb cap is 20 x 20 x 26 mm."
+    },
+    {
+      "asset": "YardShelter",
+      "cause": "Gutter segments already met, but there was no continuous roof-to-trough apron and the seams were visually unexplained.",
+      "fix": "Continuous flat underlapped drip apron, four outer joint laps, connected open outlet, socket and hollow downpipe offset."
+    },
+    {
+      "asset": "ToolRackCarpenter_1930",
+      "cause": "Try square lacked characteristic manufacture details.",
+      "fix": "Rounded rosewood stock, brass wear face, mortised steel blade, flush rivets and etched divisions."
+    },
+    {
+      "asset": "TelephoneDesk_1930",
+      "cause": "Primitive silhouette, unsupported-looking receiver, crude dial.",
+      "fix": "Moulded base, flared pedestal, receiver cradle with hook fingers, shaped handset cups, pierced numbered rotary dial, finger stop, cloth cord."
+    },
+    {
+      "asset": "DeskLampBanker_1930",
+      "cause": "Open shade ends and crude yoke; first refinement exposed liner overshoot and flat shading.",
+      "fix": "Closed curved shell and matching recessed liner, smooth normals, pivots, bulb/socket, beaded pull and cord."
+    }
+  ]
+}

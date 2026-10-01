@@ -1,0 +1,7 @@
+{
+  "shoeOuterRadius": 0.049,
+  "shoeBoreRadius": 0.046,
+  "crossSectionRings": 5,
+  "noCrossSectionFlip": true,
+  "closedRimEndRingsCoincide": true
+}

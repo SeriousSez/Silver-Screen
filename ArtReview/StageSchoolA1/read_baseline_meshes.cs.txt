@@ -1,0 +1,4 @@
+var files=System.IO.Directory.GetFiles("Assets/SilverScreen/Environment/StageSchoolA1/Meshes","*.asset");
+using(var writer=new System.IO.StreamWriter("ArtReview/StageSchoolA1/baseline_mesh_positions.txt"))
+foreach(var file in files){var mesh=UnityEditor.AssetDatabase.LoadAssetAtPath<UnityEngine.Mesh>(file.Replace('\\','/'));if(mesh==null)continue;writer.Write(mesh.name+"|"+mesh.triangles.Length/3+"|");foreach(var p in mesh.vertices)writer.Write(p.x.ToString("R",System.Globalization.CultureInfo.InvariantCulture)+","+p.y.ToString("R",System.Globalization.CultureInfo.InvariantCulture)+","+p.z.ToString("R",System.Globalization.CultureInfo.InvariantCulture)+";");writer.WriteLine();}
+result.Log("Read existing candidate mesh positions for source comparison");

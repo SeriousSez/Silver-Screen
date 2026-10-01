@@ -1,0 +1,21 @@
+00:01.344  blend            | Read blend: "C:\Repos\Unity\Silver Screen\ArtSource\StageSchoolA3\StageSchool_A3.blend"
+C:\Repos\Unity\Silver Screen\ArtSource\StageSchoolA4\generate_stage_school_a4.py:45: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat=bpy.data.materials.new(n);mat.use_nodes=True
+Info: Read library: 'C:\Repos\Unity\Silver Screen\ArtSource\PeriodEnvironment1930\PeriodEnvironment1930.blend', '//..\PeriodEnvironment1930\PeriodEnvironment1930.blend', parent '<direct>'
+Info: Read library: 'C:\Repos\Unity\Silver Screen\ArtSource\ProductionEquipment1930Candidate\ProductionEquipment1930Candidate.blend', '//..\ProductionEquipment1930Candidate\ProductionEquipment1930Candidate.blend', parent '<direct>'
+A4 three-room envelope
+A4 ceilings, fixtures and exterior applicant forecourt
+A4 established semantic packet export
+00:39.094  blend.readfile   | WARNING Append: ID 'GRChairBentwood_1930' is already linked
+00:39.094  blend.readfile   | WARNING Append: ID 'GRDeskLampBanker_1930' is already linked
+00:39.094  blend.readfile   | WARNING Append: ID 'GRFilingCabinet_4Drawer_1930' is already linked
+00:39.094  blend.readfile   | WARNING Append: ID 'GRDeskPedestal_1930' is already linked
+00:39.094  blend.readfile   | WARNING Append: ID 'GRTelephoneDesk_1930' is already linked
+00:39.094  blend.readfile   | WARNING Append: ID 'GRDeskPaperwork_1930' is already linked
+00:39.156  blend.readfile   | WARNING Append: ID 'GRStudioLamp1930' is already linked
+00:39.156  blend.readfile   | WARNING Append: ID 'GRStudioCamera1930' is already linked
+Info: Saved as "StageSchool_A4.blend"
+A4 authored: {"footprint": [22, 16], "gross_floor_area": 352, "net_room_area": 321.93420000000003, "roof_masses": 1, "source_groups": 80, "triangles": 495879, "vertices": 606913}
+Blender 5.0.1 (hash a3db93c5b259 built 2025-12-16 01:32:30)
+
+Blender quit

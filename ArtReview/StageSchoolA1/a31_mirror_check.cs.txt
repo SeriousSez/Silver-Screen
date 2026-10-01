@@ -1,0 +1,10 @@
+var scene=UnityEngine.SceneManagement.SceneManager.GetActiveScene();
+if(scene.path!=SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.ScenePath)throw new System.Exception("Expected isolated review scene");
+UnityEngine.Camera camera=null;UnityEngine.GameObject candidate=null;
+foreach(var root in scene.GetRootGameObjects()) {var c=root.GetComponent<UnityEngine.Camera>();if(c!=null)camera=c;if(root.name.StartsWith("StageSchool_A3"))candidate=root;}
+if(camera==null||candidate==null)throw new System.Exception("Missing review objects");
+var renderer=candidate.transform.Find("Furnishings/Washroom").GetComponent<UnityEngine.MeshRenderer>();
+var probes=new System.Collections.Generic.List<UnityEngine.Rendering.ReflectionProbeBlendInfo>();renderer.GetClosestReflectionProbes(probes);result.Log("Regular-scene washroom probes: "+probes.Count);
+foreach(var p in probes)result.Log(p.probe.name+" weight "+p.weight+" cubemap "+p.probe.customBakedTexture);
+SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Capture(camera,"a3_25_basins",new UnityEngine.Vector3(8.9f,1.9f,-5.9f),new UnityEngine.Vector3(9.5f,1.25f,-4.5f),70);
+result.Log("Regular-scene mirror verification captured; no asset changes");

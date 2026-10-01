@@ -1,0 +1,18 @@
+{
+  "cap_gutter": [
+    {
+      "roof": "Hall",
+      "gutter": "Pitched half-round rainwater gutter.024",
+      "overlaps": 0,
+      "cap_faces": []
+    },
+    {
+      "roof": "Interview",
+      "gutter": "Pitched half-round rainwater gutter.024",
+      "overlaps": 0,
+      "cap_faces": []
+    }
+  ],
+  "scoring_count": 89,
+  "scoring_above_stone": []
+}

@@ -1,0 +1,22 @@
+{
+    "unityVersion": "6000.6.3f1",
+    "renderPipeline": "PC_RPAsset",
+    "renderers": 319,
+    "vertices": 2631815,
+    "triangles": 1805401,
+    "materials": 37,
+    "missingMaterials": 0,
+    "missingMeshes": 0,
+    "boundsMin": {
+        "x": -14.630001068115234,
+        "y": 0.0,
+        "z": -10.744499206542969
+    },
+    "boundsMax": {
+        "x": 14.630001068115234,
+        "y": 7.605800628662109,
+        "z": 15.630001068115234
+    },
+    "scaleValid": true,
+    "noRuntimeBuildingComponents": true
+}

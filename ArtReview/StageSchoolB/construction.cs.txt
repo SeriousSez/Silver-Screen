@@ -1,0 +1,20 @@
+var scene=UnityEngine.SceneManagement.SceneManager.GetActiveScene();
+var root=System.Linq.Enumerable.First(scene.GetRootGameObjects(),g=>g.GetComponent<SilverScreen.Presentation.Buildings.StageSchoolInfrastructure>()!=null);
+var camera=System.Linq.Enumerable.First(scene.GetRootGameObjects(),g=>g.GetComponent<UnityEngine.Camera>()!=null).GetComponent<UnityEngine.Camera>();
+var clock=new SilverScreen.Domain.Time.SimulationClock();
+using var work=new SilverScreen.Domain.Work.WorkService(clock,new SilverScreen.Domain.Time.SimulationScheduler(clock));
+using var service=new SilverScreen.Domain.Buildings.BuildingConstructionService(SilverScreen.Domain.Buildings.StudioBuildingDefinitions.Create(),new SilverScreen.Domain.Buildings.PlacementRect(0,0,100,100),null,clock,work,new SilverScreen.Domain.Finance.StudioFinances(clock.CurrentTime),new SilverScreen.Domain.Resources.ResourceReservationBook());
+var building=service.Place(SilverScreen.Domain.Buildings.StudioBuildingDefinitions.StageSchool,new SilverScreen.Domain.Buildings.BuildingPose(0,0,37),out var error);
+if(error!=null)throw new System.Exception(error);
+root.SetActive(false);var site=new UnityEngine.GameObject("Stage School construction proof");site.transform.rotation=UnityEngine.Quaternion.Euler(0,37,0);
+var material=new UnityEngine.Material(UnityEngine.Shader.Find("Universal Render Pipeline/Lit"));material.color=new UnityEngine.Color(.65f,.47f,.20f);
+try{
+ var content=UnityEngine.Object.Instantiate(UnityEditor.AssetDatabase.LoadAssetAtPath<UnityEngine.GameObject>(SilverScreen.Editor.EnvironmentArt.StageSchoolRuntimeBuilder.Prefab),site.transform);
+ var view=site.AddComponent<SilverScreen.Presentation.Buildings.ConstructionSiteView>();view.Initialize(building,content,material);
+ SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Capture(camera,"../StageSchoolB/08_construction_site",new UnityEngine.Vector3(28,26,-32),new UnityEngine.Vector3(0,2,2),49);
+ result.Log("Actual placed site: operational="+building.IsOperational+" phase="+building.Phase+" LOD enabled="+content.GetComponent<UnityEngine.LODGroup>().enabled+" work="+service.Progress(building));
+}finally{UnityEngine.Object.DestroyImmediate(site);UnityEngine.Object.DestroyImmediate(material);root.SetActive(true);}
+root.GetComponent<UnityEngine.LODGroup>().ForceLOD(1);
+SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Capture(camera,"../StageSchoolB/09_operational_presentation",new UnityEngine.Vector3(28,26,-32),new UnityEngine.Vector3(0,2,2),49);
+root.GetComponent<UnityEngine.LODGroup>().ForceLOD(-1);
+result.Log("Completed prefab presentation shown separately; no construction simulation or applicants created.");

@@ -1,0 +1,1245 @@
+{
+  "candidate": "StageSchool_A4",
+  "footprint": [
+    22,
+    16
+  ],
+  "gross_floor_area": 352,
+  "net_room_area": 321.93420000000003,
+  "roof_masses": 1,
+  "roof": "Single shallow-fall mineral roof concealed by stone-capped stucco parapet; raised entrance facade only",
+  "roof_direction": "Latest user correction supersedes the original terracotta roof brief",
+  "roof_fall": 0.18,
+  "room_floor_extents": [
+    [
+      "HiringHall",
+      -10.68,
+      10.68,
+      -8.64,
+      -1.59
+    ],
+    [
+      "Audition",
+      -10.68,
+      2.51,
+      -1.41,
+      6.68
+    ],
+    [
+      "Interview",
+      2.69,
+      10.68,
+      -1.41,
+      6.68
+    ]
+  ],
+  "clear_ceiling_height": 4.22,
+  "source_groups": 80,
+  "triangles": 495879,
+  "vertices": 606913,
+  "materials": [
+    "Brass",
+    "Canvas",
+    "Concrete",
+    "Galvanized",
+    "InteriorPlaster",
+    "Leather",
+    "Mortar",
+    "Paper",
+    "PaperLight",
+    "SS_A4_LeafDeep",
+    "SS_A4_LeafGreen",
+    "SS_A4_LeafYoung",
+    "SS_A4_PottingSoil",
+    "SS_Bronze",
+    "SS_ClearGlass",
+    "SS_Curtain",
+    "SS_FloorOak",
+    "SS_FloorOakLight",
+    "SS_Headshots",
+    "SS_Lamp",
+    "SS_Sage",
+    "SS_Stone",
+    "SS_Stucco",
+    "SS_Terrazzo",
+    "SS_Walnut",
+    "Steel",
+    "Timber",
+    "TimberDark"
+  ],
+  "reused_assemblies": {
+    "Doors/EntranceLeft": {
+      "source": "Doors/EntranceLeft",
+      "offset": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Doors/EntranceRight": {
+      "source": "Doors/EntranceRight",
+      "offset": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Furnishings/Audition/Backdrop": {
+      "source": "Furnishings/Audition/Backdrop",
+      "offset": [
+        -12.5,
+        0,
+        -8
+      ]
+    },
+    "Furnishings/Audition/Curtains": {
+      "source": "Furnishings/Audition/Curtains",
+      "offset": [
+        -12.5,
+        0,
+        -8
+      ]
+    },
+    "Furnishings/Audition/EvaluationMaterials": {
+      "source": "Furnishings/Audition/EvaluationMaterials",
+      "offset": [
+        -16.5,
+        0,
+        -3.5
+      ]
+    },
+    "Furnishings/Audition/EvaluationTable": {
+      "source": "Furnishings/Audition/EvaluationTable",
+      "offset": [
+        -16.5,
+        0,
+        -3.5
+      ]
+    },
+    "Furnishings/Audition/Rostrum": {
+      "source": "Furnishings/Audition/Rostrum",
+      "offset": [
+        -12.5,
+        0,
+        -8
+      ]
+    },
+    "Furnishings/Interview/Bookcase": {
+      "source": "Furnishings/Interview/Bookcase",
+      "offset": [
+        5.46,
+        0,
+        -5
+      ]
+    },
+    "Furnishings/Interview/GuestA": {
+      "source": "Furnishings/Interview/GuestA",
+      "offset": [
+        6.6,
+        0,
+        -5
+      ]
+    },
+    "Furnishings/Interview/GuestB": {
+      "source": "Furnishings/Interview/GuestB",
+      "offset": [
+        6.6,
+        0,
+        -5
+      ]
+    },
+    "Furnishings/Interview/PortfolioReview": {
+      "source": "Furnishings/Interview/PortfolioReview",
+      "offset": [
+        6.6,
+        0,
+        -5
+      ]
+    },
+    "Shell/Front": {
+      "source": "Shell/Front",
+      "offset": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Shell/Front/AddedArticulation": {
+      "source": "Shell/Front/AddedArticulation",
+      "offset": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Shell/Front/Banners": {
+      "source": "Shell/Front/Banners",
+      "offset": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Shell/Front/EntranceLanterns": {
+      "source": "Shell/Front/EntranceLanterns",
+      "offset": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Shell/Front/Fanlight": {
+      "source": "Shell/Front/Fanlight",
+      "offset": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Shell/Front/InteriorFinishA": {
+      "source": "Shell/Front/InteriorFinishA",
+      "offset": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Shell/Front/Portal": {
+      "source": "Shell/Front/Portal",
+      "offset": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Shell/Front/Signage": {
+      "source": "Shell/Front/Signage",
+      "offset": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Shell/Front/Windows": {
+      "source": "Shell/Front/Windows",
+      "offset": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Structure/EntranceSteps": {
+      "source": "Structure/EntranceSteps",
+      "offset": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Furnishings/HiringHall/PortraitGallery0": {
+      "source": "Furnishings/Waiting/PortraitGallery",
+      "offset": [
+        4.325,
+        0,
+        -4.79
+      ]
+    },
+    "Furnishings/HiringHall/PortraitGallery1": {
+      "source": "Furnishings/Waiting/PortraitGallery",
+      "offset": [
+        7.325,
+        0,
+        -4.79
+      ]
+    },
+    "Furnishings/HiringHall/PortraitGallery2": {
+      "source": "Furnishings/Waiting/PortraitGallery",
+      "offset": [
+        20.525,
+        0,
+        -4.79
+      ]
+    },
+    "Furnishings/HiringHall/Clock": {
+      "source": "Shell/Rear/OfficeClock",
+      "offset": [
+        -1.7,
+        0,
+        -13.28
+      ]
+    },
+    "Ceilings/PendantA4_00": {
+      "source": "Ceilings/Pendant02",
+      "offset": [
+        -0.2999999999999998,
+        0.54,
+        0
+      ]
+    },
+    "Ceilings/PendantA4_01": {
+      "source": "Ceilings/Pendant02",
+      "offset": [
+        4.35,
+        0.54,
+        0
+      ]
+    },
+    "Ceilings/PendantA4_02": {
+      "source": "Ceilings/Pendant02",
+      "offset": [
+        9.05,
+        0.54,
+        0
+      ]
+    },
+    "Ceilings/PendantA4_03": {
+      "source": "Ceilings/Pendant02",
+      "offset": [
+        13.7,
+        0.54,
+        0
+      ]
+    },
+    "Ceilings/PendantA4_04": {
+      "source": "Ceilings/Pendant02",
+      "offset": [
+        2.7,
+        0.54,
+        6.6
+      ]
+    },
+    "Ceilings/PendantA4_05": {
+      "source": "Ceilings/Pendant02",
+      "offset": [
+        13.3,
+        0.54,
+        7.8
+      ]
+    }
+  },
+  "fixtures": [
+    {
+      "asset": "DeskPedestal_1930",
+      "group": "Furnishings/Interview/Desk",
+      "position": [
+        6.6,
+        0.39,
+        3.5999999999999996
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "ChairBentwood_1930",
+      "group": "Furnishings/Interview/DirectorChair",
+      "position": [
+        6.6,
+        0.39,
+        4.6
+      ],
+      "yaw": 180
+    },
+    {
+      "asset": "TelephoneDesk_1930",
+      "group": "Furnishings/Interview/Phone",
+      "position": [
+        5.8999999999999995,
+        1.19,
+        3.5500000000000007
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "DeskLampBanker_1930",
+      "group": "Furnishings/Interview/Lamp",
+      "position": [
+        7.3,
+        1.19,
+        3.6500000000000004
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "DeskPaperwork_1930",
+      "group": "Furnishings/Interview/Scripts",
+      "position": [
+        6.6,
+        1.19,
+        3.4000000000000004
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "FilingCabinet_4Drawer_1930",
+      "group": "Furnishings/Interview/Files",
+      "position": [
+        10.1,
+        0.38,
+        4.6
+      ],
+      "yaw": 270
+    },
+    {
+      "asset": "ChairBentwood_1930",
+      "group": "Furnishings/Audition/Evaluator0",
+      "position": [
+        -8.85,
+        0.39,
+        -0.5499999999999998
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "ChairBentwood_1930",
+      "group": "Furnishings/Audition/Evaluator1",
+      "position": [
+        -8.0,
+        0.39,
+        -0.5499999999999998
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "DeskPaperwork_1930",
+      "group": "Furnishings/Audition/Notes",
+      "position": [
+        -8.600000000000001,
+        1.17,
+        0.4500000000000002
+      ],
+      "yaw": 180
+    },
+    {
+      "asset": "ChairBentwood_1930",
+      "group": "Furnishings/Audition/Evaluator2",
+      "position": [
+        -7.15,
+        0.39,
+        -0.5499999999999998
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "BenchSlatted_210_1930",
+      "group": "Exterior/ApplicantBench-1",
+      "position": [
+        -7.2,
+        0.05,
+        -9.58
+      ],
+      "yaw": 180
+    },
+    {
+      "asset": "BenchSlatted_210_1930",
+      "group": "Exterior/ApplicantBench1",
+      "position": [
+        7.2,
+        0.05,
+        -9.58
+      ],
+      "yaw": 180
+    }
+  ],
+  "equipment": [
+    {
+      "asset": "StudioCamera1930",
+      "group": "Furnishings/Audition/Camera",
+      "position": [
+        -4,
+        0.39,
+        1.1
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "StudioLamp1930",
+      "group": "Furnishings/Audition/StudioLamp0",
+      "position": [
+        -7.3,
+        0.39,
+        3.35
+      ],
+      "yaw": 50
+    },
+    {
+      "asset": "StudioLamp1930",
+      "group": "Furnishings/Audition/StudioLamp1",
+      "position": [
+        -0.7,
+        0.39,
+        3.35
+      ],
+      "yaw": -50
+    }
+  ],
+  "openings": [
+    {
+      "group": "Shell/Left/Windows",
+      "center": [
+        -10.864999771118164,
+        4.840000152587891
+      ],
+      "z": 1.35,
+      "w": 1.56,
+      "h": 2.25,
+      "angle": -1.5707963267948966,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Left/Windows",
+      "center": [
+        -10.86500072479248,
+        0.940000057220459
+      ],
+      "z": 1.35,
+      "w": 1.56,
+      "h": 2.25,
+      "angle": -1.5707963267948966,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Left/Windows",
+      "center": [
+        -10.86500072479248,
+        -4.359999656677246
+      ],
+      "z": 1.3,
+      "w": 1.56,
+      "h": 2.25,
+      "angle": -1.5707963267948966,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Left/Windows",
+      "center": [
+        -10.86500072479248,
+        -7.159999847412109
+      ],
+      "z": 1.3,
+      "w": 1.56,
+      "h": 2.25,
+      "angle": -1.5707963267948966,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Right/Windows",
+      "center": [
+        10.86500072479248,
+        -6.800000190734863
+      ],
+      "z": 1.3,
+      "w": 1.56,
+      "h": 2.25,
+      "angle": 1.5707963267948966,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Right/Windows",
+      "center": [
+        10.86500072479248,
+        -3.8000001907348633
+      ],
+      "z": 1.3,
+      "w": 1.56,
+      "h": 2.25,
+      "angle": 1.5707963267948966,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Right/Windows",
+      "center": [
+        10.86500072479248,
+        1.3000001907348633
+      ],
+      "z": 1.35,
+      "w": 1.56,
+      "h": 2.25,
+      "angle": 1.5707963267948966,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Right/Windows",
+      "center": [
+        10.86500072479248,
+        5.0
+      ],
+      "z": 1.35,
+      "w": 1.56,
+      "h": 2.25,
+      "angle": 1.5707963267948966,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Rear/Windows",
+      "center": [
+        9.039999961853027,
+        6.865000247955322
+      ],
+      "z": 1.35,
+      "w": 1.56,
+      "h": 2.25,
+      "angle": 3.141592653589793,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Rear/Windows",
+      "center": [
+        5.640000343322754,
+        6.8650007247924805
+      ],
+      "z": 1.35,
+      "w": 1.56,
+      "h": 2.25,
+      "angle": 3.141592653589793,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Rear/Windows",
+      "center": [
+        0.6400003433227539,
+        6.865001201629639
+      ],
+      "z": 4.02,
+      "w": 1.5,
+      "h": 0.52,
+      "angle": 3.141592653589793,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Rear/Windows",
+      "center": [
+        -8.860000610351562,
+        6.865001678466797
+      ],
+      "z": 4.02,
+      "w": 1.5,
+      "h": 0.52,
+      "angle": 3.141592653589793,
+      "world": true,
+      "latch_side": "interior +normal"
+    }
+  ],
+  "doors": [
+    {
+      "group": "Doors/AuditionA4",
+      "center": [
+        0.5100002288818359,
+        -1.5
+      ],
+      "width": 1.48,
+      "angle": 0.0,
+      "swing": 76,
+      "hinge": "left",
+      "world": true
+    },
+    {
+      "group": "Doors/InterviewA4",
+      "center": [
+        5.599999904632568,
+        -1.5
+      ],
+      "width": 1.23,
+      "angle": 0.0,
+      "swing": 76,
+      "hinge": "left",
+      "world": true
+    }
+  ],
+  "walls": [
+    {
+      "name": "Shell/Left",
+      "a": [
+        -10.84,
+        6.84
+      ],
+      "b": [
+        -10.84,
+        -8.8
+      ],
+      "height": 4.85,
+      "windows": [
+        [
+          2,
+          1.56,
+          1.35,
+          2.25
+        ],
+        [
+          5.9,
+          1.56,
+          1.35,
+          2.25
+        ],
+        [
+          11.2,
+          1.56,
+          1.3,
+          2.25
+        ],
+        [
+          14,
+          1.56,
+          1.3,
+          2.25
+        ]
+      ],
+      "doors": [],
+      "th": 0.32,
+      "interior": false
+    },
+    {
+      "name": "Shell/Right",
+      "a": [
+        10.84,
+        -8.8
+      ],
+      "b": [
+        10.84,
+        6.84
+      ],
+      "height": 4.85,
+      "windows": [
+        [
+          2,
+          1.56,
+          1.3,
+          2.25
+        ],
+        [
+          5,
+          1.56,
+          1.3,
+          2.25
+        ],
+        [
+          10.1,
+          1.56,
+          1.35,
+          2.25
+        ],
+        [
+          13.8,
+          1.56,
+          1.35,
+          2.25
+        ]
+      ],
+      "doors": [],
+      "th": 0.32,
+      "interior": false
+    },
+    {
+      "name": "Shell/Rear",
+      "a": [
+        10.84,
+        6.84
+      ],
+      "b": [
+        -10.84,
+        6.84
+      ],
+      "height": 4.85,
+      "windows": [
+        [
+          1.8,
+          1.56,
+          1.35,
+          2.25
+        ],
+        [
+          5.2,
+          1.56,
+          1.35,
+          2.25
+        ],
+        [
+          10.2,
+          1.5,
+          4.02,
+          0.52
+        ],
+        [
+          19.7,
+          1.5,
+          4.02,
+          0.52
+        ]
+      ],
+      "doors": [],
+      "th": 0.32,
+      "interior": false
+    },
+    {
+      "name": "Partitions/HallAudition",
+      "a": [
+        -10.84,
+        -1.5
+      ],
+      "b": [
+        2.6,
+        -1.5
+      ],
+      "height": 4.65,
+      "windows": [],
+      "doors": [
+        [
+          "AuditionA4",
+          11.35,
+          1.6
+        ]
+      ],
+      "th": 0.18,
+      "interior": true
+    },
+    {
+      "name": "Partitions/HallInterview",
+      "a": [
+        2.6,
+        -1.5
+      ],
+      "b": [
+        10.84,
+        -1.5
+      ],
+      "height": 4.65,
+      "windows": [],
+      "doors": [
+        [
+          "InterviewA4",
+          3.0,
+          1.35
+        ]
+      ],
+      "th": 0.18,
+      "interior": true
+    },
+    {
+      "name": "Partitions/SpecialistDivider",
+      "a": [
+        2.6,
+        6.84
+      ],
+      "b": [
+        2.6,
+        -1.5
+      ],
+      "height": 4.65,
+      "windows": [],
+      "doors": [],
+      "th": 0.18,
+      "interior": true
+    }
+  ],
+  "parts": [
+    {
+      "name": "Doors/EntranceLeft",
+      "triangles": 5352,
+      "vertices": 10424
+    },
+    {
+      "name": "Doors/EntranceRight",
+      "triangles": 5352,
+      "vertices": 10424
+    },
+    {
+      "name": "Furnishings/Audition/Backdrop",
+      "triangles": 2068,
+      "vertices": 4224
+    },
+    {
+      "name": "Furnishings/Audition/Curtains",
+      "triangles": 46100,
+      "vertices": 31518
+    },
+    {
+      "name": "Furnishings/Audition/EvaluationMaterials",
+      "triangles": 168,
+      "vertices": 326
+    },
+    {
+      "name": "Furnishings/Audition/EvaluationTable",
+      "triangles": 1052,
+      "vertices": 2092
+    },
+    {
+      "name": "Furnishings/Audition/Rostrum",
+      "triangles": 6768,
+      "vertices": 13824
+    },
+    {
+      "name": "Furnishings/Interview/Bookcase",
+      "triangles": 5760,
+      "vertices": 10203
+    },
+    {
+      "name": "Furnishings/Interview/GuestA",
+      "triangles": 4972,
+      "vertices": 3552
+    },
+    {
+      "name": "Furnishings/Interview/GuestB",
+      "triangles": 4972,
+      "vertices": 3552
+    },
+    {
+      "name": "Furnishings/Interview/PortfolioReview",
+      "triangles": 360,
+      "vertices": 635
+    },
+    {
+      "name": "Shell/Front",
+      "triangles": 1740,
+      "vertices": 3082
+    },
+    {
+      "name": "Shell/Front/AddedArticulation",
+      "triangles": 752,
+      "vertices": 1536
+    },
+    {
+      "name": "Shell/Front/Banners",
+      "triangles": 141724,
+      "vertices": 86044
+    },
+    {
+      "name": "Shell/Front/EntranceLanterns",
+      "triangles": 1188,
+      "vertices": 1744
+    },
+    {
+      "name": "Shell/Front/Fanlight",
+      "triangles": 1812,
+      "vertices": 2673
+    },
+    {
+      "name": "Shell/Front/InteriorFinishA",
+      "triangles": 9024,
+      "vertices": 18432
+    },
+    {
+      "name": "Shell/Front/Portal",
+      "triangles": 3364,
+      "vertices": 5733
+    },
+    {
+      "name": "Shell/Front/Signage",
+      "triangles": 45124,
+      "vertices": 31555
+    },
+    {
+      "name": "Shell/Front/Windows",
+      "triangles": 7720,
+      "vertices": 15504
+    },
+    {
+      "name": "Structure/EntranceSteps",
+      "triangles": 2896,
+      "vertices": 4328
+    },
+    {
+      "name": "Furnishings/HiringHall/PortraitGallery0",
+      "triangles": 1512,
+      "vertices": 3088
+    },
+    {
+      "name": "Furnishings/HiringHall/PortraitGallery1",
+      "triangles": 1512,
+      "vertices": 3088
+    },
+    {
+      "name": "Furnishings/HiringHall/PortraitGallery2",
+      "triangles": 1512,
+      "vertices": 3088
+    },
+    {
+      "name": "Furnishings/HiringHall/Clock",
+      "triangles": 648,
+      "vertices": 546
+    },
+    {
+      "name": "Structure/Foundation",
+      "triangles": 60,
+      "vertices": 96
+    },
+    {
+      "name": "Interior/Floors/Base",
+      "triangles": 12,
+      "vertices": 24
+    },
+    {
+      "name": "Interior/Floors/HiringHall",
+      "triangles": 144,
+      "vertices": 288
+    },
+    {
+      "name": "Interior/Floors/Audition",
+      "triangles": 2448,
+      "vertices": 4896
+    },
+    {
+      "name": "Interior/Floors/Interview",
+      "triangles": 1476,
+      "vertices": 2952
+    },
+    {
+      "name": "Shell/Front/UpperClosure0",
+      "triangles": 12,
+      "vertices": 24
+    },
+    {
+      "name": "Shell/Front/UpperClosure0/Cornice",
+      "triangles": 188,
+      "vertices": 384
+    },
+    {
+      "name": "Shell/Front/UpperClosure1",
+      "triangles": 12,
+      "vertices": 24
+    },
+    {
+      "name": "Shell/Front/UpperClosure1/Cornice",
+      "triangles": 188,
+      "vertices": 384
+    },
+    {
+      "name": "Shell/Left",
+      "triangles": 632,
+      "vertices": 912
+    },
+    {
+      "name": "Shell/Left/Windows",
+      "triangles": 15440,
+      "vertices": 31008
+    },
+    {
+      "name": "Shell/Left/Articulation",
+      "triangles": 4192,
+      "vertices": 8544
+    },
+    {
+      "name": "Shell/Right",
+      "triangles": 632,
+      "vertices": 912
+    },
+    {
+      "name": "Shell/Right/Windows",
+      "triangles": 15440,
+      "vertices": 31008
+    },
+    {
+      "name": "Shell/Right/Articulation",
+      "triangles": 4192,
+      "vertices": 8544
+    },
+    {
+      "name": "Shell/Rear",
+      "triangles": 680,
+      "vertices": 920
+    },
+    {
+      "name": "Shell/Rear/Windows",
+      "triangles": 14512,
+      "vertices": 29376
+    },
+    {
+      "name": "Shell/Rear/Articulation",
+      "triangles": 3524,
+      "vertices": 7176
+    },
+    {
+      "name": "Partitions/HallAudition",
+      "triangles": 60,
+      "vertices": 88
+    },
+    {
+      "name": "Partitions/HallAudition/Trim",
+      "triangles": 2444,
+      "vertices": 4992
+    },
+    {
+      "name": "Doors/AuditionA4",
+      "triangles": 7408,
+      "vertices": 14624
+    },
+    {
+      "name": "Partitions/HallInterview",
+      "triangles": 60,
+      "vertices": 88
+    },
+    {
+      "name": "Partitions/HallInterview/Trim",
+      "triangles": 2444,
+      "vertices": 4992
+    },
+    {
+      "name": "Doors/InterviewA4",
+      "triangles": 7408,
+      "vertices": 14624
+    },
+    {
+      "name": "Partitions/SpecialistDivider",
+      "triangles": 12,
+      "vertices": 24
+    },
+    {
+      "name": "Shell/Left/InteriorFinishA",
+      "triangles": 7896,
+      "vertices": 16128
+    },
+    {
+      "name": "Shell/Right/InteriorFinishA",
+      "triangles": 7896,
+      "vertices": 16128
+    },
+    {
+      "name": "Shell/Rear/InteriorFinishA",
+      "triangles": 10528,
+      "vertices": 21504
+    },
+    {
+      "name": "Partitions/HallAudition/InteriorFinishA",
+      "triangles": 7144,
+      "vertices": 14592
+    },
+    {
+      "name": "Partitions/HallAudition/InteriorFinishB",
+      "triangles": 7144,
+      "vertices": 14592
+    },
+    {
+      "name": "Partitions/HallInterview/InteriorFinishA",
+      "triangles": 4888,
+      "vertices": 9984
+    },
+    {
+      "name": "Partitions/HallInterview/InteriorFinishB",
+      "triangles": 4888,
+      "vertices": 9984
+    },
+    {
+      "name": "Partitions/SpecialistDivider/InteriorFinishA",
+      "triangles": 4888,
+      "vertices": 9984
+    },
+    {
+      "name": "Partitions/SpecialistDivider/InteriorFinishB",
+      "triangles": 4888,
+      "vertices": 9984
+    },
+    {
+      "name": "Furnishings/HiringHall/WallLantern0",
+      "triangles": 1490,
+      "vertices": 2832
+    },
+    {
+      "name": "Furnishings/HiringHall/WallLantern1",
+      "triangles": 1490,
+      "vertices": 2832
+    },
+    {
+      "name": "Furnishings/HiringHall/WallLantern2",
+      "triangles": 1490,
+      "vertices": 2832
+    },
+    {
+      "name": "Furnishings/HiringHall/WallLantern3",
+      "triangles": 1490,
+      "vertices": 2832
+    },
+    {
+      "name": "Roofs/Main/Deck",
+      "triangles": 12,
+      "vertices": 24
+    },
+    {
+      "name": "Roofs/Main/Parapet",
+      "triangles": 1504,
+      "vertices": 3072
+    },
+    {
+      "name": "Roofs/Main/RearParapet",
+      "triangles": 344,
+      "vertices": 584
+    },
+    {
+      "name": "Roofs/Main/EntranceReturn",
+      "triangles": 376,
+      "vertices": 768
+    },
+    {
+      "name": "Roofs/Main/Flashing",
+      "triangles": 52,
+      "vertices": 104
+    },
+    {
+      "name": "Roofs/Main/Rainwater",
+      "triangles": 3368,
+      "vertices": 6432
+    },
+    {
+      "name": "Ceilings/HiringHall",
+      "triangles": 764,
+      "vertices": 1272
+    },
+    {
+      "name": "Ceilings/Audition",
+      "triangles": 764,
+      "vertices": 1270
+    },
+    {
+      "name": "Ceilings/Interview",
+      "triangles": 764,
+      "vertices": 1272
+    },
+    {
+      "name": "Ceilings/PendantA4_00",
+      "triangles": 1416,
+      "vertices": 822
+    },
+    {
+      "name": "Ceilings/PendantA4_01",
+      "triangles": 1416,
+      "vertices": 822
+    },
+    {
+      "name": "Ceilings/PendantA4_02",
+      "triangles": 1416,
+      "vertices": 822
+    },
+    {
+      "name": "Ceilings/PendantA4_03",
+      "triangles": 1416,
+      "vertices": 822
+    },
+    {
+      "name": "Ceilings/PendantA4_04",
+      "triangles": 1416,
+      "vertices": 822
+    },
+    {
+      "name": "Ceilings/PendantA4_05",
+      "triangles": 1416,
+      "vertices": 822
+    },
+    {
+      "name": "Exterior/Forecourt",
+      "triangles": 544,
+      "vertices": 1104
+    },
+    {
+      "name": "Exterior/Planters",
+      "triangles": 25699,
+      "vertices": 13752
+    }
+  ]
+}

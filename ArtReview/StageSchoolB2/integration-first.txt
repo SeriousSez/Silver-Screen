@@ -1,0 +1,37 @@
+Entered runtime: scene=Assets/SilverScreen/Environment/StageSchoolB2/StageSchool_B2IntegrationReview.unity playing=True
+Runtime dependencies: construction=True clock=True
+PASS Placement creates gated site; yaw 37
+PASS LODGroup remains enabled during construction
+PASS Zero workers means zero progress
+PASS All construction phases keep dressing inside the reserved union at yaw37
+PASS Placement async navigation completes
+Phase SitePreparation capacity=3
+PASS Three workers use real V2B productivity
+Phase Foundation capacity=4
+Phase Structure capacity=5
+Phase Exterior capacity=3
+Phase Finishing capacity=4
+PASS Real shared construction reaches completion
+PASS All five phases traversed
+PASS Completion enables production building and removes dressing
+PASS Builder assignments and person reservations released
+PASS Actual completion schedules asynchronous navigation
+PASS Selected simulation speed and world adapter preserved
+Worst clock method ms=64.73
+Completion frame=62; Main Thread recorder valid=True; completion and next 8 frame ms=19.31,113.68,31.46,6.11,4.17,4.20,4.54,4.60,12.28
+PASS Completion async navigation settles
+PASS Real agent entrance.approach -> hiringhall.approach; initially closed; status=PathComplete
+PASS Real agent entrance.approach -> audition.activity.screen-test; initially closed; status=PathComplete
+PASS Real agent audition.activity.screen-test -> exit; initially closed; status=PathComplete
+PASS Real agent entrance.approach -> interview.activity; initially closed; status=PathComplete
+PASS Real agent interview.activity -> exit; initially closed; status=PathComplete
+PASS Agent automatically opened a closed authored door
+PASS Opposing real agents both cross the audition doorway without deadlock
+PASS Hover intent does not reveal immediately
+FAIL Actual pointer hover intent and fade in
+PASS Actual mouse click pins building
+PASS Pinned reveal survives pointer departure
+PASS Orbit/rapid zoom/automatic LOD while pinned keeps roofs hidden
+PASS Actual Escape releases and fades out
+PASS Closed LOD transitions restore visibility
+Runtime checks finished; screenshots are actual site/completed state.

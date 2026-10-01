@@ -1,0 +1,25 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"success\": true,\n  \"message\": \"Command executed successfully.\",\n  \"data\": {\n    \"isCompilationSuccessful\": true,\n    \"isExecutionSuccessful\": true,\n    \"executionId\": 1,\n    \"compilationLogs\": \"\",\n    \"executionLogs\": \"[Log] compileFailed=False missingMeshes=0 missingMaterials=0 playing=False scene=Assets/SilverScreen/Environment/StageSchoolB/StageSchool_RuntimeReview.unity\",\n    \"localFixedCode\": \"using UnityEngine;\\r\\nusing UnityEditor;\\r\\n\\r\\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\\r\\n{\\r\\n    internal class CommandScript : IRunCommand\\r\\n    {\\r\\n        public void Execute(ExecutionResult result)\\r\\n        {\\r\\n            var root = AssetDatabase.LoadAssetAtPath<GameObject>(SilverScreen.Editor.EnvironmentArt.StageSchoolRuntimeBuilder.Prefab);\\r\\n            int missingMeshes = 0, missingMaterials = 0;\\r\\n            foreach (var f in root.GetComponentsInChildren<MeshFilter>(true))\\r\\n                if (f.sharedMesh == null)\\r\\n                    missingMeshes++;\\r\\n            foreach (var r in root.GetComponentsInChildren<Renderer>(true))\\r\\n                foreach (var m in r.sharedMaterials)\\r\\n                    if (m == null)\\r\\n                        missingMaterials++;\\r\\n            string text = \\\"compileFailed=\\\" + EditorUtility.scriptCompilationFailed + \\\" missingMeshes=\\\" + missingMeshes + \\\" missingMaterials=\\\" + missingMaterials + \\\" playing=\\\" + EditorApplication.isPlaying + \\\" scene=\\\" + UnityEngine.SceneManagement.SceneManager.GetActiveScene().path;\\r\\n            System.IO.File.WriteAllText(\\\"ArtReview/StageSchoolB1/final_sanity.txt\\\", text);\\r\\n            result.Log(text);\\r\\n        }\\r\\n    }\\r\\n}\",\n    \"result\": \"Command executed successfully.\"\n  }\n}"
+      }
+    ],
+    "structuredContent": {
+      "success": true,
+      "message": "Command executed successfully.",
+      "data": {
+        "isCompilationSuccessful": true,
+        "isExecutionSuccessful": true,
+        "executionId": 1,
+        "compilationLogs": "",
+        "executionLogs": "[Log] compileFailed=False missingMeshes=0 missingMaterials=0 playing=False scene=Assets/SilverScreen/Environment/StageSchoolB/StageSchool_RuntimeReview.unity",
+        "localFixedCode": "using UnityEngine;\r\nusing UnityEditor;\r\n\r\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\r\n{\r\n    internal class CommandScript : IRunCommand\r\n    {\r\n        public void Execute(ExecutionResult result)\r\n        {\r\n            var root = AssetDatabase.LoadAssetAtPath<GameObject>(SilverScreen.Editor.EnvironmentArt.StageSchoolRuntimeBuilder.Prefab);\r\n            int missingMeshes = 0, missingMaterials = 0;\r\n            foreach (var f in root.GetComponentsInChildren<MeshFilter>(true))\r\n                if (f.sharedMesh == null)\r\n                    missingMeshes++;\r\n            foreach (var r in root.GetComponentsInChildren<Renderer>(true))\r\n                foreach (var m in r.sharedMaterials)\r\n                    if (m == null)\r\n                        missingMaterials++;\r\n            string text = \"compileFailed=\" + EditorUtility.scriptCompilationFailed + \" missingMeshes=\" + missingMeshes + \" missingMaterials=\" + missingMaterials + \" playing=\" + EditorApplication.isPlaying + \" scene=\" + UnityEngine.SceneManagement.SceneManager.GetActiveScene().path;\r\n            System.IO.File.WriteAllText(\"ArtReview/StageSchoolB1/final_sanity.txt\", text);\r\n            result.Log(text);\r\n        }\r\n    }\r\n}",
+        "result": "Command executed successfully."
+      }
+    }
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}

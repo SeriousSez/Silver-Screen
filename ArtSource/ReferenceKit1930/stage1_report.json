@@ -1,0 +1,92 @@
+{
+  "footprint": [
+    15.8,
+    24
+  ],
+  "eaves": 7.6,
+  "roof_crown": 10.65,
+  "highest_vent": 11.41,
+  "door": [
+    5.6,
+    6
+  ],
+  "catwalk_height": 4.5,
+  "stair_rise": 0.1875,
+  "stair_going": 0.3,
+  "groups": [
+    "ExteriorShell",
+    "Windows",
+    "Glass",
+    "ArchitecturalDetails",
+    "Floor",
+    "Foundation",
+    "PersonnelFront",
+    "DoorFrames",
+    "PersonnelRear",
+    "Utilities",
+    "StageDoorLeft",
+    "StageDoorRight",
+    "Roof",
+    "Structure",
+    "Rigging",
+    "Catwalk",
+    "Stair",
+    "BlackoutPanels",
+    "PersonnelRight",
+    "RoofBlackout",
+    "WorkLighting",
+    "LampSources",
+    "InteriorServices"
+  ],
+  "triangles": 106636,
+  "materials": {
+    "STG_Foundation": {
+      "linear": [
+        0.25,
+        0.235,
+        0.205
+      ],
+      "roughness": 0.84,
+      "metallic": 0
+    },
+    "STG_ZincRoof": {
+      "linear": [
+        0.27,
+        0.265,
+        0.245
+      ],
+      "roughness": 0.52,
+      "metallic": 0.72
+    },
+    "STG_DarkDoors": {
+      "linear": [
+        0.045,
+        0.039,
+        0.03
+      ],
+      "roughness": 0.58,
+      "metallic": 0.12
+    },
+    "STG_ConcreteFloor": {
+      "linear": [
+        0.2,
+        0.19,
+        0.17
+      ],
+      "roughness": 0.83,
+      "metallic": 0
+    },
+    "STG_BlackoutRoof": {
+      "linear": [
+        0.085,
+        0.105,
+        0.115
+      ],
+      "roughness": 0.64,
+      "metallic": 0.35
+    }
+  },
+  "blackout": "Opaque closed roof-light panels over sealed barrel; separate clerestory blackout panels.",
+  "degenerate_faces": 0,
+  "unit_scale": true
+}

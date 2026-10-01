@@ -1,0 +1,7 @@
+Building roof geometry
+Exporting semantic packets
+Info: Saved as "StageSchool_A1.blend"
+STAGE_SCHOOL_A1 {"candidate": "StageSchool_A1", "status": "MANUAL_ART_REVIEW_PENDING", "footprint": [22, 18], "floor": 0.36, "wall_eave": 4.65, "central_eave": 5.97, "roof_crown": 7.455, "source_groups": 90, "source_objects": 2838, "unique_materials": 30, "triangles": 781646, "vertices": 918142, "fixtures": 25, "invalid_coordinates": [], "ground_datum": 0, "notes": ["Mesh packet excludes linked furnishings; Unity counts include them.", "No runtime building components, LODs, construction states or contextual overlays."]}
+Blender 5.0.1 (hash a3db93c5b259 built 2025-12-16 01:32:30)
+
+Blender quit

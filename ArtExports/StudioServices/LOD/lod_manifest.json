@@ -1,0 +1,322 @@
+{
+  "source": "ArtSource\\StudioServices\\StudioServices_Production.blend",
+  "sourceSha256": "0551f1e669f644575cfa9ab309cb23a027d55f72c276a57e8694702d853ca1fb",
+  "generatorSha256": "e8e4a3b9c36af1b71c96b0e5a42f013821ecd88e2ca4c1b050fb786ba87f9f54",
+  "schema": 1,
+  "assets": [
+    {
+      "name": "EmploymentBoard",
+      "level": 1,
+      "vertices": 5769,
+      "triangles": 5173,
+      "removed": [
+        {
+          "name": "Notice tack",
+          "reason": "small fastener"
+        },
+        {
+          "name": "Notice tack.001",
+          "reason": "small fastener"
+        },
+        {
+          "name": "Notice tack.002",
+          "reason": "small fastener"
+        },
+        {
+          "name": "Notice tack.003",
+          "reason": "small fastener"
+        }
+      ]
+    },
+    {
+      "name": "EmploymentBoard",
+      "level": 2,
+      "vertices": 2006,
+      "triangles": 1482,
+      "removed": [
+        {
+          "name": "Notice tack",
+          "reason": "small fastener"
+        },
+        {
+          "name": "Notice tack.001",
+          "reason": "small fastener"
+        },
+        {
+          "name": "Notice tack.002",
+          "reason": "small fastener"
+        },
+        {
+          "name": "Notice tack.003",
+          "reason": "small fastener"
+        }
+      ]
+    },
+    {
+      "name": "ExteriorGround",
+      "level": 1,
+      "vertices": 204,
+      "triangles": 68,
+      "removed": []
+    },
+    {
+      "name": "ExteriorGround",
+      "level": 2,
+      "vertices": 96,
+      "triangles": 32,
+      "removed": []
+    },
+    {
+      "name": "Floor",
+      "level": 1,
+      "vertices": 294,
+      "triangles": 118,
+      "removed": []
+    },
+    {
+      "name": "Floor",
+      "level": 2,
+      "vertices": 216,
+      "triangles": 92,
+      "removed": []
+    },
+    {
+      "name": "FrontWall",
+      "level": 1,
+      "vertices": 79865,
+      "triangles": 41241,
+      "removed": []
+    },
+    {
+      "name": "FrontWall",
+      "level": 2,
+      "vertices": 34210,
+      "triangles": 16138,
+      "removed": [
+        {
+          "name": "Localized runoff",
+          "reason": "distant surface/hardware detail"
+        },
+        {
+          "name": "Localized runoff.001",
+          "reason": "distant surface/hardware detail"
+        },
+        {
+          "name": "Localized runoff.002",
+          "reason": "distant surface/hardware detail"
+        },
+        {
+          "name": "Localized runoff.003",
+          "reason": "distant surface/hardware detail"
+        }
+      ]
+    },
+    {
+      "name": "InteriorPartitions",
+      "level": 1,
+      "vertices": 3786,
+      "triangles": 1294,
+      "removed": []
+    },
+    {
+      "name": "InteriorPartitions",
+      "level": 2,
+      "vertices": 2056,
+      "triangles": 716,
+      "removed": []
+    },
+    {
+      "name": "InteriorProps",
+      "level": 1,
+      "vertices": 3810,
+      "triangles": 3734,
+      "removed": [
+        {
+          "name": "Office notice tack",
+          "reason": "small fastener"
+        },
+        {
+          "name": "Office notice tack.001",
+          "reason": "small fastener"
+        },
+        {
+          "name": "Office notice tack.002",
+          "reason": "small fastener"
+        },
+        {
+          "name": "Office notice tack.003",
+          "reason": "small fastener"
+        },
+        {
+          "name": "Office notice tack.004",
+          "reason": "small fastener"
+        }
+      ]
+    },
+    {
+      "name": "InteriorProps",
+      "level": 2,
+      "vertices": 1258,
+      "triangles": 1182,
+      "removed": [
+        {
+          "name": "Office notice tack",
+          "reason": "small fastener"
+        },
+        {
+          "name": "Office notice tack.001",
+          "reason": "small fastener"
+        },
+        {
+          "name": "Office notice tack.002",
+          "reason": "small fastener"
+        },
+        {
+          "name": "Office notice tack.003",
+          "reason": "small fastener"
+        },
+        {
+          "name": "Office notice tack.004",
+          "reason": "small fastener"
+        }
+      ]
+    },
+    {
+      "name": "LeftWall",
+      "level": 1,
+      "vertices": 2061,
+      "triangles": 1356,
+      "removed": []
+    },
+    {
+      "name": "LeftWall",
+      "level": 2,
+      "vertices": 1195,
+      "triangles": 744,
+      "removed": []
+    },
+    {
+      "name": "RearWall",
+      "level": 1,
+      "vertices": 2640,
+      "triangles": 1342,
+      "removed": []
+    },
+    {
+      "name": "RearWall",
+      "level": 2,
+      "vertices": 1577,
+      "triangles": 868,
+      "removed": [
+        {
+          "name": "Localized runoff.004",
+          "reason": "distant surface/hardware detail"
+        },
+        {
+          "name": "Localized runoff.005",
+          "reason": "distant surface/hardware detail"
+        }
+      ]
+    },
+    {
+      "name": "RightWall",
+      "level": 1,
+      "vertices": 1947,
+      "triangles": 1300,
+      "removed": []
+    },
+    {
+      "name": "RightWall",
+      "level": 2,
+      "vertices": 1135,
+      "triangles": 706,
+      "removed": []
+    },
+    {
+      "name": "Roof",
+      "level": 1,
+      "vertices": 20490,
+      "triangles": 7210,
+      "removed": []
+    },
+    {
+      "name": "Roof",
+      "level": 2,
+      "vertices": 11340,
+      "triangles": 4152,
+      "removed": []
+    },
+    {
+      "name": "ServiceYard",
+      "level": 1,
+      "vertices": 1626,
+      "triangles": 822,
+      "removed": []
+    },
+    {
+      "name": "ServiceYard",
+      "level": 2,
+      "vertices": 977,
+      "triangles": 530,
+      "removed": []
+    },
+    {
+      "name": "YardShelter",
+      "level": 1,
+      "vertices": 2804,
+      "triangles": 1638,
+      "removed": []
+    },
+    {
+      "name": "YardShelter",
+      "level": 2,
+      "vertices": 1357,
+      "triangles": 634,
+      "removed": [
+        {
+          "name": "Shelter pipe clamp",
+          "reason": "distant surface/hardware detail"
+        },
+        {
+          "name": "Shelter pipe clamp.001",
+          "reason": "distant surface/hardware detail"
+        },
+        {
+          "name": "Shelter pipe clamp.002",
+          "reason": "distant surface/hardware detail"
+        }
+      ]
+    },
+    {
+      "name": "YardShelterRoof",
+      "level": 1,
+      "vertices": 5540,
+      "triangles": 1928,
+      "removed": []
+    },
+    {
+      "name": "YardShelterRoof",
+      "level": 2,
+      "vertices": 2499,
+      "triangles": 884,
+      "removed": [
+        {
+          "name": "Shelter gutter joint lap strap",
+          "reason": "distant surface/hardware detail"
+        },
+        {
+          "name": "Shelter gutter joint lap strap.001",
+          "reason": "distant surface/hardware detail"
+        },
+        {
+          "name": "Shelter gutter joint lap strap.002",
+          "reason": "distant surface/hardware detail"
+        },
+        {
+          "name": "Shelter gutter joint lap strap.003",
+          "reason": "distant surface/hardware detail"
+        }
+      ]
+    }
+  ]
+}

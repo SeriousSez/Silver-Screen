@@ -1,0 +1,16 @@
+var scene=UnityEngine.SceneManagement.SceneManager.GetActiveScene();
+if(!scene.path.Contains("StageSchoolB"))throw new System.Exception("Runtime review scene required");
+var root=System.Linq.Enumerable.First(scene.GetRootGameObjects(),g=>g.GetComponent<SilverScreen.Presentation.Buildings.StageSchoolInfrastructure>()!=null);
+foreach(var door in root.GetComponentsInChildren<SilverScreen.Presentation.Buildings.AuthoredBuildingDoor>())door.SetOpen(true);
+var surface=root.AddComponent<Unity.AI.Navigation.NavMeshSurface>();surface.agentTypeID=0;surface.collectObjects=Unity.AI.Navigation.CollectObjects.All;surface.useGeometry=UnityEngine.AI.NavMeshCollectGeometry.PhysicsColliders;surface.overrideVoxelSize=true;surface.voxelSize=.025f;
+UnityEngine.Physics.SyncTransforms();surface.BuildNavMesh();
+var anchors=root.GetComponent<SilverScreen.Presentation.Buildings.StageSchoolInfrastructure>();
+var filter=new UnityEngine.AI.NavMeshQueryFilter{agentTypeID=0,areaMask=UnityEngine.AI.NavMesh.AllAreas};
+UnityEngine.AI.NavMeshHit start;bool starts=UnityEngine.AI.NavMesh.SamplePosition(anchors.Anchor("entrance.approach").position,out start,.8f,filter);
+var lines=new System.Collections.Generic.List<string>();lines.Add("agent="+UnityEngine.AI.NavMesh.GetSettingsByID(0).agentRadius+" start="+starts+" yaw="+root.transform.eulerAngles.y);
+foreach(var id in new[]{"entrance.primary","reception.approach","waiting.approach.0","audition.operator","interview.candidate","evaluation.candidate","staff.approach","records.approach","equipment.approach","restroom.approach","service.approach"}){
+ UnityEngine.AI.NavMeshHit end;var anchor=anchors.Anchor(id);bool sampled=UnityEngine.AI.NavMesh.SamplePosition(anchor.position,out end,.65f,filter);var path=new UnityEngine.AI.NavMeshPath();bool complete=starts&&sampled&&UnityEngine.AI.NavMesh.CalculatePath(start.position,end.position,filter,path)&&path.status==UnityEngine.AI.NavMeshPathStatus.PathComplete;
+ lines.Add(id+" sampled="+sampled+" complete="+complete+" delta="+(sampled?UnityEngine.Vector3.Distance(end.position,anchor.position):-1));
+}
+System.IO.File.WriteAllLines("ArtReview/StageSchoolB/navigation.txt",lines);result.Log(string.Join("\n",lines));
+surface.RemoveData();UnityEngine.Object.DestroyImmediate(surface.navMeshData);UnityEngine.Object.DestroyImmediate(surface);

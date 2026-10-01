@@ -1,0 +1,147 @@
+{
+  "planters": [
+    {
+      "x": -4.15,
+      "leaves": 18,
+      "triangles": 6364,
+      "triangle_budget": 6500,
+      "breakdown": {
+        "pot_and_saucer": 2080,
+        "soil": 156,
+        "crown": 240,
+        "foliage": 3888
+      },
+      "exposed_leaf_intersections": 0,
+      "intersection_test_min_height": 0.775,
+      "placement_attempts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "intentional_overlap": "Basal leaf sheaths overlap below the exposed canopy as a clustered crown."
+    },
+    {
+      "x": -10.18,
+      "leaves": 18,
+      "triangles": 6364,
+      "triangle_budget": 6500,
+      "breakdown": {
+        "pot_and_saucer": 2080,
+        "soil": 156,
+        "crown": 240,
+        "foliage": 3888
+      },
+      "exposed_leaf_intersections": 0,
+      "intersection_test_min_height": 0.775,
+      "placement_attempts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "intentional_overlap": "Basal leaf sheaths overlap below the exposed canopy as a clustered crown."
+    },
+    {
+      "x": 4.15,
+      "leaves": 18,
+      "triangles": 6364,
+      "triangle_budget": 6500,
+      "breakdown": {
+        "pot_and_saucer": 2080,
+        "soil": 156,
+        "crown": 240,
+        "foliage": 3888
+      },
+      "exposed_leaf_intersections": 0,
+      "intersection_test_min_height": 0.775,
+      "placement_attempts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "intentional_overlap": "Basal leaf sheaths overlap below the exposed canopy as a clustered crown."
+    },
+    {
+      "x": 10.18,
+      "leaves": 18,
+      "triangles": 6364,
+      "triangle_budget": 6500,
+      "breakdown": {
+        "pot_and_saucer": 2080,
+        "soil": 156,
+        "crown": 240,
+        "foliage": 3888
+      },
+      "exposed_leaf_intersections": 0,
+      "intersection_test_min_height": 0.775,
+      "placement_attempts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "intentional_overlap": "Basal leaf sheaths overlap below the exposed canopy as a clustered crown."
+    }
+  ],
+  "total_triangles": 25456,
+  "total_budget": 26000,
+  "soil_texture": "128 x 128 shared albedo; no dirt-detail geometry"
+}

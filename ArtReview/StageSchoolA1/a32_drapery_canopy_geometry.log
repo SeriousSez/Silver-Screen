@@ -1,0 +1,7 @@
+00:01.063  blend            | Read blend: "C:\Repos\Unity\Silver Screen\ArtSource\StageSchoolA3\StageSchool_A3.blend"
+Info: Read library: 'C:\Repos\Unity\Silver Screen\ArtSource\PeriodEnvironment1930\PeriodEnvironment1930.blend', '//..\PeriodEnvironment1930\PeriodEnvironment1930.blend', parent '<direct>'
+Info: Read library: 'C:\Repos\Unity\Silver Screen\ArtSource\ProductionEquipment1930Candidate\ProductionEquipment1930Candidate.blend', '//..\ProductionEquipment1930Candidate\ProductionEquipment1930Candidate.blend', parent '<direct>'
+{"cloth_platform_backdrop_intersections": [], "straight_hanging_wings": true, "tieback_hardware_removed": true, "cloth_z_min": 0.7302724719047546, "cloth_rear_y_max": 14.043087005615234, "canopy_posts_below_roof": true, "canopy_fall_metres_per_metre": 0.145, "canopy_front_drip_y": 15.225, "landing_front_y": 15.1}
+Blender 5.0.1 (hash a3db93c5b259 built 2025-12-16 01:32:30)
+
+Blender quit

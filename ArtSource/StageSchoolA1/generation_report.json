@@ -1,0 +1,838 @@
+{
+  "candidate": "StageSchool_A1",
+  "status": "MANUAL_ART_REVIEW_PENDING",
+  "footprint": [
+    22,
+    18
+  ],
+  "floor": 0.36,
+  "wall_eave": 4.65,
+  "central_eave": 5.97,
+  "roof_crown": 7.455,
+  "source_groups": 90,
+  "source_objects": 2838,
+  "unique_materials": 30,
+  "triangles": 781646,
+  "vertices": 918142,
+  "fixtures": 25,
+  "invalid_coordinates": [],
+  "parts": [
+    {
+      "name": "Structure/Foundation",
+      "vertices": 96,
+      "triangles": 60
+    },
+    {
+      "name": "Interior/Floors",
+      "vertices": 96,
+      "triangles": 60
+    },
+    {
+      "name": "Interior/Floors/Waiting",
+      "vertices": 18825,
+      "triangles": 10200
+    },
+    {
+      "name": "Interior/Floors/Audition",
+      "vertices": 19185,
+      "triangles": 10440
+    },
+    {
+      "name": "Interior/Floors/Interview",
+      "vertices": 11690,
+      "triangles": 6360
+    },
+    {
+      "name": "Interior/Floors/Commons",
+      "vertices": 12481,
+      "triangles": 6660
+    },
+    {
+      "name": "Interior/Floors/HallInlay",
+      "vertices": 601,
+      "triangles": 312
+    },
+    {
+      "name": "Structure/EntranceSteps",
+      "vertices": 1636,
+      "triangles": 1204
+    },
+    {
+      "name": "Shell/Front",
+      "vertices": 3752,
+      "triangles": 2100
+    },
+    {
+      "name": "Shell/Front/Windows",
+      "vertices": 3239,
+      "triangles": 1888
+    },
+    {
+      "name": "Shell/Rear",
+      "vertices": 4525,
+      "triangles": 2820
+    },
+    {
+      "name": "Shell/Rear/Windows",
+      "vertices": 7803,
+      "triangles": 4720
+    },
+    {
+      "name": "Doors/RearService",
+      "vertices": 1370,
+      "triangles": 952
+    },
+    {
+      "name": "Structure/RearStep",
+      "vertices": 207,
+      "triangles": 120
+    },
+    {
+      "name": "Shell/Left",
+      "vertices": 2555,
+      "triangles": 1536
+    },
+    {
+      "name": "Shell/Left/Windows",
+      "vertices": 6302,
+      "triangles": 3776
+    },
+    {
+      "name": "Shell/Right",
+      "vertices": 2573,
+      "triangles": 1536
+    },
+    {
+      "name": "Shell/Right/Windows",
+      "vertices": 6394,
+      "triangles": 3776
+    },
+    {
+      "name": "Shell/Front/Portal",
+      "vertices": 4251,
+      "triangles": 2600
+    },
+    {
+      "name": "Shell/Front/Signage",
+      "vertices": 26606,
+      "triangles": 45124
+    },
+    {
+      "name": "Shell/Front/Fanlight",
+      "vertices": 2673,
+      "triangles": 1812
+    },
+    {
+      "name": "Doors/EntranceLeft",
+      "vertices": 1062,
+      "triangles": 784
+    },
+    {
+      "name": "Shell/Front/EntranceLanterns",
+      "vertices": 1744,
+      "triangles": 1188
+    },
+    {
+      "name": "Shell/Front/Banners",
+      "vertices": 86044,
+      "triangles": 141724
+    },
+    {
+      "name": "Doors/EntranceRight",
+      "vertices": 1065,
+      "triangles": 784
+    },
+    {
+      "name": "Roofs/LeftWing",
+      "vertices": 178204,
+      "triangles": 107060
+    },
+    {
+      "name": "Roofs/RightWing",
+      "vertices": 177698,
+      "triangles": 107060
+    },
+    {
+      "name": "Shell/CentralUpper",
+      "vertices": 300,
+      "triangles": 180
+    },
+    {
+      "name": "Roofs/Central",
+      "vertices": 154626,
+      "triangles": 96636
+    },
+    {
+      "name": "Shell/Left/Rainwater",
+      "vertices": 1728,
+      "triangles": 1712
+    },
+    {
+      "name": "Shell/Right/Rainwater",
+      "vertices": 1726,
+      "triangles": 1712
+    },
+    {
+      "name": "Partitions/RearRooms",
+      "vertices": 1059,
+      "triangles": 612
+    },
+    {
+      "name": "Partitions/WestSpine",
+      "vertices": 255,
+      "triangles": 132
+    },
+    {
+      "name": "Partitions/EastSpine",
+      "vertices": 255,
+      "triangles": 132
+    },
+    {
+      "name": "Partitions/Staff",
+      "vertices": 550,
+      "triangles": 300
+    },
+    {
+      "name": "Partitions/Washroom",
+      "vertices": 540,
+      "triangles": 300
+    },
+    {
+      "name": "Partitions/WashroomSide",
+      "vertices": 241,
+      "triangles": 132
+    },
+    {
+      "name": "Partitions/DoorTrim",
+      "vertices": 1672,
+      "triangles": 900
+    },
+    {
+      "name": "Doors/Interview",
+      "vertices": 1484,
+      "triangles": 952
+    },
+    {
+      "name": "Doors/Audition",
+      "vertices": 1493,
+      "triangles": 952
+    },
+    {
+      "name": "Doors/Commons",
+      "vertices": 1494,
+      "triangles": 952
+    },
+    {
+      "name": "Doors/Staff",
+      "vertices": 1489,
+      "triangles": 952
+    },
+    {
+      "name": "Doors/Washroom",
+      "vertices": 1487,
+      "triangles": 952
+    },
+    {
+      "name": "Shell/Rear/InteriorTrim",
+      "vertices": 4789,
+      "triangles": 2760
+    },
+    {
+      "name": "Partitions/InterviewTrim",
+      "vertices": 1080,
+      "triangles": 600
+    },
+    {
+      "name": "Partitions/CommonsTrim",
+      "vertices": 1689,
+      "triangles": 960
+    },
+    {
+      "name": "Furnishings/Reception/Counter",
+      "vertices": 1541,
+      "triangles": 1204
+    },
+    {
+      "name": "Furnishings/Reception/Details",
+      "vertices": 15404,
+      "triangles": 25674
+    },
+    {
+      "name": "Furnishings/Waiting/Chair00",
+      "vertices": 1752,
+      "triangles": 1920
+    },
+    {
+      "name": "Furnishings/Waiting/Chair01",
+      "vertices": 1736,
+      "triangles": 1920
+    },
+    {
+      "name": "Furnishings/Waiting/Chair02",
+      "vertices": 1726,
+      "triangles": 1920
+    },
+    {
+      "name": "Furnishings/Waiting/Chair03",
+      "vertices": 1791,
+      "triangles": 1920
+    },
+    {
+      "name": "Furnishings/Waiting/Chair04",
+      "vertices": 1767,
+      "triangles": 1920
+    },
+    {
+      "name": "Furnishings/Waiting/Chair05",
+      "vertices": 1770,
+      "triangles": 1920
+    },
+    {
+      "name": "Furnishings/Waiting/Chair06",
+      "vertices": 1746,
+      "triangles": 1920
+    },
+    {
+      "name": "Furnishings/Waiting/Chair07",
+      "vertices": 1779,
+      "triangles": 1920
+    },
+    {
+      "name": "Furnishings/Waiting/CoffeeTable",
+      "vertices": 570,
+      "triangles": 300
+    },
+    {
+      "name": "Furnishings/Waiting/Notices",
+      "vertices": 63079,
+      "triangles": 89984
+    },
+    {
+      "name": "Furnishings/Waiting/PortraitGallery",
+      "vertices": 2037,
+      "triangles": 1092
+    },
+    {
+      "name": "Furnishings/Commons/PortfolioTable",
+      "vertices": 546,
+      "triangles": 300
+    },
+    {
+      "name": "Furnishings/Lounge/Chair0",
+      "vertices": 1760,
+      "triangles": 1920
+    },
+    {
+      "name": "Furnishings/Lounge/Chair1",
+      "vertices": 1756,
+      "triangles": 1920
+    },
+    {
+      "name": "Furnishings/Lounge/Chair2",
+      "vertices": 1749,
+      "triangles": 1920
+    },
+    {
+      "name": "Furnishings/Lounge/Chair3",
+      "vertices": 1743,
+      "triangles": 1920
+    },
+    {
+      "name": "Furnishings/Lounge/Table",
+      "vertices": 590,
+      "triangles": 300
+    },
+    {
+      "name": "Furnishings/Interview/GuestA",
+      "vertices": 1746,
+      "triangles": 1920
+    },
+    {
+      "name": "Furnishings/Interview/GuestB",
+      "vertices": 1746,
+      "triangles": 1920
+    },
+    {
+      "name": "Furnishings/Interview/Bookcase",
+      "vertices": 10864,
+      "triangles": 5760
+    },
+    {
+      "name": "Shell/Rear/OfficeClock",
+      "vertices": 546,
+      "triangles": 648
+    },
+    {
+      "name": "Furnishings/Audition/Rostrum",
+      "vertices": 2696,
+      "triangles": 1440
+    },
+    {
+      "name": "Furnishings/Audition/Curtains",
+      "vertices": 14812,
+      "triangles": 27440
+    },
+    {
+      "name": "Furnishings/Audition/Backdrop",
+      "vertices": 24,
+      "triangles": 12
+    },
+    {
+      "name": "Furnishings/Audition/EvaluationTable",
+      "vertices": 564,
+      "triangles": 300
+    },
+    {
+      "name": "Furnishings/Reception/Accessories",
+      "vertices": 1965,
+      "triangles": 1092
+    },
+    {
+      "name": "Furnishings/Waiting/ReadingMaterial",
+      "vertices": 1216,
+      "triangles": 636
+    },
+    {
+      "name": "Furnishings/Commons/ReviewMaterials",
+      "vertices": 985,
+      "triangles": 516
+    },
+    {
+      "name": "Furnishings/Audition/EvaluationMaterials",
+      "vertices": 328,
+      "triangles": 168
+    },
+    {
+      "name": "Furnishings/Interview/PortfolioReview",
+      "vertices": 660,
+      "triangles": 360
+    },
+    {
+      "name": "Furnishings/Reception/Wastebasket",
+      "vertices": 2182,
+      "triangles": 1428
+    },
+    {
+      "name": "Furnishings/Staff/ArchiveBoxes",
+      "vertices": 1754,
+      "triangles": 960
+    },
+    {
+      "name": "Furnishings/Washroom",
+      "vertices": 3224,
+      "triangles": 4784
+    },
+    {
+      "name": "Ceilings/Pendant00",
+      "vertices": 854,
+      "triangles": 1448
+    },
+    {
+      "name": "Ceilings/Pendant01",
+      "vertices": 854,
+      "triangles": 1448
+    },
+    {
+      "name": "Ceilings/Pendant02",
+      "vertices": 854,
+      "triangles": 1448
+    },
+    {
+      "name": "Ceilings/Pendant03",
+      "vertices": 854,
+      "triangles": 1448
+    },
+    {
+      "name": "Ceilings/Pendant04",
+      "vertices": 854,
+      "triangles": 1448
+    },
+    {
+      "name": "Ceilings/Pendant05",
+      "vertices": 854,
+      "triangles": 1448
+    },
+    {
+      "name": "Ceilings/Pendant06",
+      "vertices": 854,
+      "triangles": 1448
+    },
+    {
+      "name": "Ceilings/Pendant07",
+      "vertices": 854,
+      "triangles": 1448
+    },
+    {
+      "name": "Ceilings/Plaster",
+      "vertices": 522,
+      "triangles": 300
+    }
+  ],
+  "materials": [
+    {
+      "name": "Black",
+      "linearRGB": [
+        0.012,
+        0.014,
+        0.012
+      ],
+      "metallic": 0.15,
+      "roughness": 0.38,
+      "texture": "",
+      "shared": true
+    },
+    {
+      "name": "Brass",
+      "linearRGB": [
+        0.36,
+        0.24,
+        0.08
+      ],
+      "metallic": 0.82,
+      "roughness": 0.33,
+      "texture": "metal",
+      "shared": true
+    },
+    {
+      "name": "Canvas",
+      "linearRGB": [
+        0.35,
+        0.29,
+        0.17
+      ],
+      "metallic": 0,
+      "roughness": 0.93,
+      "texture": "canvas",
+      "shared": true
+    },
+    {
+      "name": "Concrete",
+      "linearRGB": [
+        0.29,
+        0.27,
+        0.235
+      ],
+      "metallic": 0,
+      "roughness": 0.85,
+      "texture": "concrete",
+      "shared": true
+    },
+    {
+      "name": "Galvanized",
+      "linearRGB": [
+        0.3,
+        0.32,
+        0.3
+      ],
+      "metallic": 0.78,
+      "roughness": 0.48,
+      "texture": "metal",
+      "shared": true
+    },
+    {
+      "name": "Glass",
+      "linearRGB": [
+        0.12,
+        0.17,
+        0.17
+      ],
+      "metallic": 0,
+      "roughness": 0.12,
+      "texture": "",
+      "shared": true
+    },
+    {
+      "name": "InteriorPlaster",
+      "linearRGB": [
+        0.59,
+        0.535,
+        0.43
+      ],
+      "metallic": 0,
+      "roughness": 0.88,
+      "texture": "stucco",
+      "shared": true
+    },
+    {
+      "name": "Leather",
+      "linearRGB": [
+        0.13,
+        0.052,
+        0.024
+      ],
+      "metallic": 0,
+      "roughness": 0.73,
+      "texture": "canvas",
+      "shared": true
+    },
+    {
+      "name": "Mortar",
+      "linearRGB": [
+        0.3,
+        0.28,
+        0.235
+      ],
+      "metallic": 0,
+      "roughness": 0.9,
+      "texture": "stone",
+      "shared": true
+    },
+    {
+      "name": "Paper",
+      "linearRGB": [
+        0.71,
+        0.65,
+        0.48
+      ],
+      "metallic": 0,
+      "roughness": 0.9,
+      "texture": "",
+      "shared": true
+    },
+    {
+      "name": "PaperLight",
+      "linearRGB": [
+        0.85,
+        0.79,
+        0.63
+      ],
+      "metallic": 0,
+      "roughness": 0.88,
+      "texture": "",
+      "shared": true
+    },
+    {
+      "name": "SS_Bronze",
+      "linearRGB": [
+        0.065,
+        0.048,
+        0.029
+      ],
+      "metallic": 0.7,
+      "roughness": 0.37,
+      "texture": "metal",
+      "shared": false
+    },
+    {
+      "name": "SS_ClearGlass",
+      "linearRGB": [
+        0.14,
+        0.18,
+        0.17
+      ],
+      "metallic": 0,
+      "roughness": 0.15,
+      "texture": "",
+      "shared": false
+    },
+    {
+      "name": "SS_Curtain",
+      "linearRGB": [
+        0.18,
+        0.029,
+        0.024
+      ],
+      "metallic": 0,
+      "roughness": 0.89,
+      "texture": "cloth",
+      "shared": false
+    },
+    {
+      "name": "SS_FloorOak",
+      "linearRGB": [
+        0.25,
+        0.15,
+        0.073
+      ],
+      "metallic": 0,
+      "roughness": 0.64,
+      "texture": "timber",
+      "shared": false
+    },
+    {
+      "name": "SS_FloorOakLight",
+      "linearRGB": [
+        0.27,
+        0.165,
+        0.084
+      ],
+      "metallic": 0,
+      "roughness": 0.64,
+      "texture": "timber",
+      "shared": false
+    },
+    {
+      "name": "SS_Headshots",
+      "linearRGB": [
+        1,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.88,
+      "texture": "headshots",
+      "shared": false
+    },
+    {
+      "name": "SS_Ivory",
+      "linearRGB": [
+        0.73,
+        0.67,
+        0.53
+      ],
+      "metallic": 0,
+      "roughness": 0.71,
+      "texture": "stone",
+      "shared": false
+    },
+    {
+      "name": "SS_Lamp",
+      "linearRGB": [
+        0.92,
+        0.71,
+        0.39
+      ],
+      "metallic": 0,
+      "roughness": 0.22,
+      "texture": "",
+      "shared": false
+    },
+    {
+      "name": "SS_Sage",
+      "linearRGB": [
+        0.125,
+        0.17,
+        0.125
+      ],
+      "metallic": 0,
+      "roughness": 0.91,
+      "texture": "cloth",
+      "shared": false
+    },
+    {
+      "name": "SS_Stone",
+      "linearRGB": [
+        0.7,
+        0.625,
+        0.51
+      ],
+      "metallic": 0,
+      "roughness": 0.77,
+      "texture": "stone",
+      "shared": false
+    },
+    {
+      "name": "SS_Stucco",
+      "linearRGB": [
+        0.64,
+        0.56,
+        0.44
+      ],
+      "metallic": 0,
+      "roughness": 0.86,
+      "texture": "stucco",
+      "shared": false
+    },
+    {
+      "name": "SS_Terrazzo",
+      "linearRGB": [
+        0.45,
+        0.4,
+        0.315
+      ],
+      "metallic": 0,
+      "roughness": 0.49,
+      "texture": "concrete",
+      "shared": false
+    },
+    {
+      "name": "SS_Tile",
+      "linearRGB": [
+        0.34,
+        0.105,
+        0.045
+      ],
+      "metallic": 0,
+      "roughness": 0.78,
+      "texture": "stone",
+      "shared": false
+    },
+    {
+      "name": "SS_TileDark",
+      "linearRGB": [
+        0.3,
+        0.087,
+        0.037
+      ],
+      "metallic": 0,
+      "roughness": 0.81,
+      "texture": "stone",
+      "shared": false
+    },
+    {
+      "name": "SS_TileLight",
+      "linearRGB": [
+        0.38,
+        0.123,
+        0.055
+      ],
+      "metallic": 0,
+      "roughness": 0.78,
+      "texture": "stone",
+      "shared": false
+    },
+    {
+      "name": "SS_Walnut",
+      "linearRGB": [
+        0.105,
+        0.05,
+        0.024
+      ],
+      "metallic": 0,
+      "roughness": 0.48,
+      "texture": "timber",
+      "shared": false
+    },
+    {
+      "name": "Steel",
+      "linearRGB": [
+        0.032,
+        0.038,
+        0.033
+      ],
+      "metallic": 0.65,
+      "roughness": 0.51,
+      "texture": "paint",
+      "shared": true
+    },
+    {
+      "name": "Timber",
+      "linearRGB": [
+        0.22,
+        0.125,
+        0.052
+      ],
+      "metallic": 0,
+      "roughness": 0.73,
+      "texture": "timber",
+      "shared": true
+    },
+    {
+      "name": "TimberDark",
+      "linearRGB": [
+        0.095,
+        0.05,
+        0.022
+      ],
+      "metallic": 0,
+      "roughness": 0.7,
+      "texture": "timber",
+      "shared": true
+    }
+  ],
+  "ground_datum": 0,
+  "notes": [
+    "Mesh packet excludes linked furnishings; Unity counts include them.",
+    "No runtime building components, LODs, construction states or contextual overlays."
+  ]
+}

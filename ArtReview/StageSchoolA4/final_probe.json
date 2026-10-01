@@ -1,0 +1,25 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"success\": true,\n  \"message\": \"Command executed successfully.\",\n  \"data\": {\n    \"isCompilationSuccessful\": true,\n    \"isExecutionSuccessful\": true,\n    \"executionId\": 1,\n    \"compilationLogs\": \"\",\n    \"executionLogs\": \"[Log] Compiling=False; Failed=False\",\n    \"localFixedCode\": \"using UnityEngine;\\r\\nusing UnityEditor;\\r\\n\\r\\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\\r\\n{\\r\\n    internal class CommandScript : IRunCommand\\r\\n    {\\r\\n        public void Execute(ExecutionResult result)\\r\\n        {\\r\\n            result.Log(\\\"Compiling=\\\" + EditorApplication.isCompiling + \\\"; Failed=\\\" + EditorUtility.scriptCompilationFailed);\\r\\n            var p = AssetDatabase.LoadAssetAtPath<GameObject>(SilverScreen.Editor.EnvironmentArt.StageSchoolA4Review.Prefab);\\r\\n            foreach (var t in p.GetComponentsInChildren<Transform>(true))\\r\\n                if ((t.localScale - Vector3.one).sqrMagnitude > .0001f)\\r\\n                    result.Log(\\\"Scale \\\" + t.name + \\\" \\\" + t.localScale);\\r\\n            foreach (var b in p.GetComponentsInChildren<MonoBehaviour>(true))\\r\\n                result.Log(\\\"Behaviour \\\" + b);\\r\\n        }\\r\\n    }\\r\\n}\",\n    \"result\": \"Command executed successfully.\"\n  }\n}"
+      }
+    ],
+    "structuredContent": {
+      "success": true,
+      "message": "Command executed successfully.",
+      "data": {
+        "isCompilationSuccessful": true,
+        "isExecutionSuccessful": true,
+        "executionId": 1,
+        "compilationLogs": "",
+        "executionLogs": "[Log] Compiling=False; Failed=False",
+        "localFixedCode": "using UnityEngine;\r\nusing UnityEditor;\r\n\r\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\r\n{\r\n    internal class CommandScript : IRunCommand\r\n    {\r\n        public void Execute(ExecutionResult result)\r\n        {\r\n            result.Log(\"Compiling=\" + EditorApplication.isCompiling + \"; Failed=\" + EditorUtility.scriptCompilationFailed);\r\n            var p = AssetDatabase.LoadAssetAtPath<GameObject>(SilverScreen.Editor.EnvironmentArt.StageSchoolA4Review.Prefab);\r\n            foreach (var t in p.GetComponentsInChildren<Transform>(true))\r\n                if ((t.localScale - Vector3.one).sqrMagnitude > .0001f)\r\n                    result.Log(\"Scale \" + t.name + \" \" + t.localScale);\r\n            foreach (var b in p.GetComponentsInChildren<MonoBehaviour>(true))\r\n                result.Log(\"Behaviour \" + b);\r\n        }\r\n    }\r\n}",
+        "result": "Command executed successfully."
+      }
+    }
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}

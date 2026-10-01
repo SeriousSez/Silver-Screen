@@ -1,0 +1,16 @@
+{
+  "ArtExports/StudioServices/Production/production_meshes.json.gz": {
+    "sha256": "19a604ce10597d3dc04a2608fb4ea7b06b9cfe0d583dcbbad3c2d65c6d3a4864",
+    "parts": 13,
+    "triangles": 174834,
+    "degenerateTriangles": 0
+  },
+  "ArtExports/PeriodEnvironment1930/kit_meshes.json.gz": {
+    "sha256": "5daf1400b5c5fc21e574d06dd717c80e4a56ff0ef662ce545841cb2a3054f58d",
+    "parts": 63,
+    "triangles": 325262,
+    "degenerateTriangles": 0
+  },
+  "approvedSourceUnchanged": true,
+  "approvedAnchorsUnchanged": true
+}

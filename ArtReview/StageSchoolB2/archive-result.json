@@ -1,0 +1,25 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"success\": true,\n  \"message\": \"Command executed successfully.\",\n  \"data\": {\n    \"isCompilationSuccessful\": true,\n    \"isExecutionSuccessful\": true,\n    \"executionId\": 1,\n    \"compilationLogs\": \"\",\n    \"executionLogs\": \"[Log] Historical large B prefab outside Resources; preserved GUID=6a9044b1d07c375488e32234f75b8d70\",\n    \"localFixedCode\": \"using UnityEngine;\\r\\nusing UnityEditor;\\r\\n\\r\\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\\r\\n{\\r\\n    internal class CommandScript : IRunCommand\\r\\n    {\\r\\n        public void Execute(ExecutionResult result)\\r\\n        {\\r\\n            if (UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)\\r\\n                throw new System.InvalidOperationException(\\\"Edit Mode required\\\");\\r\\n            const string root = \\\"Assets/SilverScreen/Environment/StageSchoolB\\\";\\r\\n            if (!UnityEditor.AssetDatabase.IsValidFolder(root + \\\"/Archive\\\"))\\r\\n                UnityEditor.AssetDatabase.CreateFolder(root, \\\"Archive\\\");\\r\\n            string before = root + \\\"/Resources/StageSchool_Runtime.prefab\\\", after = root + \\\"/Archive/StageSchool_Runtime.prefab\\\";\\r\\n            string guid = UnityEditor.AssetDatabase.AssetPathToGUID(before);\\r\\n            if (!string.IsNullOrEmpty(guid))\\r\\n            {\\r\\n                var error = UnityEditor.AssetDatabase.MoveAsset(before, after);\\r\\n                if (!string.IsNullOrEmpty(error))\\r\\n                    throw new System.InvalidOperationException(error);\\r\\n                if (UnityEditor.AssetDatabase.AssetPathToGUID(after) != guid)\\r\\n                    throw new System.InvalidOperationException(\\\"Historical prefab GUID changed\\\");\\r\\n            }\\r\\n\\r\\n            result.Log(\\\"Historical large B prefab outside Resources; preserved GUID=\\\" + UnityEditor.AssetDatabase.AssetPathToGUID(after));\\r\\n        }\\r\\n    }\\r\\n}\",\n    \"result\": \"Command executed successfully.\"\n  }\n}"
+      }
+    ],
+    "structuredContent": {
+      "success": true,
+      "message": "Command executed successfully.",
+      "data": {
+        "isCompilationSuccessful": true,
+        "isExecutionSuccessful": true,
+        "executionId": 1,
+        "compilationLogs": "",
+        "executionLogs": "[Log] Historical large B prefab outside Resources; preserved GUID=6a9044b1d07c375488e32234f75b8d70",
+        "localFixedCode": "using UnityEngine;\r\nusing UnityEditor;\r\n\r\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\r\n{\r\n    internal class CommandScript : IRunCommand\r\n    {\r\n        public void Execute(ExecutionResult result)\r\n        {\r\n            if (UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)\r\n                throw new System.InvalidOperationException(\"Edit Mode required\");\r\n            const string root = \"Assets/SilverScreen/Environment/StageSchoolB\";\r\n            if (!UnityEditor.AssetDatabase.IsValidFolder(root + \"/Archive\"))\r\n                UnityEditor.AssetDatabase.CreateFolder(root, \"Archive\");\r\n            string before = root + \"/Resources/StageSchool_Runtime.prefab\", after = root + \"/Archive/StageSchool_Runtime.prefab\";\r\n            string guid = UnityEditor.AssetDatabase.AssetPathToGUID(before);\r\n            if (!string.IsNullOrEmpty(guid))\r\n            {\r\n                var error = UnityEditor.AssetDatabase.MoveAsset(before, after);\r\n                if (!string.IsNullOrEmpty(error))\r\n                    throw new System.InvalidOperationException(error);\r\n                if (UnityEditor.AssetDatabase.AssetPathToGUID(after) != guid)\r\n                    throw new System.InvalidOperationException(\"Historical prefab GUID changed\");\r\n            }\r\n\r\n            result.Log(\"Historical large B prefab outside Resources; preserved GUID=\" + UnityEditor.AssetDatabase.AssetPathToGUID(after));\r\n        }\r\n    }\r\n}",
+        "result": "Command executed successfully."
+      }
+    }
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}

@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f6e6edcd9c33894c89ae33bf4fc505f, type: 3}
+  m_Name: WastebasketWire_1930
+  m_EditorClassIdentifier: Assembly-CSharp::SilverScreen.Presentation.ReusableAssets.ReusableAssetDefinition
+  _stableId: silverscreen.period.wastebasketwire_1930
+  _displayName: WastebasketWire 1930
+  _category: Props
+  _subcategory: Office
+  _playerCatalogItem: 1
+  _availableFromYear: 1930
+  _hasAvailableUntilYear: 0
+  _availableUntilYear: 0
+  _suitability: 2
+  _placementSurface: 2
+  _role: 2
+  _handedness: 0
+  _visibleBounds:
+    m_Center: {x: 0, y: 0.189, z: 0}
+    m_Extent: {x: 0.158, y: 0.189, z: 0.158}
+  _functionalClearance:
+    m_Center: {x: 0, y: 0.189, z: 0.25800002}
+    m_Extent: {x: 0.158, y: 0.189, z: 0.1}
+  _supportsMaterialVariants: 1
+  _materialRoles:
+  - Iron
+  - Steel
+  _environmentTags:
+  - Industrial
+  - Office
+  - Workshop
+  - Period and later settings
+  _optionalInteraction: Authored anchors; future interaction only
+  _snapBehavior: Mount plane and typed anchors; no automatic placement runtime.
+  _prefab: {fileID: 2228737914248265101, guid: a5d436bf82016434f8c8e4d5d0cdc696, type: 3}

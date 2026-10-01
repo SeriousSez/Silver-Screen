@@ -1,0 +1,62 @@
+{
+  "preserved_file_hashes": 42,
+  "modified_protected_files": [],
+  "front_groups_unchanged": [
+    "Structure/EntranceSteps",
+    "Shell/Front",
+    "Shell/Front/Windows",
+    "Shell/Front/Portal",
+    "Shell/Front/Signage",
+    "Shell/Front/Fanlight",
+    "Doors/EntranceLeft",
+    "Shell/Front/EntranceLanterns",
+    "Shell/Front/Banners",
+    "Doors/EntranceRight"
+  ],
+  "curtain_rostrum_backdrop_translation_only": true,
+  "waiting_seats": 8,
+  "equipment_assets_unchanged": true,
+  "finite_coordinates": true,
+  "valid_mesh_indices": true,
+  "occupied_floors": 1,
+  "nominal_envelope": [
+    28,
+    24
+  ],
+  "audition_clear_floor": [
+    10.5,
+    13.5
+  ],
+  "equipment_instances": [
+    {
+      "asset": "StudioCamera1930",
+      "group": "Furnishings/Audition/Camera",
+      "position": [
+        8.5,
+        0.39,
+        7.8
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "StudioLamp1930",
+      "group": "Furnishings/Audition/StudioLamp0",
+      "position": [
+        5.65,
+        0.39,
+        11
+      ],
+      "yaw": 50
+    },
+    {
+      "asset": "StudioLamp1930",
+      "group": "Furnishings/Audition/StudioLamp1",
+      "position": [
+        11.35,
+        0.39,
+        11
+      ],
+      "yaw": -50
+    }
+  ]
+}

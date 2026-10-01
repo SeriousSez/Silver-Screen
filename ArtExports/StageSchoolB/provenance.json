@@ -1,0 +1,21 @@
+{
+  "strategy": "authored-object-topology",
+  "masterPacketSha256": "ba7f61e7a092314a9e4ea82ee0f9a4f5e65ccf5e073566e07967f2fe7cb31ece",
+  "levels": [
+    {
+      "level": 0,
+      "triangles": 1410563,
+      "vertices": 2135043
+    },
+    {
+      "level": 1,
+      "triangles": 343742,
+      "vertices": 482725
+    },
+    {
+      "level": 2,
+      "triangles": 196913,
+      "vertices": 242629
+    }
+  ]
+}

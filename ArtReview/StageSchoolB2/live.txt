@@ -1,0 +1,38 @@
+Entered runtime: scene=Assets/SilverScreen/Environment/StageSchoolB2/StageSchool_B2IntegrationReview.unity playing=True
+Runtime dependencies: construction=True clock=True
+PASS Placement creates gated site; yaw 37
+PASS LODGroup remains enabled during construction
+PASS Zero workers means zero progress
+PASS All construction phases keep dressing inside the reserved union at yaw37
+PASS Placement async navigation completes
+Phase SitePreparation capacity=3
+PASS Three workers use real V2B productivity
+Phase Foundation capacity=4
+Phase Structure capacity=5
+Phase Exterior capacity=3
+Phase Finishing capacity=4
+PASS Real shared construction reaches completion
+PASS All five phases traversed
+PASS Completion enables production building and removes dressing
+PASS Builder assignments and person reservations released
+PASS Actual completion schedules asynchronous navigation
+PASS Selected simulation speed and world adapter preserved
+Worst clock method ms=58.63
+Completion frame=155; Main Thread recorder valid=True; completion and next 8 frame ms=18.77,2467.60,54.32,24.24,15.48,7.72,6.11,8.64,6.12
+PASS Completion async navigation settles
+PASS Real agent entrance.approach -> hiringhall.approach; initially closed; status=PathComplete; frames=172; local=(-0.01, 0.39, -5.23); remaining=0.2318964
+PASS Real agent entrance.approach -> audition.activity.screen-test; initially closed; status=PathComplete; frames=314; local=(-0.59, 0.39, 1.04); remaining=0.239673
+PASS Real agent audition.activity.screen-test -> exit; initially closed; status=PathComplete; frames=374; local=(0.09, 0.02, -12.58); remaining=0.2374411
+PASS Real agent entrance.approach -> interview.activity; initially closed; status=PathComplete; frames=427; local=(4.73, 0.39, 1.20); remaining=0.2408852
+PASS Real agent interview.activity -> exit; initially closed; status=PathComplete; frames=413; local=(0.08, 0.02, -12.59); remaining=0.2299518
+PASS Agent automatically opened a closed authored door
+PASS Opposing real agents both cross the audition doorway without deadlock
+PASS Hover intent does not reveal immediately
+FAIL Actual sustained pointer hover intent and fade in
+FAIL Actual mouse click pins building
+FAIL Pinned reveal survives pointer departure
+Automatic LOD zoom covered adjusted heights .60/.24/.08 with lodBias=2
+FAIL Orbit/rapid zoom/automatic LOD while pinned keeps roofs hidden
+PASS Actual Escape releases and fades out
+PASS Closed LOD transitions restore visibility
+Runtime checks finished; screenshots are actual site/completed state.

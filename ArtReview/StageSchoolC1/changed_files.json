@@ -1,0 +1,18 @@
+[
+  "Assets/Scripts/Domain/PersonPopulation.cs",
+  "Assets/Scripts/Domain/PersonProfile.cs",
+  "Assets/Scripts/Domain/WorkforceRoster.cs",
+  "Assets/Scripts/Domain/Interaction/PersonInformation.cs",
+  "Assets/Scripts/Domain/Recruitment/Candidate.cs",
+  "Assets/Scripts/Domain/Recruitment/CandidateGenerator.cs",
+  "Assets/Scripts/Domain/Recruitment/FacilityApplicantPool.cs",
+  "Assets/Scripts/Domain/Recruitment/RecruitmentCoordinator.cs",
+  "Assets/Scripts/Domain/Recruitment/TalentApplicantSettings.cs",
+  "Assets/Scripts/Presentation/Buildings/StudioConstructionDriver.cs",
+  "Assets/Scripts/Presentation/Interaction/ApplicantHiringAction.cs",
+  "Assets/Scripts/Presentation/Recruitment/RecruitmentPresentation.cs",
+  "Assets/Scripts/Presentation/Recruitment/StageSchoolApplicantFacility.cs",
+  "Assets/Scripts/Presentation/UI/RecruitmentPanelUI.cs",
+  "Assets/Tests/Editor/StageSchoolApplicantTests.cs",
+  "Assets/Tests/Editor/StageSchoolC1Validation.cs"
+]

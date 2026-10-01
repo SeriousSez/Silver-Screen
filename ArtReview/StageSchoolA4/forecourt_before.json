@@ -1,0 +1,584 @@
+{
+  "parts": {
+    "Doors/EntranceLeft": "6cc0cdc7e9f1cd8f2b162d9b0dd94ae2c54d2d157be5f59f020b7c68ba9e0b35",
+    "Doors/EntranceRight": "6a46dc14fc9bff64ce0c001e1ec1aa2f91ad57d93b75dff5cf698725e56ca250",
+    "Furnishings/Audition/Backdrop": "889feb0bf9571821bfb3b109252585ae921055a7cdd8932e39f0041cb504e3cb",
+    "Furnishings/Audition/Curtains": "2abe031e299ede32d29833f6d9efa4a289ad9495be1c23b27c71a8c2053da291",
+    "Furnishings/Audition/EvaluationMaterials": "5ebae8a049344e394d94d911a7accd6f6132417a5a13a9a09c904b4799e2359c",
+    "Furnishings/Audition/EvaluationTable": "2b1b686ad8d676a099a4fe9625d5814fe8c9ef0bc017eccddeb37efc5ff4e322",
+    "Furnishings/Audition/Rostrum": "4ef6438150431818559fea033e2bf87505aa3257693e4166d2d0a62ee52b7653",
+    "Furnishings/Interview/Bookcase": "2208435e5097515f5ccb09f9d8ef882d44f4c800dd461b1b487f7d58c0809287",
+    "Furnishings/Interview/GuestA": "f8895cdd1831f4ebf30363be3f9c990fac3a982e0d1d2709f230d3cb0f92bdbd",
+    "Furnishings/Interview/GuestB": "79e0f7f744279a56b6116c85bd0af1b4479bbe852cb0d8ede9df9b182e2da053",
+    "Furnishings/Interview/PortfolioReview": "254a129c46d29c63a08b9adfbb79b04848fdc679602c3d496d5dfc7229b351f6",
+    "Shell/Front": "4799dd3588ea3c39c1ea336edc3c19e4be47e96ab5b14572dc19db93021f9aa4",
+    "Shell/Front/AddedArticulation": "96a6b93925cdcc54df8715c1e802015247e57183ddf362c84b3fdaf3fd2d6e85",
+    "Shell/Front/Banners": "b6e19dba9453166afa70fa0f11036850d85dc940e80a77a9d4222a72258990a2",
+    "Shell/Front/EntranceLanterns": "391ae5957ea50c5dd6d094740fae3a67ec16b9aa85cd5c54a4abe8432d76e339",
+    "Shell/Front/Fanlight": "4bc54baed4064ed69db16ecb83e219bd35383388533dfdc7a5e4e8b9322d5a88",
+    "Shell/Front/InteriorFinishA": "a43d0654c81397b55734ee2f2752fd32b4b523f049f4aeff63166623be51d4c4",
+    "Shell/Front/Portal": "251235dce8d2e4662b1a527bc55f9cfdf3206e7e5fe9cba97ac5b0ab360a4464",
+    "Shell/Front/Signage": "1b8d56a9daff77e0dc692f9005750deaf23952aa8c9824d5630e7d485ba4646d",
+    "Shell/Front/Windows": "5892b511f003a3a58def3176e935b36daef7cf88916b68def61100010a8b3ab1",
+    "Structure/EntranceSteps": "7b9dfa56b47f18751b82a99658710b4791b05692b678e834b39d54d644862a89",
+    "Furnishings/HiringHall/PortraitGallery0": "d0ad812b1a5e74b7e77654ba26f512c945b1c99a825fa8b282fd43f9c80d5c84",
+    "Furnishings/HiringHall/PortraitGallery1": "07c65a843d13de9fa210aaeab468a1ab0b6f20a561d779ad528b08257c335924",
+    "Furnishings/HiringHall/PortraitGallery2": "ae27de820f5470205b0d3efc8c0e176507b70ec2996d4f1e24ebd792af29fae8",
+    "Furnishings/HiringHall/Clock": "a84708b1f2beb4dff480226d3518ce9e94eae72fc1c78b30c3a752c28d0a211d",
+    "Structure/Foundation": "b89a497986c239c63f24959bf59ec2923a52a51aeeab8d9143604ff95bd5f45e",
+    "Interior/Floors/Base": "10936abbbb8754869ece2b0b3fa4a0fb1a9815c8d35895b73e41eef529be482e",
+    "Interior/Floors/HiringHall": "31b14178c8c1def06067bd8fbc109cbd1a341f8dc2c5b100a39e6135a82421a2",
+    "Interior/Floors/Audition": "1710afca163e15b2c85a607197843070ccbc6b2a57c2cd8fa8b9b2faf5daca18",
+    "Interior/Floors/Interview": "745840a5abc6d2ce0012a91a72d9982ef7ec7219bfbdacde87b15e799d905471",
+    "Shell/Front/UpperClosure0": "aae48863ae88125cb6196ba9a8c79a16a22d4023002260c2490f39a84d895a67",
+    "Shell/Front/UpperClosure0/Cornice": "a8776aa70564997ff661605fcf2e90b8907dad8c6f23cbf4d90782f9a2adb379",
+    "Shell/Front/UpperClosure1": "ac629f593a49635c1366b001dedfe4d83fb50b3ec991f183cbfa384005f3830b",
+    "Shell/Front/UpperClosure1/Cornice": "19cd4470ea469db0a8302f79d915f92ccc4bba65f95758fa990f185dbe2d80a3",
+    "Shell/Left": "c1d03b68454daecd1823f79ec9d408c2df03f5e2ff7999eafbf5b5d3c4e0e3f6",
+    "Shell/Left/Windows": "b61295a777ba31f53bd37342dbd12cccb9924027de5151ba3c5a91f8d0367104",
+    "Shell/Left/Articulation": "320fa5a866a28ceb84533cac1974348982a55b2c63f0bd5f9efacc6d14be49ea",
+    "Shell/Right": "c1fdfb10250221ce5bad51542a3f6adc8321dd1ddf01b9d0ea3a5d1c88994e04",
+    "Shell/Right/Windows": "cf64869ca19e3fc432fca6f052711914a2243bf583cabfcd94f826a1e58849d3",
+    "Shell/Right/Articulation": "2101e871037e4e2e40b1cc545c465506ca4a0e19e716d4fb6c1738f6aecc83af",
+    "Shell/Rear": "555d12c3694db04e4f7f7f54102a4eea56485710ac0a527580f9dc002b1fb46e",
+    "Shell/Rear/Windows": "01cbbde7893d9e2bb952afa4042353af4ffb97e0b6ea79a33c680eefe4b28a7d",
+    "Shell/Rear/Articulation": "39fdbb71323b21255097d347ca2a1f61464fdf5e91e2ca9a4a96136f29fb3e61",
+    "Partitions/HallAudition": "e53e540dc6006962fcd770e82258c0f6911c0abdb8f6aef4a041fc2ae55cbf9d",
+    "Partitions/HallAudition/Trim": "03a5f5181ae9c25d452647cae549036e33cbd24c0f33ca14cc4a9a96fe403e78",
+    "Doors/AuditionA4": "9b67d35c2b7d1f4516a56d486b43892f4d65fb6477085a6552a25810c0679d76",
+    "Partitions/HallInterview": "249fdab9fc5557fd8b369b4aaccaf987de71a7081577d0e2f5b5e3ab739e499f",
+    "Partitions/HallInterview/Trim": "2c78d2df2b2664e485945667fd4f0ccc0f19f7e30e3caad997712276bfb83c80",
+    "Doors/InterviewA4": "a9cfd8e5afeba185383b7aff780cb1885dcfa6ed6b27ac9ce101a209591f2b8a",
+    "Partitions/SpecialistDivider": "3f171cb058a5cd77ece907dfe0864b7f02228fc9419b3bd6c6b097b125201e9d",
+    "Shell/Left/InteriorFinishA": "e9355714db6e70f8e879674bcc107f936a19549b83a1db0db422ddacc2b43a75",
+    "Shell/Right/InteriorFinishA": "d897aa376454e20545fa7f69e45ad30650b556df2cec7b2982e11bf84f55b189",
+    "Shell/Rear/InteriorFinishA": "0d4249b636652d804c337ec140406bf734519ecfd87874d34a239d9e29dbe6da",
+    "Partitions/HallAudition/InteriorFinishA": "25f003dfb2886dc6d5ed71bda36264ffd494e6539678fa7bfd94f1eda78a9ccb",
+    "Partitions/HallAudition/InteriorFinishB": "46838999a3bbe36b31cd1c1378976b3c0787da0b63d1937fe1e1c7059951aaff",
+    "Partitions/HallInterview/InteriorFinishA": "0607e78f754f0441bf6cdb8b1479398f9e68b19766a4ebbce9b3779c1c9a7489",
+    "Partitions/HallInterview/InteriorFinishB": "7a52a683bb4e8d8a476fa46a9eb62c8fe154786c674bf0d744d250a031ef7951",
+    "Partitions/SpecialistDivider/InteriorFinishA": "f74b6849c7516f954f78ba7a35408963db268876e3e68e11084a46b0d238a8be",
+    "Partitions/SpecialistDivider/InteriorFinishB": "d6636d5344a7f52836a3659240cbc8a4a665884fcd46a338d3bc1ae6780f0ffa",
+    "Furnishings/HiringHall/WallLantern0": "f5342bc485a630a9b9db5f8d42fa63db9ee68f5a6f425429fbb059c19ca43749",
+    "Furnishings/HiringHall/WallLantern1": "9ea2261bfc30b82e3233f8d072e47903c0a08808bd750d640c45525b5151df2d",
+    "Furnishings/HiringHall/WallLantern2": "bfee27d0b1eb290628b764a66d172dbc55b0384772199d7acfb77a9091184999",
+    "Furnishings/HiringHall/WallLantern3": "761576e13110b6633d711832e29e49c7b79149f15c68b1a53fe566b0807db8e8",
+    "Roofs/Main/Deck": "f17e177e53c277a3c2c1af4266a825038e07666d494e641421cc5baaec8bfb64",
+    "Roofs/Main/Parapet": "05eeef69eff3fff919d93778038eeb96d355de077a7c8886dc0d71b68accc47a",
+    "Roofs/Main/RearParapet": "a06ef6dd4843a1e37961c49bf799b249a536d8caa174a5814ab73151c24f05f7",
+    "Roofs/Main/EntranceReturn": "d17ce0ba8fb25374e91a73518567733c2bfbfe6873c77292d84c8c19cc57e566",
+    "Roofs/Main/Flashing": "baf08cdee9c526c54d6c5591793ddea50694f87cc688f57c9c766799406ec023",
+    "Roofs/Main/Rainwater": "fb724edb00a574f339ffe927e601453c03732c500da26c40efb567f2adef3795",
+    "Ceilings/HiringHall": "e3babf683d1a5be5e292b1eee60ffa940ec2acaa0403a5b1a7ccc9dc7b1af65a",
+    "Ceilings/Audition": "a767b36dd150345d8f3de1d423cb468210943105851678bbfe71769d21ce7d92",
+    "Ceilings/Interview": "2d4bf97c462982dc1d6a767b9ba9d83efcececc31ad8e93706a7b6082d256a13",
+    "Ceilings/PendantA4_00": "5cec50fde2045a2da2b1ecbd7da9a3bac101109b047f4d62fbeaa8a667ddfda9",
+    "Ceilings/PendantA4_01": "3faa498fa075f45301fb3a8f6f010eae04e27be1f0c73384c1886ccedddd009b",
+    "Ceilings/PendantA4_02": "1b2018bf3bbf46a5c3391f229cbc0d580ee059910d82495aff176bae9d9224d3",
+    "Ceilings/PendantA4_03": "ca8ad3325a1047b92aa8608bee5a3cdb9cab5aeaf5c27be640e99778b557ee6c",
+    "Ceilings/PendantA4_04": "3695570c5ac53f536b27b10eb6fd9cdf3f09fee3da52a2c01619ff405d4de121",
+    "Ceilings/PendantA4_05": "dab07c226e7c318d35de8095277eccd0ca6a5b3ef0f0d89d4759dffe31547ee8",
+    "Exterior/Forecourt": "0c87d039d0666d5345a337c1f9478a2ffd8f57ea2501e88039c90b18953ced7c",
+    "Exterior/Planters": "293c30a80ee20f4b8b9936beb775186849f55882240dd8d72380241b71b593c0"
+  },
+  "fixtures": [
+    {
+      "asset": "DeskPedestal_1930",
+      "group": "Furnishings/Interview/Desk",
+      "position": [
+        6.6,
+        0.39,
+        3.5999999999999996
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "ChairBentwood_1930",
+      "group": "Furnishings/Interview/DirectorChair",
+      "position": [
+        6.6,
+        0.39,
+        4.6
+      ],
+      "yaw": 180
+    },
+    {
+      "asset": "TelephoneDesk_1930",
+      "group": "Furnishings/Interview/Phone",
+      "position": [
+        5.8999999999999995,
+        1.19,
+        3.5500000000000007
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "DeskLampBanker_1930",
+      "group": "Furnishings/Interview/Lamp",
+      "position": [
+        7.3,
+        1.19,
+        3.6500000000000004
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "DeskPaperwork_1930",
+      "group": "Furnishings/Interview/Scripts",
+      "position": [
+        6.6,
+        1.19,
+        3.4000000000000004
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "FilingCabinet_4Drawer_1930",
+      "group": "Furnishings/Interview/Files",
+      "position": [
+        10.1,
+        0.38,
+        4.6
+      ],
+      "yaw": 270
+    },
+    {
+      "asset": "ChairBentwood_1930",
+      "group": "Furnishings/Audition/Evaluator0",
+      "position": [
+        -8.85,
+        0.39,
+        -0.5499999999999998
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "ChairBentwood_1930",
+      "group": "Furnishings/Audition/Evaluator1",
+      "position": [
+        -8.0,
+        0.39,
+        -0.5499999999999998
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "DeskPaperwork_1930",
+      "group": "Furnishings/Audition/Notes",
+      "position": [
+        -8.600000000000001,
+        1.17,
+        0.4500000000000002
+      ],
+      "yaw": 180
+    },
+    {
+      "asset": "ChairBentwood_1930",
+      "group": "Furnishings/Audition/Evaluator2",
+      "position": [
+        -7.15,
+        0.39,
+        -0.5499999999999998
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "BenchSlatted_210_1930",
+      "group": "Exterior/ApplicantBench-1",
+      "position": [
+        -7.2,
+        0.05,
+        -9.38
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "BenchSlatted_210_1930",
+      "group": "Exterior/ApplicantBench1",
+      "position": [
+        7.2,
+        0.05,
+        -9.38
+      ],
+      "yaw": 0
+    }
+  ],
+  "equipment": [
+    {
+      "asset": "StudioCamera1930",
+      "group": "Furnishings/Audition/Camera",
+      "position": [
+        -4,
+        0.39,
+        1.1
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "StudioLamp1930",
+      "group": "Furnishings/Audition/StudioLamp0",
+      "position": [
+        -7.3,
+        0.39,
+        3.35
+      ],
+      "yaw": 50
+    },
+    {
+      "asset": "StudioLamp1930",
+      "group": "Furnishings/Audition/StudioLamp1",
+      "position": [
+        -0.7,
+        0.39,
+        3.35
+      ],
+      "yaw": -50
+    }
+  ],
+  "materials": [
+    {
+      "name": "Brass",
+      "linearRGB": [
+        0.36,
+        0.24,
+        0.08
+      ],
+      "metallic": 0.82,
+      "roughness": 0.33,
+      "texture": "metal",
+      "shared": true
+    },
+    {
+      "name": "Canvas",
+      "linearRGB": [
+        0.35,
+        0.29,
+        0.17
+      ],
+      "metallic": 0,
+      "roughness": 0.93,
+      "texture": "canvas",
+      "shared": true
+    },
+    {
+      "name": "Concrete",
+      "linearRGB": [
+        0.29,
+        0.27,
+        0.235
+      ],
+      "metallic": 0,
+      "roughness": 0.85,
+      "texture": "concrete",
+      "shared": true
+    },
+    {
+      "name": "Galvanized",
+      "linearRGB": [
+        0.3,
+        0.32,
+        0.3
+      ],
+      "metallic": 0.78,
+      "roughness": 0.48,
+      "texture": "metal",
+      "shared": true
+    },
+    {
+      "name": "InteriorPlaster",
+      "linearRGB": [
+        0.59,
+        0.535,
+        0.43
+      ],
+      "metallic": 0,
+      "roughness": 0.88,
+      "texture": "stucco",
+      "shared": true
+    },
+    {
+      "name": "Leather",
+      "linearRGB": [
+        0.13,
+        0.052,
+        0.024
+      ],
+      "metallic": 0,
+      "roughness": 0.73,
+      "texture": "canvas",
+      "shared": true
+    },
+    {
+      "name": "Mortar",
+      "linearRGB": [
+        0.3,
+        0.28,
+        0.235
+      ],
+      "metallic": 0,
+      "roughness": 0.9,
+      "texture": "stone",
+      "shared": true
+    },
+    {
+      "name": "Paper",
+      "linearRGB": [
+        0.71,
+        0.65,
+        0.48
+      ],
+      "metallic": 0,
+      "roughness": 0.9,
+      "texture": "",
+      "shared": true
+    },
+    {
+      "name": "PaperLight",
+      "linearRGB": [
+        0.85,
+        0.79,
+        0.63
+      ],
+      "metallic": 0,
+      "roughness": 0.88,
+      "texture": "",
+      "shared": true
+    },
+    {
+      "name": "SS_Bronze",
+      "linearRGB": [
+        0.065,
+        0.048,
+        0.029
+      ],
+      "metallic": 0.7,
+      "roughness": 0.37,
+      "texture": "metal",
+      "shared": false
+    },
+    {
+      "name": "SS_ClearGlass",
+      "linearRGB": [
+        0.14,
+        0.18,
+        0.17
+      ],
+      "metallic": 0,
+      "roughness": 0.15,
+      "texture": "",
+      "shared": false
+    },
+    {
+      "name": "SS_Curtain",
+      "linearRGB": [
+        0.18,
+        0.029,
+        0.024
+      ],
+      "metallic": 0,
+      "roughness": 0.89,
+      "texture": "cloth",
+      "shared": false
+    },
+    {
+      "name": "SS_FloorOak",
+      "linearRGB": [
+        0.25,
+        0.15,
+        0.073
+      ],
+      "metallic": 0,
+      "roughness": 0.64,
+      "texture": "timber",
+      "shared": false
+    },
+    {
+      "name": "SS_FloorOakLight",
+      "linearRGB": [
+        0.27,
+        0.165,
+        0.084
+      ],
+      "metallic": 0,
+      "roughness": 0.64,
+      "texture": "timber",
+      "shared": false
+    },
+    {
+      "name": "SS_Headshots",
+      "linearRGB": [
+        1,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.88,
+      "texture": "headshots",
+      "shared": false
+    },
+    {
+      "name": "SS_Lamp",
+      "linearRGB": [
+        0.92,
+        0.71,
+        0.39
+      ],
+      "metallic": 0,
+      "roughness": 0.22,
+      "texture": "",
+      "shared": false
+    },
+    {
+      "name": "SS_Sage",
+      "linearRGB": [
+        0.125,
+        0.17,
+        0.125
+      ],
+      "metallic": 0,
+      "roughness": 0.91,
+      "texture": "cloth",
+      "shared": false
+    },
+    {
+      "name": "SS_Stone",
+      "linearRGB": [
+        0.7,
+        0.625,
+        0.51
+      ],
+      "metallic": 0,
+      "roughness": 0.77,
+      "texture": "stone",
+      "shared": false
+    },
+    {
+      "name": "SS_Stucco",
+      "linearRGB": [
+        0.64,
+        0.56,
+        0.44
+      ],
+      "metallic": 0,
+      "roughness": 0.86,
+      "texture": "stucco",
+      "shared": false
+    },
+    {
+      "name": "SS_Terrazzo",
+      "linearRGB": [
+        0.45,
+        0.4,
+        0.315
+      ],
+      "metallic": 0,
+      "roughness": 0.49,
+      "texture": "concrete",
+      "shared": false
+    },
+    {
+      "name": "SS_Walnut",
+      "linearRGB": [
+        0.105,
+        0.05,
+        0.024
+      ],
+      "metallic": 0,
+      "roughness": 0.48,
+      "texture": "timber",
+      "shared": false
+    },
+    {
+      "name": "Steel",
+      "linearRGB": [
+        0.032,
+        0.038,
+        0.033
+      ],
+      "metallic": 0.65,
+      "roughness": 0.51,
+      "texture": "paint",
+      "shared": true
+    },
+    {
+      "name": "Timber",
+      "linearRGB": [
+        0.22,
+        0.125,
+        0.052
+      ],
+      "metallic": 0,
+      "roughness": 0.73,
+      "texture": "timber",
+      "shared": true
+    },
+    {
+      "name": "TimberDark",
+      "linearRGB": [
+        0.095,
+        0.05,
+        0.022
+      ],
+      "metallic": 0,
+      "roughness": 0.7,
+      "texture": "timber",
+      "shared": true
+    }
+  ],
+  "meta": {
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Editor.meta": "f695561ebb482b73475126f692908e82af738ce28d4f17bc75f7af1cb7fdf221",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes.meta": "f35aaba757cb00f96531e3275ba953cf2ad00913a3e75c3eab57300c9d7d7582",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\StageSchool_A4.prefab.meta": "238c3b95a72597b72c59e66e6135bee2a81150778010d7c5da6e2629fcb641e0",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\StageSchool_A4_Review.unity.meta": "935ef63828f8824b7357d4c244a8de2311f46cae5821882b0f32ef0fcb0925b9",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Editor\\StageSchoolA4Review.cs.meta": "3108122888772b5e408ce1f52924962665211845ceed82b857fac05e3077b9ae",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Ceilings_Audition.asset.meta": "e94e07578c66d3085043d07771719cc91a1980b40aab6120320ced916cd82d55",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Ceilings_HiringHall.asset.meta": "2f4b6e822effd7d1a1d7e06a999e6c1d523c8d359efe9a165da9a37cef5a2ee6",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Ceilings_Interview.asset.meta": "373bb02d2cd5e7e72a1dce9c2573dcf56a7d51ca9260fa51aa2eb71e8123948d",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Doors_AuditionA4.asset.meta": "9e9b908099d15f4e5af854799187b261c372be052c358682c3148daaadeabb79",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Doors_InterviewA4.asset.meta": "414fa379a4ca3c70daa6ba2f641187ccb47ff28d884e479a777bbecded9988a3",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Exterior_Forecourt.asset.meta": "42d0a37b7748cdb0373db7bf212b2716e31b7449c0719e7534ab4395faac368d",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Exterior_Planters.asset.meta": "85448f3326221faa14267886682021dabb478f75e8d09b3de565cd79703fd5a2",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Furnishings_HiringHall_WallLantern0.asset.meta": "71021ee2588de2033184d831eed63c20b8e11dadd64fad52c3b7037b1561c9d5",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Furnishings_HiringHall_WallLantern1.asset.meta": "8d9cdda1252f57d98e52aec1ada43eef8a30786370458ae0bf350a6b8057419d",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Furnishings_HiringHall_WallLantern2.asset.meta": "68f7f2f7f5b2fb410da58be2073344f84b34cfd64ec28a0eec2993dbccbd7c3d",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Furnishings_HiringHall_WallLantern3.asset.meta": "3af31eabfdb32f266d6364c542ca348296c238cd1211100b4be27ea134ab0d2f",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Interior_Floors_Audition.asset.meta": "8d0744d591c4363e75121e3664ba949561d291cb859655a202f60f65d15f0a3c",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Interior_Floors_Base.asset.meta": "31d9b7e562c7cce6654712f028521b2255fb3551e51cac6d3083d06b7dd73338",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Interior_Floors_HiringHall.asset.meta": "8277cb609d5be09ff38522ef2de2061cb66fda0839b5d82fb4149341a1064c81",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Interior_Floors_Interview.asset.meta": "8b467e938c665511673b3779b2cfc0dd7312406b05be25ae5d1ef9015862695b",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Partitions_HallAudition.asset.meta": "54954f7ec093d779039afb43480d0480e4af9cde2efe713a193f46cbf6db10b9",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Partitions_HallAudition_InteriorFinishA.asset.meta": "35e55f9a882386a4a3f67d60876db8d5c42b684cba42395c5092ad8167b7f3f0",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Partitions_HallAudition_InteriorFinishB.asset.meta": "ef588113ab9717ff04b21479ca31379e78a9020c1a6c8846bdfd08fd17cf72f5",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Partitions_HallAudition_Trim.asset.meta": "e8cee747e2bdff0556b7b6d35bd5fa0e843f9b5ae6f74ddb607da963cbeb46a0",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Partitions_HallInterview.asset.meta": "0c469a92004f5ae9096d36b5a1cfd4f48f12accd7842acfda19d8cefd7556fea",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Partitions_HallInterview_InteriorFinishA.asset.meta": "1ebd0389b60da92610c19d8050316bba9e220acea428dbd572ffeedeef0133eb",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Partitions_HallInterview_InteriorFinishB.asset.meta": "3560bbc33da781171a7d56f3a3f736aff2f9fbf6e193f30fb400d73edfbe896c",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Partitions_HallInterview_Trim.asset.meta": "30e06046bc8706bd2d9ce09229bd0a9c53cfe8c20ecacbcdabfa692a6aa4c124",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Partitions_SpecialistDivider.asset.meta": "5bdbc0b1a6a2686d9c8efbe4f001fb9556fc5a1a26292d3ca8b43493a7456127",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Partitions_SpecialistDivider_InteriorFinishA.asset.meta": "5062f3b1bdcce1369651e9deaf4e173b9ae4465a6dde5be861183736052bd469",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Partitions_SpecialistDivider_InteriorFinishB.asset.meta": "23fd369b70eecde7c6d6bee1fa157dda594dc2777dda96bc93007a7e225be511",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Roofs_Main_Deck.asset.meta": "5cd83dc419e2041cb142036a829840995bf00edc9d63ccb96bf990f02f90fcee",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Roofs_Main_EntranceReturn.asset.meta": "5fde4214996b9497aed212df61e9ccef246d22ec4b0d83a32b26fd28300fe2ec",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Roofs_Main_Flashing.asset.meta": "d2a89c8826829c1599f8773095346058df07a261976f3501e0bdc36b7a21dea4",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Roofs_Main_Parapet.asset.meta": "0555aa8fcb8368f43dc420a597fff7e9a55be942ed2bef6fc21034db1f174139",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Roofs_Main_Rainwater.asset.meta": "fdb5e1338d09d4239a86f40eb53f57272a548a136f7b8e0e78e39cb4536ffd41",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Roofs_Main_RearParapet.asset.meta": "15c960337a24939e5ae36d78c1bd86062b16293c5dcac44a5fb66fb556563b86",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Shell_Front_UpperClosure0.asset.meta": "7662a8487e1d770feda46dae972707717bf38ae79aae9ebd5e64e39058965118",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Shell_Front_UpperClosure0_Cornice.asset.meta": "69d2604734e0cc5beca048273b82143fd19f6937b485849cb74bd5137268c294",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Shell_Front_UpperClosure1.asset.meta": "c9cc9bc593744cc156a6d0a155892bd5b1b859d28e8341dc3eef9c330a1048b7",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Shell_Front_UpperClosure1_Cornice.asset.meta": "09a91857a97a23ab34824c281e85c5e113b5a166f10842d6ba5715c78fc2b55e",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Shell_Left.asset.meta": "8a5aa835915302d8d4b5760868fe9f1ecf6dfa31bce3ab65a0564bdf8d76e452",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Shell_Left_Articulation.asset.meta": "9d2e47d4a0575754b91b46b5bae8e7052b8bfa0b784cab48bfb4a7e1c2b916ce",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Shell_Left_InteriorFinishA.asset.meta": "d6d898db187e7efc5ce5fb37d5e6fc39f45571eb1c34e67ceccad1f0606c9558",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Shell_Left_Windows.asset.meta": "f801d5e456d17339f1ce9dc46f499d5c3a6ca57cec600c7428007291b0f9d3ba",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Shell_Rear.asset.meta": "797150464134e2cf91ad7467cfaac7c31fc79841f8b156fe92901892b29ab8d7",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Shell_Rear_Articulation.asset.meta": "36b211b7e8bc0167f00180128c829526db35efeec8a093361461424f30428519",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Shell_Rear_InteriorFinishA.asset.meta": "4a2a54a62358403fafaa6e94cb294c86c4f2947e65854c77b803156756139a5c",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Shell_Rear_Windows.asset.meta": "97759261e382771484bc1a19a3174bee806e21dc0190894d002934aab0e15180",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Shell_Right.asset.meta": "9e2a0bcd7d428fd2b2420254d41acecd75802af473e8ab746601b15962d2bac0",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Shell_Right_Articulation.asset.meta": "5b3404b105472f2ac697e103fa4c7cc18b0a6cfd86d582e50870f69f992435df",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Shell_Right_InteriorFinishA.asset.meta": "4b02e62b6c2e79ba52f9f1a6b9be3974fa4eef1bac93978b6b81b7bfb02485de",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Shell_Right_Windows.asset.meta": "240ce07cd294e5e86a86352bb4016649ebf2a142e9c6d3fa6f9502c4c5b9be67",
+    "Assets\\SilverScreen\\Environment\\StageSchoolA4\\Meshes\\Structure_Foundation.asset.meta": "b268f1af1921a4aaa11adf613aa6c5ac0e424895d4aab06bdebc5703990ca4fb"
+  }
+}

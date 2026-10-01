@@ -1,0 +1,4418 @@
+{
+  "candidate": "StageSchool_A3",
+  "status": "PRODUCTION_QA_PENDING",
+  "footprint": [
+    28,
+    24
+  ],
+  "masonry_area": 583.0,
+  "floor": 0.36,
+  "occupied_floors": 1,
+  "source_groups": 264,
+  "source_objects": 5793,
+  "triangles": 1609892,
+  "vertices": 2412845,
+  "unique_materials": 31,
+  "fixtures": 37,
+  "equipment_instances": [
+    {
+      "asset": "StudioCamera1930",
+      "group": "Furnishings/Audition/Camera",
+      "position": [
+        8.5,
+        0.39,
+        7.8
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "StudioLamp1930",
+      "group": "Furnishings/Audition/StudioLamp0",
+      "position": [
+        5.3,
+        0.39,
+        10.5
+      ],
+      "yaw": 48
+    },
+    {
+      "asset": "StudioLamp1930",
+      "group": "Furnishings/Audition/StudioLamp1",
+      "position": [
+        11.7,
+        0.39,
+        10.5
+      ],
+      "yaw": -48
+    }
+  ],
+  "roofs": [
+    [
+      "Entrance",
+      0,
+      -5.8,
+      7.6,
+      7.2,
+      5.97,
+      1.15
+    ],
+    [
+      "Waiting",
+      -7.25,
+      -3.0,
+      8.1,
+      12.5,
+      4.79,
+      1.18
+    ],
+    [
+      "Preparation",
+      7.25,
+      -3.9,
+      8.1,
+      10.9,
+      4.79,
+      1.05
+    ],
+    [
+      "Hall",
+      0,
+      1.25,
+      6.8,
+      8.2,
+      5.5,
+      0.9
+    ],
+    [
+      "WestEvaluation",
+      -8.6,
+      5.7,
+      11.6,
+      5.5,
+      5.25,
+      1.05
+    ],
+    [
+      "WestService",
+      -8.6,
+      11.15,
+      11.6,
+      6.5,
+      4.55,
+      0.95
+    ],
+    [
+      "CommonBay",
+      -12.4,
+      2.2,
+      4,
+      3.2,
+      4.44,
+      0.55
+    ],
+    [
+      "Interview",
+      0,
+      8.7,
+      6.8,
+      7.4,
+      5.12,
+      1.02
+    ],
+    [
+      "Audition",
+      8.5,
+      8.0,
+      11.8,
+      14.8,
+      5.85,
+      1.55
+    ]
+  ],
+  "reused_assemblies": [
+    {
+      "group": "Furnishings/Audition/Backdrop",
+      "translation": [
+        1.6,
+        0,
+        6.45
+      ]
+    },
+    {
+      "group": "Furnishings/Audition/Curtains",
+      "translation": [
+        1.6,
+        0,
+        6.45
+      ]
+    },
+    {
+      "group": "Furnishings/Audition/EvaluationMaterials",
+      "translation": [
+        2.3,
+        0,
+        0.35
+      ]
+    },
+    {
+      "group": "Furnishings/Audition/EvaluationTable",
+      "translation": [
+        2.3,
+        0,
+        0.35
+      ]
+    },
+    {
+      "group": "Furnishings/Audition/Rostrum",
+      "translation": [
+        1.6,
+        0,
+        6.45
+      ]
+    },
+    {
+      "group": "Furnishings/Interview/Bookcase",
+      "translation": [
+        0,
+        0,
+        3
+      ]
+    },
+    {
+      "group": "Furnishings/Interview/Desk",
+      "translation": [
+        0,
+        0,
+        3
+      ]
+    },
+    {
+      "group": "Furnishings/Interview/DirectorChair",
+      "translation": [
+        0,
+        0,
+        3
+      ]
+    },
+    {
+      "group": "Furnishings/Interview/Files",
+      "translation": [
+        0,
+        0,
+        3
+      ]
+    },
+    {
+      "group": "Furnishings/Interview/GuestA",
+      "translation": [
+        0,
+        0,
+        3
+      ]
+    },
+    {
+      "group": "Furnishings/Interview/GuestB",
+      "translation": [
+        0,
+        0,
+        3
+      ]
+    },
+    {
+      "group": "Furnishings/Interview/Lamp",
+      "translation": [
+        0,
+        0,
+        3
+      ]
+    },
+    {
+      "group": "Furnishings/Interview/Phone",
+      "translation": [
+        0,
+        0,
+        3
+      ]
+    },
+    {
+      "group": "Furnishings/Interview/PortfolioReview",
+      "translation": [
+        0,
+        0,
+        3
+      ]
+    },
+    {
+      "group": "Furnishings/Interview/Scripts",
+      "translation": [
+        0,
+        0,
+        3
+      ]
+    },
+    {
+      "group": "Furnishings/Staff/ArchiveBoxes",
+      "translation": [
+        -2.8,
+        0,
+        5.1
+      ]
+    },
+    {
+      "group": "Furnishings/Waiting/Notices",
+      "translation": [
+        -7.1,
+        0,
+        1.2
+      ]
+    },
+    {
+      "group": "Furnishings/Waiting/PortraitGallery",
+      "translation": [
+        0,
+        0.15,
+        1.2
+      ]
+    },
+    {
+      "group": "Shell/Rear/OfficeClock",
+      "translation": [
+        0,
+        0,
+        3.1
+      ]
+    },
+    {
+      "group": "Ceilings/Pendant00",
+      "translation": [
+        0,
+        0,
+        0.0
+      ]
+    },
+    {
+      "group": "Ceilings/Pendant01",
+      "translation": [
+        0,
+        0,
+        0.4
+      ]
+    },
+    {
+      "group": "Ceilings/Pendant02",
+      "translation": [
+        0.0,
+        0,
+        0
+      ]
+    },
+    {
+      "group": "Ceilings/Pendant03",
+      "translation": [
+        0.0,
+        0,
+        0.0
+      ]
+    },
+    {
+      "group": "Ceilings/Pendant04",
+      "translation": [
+        0.0,
+        0,
+        0.0
+      ]
+    },
+    {
+      "group": "Ceilings/Pendant05",
+      "translation": [
+        0,
+        0,
+        3.0
+      ]
+    },
+    {
+      "group": "Ceilings/Pendant06",
+      "translation": [
+        1.7000000000000002,
+        0.75,
+        4.000000000000001
+      ]
+    },
+    {
+      "group": "Ceilings/Pendant07",
+      "translation": [
+        -3.8,
+        0,
+        -0.7000000000000002
+      ]
+    },
+    {
+      "group": "Shell/Rear/OfficeClock",
+      "translation": [
+        -0.6,
+        0.13,
+        -0.1
+      ]
+    },
+    {
+      "group": "Furnishings/Reception/Accessories",
+      "translation": [
+        0,
+        -0.025,
+        -0.16
+      ]
+    }
+  ],
+  "room_floor_extents": [
+    [
+      "Waiting",
+      -10.65,
+      -3.1,
+      -8.65,
+      -1.0
+    ],
+    [
+      "Commons",
+      -10.65,
+      -3.1,
+      -0.9,
+      3.15
+    ],
+    [
+      "CommonsBay",
+      -13.65,
+      -10.65,
+      1.15,
+      3.15
+    ],
+    [
+      "Audition",
+      3.15,
+      13.65,
+      1.15,
+      14.65
+    ],
+    [
+      "Interview",
+      -2.85,
+      2.85,
+      5.15,
+      11.65
+    ],
+    [
+      "Flexible",
+      -13.65,
+      -7.1,
+      3.45,
+      7.95
+    ],
+    [
+      "Staff",
+      -6.9,
+      -3.1,
+      3.45,
+      7.95
+    ]
+  ],
+  "parts": [
+    {
+      "name": "Ceilings/Pendant00",
+      "triangles": 1416,
+      "vertices": 822
+    },
+    {
+      "name": "Ceilings/Pendant01",
+      "triangles": 1416,
+      "vertices": 822
+    },
+    {
+      "name": "Ceilings/Pendant02",
+      "triangles": 1416,
+      "vertices": 822
+    },
+    {
+      "name": "Ceilings/Pendant03",
+      "triangles": 1416,
+      "vertices": 822
+    },
+    {
+      "name": "Ceilings/Pendant04",
+      "triangles": 1416,
+      "vertices": 822
+    },
+    {
+      "name": "Ceilings/Pendant05",
+      "triangles": 1416,
+      "vertices": 822
+    },
+    {
+      "name": "Ceilings/Pendant06",
+      "triangles": 1416,
+      "vertices": 822
+    },
+    {
+      "name": "Ceilings/Pendant07",
+      "triangles": 1416,
+      "vertices": 822
+    },
+    {
+      "name": "Doors/EntranceLeft",
+      "triangles": 5352,
+      "vertices": 10424
+    },
+    {
+      "name": "Doors/EntranceRight",
+      "triangles": 5352,
+      "vertices": 10424
+    },
+    {
+      "name": "Doors/Washroom",
+      "triangles": 7408,
+      "vertices": 14624
+    },
+    {
+      "name": "Furnishings/Audition/Backdrop",
+      "triangles": 2068,
+      "vertices": 4224
+    },
+    {
+      "name": "Furnishings/Audition/Curtains",
+      "triangles": 46100,
+      "vertices": 31518
+    },
+    {
+      "name": "Furnishings/Audition/EvaluationMaterials",
+      "triangles": 168,
+      "vertices": 328
+    },
+    {
+      "name": "Furnishings/Audition/EvaluationTable",
+      "triangles": 1052,
+      "vertices": 2096
+    },
+    {
+      "name": "Furnishings/Audition/Rostrum",
+      "triangles": 6768,
+      "vertices": 13824
+    },
+    {
+      "name": "Furnishings/Commons/PortfolioTable",
+      "triangles": 1052,
+      "vertices": 2082
+    },
+    {
+      "name": "Furnishings/Commons/ReviewMaterials",
+      "triangles": 516,
+      "vertices": 985
+    },
+    {
+      "name": "Furnishings/Interview/Bookcase",
+      "triangles": 5760,
+      "vertices": 10119
+    },
+    {
+      "name": "Furnishings/Interview/GuestA",
+      "triangles": 4972,
+      "vertices": 3552
+    },
+    {
+      "name": "Furnishings/Interview/GuestB",
+      "triangles": 4972,
+      "vertices": 3552
+    },
+    {
+      "name": "Furnishings/Interview/PortfolioReview",
+      "triangles": 360,
+      "vertices": 651
+    },
+    {
+      "name": "Furnishings/Lounge/Chair0",
+      "triangles": 4972,
+      "vertices": 3552
+    },
+    {
+      "name": "Furnishings/Lounge/Chair1",
+      "triangles": 4972,
+      "vertices": 3552
+    },
+    {
+      "name": "Furnishings/Lounge/Chair2",
+      "triangles": 4972,
+      "vertices": 3552
+    },
+    {
+      "name": "Furnishings/Lounge/Chair3",
+      "triangles": 4972,
+      "vertices": 3552
+    },
+    {
+      "name": "Furnishings/Lounge/Table",
+      "triangles": 1052,
+      "vertices": 2126
+    },
+    {
+      "name": "Furnishings/Reception/Accessories",
+      "triangles": 1092,
+      "vertices": 1928
+    },
+    {
+      "name": "Furnishings/Reception/Counter",
+      "triangles": 5308,
+      "vertices": 9430
+    },
+    {
+      "name": "Furnishings/Reception/Details",
+      "triangles": 25674,
+      "vertices": 15404
+    },
+    {
+      "name": "Furnishings/Reception/Wastebasket",
+      "triangles": 1428,
+      "vertices": 2182
+    },
+    {
+      "name": "Furnishings/Staff/ArchiveBoxes",
+      "triangles": 2256,
+      "vertices": 4608
+    },
+    {
+      "name": "Furnishings/Waiting/Chair00",
+      "triangles": 4972,
+      "vertices": 3552
+    },
+    {
+      "name": "Furnishings/Waiting/Chair01",
+      "triangles": 4972,
+      "vertices": 3552
+    },
+    {
+      "name": "Furnishings/Waiting/Chair02",
+      "triangles": 4972,
+      "vertices": 3552
+    },
+    {
+      "name": "Furnishings/Waiting/Chair03",
+      "triangles": 4972,
+      "vertices": 3552
+    },
+    {
+      "name": "Furnishings/Waiting/Chair04",
+      "triangles": 4972,
+      "vertices": 3552
+    },
+    {
+      "name": "Furnishings/Waiting/Chair05",
+      "triangles": 4972,
+      "vertices": 3552
+    },
+    {
+      "name": "Furnishings/Waiting/Chair06",
+      "triangles": 4972,
+      "vertices": 3552
+    },
+    {
+      "name": "Furnishings/Waiting/Chair07",
+      "triangles": 4972,
+      "vertices": 3552
+    },
+    {
+      "name": "Furnishings/Waiting/CoffeeTable",
+      "triangles": 1052,
+      "vertices": 2106
+    },
+    {
+      "name": "Furnishings/Waiting/Notices",
+      "triangles": 89982,
+      "vertices": 84334
+    },
+    {
+      "name": "Furnishings/Waiting/PortraitGallery",
+      "triangles": 1512,
+      "vertices": 3088
+    },
+    {
+      "name": "Furnishings/Waiting/ReadingMaterial",
+      "triangles": 636,
+      "vertices": 1216
+    },
+    {
+      "name": "Furnishings/Washroom",
+      "triangles": 16944,
+      "vertices": 18684
+    },
+    {
+      "name": "Partitions/Washroom",
+      "triangles": 192,
+      "vertices": 325
+    },
+    {
+      "name": "Partitions/WashroomSide",
+      "triangles": 84,
+      "vertices": 151
+    },
+    {
+      "name": "Shell/Front",
+      "triangles": 1740,
+      "vertices": 3082
+    },
+    {
+      "name": "Shell/Front/Banners",
+      "triangles": 141724,
+      "vertices": 86044
+    },
+    {
+      "name": "Shell/Front/EntranceLanterns",
+      "triangles": 1188,
+      "vertices": 1744
+    },
+    {
+      "name": "Shell/Front/Fanlight",
+      "triangles": 1812,
+      "vertices": 2673
+    },
+    {
+      "name": "Shell/Front/Portal",
+      "triangles": 3364,
+      "vertices": 5733
+    },
+    {
+      "name": "Shell/Front/Signage",
+      "triangles": 45124,
+      "vertices": 31555
+    },
+    {
+      "name": "Shell/Front/Windows",
+      "triangles": 7720,
+      "vertices": 15504
+    },
+    {
+      "name": "Shell/Rear/OfficeClock",
+      "triangles": 648,
+      "vertices": 546
+    },
+    {
+      "name": "Structure/EntranceSteps",
+      "triangles": 2896,
+      "vertices": 4328
+    },
+    {
+      "name": "Structure/Foundation/Front",
+      "triangles": 60,
+      "vertices": 96
+    },
+    {
+      "name": "Interior/Floors/FrontBase",
+      "triangles": 12,
+      "vertices": 24
+    },
+    {
+      "name": "Structure/Foundation/WestCommons",
+      "triangles": 60,
+      "vertices": 100
+    },
+    {
+      "name": "Interior/Floors/WestCommonsBase",
+      "triangles": 12,
+      "vertices": 24
+    },
+    {
+      "name": "Structure/Foundation/WestWork",
+      "triangles": 60,
+      "vertices": 100
+    },
+    {
+      "name": "Interior/Floors/WestWorkBase",
+      "triangles": 12,
+      "vertices": 24
+    },
+    {
+      "name": "Structure/Foundation/Hall",
+      "triangles": 60,
+      "vertices": 112
+    },
+    {
+      "name": "Interior/Floors/HallBase",
+      "triangles": 12,
+      "vertices": 24
+    },
+    {
+      "name": "Structure/Foundation/Interview",
+      "triangles": 60,
+      "vertices": 108
+    },
+    {
+      "name": "Interior/Floors/InterviewBase",
+      "triangles": 12,
+      "vertices": 24
+    },
+    {
+      "name": "Structure/Foundation/Audition",
+      "triangles": 60,
+      "vertices": 100
+    },
+    {
+      "name": "Interior/Floors/AuditionBase",
+      "triangles": 12,
+      "vertices": 24
+    },
+    {
+      "name": "Interior/Floors/Waiting",
+      "triangles": 1296,
+      "vertices": 2592
+    },
+    {
+      "name": "Interior/Floors/Commons",
+      "triangles": 792,
+      "vertices": 1584
+    },
+    {
+      "name": "Interior/Floors/CommonsBay",
+      "triangles": 168,
+      "vertices": 336
+    },
+    {
+      "name": "Interior/Floors/Audition",
+      "triangles": 3024,
+      "vertices": 6048
+    },
+    {
+      "name": "Interior/Floors/Interview",
+      "triangles": 900,
+      "vertices": 1800
+    },
+    {
+      "name": "Interior/Floors/Flexible",
+      "triangles": 708,
+      "vertices": 1416
+    },
+    {
+      "name": "Interior/Floors/Staff",
+      "triangles": 420,
+      "vertices": 840
+    },
+    {
+      "name": "Interior/Floors/HallInlay",
+      "triangles": 240,
+      "vertices": 480
+    },
+    {
+      "name": "Shell/Left/Waiting",
+      "triangles": 344,
+      "vertices": 592
+    },
+    {
+      "name": "Shell/Left/Waiting/Windows",
+      "triangles": 7720,
+      "vertices": 15504
+    },
+    {
+      "name": "Shell/Left/Waiting/Articulation",
+      "triangles": 2604,
+      "vertices": 5304
+    },
+    {
+      "name": "Shell/Left/CommonShoulder",
+      "triangles": 284,
+      "vertices": 512
+    },
+    {
+      "name": "Shell/Left/CommonShoulder/Windows",
+      "triangles": 3860,
+      "vertices": 7752
+    },
+    {
+      "name": "Shell/Left/CommonShoulder/Articulation",
+      "triangles": 1920,
+      "vertices": 3912
+    },
+    {
+      "name": "Shell/Left/CommonBay",
+      "triangles": 284,
+      "vertices": 512
+    },
+    {
+      "name": "Shell/Left/CommonBay/Windows",
+      "triangles": 3860,
+      "vertices": 7752
+    },
+    {
+      "name": "Shell/Left/CommonBay/Articulation",
+      "triangles": 1908,
+      "vertices": 3888
+    },
+    {
+      "name": "Shell/Left/Evaluation",
+      "triangles": 344,
+      "vertices": 584
+    },
+    {
+      "name": "Shell/Left/Evaluation/Windows",
+      "triangles": 7720,
+      "vertices": 15504
+    },
+    {
+      "name": "Shell/Left/Evaluation/Articulation",
+      "triangles": 2556,
+      "vertices": 5208
+    },
+    {
+      "name": "Shell/Left/Records",
+      "triangles": 344,
+      "vertices": 584
+    },
+    {
+      "name": "Shell/Left/Records/Windows",
+      "triangles": 7720,
+      "vertices": 15504
+    },
+    {
+      "name": "Shell/Left/Records/Articulation",
+      "triangles": 2708,
+      "vertices": 5520
+    },
+    {
+      "name": "Shell/Rear/Service",
+      "triangles": 712,
+      "vertices": 1203
+    },
+    {
+      "name": "Shell/Rear/Service/Windows",
+      "triangles": 11580,
+      "vertices": 23256
+    },
+    {
+      "name": "Shell/Rear/Service/DoorSurrounds",
+      "triangles": 2632,
+      "vertices": 5376
+    },
+    {
+      "name": "Doors/RearServiceA2",
+      "triangles": 7408,
+      "vertices": 14624
+    },
+    {
+      "name": "Shell/Rear/Service/Articulation",
+      "triangles": 3344,
+      "vertices": 6816
+    },
+    {
+      "name": "Shell/Rear/WestSetback",
+      "triangles": 200,
+      "vertices": 408
+    },
+    {
+      "name": "Shell/Rear/WestSetback/Articulation",
+      "triangles": 776,
+      "vertices": 1584
+    },
+    {
+      "name": "Shell/Rear/Interview",
+      "triangles": 344,
+      "vertices": 592
+    },
+    {
+      "name": "Shell/Rear/Interview/Windows",
+      "triangles": 7720,
+      "vertices": 15504
+    },
+    {
+      "name": "Shell/Rear/Interview/Articulation",
+      "triangles": 2768,
+      "vertices": 5640
+    },
+    {
+      "name": "Shell/Rear/AuditionReturn",
+      "triangles": 284,
+      "vertices": 512
+    },
+    {
+      "name": "Shell/Rear/AuditionReturn/Windows",
+      "triangles": 3396,
+      "vertices": 6936
+    },
+    {
+      "name": "Shell/Rear/AuditionReturn/Articulation",
+      "triangles": 1428,
+      "vertices": 2904
+    },
+    {
+      "name": "Shell/Rear/Audition",
+      "triangles": 344,
+      "vertices": 584
+    },
+    {
+      "name": "Shell/Rear/Audition/Windows",
+      "triangles": 6792,
+      "vertices": 13872
+    },
+    {
+      "name": "Shell/Rear/Audition/Articulation",
+      "triangles": 1912,
+      "vertices": 3888
+    },
+    {
+      "name": "Shell/Right/Audition",
+      "triangles": 536,
+      "vertices": 814
+    },
+    {
+      "name": "Shell/Right/Audition/Windows",
+      "triangles": 21768,
+      "vertices": 44064
+    },
+    {
+      "name": "Shell/Right/Audition/Articulation",
+      "triangles": 3464,
+      "vertices": 7056
+    },
+    {
+      "name": "Shell/Right/AuditionShoulder",
+      "triangles": 344,
+      "vertices": 584
+    },
+    {
+      "name": "Shell/Right/AuditionShoulder/Windows",
+      "triangles": 7256,
+      "vertices": 14688
+    },
+    {
+      "name": "Shell/Right/AuditionShoulder/Articulation",
+      "triangles": 1992,
+      "vertices": 4056
+    },
+    {
+      "name": "Shell/Right/Preparation",
+      "triangles": 392,
+      "vertices": 636
+    },
+    {
+      "name": "Shell/Right/Preparation/Windows",
+      "triangles": 7720,
+      "vertices": 15504
+    },
+    {
+      "name": "Shell/Right/Preparation/Articulation",
+      "triangles": 2792,
+      "vertices": 5688
+    },
+    {
+      "name": "Partitions/InterviewFront",
+      "triangles": 60,
+      "vertices": 88
+    },
+    {
+      "name": "Partitions/InterviewFront/Trim",
+      "triangles": 2444,
+      "vertices": 4992
+    },
+    {
+      "name": "Doors/InterviewA2",
+      "triangles": 7408,
+      "vertices": 14624
+    },
+    {
+      "name": "Partitions/AuditionFront",
+      "triangles": 60,
+      "vertices": 88
+    },
+    {
+      "name": "Partitions/AuditionFront/Trim",
+      "triangles": 2444,
+      "vertices": 4992
+    },
+    {
+      "name": "Doors/AuditionA2",
+      "triangles": 7408,
+      "vertices": 14624
+    },
+    {
+      "name": "Partitions/AuditionWest",
+      "triangles": 12,
+      "vertices": 24
+    },
+    {
+      "name": "Partitions/WestSpine",
+      "triangles": 60,
+      "vertices": 88
+    },
+    {
+      "name": "Partitions/WestSpine/Trim",
+      "triangles": 2444,
+      "vertices": 4992
+    },
+    {
+      "name": "Doors/StaffInterviewLink",
+      "triangles": 7408,
+      "vertices": 14624
+    },
+    {
+      "name": "Partitions/WestRoomFront",
+      "triangles": 96,
+      "vertices": 136
+    },
+    {
+      "name": "Partitions/WestRoomFront/Trim",
+      "triangles": 4888,
+      "vertices": 9984
+    },
+    {
+      "name": "Doors/FlexibleA2",
+      "triangles": 7408,
+      "vertices": 14624
+    },
+    {
+      "name": "Doors/StaffA2",
+      "triangles": 7408,
+      "vertices": 14624
+    },
+    {
+      "name": "Partitions/StaffDivider",
+      "triangles": 12,
+      "vertices": 24
+    },
+    {
+      "name": "Partitions/ServiceFront",
+      "triangles": 96,
+      "vertices": 136
+    },
+    {
+      "name": "Partitions/ServiceFront/Trim",
+      "triangles": 4888,
+      "vertices": 9984
+    },
+    {
+      "name": "Doors/FlexibleService",
+      "triangles": 7408,
+      "vertices": 14624
+    },
+    {
+      "name": "Doors/StaffService",
+      "triangles": 7408,
+      "vertices": 14624
+    },
+    {
+      "name": "Partitions/RecordsFront",
+      "triangles": 60,
+      "vertices": 88
+    },
+    {
+      "name": "Partitions/RecordsFront/Trim",
+      "triangles": 2444,
+      "vertices": 4992
+    },
+    {
+      "name": "Doors/RecordsA2",
+      "triangles": 7408,
+      "vertices": 14624
+    },
+    {
+      "name": "Partitions/StoreFront",
+      "triangles": 60,
+      "vertices": 88
+    },
+    {
+      "name": "Partitions/StoreFront/Trim",
+      "triangles": 2444,
+      "vertices": 4992
+    },
+    {
+      "name": "Doors/StoreA2",
+      "triangles": 7408,
+      "vertices": 14624
+    },
+    {
+      "name": "Partitions/RecordsPassage",
+      "triangles": 12,
+      "vertices": 24
+    },
+    {
+      "name": "Partitions/StorePassage",
+      "triangles": 12,
+      "vertices": 24
+    },
+    {
+      "name": "Partitions/WashroomTrim",
+      "triangles": 2444,
+      "vertices": 4992
+    },
+    {
+      "name": "Shell/Raised/EntryLeft",
+      "triangles": 156,
+      "vertices": 200
+    },
+    {
+      "name": "Shell/Raised/EntryLeft/Windows",
+      "triangles": 6792,
+      "vertices": 13872
+    },
+    {
+      "name": "Shell/Raised/EntryLeft/Cornice",
+      "triangles": 188,
+      "vertices": 384
+    },
+    {
+      "name": "Shell/Raised/EntryRight",
+      "triangles": 156,
+      "vertices": 200
+    },
+    {
+      "name": "Shell/Raised/EntryRight/Windows",
+      "triangles": 6792,
+      "vertices": 13872
+    },
+    {
+      "name": "Shell/Raised/EntryRight/Cornice",
+      "triangles": 188,
+      "vertices": 384
+    },
+    {
+      "name": "Shell/Raised/EntryRear",
+      "triangles": 12,
+      "vertices": 24
+    },
+    {
+      "name": "Shell/Raised/EntryRear/Cornice",
+      "triangles": 188,
+      "vertices": 384
+    },
+    {
+      "name": "Shell/Raised/HallLeft",
+      "triangles": 156,
+      "vertices": 200
+    },
+    {
+      "name": "Shell/Raised/HallLeft/Windows",
+      "triangles": 6792,
+      "vertices": 13872
+    },
+    {
+      "name": "Shell/Raised/HallLeft/Cornice",
+      "triangles": 188,
+      "vertices": 384
+    },
+    {
+      "name": "Shell/Raised/HallRight",
+      "triangles": 96,
+      "vertices": 128
+    },
+    {
+      "name": "Shell/Raised/HallRight/Windows",
+      "triangles": 3396,
+      "vertices": 6936
+    },
+    {
+      "name": "Shell/Raised/HallRight/Cornice",
+      "triangles": 188,
+      "vertices": 384
+    },
+    {
+      "name": "Shell/Raised/HallRear",
+      "triangles": 12,
+      "vertices": 24
+    },
+    {
+      "name": "Shell/Raised/HallRear/Cornice",
+      "triangles": 188,
+      "vertices": 384
+    },
+    {
+      "name": "Shell/Raised/AuditionWest",
+      "triangles": 156,
+      "vertices": 200
+    },
+    {
+      "name": "Shell/Raised/AuditionWest/Windows",
+      "triangles": 6792,
+      "vertices": 13872
+    },
+    {
+      "name": "Shell/Raised/AuditionWest/Cornice",
+      "triangles": 188,
+      "vertices": 384
+    },
+    {
+      "name": "Shell/Raised/AuditionFront",
+      "triangles": 156,
+      "vertices": 200
+    },
+    {
+      "name": "Shell/Raised/AuditionFront/Windows",
+      "triangles": 6792,
+      "vertices": 13872
+    },
+    {
+      "name": "Shell/Raised/AuditionFront/Cornice",
+      "triangles": 188,
+      "vertices": 384
+    },
+    {
+      "name": "Shell/Raised/WestFront",
+      "triangles": 12,
+      "vertices": 24
+    },
+    {
+      "name": "Shell/Raised/WestFront/Cornice",
+      "triangles": 188,
+      "vertices": 384
+    },
+    {
+      "name": "Shell/Raised/WestRear",
+      "triangles": 12,
+      "vertices": 24
+    },
+    {
+      "name": "Shell/Raised/WestRear/Cornice",
+      "triangles": 188,
+      "vertices": 384
+    },
+    {
+      "name": "Shell/Raised/WestSide",
+      "triangles": 12,
+      "vertices": 24
+    },
+    {
+      "name": "Shell/Raised/WestSide/Cornice",
+      "triangles": 188,
+      "vertices": 384
+    },
+    {
+      "name": "Shell/Raised/WaitingBay",
+      "triangles": 12,
+      "vertices": 24
+    },
+    {
+      "name": "Shell/Raised/WaitingBay/Cornice",
+      "triangles": 188,
+      "vertices": 384
+    },
+    {
+      "name": "Shell/Raised/InterviewLeft",
+      "triangles": 12,
+      "vertices": 24
+    },
+    {
+      "name": "Shell/Raised/InterviewLeft/Cornice",
+      "triangles": 188,
+      "vertices": 384
+    },
+    {
+      "name": "Shell/Front/AddedArticulation",
+      "triangles": 752,
+      "vertices": 1536
+    },
+    {
+      "name": "Shell/Rear/Audition/BlindBays",
+      "triangles": 5076,
+      "vertices": 10368
+    },
+    {
+      "name": "Roofs/Entrance",
+      "triangles": 49080,
+      "vertices": 78598
+    },
+    {
+      "name": "Roofs/Waiting",
+      "triangles": 81880,
+      "vertices": 137065
+    },
+    {
+      "name": "Roofs/Preparation",
+      "triangles": 67669,
+      "vertices": 112134
+    },
+    {
+      "name": "Roofs/Hall",
+      "triangles": 49272,
+      "vertices": 81332
+    },
+    {
+      "name": "Roofs/WestEvaluation",
+      "triangles": 56628,
+      "vertices": 89607
+    },
+    {
+      "name": "Roofs/WestService",
+      "triangles": 55465,
+      "vertices": 87532
+    },
+    {
+      "name": "Roofs/CommonBay",
+      "triangles": 9292,
+      "vertices": 14501
+    },
+    {
+      "name": "Roofs/Interview",
+      "triangles": 46045,
+      "vertices": 75502
+    },
+    {
+      "name": "Roofs/Audition",
+      "triangles": 129468,
+      "vertices": 215044
+    },
+    {
+      "name": "Roofs/Waiting/Flashing",
+      "triangles": 28,
+      "vertices": 54
+    },
+    {
+      "name": "Roofs/Hall/Flashing",
+      "triangles": 348,
+      "vertices": 493
+    },
+    {
+      "name": "Roofs/CommonBay/Flashing",
+      "triangles": 48,
+      "vertices": 82
+    },
+    {
+      "name": "Roofs/Interview/Flashing",
+      "triangles": 229,
+      "vertices": 393
+    },
+    {
+      "name": "Roofs/Waiting/Rainwater",
+      "triangles": 9004,
+      "vertices": 12613
+    },
+    {
+      "name": "Roofs/Preparation/Rainwater",
+      "triangles": 9004,
+      "vertices": 12728
+    },
+    {
+      "name": "Roofs/CommonBay/Rainwater",
+      "triangles": 5472,
+      "vertices": 7825
+    },
+    {
+      "name": "Roofs/WestEvaluation/Rainwater",
+      "triangles": 30,
+      "vertices": 60
+    },
+    {
+      "name": "Roofs/WestService/Rainwater",
+      "triangles": 10156,
+      "vertices": 14648
+    },
+    {
+      "name": "Roofs/Audition/Rainwater",
+      "triangles": 18476,
+      "vertices": 26165
+    },
+    {
+      "name": "Roofs/Interview/Rainwater",
+      "triangles": 5034,
+      "vertices": 7208
+    },
+    {
+      "name": "Roofs/Entrance/Rainwater",
+      "triangles": 2692,
+      "vertices": 3836
+    },
+    {
+      "name": "Structure/RearServiceSteps",
+      "triangles": 376,
+      "vertices": 768
+    },
+    {
+      "name": "Shell/Rear/Service/Light",
+      "triangles": 1490,
+      "vertices": 2832
+    },
+    {
+      "name": "Shell/Rear/Service/Utilities",
+      "triangles": 3124,
+      "vertices": 6242
+    },
+    {
+      "name": "Furnishings/Flexible/ReviewTable",
+      "triangles": 1692,
+      "vertices": 3456
+    },
+    {
+      "name": "Ceilings/Reception",
+      "triangles": 764,
+      "vertices": 1560
+    },
+    {
+      "name": "Ceilings/Waiting",
+      "triangles": 764,
+      "vertices": 1560
+    },
+    {
+      "name": "Ceilings/Preparation",
+      "triangles": 764,
+      "vertices": 1560
+    },
+    {
+      "name": "Ceilings/CommonBay",
+      "triangles": 764,
+      "vertices": 1560
+    },
+    {
+      "name": "Ceilings/Hall",
+      "triangles": 764,
+      "vertices": 1560
+    },
+    {
+      "name": "Ceilings/Interview",
+      "triangles": 764,
+      "vertices": 1560
+    },
+    {
+      "name": "Ceilings/WestWork",
+      "triangles": 764,
+      "vertices": 1560
+    },
+    {
+      "name": "Ceilings/Service",
+      "triangles": 764,
+      "vertices": 1560
+    },
+    {
+      "name": "Ceilings/Audition",
+      "triangles": 764,
+      "vertices": 1560
+    },
+    {
+      "name": "Ceilings/SupportPendant0",
+      "triangles": 560,
+      "vertices": 350
+    },
+    {
+      "name": "Ceilings/SupportPendant1",
+      "triangles": 560,
+      "vertices": 350
+    },
+    {
+      "name": "Ceilings/SupportPendant2",
+      "triangles": 560,
+      "vertices": 350
+    },
+    {
+      "name": "Ceilings/SupportPendant3",
+      "triangles": 560,
+      "vertices": 350
+    },
+    {
+      "name": "Shell/Front/InteriorFinishA",
+      "triangles": 9024,
+      "vertices": 18432
+    },
+    {
+      "name": "Partitions/Washroom/InteriorFinishA",
+      "triangles": 3760,
+      "vertices": 7680
+    },
+    {
+      "name": "Partitions/Washroom/InteriorFinishB",
+      "triangles": 3760,
+      "vertices": 7680
+    },
+    {
+      "name": "Partitions/WashroomSide/InteriorFinishA",
+      "triangles": 3008,
+      "vertices": 6144
+    },
+    {
+      "name": "Partitions/WashroomSide/InteriorFinishB",
+      "triangles": 3008,
+      "vertices": 6144
+    },
+    {
+      "name": "Shell/Left/Waiting/InteriorFinishA",
+      "triangles": 5264,
+      "vertices": 10752
+    },
+    {
+      "name": "Shell/Left/CommonShoulder/InteriorFinishA",
+      "triangles": 2256,
+      "vertices": 4608
+    },
+    {
+      "name": "Shell/Left/CommonBay/InteriorFinishA",
+      "triangles": 2256,
+      "vertices": 4608
+    },
+    {
+      "name": "Shell/Left/Evaluation/InteriorFinishA",
+      "triangles": 3008,
+      "vertices": 6144
+    },
+    {
+      "name": "Shell/Left/Records/InteriorFinishA",
+      "triangles": 3760,
+      "vertices": 7680
+    },
+    {
+      "name": "Shell/Rear/Service/InteriorFinishA",
+      "triangles": 6016,
+      "vertices": 12288
+    },
+    {
+      "name": "Shell/Rear/WestSetback/InteriorFinishA",
+      "triangles": 1880,
+      "vertices": 3840
+    },
+    {
+      "name": "Shell/Rear/Interview/InteriorFinishA",
+      "triangles": 3760,
+      "vertices": 7680
+    },
+    {
+      "name": "Shell/Rear/AuditionReturn/InteriorFinishA",
+      "triangles": 2256,
+      "vertices": 4608
+    },
+    {
+      "name": "Shell/Rear/Audition/InteriorFinishA",
+      "triangles": 6016,
+      "vertices": 12288
+    },
+    {
+      "name": "Shell/Right/Audition/InteriorFinishA",
+      "triangles": 7144,
+      "vertices": 14592
+    },
+    {
+      "name": "Shell/Right/AuditionShoulder/InteriorFinishA",
+      "triangles": 2256,
+      "vertices": 4608
+    },
+    {
+      "name": "Shell/Right/Preparation/InteriorFinishA",
+      "triangles": 5264,
+      "vertices": 10752
+    },
+    {
+      "name": "Partitions/InterviewFront/InteriorFinishA",
+      "triangles": 4136,
+      "vertices": 8448
+    },
+    {
+      "name": "Partitions/InterviewFront/InteriorFinishB",
+      "triangles": 4136,
+      "vertices": 8448
+    },
+    {
+      "name": "Partitions/AuditionFront/InteriorFinishA",
+      "triangles": 4888,
+      "vertices": 9984
+    },
+    {
+      "name": "Partitions/AuditionFront/InteriorFinishB",
+      "triangles": 4888,
+      "vertices": 9984
+    },
+    {
+      "name": "Partitions/AuditionWest/InteriorFinishA",
+      "triangles": 6016,
+      "vertices": 12288
+    },
+    {
+      "name": "Partitions/AuditionWest/InteriorFinishB",
+      "triangles": 6016,
+      "vertices": 12288
+    },
+    {
+      "name": "Partitions/WestSpine/InteriorFinishA",
+      "triangles": 5264,
+      "vertices": 10752
+    },
+    {
+      "name": "Partitions/WestSpine/InteriorFinishB",
+      "triangles": 5264,
+      "vertices": 10752
+    },
+    {
+      "name": "Partitions/WestRoomFront/InteriorFinishA",
+      "triangles": 6768,
+      "vertices": 13824
+    },
+    {
+      "name": "Partitions/WestRoomFront/InteriorFinishB",
+      "triangles": 6768,
+      "vertices": 13824
+    },
+    {
+      "name": "Partitions/StaffDivider/InteriorFinishA",
+      "triangles": 3008,
+      "vertices": 6144
+    },
+    {
+      "name": "Partitions/StaffDivider/InteriorFinishB",
+      "triangles": 3008,
+      "vertices": 6144
+    },
+    {
+      "name": "Partitions/ServiceFront/InteriorFinishA",
+      "triangles": 7144,
+      "vertices": 14592
+    },
+    {
+      "name": "Partitions/ServiceFront/InteriorFinishB",
+      "triangles": 7144,
+      "vertices": 14592
+    },
+    {
+      "name": "Partitions/RecordsFront/InteriorFinishA",
+      "triangles": 4136,
+      "vertices": 8448
+    },
+    {
+      "name": "Partitions/RecordsFront/InteriorFinishB",
+      "triangles": 4136,
+      "vertices": 8448
+    },
+    {
+      "name": "Partitions/StoreFront/InteriorFinishA",
+      "triangles": 3384,
+      "vertices": 6912
+    },
+    {
+      "name": "Partitions/StoreFront/InteriorFinishB",
+      "triangles": 3384,
+      "vertices": 6912
+    },
+    {
+      "name": "Partitions/RecordsPassage/InteriorFinishA",
+      "triangles": 2632,
+      "vertices": 5376
+    },
+    {
+      "name": "Partitions/RecordsPassage/InteriorFinishB",
+      "triangles": 2632,
+      "vertices": 5376
+    },
+    {
+      "name": "Partitions/StorePassage/InteriorFinishA",
+      "triangles": 2632,
+      "vertices": 5376
+    },
+    {
+      "name": "Partitions/StorePassage/InteriorFinishB",
+      "triangles": 2632,
+      "vertices": 5376
+    },
+    {
+      "name": "Shell/Rear/Audition/CurtainSupports",
+      "triangles": 940,
+      "vertices": 1920
+    },
+    {
+      "name": "Doors/Cubicle0",
+      "triangles": 3320,
+      "vertices": 6200
+    },
+    {
+      "name": "Doors/Cubicle1",
+      "triangles": 3320,
+      "vertices": 6200
+    },
+    {
+      "name": "Roofs/WestEvaluation/Flashing",
+      "triangles": 524,
+      "vertices": 906
+    },
+    {
+      "name": "Roofs/Entrance/Flashing",
+      "triangles": 436,
+      "vertices": 732
+    },
+    {
+      "name": "Roofs/Audition/Flashing",
+      "triangles": 328,
+      "vertices": 494
+    },
+    {
+      "name": "Shell/Raised/HallRevealFinish",
+      "triangles": 1562,
+      "vertices": 2892
+    },
+    {
+      "name": "Roofs/Hall/Rainwater",
+      "triangles": 12,
+      "vertices": 24
+    }
+  ],
+  "qa": {
+    "roof_faces_clipped": 11581,
+    "roof_room_pairs": [
+      [
+        "Roofs/CommonBay",
+        "WestWork"
+      ],
+      [
+        "Roofs/Hall",
+        "Audition"
+      ],
+      [
+        "Roofs/Hall",
+        "Reception"
+      ],
+      [
+        "Roofs/Hall/Flashing",
+        "Reception"
+      ],
+      [
+        "Roofs/Interview",
+        "Audition"
+      ],
+      [
+        "Roofs/Interview",
+        "Hall"
+      ],
+      [
+        "Roofs/Preparation",
+        "Audition"
+      ],
+      [
+        "Roofs/Preparation",
+        "Reception"
+      ],
+      [
+        "Roofs/Preparation/Flashing",
+        "Reception"
+      ],
+      [
+        "Roofs/Waiting",
+        "Reception"
+      ],
+      [
+        "Roofs/Waiting",
+        "WestWork"
+      ],
+      [
+        "Roofs/Waiting/Flashing",
+        "Reception"
+      ],
+      [
+        "Roofs/WestEvaluation",
+        "Hall"
+      ],
+      [
+        "Roofs/WestService",
+        "Interview"
+      ],
+      [
+        "Roofs/WestService",
+        "WestWork"
+      ]
+    ],
+    "trim_spans": [
+      {
+        "wall": "Shell/Front",
+        "side": 1,
+        "interval": [
+          0.08,
+          7.320000144339895
+        ],
+        "door_exclusions": []
+      },
+      {
+        "wall": "Shell/Front",
+        "side": 1,
+        "interval": [
+          0.08,
+          7.320000144339895
+        ],
+        "door_exclusions": []
+      },
+      {
+        "wall": "Partitions/Washroom",
+        "side": 1,
+        "interval": [
+          0.08,
+          0.37
+        ],
+        "door_exclusions": [
+          [
+            0.37,
+            1.73
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/Washroom",
+        "side": 1,
+        "interval": [
+          1.73,
+          3.8699997537347257
+        ],
+        "door_exclusions": [
+          [
+            0.37,
+            1.73
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/Washroom",
+        "side": -1,
+        "interval": [
+          0.08,
+          0.37
+        ],
+        "door_exclusions": [
+          [
+            0.37,
+            1.73
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/Washroom",
+        "side": -1,
+        "interval": [
+          1.73,
+          3.8699997537347257
+        ],
+        "door_exclusions": [
+          [
+            0.37,
+            1.73
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/WashroomSide",
+        "side": 1,
+        "interval": [
+          0.08,
+          4.419999576144728
+        ],
+        "door_exclusions": []
+      },
+      {
+        "wall": "Partitions/WashroomSide",
+        "side": -1,
+        "interval": [
+          0.08,
+          4.419999576144728
+        ],
+        "door_exclusions": []
+      },
+      {
+        "wall": "Shell/Left/Waiting",
+        "side": 1,
+        "interval": [
+          0.08,
+          9.72000004671058
+        ],
+        "door_exclusions": []
+      },
+      {
+        "wall": "Shell/Left/CommonShoulder",
+        "side": 1,
+        "interval": [
+          0.08,
+          2.92
+        ],
+        "door_exclusions": []
+      },
+      {
+        "wall": "Shell/Left/CommonBay",
+        "side": 1,
+        "interval": [
+          0.08,
+          2.21999999170718
+        ],
+        "door_exclusions": []
+      },
+      {
+        "wall": "Shell/Left/Evaluation",
+        "side": 1,
+        "interval": [
+          0.08,
+          4.720000095367431
+        ],
+        "door_exclusions": []
+      },
+      {
+        "wall": "Shell/Left/Records",
+        "side": 1,
+        "interval": [
+          0.08,
+          5.65999978254896
+        ],
+        "door_exclusions": []
+      },
+      {
+        "wall": "Shell/Rear/Service",
+        "side": 1,
+        "interval": [
+          0.08,
+          3.7449999999999997
+        ],
+        "door_exclusions": [
+          [
+            3.7449999999999997,
+            5.454999999999999
+          ]
+        ]
+      },
+      {
+        "wall": "Shell/Rear/Service",
+        "side": 1,
+        "interval": [
+          5.454999999999999,
+          10.75999999887389
+        ],
+        "door_exclusions": [
+          [
+            3.7449999999999997,
+            5.454999999999999
+          ]
+        ]
+      },
+      {
+        "wall": "Shell/Rear/WestSetback",
+        "side": 1,
+        "interval": [
+          0.08,
+          1.7600001540391277
+        ],
+        "door_exclusions": []
+      },
+      {
+        "wall": "Shell/Rear/Interview",
+        "side": 1,
+        "interval": [
+          0.08,
+          5.92
+        ],
+        "door_exclusions": []
+      },
+      {
+        "wall": "Shell/Rear/AuditionReturn",
+        "side": 1,
+        "interval": [
+          0.08,
+          2.760000069577928
+        ],
+        "door_exclusions": []
+      },
+      {
+        "wall": "Shell/Rear/Audition",
+        "side": 1,
+        "interval": [
+          0.08,
+          10.75999999887389
+        ],
+        "door_exclusions": []
+      },
+      {
+        "wall": "Shell/Right/Audition",
+        "side": 1,
+        "interval": [
+          0.08,
+          13.76000030782181
+        ],
+        "door_exclusions": []
+      },
+      {
+        "wall": "Shell/Right/AuditionShoulder",
+        "side": 1,
+        "interval": [
+          0.08,
+          2.92
+        ],
+        "door_exclusions": []
+      },
+      {
+        "wall": "Shell/Right/Preparation",
+        "side": 1,
+        "interval": [
+          0.08,
+          9.72000004671058
+        ],
+        "door_exclusions": []
+      },
+      {
+        "wall": "Partitions/InterviewFront",
+        "side": 1,
+        "interval": [
+          0.08,
+          1.8449999999999998
+        ],
+        "door_exclusions": [
+          [
+            1.8449999999999998,
+            3.455
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/InterviewFront",
+        "side": 1,
+        "interval": [
+          3.455,
+          5.92
+        ],
+        "door_exclusions": [
+          [
+            1.8449999999999998,
+            3.455
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/InterviewFront",
+        "side": -1,
+        "interval": [
+          0.08,
+          1.8449999999999998
+        ],
+        "door_exclusions": [
+          [
+            1.8449999999999998,
+            3.455
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/InterviewFront",
+        "side": -1,
+        "interval": [
+          3.455,
+          5.92
+        ],
+        "door_exclusions": [
+          [
+            1.8449999999999998,
+            3.455
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/AuditionFront",
+        "side": 1,
+        "interval": [
+          0.08,
+          1.045
+        ],
+        "door_exclusions": [
+          [
+            1.045,
+            2.855
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/AuditionFront",
+        "side": 1,
+        "interval": [
+          2.855,
+          7.760000183339019
+        ],
+        "door_exclusions": [
+          [
+            1.045,
+            2.855
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/AuditionFront",
+        "side": -1,
+        "interval": [
+          0.08,
+          1.045
+        ],
+        "door_exclusions": [
+          [
+            1.045,
+            2.855
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/AuditionFront",
+        "side": -1,
+        "interval": [
+          2.855,
+          7.760000183339019
+        ],
+        "door_exclusions": [
+          [
+            1.045,
+            2.855
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/AuditionWest",
+        "side": 1,
+        "interval": [
+          0.08,
+          10.92
+        ],
+        "door_exclusions": []
+      },
+      {
+        "wall": "Partitions/AuditionWest",
+        "side": -1,
+        "interval": [
+          0.08,
+          10.92
+        ],
+        "door_exclusions": []
+      },
+      {
+        "wall": "Partitions/WestSpine",
+        "side": 1,
+        "interval": [
+          0.08,
+          1.77
+        ],
+        "door_exclusions": [
+          [
+            1.77,
+            3.23
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/WestSpine",
+        "side": 1,
+        "interval": [
+          3.23,
+          8.619999701839749
+        ],
+        "door_exclusions": [
+          [
+            1.77,
+            3.23
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/WestSpine",
+        "side": -1,
+        "interval": [
+          0.08,
+          1.77
+        ],
+        "door_exclusions": [
+          [
+            1.77,
+            3.23
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/WestSpine",
+        "side": -1,
+        "interval": [
+          3.23,
+          8.619999701839749
+        ],
+        "door_exclusions": [
+          [
+            1.77,
+            3.23
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/WestRoomFront",
+        "side": 1,
+        "interval": [
+          0.08,
+          3.8950000000000005
+        ],
+        "door_exclusions": [
+          [
+            3.8950000000000005,
+            5.505
+          ],
+          [
+            7.7700000000000005,
+            9.23
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/WestRoomFront",
+        "side": 1,
+        "interval": [
+          5.505,
+          7.7700000000000005
+        ],
+        "door_exclusions": [
+          [
+            3.8950000000000005,
+            5.505
+          ],
+          [
+            7.7700000000000005,
+            9.23
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/WestRoomFront",
+        "side": 1,
+        "interval": [
+          9.23,
+          10.92
+        ],
+        "door_exclusions": [
+          [
+            3.8950000000000005,
+            5.505
+          ],
+          [
+            7.7700000000000005,
+            9.23
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/WestRoomFront",
+        "side": -1,
+        "interval": [
+          0.08,
+          3.8950000000000005
+        ],
+        "door_exclusions": [
+          [
+            3.8950000000000005,
+            5.505
+          ],
+          [
+            7.7700000000000005,
+            9.23
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/WestRoomFront",
+        "side": -1,
+        "interval": [
+          5.505,
+          7.7700000000000005
+        ],
+        "door_exclusions": [
+          [
+            3.8950000000000005,
+            5.505
+          ],
+          [
+            7.7700000000000005,
+            9.23
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/WestRoomFront",
+        "side": -1,
+        "interval": [
+          9.23,
+          10.92
+        ],
+        "door_exclusions": [
+          [
+            3.8950000000000005,
+            5.505
+          ],
+          [
+            7.7700000000000005,
+            9.23
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/StaffDivider",
+        "side": 1,
+        "interval": [
+          0.08,
+          4.720000095367431
+        ],
+        "door_exclusions": []
+      },
+      {
+        "wall": "Partitions/StaffDivider",
+        "side": -1,
+        "interval": [
+          0.08,
+          4.720000095367431
+        ],
+        "door_exclusions": []
+      },
+      {
+        "wall": "Partitions/ServiceFront",
+        "side": 1,
+        "interval": [
+          0.08,
+          2.295
+        ],
+        "door_exclusions": [
+          [
+            2.295,
+            3.705
+          ],
+          [
+            8.095,
+            9.505
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/ServiceFront",
+        "side": 1,
+        "interval": [
+          3.705,
+          8.095
+        ],
+        "door_exclusions": [
+          [
+            2.295,
+            3.705
+          ],
+          [
+            8.095,
+            9.505
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/ServiceFront",
+        "side": 1,
+        "interval": [
+          9.505,
+          10.92
+        ],
+        "door_exclusions": [
+          [
+            2.295,
+            3.705
+          ],
+          [
+            8.095,
+            9.505
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/ServiceFront",
+        "side": -1,
+        "interval": [
+          0.08,
+          2.295
+        ],
+        "door_exclusions": [
+          [
+            2.295,
+            3.705
+          ],
+          [
+            8.095,
+            9.505
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/ServiceFront",
+        "side": -1,
+        "interval": [
+          3.705,
+          8.095
+        ],
+        "door_exclusions": [
+          [
+            2.295,
+            3.705
+          ],
+          [
+            8.095,
+            9.505
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/ServiceFront",
+        "side": -1,
+        "interval": [
+          9.505,
+          10.92
+        ],
+        "door_exclusions": [
+          [
+            2.295,
+            3.705
+          ],
+          [
+            8.095,
+            9.505
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/RecordsFront",
+        "side": 1,
+        "interval": [
+          0.08,
+          3.6449999999999996
+        ],
+        "door_exclusions": [
+          [
+            3.6449999999999996,
+            5.055
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/RecordsFront",
+        "side": 1,
+        "interval": [
+          5.055,
+          5.42
+        ],
+        "door_exclusions": [
+          [
+            3.6449999999999996,
+            5.055
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/RecordsFront",
+        "side": -1,
+        "interval": [
+          0.08,
+          3.6449999999999996
+        ],
+        "door_exclusions": [
+          [
+            3.6449999999999996,
+            5.055
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/RecordsFront",
+        "side": -1,
+        "interval": [
+          5.055,
+          5.42
+        ],
+        "door_exclusions": [
+          [
+            3.6449999999999996,
+            5.055
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/StoreFront",
+        "side": 1,
+        "interval": [
+          0.08,
+          0.39500000000000013
+        ],
+        "door_exclusions": [
+          [
+            0.39500000000000013,
+            1.8050000000000002
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/StoreFront",
+        "side": 1,
+        "interval": [
+          1.8050000000000002,
+          3.619999814420128
+        ],
+        "door_exclusions": [
+          [
+            0.39500000000000013,
+            1.8050000000000002
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/StoreFront",
+        "side": -1,
+        "interval": [
+          0.08,
+          0.39500000000000013
+        ],
+        "door_exclusions": [
+          [
+            0.39500000000000013,
+            1.8050000000000002
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/StoreFront",
+        "side": -1,
+        "interval": [
+          1.8050000000000002,
+          3.619999814420128
+        ],
+        "door_exclusions": [
+          [
+            0.39500000000000013,
+            1.8050000000000002
+          ]
+        ]
+      },
+      {
+        "wall": "Partitions/RecordsPassage",
+        "side": 1,
+        "interval": [
+          0.08,
+          3.7600000911951055
+        ],
+        "door_exclusions": []
+      },
+      {
+        "wall": "Partitions/RecordsPassage",
+        "side": -1,
+        "interval": [
+          0.08,
+          3.7600000911951055
+        ],
+        "door_exclusions": []
+      },
+      {
+        "wall": "Partitions/StorePassage",
+        "side": 1,
+        "interval": [
+          0.08,
+          3.7600000911951055
+        ],
+        "door_exclusions": []
+      },
+      {
+        "wall": "Partitions/StorePassage",
+        "side": -1,
+        "interval": [
+          0.08,
+          3.7600000911951055
+        ],
+        "door_exclusions": []
+      }
+    ],
+    "armchairs_rebuilt": 14,
+    "runner": "removed",
+    "backdrop_width": 5.65,
+    "platform": [
+      7.5,
+      3.0
+    ],
+    "macro_architecture": "A2 retained",
+    "a31": {
+      "pendants": [
+        {
+          "group": "Ceilings/Pendant00",
+          "ceiling": 5.71,
+          "rose_top": 5.710000038146973,
+          "stem_top": 5.6579996185302734
+        },
+        {
+          "group": "Ceilings/Pendant01",
+          "ceiling": 5.31,
+          "rose_top": 5.309999942779541,
+          "stem_top": 5.258
+        },
+        {
+          "group": "Ceilings/Pendant02",
+          "ceiling": 4.06,
+          "rose_top": 4.059999942779541,
+          "stem_top": 4.007999761581421
+        },
+        {
+          "group": "Ceilings/Pendant03",
+          "ceiling": 4.06,
+          "rose_top": 4.059999942779541,
+          "stem_top": 4.007999761581421
+        },
+        {
+          "group": "Ceilings/Pendant04",
+          "ceiling": 4.06,
+          "rose_top": 4.059999942779541,
+          "stem_top": 4.007999761581421
+        },
+        {
+          "group": "Ceilings/Pendant05",
+          "ceiling": 4.38,
+          "rose_top": 4.380000114440918,
+          "stem_top": 4.327999694824219
+        },
+        {
+          "group": "Ceilings/Pendant06",
+          "ceiling": 5.39,
+          "rose_top": 5.389999866485596,
+          "stem_top": 5.3379994468688965
+        },
+        {
+          "group": "Ceilings/Pendant07",
+          "ceiling": 4.58,
+          "rose_top": 4.579999923706055,
+          "stem_top": 4.527999980926514
+        },
+        {
+          "group": "Ceilings/SupportPendant0",
+          "ceiling": 4.58,
+          "rose_top": 4.579999923706055,
+          "stem_top": 4.537999732971191
+        },
+        {
+          "group": "Ceilings/SupportPendant1",
+          "ceiling": 3.9799999999999995,
+          "rose_top": 3.9800000190734863,
+          "stem_top": 3.937999828338623
+        },
+        {
+          "group": "Ceilings/SupportPendant2",
+          "ceiling": 3.9799999999999995,
+          "rose_top": 3.9800000190734863,
+          "stem_top": 3.937999828338623
+        },
+        {
+          "group": "Ceilings/SupportPendant3",
+          "ceiling": 3.9799999999999995,
+          "rose_top": 3.9800000190734863,
+          "stem_top": 3.937999828338623
+        }
+      ],
+      "roof_routes": [
+        {
+          "roof": "Entrance",
+          "destination": "concealed entrance cornice to wing collection",
+          "type": "boxed fascia return; shared perimeter outlet"
+        },
+        {
+          "roof": "Entrance",
+          "destination": "perimeter rainwater via concealed box collection",
+          "type": "recessed internal liner; no exposed cascade fittings"
+        },
+        {
+          "roof": "Entrance",
+          "destination": "perimeter rainwater via concealed box collection",
+          "type": "recessed internal liner; no exposed cascade fittings"
+        },
+        {
+          "roof": "Entrance",
+          "destination": "perimeter rainwater via concealed box collection",
+          "type": "recessed internal liner; no exposed cascade fittings"
+        },
+        {
+          "roof": "Entrance",
+          "destination": "perimeter rainwater via concealed box collection",
+          "type": "recessed internal liner; no exposed cascade fittings"
+        },
+        {
+          "roof": "Waiting",
+          "destination": "west side outlet",
+          "type": "boxed fascia return; shared perimeter outlet"
+        },
+        {
+          "roof": "Waiting",
+          "destination": "perimeter rainwater via concealed box collection",
+          "type": "recessed internal liner; no exposed cascade fittings"
+        },
+        {
+          "roof": "Waiting",
+          "destination": "perimeter rainwater via concealed box collection",
+          "type": "recessed internal liner; no exposed cascade fittings"
+        },
+        {
+          "roof": "Waiting",
+          "destination": "ground gully",
+          "outlet": [
+            -11.440000534057617,
+            -8.669642448425293
+          ],
+          "type": "wall-supported downpipe with open shoe"
+        },
+        {
+          "roof": "Preparation",
+          "destination": "perimeter rainwater via concealed box collection",
+          "type": "recessed internal liner; no exposed cascade fittings"
+        },
+        {
+          "roof": "Preparation",
+          "destination": "east side outlet",
+          "type": "boxed fascia return; shared perimeter outlet"
+        },
+        {
+          "roof": "Preparation",
+          "destination": "ground gully",
+          "outlet": [
+            11.440000534057617,
+            -0.22684946656227112
+          ],
+          "type": "wall-supported downpipe with open shoe"
+        },
+        {
+          "roof": "Preparation",
+          "destination": "perimeter rainwater via concealed box collection",
+          "type": "recessed internal liner; no exposed cascade fittings"
+        },
+        {
+          "roof": "Hall",
+          "destination": "perimeter rainwater via concealed box collection",
+          "type": "recessed internal liner; no exposed cascade fittings"
+        },
+        {
+          "roof": "Hall",
+          "destination": "perimeter rainwater via concealed box collection",
+          "type": "recessed internal liner; no exposed cascade fittings"
+        },
+        {
+          "roof": "WestEvaluation",
+          "destination": "perimeter rainwater via concealed box collection",
+          "type": "recessed internal liner; no exposed cascade fittings"
+        },
+        {
+          "roof": "WestEvaluation",
+          "destination": "perimeter rainwater via concealed box collection",
+          "type": "recessed internal liner; no exposed cascade fittings"
+        },
+        {
+          "roof": "WestEvaluation",
+          "destination": "perimeter rainwater via concealed box collection",
+          "type": "recessed internal liner; no exposed cascade fittings"
+        },
+        {
+          "roof": "WestEvaluation",
+          "destination": "perimeter rainwater via concealed box collection",
+          "type": "recessed internal liner; no exposed cascade fittings"
+        },
+        {
+          "roof": "WestEvaluation",
+          "destination": "perimeter rainwater via concealed box collection",
+          "type": "recessed internal liner; no exposed cascade fittings"
+        },
+        {
+          "roof": "WestService",
+          "destination": "perimeter rainwater via concealed box collection",
+          "type": "recessed internal liner; no exposed cascade fittings"
+        },
+        {
+          "roof": "WestService",
+          "destination": "rear outlet",
+          "type": "boxed fascia return; shared perimeter outlet"
+        },
+        {
+          "roof": "WestService",
+          "destination": "ground gully",
+          "outlet": [
+            -13.703999519348145,
+            14.539999961853027
+          ],
+          "type": "wall-supported downpipe with open shoe"
+        },
+        {
+          "roof": "WestService",
+          "destination": "rear outlet",
+          "type": "boxed fascia return; shared perimeter outlet"
+        },
+        {
+          "roof": "WestService",
+          "destination": "perimeter rainwater via concealed box collection",
+          "type": "recessed internal liner; no exposed cascade fittings"
+        },
+        {
+          "roof": "CommonBay",
+          "destination": "west side outlet",
+          "type": "boxed fascia return; shared perimeter outlet"
+        },
+        {
+          "roof": "CommonBay",
+          "destination": "perimeter rainwater via concealed box collection",
+          "type": "recessed internal liner; no exposed cascade fittings"
+        },
+        {
+          "roof": "CommonBay",
+          "destination": "perimeter rainwater via concealed box collection",
+          "type": "recessed internal liner; no exposed cascade fittings"
+        },
+        {
+          "roof": "CommonBay",
+          "destination": "ground gully",
+          "outlet": [
+            -14.539999961853027,
+            0.7309091091156006
+          ],
+          "type": "wall-supported downpipe with open shoe"
+        },
+        {
+          "roof": "Interview",
+          "destination": "perimeter rainwater via concealed box collection",
+          "type": "recessed internal liner; no exposed cascade fittings"
+        },
+        {
+          "roof": "Interview",
+          "destination": "ground gully",
+          "outlet": [
+            -0.5129562616348267,
+            12.539999961853027
+          ],
+          "type": "wall-supported downpipe with open shoe"
+        },
+        {
+          "roof": "Interview",
+          "destination": "perimeter rainwater via concealed box collection",
+          "type": "recessed internal liner; no exposed cascade fittings"
+        },
+        {
+          "roof": "Interview",
+          "destination": "perimeter rainwater via concealed box collection",
+          "type": "recessed internal liner; no exposed cascade fittings"
+        },
+        {
+          "roof": "Audition",
+          "destination": "perimeter rainwater via concealed box collection",
+          "type": "recessed internal liner; no exposed cascade fittings"
+        },
+        {
+          "roof": "Audition",
+          "destination": "east and rear outlets",
+          "type": "boxed fascia return; shared perimeter outlet"
+        },
+        {
+          "roof": "Audition",
+          "destination": "ground gully",
+          "outlet": [
+            14.539999961853027,
+            14.51200008392334
+          ],
+          "type": "wall-supported downpipe with open shoe"
+        },
+        {
+          "roof": "Audition",
+          "destination": "ground gully",
+          "outlet": [
+            3.308000087738037,
+            15.539999961853027
+          ],
+          "type": "wall-supported downpipe with open shoe"
+        },
+        {
+          "roof": "Audition",
+          "destination": "east and rear outlets",
+          "type": "boxed fascia return; shared perimeter outlet"
+        },
+        {
+          "roof": "Audition",
+          "destination": "perimeter rainwater via concealed box collection",
+          "type": "recessed internal liner; no exposed cascade fittings"
+        }
+      ],
+      "valley_segments": 5,
+      "junction_faces_removed": 27384,
+      "scope": "six known defects only"
+    },
+    "a32": {
+      "scope": "six manual corrections",
+      "hall_terminal_faces_removed": 138,
+      "reception_knee_width": 1.54,
+      "cubicle_leaf_thickness": 0.032,
+      "cubicle_bottom_clearance": 0.21,
+      "cubicle_top_clearance": 0.18,
+      "privacy_side": "occupant negative Y",
+      "scoring": "upper stucco scoring row removed; lower stone-base joints retained"
+    },
+    "a32_drapery_canopy": {
+      "curtain_wings": 2,
+      "continuous_fabric": true,
+      "service_canopy_removed": true,
+      "roof_massing_unchanged": true
+    }
+  },
+  "openings": [
+    {
+      "group": "Shell/Front/Windows",
+      "center": [
+        -8.4,
+        -8.83
+      ],
+      "z": 1.26,
+      "w": 1.68,
+      "h": 2.25,
+      "angle": 0.0,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Front/Windows",
+      "center": [
+        8.4,
+        -8.83
+      ],
+      "z": 1.26,
+      "w": 1.68,
+      "h": 2.25,
+      "angle": 0.0,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Left/Waiting/Windows",
+      "center": [
+        -10.86500072479248,
+        -2.0
+      ],
+      "z": 1.3,
+      "w": 1.56,
+      "h": 2.25,
+      "angle": -1.5707963267948966,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Left/Waiting/Windows",
+      "center": [
+        -10.86500072479248,
+        -6.099999904632568
+      ],
+      "z": 1.3,
+      "w": 1.56,
+      "h": 2.25,
+      "angle": -1.5707963267948966,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Left/CommonShoulder/Windows",
+      "center": [
+        -12.34000015258789,
+        0.9750000238418579
+      ],
+      "z": 1.4,
+      "w": 1.35,
+      "h": 1.9,
+      "angle": 0.0,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Left/CommonBay/Windows",
+      "center": [
+        -13.864999771118164,
+        2.1500000953674316
+      ],
+      "z": 1.4,
+      "w": 1.25,
+      "h": 1.9,
+      "angle": -1.5707963267948966,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Left/Evaluation/Windows",
+      "center": [
+        -13.864999771118164,
+        6.700000286102295
+      ],
+      "z": 1.35,
+      "w": 1.5,
+      "h": 2.35,
+      "angle": -1.5707963267948966,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Left/Evaluation/Windows",
+      "center": [
+        -13.86500072479248,
+        4.700000286102295
+      ],
+      "z": 1.35,
+      "w": 1.5,
+      "h": 2.35,
+      "angle": -1.5707963267948966,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Left/Records/Windows",
+      "center": [
+        -13.864999771118164,
+        12.390000343322754
+      ],
+      "z": 1.65,
+      "w": 1.4,
+      "h": 1.9,
+      "angle": -1.5707963267948966,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Left/Records/Windows",
+      "center": [
+        -13.86500072479248,
+        9.239999771118164
+      ],
+      "z": 1.65,
+      "w": 1.1,
+      "h": 1.9,
+      "angle": -1.5707963267948966,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Rear/Service/Windows",
+      "center": [
+        -4.449999809265137,
+        13.86500072479248
+      ],
+      "z": 1.55,
+      "w": 1.4,
+      "h": 2.0,
+      "angle": 3.141592653589793,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Rear/Service/Windows",
+      "center": [
+        -10.0,
+        13.86500072479248
+      ],
+      "z": 1.55,
+      "w": 1.4,
+      "h": 2.0,
+      "angle": 3.141592653589793,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Rear/Service/Windows",
+      "center": [
+        -12.350000381469727,
+        13.86500072479248
+      ],
+      "z": 1.55,
+      "w": 1.4,
+      "h": 2.0,
+      "angle": 3.141592653589793,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Rear/Interview/Windows",
+      "center": [
+        1.649999976158142,
+        11.86500072479248
+      ],
+      "z": 1.4,
+      "w": 1.5,
+      "h": 2.25,
+      "angle": 3.141592653589793,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Rear/Interview/Windows",
+      "center": [
+        -1.5500001907348633,
+        11.86500072479248
+      ],
+      "z": 1.4,
+      "w": 1.5,
+      "h": 2.25,
+      "angle": 3.141592653589793,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Rear/AuditionReturn/Windows",
+      "center": [
+        2.9749999046325684,
+        13.390000343322754
+      ],
+      "z": 4.5,
+      "w": 1.2,
+      "h": 0.75,
+      "angle": -1.5707963267948966,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Rear/Audition/Windows",
+      "center": [
+        12.440000534057617,
+        14.86500072479248
+      ],
+      "z": 4.55,
+      "w": 1.25,
+      "h": 0.75,
+      "angle": 3.141592653589793,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Rear/Audition/Windows",
+      "center": [
+        4.489999771118164,
+        14.86500072479248
+      ],
+      "z": 4.55,
+      "w": 1.25,
+      "h": 0.75,
+      "angle": 3.141592653589793,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Right/Audition/Windows",
+      "center": [
+        13.86500072479248,
+        3.0
+      ],
+      "z": 1.5,
+      "w": 1.65,
+      "h": 2.25,
+      "angle": 1.5707963267948966,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Right/Audition/Windows",
+      "center": [
+        13.86500072479248,
+        7.599999904632568
+      ],
+      "z": 1.5,
+      "w": 1.65,
+      "h": 2.25,
+      "angle": 1.5707963267948966,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Right/Audition/Windows",
+      "center": [
+        13.86500072479248,
+        11.699999809265137
+      ],
+      "z": 1.5,
+      "w": 1.65,
+      "h": 2.25,
+      "angle": 1.5707963267948966,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Right/Audition/Windows",
+      "center": [
+        13.86500072479248,
+        3.0
+      ],
+      "z": 4.5,
+      "w": 1.65,
+      "h": 0.75,
+      "angle": 1.5707963267948966,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Right/Audition/Windows",
+      "center": [
+        13.86500072479248,
+        7.599999904632568
+      ],
+      "z": 4.5,
+      "w": 1.65,
+      "h": 0.75,
+      "angle": 1.5707963267948966,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Right/Audition/Windows",
+      "center": [
+        13.86500072479248,
+        11.699999809265137
+      ],
+      "z": 4.5,
+      "w": 1.65,
+      "h": 0.75,
+      "angle": 1.5707963267948966,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Right/AuditionShoulder/Windows",
+      "center": [
+        12.34000015258789,
+        0.9750000238418579
+      ],
+      "z": 1.5,
+      "w": 1.35,
+      "h": 2.25,
+      "angle": 0.0,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Right/AuditionShoulder/Windows",
+      "center": [
+        12.34000015258789,
+        0.9750000238418579
+      ],
+      "z": 4.5,
+      "w": 1.35,
+      "h": 0.75,
+      "angle": 0.0,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Right/Preparation/Windows",
+      "center": [
+        10.86500072479248,
+        -6.800000190734863
+      ],
+      "z": 1.65,
+      "w": 1.4,
+      "h": 1.9,
+      "angle": 1.5707963267948966,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Right/Preparation/Windows",
+      "center": [
+        10.86500072479248,
+        -2.0
+      ],
+      "z": 1.3,
+      "w": 1.65,
+      "h": 2.25,
+      "angle": 1.5707963267948966,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Raised/EntryLeft/Windows",
+      "center": [
+        -3.515000104904175,
+        -3.8499999046325684
+      ],
+      "z": 5.05,
+      "w": 1.4,
+      "h": 0.5,
+      "angle": -1.5707963267948966,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Raised/EntryLeft/Windows",
+      "center": [
+        -3.515000104904175,
+        -6.849999904632568
+      ],
+      "z": 5.05,
+      "w": 1.4,
+      "h": 0.5,
+      "angle": -1.5707963267948966,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Raised/EntryRight/Windows",
+      "center": [
+        3.515000104904175,
+        -7.200000286102295
+      ],
+      "z": 5.05,
+      "w": 1.4,
+      "h": 0.5,
+      "angle": 1.5707963267948966,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Raised/EntryRight/Windows",
+      "center": [
+        3.515000343322754,
+        -4.200000286102295
+      ],
+      "z": 5.05,
+      "w": 1.4,
+      "h": 0.5,
+      "angle": 1.5707963267948966,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Raised/HallLeft/Windows",
+      "center": [
+        -3.015000104904175,
+        1.0
+      ],
+      "z": 4.85,
+      "w": 1.5,
+      "h": 0.42,
+      "angle": -1.5707963267948966,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Raised/HallLeft/Windows",
+      "center": [
+        -3.015000343322754,
+        -1.0999999046325684
+      ],
+      "z": 4.85,
+      "w": 1.5,
+      "h": 0.42,
+      "angle": -1.5707963267948966,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Raised/HallRight/Windows",
+      "center": [
+        3.015000104904175,
+        -1.2000000476837158
+      ],
+      "z": 4.85,
+      "w": 1.55,
+      "h": 0.42,
+      "angle": 1.5707963267948966,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Raised/AuditionWest/Windows",
+      "center": [
+        2.984999895095825,
+        9.0
+      ],
+      "z": 4.65,
+      "w": 1.6,
+      "h": 0.6,
+      "angle": -1.5707963267948966,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Raised/AuditionWest/Windows",
+      "center": [
+        2.984999656677246,
+        4.300000190734863
+      ],
+      "z": 4.65,
+      "w": 1.6,
+      "h": 0.6,
+      "angle": -1.5707963267948966,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Raised/AuditionFront/Windows",
+      "center": [
+        6.5,
+        0.9850000143051147
+      ],
+      "z": 5.05,
+      "w": 1.8,
+      "h": 0.44,
+      "angle": 0.0,
+      "world": true,
+      "latch_side": "interior +normal"
+    },
+    {
+      "group": "Shell/Raised/AuditionFront/Windows",
+      "center": [
+        9.100000381469727,
+        0.9850000143051147
+      ],
+      "z": 5.05,
+      "w": 1.8,
+      "h": 0.44,
+      "angle": 0.0,
+      "world": true,
+      "latch_side": "interior +normal"
+    }
+  ],
+  "doors": [
+    {
+      "group": "Doors/EntranceLeft",
+      "center": [
+        -0.79,
+        -9.02
+      ],
+      "width": 1.52,
+      "angle": 0,
+      "swing": 0,
+      "hinge": "left",
+      "world": true
+    },
+    {
+      "group": "Doors/EntranceRight",
+      "center": [
+        0.79,
+        -9.02
+      ],
+      "width": 1.52,
+      "angle": 0,
+      "swing": 0,
+      "hinge": "right",
+      "world": true
+    },
+    {
+      "group": "Doors/Washroom",
+      "center": [
+        7.75,
+        -4.15
+      ],
+      "width": 0.92,
+      "angle": 0,
+      "swing": -85,
+      "hinge": "left",
+      "world": true
+    },
+    {
+      "group": "Doors/RearServiceA2",
+      "center": [
+        -7.599999904632568,
+        13.86500072479248
+      ],
+      "width": 1.3499999999999999,
+      "angle": 3.141592653589793,
+      "swing": 0,
+      "hinge": "left",
+      "world": true
+    },
+    {
+      "group": "Doors/InterviewA2",
+      "center": [
+        -0.34999990463256836,
+        5.0
+      ],
+      "width": 1.23,
+      "angle": 0.0,
+      "swing": 76,
+      "hinge": "left",
+      "world": true
+    },
+    {
+      "group": "Doors/AuditionA2",
+      "center": [
+        4.949999809265137,
+        1.0
+      ],
+      "width": 1.4300000000000002,
+      "angle": 0.0,
+      "swing": 76,
+      "hinge": "left",
+      "world": true
+    },
+    {
+      "group": "Doors/StaffInterviewLink",
+      "center": [
+        -2.999999761581421,
+        5.800000190734863
+      ],
+      "width": 1.08,
+      "angle": 1.5707963267948966,
+      "swing": -85,
+      "hinge": "left",
+      "world": true
+    },
+    {
+      "group": "Doors/FlexibleA2",
+      "center": [
+        -9.300000190734863,
+        3.299999952316284
+      ],
+      "width": 1.23,
+      "angle": 0.0,
+      "swing": 76,
+      "hinge": "left",
+      "world": true
+    },
+    {
+      "group": "Doors/StaffA2",
+      "center": [
+        -5.5,
+        3.299999952316284
+      ],
+      "width": 1.08,
+      "angle": 0.0,
+      "swing": -85,
+      "hinge": "left",
+      "world": true
+    },
+    {
+      "group": "Doors/FlexibleService",
+      "center": [
+        -11.0,
+        8.100000381469727
+      ],
+      "width": 1.0299999999999998,
+      "angle": 0.0,
+      "swing": -85,
+      "hinge": "left",
+      "world": true
+    },
+    {
+      "group": "Doors/StaffService",
+      "center": [
+        -5.199999809265137,
+        8.100000381469727
+      ],
+      "width": 1.0299999999999998,
+      "angle": 0.0,
+      "swing": -85,
+      "hinge": "right",
+      "world": true
+    },
+    {
+      "group": "Doors/RecordsA2",
+      "center": [
+        -9.649999618530273,
+        10.0
+      ],
+      "width": 1.0299999999999998,
+      "angle": 0.0,
+      "swing": 90,
+      "hinge": "left",
+      "world": true
+    },
+    {
+      "group": "Doors/StoreA2",
+      "center": [
+        -5.599999904632568,
+        10.0
+      ],
+      "width": 1.0299999999999998,
+      "angle": 0.0,
+      "swing": 90,
+      "hinge": "left",
+      "world": true
+    },
+    {
+      "group": "Doors/Cubicle0",
+      "center": [
+        7.79,
+        -6.2
+      ],
+      "width": 1.05,
+      "angle": 0,
+      "swing": 0,
+      "hinge": "left",
+      "world": true,
+      "bottom": 0.59,
+      "height": 1.5700000000000003,
+      "thickness": 0.032,
+      "privacy_side": "negative Y / occupant"
+    },
+    {
+      "group": "Doors/Cubicle1",
+      "center": [
+        9.49,
+        -6.2
+      ],
+      "width": 1.05,
+      "angle": 0,
+      "swing": 0,
+      "hinge": "left",
+      "world": true,
+      "bottom": 0.59,
+      "height": 1.5700000000000003,
+      "thickness": 0.032,
+      "privacy_side": "negative Y / occupant"
+    }
+  ],
+  "walls": [
+    {
+      "name": "Shell/Front",
+      "a": [
+        -11,
+        -8.8
+      ],
+      "b": [
+        -3.6,
+        -8.8
+      ],
+      "height": 4.65,
+      "windows": [
+        [
+          2.5999999999999996,
+          1.68,
+          1.26,
+          2.25
+        ]
+      ],
+      "doors": [],
+      "th": 0.32,
+      "interior": false
+    },
+    {
+      "name": "Shell/Front",
+      "a": [
+        3.6,
+        -8.8
+      ],
+      "b": [
+        11,
+        -8.8
+      ],
+      "height": 4.65,
+      "windows": [
+        [
+          4.800000000000001,
+          1.68,
+          1.26,
+          2.25
+        ]
+      ],
+      "doors": [],
+      "th": 0.32,
+      "interior": false
+    },
+    {
+      "name": "Partitions/Washroom",
+      "a": [
+        6.7,
+        -4.15
+      ],
+      "b": [
+        10.65,
+        -4.15
+      ],
+      "height": 3.2,
+      "windows": [],
+      "doors": [
+        [
+          "Washroom",
+          1.05,
+          1.1
+        ]
+      ],
+      "th": 0.16,
+      "interior": true
+    },
+    {
+      "name": "Partitions/WashroomSide",
+      "a": [
+        6.7,
+        -8.65
+      ],
+      "b": [
+        6.7,
+        -4.15
+      ],
+      "height": 3.2,
+      "windows": [],
+      "doors": [],
+      "th": 0.16,
+      "interior": true
+    },
+    {
+      "name": "Shell/Left/Waiting",
+      "a": [
+        -10.84,
+        1
+      ],
+      "b": [
+        -10.84,
+        -8.8
+      ],
+      "height": 4.65,
+      "windows": [
+        [
+          3.0,
+          1.56,
+          1.3,
+          2.25
+        ],
+        [
+          7.1,
+          1.56,
+          1.3,
+          2.25
+        ]
+      ],
+      "doors": [],
+      "th": 0.32,
+      "interior": false
+    },
+    {
+      "name": "Shell/Left/CommonShoulder",
+      "a": [
+        -13.84,
+        1
+      ],
+      "b": [
+        -10.84,
+        1
+      ],
+      "height": 4.3,
+      "windows": [
+        [
+          1.5,
+          1.35,
+          1.4,
+          1.9
+        ]
+      ],
+      "doors": [],
+      "th": 0.32,
+      "interior": false
+    },
+    {
+      "name": "Shell/Left/CommonBay",
+      "a": [
+        -13.84,
+        3.3
+      ],
+      "b": [
+        -13.84,
+        1
+      ],
+      "height": 4.3,
+      "windows": [
+        [
+          1.15,
+          1.25,
+          1.4,
+          1.9
+        ]
+      ],
+      "doors": [],
+      "th": 0.32,
+      "interior": false
+    },
+    {
+      "name": "Shell/Left/Evaluation",
+      "a": [
+        -13.84,
+        8.1
+      ],
+      "b": [
+        -13.84,
+        3.3
+      ],
+      "height": 5.1,
+      "windows": [
+        [
+          1.4,
+          1.5,
+          1.35,
+          2.35
+        ],
+        [
+          3.4,
+          1.5,
+          1.35,
+          2.35
+        ]
+      ],
+      "doors": [],
+      "th": 0.32,
+      "interior": false
+    },
+    {
+      "name": "Shell/Left/Records",
+      "a": [
+        -13.84,
+        13.84
+      ],
+      "b": [
+        -13.84,
+        8.1
+      ],
+      "height": 4.4,
+      "windows": [
+        [
+          1.45,
+          1.4,
+          1.65,
+          1.9
+        ],
+        [
+          4.6,
+          1.1,
+          1.65,
+          1.9
+        ]
+      ],
+      "doors": [],
+      "th": 0.32,
+      "interior": false
+    },
+    {
+      "name": "Shell/Rear/Service",
+      "a": [
+        -3,
+        13.84
+      ],
+      "b": [
+        -13.84,
+        13.84
+      ],
+      "height": 4.4,
+      "windows": [
+        [
+          1.45,
+          1.4,
+          1.55,
+          2.0
+        ],
+        [
+          7.0,
+          1.4,
+          1.55,
+          2.0
+        ],
+        [
+          9.35,
+          1.4,
+          1.55,
+          2.0
+        ]
+      ],
+      "doors": [
+        [
+          "RearServiceA2",
+          4.6,
+          1.45
+        ]
+      ],
+      "th": 0.32,
+      "interior": false
+    },
+    {
+      "name": "Shell/Rear/WestSetback",
+      "a": [
+        -3,
+        12
+      ],
+      "b": [
+        -3,
+        13.84
+      ],
+      "height": 4.4,
+      "windows": [],
+      "doors": [],
+      "th": 0.32,
+      "interior": false
+    },
+    {
+      "name": "Shell/Rear/Interview",
+      "a": [
+        3,
+        11.84
+      ],
+      "b": [
+        -3,
+        11.84
+      ],
+      "height": 4.97,
+      "windows": [
+        [
+          1.35,
+          1.5,
+          1.4,
+          2.25
+        ],
+        [
+          4.55,
+          1.5,
+          1.4,
+          2.25
+        ]
+      ],
+      "doors": [],
+      "th": 0.32,
+      "interior": false
+    },
+    {
+      "name": "Shell/Rear/AuditionReturn",
+      "a": [
+        3,
+        14.84
+      ],
+      "b": [
+        3,
+        12
+      ],
+      "height": 5.7,
+      "windows": [
+        [
+          1.45,
+          1.2,
+          4.5,
+          0.75
+        ]
+      ],
+      "doors": [],
+      "th": 0.32,
+      "interior": false
+    },
+    {
+      "name": "Shell/Rear/Audition",
+      "a": [
+        13.84,
+        14.84
+      ],
+      "b": [
+        3,
+        14.84
+      ],
+      "height": 5.7,
+      "windows": [
+        [
+          1.4,
+          1.25,
+          4.55,
+          0.75
+        ],
+        [
+          9.35,
+          1.25,
+          4.55,
+          0.75
+        ]
+      ],
+      "doors": [],
+      "th": 0.32,
+      "interior": false
+    },
+    {
+      "name": "Shell/Right/Audition",
+      "a": [
+        13.84,
+        1
+      ],
+      "b": [
+        13.84,
+        14.84
+      ],
+      "height": 5.7,
+      "windows": [
+        [
+          2,
+          1.65,
+          1.5,
+          2.25
+        ],
+        [
+          6.6,
+          1.65,
+          1.5,
+          2.25
+        ],
+        [
+          10.7,
+          1.65,
+          1.5,
+          2.25
+        ],
+        [
+          2,
+          1.65,
+          4.5,
+          0.75
+        ],
+        [
+          6.6,
+          1.65,
+          4.5,
+          0.75
+        ],
+        [
+          10.7,
+          1.65,
+          4.5,
+          0.75
+        ]
+      ],
+      "doors": [],
+      "th": 0.32,
+      "interior": false
+    },
+    {
+      "name": "Shell/Right/AuditionShoulder",
+      "a": [
+        10.84,
+        1
+      ],
+      "b": [
+        13.84,
+        1
+      ],
+      "height": 5.7,
+      "windows": [
+        [
+          1.5,
+          1.35,
+          1.5,
+          2.25
+        ],
+        [
+          1.5,
+          1.35,
+          4.5,
+          0.75
+        ]
+      ],
+      "doors": [],
+      "th": 0.32,
+      "interior": false
+    },
+    {
+      "name": "Shell/Right/Preparation",
+      "a": [
+        10.84,
+        -8.8
+      ],
+      "b": [
+        10.84,
+        1
+      ],
+      "height": 4.65,
+      "windows": [
+        [
+          2,
+          1.4,
+          1.65,
+          1.9
+        ],
+        [
+          6.8,
+          1.65,
+          1.3,
+          2.25
+        ]
+      ],
+      "doors": [],
+      "th": 0.32,
+      "interior": false
+    },
+    {
+      "name": "Partitions/InterviewFront",
+      "a": [
+        -3,
+        5
+      ],
+      "b": [
+        3,
+        5
+      ],
+      "height": 4.05,
+      "windows": [],
+      "doors": [
+        [
+          "InterviewA2",
+          2.65,
+          1.35
+        ]
+      ],
+      "th": 0.18,
+      "interior": true
+    },
+    {
+      "name": "Partitions/AuditionFront",
+      "a": [
+        3,
+        1
+      ],
+      "b": [
+        10.84,
+        1
+      ],
+      "height": 4.1,
+      "windows": [],
+      "doors": [
+        [
+          "AuditionA2",
+          1.95,
+          1.55
+        ]
+      ],
+      "th": 0.18,
+      "interior": true
+    },
+    {
+      "name": "Partitions/AuditionWest",
+      "a": [
+        3,
+        12
+      ],
+      "b": [
+        3,
+        1
+      ],
+      "height": 4.1,
+      "windows": [],
+      "doors": [],
+      "th": 0.18,
+      "interior": true
+    },
+    {
+      "name": "Partitions/WestSpine",
+      "a": [
+        -3,
+        3.3
+      ],
+      "b": [
+        -3,
+        12
+      ],
+      "height": 4.05,
+      "windows": [],
+      "doors": [
+        [
+          "StaffInterviewLink",
+          2.5,
+          1.2
+        ]
+      ],
+      "th": 0.18,
+      "interior": true
+    },
+    {
+      "name": "Partitions/WestRoomFront",
+      "a": [
+        -14,
+        3.3
+      ],
+      "b": [
+        -3,
+        3.3
+      ],
+      "height": 3.8,
+      "windows": [],
+      "doors": [
+        [
+          "FlexibleA2",
+          4.7,
+          1.35
+        ],
+        [
+          "StaffA2",
+          8.5,
+          1.2
+        ]
+      ],
+      "th": 0.18,
+      "interior": true
+    },
+    {
+      "name": "Partitions/StaffDivider",
+      "a": [
+        -7,
+        3.3
+      ],
+      "b": [
+        -7,
+        8.1
+      ],
+      "height": 4.62,
+      "windows": [],
+      "doors": [],
+      "th": 0.18,
+      "interior": true
+    },
+    {
+      "name": "Partitions/ServiceFront",
+      "a": [
+        -14,
+        8.1
+      ],
+      "b": [
+        -3,
+        8.1
+      ],
+      "height": 3.8,
+      "windows": [],
+      "doors": [
+        [
+          "FlexibleService",
+          3.0,
+          1.15
+        ],
+        [
+          "StaffService",
+          8.8,
+          1.15
+        ]
+      ],
+      "th": 0.18,
+      "interior": true
+    },
+    {
+      "name": "Partitions/RecordsFront",
+      "a": [
+        -14,
+        10
+      ],
+      "b": [
+        -8.5,
+        10
+      ],
+      "height": 4.02,
+      "windows": [],
+      "doors": [
+        [
+          "RecordsA2",
+          4.35,
+          1.15
+        ]
+      ],
+      "th": 0.18,
+      "interior": true
+    },
+    {
+      "name": "Partitions/StoreFront",
+      "a": [
+        -6.7,
+        10
+      ],
+      "b": [
+        -3,
+        10
+      ],
+      "height": 4.02,
+      "windows": [],
+      "doors": [
+        [
+          "StoreA2",
+          1.1,
+          1.15
+        ]
+      ],
+      "th": 0.18,
+      "interior": true
+    },
+    {
+      "name": "Partitions/RecordsPassage",
+      "a": [
+        -8.5,
+        10
+      ],
+      "b": [
+        -8.5,
+        13.84
+      ],
+      "height": 4.02,
+      "windows": [],
+      "doors": [],
+      "th": 0.18,
+      "interior": true
+    },
+    {
+      "name": "Partitions/StorePassage",
+      "a": [
+        -6.7,
+        10
+      ],
+      "b": [
+        -6.7,
+        13.84
+      ],
+      "height": 4.02,
+      "windows": [],
+      "doors": [],
+      "th": 0.18,
+      "interior": true
+    }
+  ],
+  "drains": [
+    {
+      "roof": "Waiting",
+      "top": [
+        -11.199999809265137,
+        -8.669642448425293,
+        4.225
+      ],
+      "bottom": [
+        -11.199999809265137,
+        -8.669642448425293,
+        0.32
+      ]
+    },
+    {
+      "roof": "Preparation",
+      "top": [
+        11.199999809265137,
+        -0.22684955596923828,
+        4.225
+      ],
+      "bottom": [
+        11.199999809265137,
+        -0.22684955596923828,
+        0.32
+      ]
+    },
+    {
+      "roof": "WestService",
+      "top": [
+        -13.703999519348145,
+        14.199999809265137,
+        3.985
+      ],
+      "bottom": [
+        -13.703999519348145,
+        14.199999809265137,
+        0.32
+      ]
+    },
+    {
+      "roof": "CommonBay",
+      "top": [
+        -14.199999809265137,
+        1.0,
+        3.8750000000000004
+      ],
+      "bottom": [
+        -14.199999809265137,
+        1.0,
+        0.32
+      ]
+    },
+    {
+      "roof": "Interview",
+      "top": [
+        -0.5129561424255371,
+        12.199999809265137,
+        4.555
+      ],
+      "bottom": [
+        -0.5129561424255371,
+        12.199999809265137,
+        0.32
+      ]
+    },
+    {
+      "roof": "Audition",
+      "top": [
+        14.199999809265137,
+        14.51200008392334,
+        5.285
+      ],
+      "bottom": [
+        14.199999809265137,
+        14.51200008392334,
+        0.32
+      ]
+    },
+    {
+      "roof": "Audition",
+      "top": [
+        3.3080005645751953,
+        15.199999809265137,
+        5.285
+      ],
+      "bottom": [
+        3.3080005645751953,
+        15.199999809265137,
+        0.32
+      ]
+    }
+  ]
+}

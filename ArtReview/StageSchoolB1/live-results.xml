@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="1" result="Passed" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-09-30 11:56:33Z" end-time="2026-09-30 11:56:58Z" duration="24.7166056">
+  <test-suite type="TestSuite" id="1000" name="Silver Screen" fullname="Silver Screen" runstate="Runnable" testcasecount="363" result="Passed" start-time="2026-09-30 11:56:33Z" end-time="2026-09-30 11:56:58Z" duration="24.716606" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1430" name="Assembly-CSharp-Editor.dll" fullname="C:/Repos/Unity/Silver Screen/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" runstate="Runnable" testcasecount="363" result="Passed" start-time="2026-09-30 11:56:34Z" end-time="2026-09-30 11:56:58Z" duration="24.235110" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="46120" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1431" name="SilverScreen" fullname="SilverScreen" runstate="Runnable" testcasecount="363" result="Passed" start-time="2026-09-30 11:56:34Z" end-time="2026-09-30 11:56:58Z" duration="24.230173" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1432" name="Tests" fullname="SilverScreen.Tests" runstate="Runnable" testcasecount="363" result="Passed" start-time="2026-09-30 11:56:34Z" end-time="2026-09-30 11:56:58Z" duration="24.224249" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1433" name="Editor" fullname="SilverScreen.Tests.Editor" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-09-30 11:56:34Z" end-time="2026-09-30 11:56:58Z" duration="24.189428" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1017" name="StageSchoolB1Validation" fullname="SilverScreen.Tests.Editor.StageSchoolB1Validation" classname="SilverScreen.Tests.Editor.StageSchoolB1Validation" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-09-30 11:56:34Z" end-time="2026-09-30 11:56:58Z" duration="24.177648" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1018" name="LiveRuntime" fullname="SilverScreen.Tests.Editor.StageSchoolB1Validation.LiveRuntime" methodname="LiveRuntime" classname="SilverScreen.Tests.Editor.StageSchoolB1Validation" runstate="Runnable" seed="1463254232" result="Passed" start-time="2026-09-30 11:56:06Z" end-time="2026-09-30 11:56:58Z" duration="52.146034" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[
+IgnoreFailingMessages:true
+
+IgnoreFailingMessages:false
+Saving results to: C:/Users/Sez/AppData/LocalLow/DefaultCompany/Silver Screen\TestResults.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

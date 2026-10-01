@@ -1,0 +1,2182 @@
+{
+  "schema": 1,
+  "phase": "MASSING_REVIEW_NOT_PRODUCTION",
+  "fixtures": [
+    {
+      "asset": "GooseneckLamp_1930",
+      "group": "FrontWall",
+      "position": [
+        -4.15,
+        3.36,
+        -4.54
+      ],
+      "yaw": 180
+    },
+    {
+      "asset": "GooseneckLamp_1930",
+      "group": "FrontWall",
+      "position": [
+        -0.05,
+        3.37,
+        -4.54
+      ],
+      "yaw": 180
+    },
+    {
+      "asset": "GooseneckLamp_1930",
+      "group": "FrontWall",
+      "position": [
+        -3.0,
+        5.4,
+        -4.54
+      ],
+      "yaw": 180
+    },
+    {
+      "asset": "GooseneckLamp_1930",
+      "group": "FrontWall",
+      "position": [
+        0,
+        5.4,
+        -4.54
+      ],
+      "yaw": 180
+    },
+    {
+      "asset": "GooseneckLamp_1930",
+      "group": "FrontWall",
+      "position": [
+        3.0,
+        5.4,
+        -4.54
+      ],
+      "yaw": 180
+    },
+    {
+      "asset": "PendantWorkLamp_1930",
+      "group": "InteriorLighting",
+      "position": [
+        -3.6,
+        3.15,
+        -1.7
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "PendantWorkLamp_1930",
+      "group": "InteriorLighting",
+      "position": [
+        3,
+        3.7,
+        -1.7
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "PendantWorkLamp_1930",
+      "group": "InteriorLighting",
+      "position": [
+        3,
+        3.7,
+        2.1
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "PendantWorkLamp_1930",
+      "group": "InteriorLighting",
+      "position": [
+        -3.7,
+        3.15,
+        2.3
+      ],
+      "yaw": 0
+    }
+  ],
+  "anchors": [
+    {
+      "name": "OfficeEntrance",
+      "position": [
+        -4.15,
+        0,
+        -4.32
+      ],
+      "yaw": 0
+    },
+    {
+      "name": "OfficeApproach",
+      "position": [
+        -4.15,
+        0,
+        -5.35
+      ],
+      "yaw": 0
+    },
+    {
+      "name": "WorkshopEntrance",
+      "position": [
+        3.775,
+        0,
+        -3.8
+      ],
+      "yaw": 0
+    },
+    {
+      "name": "WorkshopApproach",
+      "position": [
+        3.775,
+        0,
+        -5.5
+      ],
+      "yaw": 0
+    },
+    {
+      "name": "YardAccess",
+      "position": [
+        6.86,
+        0,
+        -1.65
+      ],
+      "yaw": 270
+    },
+    {
+      "name": "ApplicantArrival",
+      "position": [
+        -7.5,
+        0,
+        -7.4
+      ],
+      "yaw": 0
+    },
+    {
+      "name": "ApplicantExit",
+      "position": [
+        -3.0,
+        0,
+        -7.4
+      ],
+      "yaw": 0
+    },
+    {
+      "name": "ApplicantWaiting_00",
+      "position": [
+        -6.45,
+        0,
+        -5.2
+      ],
+      "yaw": 0
+    },
+    {
+      "name": "ApplicantWaiting_01",
+      "position": [
+        -5.4,
+        0,
+        -5.25
+      ],
+      "yaw": 0
+    },
+    {
+      "name": "ApplicantWaiting_02",
+      "position": [
+        -6.45,
+        0,
+        -6.9
+      ],
+      "yaw": 0
+    },
+    {
+      "name": "ApplicantWaiting_03",
+      "position": [
+        -5.1,
+        0,
+        -6.9
+      ],
+      "yaw": 0
+    },
+    {
+      "name": "ApplicantWaiting_04",
+      "position": [
+        -3.4,
+        0,
+        -6.45
+      ],
+      "yaw": 0
+    },
+    {
+      "name": "HireConstructionWorker",
+      "position": [
+        -5.4,
+        0,
+        -2.75
+      ],
+      "yaw": 0
+    },
+    {
+      "name": "HireGroundskeeper",
+      "position": [
+        -2.5,
+        0,
+        -2.6
+      ],
+      "yaw": 0
+    },
+    {
+      "name": "ConstructionMaterialPickup",
+      "position": [
+        -2.6,
+        0,
+        2.85
+      ],
+      "yaw": 270
+    },
+    {
+      "name": "ToolPickup",
+      "position": [
+        0.7,
+        0,
+        2.85
+      ],
+      "yaw": 0
+    },
+    {
+      "name": "WorkshopWork",
+      "position": [
+        4.35,
+        0,
+        2.75
+      ],
+      "yaw": 90
+    },
+    {
+      "name": "GroundskeeperSupply",
+      "position": [
+        -5.0,
+        0,
+        1.65
+      ],
+      "yaw": 270
+    },
+    {
+      "name": "ApplicantInspection",
+      "position": [
+        -5.8,
+        0,
+        -7.7
+      ],
+      "yaw": 0
+    }
+  ],
+  "colliders": [
+    {
+      "name": "Foundation floor",
+      "group": "Floor",
+      "position": [
+        0,
+        -0.09,
+        0
+      ],
+      "size": [
+        14,
+        0.18,
+        9
+      ]
+    },
+    {
+      "name": "Employment apron",
+      "group": "ExteriorGround",
+      "position": [
+        -2.6,
+        -0.08,
+        -5.3
+      ],
+      "size": [
+        9.3,
+        0.16,
+        1.6
+      ]
+    },
+    {
+      "name": "Service apron",
+      "group": "ExteriorGround",
+      "position": [
+        3.5,
+        -0.08,
+        -5.4
+      ],
+      "size": [
+        5.9,
+        0.16,
+        1.8
+      ]
+    },
+    {
+      "name": "Yard slab",
+      "group": "ServiceYard",
+      "position": [
+        9.7,
+        -0.08,
+        0
+      ],
+      "size": [
+        5.4,
+        0.16,
+        9
+      ]
+    },
+    {
+      "name": "Front masonry_00_00",
+      "group": "FrontWall",
+      "position": [
+        -5.875,
+        0.415,
+        -4.36
+      ],
+      "size": [
+        2.25,
+        0.83,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_00_01",
+      "group": "FrontWall",
+      "position": [
+        -5.875,
+        1.725,
+        -4.36
+      ],
+      "size": [
+        2.25,
+        1.79,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_00_02",
+      "group": "FrontWall",
+      "position": [
+        -5.875,
+        2.785,
+        -4.36
+      ],
+      "size": [
+        2.25,
+        0.33,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_00_03",
+      "group": "FrontWall",
+      "position": [
+        -5.875,
+        3.205,
+        -4.36
+      ],
+      "size": [
+        2.25,
+        0.51,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_00_04",
+      "group": "FrontWall",
+      "position": [
+        -5.875,
+        3.84,
+        -4.36
+      ],
+      "size": [
+        2.25,
+        0.76,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_01_02",
+      "group": "FrontWall",
+      "position": [
+        -4.15,
+        2.785,
+        -4.36
+      ],
+      "size": [
+        1.2,
+        0.33,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_01_03",
+      "group": "FrontWall",
+      "position": [
+        -4.15,
+        3.205,
+        -4.36
+      ],
+      "size": [
+        1.2,
+        0.51,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_01_04",
+      "group": "FrontWall",
+      "position": [
+        -4.15,
+        3.84,
+        -4.36
+      ],
+      "size": [
+        1.2,
+        0.76,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_02_00",
+      "group": "FrontWall",
+      "position": [
+        -3.025,
+        0.415,
+        -4.36
+      ],
+      "size": [
+        1.05,
+        0.83,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_02_01",
+      "group": "FrontWall",
+      "position": [
+        -3.025,
+        1.725,
+        -4.36
+      ],
+      "size": [
+        1.05,
+        1.79,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_02_02",
+      "group": "FrontWall",
+      "position": [
+        -3.025,
+        2.785,
+        -4.36
+      ],
+      "size": [
+        1.05,
+        0.33,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_02_03",
+      "group": "FrontWall",
+      "position": [
+        -3.025,
+        3.205,
+        -4.36
+      ],
+      "size": [
+        1.05,
+        0.51,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_02_04",
+      "group": "FrontWall",
+      "position": [
+        -3.025,
+        3.84,
+        -4.36
+      ],
+      "size": [
+        1.05,
+        0.76,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_03_00",
+      "group": "FrontWall",
+      "position": [
+        -1.525,
+        0.415,
+        -4.36
+      ],
+      "size": [
+        1.95,
+        0.83,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_03_03",
+      "group": "FrontWall",
+      "position": [
+        -1.525,
+        3.205,
+        -4.36
+      ],
+      "size": [
+        1.95,
+        0.51,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_03_04",
+      "group": "FrontWall",
+      "position": [
+        -1.525,
+        3.84,
+        -4.36
+      ],
+      "size": [
+        1.95,
+        0.76,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_04_00",
+      "group": "FrontWall",
+      "position": [
+        0.4,
+        0.415,
+        -4.36
+      ],
+      "size": [
+        1.9,
+        0.83,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_04_01",
+      "group": "FrontWall",
+      "position": [
+        0.4,
+        1.725,
+        -4.36
+      ],
+      "size": [
+        1.9,
+        1.79,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_04_02",
+      "group": "FrontWall",
+      "position": [
+        0.4,
+        2.785,
+        -4.36
+      ],
+      "size": [
+        1.9,
+        0.33,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_04_03",
+      "group": "FrontWall",
+      "position": [
+        0.4,
+        3.205,
+        -4.36
+      ],
+      "size": [
+        1.9,
+        0.51,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_04_04",
+      "group": "FrontWall",
+      "position": [
+        0.4,
+        3.84,
+        -4.36
+      ],
+      "size": [
+        1.9,
+        0.76,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_05_04",
+      "group": "FrontWall",
+      "position": [
+        3.775,
+        3.84,
+        -4.36
+      ],
+      "size": [
+        4.85,
+        0.76,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_06_00",
+      "group": "FrontWall",
+      "position": [
+        6.6,
+        0.415,
+        -4.36
+      ],
+      "size": [
+        0.8,
+        0.83,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_06_01",
+      "group": "FrontWall",
+      "position": [
+        6.6,
+        1.725,
+        -4.36
+      ],
+      "size": [
+        0.8,
+        1.79,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_06_02",
+      "group": "FrontWall",
+      "position": [
+        6.6,
+        2.785,
+        -4.36
+      ],
+      "size": [
+        0.8,
+        0.33,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_06_03",
+      "group": "FrontWall",
+      "position": [
+        6.6,
+        3.205,
+        -4.36
+      ],
+      "size": [
+        0.8,
+        0.51,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_06_04",
+      "group": "FrontWall",
+      "position": [
+        6.6,
+        3.84,
+        -4.36
+      ],
+      "size": [
+        0.8,
+        0.76,
+        0.28
+      ]
+    },
+    {
+      "name": "Right masonry_00_00",
+      "group": "RightWall",
+      "position": [
+        6.86,
+        0.55,
+        -3.475
+      ],
+      "size": [
+        0.28,
+        1.1,
+        2.05
+      ]
+    },
+    {
+      "name": "Right masonry_00_01",
+      "group": "RightWall",
+      "position": [
+        6.86,
+        1.9,
+        -3.475
+      ],
+      "size": [
+        0.28,
+        1.6,
+        2.05
+      ]
+    },
+    {
+      "name": "Right masonry_00_02",
+      "group": "RightWall",
+      "position": [
+        6.86,
+        2.925,
+        -3.475
+      ],
+      "size": [
+        0.28,
+        0.45,
+        2.05
+      ]
+    },
+    {
+      "name": "Right masonry_00_03",
+      "group": "RightWall",
+      "position": [
+        6.86,
+        3.635,
+        -3.475
+      ],
+      "size": [
+        0.28,
+        0.97,
+        2.05
+      ]
+    },
+    {
+      "name": "Right masonry_01_02",
+      "group": "RightWall",
+      "position": [
+        6.86,
+        2.925,
+        -1.65
+      ],
+      "size": [
+        0.28,
+        0.45,
+        1.6
+      ]
+    },
+    {
+      "name": "Right masonry_01_03",
+      "group": "RightWall",
+      "position": [
+        6.86,
+        3.635,
+        -1.65
+      ],
+      "size": [
+        0.28,
+        0.97,
+        1.6
+      ]
+    },
+    {
+      "name": "Right masonry_02_00",
+      "group": "RightWall",
+      "position": [
+        6.86,
+        0.55,
+        -0.2
+      ],
+      "size": [
+        0.28,
+        1.1,
+        1.3
+      ]
+    },
+    {
+      "name": "Right masonry_02_01",
+      "group": "RightWall",
+      "position": [
+        6.86,
+        1.9,
+        -0.2
+      ],
+      "size": [
+        0.28,
+        1.6,
+        1.3
+      ]
+    },
+    {
+      "name": "Right masonry_02_02",
+      "group": "RightWall",
+      "position": [
+        6.86,
+        2.925,
+        -0.2
+      ],
+      "size": [
+        0.28,
+        0.45,
+        1.3
+      ]
+    },
+    {
+      "name": "Right masonry_02_03",
+      "group": "RightWall",
+      "position": [
+        6.86,
+        3.635,
+        -0.2
+      ],
+      "size": [
+        0.28,
+        0.97,
+        1.3
+      ]
+    },
+    {
+      "name": "Right masonry_03_00",
+      "group": "RightWall",
+      "position": [
+        6.86,
+        0.55,
+        1.775
+      ],
+      "size": [
+        0.28,
+        1.1,
+        2.65
+      ]
+    },
+    {
+      "name": "Right masonry_03_03",
+      "group": "RightWall",
+      "position": [
+        6.86,
+        3.635,
+        1.775
+      ],
+      "size": [
+        0.28,
+        0.97,
+        2.65
+      ]
+    },
+    {
+      "name": "Right masonry_04_00",
+      "group": "RightWall",
+      "position": [
+        6.86,
+        0.55,
+        3.8
+      ],
+      "size": [
+        0.28,
+        1.1,
+        1.4
+      ]
+    },
+    {
+      "name": "Right masonry_04_01",
+      "group": "RightWall",
+      "position": [
+        6.86,
+        1.9,
+        3.8
+      ],
+      "size": [
+        0.28,
+        1.6,
+        1.4
+      ]
+    },
+    {
+      "name": "Right masonry_04_02",
+      "group": "RightWall",
+      "position": [
+        6.86,
+        2.925,
+        3.8
+      ],
+      "size": [
+        0.28,
+        0.45,
+        1.4
+      ]
+    },
+    {
+      "name": "Right masonry_04_03",
+      "group": "RightWall",
+      "position": [
+        6.86,
+        3.635,
+        3.8
+      ],
+      "size": [
+        0.28,
+        0.97,
+        1.4
+      ]
+    },
+    {
+      "name": "Left masonry_00_00",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        0.5,
+        -3.7
+      ],
+      "size": [
+        0.28,
+        1.0,
+        1.6
+      ]
+    },
+    {
+      "name": "Left masonry_00_01",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        1.15,
+        -3.7
+      ],
+      "size": [
+        0.28,
+        0.3,
+        1.6
+      ]
+    },
+    {
+      "name": "Left masonry_00_02",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        2.2,
+        -3.7
+      ],
+      "size": [
+        0.28,
+        1.8,
+        1.6
+      ]
+    },
+    {
+      "name": "Left masonry_00_03",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        3.61,
+        -3.7
+      ],
+      "size": [
+        0.28,
+        1.02,
+        1.6
+      ]
+    },
+    {
+      "name": "Left masonry_01_00",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        0.5,
+        -1.9
+      ],
+      "size": [
+        0.28,
+        1.0,
+        2.0
+      ]
+    },
+    {
+      "name": "Left masonry_01_03",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        3.61,
+        -1.9
+      ],
+      "size": [
+        0.28,
+        1.02,
+        2.0
+      ]
+    },
+    {
+      "name": "Left masonry_02_00",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        0.5,
+        0.3
+      ],
+      "size": [
+        0.28,
+        1.0,
+        2.4
+      ]
+    },
+    {
+      "name": "Left masonry_02_01",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        1.15,
+        0.3
+      ],
+      "size": [
+        0.28,
+        0.3,
+        2.4
+      ]
+    },
+    {
+      "name": "Left masonry_02_02",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        2.2,
+        0.3
+      ],
+      "size": [
+        0.28,
+        1.8,
+        2.4
+      ]
+    },
+    {
+      "name": "Left masonry_02_03",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        3.61,
+        0.3
+      ],
+      "size": [
+        0.28,
+        1.02,
+        2.4
+      ]
+    },
+    {
+      "name": "Left masonry_03_00",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        0.5,
+        2.45
+      ],
+      "size": [
+        0.28,
+        1.0,
+        1.9
+      ]
+    },
+    {
+      "name": "Left masonry_03_01",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        1.15,
+        2.45
+      ],
+      "size": [
+        0.28,
+        0.3,
+        1.9
+      ]
+    },
+    {
+      "name": "Left masonry_03_03",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        3.61,
+        2.45
+      ],
+      "size": [
+        0.28,
+        1.02,
+        1.9
+      ]
+    },
+    {
+      "name": "Left masonry_04_00",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        0.5,
+        3.95
+      ],
+      "size": [
+        0.28,
+        1.0,
+        1.1
+      ]
+    },
+    {
+      "name": "Left masonry_04_01",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        1.15,
+        3.95
+      ],
+      "size": [
+        0.28,
+        0.3,
+        1.1
+      ]
+    },
+    {
+      "name": "Left masonry_04_02",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        2.2,
+        3.95
+      ],
+      "size": [
+        0.28,
+        1.8,
+        1.1
+      ]
+    },
+    {
+      "name": "Left masonry_04_03",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        3.61,
+        3.95
+      ],
+      "size": [
+        0.28,
+        1.02,
+        1.1
+      ]
+    },
+    {
+      "name": "Rear masonry_00_00",
+      "group": "RearWall",
+      "position": [
+        -6.2,
+        0.575,
+        4.36
+      ],
+      "size": [
+        1.6,
+        1.15,
+        0.28
+      ]
+    },
+    {
+      "name": "Rear masonry_00_01",
+      "group": "RearWall",
+      "position": [
+        -6.2,
+        1.225,
+        4.36
+      ],
+      "size": [
+        1.6,
+        0.15,
+        0.28
+      ]
+    },
+    {
+      "name": "Rear masonry_00_02",
+      "group": "RearWall",
+      "position": [
+        -6.2,
+        2.2,
+        4.36
+      ],
+      "size": [
+        1.6,
+        1.8,
+        0.28
+      ]
+    },
+    {
+      "name": "Rear masonry_00_03",
+      "group": "RearWall",
+      "position": [
+        -6.2,
+        3.61,
+        4.36
+      ],
+      "size": [
+        1.6,
+        1.02,
+        0.28
+      ]
+    },
+    {
+      "name": "Rear masonry_01_00",
+      "group": "RearWall",
+      "position": [
+        -4.4,
+        0.575,
+        4.36
+      ],
+      "size": [
+        2.0,
+        1.15,
+        0.28
+      ]
+    },
+    {
+      "name": "Rear masonry_01_01",
+      "group": "RearWall",
+      "position": [
+        -4.4,
+        1.225,
+        4.36
+      ],
+      "size": [
+        2.0,
+        0.15,
+        0.28
+      ]
+    },
+    {
+      "name": "Rear masonry_01_03",
+      "group": "RearWall",
+      "position": [
+        -4.4,
+        3.61,
+        4.36
+      ],
+      "size": [
+        2.0,
+        1.02,
+        0.28
+      ]
+    },
+    {
+      "name": "Rear masonry_02_00",
+      "group": "RearWall",
+      "position": [
+        -1.35,
+        0.575,
+        4.36
+      ],
+      "size": [
+        4.1,
+        1.15,
+        0.28
+      ]
+    },
+    {
+      "name": "Rear masonry_02_01",
+      "group": "RearWall",
+      "position": [
+        -1.35,
+        1.225,
+        4.36
+      ],
+      "size": [
+        4.1,
+        0.15,
+        0.28
+      ]
+    },
+    {
+      "name": "Rear masonry_02_02",
+      "group": "RearWall",
+      "position": [
+        -1.35,
+        2.2,
+        4.36
+      ],
+      "size": [
+        4.1,
+        1.8,
+        0.28
+      ]
+    },
+    {
+      "name": "Rear masonry_02_03",
+      "group": "RearWall",
+      "position": [
+        -1.35,
+        3.61,
+        4.36
+      ],
+      "size": [
+        4.1,
+        1.02,
+        0.28
+      ]
+    },
+    {
+      "name": "Rear masonry_03_00",
+      "group": "RearWall",
+      "position": [
+        2.25,
+        0.575,
+        4.36
+      ],
+      "size": [
+        3.1,
+        1.15,
+        0.28
+      ]
+    },
+    {
+      "name": "Rear masonry_03_03",
+      "group": "RearWall",
+      "position": [
+        2.25,
+        3.61,
+        4.36
+      ],
+      "size": [
+        3.1,
+        1.02,
+        0.28
+      ]
+    },
+    {
+      "name": "Rear masonry_04_00",
+      "group": "RearWall",
+      "position": [
+        5.4,
+        0.575,
+        4.36
+      ],
+      "size": [
+        3.2,
+        1.15,
+        0.28
+      ]
+    },
+    {
+      "name": "Rear masonry_04_01",
+      "group": "RearWall",
+      "position": [
+        5.4,
+        1.225,
+        4.36
+      ],
+      "size": [
+        3.2,
+        0.15,
+        0.28
+      ]
+    },
+    {
+      "name": "Rear masonry_04_02",
+      "group": "RearWall",
+      "position": [
+        5.4,
+        2.2,
+        4.36
+      ],
+      "size": [
+        3.2,
+        1.8,
+        0.28
+      ]
+    },
+    {
+      "name": "Rear masonry_04_03",
+      "group": "RearWall",
+      "position": [
+        5.4,
+        3.61,
+        4.36
+      ],
+      "size": [
+        3.2,
+        1.02,
+        0.28
+      ]
+    },
+    {
+      "name": "Office workshop partition_00_00",
+      "group": "InteriorPartitions",
+      "position": [
+        -0.25,
+        1.25,
+        -2.71
+      ],
+      "size": [
+        0.16,
+        2.5,
+        3.02
+      ]
+    },
+    {
+      "name": "Office workshop partition_00_01",
+      "group": "InteriorPartitions",
+      "position": [
+        -0.25,
+        2.9,
+        -2.71
+      ],
+      "size": [
+        0.16,
+        0.8,
+        3.02
+      ]
+    },
+    {
+      "name": "Office workshop partition_01_01",
+      "group": "InteriorPartitions",
+      "position": [
+        -0.25,
+        2.9,
+        -0.55
+      ],
+      "size": [
+        0.16,
+        0.8,
+        1.3
+      ]
+    },
+    {
+      "name": "Office workshop partition_02_00",
+      "group": "InteriorPartitions",
+      "position": [
+        -0.25,
+        1.25,
+        2.16
+      ],
+      "size": [
+        0.16,
+        2.5,
+        4.12
+      ]
+    },
+    {
+      "name": "Office workshop partition_02_01",
+      "group": "InteriorPartitions",
+      "position": [
+        -0.25,
+        2.9,
+        2.16
+      ],
+      "size": [
+        0.16,
+        0.8,
+        4.12
+      ]
+    },
+    {
+      "name": "Office store partition",
+      "group": "InteriorPartitions",
+      "position": [
+        -5.87,
+        1.65,
+        0.3
+      ],
+      "size": [
+        1.98,
+        3.3,
+        0.16
+      ]
+    },
+    {
+      "name": "Office store partition",
+      "group": "InteriorPartitions",
+      "position": [
+        -1.94,
+        1.65,
+        0.3
+      ],
+      "size": [
+        3.12,
+        3.3,
+        0.16
+      ]
+    },
+    {
+      "name": "Store doorway header",
+      "group": "InteriorPartitions",
+      "position": [
+        -4.25,
+        2.91,
+        0.3
+      ],
+      "size": [
+        1.3,
+        0.78,
+        0.16
+      ]
+    },
+    {
+      "name": "Office leaf 55mm open",
+      "group": "OfficeDoor",
+      "position": [
+        -4.65,
+        1.29,
+        -3.91
+      ],
+      "size": [
+        0.055,
+        2.58,
+        1.1
+      ]
+    },
+    {
+      "name": "Workshop lower leaf",
+      "group": "WorkshopDoors",
+      "position": [
+        2.565,
+        1.13,
+        -4.48
+      ],
+      "size": [
+        2.385,
+        2.24,
+        0.06
+      ]
+    },
+    {
+      "name": "Workshop lower leaf",
+      "group": "WorkshopDoors",
+      "position": [
+        4.985,
+        1.13,
+        -4.48
+      ],
+      "size": [
+        2.385,
+        2.24,
+        0.06
+      ]
+    },
+    {
+      "name": "Yard service leaf 60mm",
+      "group": "YardDoor",
+      "position": [
+        6.6,
+        1.3,
+        -0.1
+      ],
+      "size": [
+        0.06,
+        2.6,
+        1.5
+      ]
+    },
+    {
+      "name": "Employment porch post",
+      "group": "EmploymentCanopy",
+      "position": [
+        -6.75,
+        1.38,
+        -6.1
+      ],
+      "size": [
+        0.12,
+        2.76,
+        0.12
+      ]
+    },
+    {
+      "name": "Employment porch post",
+      "group": "EmploymentCanopy",
+      "position": [
+        -4.97,
+        1.38,
+        -6.1
+      ],
+      "size": [
+        0.12,
+        2.76,
+        0.12
+      ]
+    },
+    {
+      "name": "Yard shelter post",
+      "group": "YardShelter",
+      "position": [
+        10.45,
+        1.45,
+        -3.6
+      ],
+      "size": [
+        0.17,
+        2.9,
+        0.17
+      ]
+    },
+    {
+      "name": "Yard shelter post",
+      "group": "YardShelter",
+      "position": [
+        10.45,
+        1.45,
+        0.3
+      ],
+      "size": [
+        0.17,
+        2.9,
+        0.17
+      ]
+    },
+    {
+      "name": "Yard shelter post",
+      "group": "YardShelter",
+      "position": [
+        10.45,
+        1.45,
+        4.15
+      ],
+      "size": [
+        0.17,
+        2.9,
+        0.17
+      ]
+    },
+    {
+      "name": "Office desk",
+      "group": "InteriorProps",
+      "position": [
+        -5.4,
+        0.39,
+        -1.45
+      ],
+      "size": [
+        2.1,
+        0.78,
+        0.85
+      ]
+    },
+    {
+      "name": "Office chair",
+      "group": "InteriorProps",
+      "position": [
+        -5.4,
+        0.48,
+        -0.65
+      ],
+      "size": [
+        0.55,
+        0.96,
+        0.58
+      ]
+    },
+    {
+      "name": "Filing cabinet",
+      "group": "InteriorProps",
+      "position": [
+        -6.38,
+        0.7,
+        -0.25
+      ],
+      "size": [
+        0.65,
+        1.4,
+        0.6
+      ]
+    },
+    {
+      "name": "Office visitor seat",
+      "group": "InteriorProps",
+      "position": [
+        -2.1,
+        0.48,
+        -0.6
+      ],
+      "size": [
+        0.6,
+        0.96,
+        0.58
+      ]
+    },
+    {
+      "name": "Workshop bench",
+      "group": "InteriorProps",
+      "position": [
+        5.75,
+        0.46,
+        2.75
+      ],
+      "size": [
+        1.4,
+        0.92,
+        2.75
+      ]
+    },
+    {
+      "name": "Workshop tool cabinet",
+      "group": "InteriorProps",
+      "position": [
+        0.6,
+        0.9,
+        3.7
+      ],
+      "size": [
+        1.3,
+        1.8,
+        0.75
+      ]
+    },
+    {
+      "name": "Supply shelving",
+      "group": "InteriorProps",
+      "position": [
+        -6.25,
+        1.05,
+        2.42
+      ],
+      "size": [
+        0.68,
+        2.1,
+        3.3
+      ]
+    },
+    {
+      "name": "Supply shelving",
+      "group": "InteriorProps",
+      "position": [
+        -1.13,
+        1.05,
+        2.42
+      ],
+      "size": [
+        0.68,
+        2.1,
+        3.3
+      ]
+    },
+    {
+      "name": "Supply centre rack",
+      "group": "InteriorProps",
+      "position": [
+        -3.8,
+        0.65,
+        2.9
+      ],
+      "size": [
+        1.3,
+        1.3,
+        1.3
+      ]
+    },
+    {
+      "name": "Yard workbench",
+      "group": "YardProps",
+      "position": [
+        8.6,
+        0.47,
+        3.52
+      ],
+      "size": [
+        2.25,
+        0.94,
+        0.8
+      ]
+    },
+    {
+      "name": "Lumber rack",
+      "group": "YardProps",
+      "position": [
+        11.55,
+        0.85,
+        1.2
+      ],
+      "size": [
+        1.1,
+        1.7,
+        4.1
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "WarmStucco",
+      "linearRGB": [
+        0.53,
+        0.445,
+        0.335
+      ],
+      "metallic": 0,
+      "roughness": 0.86
+    },
+    {
+      "name": "LimestoneTrim",
+      "linearRGB": [
+        0.64,
+        0.56,
+        0.435
+      ],
+      "metallic": 0,
+      "roughness": 0.8
+    },
+    {
+      "name": "Brick",
+      "linearRGB": [
+        0.28,
+        0.115,
+        0.063
+      ],
+      "metallic": 0,
+      "roughness": 0.87
+    },
+    {
+      "name": "WorkshopPaint",
+      "linearRGB": [
+        0.075,
+        0.13,
+        0.115
+      ],
+      "metallic": 0,
+      "roughness": 0.72
+    },
+    {
+      "name": "Timber",
+      "linearRGB": [
+        0.235,
+        0.145,
+        0.07
+      ],
+      "metallic": 0,
+      "roughness": 0.8
+    },
+    {
+      "name": "RoofMetal",
+      "linearRGB": [
+        0.13,
+        0.14,
+        0.135
+      ],
+      "metallic": 0.55,
+      "roughness": 0.65
+    },
+    {
+      "name": "Steel",
+      "linearRGB": [
+        0.037,
+        0.044,
+        0.043
+      ],
+      "metallic": 0.65,
+      "roughness": 0.57
+    },
+    {
+      "name": "Glass",
+      "linearRGB": [
+        0.12,
+        0.18,
+        0.18
+      ],
+      "metallic": 0.25,
+      "roughness": 0.23
+    },
+    {
+      "name": "Concrete",
+      "linearRGB": [
+        0.31,
+        0.29,
+        0.25
+      ],
+      "metallic": 0,
+      "roughness": 0.88
+    },
+    {
+      "name": "Paper",
+      "linearRGB": [
+        0.78,
+        0.7,
+        0.51
+      ],
+      "metallic": 0,
+      "roughness": 0.9
+    },
+    {
+      "name": "FurnishingStudy",
+      "linearRGB": [
+        0.26,
+        0.235,
+        0.185
+      ],
+      "metallic": 0,
+      "roughness": 0.84
+    }
+  ],
+  "studies": [
+    {
+      "name": "Office desk",
+      "position": [
+        -5.4,
+        0.39,
+        -1.45
+      ],
+      "dimensions": [
+        2.1,
+        0.78,
+        0.85
+      ],
+      "status": "Furnishing envelope only; canonical asset after visual gate"
+    },
+    {
+      "name": "Office chair",
+      "position": [
+        -5.4,
+        0.48,
+        -0.65
+      ],
+      "dimensions": [
+        0.55,
+        0.96,
+        0.58
+      ],
+      "status": "Furnishing envelope only; canonical asset after visual gate"
+    },
+    {
+      "name": "Filing cabinet",
+      "position": [
+        -6.38,
+        0.7,
+        -0.25
+      ],
+      "dimensions": [
+        0.65,
+        1.4,
+        0.6
+      ],
+      "status": "Furnishing envelope only; canonical asset after visual gate"
+    },
+    {
+      "name": "Office visitor seat",
+      "position": [
+        -2.1,
+        0.48,
+        -0.6
+      ],
+      "dimensions": [
+        0.6,
+        0.96,
+        0.58
+      ],
+      "status": "Furnishing envelope only; canonical asset after visual gate"
+    },
+    {
+      "name": "Workshop bench",
+      "position": [
+        5.75,
+        0.46,
+        2.75
+      ],
+      "dimensions": [
+        1.4,
+        0.92,
+        2.75
+      ],
+      "status": "Furnishing envelope only; canonical asset after visual gate"
+    },
+    {
+      "name": "Workshop tool cabinet",
+      "position": [
+        0.6,
+        0.9,
+        3.7
+      ],
+      "dimensions": [
+        1.3,
+        1.8,
+        0.75
+      ],
+      "status": "Furnishing envelope only; canonical asset after visual gate"
+    },
+    {
+      "name": "Supply shelving",
+      "position": [
+        -6.25,
+        1.05,
+        2.42
+      ],
+      "dimensions": [
+        0.68,
+        2.1,
+        3.3
+      ],
+      "status": "Furnishing envelope only; canonical asset after visual gate"
+    },
+    {
+      "name": "Supply shelving",
+      "position": [
+        -1.13,
+        1.05,
+        2.42
+      ],
+      "dimensions": [
+        0.68,
+        2.1,
+        3.3
+      ],
+      "status": "Furnishing envelope only; canonical asset after visual gate"
+    },
+    {
+      "name": "Supply centre rack",
+      "position": [
+        -3.8,
+        0.65,
+        2.9
+      ],
+      "dimensions": [
+        1.3,
+        1.3,
+        1.3
+      ],
+      "status": "Furnishing envelope only; canonical asset after visual gate"
+    }
+  ],
+  "buildingWidth": 14,
+  "buildingDepth": 9,
+  "eavesHeight": 4.22,
+  "parapetHeight": 5.35,
+  "roofRidgeHeight": 5.15,
+  "yardBounds": [
+    7,
+    -4.5,
+    12.4,
+    4.5
+  ],
+  "reservedRect": [
+    2.7,
+    -1.3,
+    20.6,
+    13.6
+  ],
+  "cutaway": {
+    "roof": [
+      "Roof",
+      "EmploymentCanopy",
+      "OfficeAwning",
+      "YardShelterRoof"
+    ],
+    "walls": [
+      "FrontWall",
+      "RightWall",
+      "RearWall",
+      "LeftWall"
+    ],
+    "retain": [
+      "Floor",
+      "InteriorPartitions",
+      "InteriorProps",
+      "ServiceYard"
+    ]
+  },
+  "parts": [
+    {
+      "name": "Floor",
+      "vertices": 324,
+      "triangles": 108
+    },
+    {
+      "name": "ExteriorGround",
+      "vertices": 648,
+      "triangles": 216
+    },
+    {
+      "name": "ServiceYard",
+      "vertices": 2160,
+      "triangles": 720
+    },
+    {
+      "name": "FrontWall",
+      "vertices": 136860,
+      "triangles": 45620
+    },
+    {
+      "name": "RightWall",
+      "vertices": 3852,
+      "triangles": 1284
+    },
+    {
+      "name": "LeftWall",
+      "vertices": 7164,
+      "triangles": 2388
+    },
+    {
+      "name": "RearWall",
+      "vertices": 7164,
+      "triangles": 2388
+    },
+    {
+      "name": "Roof",
+      "vertices": 5568,
+      "triangles": 1856
+    },
+    {
+      "name": "InteriorPartitions",
+      "vertices": 1152,
+      "triangles": 384
+    },
+    {
+      "name": "OfficeDoor",
+      "vertices": 972,
+      "triangles": 324
+    },
+    {
+      "name": "WorkshopDoors",
+      "vertices": 10440,
+      "triangles": 3480
+    },
+    {
+      "name": "YardDoor",
+      "vertices": 324,
+      "triangles": 108
+    },
+    {
+      "name": "EmploymentCanopy",
+      "vertices": 3240,
+      "triangles": 1080
+    },
+    {
+      "name": "OfficeAwning",
+      "vertices": 204,
+      "triangles": 68
+    },
+    {
+      "name": "EmploymentBoard",
+      "vertices": 26052,
+      "triangles": 8684
+    },
+    {
+      "name": "YardShelter",
+      "vertices": 3240,
+      "triangles": 1080
+    },
+    {
+      "name": "YardShelterRoof",
+      "vertices": 324,
+      "triangles": 108
+    },
+    {
+      "name": "InteriorProps",
+      "vertices": 2916,
+      "triangles": 972
+    },
+    {
+      "name": "YardProps",
+      "vertices": 648,
+      "triangles": 216
+    },
+    {
+      "name": "ExteriorProps",
+      "vertices": 1296,
+      "triangles": 432
+    },
+    {
+      "name": "ScaleStudies",
+      "vertices": 9360,
+      "triangles": 3120
+    }
+  ],
+  "generatorSha256": "c38379b18a7e68fbbd6c0a93dcaac9561aaa30ff8ab84c55f2c01c2733138224"
+}

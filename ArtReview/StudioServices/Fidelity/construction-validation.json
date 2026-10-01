@@ -1,0 +1,6 @@
+{
+  "frontRoofPanels": 52,
+  "allThicknessBelowApprovedPlane": true,
+  "rooflightPlanes": "Both curbs fit the front roof plane (generator assertions)",
+  "sourceFile": "ArtSource/StudioServices/StudioServices_Production.blend"
+}

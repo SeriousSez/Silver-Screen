@@ -1,0 +1,6 @@
+var root=UnityEngine.Object.FindAnyObjectByType<SilverScreen.Presentation.Buildings.StageSchoolInfrastructure>().gameObject;
+var camera=UnityEngine.Camera.main;root.GetComponent<UnityEngine.LODGroup>().ForceLOD(0);
+root.transform.Find("LOD1").gameObject.SetActive(false);root.transform.Find("LOD2").gameObject.SetActive(false);
+SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Capture(camera,"../StageSchoolB1/diagnostic_single_lod",new UnityEngine.Vector3(21,13,-24),new UnityEngine.Vector3(0,2,0),54);
+root.transform.Find("LOD1").gameObject.SetActive(true);root.transform.Find("LOD2").gameObject.SetActive(true);
+result.Log("Isolated branch diagnostic only; not saved");

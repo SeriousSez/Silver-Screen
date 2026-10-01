@@ -1,0 +1,21 @@
+{
+  "frozenFilesVerified": 548,
+  "masterChanged": [],
+  "levels": [
+    {
+      "level": 0,
+      "sharedMeshes": 286,
+      "triangles": 1410563
+    },
+    {
+      "level": 1,
+      "sharedMeshes": 286,
+      "triangles": 343742
+    },
+    {
+      "level": 2,
+      "sharedMeshes": 286,
+      "triangles": 196913
+    }
+  ]
+}

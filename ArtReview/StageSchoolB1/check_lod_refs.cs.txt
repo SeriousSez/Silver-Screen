@@ -1,0 +1,3 @@
+var root=UnityEngine.Object.FindAnyObjectByType<SilverScreen.Presentation.Buildings.StageSchoolInfrastructure>().gameObject;
+var levels=root.GetComponent<UnityEngine.LODGroup>().GetLODs();
+for(int i=0;i<levels.Length;i++){var counts=new System.Collections.Generic.Dictionary<string,int>();foreach(var r in levels[i].renderers){var p=UnityEditor.AnimationUtility.CalculateTransformPath(r.transform,root.transform).Split('/')[0];if(!counts.ContainsKey(p))counts[p]=0;counts[p]++;}result.Log("LOD"+i+" "+string.Join(",",counts));}

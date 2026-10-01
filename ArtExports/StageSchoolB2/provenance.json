@@ -1,0 +1,21 @@
+{
+  "strategy": "A4 authored-object topology; exact close planters; reused period prop LODs",
+  "masterPacketSha256": "6f93c2b2676a4d05c4ceb5b35c7f5183a8dabe5ddd9371b5afe1477fae685272",
+  "levels": [
+    {
+      "level": 0,
+      "uniqueMeshTriangles": 439600,
+      "vertices": 594326
+    },
+    {
+      "level": 1,
+      "uniqueMeshTriangles": 138582,
+      "vertices": 197487
+    },
+    {
+      "level": 2,
+      "uniqueMeshTriangles": 100408,
+      "vertices": 145356
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+Focused input regression after the full construction/navigation session.
+Ray intersects A4 local selection volume=True; distance=51.27318; pixel=(960.00, 608.96)
+Immediate reveal=False
+Held pointer=(0.00, 0.00); reasons=PointerHover
+PASS actual hover intent
+PASS click pin
+PASS pin survives pointer departure
+Automatic LOD 0 screen-relative height=0.6 lodBias=2 group enabled=True
+Automatic LOD 1 screen-relative height=0.24 lodBias=2 group enabled=True
+Automatic LOD 2 screen-relative height=0.08 lodBias=2 group enabled=True
+PASS orbit through close, management and distant LOD ranges preserves reveal
+PASS actual Escape release
+PASS restored opaque materials; closed-building deep-detail enabled renderers=201
+PASS focused input regression complete

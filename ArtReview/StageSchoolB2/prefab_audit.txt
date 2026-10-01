@@ -1,0 +1,1 @@
+Unity=6000.6.3f1; pipeline=PC_RPAsset; compilationFailed=False; boxColliders=40; meshColliders=0; doors=4; anchors=25; regions=4; agentRadius=0.35

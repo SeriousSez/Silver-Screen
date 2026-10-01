@@ -1,0 +1,642 @@
+{
+  "parts": {
+    "Ceilings/Pendant00": "72688b36ee790b589f980c164a351fb173609641a990179585c8e0e34e95b14c",
+    "Ceilings/Pendant01": "45c38cc3fe0dc31380181695bd8177a24067ec5c2e58ffb8dcb340a2e7e29846",
+    "Ceilings/Pendant02": "3cdf8c46815d4514edc36701362cc722a078f76b8b93ffb936a338ce05a251d3",
+    "Ceilings/Pendant03": "290569aa4afe6f85ef5415dd82f6f15d97fbb36a1a9d99170ad8f9a2545ed1d4",
+    "Ceilings/Pendant04": "83e0d84249eaeebd031a178f4f76c38bb25f08137fbb49c6b9fc19a490b41b05",
+    "Ceilings/Pendant05": "5d2ac818d2293f628e580da7e5edf27dfa529201684f53098b0e8dabb09fec0d",
+    "Ceilings/Pendant06": "e9b2f575185ded9e79f4a68fd879f12301de8479c82ee47f977a138b4d90371a",
+    "Ceilings/Pendant07": "374e9044f8477edf306fda7446e19d17a2b61a987e157ecbe5fd0d349b4a9ba7",
+    "Doors/EntranceLeft": "99c3a46cc005ff0c5fee7b56243889bc9582e0c2040d4e714f4730eac07ff35b",
+    "Doors/EntranceRight": "2d1fe4543476e1b67d6387673940c24c269e0eaac255a43ee4159496daa45214",
+    "Doors/Washroom": "942ba52d45feafbfcbdfbbc8e07691a7bb5b38834464006a59f378385d4f137a",
+    "Furnishings/Audition/Backdrop": "81f58ed40580a98b9fcdb9ed0a467f3a95a5d6abe391f490cc4044f078d77591",
+    "Furnishings/Audition/Curtains": "87cece57487d663a68c5cf17b8a134a495435290dd6addf27f9beedeae1f8346",
+    "Furnishings/Audition/EvaluationMaterials": "2603cb7d01fdaefd18210accb8fe5ba0718969f71b53e517083cf017565c0c10",
+    "Furnishings/Audition/EvaluationTable": "5bf2df27f53492822166d5f0a70b795791a1f6a9079e31cec05434271ddee1cc",
+    "Furnishings/Audition/Rostrum": "0868a24ae529b26060c6b24dd5f1e79c7af98ed1010f6e010616123fcba242d9",
+    "Furnishings/Commons/PortfolioTable": "163dca07aaa7254c0ca5315de402f84f379f2d35656a6cd67aab1066218fa3f2",
+    "Furnishings/Commons/ReviewMaterials": "64129fc5dd50a04ed44585349bb00c0f2d30e8feb7a62ce65d01fecaa84e3939",
+    "Furnishings/Interview/Bookcase": "dc073a3760515828ab95ec9222d4afa29c1fb59c572dfbafa8f8161bbb8279e2",
+    "Furnishings/Interview/GuestA": "f1917befbae6ba3a6f15f204a362886669acbd13d489359b54268ec1880bcc7f",
+    "Furnishings/Interview/GuestB": "ef0bcf1e4d5267208310bdae364f2fb1294cceb5f59c82f41f5f922b50d082e8",
+    "Furnishings/Interview/PortfolioReview": "dfb06f2c3e1bb4865281567e415de324a4f0021e77da59c62350a6ad933a6dfd",
+    "Furnishings/Lounge/Chair0": "a87d10e7321bb3c7580848e5c763f834e6dda3fc66040246e94571d48ed3119a",
+    "Furnishings/Lounge/Chair1": "2b9834fd41ad607c33308ccef83b002a1baba1d3fca17b11f82b682a5426ff4f",
+    "Furnishings/Lounge/Chair2": "512568a95e346c966a033e46cc195afe0eb33e773ba1f1ac6145a0b875059d58",
+    "Furnishings/Lounge/Chair3": "16381d7b43a98bee573ebcb162aae1430ba20dad03c0f71f5c0aad9f16a7cda5",
+    "Furnishings/Lounge/Table": "46b431010afc1929a2b4b8ec5a4a762f354666da5b7e51b8520b8700330bfbea",
+    "Furnishings/Reception/Accessories": "1e59c64e8626f8fde8da3ccab633392aab919a74714f1237fb52dc579eb761a4",
+    "Furnishings/Reception/Counter": "aafec64ec8aa8f8d1e5e56e661f849779816ccccaa8b13e87a3020ac740c78cd",
+    "Furnishings/Reception/Details": "bd2bd1aea93a7f3964ea690cc3fd41970f88f93af9954dec91aba7da020f1cca",
+    "Furnishings/Reception/Wastebasket": "2501e2d52a70bb81d5854ada3214972dbdba0548ccb16e666677e4603323ead2",
+    "Furnishings/Staff/ArchiveBoxes": "d66aebabe89759bca5da9ff02a886b23c15b771b34fc2edcd0c80378a9a77ce2",
+    "Furnishings/Waiting/Chair00": "57e14d9c527912ee4f84d9f02d80a7ece3965f2778a210fbdf3e50e671c99ee6",
+    "Furnishings/Waiting/Chair01": "a1e04862257d6eceb3c0b7a7646fb2370a5d842afc917b39243b31c1032b32a7",
+    "Furnishings/Waiting/Chair02": "cddb8085e12d23f4eedd7954a52d6b5db278efe1819d92702bfd2267eae2e6ad",
+    "Furnishings/Waiting/Chair03": "46edc3c8df9d492c1dbf6c3f82e87694e3b8eef48d1c3c894ce50bb7791fc949",
+    "Furnishings/Waiting/Chair04": "a44186cd8e09ecdc4ee3f53d8defd7cb921bb57f61d3563e61cfc205b7995667",
+    "Furnishings/Waiting/Chair05": "82f051bb1914d2f4038cbed7c99924cff679c5e299a9b4b840b4166e8f079207",
+    "Furnishings/Waiting/Chair06": "72653b9791d02e496c8324c8f2b2b92d1a1f8513795191b346c76e4aafcc87fd",
+    "Furnishings/Waiting/Chair07": "564d339a3a298a2233d9f83489c40444ff81491ce6e8a64a9d9f252afd1242ef",
+    "Furnishings/Waiting/CoffeeTable": "f20b2b92950ea66c44530475c1532c78d3cefbaaeb3ed8d6b36a002f0d3f12e8",
+    "Furnishings/Waiting/Notices": "6f2e4c063cfd039f0a1c7e51d6fcb92d3ad1d4a90f8f38acb6103660864dc821",
+    "Furnishings/Waiting/PortraitGallery": "fe75e380d9fc14d269eab099fe971d28bb0dd0bae8c339c005a4d06649d058aa",
+    "Furnishings/Waiting/ReadingMaterial": "3d60aff8d84f4d2086c43758a3eaa3b678fd7e9f75baaf086b43e6f0d3b58c29",
+    "Furnishings/Washroom": "d8594face543296a2edd47712f94e329be683d2cc8a366cbb4c7b4137ae915bc",
+    "Partitions/Washroom": "a0953b42de42d9a636dcca59e1676da572622c3965f48e039e19200494d818da",
+    "Partitions/WashroomSide": "cf32b3d818f5a93b4facaeb0dd15967f6152fad0dd591cb72719d5ab2bbf24ce",
+    "Shell/Front": "763950a0221d196209965b11702389413c63b3523bfe5facc87eeadd596c2a47",
+    "Shell/Front/Banners": "dc362849ac20a40bc56bfa32f66c62964054bc451c6487eb3f704c1a1e0b314c",
+    "Shell/Front/EntranceLanterns": "7da7d3211470ac29e68d1d7a7cd3eee7a5b4fc2063720f55eeec17e84d165fc4",
+    "Shell/Front/Fanlight": "939a94f7acaa37df19edaab901ddcdb510bdcc272758956bcc0ea6ab88bd5929",
+    "Shell/Front/Portal": "e539c765ff53179e65690f851e2556d9bd22fe9f7d4d18f1e58dbb1b09121e32",
+    "Shell/Front/Signage": "fad32655ffc1ad61796183b434c2d31594bb91d3f99a89aab5cb0ac62b431ab9",
+    "Shell/Front/Windows": "39b7181c83b668557f09124cec5a13ec7b6d8b669daff7695f050b97848c8fc7",
+    "Shell/Rear/OfficeClock": "1d0ce6c755281ba28e7ce69adce961adc9555dcd87d68207817968936b3c22c0",
+    "Structure/EntranceSteps": "2440163d8ea53b90cd1c6b5f462c665e289f54f4b4321496b9a296ec20bcf681",
+    "Structure/Foundation/Front": "bee8c5dbba1f46db9367a6ab45552b4458116896ed7187cc4195e493a5770444",
+    "Interior/Floors/FrontBase": "861f6010c94c0562d6c9170c8110524477898973cfe42171634db9ad9e3904db",
+    "Structure/Foundation/WestCommons": "ae02c82e06be355bc6ebd7a266bf5ad30a0992346403b88e64eca13aafdf5c47",
+    "Interior/Floors/WestCommonsBase": "8d6e1a37f8f2472cb591f427ca86a38da9aa3b448562e027592136aec934817b",
+    "Structure/Foundation/WestWork": "7c307935107b773dd16c4c39aee426de111cc9d141eb2dbe579e7a79d1bb43d1",
+    "Interior/Floors/WestWorkBase": "5229f95bbe722662ca27a9111bf93a6b549cd9553263ed0639db4714f353f804",
+    "Structure/Foundation/Hall": "046d418da3228366406f7b86afbe62b6ca647521f7150513f32fc67d4444cc24",
+    "Interior/Floors/HallBase": "4d88b9a18bfce0e5161538effc3be5a2d07eca5ab13019c194c5e7508318ad76",
+    "Structure/Foundation/Interview": "c78c65992e5fb4436a25a27c6fe6522db02e3da34f47396d33c183c05fdb9867",
+    "Interior/Floors/InterviewBase": "1c7e22c0faefe11f8cdcb2ab0abd0a3cd59d887f54d67bc65268d3de2fcb9c41",
+    "Structure/Foundation/Audition": "db052dbc56cfd5fe87f2a00a1c5ea6b76b9d09519e4e728f333afcd9cb853b7b",
+    "Interior/Floors/AuditionBase": "0bce4036b6e590f9dfc0d04b3798f0d60ae3b94e2997e6a91ada3b62a95fad63",
+    "Interior/Floors/Waiting": "34411c2ae58e5105bfdb1213fe7fabd380a48a614582f415889ed2887be2a4e9",
+    "Interior/Floors/Commons": "47508e1dd02cf37cab388e709027b06b475b6324cf2e0a4a1277e3622100cccb",
+    "Interior/Floors/CommonsBay": "a0f856f0c91f52b97b73ec862df72610548b72696a87d1ca9fef3f94d04cc186",
+    "Interior/Floors/Audition": "0c9538c21133045834cf6667a61321184774789cef72a66cce3ca76b431bfd56",
+    "Interior/Floors/Interview": "04470ada9ee077747f8c4d74da2fac888919b6a6134cd137b663fb13bd426cec",
+    "Interior/Floors/Flexible": "529c2e900b396583da865a08457e29a063c579f9c8e1b0b24c4a2863aa2e9ca8",
+    "Interior/Floors/Staff": "d17cbad7477bef69c8948c30be3fc32f4509f63fd439fe551f82711acacae7c4",
+    "Interior/Floors/HallInlay": "6bc052295c6144427cbf65611ba1faa0b865188f23df45eb3c45f778d602ac72",
+    "Shell/Left/Waiting": "4d91db322e27745310fc2e7ba14548c2979d8306dee0f033a39f9c820ffa0b9c",
+    "Shell/Left/Waiting/Windows": "d708e78676480818a078afe418dce6277d85901415cd466e74a9b0610d309660",
+    "Shell/Left/Waiting/Articulation": "1e5acc3a873c7a73c5e652d338b6ed751f4b26dd2bf726afd22a504afde8ee05",
+    "Shell/Left/CommonShoulder": "e0d5177bcce81b3169e3d0e086a6969f445d8eef05b4b3c7e430b46f6ea2a211",
+    "Shell/Left/CommonShoulder/Windows": "d6ae85d3cf3e4d519baf4694547dcfe1a1e1e24fe596cf11911d61d5e538aeeb",
+    "Shell/Left/CommonShoulder/Articulation": "1ae47fbf07a3f18faaac2db3cdf2527a1dc2847371b16ee443a46bf3e9ca3149",
+    "Shell/Left/CommonBay": "7d16bae3433b0d7824396de8d3c65c8ade783c8b447bcef8b308d349e392f396",
+    "Shell/Left/CommonBay/Windows": "3c955d40840188ccc4827fbdf0008775ae1e2e642a4a4909f5c63e5946360cd2",
+    "Shell/Left/CommonBay/Articulation": "09a3ed74e1b009a5d6ee118d9e97c8c32f02eed3b3e3a834cd42b0bfd771abb2",
+    "Shell/Left/Evaluation": "b56809706e78b96ad70f16719a1e647a7aee2b77006ea4714b2e6cd4c77872d6",
+    "Shell/Left/Evaluation/Windows": "ed2e00009d68b1f1ff0e82b323b049fbecda52cd558addf9eccc30b0dc1cea52",
+    "Shell/Left/Evaluation/Articulation": "4e8cdd3c1c37df949f7835fad8818210d77bed07a2f1b562831df249a866fbaa",
+    "Shell/Left/Records": "406ed029602e71010d7239b24b0df93529b7b364f11a414d406434e585aaf1ae",
+    "Shell/Left/Records/Windows": "db6691275a2e3b6410a5fadd6d62b1869175f57949904c7429c9631e9fb89880",
+    "Shell/Left/Records/Articulation": "1617efc0f0264245388e4f11a68fad8762060a6d6effeb97f2deb3673daf86d8",
+    "Shell/Rear/Service": "78aa3dd7ff529606bd91ceee271e1bf50c3290cb96606264968246d6adce7feb",
+    "Shell/Rear/Service/Windows": "f20b8ca303f6234b672d7bf9dcd40e96a2c31d26cc0b6989a8d01fb05380cac0",
+    "Shell/Rear/Service/DoorSurrounds": "05e906e1786b680ad857a1cdf85d859261d078f120601ab3d2578367c5584803",
+    "Doors/RearServiceA2": "5a5d6c739dc8a4a573af4ea4c48753207ff4383b536ace9de2ea6f826caab17b",
+    "Shell/Rear/Service/Articulation": "6854a938834d45800defbd8cfa6cbe8bffc37ed1da7f3b86c6adf9dc10c549cd",
+    "Shell/Rear/WestSetback": "96b4def85db8320d594f2e3a04da9260fe6af2878bb002dec580e2fc55f94e52",
+    "Shell/Rear/WestSetback/Articulation": "272e038bed22f4f6596d1cd1caa0abc13f9f865ae46836d765ecedf8411fa535",
+    "Shell/Rear/Interview": "149b06ca7254fe56dc3e785873b5b5479b36bb34ded7997eeb45adb0e7aaf155",
+    "Shell/Rear/Interview/Windows": "fb2265f78fa2421085c61fed677fa21ed31c47b66b08b7b8338fcb9befa007c2",
+    "Shell/Rear/Interview/Articulation": "e701afb0b557edc92b072d9270a551a831f8e41805de601117ff75cd59d85bb5",
+    "Shell/Rear/AuditionReturn": "9c42ca67c5f78643b7fa5f3e28bef88aaf9bfbf5ff7f5abcbdce6f366f79b3e0",
+    "Shell/Rear/AuditionReturn/Windows": "80343a1adec15cd8a06938e5b6a4f151099203488d696d3272c29df64703d488",
+    "Shell/Rear/AuditionReturn/Articulation": "0dbe0e08d1f132f9d87241e708fb9a024ec56677f411611b45cc1db361d2b571",
+    "Shell/Rear/Audition": "2c8c9d77617a822ccecf26faaaad70bc18664a6a48e6d805c384ef101507e9ed",
+    "Shell/Rear/Audition/Windows": "432881592b470e6da2daee0979efec319053ba255a87446addaae8e473553dc8",
+    "Shell/Rear/Audition/Articulation": "1ba762ce8afa711abc306482b6fde2741eb3a51bbda07eb784795284a4500d22",
+    "Shell/Right/Audition": "de9f8110452eb38a8395f5e14f9805871782846d8f00245d5ee1fa4442074c8b",
+    "Shell/Right/Audition/Windows": "a1ef4e4358fe6c6d2c209b032c627fb8be9420642386bd0e1a4c265816a1c945",
+    "Shell/Right/Audition/Articulation": "6c8317c46489381fedb23a6217d40077a702f953f862ade715b0588916f33081",
+    "Shell/Right/AuditionShoulder": "30e9bccf3d2eeaf3035013a6d081f0f3b30c05043784df3d8c5d084d50ec867d",
+    "Shell/Right/AuditionShoulder/Windows": "9be49d60ce3de9b987be0b7a2e2007e95a6789edf2f61f5158eb663da1598fac",
+    "Shell/Right/AuditionShoulder/Articulation": "3065a802273bc2a2ff70aac5d9930a315964748127b7fe45867d9f2d4b8bf35d",
+    "Shell/Right/Preparation": "4c0ed33b05e5ec994bdc8242d76d5cc20e8e45f80f54af25da805d9e6cabf1ce",
+    "Shell/Right/Preparation/Windows": "e89316238216e84b70cf1f7a0ef2a60fad77d9c13e49205e1888abf32d67b9ff",
+    "Shell/Right/Preparation/Articulation": "520c1441b389ef9c384acaaf3f5a3585069202b69f812a9a584bb9c6723dc29c",
+    "Partitions/InterviewFront": "3b1c387c6b728f199d417cdcf2e264a1600679c57448cbadbd696fb972273558",
+    "Partitions/InterviewFront/Trim": "16ba62f8cf177c0eab33538efec9bf9e10a86b693b606708d7cb323a6d39fa02",
+    "Doors/InterviewA2": "f4ba5ae1a9beafa036ff0e0a31cd8fb30bd3e9133df9b52232c8bfedb0218d26",
+    "Partitions/AuditionFront": "3d6506972bc2e259ee28ac3af0326a3844dca3900c4a4aa525f7e6cc89a53901",
+    "Partitions/AuditionFront/Trim": "edea1b19ed5357b597bab80afde1f245da8a76f43ea954e1b554d65f5734b728",
+    "Doors/AuditionA2": "b41c24e86ffc4e17c12c3a9273cba06adf0e466557dfb45f28caa4b179dcf064",
+    "Partitions/AuditionWest": "fa5d8cabd5719e93e65a9863a3d0053acdb57241ac2045601c8a0ac46a96e077",
+    "Partitions/WestSpine": "ddfc8f36af7c1477353f95670982ed681d4c93145c1b6ee71f3932a9ab652929",
+    "Partitions/WestSpine/Trim": "1247f00cef760b4a0043204b25f7473acdfffd1c1f86f5906e806d97914ddfd8",
+    "Doors/StaffInterviewLink": "fc47ab1890e8d8465a8bdd836b93525ec795219afb73375d1b983f6a2b888739",
+    "Partitions/WestRoomFront": "b1a8e01a505a3471224790ab1d36d8748203cad68ef5198c0dddb27414d29256",
+    "Partitions/WestRoomFront/Trim": "9b88e6c0aecc8f98fc16aa86de21351cf41abbeb89aad7b5bf74ef11cf53a81f",
+    "Doors/FlexibleA2": "8f1f99b3faaf490525fe0d2b4d08e392d203263ba2cdbe3d964f215b7d94e7ed",
+    "Doors/StaffA2": "189ce5409c1f4dd4baed121256df087d89fcf73c12edc5ec83c4b048f3249a13",
+    "Partitions/StaffDivider": "2c488ed7c20beef93af1f3cd68869e9e20df8dbc2c1451ad574aaa9347ad8e25",
+    "Partitions/ServiceFront": "e456f9ad1abdbcb49aeebba713dd37e8f87336188cf84fa79adea81f31df588b",
+    "Partitions/ServiceFront/Trim": "b5640c7bcb1c5dd57c171e4cb0eea7689cb87d92f500040afa3d6ec3c622d8da",
+    "Doors/FlexibleService": "e6fa4452190e65e10b8ec299bd26133a15c4d15b8f3828f15c80f6eb66ea2869",
+    "Doors/StaffService": "b8f81164fe442f3b89986a09680a78826a4c264b895207bc180e27c3961cbf46",
+    "Partitions/RecordsFront": "557b83618e9c3ec2815d7705dc6351f35d6a2af7990c3897823ff5cd8af3619e",
+    "Partitions/RecordsFront/Trim": "f64753d2f6aaa9c33d17ee865976c49e8965b383b77a576f719f4922d7833a43",
+    "Doors/RecordsA2": "fad123ce8cb07451390bd13da44ff72ffc8651a1d234e9dbdefe95ff7b6aec8c",
+    "Partitions/StoreFront": "8b6f2dc9fcca57b05e0db8aaadef37303ffac37471c314f6c31aed8ad377c843",
+    "Partitions/StoreFront/Trim": "9f67a7eda9526db53684b60992178b88e98a95b6845e9e607f94dea4c6c0a88d",
+    "Doors/StoreA2": "60ede14bb00687de514306404451dfccfbc58f3c7ed1a0e971d1eac1498535fe",
+    "Partitions/RecordsPassage": "e31200053b4045c77a83df36bff79fdfb482d5574a53d38777ea142028547942",
+    "Partitions/StorePassage": "5b863702e2a7370d0f91001ef24e0c68d8045ddfd24cb9d765705fe647b3bd17",
+    "Partitions/WashroomTrim": "b937350f10a9fecdee96641822ad214bebfb8c8158f7c1d7b8d5adf77e964f66",
+    "Shell/Raised/EntryLeft": "9f435b94367ea8c6f3aabe48c31d013406b14eed7816c057cdcda7e3b5693ac6",
+    "Shell/Raised/EntryLeft/Windows": "6105bd6c23089e8e2e3813ec63eeb2fd59e11d19e038ff6b2c99baf01b7ecc2a",
+    "Shell/Raised/EntryLeft/Cornice": "e6ba76dd4508a8b640ea4753a7545afffb49f950a417f2034c600c1e0b3505a0",
+    "Shell/Raised/EntryRight": "0a8639f70b8995460227506165254c9b489a613c76e6f8f7e9074ff1c4b8a44c",
+    "Shell/Raised/EntryRight/Windows": "e8ab35318385968212d57215b45eb03e0d39607f6b59da95d643c0688b780c30",
+    "Shell/Raised/EntryRight/Cornice": "24d6489eaa73e73d0662dc62347487143916b0a283c6479da370c4b27e81a8ad",
+    "Shell/Raised/EntryRear": "59fe14a74fa856aa6c2d828feaf7d0cde8b79db7ced47b72c2fd8e2993fa958b",
+    "Shell/Raised/EntryRear/Cornice": "e7c90ca8c1bdeaadba1973d92cc98066bd80aaf5f2aec98e84088d76fe3f88ea",
+    "Shell/Raised/HallLeft": "2224ba6e0141c7de7bc6c2d258e57338ef35ca21d77a82e59f5dd822913273a9",
+    "Shell/Raised/HallLeft/Windows": "d272ba7f72901afee925b99275df708fec13e06766488c8eba03059751706f31",
+    "Shell/Raised/HallLeft/Cornice": "836d4447d025fdc3f09d071e04d85adb1b08b1c58739f7a144e5d2c49813de1e",
+    "Shell/Raised/HallRight": "e849fba10a1120ab80aac91d6ef1bd8f79ff1c85df869a282c692b1f9bc263b6",
+    "Shell/Raised/HallRight/Windows": "617b7e690d158c58e7b7690fae023783cdc627210092e5aa22a5c7fddb8f631f",
+    "Shell/Raised/HallRight/Cornice": "f81dbffb52818c3e1690718e53c3ecb7fea2ba21f914573049e131ed0de053e9",
+    "Shell/Raised/HallRear": "43616b961c5e9c30b8f99aad427abfb12a4f9c0fbcf5a3392b3ef7c6728d2151",
+    "Shell/Raised/HallRear/Cornice": "afd2672a8c1b3c3f2606c8d0026c9119ef103a9a252ba28d1a8cedf61a6588f9",
+    "Shell/Raised/AuditionWest": "d8af825cbb0573c9bb3365879bf4af4d6c474b8d60e6e8ce4c0b5ad9f076a23e",
+    "Shell/Raised/AuditionWest/Windows": "389e886062350eafaedd55d1f2161f106fac749dfa4ec71f489daab4cc8baced",
+    "Shell/Raised/AuditionWest/Cornice": "82faa8d0f4adb08c1f3eeaeb095c3b46f80a55eeff00f7a73fe302e5ba29262f",
+    "Shell/Raised/AuditionFront": "a1a3ed264b449e3b9a2638982c7b2756675c735cf6710fddf74a7e494057c102",
+    "Shell/Raised/AuditionFront/Windows": "61d25327ed0836cb742672a1abfbadec266557a1657a402d0809d656350efdd6",
+    "Shell/Raised/AuditionFront/Cornice": "5a871be7ed99e105957ec62ee8833a824a3217c05d3b93fe50f2ef96624765f2",
+    "Shell/Raised/WestFront": "2b50fecfd55899a4b3f073dde107353d438e69a383b78e2f9ae00ab5992fd7e0",
+    "Shell/Raised/WestFront/Cornice": "7f4b53f6e3380de61906382d14305080e7c517d105758ecb43cffafd81eb8ed5",
+    "Shell/Raised/WestRear": "7663af10e18569c5cf74c1cffe4f0e1969ec533ba201c2cd14081561133c7e98",
+    "Shell/Raised/WestRear/Cornice": "ddcea73b539b5872ab5aed6ee6964d248386290c66f159731cd839307afc26fb",
+    "Shell/Raised/WestSide": "b52b15514600a721b3973284e646b2afd8e73fafde07c1a33d2687249dfcf08d",
+    "Shell/Raised/WestSide/Cornice": "579577c8f22097c14a0c5edfd5eb70e661bd106d20fed1c286b00c72ac16282b",
+    "Shell/Raised/WaitingBay": "ff910c7bc1aac76335826366a6d1294e718474b34a0e6a3afe2f7d8d3aa85f7f",
+    "Shell/Raised/WaitingBay/Cornice": "73f0562a5c00285e48b21663bc9aabf5ddd116102d865aeda239a52469bd4f9f",
+    "Shell/Raised/InterviewLeft": "4ee9eb75ce240f678ce1d294b41d2408c15070a2db6858a19fe630a83bd76beb",
+    "Shell/Raised/InterviewLeft/Cornice": "a5c90d9277c06d1b58651a0f97c2ca4e31bc4d1ca1a9ba7146204ae728596f0c",
+    "Shell/Front/AddedArticulation": "b57d8953c298fb66726a746f3501b458f78b17196c6df1b6398655e100f0ca98",
+    "Shell/Rear/Audition/BlindBays": "3e3670ae2184b6139914b76f883cb8f4ed20358ed6f34280e3a652fdeb993c00",
+    "Roofs/Entrance": "6ab71b185784209fee77c1b19fd83c13b38c03a14186ebb645ad0adc034d67e2",
+    "Roofs/Waiting": "9556d360a9c7cb6a77447197c9504d54a5ca64381210a39f755a800f85e33996",
+    "Roofs/Preparation": "2cdd47f8578645b9f8d49ef6465dc282ec4e00c770d47af7e4eddd0ebb08021c",
+    "Roofs/Hall": "228cdaf21d6dd39378d6a45106aa6a0074ad7e534a442919c024ecd0432568a3",
+    "Roofs/WestEvaluation": "896e4b3323a6debd749e01637120ed17278a1b98c8532f02fb0c483a3c97a523",
+    "Roofs/WestService": "3851dadcd717fe758c5ae382c77eff206be880e2050228017fb2c82a42cf5319",
+    "Roofs/CommonBay": "e69d9ece516efc08bdf21987983fb39bf9ddf7b350ebfcf7e62407e1e1269750",
+    "Roofs/Interview": "0f7c53eae40833c1f41f5999fd30b01f712a3abc5b0cc7da561c60c119e52cae",
+    "Roofs/Audition": "3eeddb4023c7dfb01e836d2b467ab33685c90b73dd4715a53a20ffd62cfc602d",
+    "Roofs/Waiting/Flashing": "3805b1d46f76ffca4636f93886b1a9500093e318f147578654107761c3fabcfd",
+    "Roofs/Hall/Flashing": "f39772a854198ae94eec41dad7f15c89634172fc75836cb07d663cbcb8c957d0",
+    "Roofs/CommonBay/Flashing": "29d37311e731779bba53826ecc52bf84f954793b07c505bc69158a621412fed7",
+    "Roofs/Interview/Flashing": "c5f40d91e66fcece4feff589c37b0159a250175f616c40f199119d8a8d8f1c89",
+    "Roofs/Waiting/Rainwater": "54c2e6a1162dd3551421e1886168d7430df9246fe8ba94ad64c888bc577910bc",
+    "Roofs/Preparation/Rainwater": "7ab8061a963c0744cb8549281e57796dcde886d6e39d2cd5e18961397393c22d",
+    "Roofs/CommonBay/Rainwater": "2c8c84887714873723b4a649a91187b0c7af7f7cf7c7d301ce5a121d21a4c2ec",
+    "Roofs/WestEvaluation/Rainwater": "3b5aafa3d0a23ed0cd50860b3c98563c3f632b463645ea18a9c1bb1b1b1b9727",
+    "Roofs/WestService/Rainwater": "b065e5d84225b5d98aacaf25367eb5e5c00d0a3b5ea4abfa330de92fd4295707",
+    "Roofs/Audition/Rainwater": "694a9490c2585a2805a05009efecfd204732b33b05c7b54bfeb76de838d70f3e",
+    "Roofs/Interview/Rainwater": "3a844a2993b54aa3a3a80c82e55062fc40b7fc8a8e3e1f3e77847972a03d5d26",
+    "Roofs/Entrance/Rainwater": "3a717a32a44e13507bf93835c69050d30557ecf486767ecbfae04353189cdeb6",
+    "Structure/RearServiceSteps": "b349551a7121bdb954465e5fab9a52517ff515feba27f7e87f0f6ab7012e8c60",
+    "Shell/Rear/ServiceCanopy": "5d7deacbb8fb5ecd8172af300f1cbff51a11865d1b5cc851d163ccd319299592",
+    "Shell/Rear/Service/Light": "68ad6bfcd72180c2f6d1bf7e5cc717b2e8e4c3e443d279b9802589140621f633",
+    "Shell/Rear/Service/Utilities": "c09c5bf304dc8001759a37ded4e343bcda67b8d14abb6ea13bc811825a5c0c8e",
+    "Furnishings/Flexible/ReviewTable": "6a0771a0afeafa3eaf048ffd7a8a964fa098f81d65ace67beb715e7e62811682",
+    "Ceilings/Reception": "496249b452a2f29dcd9d823c608694c163859a12181b8821e3a6227df48be5d5",
+    "Ceilings/Waiting": "69295e7da75c714213a3281b855204db944750fa01b6fa1e9e893aa4aa88a4c1",
+    "Ceilings/Preparation": "1e177b75cdf4369762b5d06e58fc476dc6da670b91e31321766fca6f962a4c6d",
+    "Ceilings/CommonBay": "028dc23e98c1ec8cc6903c5bda3978ba1da7d3c6ed95ede70f7f0cd4c4c61620",
+    "Ceilings/Hall": "0c07cbf038a3d0517dbb733d54eb52db109b424cee42becb63de3b4574e14daa",
+    "Ceilings/Interview": "ce401edbf75a640d7c3fada274e8af9f91a939f433ce3bbc888ed8b42225a10b",
+    "Ceilings/WestWork": "a1702864bb16597d30d8e4c6c94481c6f644241dc0520ed58b11f5ced5242215",
+    "Ceilings/Service": "88244f6634525f47e635892aacb4b8b6b1b8f8eb7862018fcbd39224067eb00d",
+    "Ceilings/Audition": "c62caaba76ddac5748ff126afb6f80fc5cf55323cf9dbd16bb14fa5890764f42",
+    "Ceilings/SupportPendant0": "419233e7902808f7c9cdbe88580569f1265892ff1e4cfe54233514209055487a",
+    "Ceilings/SupportPendant1": "0d09bd3202ecd6006ba4fc5fe1e643ba8e4736166645800a58e6298434285399",
+    "Ceilings/SupportPendant2": "c882831efd51e395dfc0722c34e2d22455be3e463ed73cffbb243b37d7e923a4",
+    "Ceilings/SupportPendant3": "cd70fa1284712a4aa8b5896f81a66c8c0ecbc08a10520ae4685c034f6f4efe0d",
+    "Shell/Front/InteriorFinishA": "761f14544373c3ad2cf6746a4a0175b9fd0250c05e24e05d5bdc498904f3f7eb",
+    "Partitions/Washroom/InteriorFinishA": "cbd488bfbbca04e22eab243fe899e160b36e71c728153e2b2ffd73266ab54f70",
+    "Partitions/Washroom/InteriorFinishB": "d6cc177a543617c123b1181787605dde12dd468b4edadae6def41e46a070be0a",
+    "Partitions/WashroomSide/InteriorFinishA": "eabfb43dba4521c7607b0740e12268eb571e1bcb40fad677e3aabad918ec4b70",
+    "Partitions/WashroomSide/InteriorFinishB": "9ad76097c85db04c0cf46a766229b5f5f6b921e5cf868dbd7f3cd3fe4b313557",
+    "Shell/Left/Waiting/InteriorFinishA": "da12a5b32dfbbd783da213477d1395d1b50f08f817c0683a977cabc6b92b2acf",
+    "Shell/Left/CommonShoulder/InteriorFinishA": "a66b9bcb7baebe66429c7705ff3b071bd22372e4cd52f4a2ce5ac154d1a94e7c",
+    "Shell/Left/CommonBay/InteriorFinishA": "fe2a29b5b1838c9295c9c18ce33670c12e9f9b11b9a8dbd63b928b28accb9d09",
+    "Shell/Left/Evaluation/InteriorFinishA": "6f166fa40a3c7a238582d5e8b9b034db092ab71a56b9558b629a67982b91cb87",
+    "Shell/Left/Records/InteriorFinishA": "c1a761d7a64c6528881b20d85f74c030792c60b407fb2810d8a021956bc8d833",
+    "Shell/Rear/Service/InteriorFinishA": "c7ba8fa514bee9827ad4ac5850cb93f1ed274354a5cd560da3799038f88d5c90",
+    "Shell/Rear/WestSetback/InteriorFinishA": "cf1f4d4d6833c438d0a0f97658c17097f5afc87c147eeb6bd89391ae78372cdc",
+    "Shell/Rear/Interview/InteriorFinishA": "a10b2ab8777b5b4a3ad4ea93a05066a96f4a23048bb60587e37430c66195859e",
+    "Shell/Rear/AuditionReturn/InteriorFinishA": "9e959febb31db5cdbb78b19918b4695d3f2ca641a104c06b9af90969fe6300f5",
+    "Shell/Rear/Audition/InteriorFinishA": "d33196d7f8f44bc06c0db8348f8fb28c113040ff2602a20651e555c39d004a25",
+    "Shell/Right/Audition/InteriorFinishA": "372edc63c53ad4fd22c266cca1b1b1e5f7c5adf014c5d9b65f3e82de4082d904",
+    "Shell/Right/AuditionShoulder/InteriorFinishA": "d80569bdc9b3e21d161764cafdea06001a07c7beab19d805ad106508bbd05bd4",
+    "Shell/Right/Preparation/InteriorFinishA": "0d7479e273e31f362e98799bc6153dc5504c152beaf9bbd27ce6671a64df652f",
+    "Partitions/InterviewFront/InteriorFinishA": "47cc88ae69f46951a05736bdc3e8cb572156350b2b794a6476e173e037bde469",
+    "Partitions/InterviewFront/InteriorFinishB": "adf4ccac47b9bad4db1d631567c329d7062d81cc02118b8a488dd508ec53cdff",
+    "Partitions/AuditionFront/InteriorFinishA": "1aebf6cfafbe648d53eb43e53029686ab8d76bebf224daf1687847c8db8f1463",
+    "Partitions/AuditionFront/InteriorFinishB": "4cb5036ac206961f2bcc7de3d33012f0ba7734b747a48745bdac33dc083362f4",
+    "Partitions/AuditionWest/InteriorFinishA": "4cfe997f06330135521847004c97b7bc481f56f4801c64985ab716986a386bc8",
+    "Partitions/AuditionWest/InteriorFinishB": "e33f719b7d3d25ee7f11f80d69c0a5073eeba9696815f14822158f51ca178a02",
+    "Partitions/WestSpine/InteriorFinishA": "50a1a1c1aeb3f7b393ce8e6e3dac8615aabdb8697e1eb28c7e21a6b8ed575a87",
+    "Partitions/WestSpine/InteriorFinishB": "4ee6b77a484e4cf071ea5b447ef3678bb13e58b6ccf9033f6974ac9e030e706d",
+    "Partitions/WestRoomFront/InteriorFinishA": "6aded7b869575aea00aafb71eff6ffa62f0f3bf96072646a61807fd2293aa157",
+    "Partitions/WestRoomFront/InteriorFinishB": "b74aa9469f2d001335bb1c7e3d21baf90f758b0fbe76967f32f0ffc2a1c51fba",
+    "Partitions/StaffDivider/InteriorFinishA": "b48ea7b5f4e41ea237d0ceafa80e6c97972df7dac086a659cc1d295ae75aa22c",
+    "Partitions/StaffDivider/InteriorFinishB": "b3060bd480802f7623b60944afa949f2fdbc1a1c4f33ed189d78eb4b7b241d32",
+    "Partitions/ServiceFront/InteriorFinishA": "8abe57a1dd4b08d2650d94c39e2d90d63417fc4cd50b4ccd79ed5671ba9a57c3",
+    "Partitions/ServiceFront/InteriorFinishB": "60053ee9223ecb762fc27c5dba74b6f267956a7eeeee9729545f46fa9ddb297c",
+    "Partitions/RecordsFront/InteriorFinishA": "e3a35b2fdc4fe4eb6779a6a70e459271672f22ce91a89f22e96f8b4ebba1415c",
+    "Partitions/RecordsFront/InteriorFinishB": "adce8856b77bec4acc39191f31e28ccc0cec32141ec7fae9b7f0b0d4d0e4a9d1",
+    "Partitions/StoreFront/InteriorFinishA": "e3016ed719ef87b25627658a96978354f77b7d3dc26dbab2158422990a5e2c0d",
+    "Partitions/StoreFront/InteriorFinishB": "f7777b99f3daa4322e3b2420bdcf9843352da12770a342e1f50c6403066bda6f",
+    "Partitions/RecordsPassage/InteriorFinishA": "f980e40a2ee9d3b39db383134964264129298f747dd2db0a9fd27cb22eb548ec",
+    "Partitions/RecordsPassage/InteriorFinishB": "9b70d8a6f72174ec0cb377ce0e1da13ad8163bdcca54356c5fbce542746d081a",
+    "Partitions/StorePassage/InteriorFinishA": "c1fd9fddf132a8e034318466a644b85f77e0af9f35d997b5f5afa94ac237f236",
+    "Partitions/StorePassage/InteriorFinishB": "df0ac3e2892d6c5e63e99a306131830f4ea4135008388a1212308f89b38cf91e",
+    "Shell/Rear/Audition/CurtainSupports": "27a8a8315273b30dee322d2a40cefca3db9668c5298ba2e3488c1e4d53bbdc82",
+    "Doors/Cubicle0": "469e64d792c5e11e0e917be78c780846027658b8833af0e9bfabaab903ab05b4",
+    "Doors/Cubicle1": "be39016970d33e4c40c86f9cce33bb16f804a1f3c48fdbc53b0ab0173a47e9a2",
+    "Roofs/WestEvaluation/Flashing": "7683b0251b5a020130e4bff6244eb958ad1fc761742bbde75acf93ca8a60be1d",
+    "Roofs/Entrance/Flashing": "a7c72d5fc9e23e37e4e5001a96a67c4fac5414ab6c8f19477b6f6634856ea661",
+    "Roofs/Audition/Flashing": "b22ab07b3a8eed6e5ad593c41716757b69f12256c5c11658f1491dbce22c1daa",
+    "Shell/Raised/HallRevealFinish": "37c0d246a8ef61a639c0bcf2da6c723b0e707d77eb3fdd465dd8f058895f6e41",
+    "Roofs/Hall/Rainwater": "b7576715711d497e909c0c59917d9b9d6bcf8ccd3f7e19d0e9c4877c2b97e791"
+  },
+  "fixtures": [
+    {
+      "asset": "TelephoneDesk_1930",
+      "group": "Furnishings/Reception/Telephone",
+      "position": [
+        -0.72,
+        1.15,
+        -4.2
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "DeskLampBanker_1930",
+      "group": "Furnishings/Reception/BankerLamp",
+      "position": [
+        1.08,
+        1.14,
+        -4.12
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "ChairBentwood_1930",
+      "group": "Furnishings/Reception/StaffChair",
+      "position": [
+        0,
+        0.381,
+        -3.4
+      ],
+      "yaw": 180
+    },
+    {
+      "asset": "CoatStandTimber_1930",
+      "group": "Furnishings/Waiting/CoatStand",
+      "position": [
+        -10,
+        0.36,
+        -2
+      ],
+      "yaw": 180
+    },
+    {
+      "asset": "NoticeBoardTimber_173_1930",
+      "group": "Furnishings/Waiting/Noticeboard",
+      "position": [
+        -7.45,
+        1.36,
+        3.145
+      ],
+      "yaw": 180
+    },
+    {
+      "asset": "ChairBentwood_1930",
+      "group": "Furnishings/Commons/ChairN0",
+      "position": [
+        -7.25,
+        0.38,
+        1.15
+      ],
+      "yaw": 180
+    },
+    {
+      "asset": "ChairBentwood_1930",
+      "group": "Furnishings/Commons/ChairS0",
+      "position": [
+        -7.25,
+        0.38,
+        -0.65
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "ChairBentwood_1930",
+      "group": "Furnishings/Commons/ChairN1",
+      "position": [
+        -6.4,
+        0.38,
+        1.15
+      ],
+      "yaw": 180
+    },
+    {
+      "asset": "ChairBentwood_1930",
+      "group": "Furnishings/Commons/ChairS1",
+      "position": [
+        -6.4,
+        0.38,
+        -0.65
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "ChairBentwood_1930",
+      "group": "Furnishings/Commons/ChairN2",
+      "position": [
+        -5.55,
+        0.38,
+        1.15
+      ],
+      "yaw": 180
+    },
+    {
+      "asset": "ChairBentwood_1930",
+      "group": "Furnishings/Commons/ChairS2",
+      "position": [
+        -5.55,
+        0.38,
+        -0.65
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "DeskPedestal_1930",
+      "group": "Furnishings/Interview/Desk",
+      "position": [
+        0,
+        0.39,
+        8.6
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "ChairBentwood_1930",
+      "group": "Furnishings/Interview/DirectorChair",
+      "position": [
+        0,
+        0.39,
+        9.6
+      ],
+      "yaw": 180
+    },
+    {
+      "asset": "TelephoneDesk_1930",
+      "group": "Furnishings/Interview/Phone",
+      "position": [
+        -0.7,
+        1.19,
+        8.55
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "DeskLampBanker_1930",
+      "group": "Furnishings/Interview/Lamp",
+      "position": [
+        0.7,
+        1.19,
+        8.65
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "DeskPaperwork_1930",
+      "group": "Furnishings/Interview/Scripts",
+      "position": [
+        0,
+        1.19,
+        8.4
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "FilingCabinet_4Drawer_1930",
+      "group": "Furnishings/Interview/Files",
+      "position": [
+        2.28,
+        0.38,
+        10.15
+      ],
+      "yaw": 270
+    },
+    {
+      "asset": "ChairBentwood_1930",
+      "group": "Furnishings/Audition/Evaluator0",
+      "position": [
+        7.65,
+        0.39,
+        2.95
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "ChairBentwood_1930",
+      "group": "Furnishings/Audition/Evaluator1",
+      "position": [
+        8.5,
+        0.39,
+        2.95
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "DeskPaperwork_1930",
+      "group": "Furnishings/Audition/Notes",
+      "position": [
+        7.8999999999999995,
+        1.17,
+        3.95
+      ],
+      "yaw": 180
+    },
+    {
+      "asset": "ShelfSteelTimber_170_1930",
+      "group": "Furnishings/Records/Rack0",
+      "position": [
+        -11.9,
+        0.36,
+        12.0
+      ],
+      "yaw": 270
+    },
+    {
+      "asset": "ShelfSteelTimber_170_1930",
+      "group": "Furnishings/Records/Rack1",
+      "position": [
+        -11.1,
+        0.36,
+        12.0
+      ],
+      "yaw": 90
+    },
+    {
+      "asset": "CupboardUtility_1930",
+      "group": "Furnishings/Storage/Cupboard",
+      "position": [
+        -6.08,
+        0.36,
+        12.32
+      ],
+      "yaw": 90
+    },
+    {
+      "asset": "FilingCabinet_4Drawer_1930",
+      "group": "Furnishings/Records/Files",
+      "position": [
+        -9.13,
+        0.38,
+        12.85
+      ],
+      "yaw": 270
+    },
+    {
+      "asset": "ChairBentwood_1930",
+      "group": "Furnishings/Flexible/Chair0",
+      "position": [
+        -10.4,
+        0.39,
+        6.65
+      ],
+      "yaw": 180
+    },
+    {
+      "asset": "ChairBentwood_1930",
+      "group": "Furnishings/Flexible/Chair1",
+      "position": [
+        -11.0,
+        0.39,
+        4.9
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "ChairBentwood_1930",
+      "group": "Furnishings/Flexible/Chair2",
+      "position": [
+        -9.8,
+        0.39,
+        4.9
+      ],
+      "yaw": 0
+    },
+    {
+      "asset": "DeskPaperwork_1930",
+      "group": "Furnishings/Flexible/ReviewPapers",
+      "position": [
+        -10.5,
+        1.15,
+        5.7
+      ],
+      "yaw": 180
+    },
+    {
+      "asset": "FilingCabinet_4Drawer_1930",
+      "group": "Furnishings/Flexible/Files",
+      "position": [
+        -7.6,
+        0.38,
+        6.65
+      ],
+      "yaw": 270
+    },
+    {
+      "asset": "DeskPedestal_1930",
+      "group": "Furnishings/Staff/Desk0",
+      "position": [
+        -5.72,
+        0.39,
+        4.65
+      ],
+      "yaw": 90
+    },
+    {
+      "asset": "ChairBentwood_1930",
+      "group": "Furnishings/Staff/Chair0",
+      "position": [
+        -4.65,
+        0.39,
+        4.65
+      ],
+      "yaw": 270
+    },
+    {
+      "asset": "DeskPedestal_1930",
+      "group": "Furnishings/Staff/Desk1",
+      "position": [
+        -5.72,
+        0.39,
+        6.85
+      ],
+      "yaw": 90
+    },
+    {
+      "asset": "ChairBentwood_1930",
+      "group": "Furnishings/Staff/Chair1",
+      "position": [
+        -4.65,
+        0.39,
+        6.6
+      ],
+      "yaw": 270
+    },
+    {
+      "asset": "TelephoneDesk_1930",
+      "group": "Furnishings/Staff/Telephone",
+      "position": [
+        -5.7,
+        1.19,
+        4.65
+      ],
+      "yaw": 90
+    },
+    {
+      "asset": "DeskPaperwork_1930",
+      "group": "Furnishings/Staff/RecordsInUse",
+      "position": [
+        -5.7,
+        1.19,
+        6.85
+      ],
+      "yaw": 90
+    },
+    {
+      "asset": "ShelfSteelTimber_170_1930",
+      "group": "Furnishings/Storage/EquipmentShelf",
+      "position": [
+        -3.7,
+        0.36,
+        12.18
+      ],
+      "yaw": 270
+    },
+    {
+      "asset": "ChairBentwood_1930",
+      "group": "Furnishings/Audition/Evaluator2",
+      "position": [
+        9.35,
+        0.39,
+        2.95
+      ],
+      "yaw": 0
+    }
+  ],
+  "equipment": "a5e1ea2063b127c1b555f67ea86c4d82a99fe83fe1fd31675e46907def6a0543"
+}

@@ -1,0 +1,574 @@
+{
+  "generatedUtc": "2026-09-29T12:19:42.954930+00:00",
+  "scope": "Six reported clipping corrections; no commit/push",
+  "selfExcludedFromHashes": "ArtReview/StudioServices/CollisionQA/implementation-manifest.json",
+  "baselines": {
+    "baseline": {
+      "baselineCount": 9573,
+      "modified": [
+        {
+          "path": "ArtExports/PeriodEnvironment1930/kit_manifest.json",
+          "beforeSha256": "a5e4691a774fbf92fa7c91e63de1002d74dcd5805ad9b81cb30b3ef02cd243f2",
+          "sha256": "4b0f7e50f93d87874e57a47cbe8caf69910fb445ce7f2dee231ca0f7e80023b7",
+          "size": 42331
+        },
+        {
+          "path": "ArtExports/PeriodEnvironment1930/kit_meshes.json.gz",
+          "beforeSha256": "411cf6930d7b231b548a7bf462ae78b117e239715fbf84399263f584d9d2294d",
+          "sha256": "5daf1400b5c5fc21e574d06dd717c80e4a56ff0ef662ce545841cb2a3054f58d",
+          "size": 4255665
+        },
+        {
+          "path": "ArtExports/StudioServices/Production/production_manifest.json",
+          "beforeSha256": "89cc2af605ba2a62377fd61a3a1c7375b91bb82704c0b1981dd9dc77069bb5c3",
+          "sha256": "c93b96f42ce4012e487bd5c5d6b99fc34a676d43089be37ea295f956093be657",
+          "size": 67952
+        },
+        {
+          "path": "ArtExports/StudioServices/Production/production_meshes.json.gz",
+          "beforeSha256": "197655dd940dcb98ac1ea8eab90ada1a6818d488002d1606011f657f7bf934e3",
+          "sha256": "19a604ce10597d3dc04a2608fb4ea7b06b9cfe0d583dcbbad3c2d65c6d3a4864",
+          "size": 2593634
+        },
+        {
+          "path": "ArtReview/StudioServices/Production/01_front_three_quarter.png",
+          "beforeSha256": "c6456390e29db907d156cd2bef08acbdb3c6d392955862d7a6643ddd6b6009bf",
+          "sha256": "00713222e3ad2d6c12f932b5afec1c901e09a4243456e265fa253fffe30ea5e7",
+          "size": 1411495
+        },
+        {
+          "path": "ArtReview/StudioServices/Production/02_front.png",
+          "beforeSha256": "2d6b53a7106bf9d4d44850bbb6516429a4cccea65a4ee0917dc6e29c659ff486",
+          "sha256": "a7a0165845fd77f7cd729a5691589016ab0b9fe0ee42777f4dd4f08c158a5a12",
+          "size": 823140
+        },
+        {
+          "path": "ArtReview/StudioServices/Production/03_rear_yard.png",
+          "beforeSha256": "2f4b7f6237bda808452f2a1a3ce455b79292473dce30726fb5bcb62affc144a4",
+          "sha256": "4cb0899b8abe1957d46dbd165d396f9be4f7959a3c2bb6cf2f98e48fef8809c3",
+          "size": 1292855
+        },
+        {
+          "path": "ArtReview/StudioServices/Production/04_management.png",
+          "beforeSha256": "53326c7b0c38106ea13b9659cfcd61befd80d9ed997e040cd698048222dee19c",
+          "sha256": "805aa4533d79188c1dca97d609a0534ffbb4189c6963c2faba79482daa3513fd",
+          "size": 1390458
+        },
+        {
+          "path": "ArtReview/StudioServices/Production/05_employment.png",
+          "beforeSha256": "e5fe91c07802af2b64ab9705c21f840153d7daf3019829a5cabd7dbda45b105c",
+          "sha256": "0f23285d326c2d2f912fe7bca19c9709bc9fd3ae5d9cc2b2aabbdda6f3946d33",
+          "size": 2006651
+        },
+        {
+          "path": "ArtReview/StudioServices/Production/06_workshop_doors.png",
+          "beforeSha256": "4de10d5815c11430914e43ffecde08e34a9f9d4843209300bdf42e02e9c2704c",
+          "sha256": "0633a4bb0d21d6449ce557bc681a6f2d0af531a64bacfbed2d503a959a5bfe41",
+          "size": 2263861
+        },
+        {
+          "path": "ArtReview/StudioServices/Production/07_working_yard.png",
+          "beforeSha256": "8702c15a92af489e839cf6d0a921e6644bc22227a3b209c5e8231d5a0a71ae74",
+          "sha256": "befe20ae8c7e90c72bd5afa7a3cd080a092dcfc5e74580dc27a74f0580d7960f",
+          "size": 2096401
+        },
+        {
+          "path": "ArtReview/StudioServices/Production/08_cutaway.png",
+          "beforeSha256": "60d5d1e1b7f1daf49e968af43569fa1d32f4fcc8b5f676a4d1ace8c02c5c9237",
+          "sha256": "844d799b2bd79fadf5feff26b026383db784fbe0fbac615bff5b3c469bb37183",
+          "size": 1584903
+        },
+        {
+          "path": "ArtReview/StudioServices/Production/09_plan.png",
+          "beforeSha256": "c3fabed5c4cc5e0ea7604b577d731536d535b4af1555a53c39332d17a07f6b57",
+          "sha256": "c421301e22bbd00f54125488cea20b21ddae138188cd77c9cfec743d805b71af",
+          "size": 2162685
+        },
+        {
+          "path": "ArtReview/StudioServices/Production/10_office.png",
+          "beforeSha256": "04956be20bfc487be66c0f0e3ba08acba4a4a459f9fa4d315b059d2a2e93a8b9",
+          "sha256": "c05208bcf74f707de64cdc009f0621bdec93f21386fda64dc33091cfcd55b646",
+          "size": 2375496
+        },
+        {
+          "path": "ArtReview/StudioServices/Production/11_workshop.png",
+          "beforeSha256": "c6e8751501a12b1b663ecca65ed2d429539b414b716198b4c2e15c14e9d28095",
+          "sha256": "79c78b814dc5114fcb23142a436c8adcc245c1a0e1a48f0cecd3c4b95735df7f",
+          "size": 2367285
+        },
+        {
+          "path": "ArtReview/StudioServices/Production/12_storage.png",
+          "beforeSha256": "0081487334dc5acfabec813a1d795661912535534f3446c0f21570bd3f0c3a7e",
+          "sha256": "f4159d55b09832048db470421743c52adb4cc803f23e177cbc54bc71c9f66f86",
+          "size": 2228101
+        },
+        {
+          "path": "ArtReview/StudioServices/Production/13_restored.png",
+          "beforeSha256": "c6456390e29db907d156cd2bef08acbdb3c6d392955862d7a6643ddd6b6009bf",
+          "sha256": "00713222e3ad2d6c12f932b5afec1c901e09a4243456e265fa253fffe30ea5e7",
+          "size": 1411495
+        },
+        {
+          "path": "ArtReview/StudioServices/Production/14_live_held_cutaway.png",
+          "beforeSha256": "df01e686ed36810d29526f0955604172dacfccec0c3ecfc6783d56a3be430ada",
+          "sha256": "c45d107e2e2fc5b63b88c347c858818b3bc90755a5af2776a257f56d2fac3514",
+          "size": 917597
+        },
+        {
+          "path": "ArtReview/StudioServices/Production/15_drainage_corner.png",
+          "beforeSha256": "5503c963032917423f9cfb34ac338b2af5133a8869fb993a705526bbed13c442",
+          "sha256": "38f54a6510b440c4a85f4f639e806f21e56eaff59a5ee89462ed383b61c893c5",
+          "size": 2272861
+        },
+        {
+          "path": "ArtReview/StudioServices/Production/16_left_eave.png",
+          "beforeSha256": "388f96888afd798f81e5080c084425e090cd5f1221aba4bb2fbe08b74c3f44ce",
+          "sha256": "581df4ab4af7433eef38f20cf6a97bb0b54944b614cb2b332b515d63a2499b12",
+          "size": 1950031
+        },
+        {
+          "path": "ArtReview/StudioServices/Production/17_live_exterior.png",
+          "beforeSha256": "37840ff49b3e36065b1a593ae472d5648036c4e27a0b51aab17653eeba1867f6",
+          "sha256": "ca2bae7b97b6c33832addf8f303fccbbf148422ac3ea8098a789e42410d2904a",
+          "size": 863259
+        },
+        {
+          "path": "ArtReview/StudioServices/Production/checks.json",
+          "beforeSha256": "204f1fe35942ff03c52ce71def201ba06aa05bf38a2efa7b2ad4d61332793d3a",
+          "sha256": "7ca87656d92aca5fa5170f39d3e6c33f3ece2d76c892c124a3ef7fc6fa395e06",
+          "size": 6884
+        },
+        {
+          "path": "ArtReview/StudioServices/Production/mesh-validation.json",
+          "beforeSha256": "7c1cfc9c15a7bd1a8f2dff7cd3d8889141d367c74a9d15d6289ef1fef77857ca",
+          "sha256": "534bcea5f6745ffe62c1a739df3dcfc402acfbe1c14669c0bcf0c2f5f2d6dc83",
+          "size": 533
+        },
+        {
+          "path": "ArtSource/PeriodEnvironment1930/PeriodEnvironment1930.blend",
+          "beforeSha256": "2dfee5e27ab097cd11fb00405bd8b4b9b82e4c5f855f976dbbb454f56d9f8829",
+          "sha256": "245bd95c86d751540a463395ae60f42049b4e9a9671702fc8e571cfefba98094",
+          "size": 2170480
+        },
+        {
+          "path": "ArtSource/PeriodEnvironment1930/__pycache__/fidelity.cpython-311.pyc",
+          "beforeSha256": "5ea1b374e016b3987aef1c46b32afaf5ef8ba85657d73c7f9b90242d8a2367b0",
+          "sha256": "9702dcabcf29f6a0d166b9bfe62531028446553acb0666c31a2d56622167e443",
+          "size": 64259
+        },
+        {
+          "path": "ArtSource/PeriodEnvironment1930/__pycache__/final_qa.cpython-311.pyc",
+          "beforeSha256": "5f252adb017c9b004501fa17c6baefe516974e59bb0f90698c5caec3ac8e02d7",
+          "sha256": "9edbb497534eca743a0933d55a8b29c97274938c832e218119e3e9687b325e42",
+          "size": 60582
+        },
+        {
+          "path": "ArtSource/PeriodEnvironment1930/fidelity.py",
+          "beforeSha256": "f60bcd0e39341519857aa7a4cd7dfe1910d503571d4e01cb3f856b0f0c204fb5",
+          "sha256": "7cf4effcfb170626f7ade55d903bbfb06ba628fe073f428d508327ff9a3a43ce",
+          "size": 27752
+        },
+        {
+          "path": "ArtSource/PeriodEnvironment1930/final_qa.py",
+          "beforeSha256": "953185417dee03ddada946908f850bf501d825765cdfe5a811ae4f4543d5d9e9",
+          "sha256": "ab71a0db9da02fa63e68d506d88e0603ad0a772e1b6066d0a613351e6286949c",
+          "size": 27448
+        },
+        {
+          "path": "ArtSource/StudioServices/StudioServices_Production.blend",
+          "beforeSha256": "68e025aa38a537d8e3e5094ef29803246c361c8f954b1de2604ad991f512498a",
+          "sha256": "0551f1e669f644575cfa9ab309cb23a027d55f72c276a57e8694702d853ca1fb",
+          "size": 2137305
+        },
+        {
+          "path": "ArtSource/StudioServices/generate_production.py",
+          "beforeSha256": "c1b78de69cad56ea6edcdf3f84cc890a00485eeaaa6fe327745072387f808d87",
+          "sha256": "be3069a80c6b3afd8dd127467ed8375c2b7c5740e38686c30d03097afed5ff5d",
+          "size": 28496
+        },
+        {
+          "path": "Assets/Scenes/Studio.unity",
+          "beforeSha256": "cf67bba36af2f2cc9677432e9bc22d0fc1fb6b8f34204a401f786d639e81d4bb",
+          "sha256": "e199ee236168a62743d2a4488cea99a43669e9d0476f9a916ae37d8434678592",
+          "size": 486591
+        },
+        {
+          "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/AwningCurved_164_1930.asset",
+          "beforeSha256": "253ab1d24adc459ea1414f5e57e766fad11a6b4f57fdd8f6fa6a804182a6a1bd",
+          "sha256": "24d97c647aad0c896c68d3480249fe3a3a0e087b4517eeb6b1ca8607d9429a3a",
+          "size": 1471
+        },
+        {
+          "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Definitions/BenchSlatted_210_1930.asset",
+          "beforeSha256": "6802760c4a03e8c7909448eb3d839892e46c599c12750668425c2d1f6a144b7f",
+          "sha256": "da333be55b23fad3069eebe67e5801c071cc45ce21880f0e20076cbed4fd252d",
+          "size": 1441
+        },
+        {
+          "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/AwningCurved_164_1930.asset",
+          "beforeSha256": "6b8088ededed704f643bbce2ee4dbde753cfaf71780a1fc6c8add1ce7fd101a2",
+          "sha256": "90791d7f6020f6771da13553ecf45ac0235d05c36ad75a662ac23e7ccb5b011c",
+          "size": 351804
+        },
+        {
+          "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/BenchSlatted_210_1930.asset",
+          "beforeSha256": "898630c5c7fcc8c74ddcc18dfd0cc96ef1d52afc43d655de1c0e33396a73e23d",
+          "sha256": "48c08b425dfeed9b4f784fa9ea7f136d0345cf01192c25a1b8a7afe9e0578a93",
+          "size": 746196
+        },
+        {
+          "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/DeskLampBanker_1930.asset",
+          "beforeSha256": "2e2f55bdcf41e0d35f026a71305536e8ee2a670a33695a72781bfde22bcaf4f2",
+          "sha256": "efc21b92570c111ce7a784f2bc764e5bbb3879400a9e8568bb7d923ebce34a7c",
+          "size": 1311822
+        },
+        {
+          "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/FenceGateWire_180_1930.asset",
+          "beforeSha256": "48e69ac71cfc69ccc0fed95b7e19f8abacfdc3a5f3d7c410ca2ff9591da6244f",
+          "sha256": "9b19650a1f590be20e2037a929060e8fc803c240797c318b531c09752994819a",
+          "size": 1039340
+        },
+        {
+          "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/FenceGateWire_180_RH_1930.asset",
+          "beforeSha256": "e1ca80caf0d80c4a5ab9763d1da59a8f7ed6bee489a17609f01330491132f21c",
+          "sha256": "8106ff3c1b8d2b99c96fca9f63e3572c6e611216458b74f222ac9ae301d67973",
+          "size": 1014196
+        },
+        {
+          "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/FencePostTubular_1930.asset",
+          "beforeSha256": "34b220a8e37d3081fa2fb6ca7c4e91d1d87e7825aaf422b39e63db9fd19cbceb",
+          "sha256": "e828b225e8c6bcefe2e4442eef5192a259a7f2fc0442434d2e477579ab50b0c5",
+          "size": 40413
+        },
+        {
+          "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/ServiceDoorPair_485x346_1930.asset",
+          "beforeSha256": "a2526d24c1032ae9f29c43596feb4935b147b9c00797397128fd66d9dae35e8f",
+          "sha256": "f5094e38579dacd5a89b1347448a89abefd05441d16d4a94bbaa2aab22a1e1f5",
+          "size": 1974483
+        },
+        {
+          "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Meshes/WorkbenchJoiner_225_1930.asset",
+          "beforeSha256": "c0419b737b305d93e5595b1483bbc97d21c5f2ceac2172b8237a6a2e3123f275",
+          "sha256": "72fac9b0d6d76f110c90d8115e2c1e4839ee1bc510357f9694dc0676d6866234",
+          "size": 952325
+        },
+        {
+          "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/BenchSlatted_210_1930.prefab",
+          "beforeSha256": "8fdbe3fb216a8a1c971ca099a79a1763b4ffc0aa5105e9439325dd6378c439de",
+          "sha256": "be66076c7abfbcd5a7201f0ed1e447890f7931a95862ea570897ea6c00d3f693",
+          "size": 8121
+        },
+        {
+          "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/EmploymentPorchTimber_232_1930.prefab",
+          "beforeSha256": "399d6c762df0781c95ef02d77415bbaf51618d5eacbba005ae95aeb9e259537e",
+          "sha256": "0646fee1118bfec180a36bc983111a9854db3c94d104a8345f9ef7a777089939",
+          "size": 9783
+        },
+        {
+          "path": "Assets/SilverScreen/Environment/PeriodEnvironment1930/Prefabs/ServiceDoorPair_485x346_1930.prefab",
+          "beforeSha256": "2f24926b2b4f530a0f20f1f42d6df68811717ae7cfe34264a652a41ed49e46bf",
+          "sha256": "bb0a88b538eb3b6ca4eeb72eabda3a98991daa80586c23faa22d76b356a79295",
+          "size": 9855
+        },
+        {
+          "path": "Assets/SilverScreen/Environment/StudioServices/Editor/StudioServicesFinalQAReview.cs",
+          "beforeSha256": "4fa86d4c390b76cd2eb9e0b1ffd88d60e77ef93d8f01bb3a128d6272398c98e7",
+          "sha256": "3167e4132de7418f918c8887be10b6245a51ed925d5b10cc9d8acc8342a9e494",
+          "size": 13364
+        },
+        {
+          "path": "Assets/SilverScreen/Environment/StudioServices/Resources/StudioServices_Live.prefab",
+          "beforeSha256": "b4b91ab9fe996c704f2e5cc54c897b9fe92576e9f97dc7210623178439ec25c6",
+          "sha256": "e30eb379de76452be04187f631ce4ae4e2e47d52b34743b4b52f96c4b7097197",
+          "size": 769787
+        }
+      ],
+      "added": [
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/After/capture-order.txt",
+          "sha256": "b27ad086b6a1e26973201db87b2a1c241e65646228c967c05d27c294591980ff",
+          "size": 358
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/After/collision_awning_above.png",
+          "sha256": "bb7db54971a3e6f0af660ce822e8fd8295f78aefdb8d4d13ddb215fb19769ee7",
+          "size": 2041597
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/After/collision_awning_front.png",
+          "sha256": "81eb504b4a749e2689020981bc073bf6ac86c47d01c4a264b7c70fb9efb59915",
+          "size": 1930989
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/After/collision_awning_left.png",
+          "sha256": "62175d4237cdcdfaf1ac4ec16e8945865ca55d311be975c063cbe556e26f9f49",
+          "size": 1855652
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/After/collision_awning_right.png",
+          "sha256": "8d75ede93062c392c02667f4cc2503c12e06a46579371e634d0575a11f80bfc4",
+          "size": 1937585
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/After/collision_bench_back.png",
+          "sha256": "ed7a1e2bcd3f4e801b7be6b744382db3d5ecb85d9cc935520e02b97360adf774",
+          "size": 1511414
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/After/collision_bench_top.png",
+          "sha256": "e19145793c3793a91e0d4df8c7f1f75fbef6884330bb272dd793e8a1e554d29b",
+          "size": 2607711
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/After/collision_door_bolts.png",
+          "sha256": "b1c8523f65c649372799f46361e2798bde958fabeca12c1d96dc6d9b12034260",
+          "size": 1929016
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/After/collision_door_bolts_oblique.png",
+          "sha256": "98b9baab433d6bc93b964d0a4b20494923a8630c608f5b8fc762140e94a469ec",
+          "size": 1984076
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/After/collision_storage_above.png",
+          "sha256": "42231960106e2f68aeda851b64249cc59db6c70ea290a4da88c388cff6d70c01",
+          "size": 2007822
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/After/collision_storage_clearance.png",
+          "sha256": "fbb5cffc4175c1e634b9828a6b945878af90c99fa2834a05b424ad2378687974",
+          "size": 1912832
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/After/collision_storage_front.png",
+          "sha256": "2b6748729d2c2b7fb26e6b963a9f5207174b10622b79a445cb936c7d81e0fe16",
+          "size": 1908412
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/After/collision_yard_crates.png",
+          "sha256": "a3eebd3c46afdfe1490d4addd52184fcdb1b3726d464e0afe27c511a222ca2a1",
+          "size": 2046536
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/After/collision_yard_sill.png",
+          "sha256": "d060decb9989935b2ff80e3cac8079730994013104f1cca735630c321e59b6d9",
+          "size": 2092566
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/After/collision_yard_spacing.png",
+          "sha256": "f9fe45577ca4064ac9eceb3a8e52f05fb824c00960ec8f169fbdd8678281ad07",
+          "size": 2250848
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/After/collision_yard_vise.png",
+          "sha256": "cfe5055d045253a77b1b886647198d9327d5040613d3d83d032f7efb08959739",
+          "size": 2279647
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/Before/capture-order.txt",
+          "sha256": "a26108bb57247a42f014f94b8d98ca1707b1574cceb3e426e576e5e3103b6a9f",
+          "size": 260
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/Before/collision_awning_front.png",
+          "sha256": "df87a2243617cc39ad0deb56c5b5ba7c137a8d642203fb7018b4149be6f38835",
+          "size": 1936044
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/Before/collision_awning_left.png",
+          "sha256": "3165ccd930222e44aa92dfc3d06ce4a4e575a7f424840e49a85004f5dd2131b3",
+          "size": 1881530
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/Before/collision_awning_right.png",
+          "sha256": "2b9bf3c7fc45e0f9125824191abfcb0c46862c5b9861b1b2bc16735343e154f2",
+          "size": 1932192
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/Before/collision_bench_back.png",
+          "sha256": "3cce34231014156bda27b60e6fe4abc5df1b54a65bcb99bf1d215fabc0b05ca9",
+          "size": 1349714
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/Before/collision_bench_top.png",
+          "sha256": "b37c63de600f1c06f0f9eec1871f0b4f7a4937502a5742deb8d5ea1e548a0560",
+          "size": 2602525
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/Before/collision_door_bolts.png",
+          "sha256": "91b4ed7a927cbe285809fe66f9b5a0554c5c3680f37fcbd8e66a0e7566ea830e",
+          "size": 1918645
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/Before/collision_door_bolts_oblique.png",
+          "sha256": "c0640e62772c334955f4a09079290b55756f1530915f001217e429851925a0d1",
+          "size": 1984952
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/Before/collision_storage_above.png",
+          "sha256": "5b092a3e7ba967a0b705fef7b4ae278d90c457d2f19c0afa456d64330d9330f3",
+          "size": 2005496
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/Before/collision_storage_front.png",
+          "sha256": "72a246ecbe23619e8f7a74f6832d600f9254b8626536329afaf926ba5521c6ff",
+          "size": 1908392
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/Before/collision_yard_crates.png",
+          "sha256": "2f325132165bd575ad6acc46caed77a43bdf385be4dc39c63a7ba5a254d8ec2c",
+          "size": 2037435
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/Before/collision_yard_vise.png",
+          "sha256": "dbaa4e4ce7c422a0086e5336dbdf5de9e19960e2060afbf56b7cd2ffa5fe1472",
+          "size": 2271148
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/YardSillBefore/capture-order.txt",
+          "sha256": "b27ad086b6a1e26973201db87b2a1c241e65646228c967c05d27c294591980ff",
+          "size": 358
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/YardSillBefore/collision_awning_above.png",
+          "sha256": "bb7db54971a3e6f0af660ce822e8fd8295f78aefdb8d4d13ddb215fb19769ee7",
+          "size": 2041597
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/YardSillBefore/collision_awning_front.png",
+          "sha256": "81eb504b4a749e2689020981bc073bf6ac86c47d01c4a264b7c70fb9efb59915",
+          "size": 1930989
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/YardSillBefore/collision_awning_left.png",
+          "sha256": "62175d4237cdcdfaf1ac4ec16e8945865ca55d311be975c063cbe556e26f9f49",
+          "size": 1855652
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/YardSillBefore/collision_awning_right.png",
+          "sha256": "8d75ede93062c392c02667f4cc2503c12e06a46579371e634d0575a11f80bfc4",
+          "size": 1937585
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/YardSillBefore/collision_bench_back.png",
+          "sha256": "ed7a1e2bcd3f4e801b7be6b744382db3d5ecb85d9cc935520e02b97360adf774",
+          "size": 1511414
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/YardSillBefore/collision_bench_top.png",
+          "sha256": "e19145793c3793a91e0d4df8c7f1f75fbef6884330bb272dd793e8a1e554d29b",
+          "size": 2607711
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/YardSillBefore/collision_door_bolts.png",
+          "sha256": "b1c8523f65c649372799f46361e2798bde958fabeca12c1d96dc6d9b12034260",
+          "size": 1929016
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/YardSillBefore/collision_door_bolts_oblique.png",
+          "sha256": "98b9baab433d6bc93b964d0a4b20494923a8630c608f5b8fc762140e94a469ec",
+          "size": 1984076
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/YardSillBefore/collision_storage_above.png",
+          "sha256": "42231960106e2f68aeda851b64249cc59db6c70ea290a4da88c388cff6d70c01",
+          "size": 2007822
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/YardSillBefore/collision_storage_clearance.png",
+          "sha256": "fbb5cffc4175c1e634b9828a6b945878af90c99fa2834a05b424ad2378687974",
+          "size": 1912832
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/YardSillBefore/collision_storage_front.png",
+          "sha256": "2b6748729d2c2b7fb26e6b963a9f5207174b10622b79a445cb936c7d81e0fe16",
+          "size": 1908412
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/YardSillBefore/collision_yard_crates.png",
+          "sha256": "4a28e4ca921c02b47c0f921b052e568abc5ac6b56ab3479c5ac9c484040c8d61",
+          "size": 2052355
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/YardSillBefore/collision_yard_sill.png",
+          "sha256": "96d123cd745b2062183f765915d5ccb05e56a3dbfbeff3a211bb7352637067e8",
+          "size": 2093596
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/YardSillBefore/collision_yard_spacing.png",
+          "sha256": "135344883073716e47299b61cd86cc85bc0dad775f633d3b43adcd61e7eed9b3",
+          "size": 2249360
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/YardSillBefore/collision_yard_vise.png",
+          "sha256": "6a7b52d81ac2bb300ff4faeb92d974d1e3fe629fc4320cf442055e6c8c704a4d",
+          "size": 2274916
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/mesh-validation.json",
+          "sha256": "534bcea5f6745ffe62c1a739df3dcfc402acfbe1c14669c0bcf0c2f5f2d6dc83",
+          "size": 533
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/review.html",
+          "sha256": "e4e72bf73f71227906473c679fb51834f7640744e51ddffabe316d49382ceffd",
+          "size": 8352
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/runtime.txt",
+          "sha256": "1b74c68272f04554733ef3166f126a032ab1232b8af5f9f2e7753c4771ce47fb",
+          "size": 385
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/source-clearances.json",
+          "sha256": "22632323659406049d9d999af6ae13bfa095a2d5c9f5eff2b88384b6b0bbdcbf",
+          "size": 4355
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/tests.xml",
+          "sha256": "f81234284699f56f9e06cbe8a7b687e4f695664762a0613443a07ee98d87458d",
+          "size": 34922
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/unity-clearances.json",
+          "sha256": "ace5640d7e7eb38df4eccded5eea8d61b9011d49a79bc4c9323926461c743c0b",
+          "size": 69
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/unity-preflight.json",
+          "sha256": "7ca87656d92aca5fa5170f39d3e6c33f3ece2d76c892c124a3ef7fc6fa395e06",
+          "size": 6884
+        },
+        {
+          "path": "ArtReview/StudioServices/CollisionQA/validation.md",
+          "sha256": "c739d1cb425ddfeaf0f5d64462335c690d87ccd24f9929fbc86d79eb32602c1e",
+          "size": 7781
+        },
+        {
+          "path": "ArtSource/StudioServices/validate_collision_clearances.py",
+          "sha256": "05cb18eb36fe7233f872748a164a4edde89beac298e48f66355d46d2e287fbac",
+          "size": 8526
+        }
+      ],
+      "deleted": [],
+      "outsideOwnedScope": [
+        "Assets/Scenes/Studio.unity"
+      ],
+      "changedExistingMetaFiles": []
+    }
+  },
+  "preInterruptionComparisonUnchangedOutsideOwnedScope": false,
+  "externalSceneChangeObservedDuringResume": {
+    "path": "Assets/Scenes/Studio.unity",
+    "sha256": "e199ee236168a62743d2a4488cea99a43669e9d0476f9a916ae37d8434678592",
+    "size": 486591,
+    "lastWriteUtc": "2026-09-29T11:35:48.195642+00:00",
+    "priorBaseline": {
+      "sha256": "cf67bba36af2f2cc9677432e9bc22d0fc1fb6b8f34204a401f786d639e81d4bb",
+      "size": 486483
+    },
+    "observation": "Different from pre-interruption baseline. Initial resumed MCP inspection reported unsaved Studio; later inspection reported clean ProductionReview. This correction has not saved Studio. Preserve the currently saved file.",
+    "preservedSinceObservation": true
+  },
+  "unrelatedStatePreservedByThisCorrection": true
+}

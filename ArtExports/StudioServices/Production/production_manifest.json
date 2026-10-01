@@ -1,0 +1,3851 @@
+{
+  "schema": 1,
+  "materials": [
+    {
+      "name": "WarmStucco",
+      "linearRGB": [
+        0.53,
+        0.445,
+        0.335
+      ],
+      "metallic": 0,
+      "roughness": 0.87,
+      "texture": "stucco"
+    },
+    {
+      "name": "InteriorPlaster",
+      "linearRGB": [
+        0.59,
+        0.535,
+        0.43
+      ],
+      "metallic": 0,
+      "roughness": 0.88,
+      "texture": "stucco"
+    },
+    {
+      "name": "LimestoneTrim",
+      "linearRGB": [
+        0.64,
+        0.56,
+        0.435
+      ],
+      "metallic": 0,
+      "roughness": 0.78,
+      "texture": "stone"
+    },
+    {
+      "name": "Brick",
+      "linearRGB": [
+        0.27,
+        0.1,
+        0.048
+      ],
+      "metallic": 0,
+      "roughness": 0.86,
+      "texture": "stone"
+    },
+    {
+      "name": "BrickLight",
+      "linearRGB": [
+        0.36,
+        0.16,
+        0.075
+      ],
+      "metallic": 0,
+      "roughness": 0.86,
+      "texture": "stone"
+    },
+    {
+      "name": "BrickDark",
+      "linearRGB": [
+        0.19,
+        0.063,
+        0.029
+      ],
+      "metallic": 0,
+      "roughness": 0.87,
+      "texture": "stone"
+    },
+    {
+      "name": "Mortar",
+      "linearRGB": [
+        0.3,
+        0.28,
+        0.235
+      ],
+      "metallic": 0,
+      "roughness": 0.9,
+      "texture": "stone"
+    },
+    {
+      "name": "WorkshopPaint",
+      "linearRGB": [
+        0.07,
+        0.115,
+        0.095
+      ],
+      "metallic": 0,
+      "roughness": 0.68,
+      "texture": "paint"
+    },
+    {
+      "name": "PaintWear",
+      "linearRGB": [
+        0.2,
+        0.245,
+        0.185
+      ],
+      "metallic": 0,
+      "roughness": 0.77,
+      "texture": "paint"
+    },
+    {
+      "name": "Timber",
+      "linearRGB": [
+        0.22,
+        0.125,
+        0.052
+      ],
+      "metallic": 0,
+      "roughness": 0.73,
+      "texture": "timber"
+    },
+    {
+      "name": "TimberLight",
+      "linearRGB": [
+        0.36,
+        0.245,
+        0.122
+      ],
+      "metallic": 0,
+      "roughness": 0.79,
+      "texture": "timber"
+    },
+    {
+      "name": "TimberDark",
+      "linearRGB": [
+        0.095,
+        0.05,
+        0.022
+      ],
+      "metallic": 0,
+      "roughness": 0.7,
+      "texture": "timber"
+    },
+    {
+      "name": "RoofMetal",
+      "linearRGB": [
+        0.115,
+        0.126,
+        0.12
+      ],
+      "metallic": 0.7,
+      "roughness": 0.59,
+      "texture": "metal"
+    },
+    {
+      "name": "Galvanized",
+      "linearRGB": [
+        0.3,
+        0.32,
+        0.3
+      ],
+      "metallic": 0.78,
+      "roughness": 0.48,
+      "texture": "metal"
+    },
+    {
+      "name": "Steel",
+      "linearRGB": [
+        0.032,
+        0.038,
+        0.033
+      ],
+      "metallic": 0.65,
+      "roughness": 0.51,
+      "texture": "paint"
+    },
+    {
+      "name": "Iron",
+      "linearRGB": [
+        0.06,
+        0.065,
+        0.055
+      ],
+      "metallic": 0.72,
+      "roughness": 0.55,
+      "texture": "metal"
+    },
+    {
+      "name": "Brass",
+      "linearRGB": [
+        0.36,
+        0.24,
+        0.08
+      ],
+      "metallic": 0.82,
+      "roughness": 0.33,
+      "texture": "metal"
+    },
+    {
+      "name": "Glass",
+      "linearRGB": [
+        0.12,
+        0.17,
+        0.17
+      ],
+      "metallic": 0,
+      "roughness": 0.12,
+      "texture": ""
+    },
+    {
+      "name": "Concrete",
+      "linearRGB": [
+        0.29,
+        0.27,
+        0.235
+      ],
+      "metallic": 0,
+      "roughness": 0.85,
+      "texture": "concrete"
+    },
+    {
+      "name": "OfficeFloor",
+      "linearRGB": [
+        0.23,
+        0.195,
+        0.145
+      ],
+      "metallic": 0,
+      "roughness": 0.7,
+      "texture": "floor"
+    },
+    {
+      "name": "Paper",
+      "linearRGB": [
+        0.71,
+        0.65,
+        0.48
+      ],
+      "metallic": 0,
+      "roughness": 0.9,
+      "texture": ""
+    },
+    {
+      "name": "PaperLight",
+      "linearRGB": [
+        0.85,
+        0.79,
+        0.63
+      ],
+      "metallic": 0,
+      "roughness": 0.88,
+      "texture": ""
+    },
+    {
+      "name": "Black",
+      "linearRGB": [
+        0.012,
+        0.014,
+        0.012
+      ],
+      "metallic": 0.15,
+      "roughness": 0.38,
+      "texture": ""
+    },
+    {
+      "name": "Canvas",
+      "linearRGB": [
+        0.35,
+        0.29,
+        0.17
+      ],
+      "metallic": 0,
+      "roughness": 0.93,
+      "texture": "canvas"
+    },
+    {
+      "name": "ToolRed",
+      "linearRGB": [
+        0.27,
+        0.052,
+        0.027
+      ],
+      "metallic": 0.15,
+      "roughness": 0.66,
+      "texture": "paint"
+    },
+    {
+      "name": "Leather",
+      "linearRGB": [
+        0.13,
+        0.052,
+        0.024
+      ],
+      "metallic": 0,
+      "roughness": 0.73,
+      "texture": "canvas"
+    },
+    {
+      "name": "ContactPatina",
+      "linearRGB": [
+        1,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.9,
+      "texture": "weather:Weather_Contact"
+    },
+    {
+      "name": "RunoffPatina",
+      "linearRGB": [
+        1,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.9,
+      "texture": "weather:Weather_Runoff"
+    }
+  ],
+  "fixtures": [
+    {
+      "asset": "WindowSteel_195x212_1930",
+      "group": "FrontWall",
+      "position": [
+        -1.525,
+        0.83,
+        -4.43
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "WindowSteel_200x180_1930",
+      "group": "RearWall",
+      "position": [
+        -4.4,
+        1.3,
+        4.43
+      ],
+      "yaw": 0,
+      "existing": false
+    },
+    {
+      "asset": "WindowSteel_310x195_1930",
+      "group": "RearWall",
+      "position": [
+        2.25,
+        1.15,
+        4.43
+      ],
+      "yaw": 0,
+      "existing": false
+    },
+    {
+      "asset": "WindowSteel_265x205_1930",
+      "group": "RightWall",
+      "position": [
+        6.93,
+        1.1,
+        1.775
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "WindowSteel_200x210_1930",
+      "group": "LeftWall",
+      "position": [
+        -6.93,
+        1,
+        -1.9
+      ],
+      "yaw": 270,
+      "existing": false
+    },
+    {
+      "asset": "WindowSteel_190x180_1930",
+      "group": "LeftWall",
+      "position": [
+        -6.93,
+        1.3,
+        2.45
+      ],
+      "yaw": 270,
+      "existing": false
+    },
+    {
+      "asset": "DoorFrameTimber_120x262_1930",
+      "group": "FrontWall",
+      "position": [
+        -4.15,
+        0,
+        -4.36
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "DoorGlazedTimber_110x258_1930",
+      "group": "OfficeDoor",
+      "position": [
+        -4.65,
+        0,
+        -3.91
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "DoorUtilityTimber_150x260_1930",
+      "group": "YardDoor",
+      "position": [
+        6.6,
+        0,
+        -0.1
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "ServiceDoorPair_485x346_1930",
+      "group": "WorkshopDoors",
+      "position": [
+        3.775,
+        0,
+        -4.48
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "AwningCurved_164_1930",
+      "group": "OfficeAwning",
+      "position": [
+        -4.15,
+        2.73,
+        -4.5265
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "NoticeBoardTimber_173_1930",
+      "group": "EmploymentBoard",
+      "position": [
+        -5.88,
+        1.105,
+        -4.6
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "GutterHalfRound_200_1930",
+      "group": "Roof",
+      "position": [
+        -7.025,
+        4.08,
+        -2.95
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "GutterHalfRound_200_1930",
+      "group": "Roof",
+      "position": [
+        -7.025,
+        4.08,
+        -0.9500000000000002
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "GutterHalfRound_200_1930",
+      "group": "Roof",
+      "position": [
+        -7.025,
+        4.08,
+        1.0499999999999998
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "GutterHalfRound_155_1930",
+      "group": "Roof",
+      "position": [
+        -7.025,
+        4.08,
+        2.825
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "GutterHalfRound_040_1930",
+      "group": "Roof",
+      "position": [
+        -7.025,
+        4.08,
+        3.8
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "GutterHalfRound_040Plain_1930",
+      "group": "Roof",
+      "position": [
+        -7.025,
+        4.08,
+        4.2
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "DownpipeHollow_300_1930",
+      "group": "LeftWall",
+      "position": [
+        -7.1,
+        0.43,
+        3.8
+      ],
+      "yaw": 270,
+      "existing": false
+    },
+    {
+      "asset": "DownpipeShoe_1930",
+      "group": "LeftWall",
+      "position": [
+        -7.1,
+        0.07,
+        3.8
+      ],
+      "yaw": 270,
+      "existing": false
+    },
+    {
+      "asset": "SplashBlockConcrete_1930",
+      "group": "ExteriorProps",
+      "position": [
+        -7.38,
+        0,
+        3.8
+      ],
+      "yaw": 270,
+      "existing": false
+    },
+    {
+      "asset": "GutterHalfRound_200_1930",
+      "group": "Roof",
+      "position": [
+        7.025,
+        4.08,
+        -2.95
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "GutterHalfRound_200_1930",
+      "group": "Roof",
+      "position": [
+        7.025,
+        4.08,
+        -0.9500000000000002
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "GutterHalfRound_200_1930",
+      "group": "Roof",
+      "position": [
+        7.025,
+        4.08,
+        1.0499999999999998
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "GutterHalfRound_155_1930",
+      "group": "Roof",
+      "position": [
+        7.025,
+        4.08,
+        2.825
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "GutterHalfRound_040_1930",
+      "group": "Roof",
+      "position": [
+        7.025,
+        4.08,
+        3.8
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "GutterHalfRound_040Plain_1930",
+      "group": "Roof",
+      "position": [
+        7.025,
+        4.08,
+        4.2
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "DownpipeHollow_300_1930",
+      "group": "RightWall",
+      "position": [
+        7.1,
+        0.43,
+        3.8
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "DownpipeShoe_1930",
+      "group": "RightWall",
+      "position": [
+        7.1,
+        0.07,
+        3.8
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "SplashBlockConcrete_1930",
+      "group": "ExteriorProps",
+      "position": [
+        7.38,
+        0,
+        3.8
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "GutterHalfRound_200_1930",
+      "group": "Roof",
+      "position": [
+        -5.875,
+        4.08,
+        -4.1
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "GutterHalfRound_200_1930",
+      "group": "Roof",
+      "position": [
+        -3.875,
+        4.08,
+        -4.1
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "GutterHalfRound_200_1930",
+      "group": "Roof",
+      "position": [
+        -1.875,
+        4.08,
+        -4.1
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "GutterHalfRound_200_1930",
+      "group": "Roof",
+      "position": [
+        0.125,
+        4.08,
+        -4.1
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "GutterHalfRound_200_1930",
+      "group": "Roof",
+      "position": [
+        2.125,
+        4.08,
+        -4.1
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "GutterHalfRound_200_1930",
+      "group": "Roof",
+      "position": [
+        4.125,
+        4.08,
+        -4.1
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "GutterHalfRound_175_1930",
+      "group": "Roof",
+      "position": [
+        6,
+        4.08,
+        -4.1
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "GutterHalfRound_200_1930",
+      "group": "Roof",
+      "position": [
+        -5.875,
+        4.08,
+        4.55
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "GutterHalfRound_200_1930",
+      "group": "Roof",
+      "position": [
+        -3.875,
+        4.08,
+        4.55
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "GutterHalfRound_200_1930",
+      "group": "Roof",
+      "position": [
+        -1.875,
+        4.08,
+        4.55
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "GutterHalfRound_200_1930",
+      "group": "Roof",
+      "position": [
+        0.125,
+        4.08,
+        4.55
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "GutterHalfRound_200_1930",
+      "group": "Roof",
+      "position": [
+        2.125,
+        4.08,
+        4.55
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "GutterHalfRound_200_1930",
+      "group": "Roof",
+      "position": [
+        4.125,
+        4.08,
+        4.55
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "GutterHalfRound_175_1930",
+      "group": "Roof",
+      "position": [
+        6,
+        4.08,
+        4.55
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "GutterCorner90_1930",
+      "group": "Roof",
+      "position": [
+        7.025,
+        4.08,
+        -4.1
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "GutterCorner90_1930",
+      "group": "Roof",
+      "position": [
+        -7.025,
+        4.08,
+        -4.1
+      ],
+      "yaw": 270,
+      "existing": false
+    },
+    {
+      "asset": "GutterCorner90_1930",
+      "group": "Roof",
+      "position": [
+        7.025,
+        4.08,
+        4.55
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "GutterCorner90_1930",
+      "group": "Roof",
+      "position": [
+        -7.025,
+        4.08,
+        4.55
+      ],
+      "yaw": 0,
+      "existing": false
+    },
+    {
+      "asset": "GutterHalfRound_040_1930",
+      "group": "YardShelterRoof",
+      "position": [
+        10.875,
+        2.8,
+        -3.725
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "GutterHalfRound_200_1930",
+      "group": "YardShelterRoof",
+      "position": [
+        10.875,
+        2.8,
+        -2.525
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "GutterHalfRound_200_1930",
+      "group": "YardShelterRoof",
+      "position": [
+        10.875,
+        2.8,
+        -0.5249999999999999
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "GutterHalfRound_200_1930",
+      "group": "YardShelterRoof",
+      "position": [
+        10.875,
+        2.8,
+        1.475
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "GutterHalfRound_200_1930",
+      "group": "YardShelterRoof",
+      "position": [
+        10.875,
+        2.8,
+        3.475
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "DownpipeShoe_1930",
+      "group": "YardShelter",
+      "position": [
+        10.63,
+        0.07,
+        -3.725
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "SplashBlockConcrete_1930",
+      "group": "ExteriorProps",
+      "position": [
+        10.91,
+        0,
+        -3.725
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "DeskPedestal_1930",
+      "group": "InteriorProps",
+      "position": [
+        -5.4,
+        0,
+        -1.45
+      ],
+      "yaw": 0,
+      "existing": false
+    },
+    {
+      "asset": "ChairBentwood_1930",
+      "group": "InteriorProps",
+      "position": [
+        -5.4,
+        0,
+        -0.65
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "ChairBentwood_1930",
+      "group": "InteriorProps",
+      "position": [
+        -2.1,
+        0,
+        -0.6
+      ],
+      "yaw": 155,
+      "existing": false
+    },
+    {
+      "asset": "FilingCabinet_4Drawer_1930",
+      "group": "InteriorProps",
+      "position": [
+        -6.38,
+        0,
+        -0.25
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "ChairBentwood_1930",
+      "group": "InteriorProps",
+      "position": [
+        -1.12,
+        0,
+        -0.6
+      ],
+      "yaw": 195,
+      "existing": false
+    },
+    {
+      "asset": "WastebasketWire_1930",
+      "group": "InteriorProps",
+      "position": [
+        -6.36,
+        0,
+        -2.2
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "CoatStandTimber_1930",
+      "group": "InteriorProps",
+      "position": [
+        -0.87,
+        0,
+        -3.7
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "ClockSchoolhouse_1930",
+      "group": "InteriorPartitions",
+      "position": [
+        -2.7,
+        2.6,
+        0.1575
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "TelephoneDesk_1930",
+      "group": "InteriorProps",
+      "position": [
+        -6.05,
+        0.8,
+        -1.48
+      ],
+      "yaw": 195,
+      "existing": false
+    },
+    {
+      "asset": "DeskPaperwork_1930",
+      "group": "InteriorProps",
+      "position": [
+        -5.18,
+        0.8,
+        -1.47
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "BenchSlatted_210_1930",
+      "group": "ExteriorProps",
+      "position": [
+        -1.65,
+        0,
+        -5.16
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "NoticeBoardTimber_173_1930",
+      "group": "InteriorProps",
+      "position": [
+        -1.47,
+        1.3,
+        0.12
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "ShelfSteelTimber_170_1930",
+      "group": "InteriorProps",
+      "position": [
+        -6.25,
+        0,
+        1.32
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "ArchiveBox_1930",
+      "group": "InteriorProps",
+      "position": [
+        -6.25,
+        0.14,
+        0.77
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "ArchiveBox_1930",
+      "group": "InteriorProps",
+      "position": [
+        -6.25,
+        0.14,
+        1.32
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "ArchiveBox_1930",
+      "group": "InteriorProps",
+      "position": [
+        -6.25,
+        0.14,
+        1.87
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "ArchiveBox_1930",
+      "group": "InteriorProps",
+      "position": [
+        -6.25,
+        0.6000000000000001,
+        0.77
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "ArchiveBox_1930",
+      "group": "InteriorProps",
+      "position": [
+        -6.25,
+        0.6000000000000001,
+        1.32
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "ArchiveBox_1930",
+      "group": "InteriorProps",
+      "position": [
+        -6.25,
+        0.6000000000000001,
+        1.87
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "ArchiveBox_1930",
+      "group": "InteriorProps",
+      "position": [
+        -6.25,
+        1.06,
+        0.77
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "ArchiveBox_1930",
+      "group": "InteriorProps",
+      "position": [
+        -6.25,
+        1.06,
+        1.32
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "ArchiveBox_1930",
+      "group": "InteriorProps",
+      "position": [
+        -6.25,
+        1.06,
+        1.87
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "ArchiveBox_1930",
+      "group": "InteriorProps",
+      "position": [
+        -6.25,
+        1.52,
+        0.77
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "ArchiveBox_1930",
+      "group": "InteriorProps",
+      "position": [
+        -6.25,
+        1.52,
+        1.32
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "ArchiveBox_1930",
+      "group": "InteriorProps",
+      "position": [
+        -6.25,
+        1.52,
+        1.87
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "ShelfSteelTimber_170_1930",
+      "group": "InteriorProps",
+      "position": [
+        -6.25,
+        0,
+        3.22
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "ArchiveBox_1930",
+      "group": "InteriorProps",
+      "position": [
+        -6.25,
+        0.14,
+        2.67
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "ArchiveBox_1930",
+      "group": "InteriorProps",
+      "position": [
+        -6.25,
+        0.14,
+        3.22
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "ArchiveBox_1930",
+      "group": "InteriorProps",
+      "position": [
+        -6.25,
+        0.14,
+        3.7700000000000005
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "ArchiveBox_1930",
+      "group": "InteriorProps",
+      "position": [
+        -6.25,
+        0.6000000000000001,
+        2.67
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "ArchiveBox_1930",
+      "group": "InteriorProps",
+      "position": [
+        -6.25,
+        0.6000000000000001,
+        3.22
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "ArchiveBox_1930",
+      "group": "InteriorProps",
+      "position": [
+        -6.25,
+        0.6000000000000001,
+        3.7700000000000005
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "ArchiveBox_1930",
+      "group": "InteriorProps",
+      "position": [
+        -6.25,
+        1.06,
+        2.67
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "ArchiveBox_1930",
+      "group": "InteriorProps",
+      "position": [
+        -6.25,
+        1.06,
+        3.22
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "ArchiveBox_1930",
+      "group": "InteriorProps",
+      "position": [
+        -6.25,
+        1.06,
+        3.7700000000000005
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "ArchiveBox_1930",
+      "group": "InteriorProps",
+      "position": [
+        -6.25,
+        1.52,
+        2.67
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "ArchiveBox_1930",
+      "group": "InteriorProps",
+      "position": [
+        -6.25,
+        1.52,
+        3.22
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "ArchiveBox_1930",
+      "group": "InteriorProps",
+      "position": [
+        -6.25,
+        1.52,
+        3.7700000000000005
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "ShelfSteelTimber_170_1930",
+      "group": "InteriorProps",
+      "position": [
+        -1.13,
+        0,
+        1.32
+      ],
+      "yaw": 270,
+      "existing": false
+    },
+    {
+      "asset": "CrateTimber_045_1930",
+      "group": "InteriorProps",
+      "position": [
+        -1.13,
+        0.14,
+        0.77
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "CrateTimber_045_1930",
+      "group": "InteriorProps",
+      "position": [
+        -1.13,
+        0.14,
+        1.32
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "CrateTimber_045_1930",
+      "group": "InteriorProps",
+      "position": [
+        -1.13,
+        0.14,
+        1.87
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "PaintCan_1930",
+      "group": "InteriorProps",
+      "position": [
+        -1.13,
+        0.6000000000000001,
+        0.77
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "PaintCan_1930",
+      "group": "InteriorProps",
+      "position": [
+        -1.13,
+        0.6000000000000001,
+        1.32
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "PaintCan_1930",
+      "group": "InteriorProps",
+      "position": [
+        -1.13,
+        0.6000000000000001,
+        1.87
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "CrateTimber_045_1930",
+      "group": "InteriorProps",
+      "position": [
+        -1.13,
+        1.06,
+        0.77
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "CrateTimber_045_1930",
+      "group": "InteriorProps",
+      "position": [
+        -1.13,
+        1.06,
+        1.32
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "CrateTimber_045_1930",
+      "group": "InteriorProps",
+      "position": [
+        -1.13,
+        1.06,
+        1.87
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "PaintCan_1930",
+      "group": "InteriorProps",
+      "position": [
+        -1.13,
+        1.52,
+        0.77
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "PaintCan_1930",
+      "group": "InteriorProps",
+      "position": [
+        -1.13,
+        1.52,
+        1.32
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "PaintCan_1930",
+      "group": "InteriorProps",
+      "position": [
+        -1.13,
+        1.52,
+        1.87
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "ShelfSteelTimber_170_1930",
+      "group": "InteriorProps",
+      "position": [
+        -1.13,
+        0,
+        3.22
+      ],
+      "yaw": 270,
+      "existing": false
+    },
+    {
+      "asset": "CrateTimber_045_1930",
+      "group": "InteriorProps",
+      "position": [
+        -1.13,
+        0.14,
+        2.67
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "CrateTimber_045_1930",
+      "group": "InteriorProps",
+      "position": [
+        -1.13,
+        0.14,
+        3.22
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "CrateTimber_045_1930",
+      "group": "InteriorProps",
+      "position": [
+        -1.13,
+        0.14,
+        3.7700000000000005
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "PaintCan_1930",
+      "group": "InteriorProps",
+      "position": [
+        -1.13,
+        0.6000000000000001,
+        2.67
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "PaintCan_1930",
+      "group": "InteriorProps",
+      "position": [
+        -1.13,
+        0.6000000000000001,
+        3.22
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "PaintCan_1930",
+      "group": "InteriorProps",
+      "position": [
+        -1.13,
+        0.6000000000000001,
+        3.7700000000000005
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "CrateTimber_045_1930",
+      "group": "InteriorProps",
+      "position": [
+        -1.13,
+        1.06,
+        2.67
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "CrateTimber_045_1930",
+      "group": "InteriorProps",
+      "position": [
+        -1.13,
+        1.06,
+        3.22
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "CrateTimber_045_1930",
+      "group": "InteriorProps",
+      "position": [
+        -1.13,
+        1.06,
+        3.7700000000000005
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "PaintCan_1930",
+      "group": "InteriorProps",
+      "position": [
+        -1.13,
+        1.52,
+        2.67
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "PaintCan_1930",
+      "group": "InteriorProps",
+      "position": [
+        -1.13,
+        1.52,
+        3.22
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "PaintCan_1930",
+      "group": "InteriorProps",
+      "position": [
+        -1.13,
+        1.52,
+        3.7700000000000005
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "CrateTimber_075_1930",
+      "group": "InteriorProps",
+      "position": [
+        -4.1,
+        0,
+        2.8
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "CrateTimber_075_1930",
+      "group": "InteriorProps",
+      "position": [
+        -3.5,
+        0,
+        3.5
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "CrateTimber_075_1930",
+      "group": "InteriorProps",
+      "position": [
+        -4.1,
+        0.58,
+        2.8
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "SackCanvas_1930",
+      "group": "InteriorProps",
+      "position": [
+        -5.3,
+        0,
+        3.72
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "SackCanvasSlumped_1930",
+      "group": "InteriorProps",
+      "position": [
+        -4.65,
+        0,
+        3.72
+      ],
+      "yaw": 148,
+      "existing": false
+    },
+    {
+      "asset": "GroundsToolRack_1930",
+      "group": "InteriorPartitions",
+      "position": [
+        -2.55,
+        0.13,
+        0.43
+      ],
+      "yaw": 0,
+      "existing": false
+    },
+    {
+      "asset": "WorkbenchJoiner_225_1930",
+      "group": "InteriorProps",
+      "position": [
+        5.75,
+        0,
+        2.75
+      ],
+      "yaw": 270,
+      "existing": false
+    },
+    {
+      "asset": "ToolRackCarpenter_1930",
+      "group": "InteriorPartitions",
+      "position": [
+        -0.0815,
+        1.34,
+        2.55
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "CupboardUtility_1930",
+      "group": "InteriorProps",
+      "position": [
+        0.6,
+        0,
+        3.7
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "WorkbenchJoiner_225_1930",
+      "group": "InteriorProps",
+      "position": [
+        2.9,
+        0,
+        3.65
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "ToolTrayCarpenter_1930",
+      "group": "InteriorProps",
+      "position": [
+        3.12,
+        0.952,
+        3.65
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "DeskLampBanker_1930",
+      "group": "InteriorProps",
+      "position": [
+        -4.7,
+        0.8,
+        -1.5
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "PaintCan_1930",
+      "group": "InteriorProps",
+      "position": [
+        5.6,
+        0.96,
+        2.1
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "PaintCan_1930",
+      "group": "InteriorProps",
+      "position": [
+        5.9,
+        0.96,
+        2.2
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "PaintCan_1930",
+      "group": "InteriorProps",
+      "position": [
+        5.8,
+        0.96,
+        3.4
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "CrateTimber_045_1930",
+      "group": "InteriorProps",
+      "position": [
+        5.75,
+        0.27,
+        2.75
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "WorkbenchJoiner_225_1930",
+      "group": "YardProps",
+      "position": [
+        8.6,
+        0,
+        3.52
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "ToolTrayCarpenter_1930",
+      "group": "YardProps",
+      "position": [
+        8.9,
+        0.952,
+        3.5
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "MaterialRackTimber_400_1930",
+      "group": "YardProps",
+      "position": [
+        11.55,
+        0,
+        1.2
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "LumberStack_240_1930",
+      "group": "YardProps",
+      "position": [
+        11.55,
+        0.25,
+        1.2
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "LumberStack_240_1930",
+      "group": "YardProps",
+      "position": [
+        11.55,
+        0.93,
+        1.2
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "LumberStack_240_1930",
+      "group": "YardProps",
+      "position": [
+        11.55,
+        1.62,
+        1.2
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "WheelbarrowSteel_1930",
+      "group": "YardProps",
+      "position": [
+        8.35,
+        0,
+        0.4
+      ],
+      "yaw": 200,
+      "existing": false
+    },
+    {
+      "asset": "WheelbarrowSteel_1930",
+      "group": "YardProps",
+      "position": [
+        11.5,
+        0,
+        -2.8
+      ],
+      "yaw": 155,
+      "existing": false
+    },
+    {
+      "asset": "CrateTimber_075_1930",
+      "group": "YardProps",
+      "position": [
+        7.75,
+        0,
+        2.35
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "CrateTimber_075_1930",
+      "group": "YardProps",
+      "position": [
+        7.75,
+        0.58,
+        2.35
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "BarrelPaintedSteel_1930",
+      "group": "YardProps",
+      "position": [
+        7.5,
+        0,
+        0.4
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "BarrelPaintedSteel_1930",
+      "group": "YardProps",
+      "position": [
+        7.5,
+        0,
+        1.15
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "BarrelTimber_1930",
+      "group": "YardProps",
+      "position": [
+        9.55,
+        0,
+        2.15
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "LadderTimber_260_1930",
+      "group": "YardProps",
+      "position": [
+        7.2,
+        0,
+        3.73
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "SackCanvas_1930",
+      "group": "YardProps",
+      "position": [
+        10.7,
+        0,
+        4.03
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "SackCanvasSlumped_1930",
+      "group": "YardProps",
+      "position": [
+        11.2,
+        0,
+        4.03
+      ],
+      "yaw": 157,
+      "existing": false
+    },
+    {
+      "asset": "SackCanvas_1930",
+      "group": "YardProps",
+      "position": [
+        11.7,
+        0,
+        4.03
+      ],
+      "yaw": 134,
+      "existing": false
+    },
+    {
+      "asset": "FenceWire_200_1930",
+      "group": "ServiceYard",
+      "position": [
+        12.35,
+        0,
+        -3.3
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "FenceWire_200_1930",
+      "group": "ServiceYard",
+      "position": [
+        12.35,
+        0,
+        -1.3
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "FenceWire_200_1930",
+      "group": "ServiceYard",
+      "position": [
+        12.35,
+        0,
+        0.7
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "FenceWire_200_1930",
+      "group": "ServiceYard",
+      "position": [
+        12.35,
+        0,
+        2.7
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "FenceWire_065_1930",
+      "group": "ServiceYard",
+      "position": [
+        12.35,
+        0,
+        4.025
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "FenceWire_200_1930",
+      "group": "ServiceYard",
+      "position": [
+        8,
+        0,
+        4.35
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "FenceWire_200_1930",
+      "group": "ServiceYard",
+      "position": [
+        10,
+        0,
+        4.35
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "FenceWire_135_1930",
+      "group": "ServiceYard",
+      "position": [
+        11.675,
+        0,
+        4.35
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "FenceWire_175_1930",
+      "group": "ServiceYard",
+      "position": [
+        11.475,
+        0,
+        -4.3
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "FenceGateWire_180_1930",
+      "group": "ServiceYard",
+      "position": [
+        7.15,
+        0,
+        -3.58
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "FenceGateWire_180_RH_1930",
+      "group": "ServiceYard",
+      "position": [
+        10.6,
+        0,
+        -5.26
+      ],
+      "yaw": 90,
+      "existing": false
+    },
+    {
+      "asset": "FencePostTubular_1930",
+      "group": "ServiceYard",
+      "position": [
+        9,
+        0,
+        4.35
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "FencePostTubular_1930",
+      "group": "ServiceYard",
+      "position": [
+        11,
+        0,
+        4.35
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "FencePostTubular_1930",
+      "group": "ServiceYard",
+      "position": [
+        12.35,
+        0,
+        -4.3
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "FencePostTubular_1930",
+      "group": "ServiceYard",
+      "position": [
+        12.35,
+        0,
+        -2.3
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "FencePostTubular_1930",
+      "group": "ServiceYard",
+      "position": [
+        12.35,
+        0,
+        -0.3
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "FencePostTubular_1930",
+      "group": "ServiceYard",
+      "position": [
+        12.35,
+        0,
+        1.7
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "FencePostTubular_1930",
+      "group": "ServiceYard",
+      "position": [
+        12.35,
+        0,
+        3.7
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "FencePostTubular_1930",
+      "group": "ServiceYard",
+      "position": [
+        12.35,
+        0,
+        4.35
+      ],
+      "yaw": 180,
+      "existing": false
+    },
+    {
+      "asset": "GooseneckLamp_1930",
+      "group": "FrontWall",
+      "position": [
+        -4.15,
+        3.47,
+        -4.501
+      ],
+      "yaw": 180,
+      "existing": true
+    },
+    {
+      "asset": "GooseneckLamp_1930",
+      "group": "FrontWall",
+      "position": [
+        -0.05,
+        3.37,
+        -4.501
+      ],
+      "yaw": 180,
+      "existing": true
+    },
+    {
+      "asset": "GooseneckLamp_1930",
+      "group": "FrontWall",
+      "position": [
+        -3.55,
+        5.015,
+        -4.511
+      ],
+      "yaw": 180,
+      "existing": true
+    },
+    {
+      "asset": "GooseneckLamp_1930",
+      "group": "FrontWall",
+      "position": [
+        3.55,
+        5.015,
+        -4.511
+      ],
+      "yaw": 180,
+      "existing": true
+    },
+    {
+      "asset": "PendantWorkLamp_1930",
+      "group": "InteriorLighting",
+      "position": [
+        -3.6,
+        3.4,
+        -1.7
+      ],
+      "yaw": 0,
+      "existing": true
+    },
+    {
+      "asset": "PendantWorkLamp_1930",
+      "group": "InteriorLighting",
+      "position": [
+        3,
+        3.7,
+        -1.7
+      ],
+      "yaw": 0,
+      "existing": true
+    },
+    {
+      "asset": "PendantWorkLamp_1930",
+      "group": "InteriorLighting",
+      "position": [
+        3,
+        3.7,
+        2.1
+      ],
+      "yaw": 0,
+      "existing": true
+    },
+    {
+      "asset": "PendantWorkLamp_1930",
+      "group": "InteriorLighting",
+      "position": [
+        -3.7,
+        3.4,
+        2.3
+      ],
+      "yaw": 0,
+      "existing": true
+    },
+    {
+      "asset": "MeterCabinet_1930",
+      "group": "RearWall",
+      "position": [
+        5.6,
+        1.22,
+        4.51
+      ],
+      "yaw": 0,
+      "existing": true
+    },
+    {
+      "asset": "JunctionBox_Shallow_1930",
+      "group": "RearWall",
+      "position": [
+        5.6,
+        3.47,
+        4.515
+      ],
+      "yaw": 0,
+      "existing": true
+    }
+  ],
+  "anchors": [
+    {
+      "name": "OfficeEntrance",
+      "position": [
+        -4.15,
+        0,
+        -4.32
+      ],
+      "yaw": 0
+    },
+    {
+      "name": "OfficeApproach",
+      "position": [
+        -4.15,
+        0,
+        -5.35
+      ],
+      "yaw": 0
+    },
+    {
+      "name": "WorkshopEntrance",
+      "position": [
+        3.775,
+        0,
+        -3.8
+      ],
+      "yaw": 0
+    },
+    {
+      "name": "WorkshopApproach",
+      "position": [
+        3.775,
+        0,
+        -5.5
+      ],
+      "yaw": 0
+    },
+    {
+      "name": "YardAccess",
+      "position": [
+        6.86,
+        0,
+        -1.65
+      ],
+      "yaw": 270
+    },
+    {
+      "name": "ApplicantArrival",
+      "position": [
+        -7.5,
+        0,
+        -7.4
+      ],
+      "yaw": 0
+    },
+    {
+      "name": "ApplicantExit",
+      "position": [
+        -3.0,
+        0,
+        -7.4
+      ],
+      "yaw": 0
+    },
+    {
+      "name": "ApplicantWaiting_00",
+      "position": [
+        -6.45,
+        0,
+        -5.2
+      ],
+      "yaw": 0
+    },
+    {
+      "name": "ApplicantWaiting_01",
+      "position": [
+        -5.4,
+        0,
+        -5.25
+      ],
+      "yaw": 0
+    },
+    {
+      "name": "ApplicantWaiting_02",
+      "position": [
+        -6.45,
+        0,
+        -6.9
+      ],
+      "yaw": 0
+    },
+    {
+      "name": "ApplicantWaiting_03",
+      "position": [
+        -5.1,
+        0,
+        -6.9
+      ],
+      "yaw": 0
+    },
+    {
+      "name": "ApplicantWaiting_04",
+      "position": [
+        -3.4,
+        0,
+        -6.45
+      ],
+      "yaw": 0
+    },
+    {
+      "name": "HireConstructionWorker",
+      "position": [
+        -5.4,
+        0,
+        -2.75
+      ],
+      "yaw": 0
+    },
+    {
+      "name": "HireGroundskeeper",
+      "position": [
+        -2.5,
+        0,
+        -2.6
+      ],
+      "yaw": 0
+    },
+    {
+      "name": "ConstructionMaterialPickup",
+      "position": [
+        -2.6,
+        0,
+        2.85
+      ],
+      "yaw": 270
+    },
+    {
+      "name": "ToolPickup",
+      "position": [
+        0.7,
+        0,
+        2.85
+      ],
+      "yaw": 0
+    },
+    {
+      "name": "WorkshopWork",
+      "position": [
+        4.35,
+        0,
+        2.75
+      ],
+      "yaw": 90
+    },
+    {
+      "name": "GroundskeeperSupply",
+      "position": [
+        -5.0,
+        0,
+        1.65
+      ],
+      "yaw": 270
+    },
+    {
+      "name": "ApplicantInspection",
+      "position": [
+        -5.8,
+        0,
+        -7.7
+      ],
+      "yaw": 0
+    }
+  ],
+  "colliders": [
+    {
+      "name": "Foundation floor",
+      "group": "Floor",
+      "position": [
+        0,
+        -0.09,
+        0
+      ],
+      "size": [
+        14,
+        0.18,
+        9
+      ]
+    },
+    {
+      "name": "Employment apron",
+      "group": "ExteriorGround",
+      "position": [
+        -2.6,
+        -0.08,
+        -5.3
+      ],
+      "size": [
+        9.3,
+        0.16,
+        1.6
+      ]
+    },
+    {
+      "name": "Service apron",
+      "group": "ExteriorGround",
+      "position": [
+        3.5,
+        -0.08,
+        -5.4
+      ],
+      "size": [
+        5.9,
+        0.16,
+        1.8
+      ]
+    },
+    {
+      "name": "Front masonry_00_00",
+      "group": "FrontWall",
+      "position": [
+        -5.875,
+        0.415,
+        -4.36
+      ],
+      "size": [
+        2.25,
+        0.83,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_00_01",
+      "group": "FrontWall",
+      "position": [
+        -5.875,
+        1.725,
+        -4.36
+      ],
+      "size": [
+        2.25,
+        1.79,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_00_02",
+      "group": "FrontWall",
+      "position": [
+        -5.875,
+        2.785,
+        -4.36
+      ],
+      "size": [
+        2.25,
+        0.33,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_00_03",
+      "group": "FrontWall",
+      "position": [
+        -5.875,
+        3.205,
+        -4.36
+      ],
+      "size": [
+        2.25,
+        0.51,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_00_04",
+      "group": "FrontWall",
+      "position": [
+        -5.875,
+        3.84,
+        -4.36
+      ],
+      "size": [
+        2.25,
+        0.76,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_01_02",
+      "group": "FrontWall",
+      "position": [
+        -4.15,
+        2.785,
+        -4.36
+      ],
+      "size": [
+        1.2,
+        0.33,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_01_03",
+      "group": "FrontWall",
+      "position": [
+        -4.15,
+        3.205,
+        -4.36
+      ],
+      "size": [
+        1.2,
+        0.51,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_01_04",
+      "group": "FrontWall",
+      "position": [
+        -4.15,
+        3.84,
+        -4.36
+      ],
+      "size": [
+        1.2,
+        0.76,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_02_00",
+      "group": "FrontWall",
+      "position": [
+        -3.025,
+        0.415,
+        -4.36
+      ],
+      "size": [
+        1.05,
+        0.83,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_02_01",
+      "group": "FrontWall",
+      "position": [
+        -3.025,
+        1.725,
+        -4.36
+      ],
+      "size": [
+        1.05,
+        1.79,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_02_02",
+      "group": "FrontWall",
+      "position": [
+        -3.025,
+        2.785,
+        -4.36
+      ],
+      "size": [
+        1.05,
+        0.33,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_02_03",
+      "group": "FrontWall",
+      "position": [
+        -3.025,
+        3.205,
+        -4.36
+      ],
+      "size": [
+        1.05,
+        0.51,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_02_04",
+      "group": "FrontWall",
+      "position": [
+        -3.025,
+        3.84,
+        -4.36
+      ],
+      "size": [
+        1.05,
+        0.76,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_03_00",
+      "group": "FrontWall",
+      "position": [
+        -1.525,
+        0.415,
+        -4.36
+      ],
+      "size": [
+        1.95,
+        0.83,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_03_03",
+      "group": "FrontWall",
+      "position": [
+        -1.525,
+        3.205,
+        -4.36
+      ],
+      "size": [
+        1.95,
+        0.51,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_03_04",
+      "group": "FrontWall",
+      "position": [
+        -1.525,
+        3.84,
+        -4.36
+      ],
+      "size": [
+        1.95,
+        0.76,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_04_00",
+      "group": "FrontWall",
+      "position": [
+        0.4,
+        0.415,
+        -4.36
+      ],
+      "size": [
+        1.9,
+        0.83,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_04_01",
+      "group": "FrontWall",
+      "position": [
+        0.4,
+        1.725,
+        -4.36
+      ],
+      "size": [
+        1.9,
+        1.79,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_04_02",
+      "group": "FrontWall",
+      "position": [
+        0.4,
+        2.785,
+        -4.36
+      ],
+      "size": [
+        1.9,
+        0.33,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_04_03",
+      "group": "FrontWall",
+      "position": [
+        0.4,
+        3.205,
+        -4.36
+      ],
+      "size": [
+        1.9,
+        0.51,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_04_04",
+      "group": "FrontWall",
+      "position": [
+        0.4,
+        3.84,
+        -4.36
+      ],
+      "size": [
+        1.9,
+        0.76,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_05_04",
+      "group": "FrontWall",
+      "position": [
+        3.775,
+        3.84,
+        -4.36
+      ],
+      "size": [
+        4.85,
+        0.76,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_06_00",
+      "group": "FrontWall",
+      "position": [
+        6.6,
+        0.415,
+        -4.36
+      ],
+      "size": [
+        0.8,
+        0.83,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_06_01",
+      "group": "FrontWall",
+      "position": [
+        6.6,
+        1.725,
+        -4.36
+      ],
+      "size": [
+        0.8,
+        1.79,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_06_02",
+      "group": "FrontWall",
+      "position": [
+        6.6,
+        2.785,
+        -4.36
+      ],
+      "size": [
+        0.8,
+        0.33,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_06_03",
+      "group": "FrontWall",
+      "position": [
+        6.6,
+        3.205,
+        -4.36
+      ],
+      "size": [
+        0.8,
+        0.51,
+        0.28
+      ]
+    },
+    {
+      "name": "Front masonry_06_04",
+      "group": "FrontWall",
+      "position": [
+        6.6,
+        3.84,
+        -4.36
+      ],
+      "size": [
+        0.8,
+        0.76,
+        0.28
+      ]
+    },
+    {
+      "name": "Right masonry_00_00",
+      "group": "RightWall",
+      "position": [
+        6.86,
+        0.55,
+        -3.475
+      ],
+      "size": [
+        0.28,
+        1.1,
+        2.05
+      ]
+    },
+    {
+      "name": "Right masonry_00_01",
+      "group": "RightWall",
+      "position": [
+        6.86,
+        1.9,
+        -3.475
+      ],
+      "size": [
+        0.28,
+        1.6,
+        2.05
+      ]
+    },
+    {
+      "name": "Right masonry_00_02",
+      "group": "RightWall",
+      "position": [
+        6.86,
+        2.925,
+        -3.475
+      ],
+      "size": [
+        0.28,
+        0.45,
+        2.05
+      ]
+    },
+    {
+      "name": "Right masonry_00_03",
+      "group": "RightWall",
+      "position": [
+        6.86,
+        3.635,
+        -3.475
+      ],
+      "size": [
+        0.28,
+        0.97,
+        2.05
+      ]
+    },
+    {
+      "name": "Right masonry_01_02",
+      "group": "RightWall",
+      "position": [
+        6.86,
+        2.925,
+        -1.65
+      ],
+      "size": [
+        0.28,
+        0.45,
+        1.6
+      ]
+    },
+    {
+      "name": "Right masonry_01_03",
+      "group": "RightWall",
+      "position": [
+        6.86,
+        3.635,
+        -1.65
+      ],
+      "size": [
+        0.28,
+        0.97,
+        1.6
+      ]
+    },
+    {
+      "name": "Right masonry_02_00",
+      "group": "RightWall",
+      "position": [
+        6.86,
+        0.55,
+        -0.2
+      ],
+      "size": [
+        0.28,
+        1.1,
+        1.3
+      ]
+    },
+    {
+      "name": "Right masonry_02_01",
+      "group": "RightWall",
+      "position": [
+        6.86,
+        1.9,
+        -0.2
+      ],
+      "size": [
+        0.28,
+        1.6,
+        1.3
+      ]
+    },
+    {
+      "name": "Right masonry_02_02",
+      "group": "RightWall",
+      "position": [
+        6.86,
+        2.925,
+        -0.2
+      ],
+      "size": [
+        0.28,
+        0.45,
+        1.3
+      ]
+    },
+    {
+      "name": "Right masonry_02_03",
+      "group": "RightWall",
+      "position": [
+        6.86,
+        3.635,
+        -0.2
+      ],
+      "size": [
+        0.28,
+        0.97,
+        1.3
+      ]
+    },
+    {
+      "name": "Right masonry_03_00",
+      "group": "RightWall",
+      "position": [
+        6.86,
+        0.55,
+        1.775
+      ],
+      "size": [
+        0.28,
+        1.1,
+        2.65
+      ]
+    },
+    {
+      "name": "Right masonry_03_03",
+      "group": "RightWall",
+      "position": [
+        6.86,
+        3.635,
+        1.775
+      ],
+      "size": [
+        0.28,
+        0.97,
+        2.65
+      ]
+    },
+    {
+      "name": "Right masonry_04_00",
+      "group": "RightWall",
+      "position": [
+        6.86,
+        0.55,
+        3.8
+      ],
+      "size": [
+        0.28,
+        1.1,
+        1.4
+      ]
+    },
+    {
+      "name": "Right masonry_04_01",
+      "group": "RightWall",
+      "position": [
+        6.86,
+        1.9,
+        3.8
+      ],
+      "size": [
+        0.28,
+        1.6,
+        1.4
+      ]
+    },
+    {
+      "name": "Right masonry_04_02",
+      "group": "RightWall",
+      "position": [
+        6.86,
+        2.925,
+        3.8
+      ],
+      "size": [
+        0.28,
+        0.45,
+        1.4
+      ]
+    },
+    {
+      "name": "Right masonry_04_03",
+      "group": "RightWall",
+      "position": [
+        6.86,
+        3.635,
+        3.8
+      ],
+      "size": [
+        0.28,
+        0.97,
+        1.4
+      ]
+    },
+    {
+      "name": "Left masonry_00_00",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        0.5,
+        -3.7
+      ],
+      "size": [
+        0.28,
+        1.0,
+        1.6
+      ]
+    },
+    {
+      "name": "Left masonry_00_01",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        1.15,
+        -3.7
+      ],
+      "size": [
+        0.28,
+        0.3,
+        1.6
+      ]
+    },
+    {
+      "name": "Left masonry_00_02",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        2.2,
+        -3.7
+      ],
+      "size": [
+        0.28,
+        1.8,
+        1.6
+      ]
+    },
+    {
+      "name": "Left masonry_00_03",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        3.61,
+        -3.7
+      ],
+      "size": [
+        0.28,
+        1.02,
+        1.6
+      ]
+    },
+    {
+      "name": "Left masonry_01_00",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        0.5,
+        -1.9
+      ],
+      "size": [
+        0.28,
+        1.0,
+        2.0
+      ]
+    },
+    {
+      "name": "Left masonry_01_03",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        3.61,
+        -1.9
+      ],
+      "size": [
+        0.28,
+        1.02,
+        2.0
+      ]
+    },
+    {
+      "name": "Left masonry_02_00",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        0.5,
+        0.3
+      ],
+      "size": [
+        0.28,
+        1.0,
+        2.4
+      ]
+    },
+    {
+      "name": "Left masonry_02_01",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        1.15,
+        0.3
+      ],
+      "size": [
+        0.28,
+        0.3,
+        2.4
+      ]
+    },
+    {
+      "name": "Left masonry_02_02",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        2.2,
+        0.3
+      ],
+      "size": [
+        0.28,
+        1.8,
+        2.4
+      ]
+    },
+    {
+      "name": "Left masonry_02_03",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        3.61,
+        0.3
+      ],
+      "size": [
+        0.28,
+        1.02,
+        2.4
+      ]
+    },
+    {
+      "name": "Left masonry_03_00",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        0.5,
+        2.45
+      ],
+      "size": [
+        0.28,
+        1.0,
+        1.9
+      ]
+    },
+    {
+      "name": "Left masonry_03_01",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        1.15,
+        2.45
+      ],
+      "size": [
+        0.28,
+        0.3,
+        1.9
+      ]
+    },
+    {
+      "name": "Left masonry_03_03",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        3.61,
+        2.45
+      ],
+      "size": [
+        0.28,
+        1.02,
+        1.9
+      ]
+    },
+    {
+      "name": "Left masonry_04_00",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        0.5,
+        3.95
+      ],
+      "size": [
+        0.28,
+        1.0,
+        1.1
+      ]
+    },
+    {
+      "name": "Left masonry_04_01",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        1.15,
+        3.95
+      ],
+      "size": [
+        0.28,
+        0.3,
+        1.1
+      ]
+    },
+    {
+      "name": "Left masonry_04_02",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        2.2,
+        3.95
+      ],
+      "size": [
+        0.28,
+        1.8,
+        1.1
+      ]
+    },
+    {
+      "name": "Left masonry_04_03",
+      "group": "LeftWall",
+      "position": [
+        -6.86,
+        3.61,
+        3.95
+      ],
+      "size": [
+        0.28,
+        1.02,
+        1.1
+      ]
+    },
+    {
+      "name": "Rear masonry_00_00",
+      "group": "RearWall",
+      "position": [
+        -6.2,
+        0.575,
+        4.36
+      ],
+      "size": [
+        1.6,
+        1.15,
+        0.28
+      ]
+    },
+    {
+      "name": "Rear masonry_00_01",
+      "group": "RearWall",
+      "position": [
+        -6.2,
+        1.225,
+        4.36
+      ],
+      "size": [
+        1.6,
+        0.15,
+        0.28
+      ]
+    },
+    {
+      "name": "Rear masonry_00_02",
+      "group": "RearWall",
+      "position": [
+        -6.2,
+        2.2,
+        4.36
+      ],
+      "size": [
+        1.6,
+        1.8,
+        0.28
+      ]
+    },
+    {
+      "name": "Rear masonry_00_03",
+      "group": "RearWall",
+      "position": [
+        -6.2,
+        3.61,
+        4.36
+      ],
+      "size": [
+        1.6,
+        1.02,
+        0.28
+      ]
+    },
+    {
+      "name": "Rear masonry_01_00",
+      "group": "RearWall",
+      "position": [
+        -4.4,
+        0.575,
+        4.36
+      ],
+      "size": [
+        2.0,
+        1.15,
+        0.28
+      ]
+    },
+    {
+      "name": "Rear masonry_01_01",
+      "group": "RearWall",
+      "position": [
+        -4.4,
+        1.225,
+        4.36
+      ],
+      "size": [
+        2.0,
+        0.15,
+        0.28
+      ]
+    },
+    {
+      "name": "Rear masonry_01_03",
+      "group": "RearWall",
+      "position": [
+        -4.4,
+        3.61,
+        4.36
+      ],
+      "size": [
+        2.0,
+        1.02,
+        0.28
+      ]
+    },
+    {
+      "name": "Rear masonry_02_00",
+      "group": "RearWall",
+      "position": [
+        -1.35,
+        0.575,
+        4.36
+      ],
+      "size": [
+        4.1,
+        1.15,
+        0.28
+      ]
+    },
+    {
+      "name": "Rear masonry_02_01",
+      "group": "RearWall",
+      "position": [
+        -1.35,
+        1.225,
+        4.36
+      ],
+      "size": [
+        4.1,
+        0.15,
+        0.28
+      ]
+    },
+    {
+      "name": "Rear masonry_02_02",
+      "group": "RearWall",
+      "position": [
+        -1.35,
+        2.2,
+        4.36
+      ],
+      "size": [
+        4.1,
+        1.8,
+        0.28
+      ]
+    },
+    {
+      "name": "Rear masonry_02_03",
+      "group": "RearWall",
+      "position": [
+        -1.35,
+        3.61,
+        4.36
+      ],
+      "size": [
+        4.1,
+        1.02,
+        0.28
+      ]
+    },
+    {
+      "name": "Rear masonry_03_00",
+      "group": "RearWall",
+      "position": [
+        2.25,
+        0.575,
+        4.36
+      ],
+      "size": [
+        3.1,
+        1.15,
+        0.28
+      ]
+    },
+    {
+      "name": "Rear masonry_03_03",
+      "group": "RearWall",
+      "position": [
+        2.25,
+        3.61,
+        4.36
+      ],
+      "size": [
+        3.1,
+        1.02,
+        0.28
+      ]
+    },
+    {
+      "name": "Rear masonry_04_00",
+      "group": "RearWall",
+      "position": [
+        5.4,
+        0.575,
+        4.36
+      ],
+      "size": [
+        3.2,
+        1.15,
+        0.28
+      ]
+    },
+    {
+      "name": "Rear masonry_04_01",
+      "group": "RearWall",
+      "position": [
+        5.4,
+        1.225,
+        4.36
+      ],
+      "size": [
+        3.2,
+        0.15,
+        0.28
+      ]
+    },
+    {
+      "name": "Rear masonry_04_02",
+      "group": "RearWall",
+      "position": [
+        5.4,
+        2.2,
+        4.36
+      ],
+      "size": [
+        3.2,
+        1.8,
+        0.28
+      ]
+    },
+    {
+      "name": "Rear masonry_04_03",
+      "group": "RearWall",
+      "position": [
+        5.4,
+        3.61,
+        4.36
+      ],
+      "size": [
+        3.2,
+        1.02,
+        0.28
+      ]
+    },
+    {
+      "name": "Office workshop partition_00_00",
+      "group": "InteriorPartitions",
+      "position": [
+        -0.25,
+        1.25,
+        -2.71
+      ],
+      "size": [
+        0.16,
+        2.5,
+        3.02
+      ]
+    },
+    {
+      "name": "Office workshop partition_00_01",
+      "group": "InteriorPartitions",
+      "position": [
+        -0.25,
+        2.9,
+        -2.71
+      ],
+      "size": [
+        0.16,
+        0.8,
+        3.02
+      ]
+    },
+    {
+      "name": "Office workshop partition_01_01",
+      "group": "InteriorPartitions",
+      "position": [
+        -0.25,
+        2.9,
+        -0.55
+      ],
+      "size": [
+        0.16,
+        0.8,
+        1.3
+      ]
+    },
+    {
+      "name": "Office workshop partition_02_00",
+      "group": "InteriorPartitions",
+      "position": [
+        -0.25,
+        1.25,
+        2.16
+      ],
+      "size": [
+        0.16,
+        2.5,
+        4.12
+      ]
+    },
+    {
+      "name": "Office workshop partition_02_01",
+      "group": "InteriorPartitions",
+      "position": [
+        -0.25,
+        2.9,
+        2.16
+      ],
+      "size": [
+        0.16,
+        0.8,
+        4.12
+      ]
+    },
+    {
+      "name": "Office store partition",
+      "group": "InteriorPartitions",
+      "position": [
+        -5.87,
+        1.65,
+        0.3
+      ],
+      "size": [
+        1.98,
+        3.3,
+        0.16
+      ]
+    },
+    {
+      "name": "Office store partition",
+      "group": "InteriorPartitions",
+      "position": [
+        -1.94,
+        1.65,
+        0.3
+      ],
+      "size": [
+        3.12,
+        3.3,
+        0.16
+      ]
+    },
+    {
+      "name": "Store doorway header",
+      "group": "InteriorPartitions",
+      "position": [
+        -4.25,
+        2.91,
+        0.3
+      ],
+      "size": [
+        1.3,
+        0.78,
+        0.16
+      ]
+    },
+    {
+      "name": "Yard shelter post",
+      "group": "YardShelter",
+      "position": [
+        10.45,
+        1.45,
+        -3.6
+      ],
+      "size": [
+        0.17,
+        2.9,
+        0.17
+      ]
+    },
+    {
+      "name": "Yard shelter post",
+      "group": "YardShelter",
+      "position": [
+        10.45,
+        1.45,
+        0.3
+      ],
+      "size": [
+        0.17,
+        2.9,
+        0.17
+      ]
+    },
+    {
+      "name": "Yard shelter post",
+      "group": "YardShelter",
+      "position": [
+        10.45,
+        1.45,
+        4.15
+      ],
+      "size": [
+        0.17,
+        2.9,
+        0.17
+      ]
+    },
+    {
+      "name": "Yard slab",
+      "group": "ServiceYard",
+      "position": [
+        9.7,
+        -0.08,
+        0
+      ],
+      "size": [
+        5.4,
+        0.16,
+        9
+      ]
+    }
+  ],
+  "approvedSourceSha256": "7fca5157075041e5fb68eaca80a92b69500cf1b1b3652f2e98f030cef06d9747",
+  "approvedDimensions": [
+    14,
+    9,
+    4.22,
+    5.35,
+    5.15
+  ],
+  "reservedRect": [
+    2.7,
+    -1.3,
+    20.6,
+    13.6
+  ],
+  "parts": [
+    {
+      "name": "Floor",
+      "vertices": 336,
+      "triangles": 168
+    },
+    {
+      "name": "ExteriorGround",
+      "vertices": 432,
+      "triangles": 216
+    },
+    {
+      "name": "ServiceYard",
+      "vertices": 2216,
+      "triangles": 1540
+    },
+    {
+      "name": "FrontWall",
+      "vertices": 161724,
+      "triangles": 101462
+    },
+    {
+      "name": "RightWall",
+      "vertices": 3928,
+      "triangles": 3688
+    },
+    {
+      "name": "LeftWall",
+      "vertices": 4156,
+      "triangles": 3818
+    },
+    {
+      "name": "RearWall",
+      "vertices": 4388,
+      "triangles": 2974
+    },
+    {
+      "name": "Roof",
+      "vertices": 29836,
+      "triangles": 15252
+    },
+    {
+      "name": "InteriorPartitions",
+      "vertices": 5484,
+      "triangles": 2760
+    },
+    {
+      "name": "EmploymentBoard",
+      "vertices": 17958,
+      "triangles": 17024
+    },
+    {
+      "name": "YardShelter",
+      "vertices": 5288,
+      "triangles": 5068
+    },
+    {
+      "name": "YardShelterRoof",
+      "vertices": 22431,
+      "triangles": 13264
+    },
+    {
+      "name": "InteriorProps",
+      "vertices": 7724,
+      "triangles": 7600
+    }
+  ],
+  "generatorSha256": "be3069a80c6b3afd8dd127467ed8375c2b7c5740e38686c30d03097afed5ff5d"
+}

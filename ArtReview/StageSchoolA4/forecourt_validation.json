@@ -1,0 +1,75 @@
+{
+  "changed_mesh_groups": [
+    "Exterior/Planters"
+  ],
+  "changed_fixtures": [
+    {
+      "group": "Exterior/ApplicantBench-1",
+      "before_yaw": 0,
+      "after_yaw": 180
+    },
+    {
+      "group": "Exterior/ApplicantBench1",
+      "before_yaw": 0,
+      "after_yaw": 180
+    }
+  ],
+  "existing_meta_changed": [],
+  "equipment_unchanged": true,
+  "existing_used_material_definitions_unchanged": true,
+  "scoped_change_pass": true,
+  "historical_preservation": {
+    "protected_files": 4036,
+    "changed_or_missing": [
+      "Assets/Scenes/Studio.unity"
+    ],
+    "added_dependencies": []
+  },
+  "studio_last_write_utc": "2026-09-30T15:55:18.626534+00:00",
+  "followup_first_unity_probe_utc": "2026-09-30T16:02:21.289277+00:00",
+  "historical_preservation_note": "Studio.unity differs from the original pre-A4 baseline; its modification time precedes this follow-up Unity probe. This follow-up did not open or write Studio.unity. All other 4,035 protected files match. The historical baseline is retained unchanged.",
+  "final_source_packet_sha256": "858ec05ef7e13ff590ef4870669f7e0e7b99d0a4b485ae5b2425ef0a09d4913e",
+  "final_unity_counts": {
+    "unityVersion": "6000.6.3f1",
+    "renderPipeline": "PC_RPAsset",
+    "triangles": 617211,
+    "vertices": 720837,
+    "uniqueMeshTriangles": 590111,
+    "uniqueMeshVertices": 686084,
+    "renderers": 110,
+    "materials": 35,
+    "uniqueMeshes": 92,
+    "missingMeshes": 0,
+    "missingMaterials": 0,
+    "sharedA3Renderers": 31,
+    "equipmentInstances": 3,
+    "scaleValid": true,
+    "noGameplayComponents": true,
+    "noLods": true,
+    "compilationFailed": false,
+    "renderSupportComponents": [
+      "Room_-7_-5",
+      "Room_-2.35_-5",
+      "Room_2.35_-5",
+      "Room_7_-5",
+      "Room_-4_1.6",
+      "Room_6.6_2.8"
+    ],
+    "boundsMin": {
+      "x": -11.5,
+      "y": 0.0,
+      "z": -13.649999618530273
+    },
+    "boundsMax": {
+      "x": 11.5,
+      "y": 5.949999809265137,
+      "z": 7.569999694824219
+    }
+  },
+  "visually_inspected_followup": [
+    "03_front_elevation",
+    "11_forecourt_detail",
+    "12_planter_detail"
+  ],
+  "source_geometry_qa": "PASS"
+}

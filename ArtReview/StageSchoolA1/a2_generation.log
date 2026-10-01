@@ -1,0 +1,24 @@
+00:01.359  blend            | Read blend: "C:\Repos\Unity\Silver Screen\ArtSource\StageSchoolA1\StageSchool_A1.blend"
+Info: Read library: 'C:\Repos\Unity\Silver Screen\ArtSource\PeriodEnvironment1930\PeriodEnvironment1930.blend', '//../PeriodEnvironment1930/PeriodEnvironment1930.blend', parent '<direct>'
+Info: Read library: 'C:\Repos\Unity\Silver Screen\ArtSource\ProductionEquipment1930Candidate\ProductionEquipment1930Candidate.blend', '//../ProductionEquipment1930Candidate/ProductionEquipment1930Candidate.blend', parent '<direct>'
+A2 foundations, floors and articulated shell
+A2 stepped roofs and connected drainage
+A2 room furnishings and ceilings
+A2 semantic packet export
+01:27.375  blend.readfile   | WARNING Append: ID 'GRNoticeBoardTimber_173_1930' is already linked
+01:27.375  blend.readfile   | WARNING Append: ID 'GRDeskPedestal_1930' is already linked
+01:27.375  blend.readfile   | WARNING Append: ID 'GRDeskPaperwork_1930' is already linked
+01:27.375  blend.readfile   | WARNING Append: ID 'GRShelfSteelTimber_170_1930' is already linked
+01:27.375  blend.readfile   | WARNING Append: ID 'GRTelephoneDesk_1930' is already linked
+01:27.375  blend.readfile   | WARNING Append: ID 'GRDeskLampBanker_1930' is already linked
+01:27.375  blend.readfile   | WARNING Append: ID 'GRCupboardUtility_1930' is already linked
+01:27.375  blend.readfile   | WARNING Append: ID 'GRFilingCabinet_4Drawer_1930' is already linked
+01:27.375  blend.readfile   | WARNING Append: ID 'GRChairBentwood_1930' is already linked
+01:27.375  blend.readfile   | WARNING Append: ID 'GRCoatStandTimber_1930' is already linked
+01:27.406  blend.readfile   | WARNING Append: ID 'GRStudioCamera1930' is already linked
+01:27.406  blend.readfile   | WARNING Append: ID 'GRStudioLamp1930' is already linked
+Info: Saved as "StageSchool_A2.blend"
+STAGE_SCHOOL_A2 {"candidate": "StageSchool_A2", "status": "MANUAL_ARCHITECTURE_REVIEW_PENDING", "footprint": [28, 24], "masonry_area": 583.0, "floor": 0.36, "occupied_floors": 1, "source_groups": 222, "source_objects": 3266, "triangles": 1025992, "vertices": 1306340, "unique_materials": 30, "fixtures": 38, "equipment_instances": [{"asset": "StudioCamera1930", "group": "Furnishings/Audition/Camera", "position": [8.5, 0.39, 7.8], "yaw": 0}, {"asset": "StudioLamp1930", "group": "Furnishings/Audition/StudioLamp0", "position": [5.65, 0.39, 11], "yaw": 50}, {"asset": "StudioLamp1930", "group": "Furnishings/Audition/StudioLamp1", "position": [11.35, 0.39, 11], "yaw": -50}]}
+Blender 5.0.1 (hash a3db93c5b259 built 2025-12-16 01:32:30)
+
+Blender quit

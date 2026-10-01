@@ -1,0 +1,17 @@
+var scene=UnityEngine.SceneManagement.SceneManager.GetActiveScene();
+var root=System.Linq.Enumerable.First(scene.GetRootGameObjects(),g=>g.GetComponent<SilverScreen.Presentation.Buildings.StageSchoolInfrastructure>()!=null);
+root.transform.rotation=UnityEngine.Quaternion.identity;
+var camera=System.Linq.Enumerable.First(scene.GetRootGameObjects(),g=>g.GetComponent<UnityEngine.Camera>()!=null).GetComponent<UnityEngine.Camera>();
+var lod=root.GetComponent<UnityEngine.LODGroup>();var reveal=root.GetComponent<SilverScreen.Presentation.Buildings.BuildingCutawayController>();
+System.Action<string,UnityEngine.Vector3,UnityEngine.Vector3,float> shot=(n,p,t,f)=>SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Capture(camera,"../StageSchoolB/"+n,p,t,f);
+lod.ForceLOD(0);shot("01_close_lod0",new UnityEngine.Vector3(21,13,-24),new UnityEngine.Vector3(0,2,0),54);
+lod.ForceLOD(1);shot("02_management_lod1",new UnityEngine.Vector3(24,27,-28),new UnityEngine.Vector3(0,3.8f,2.5f),49);
+lod.ForceLOD(2);shot("03_distant_lod2",new UnityEngine.Vector3(36,38,-42),new UnityEngine.Vector3(0,3,2.5f),49);
+var observer=new UnityEngine.Vector3(24,25,-28);reveal.SetReveal(SilverScreen.Presentation.Buildings.BuildingRevealReason.BuildingFocus,true,observer);
+lod.ForceLOD(1);shot("04_reveal_lod1",observer,new UnityEngine.Vector3(0,1,2),49);
+lod.ForceLOD(2);shot("05_reveal_lod2",observer,new UnityEngine.Vector3(0,1,2),49);
+observer=new UnityEngine.Vector3(-26,25,32);reveal.SetReveal(SilverScreen.Presentation.Buildings.BuildingRevealReason.BuildingFocus,true,observer);lod.ForceLOD(1);shot("06_reveal_opposite",observer,new UnityEngine.Vector3(0,1,2),49);
+reveal.Restore();root.transform.rotation=UnityEngine.Quaternion.Euler(0,37,0);lod.ForceLOD(1);shot("07_yaw37",new UnityEngine.Vector3(28,26,-32),new UnityEngine.Vector3(0,2,2),49);
+lod.ForceLOD(-1);
+UnityEditor.SceneManagement.EditorSceneManager.SaveScene(scene,SilverScreen.Editor.EnvironmentArt.StageSchoolRuntimeBuilder.Root+"/StageSchool_RuntimeReview.unity");
+result.Log("Runtime captures refreshed after scene import.");

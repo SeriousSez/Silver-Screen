@@ -1,0 +1,1 @@
+SilverScreen.Editor.EnvironmentArt.StageSchoolRuntimeBuilder.Build(); result.Log("Stage School runtime prefab built.");

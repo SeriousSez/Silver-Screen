@@ -1,0 +1,32 @@
+var scene=UnityEngine.SceneManagement.SceneManager.GetActiveScene();
+if(scene.path!=SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.ScenePath)throw new System.Exception("Isolated review required");
+var roots=scene.GetRootGameObjects();
+var root=System.Array.Find(roots,o=>o.name.StartsWith("StageSchool_A3"));
+var camera=System.Array.Find(roots,o=>o.GetComponent<UnityEngine.Camera>()!=null).GetComponent<UnityEngine.Camera>();
+var pos=camera.transform.position;var rot=camera.transform.rotation;var fov=camera.fieldOfView;var orth=camera.orthographic;var size=camera.orthographicSize;
+System.Action<string,UnityEngine.Vector3,UnityEngine.Vector3,float> shot=(n,p,t,f)=>SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Capture(camera,n,p,t,f);
+try {
+shot("a32_entrance_pipe",new UnityEngine.Vector3(6.3f,3.3f,-14.5f),new UnityEngine.Vector3(3.34f,2.9f,-9.5f),74);
+shot("a32_pipe_offset",new UnityEngine.Vector3(4.8f,5.9f,-11.5f),new UnityEngine.Vector3(3.34f,5.45f,-9.55f),52);
+shot("a32_hall_outlet",new UnityEngine.Vector3(5,7.3f,-1.8f),new UnityEngine.Vector3(3.55f,5.4f,.2f),65);
+shot("a32_collector_corner",new UnityEngine.Vector3(.5f,7.5f,7.0f),new UnityEngine.Vector3(2.45f,5.85f,5.05f),65);
+shot("a32_collector_outlet",new UnityEngine.Vector3(.3f,7.6f,13.3f),new UnityEngine.Vector3(2.46f,5.65f,12.05f),60);
+SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Capture(camera,"a3_01_front",new UnityEngine.Vector3(0,5,-39),new UnityEngine.Vector3(0,3,0),43,true,10.4f);
+SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Capture(camera,"a3_02_left",new UnityEngine.Vector3(-40,6,3),new UnityEngine.Vector3(0,3,3),43,true,10.2f);
+SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Capture(camera,"a3_03_right",new UnityEngine.Vector3(40,6,3),new UnityEngine.Vector3(0,3,3),43,true,10.2f);
+SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Capture(camera,"a3_04_rear",new UnityEngine.Vector3(0,6,44),new UnityEngine.Vector3(0,3,3),43,true,10.4f);
+shot("a3_09_reception",new UnityEngine.Vector3(2.6f,2.2f,-7.1f),new UnityEngine.Vector3(0,1,-4.2f),70);
+shot("a3_17_reception_rear",new UnityEngine.Vector3(2,2.2f,-1.95f),new UnityEngine.Vector3(0,.9f,-4.2f),70);
+shot("a3_23_restrooms",new UnityEngine.Vector3(8.6f,2.0f,-4.8f),new UnityEngine.Vector3(8.65f,1.5f,-6.2f),92);
+shot("a32_cubicle_inside0",new UnityEngine.Vector3(7.45f,1.65f,-7.6f),new UnityEngine.Vector3(7.8f,1.40f,-6.2f),72);
+shot("a32_cubicle_inside1",new UnityEngine.Vector3(9.15f,1.65f,-7.6f),new UnityEngine.Vector3(9.5f,1.40f,-6.2f),72);
+shot("a3_19_staff_office",new UnityEngine.Vector3(-3.45f,2.45f,3.75f),new UnityEngine.Vector3(-5.5f,1.3f,6.4f),85);
+var hidden=new System.Collections.Generic.List<UnityEngine.GameObject>();
+foreach(string path in new[]{"Roofs","Ceilings","Shell/Raised"}){var t=root.transform.Find(path);if(t!=null&&t.gameObject.activeSelf){hidden.Add(t.gameObject);t.gameObject.SetActive(false);}}
+try {
+SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Capture(camera,"a32_staff_circulation",new UnityEngine.Vector3(-5.0f,17,5.899f),new UnityEngine.Vector3(-5,0,5.9f),43,true,3.6f);
+SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Capture(camera,"a32_fixed_table_routes",new UnityEngine.Vector3(0,42,2.999f),new UnityEngine.Vector3(0,0,3),43,true,14.7f);
+}finally{foreach(var go in hidden)go.SetActive(true);}
+} finally{camera.transform.SetPositionAndRotation(pos,rot);camera.fieldOfView=fov;camera.orthographic=orth;camera.orthographicSize=size;}
+result.Log("A3.2 seventeen targeted captures completed; camera and visibility restored.");
+

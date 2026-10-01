@@ -1,0 +1,11 @@
+{
+  "cloth_platform_backdrop_intersections": [],
+  "straight_hanging_wings": true,
+  "tieback_hardware_removed": true,
+  "cloth_z_min": 0.7302724719047546,
+  "cloth_rear_y_max": 14.043087005615234,
+  "canopy_posts_below_roof": true,
+  "canopy_fall_metres_per_metre": 0.145,
+  "canopy_front_drip_y": 15.225,
+  "landing_front_y": 15.1
+}

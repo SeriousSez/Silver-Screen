@@ -1,0 +1,13 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"success\": false,\n  \"error\": \"UNEXPECTED_ERROR: Command was executed partially, but reported warnings or errors:\\n[Error] System.ArgumentException: EditorSceneManager.SetActive failed; you can not save a preview scene\\r\\n  at (wrapper managed-to-native) UnityEditor.SceneManagement.EditorSceneManager.SaveSceneInternal_Injected(UnityEngine.SceneManagement.Scene&,UnityEngine.Bindings.ManagedSpanWrapper&,bool)\\r\\n  at UnityEditor.SceneManagement.EditorSceneManager.SaveSceneInternal (UnityEngine.SceneManagement.Scene scene, System.String dstScenePath, System.Boolean saveAsCopy) [0x0002b] in <86ff5cbd32484068aca9e84e94736ae0>:0 \\r\\n  at UnityEditor.SceneManagement.EditorSceneManager.SaveScene (UnityEngine.SceneManagement.Scene scene, System.String dstScenePath, System.Boolean saveAsCopy) [0x00017] in <86ff5cbd32484068aca9e84e94736ae0>:0 \\r\\n  at UnityEditor.SceneManagement.EditorSceneManager.SaveScene (UnityEngine.SceneManagement.Scene scene, System.String dstScenePath) [0x00002] in <86ff5cbd32484068aca9e84e94736ae0>:0 \\r\\n  at SilverScreen.Editor.EnvironmentArt.StageSchoolB2Review.Capture () [0x00321] in C:\\\\Repos\\\\Unity\\\\Silver Screen\\\\Assets\\\\SilverScreen\\\\Environment\\\\StageSchoolB2\\\\Editor\\\\StageSchoolB2Review.cs:41 \\r\\n  at Unity.AI.Assistant.Agent.Dynamic.Extension.Editor.CommandScript.Execute (Unity.AI.Assistant.Agent.Dynamic.Extension.Editor.ExecutionResult result) [0x00007] in <083370fc10f94b7f91ff708ba34e3328>:0 \\r\\n  at Unity.AI.Assistant.Editor.RunCommand.AgentRunCommand.Execute (Unity.AI.Assistant.Agent.Dynamic.Extension.Editor.ExecutionResult& executionResult, System.String title) [0x00019] in .\\\\Library\\\\PackageCache\\\\com.unity.ai.assistant@8d1e3e89e3a7\\\\Editor\\\\Assistant\\\\RunCommand\\\\AgentRunCommand.cs:56 \\nConsider reverting changes that may have happened if you retry.\"\n}"
+      }
+    ],
+    "isError": true
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}

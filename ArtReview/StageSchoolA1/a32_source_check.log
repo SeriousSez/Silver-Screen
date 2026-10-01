@@ -1,0 +1,148 @@
+{
+  "changed_groups": [
+    "Furnishings/Reception/Accessories",
+    "Furnishings/Reception/Counter",
+    "Furnishings/Washroom",
+    "Shell/Left/Waiting/Articulation",
+    "Shell/Left/CommonShoulder/Articulation",
+    "Shell/Left/CommonBay/Articulation",
+    "Shell/Left/Evaluation/Articulation",
+    "Shell/Left/Records/Articulation",
+    "Shell/Rear/Service/Articulation",
+    "Shell/Rear/Interview/Articulation",
+    "Shell/Rear/AuditionReturn/Articulation",
+    "Shell/Rear/Audition/Articulation",
+    "Shell/Right/Audition/Articulation",
+    "Shell/Right/AuditionShoulder/Articulation",
+    "Shell/Right/Preparation/Articulation",
+    "Roofs/Hall",
+    "Roofs/Hall/Flashing",
+    "Roofs/Audition/Rainwater",
+    "Roofs/Entrance/Rainwater",
+    "Ceilings/SupportPendant0",
+    "Ceilings/SupportPendant1",
+    "Ceilings/SupportPendant2",
+    "Ceilings/SupportPendant3",
+    "Doors/Cubicle0",
+    "Doors/Cubicle1",
+    "Roofs/Hall/Rainwater"
+  ],
+  "unchanged_groups": 239,
+  "changed_fixtures": [
+    "Furnishings/Reception/Telephone",
+    "Furnishings/Reception/BankerLamp",
+    "Furnishings/Reception/StaffChair",
+    "Furnishings/Staff/Desk0",
+    "Furnishings/Staff/Chair0",
+    "Furnishings/Staff/Desk1",
+    "Furnishings/Staff/Chair1",
+    "Furnishings/Staff/Telephone",
+    "Furnishings/Staff/RecordsInUse"
+  ],
+  "protected_files_unchanged": 502,
+  "roof_massing_unchanged": true,
+  "equipment_unchanged": true,
+  "doorway_approach_candidates": [
+    [
+      "Doors/StaffA2",
+      "Furnishings/Staff/Desk0"
+    ]
+  ],
+  "staff_bounds": {
+    "Furnishings/Staff/Desk0": [
+      [
+        -6.825,
+        0.395,
+        3.6000000000000005
+      ],
+      [
+        -5.957384,
+        1.19,
+        5.7
+      ]
+    ],
+    "Furnishings/Staff/Chair0": [
+      [
+        -5.7700000000000005,
+        0.39,
+        4.3950000000000005
+      ],
+      [
+        -5.2579270000000005,
+        1.3715890000000002,
+        4.905
+      ]
+    ],
+    "Furnishings/Staff/Desk1": [
+      [
+        -6.825,
+        0.395,
+        5.7
+      ],
+      [
+        -5.957384,
+        1.19,
+        7.8
+      ]
+    ],
+    "Furnishings/Staff/Chair1": [
+      [
+        -5.7700000000000005,
+        0.39,
+        6.495
+      ],
+      [
+        -5.2579270000000005,
+        1.3715890000000002,
+        7.005
+      ]
+    ],
+    "Furnishings/Staff/Telephone": [
+      [
+        -6.605171,
+        1.1901389999999998,
+        4.46
+      ],
+      [
+        -6.237,
+        1.455,
+        4.857254
+      ]
+    ],
+    "Furnishings/Staff/RecordsInUse": [
+      [
+        -6.55,
+        1.1915,
+        6.516
+      ],
+      [
+        -6.21,
+        1.3907889999999998,
+        7.07
+      ]
+    ],
+    "Furnishings/Staff/ArchiveBoxes": [
+      [
+        -12.0875,
+        0.5,
+        11.21
+      ],
+      [
+        -10.9125,
+        0.78,
+        12.71
+      ]
+    ]
+  },
+  "staff_one_metre_route_clear": true,
+  "source_checks": {
+    "scope": "six manual corrections",
+    "hall_terminal_faces_removed": 138,
+    "reception_knee_width": 1.54,
+    "cubicle_leaf_thickness": 0.032,
+    "cubicle_bottom_clearance": 0.21,
+    "cubicle_top_clearance": 0.18,
+    "privacy_side": "occupant negative Y",
+    "scoring": "upper stucco scoring row removed; lower stone-base joints retained"
+  }
+}

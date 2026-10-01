@@ -1,0 +1,1 @@
+result.Log("Scene="+UnityEngine.SceneManagement.SceneManager.GetActiveScene().path+" Dirty="+UnityEngine.SceneManagement.SceneManager.GetActiveScene().isDirty+" Compiling="+UnityEditor.EditorApplication.isCompiling+" CompileFailed="+UnityEditor.EditorUtility.scriptCompilationFailed);

@@ -1,0 +1,11 @@
+C1 focused real applicant and input proof
+Operational production A4/B2 school; zero studio employees.
+Spawned talent-1930-01-02-7-454322 at world arrival source (49.20, 0.09, 0.00)
+Physically reached authored exterior slot 0
+Actual carry/drop hired same person and world object as Actor; slot released; original skills retained.
+Actor resumes normal employee locomotion.
+Spawned talent-1930-01-02-8-806420 at world arrival source (46.00, 0.10, 3.20)
+Physically reached authored exterior slot 0
+Actual carry/drop hired same person and world object as Director; slot released; original skills retained.
+Director resumes normal employee locomotion.
+PASS: Actor and Director end-to-end input hiring; Extra covered by focused domain tests.

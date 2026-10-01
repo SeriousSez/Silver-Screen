@@ -1,0 +1,25 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"success\": true,\n  \"message\": \"Command executed successfully.\",\n  \"data\": {\n    \"isCompilationSuccessful\": true,\n    \"isExecutionSuccessful\": true,\n    \"executionId\": 1,\n    \"compilationLogs\": \"\",\n    \"executionLogs\": \"[Log] A3 final 36-view capture set complete; all material shaders supported; Edit Mode only.\",\n    \"localFixedCode\": \"using UnityEngine;\\r\\nusing UnityEditor;\\r\\n\\r\\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\\r\\n{\\r\\n    internal class CommandScript : IRunCommand\\r\\n    {\\r\\n        public void Execute(ExecutionResult result)\\r\\n        {\\r\\n            if (UnityEditor.EditorApplication.isCompiling)\\r\\n                throw new System.Exception(\\\"Compilation in progress\\\");\\r\\n            var root = UnityEditor.AssetDatabase.LoadAssetAtPath<UnityEngine.GameObject>(SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Prefab);\\r\\n            foreach (var renderer in root.GetComponentsInChildren<UnityEngine.MeshRenderer>(true))\\r\\n                foreach (var material in renderer.sharedMaterials)\\r\\n                    if (material == null || material.shader == null || !material.shader.isSupported)\\r\\n                        throw new System.Exception(\\\"Unsupported or missing material: \\\" + renderer.name);\\r\\n            SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Exteriors();\\r\\n            SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Interiors();\\r\\n            SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.AuditViews();\\r\\n            result.Log(\\\"A3 final 36-view capture set complete; all material shaders supported; Edit Mode only.\\\");\\r\\n        }\\r\\n    }\\r\\n}\",\n    \"result\": \"Command executed successfully.\"\n  }\n}"
+      }
+    ],
+    "structuredContent": {
+      "success": true,
+      "message": "Command executed successfully.",
+      "data": {
+        "isCompilationSuccessful": true,
+        "isExecutionSuccessful": true,
+        "executionId": 1,
+        "compilationLogs": "",
+        "executionLogs": "[Log] A3 final 36-view capture set complete; all material shaders supported; Edit Mode only.",
+        "localFixedCode": "using UnityEngine;\r\nusing UnityEditor;\r\n\r\nnamespace Unity.AI.Assistant.Agent.Dynamic.Extension.Editor\r\n{\r\n    internal class CommandScript : IRunCommand\r\n    {\r\n        public void Execute(ExecutionResult result)\r\n        {\r\n            if (UnityEditor.EditorApplication.isCompiling)\r\n                throw new System.Exception(\"Compilation in progress\");\r\n            var root = UnityEditor.AssetDatabase.LoadAssetAtPath<UnityEngine.GameObject>(SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Prefab);\r\n            foreach (var renderer in root.GetComponentsInChildren<UnityEngine.MeshRenderer>(true))\r\n                foreach (var material in renderer.sharedMaterials)\r\n                    if (material == null || material.shader == null || !material.shader.isSupported)\r\n                        throw new System.Exception(\"Unsupported or missing material: \" + renderer.name);\r\n            SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Exteriors();\r\n            SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.Interiors();\r\n            SilverScreen.Editor.EnvironmentArt.StageSchoolA1Review.AuditViews();\r\n            result.Log(\"A3 final 36-view capture set complete; all material shaders supported; Edit Mode only.\");\r\n        }\r\n    }\r\n}",
+        "result": "Command executed successfully."
+      }
+    }
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}
