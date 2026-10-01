@@ -98,9 +98,17 @@ namespace SilverScreen.Domain
 
         public void SetState(EmployeeState newState)
         {
-            if (CurrentState == newState) return;
+            bool changed = CurrentState != newState;
             CurrentState = newState;
-            OnStateChanged?.Invoke(this);
+            Person.Wellbeing.SetActivity(newState switch
+            {
+                EmployeeState.Working or EmployeeState.Casting or EmployeeState.Rehearsing or EmployeeState.Filming or
+                    EmployeeState.Writing or EmployeeState.DevelopingIdea or EmployeeState.Practicing => PersonWellbeingActivity.Working,
+                EmployeeState.Resting => PersonWellbeingActivity.Resting,
+                EmployeeState.Socializing => PersonWellbeingActivity.Socializing,
+                _ => PersonWellbeingActivity.Idle
+            });
+            if (changed) OnStateChanged?.Invoke(this);
         }
 
         public void SetIntent(EmployeeIntent intent)

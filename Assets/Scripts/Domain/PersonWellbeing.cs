@@ -2,6 +2,15 @@ using System;
 
 namespace SilverScreen.Domain
 {
+    public enum PersonWellbeingActivity
+    {
+        Idle,
+        Working,
+        Resting,
+        Socializing,
+        Recreation
+    }
+
     public enum PersonWellbeingDimension
     {
         Energy,
@@ -17,6 +26,7 @@ namespace SilverScreen.Domain
         public int Stress = PersonWellbeing.DefaultStress;
         public int Boredom = PersonWellbeing.DefaultBoredom;
         public int Mood = PersonWellbeing.DefaultMood;
+        public PersonWellbeingActivity Activity = PersonWellbeingActivity.Idle;
     }
 
     [Serializable]
@@ -33,6 +43,14 @@ namespace SilverScreen.Domain
         public int Stress { get; private set; } = DefaultStress;
         public int Boredom { get; private set; } = DefaultBoredom;
         public int Mood { get; private set; } = DefaultMood;
+        public PersonWellbeingActivity Activity { get; private set; } = PersonWellbeingActivity.Idle;
+
+        public void SetActivity(PersonWellbeingActivity activity)
+        {
+            if (!Enum.IsDefined(typeof(PersonWellbeingActivity), activity))
+                throw new ArgumentOutOfRangeException(nameof(activity), activity, "Unknown wellbeing activity.");
+            Activity = activity;
+        }
 
         public void ApplyDelta(PersonWellbeingDimension dimension, int delta)
         {
@@ -60,16 +78,20 @@ namespace SilverScreen.Domain
             Energy = Energy,
             Stress = Stress,
             Boredom = Boredom,
-            Mood = Mood
+            Mood = Mood,
+            Activity = Activity
         };
 
         public void Restore(PersonWellbeingSnapshot snapshot)
         {
             if (snapshot == null) throw new ArgumentNullException(nameof(snapshot));
+            if (!Enum.IsDefined(typeof(PersonWellbeingActivity), snapshot.Activity))
+                throw new ArgumentOutOfRangeException(nameof(snapshot), snapshot.Activity, "Unknown wellbeing activity.");
             Energy = Clamp(snapshot.Energy);
             Stress = Clamp(snapshot.Stress);
             Boredom = Clamp(snapshot.Boredom);
             Mood = Clamp(snapshot.Mood);
+            SetActivity(snapshot.Activity);
         }
 
         private static int ClampDelta(int current, int delta) => Clamp((long)current + delta);

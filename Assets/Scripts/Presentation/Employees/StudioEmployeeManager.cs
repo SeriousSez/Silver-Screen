@@ -34,6 +34,7 @@ namespace SilverScreen.Presentation.Employees
             if (added)
             {
                 var time = GetComponent<SilverScreen.Presentation.SimulationTime.SimulationTimeDriver>();
+                time?.Wellbeing.Register(employee.Person);
                 if (time != null) agent.AvailabilityChanged += available =>
                 { if (!time.Work.IsDisposed) time.Work.SetResourceAvailable(new SilverScreen.Domain.Resources.ResourceKey("person", employee.Id), available); };
                 OnEmployeeAdded?.Invoke(employee);
@@ -72,6 +73,7 @@ namespace SilverScreen.Presentation.Employees
         {
             BeforeEmploymentChange?.Invoke(employee);
             if (!Workforce.TryDismiss(employee)) return false;
+            GetComponent<SilverScreen.Presentation.SimulationTime.SimulationTimeDriver>()?.Wellbeing.Unregister(employee.Person);
             var agent = GetAgent(employee);
             _agentByEmployeeId.Remove(employee.Id); _agents.Remove(agent);
             OnEmployeeRemoved?.Invoke(employee);

@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 using SilverScreen.Domain.Time;
 using SilverScreen.Domain.Work;
 using SilverScreen.Domain.Resources;
+using SilverScreen.Domain;
 
 namespace SilverScreen.Presentation.SimulationTime
 {
@@ -24,6 +25,7 @@ namespace SilverScreen.Presentation.SimulationTime
         private SimulationClock _clock;
         private SimulationScheduler _scheduler;
         private WorkService _work;
+        private PersonWellbeingSimulation _wellbeing;
         private ResourceReservationBook _reservations;
         private bool _reportedFailure;
         private static SimulationTimeDriver _activeDriver;
@@ -31,6 +33,7 @@ namespace SilverScreen.Presentation.SimulationTime
         public SimulationScheduler Scheduler { get { EnsureClock(); return _scheduler; } }
         public WorkService Work { get { EnsureClock(); return _work; } }
         public ResourceReservationBook Reservations { get { EnsureClock(); return _reservations; } }
+        public PersonWellbeingSimulation Wellbeing { get { EnsureClock(); return _wellbeing; } }
 
         public ISimulationTimeService TimeService
         {
@@ -71,6 +74,7 @@ namespace SilverScreen.Presentation.SimulationTime
                 _scheduler = new SimulationScheduler(_clock);
                 _work = new WorkService(_clock, _scheduler);
                 _reservations = new ResourceReservationBook();
+                _wellbeing = new PersonWellbeingSimulation(_clock);
             }
         }
 
@@ -151,6 +155,10 @@ namespace SilverScreen.Presentation.SimulationTime
             }
         }
 
-        private void OnDestroy() => _work?.Dispose();
+        private void OnDestroy()
+        {
+            _wellbeing?.Dispose();
+            _work?.Dispose();
+        }
     }
 }

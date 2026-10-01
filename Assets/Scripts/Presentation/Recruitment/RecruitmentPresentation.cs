@@ -167,11 +167,15 @@ namespace SilverScreen.Presentation.Recruitment
    Coordinator.Population=_employeeManager.Workforce.Population;
    Coordinator.ConfigureTalentApplicants(_talentApplicants);
    if(_openingWave!=null)Coordinator.ConfigureOpeningWave(_openingWave);
+   Coordinator.OnCandidateAdded+=HandleCandidateAdded;
+   Coordinator.OnCandidateRemoved+=HandleCandidateRemoved;
    Coordinator.OnCandidateHired+=HandleHired;
    Coordinator.OnRoutingFailed+=HandleRoutingFailed;
    gameObject.AddComponent<SilverScreen.Presentation.UI.RecruitmentPanelUI>().Initialize(this);
   }
-  private void OnDestroy(){if(Coordinator!=null){Coordinator.OnCandidateHired-=HandleHired;Coordinator.OnRoutingFailed-=HandleRoutingFailed;Coordinator.Dispose();}}
+  private void OnDestroy(){if(Coordinator!=null){Coordinator.OnCandidateAdded-=HandleCandidateAdded;Coordinator.OnCandidateRemoved-=HandleCandidateRemoved;Coordinator.OnCandidateHired-=HandleHired;Coordinator.OnRoutingFailed-=HandleRoutingFailed;Coordinator.Dispose();}}
+  private void HandleCandidateAdded(Candidate candidate)=>_timeDriver.Wellbeing.Register(candidate.Person);
+  private void HandleCandidateRemoved(Candidate candidate){if(candidate.Status!=CandidateStatus.Hired)_timeDriver.Wellbeing.Unregister(candidate.Person);}
   private void HandleRoutingFailed(Candidate candidate,CandidateRouteResult result)=>Debug.LogWarning($"Recruitment route failed for {candidate.Person.Id}: {result}.",this);
   private void HandleHired(Candidate candidate,Employee employee){var agent=_world.ConvertToEmployee(candidate,employee);if(agent!=null)_employeeManager.RegisterEmployee(employee,agent);}
   private static StageSchoolView CreatePrototype(){var root=GameObject.CreatePrimitive(PrimitiveType.Cube);root.name="StageSchool";root.transform.position=new Vector3(-15f,2f,9f);root.transform.localScale=new Vector3(10f,4f,7f);root.GetComponent<Renderer>().material.color=new Color(.78f,.66f,.48f);var view=root.AddComponent<StageSchoolView>();Transform Marker(string name,Vector3 local){var go=new GameObject(name);go.transform.SetParent(root.transform,false);go.transform.localPosition=local;return go.transform;}var entrance=Marker("Entrance",new Vector3(0,-.5f,-.58f));var arrival=Marker("ArrivalPoint",new Vector3(-.8f,-.5f,-1.3f));var exit=Marker("ExitPoint",new Vector3(.8f,-.5f,-1.3f));var waits=new List<Transform>();for(int i=0;i<5;i++)waits.Add(Marker("WaitingPosition_"+(i+1),new Vector3(-.4f+i*.2f,-.5f,-.85f)));view.Configure(entrance,arrival,exit,waits);return view;}
