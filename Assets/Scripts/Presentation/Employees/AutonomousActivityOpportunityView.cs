@@ -64,13 +64,28 @@ namespace SilverScreen.Presentation.Employees
 
             if (_driver == null) _driver = FindAnyObjectByType<SimulationTimeDriver>();
             if (_driver == null) return;
+            RegisterWith(_driver);
+        }
+
+        public bool RegisterWith(SimulationTimeDriver driver)
+        {
+            if (driver == null) throw new System.ArgumentNullException(nameof(driver));
+            if (_registered) return _driver == driver;
+            if (string.IsNullOrWhiteSpace(_opportunityId))
+                throw new System.InvalidOperationException("Autonomous activity opportunity requires a stable ID.");
+
+            _driver = driver;
             var point = _destination != null ? _destination.position : transform.position;
             var opportunity = new PersonActivityOpportunity(_opportunityId,
                 string.IsNullOrWhiteSpace(_displayName) ? _opportunityId : _displayName,
                 _activity, new AutonomyPosition(point.x, point.y, point.z), _capacity, _suitability);
             _registered = _driver.AutonomyOpportunities.Register(opportunity);
             if (!_registered)
+            {
                 Debug.LogError("Duplicate autonomous activity opportunity ID: " + _opportunityId, this);
+                _driver = null;
+            }
+            return _registered;
         }
     }
 }
