@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 using SilverScreen.Domain.Time;
 using SilverScreen.Domain.Work;
 using SilverScreen.Domain.Resources;
+using SilverScreen.Domain;
 
 namespace SilverScreen.Presentation.SimulationTime
 {
@@ -24,6 +25,9 @@ namespace SilverScreen.Presentation.SimulationTime
         private SimulationClock _clock;
         private SimulationScheduler _scheduler;
         private WorkService _work;
+        private PersonWellbeingSimulation _wellbeing;
+        private PersonAutonomySimulation _autonomy;
+        private PersonActivityOpportunityRegistry _autonomyOpportunities;
         private ResourceReservationBook _reservations;
         private bool _reportedFailure;
         private static SimulationTimeDriver _activeDriver;
@@ -31,6 +35,9 @@ namespace SilverScreen.Presentation.SimulationTime
         public SimulationScheduler Scheduler { get { EnsureClock(); return _scheduler; } }
         public WorkService Work { get { EnsureClock(); return _work; } }
         public ResourceReservationBook Reservations { get { EnsureClock(); return _reservations; } }
+        public PersonWellbeingSimulation Wellbeing { get { EnsureClock(); return _wellbeing; } }
+        public PersonAutonomySimulation Autonomy { get { EnsureClock(); return _autonomy; } }
+        public PersonActivityOpportunityRegistry AutonomyOpportunities { get { EnsureClock(); return _autonomyOpportunities; } }
 
         public ISimulationTimeService TimeService
         {
@@ -71,6 +78,9 @@ namespace SilverScreen.Presentation.SimulationTime
                 _scheduler = new SimulationScheduler(_clock);
                 _work = new WorkService(_clock, _scheduler);
                 _reservations = new ResourceReservationBook();
+                _wellbeing = new PersonWellbeingSimulation(_clock);
+                _autonomyOpportunities = new PersonActivityOpportunityRegistry();
+                _autonomy = new PersonAutonomySimulation(_clock, _scheduler, _autonomyOpportunities);
             }
         }
 
@@ -151,6 +161,11 @@ namespace SilverScreen.Presentation.SimulationTime
             }
         }
 
-        private void OnDestroy() => _work?.Dispose();
+        private void OnDestroy()
+        {
+            _wellbeing?.Dispose();
+            _autonomy?.Dispose();
+            _work?.Dispose();
+        }
     }
 }

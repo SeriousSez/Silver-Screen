@@ -48,6 +48,7 @@ namespace SilverScreen.Presentation.Employees
 
         public void SetHeld(bool held)
         {
+            if (held) _autonomy?.Interrupt(Employee);
             IsHeld = held;
             if (held)
             {
@@ -87,6 +88,8 @@ namespace SilverScreen.Presentation.Employees
         private Vector3 _homeCenter;
         private float _idleWaitTimer;
         private bool _hasExplicitTask;
+        private bool _autonomousRoute;
+        private PersonAutonomySimulation _autonomy;
         private Action _onArrivalCallback;
 
         private float _baseSpeed = 3.5f;
@@ -155,15 +158,51 @@ namespace SilverScreen.Presentation.Employees
 
         private void OnDestroy()
         {
+            if (_autonomy != null)
+            {
+                if (Application.isPlaying && Employee != null)
+                    _autonomy.Unregister(Employee);
+                _autonomy.ActivitySelected -= HandleAutonomousActivitySelected;
+                _autonomy.ActivityCancelled -= HandleAutonomousActivityCancelled;
+            }
             if (_timeService != null)
             {
                 _timeService.OnSpeedChanged -= HandleSpeedChanged;
             }
         }
 
+        private void OnEnable()
+        {
+            if (!Application.isPlaying || _autonomy == null || Employee == null) return;
+            _autonomy.Register(Employee);
+            UpdateAutonomyPosition();
+        }
+
+        private void OnDisable()
+        {
+            if (Application.isPlaying && _autonomy != null && Employee != null)
+                _autonomy.Unregister(Employee);
+        }
+
         public void BindDomain(Employee employee)
         {
             Employee = employee;
+        }
+
+        public void BindAutonomy(PersonAutonomySimulation autonomy)
+        {
+            if (_autonomy != null)
+            {
+                _autonomy.ActivitySelected -= HandleAutonomousActivitySelected;
+                _autonomy.ActivityCancelled -= HandleAutonomousActivityCancelled;
+            }
+            _autonomy = autonomy;
+            if (_autonomy != null)
+            {
+                _autonomy.ActivitySelected += HandleAutonomousActivitySelected;
+                _autonomy.ActivityCancelled += HandleAutonomousActivityCancelled;
+                UpdateAutonomyPosition();
+            }
         }
 
         public void BindTimeService(ISimulationTimeService timeService)
@@ -225,6 +264,9 @@ namespace SilverScreen.Presentation.Employees
         private void Update()
         {
             if (Employee == null || IsHeld || UnityEngine.Time.frameCount == _dropFrame) return;
+            if (_autonomy != null)
+                _autonomy.UpdatePosition(Employee,
+                    AutonomyPositionAt(transform.position - Vector3.up * (_navAgent != null ? _navAgent.baseOffset : 0f)));
 
             // When simulation is paused, freeze simulation updates, preserving destinations and intent
             if (_timeService != null && _timeService.IsPaused)
@@ -250,7 +292,14 @@ namespace SilverScreen.Presentation.Employees
             }
             else if (Employee.CurrentState == EmployeeState.Walking && !_hasExplicitTask)
             {
-                CheckWanderArrival();
+                if (_autonomy != null && _autonomy.ShouldDeferIdleWander(Employee) &&
+                    Employee.CurrentIntent.Purpose == EmployeeIntentPurpose.IdleWander)
+                {
+                    if (_navAgent != null && _navAgent.isOnNavMesh) _navAgent.ResetPath();
+                    Employee.SetState(EmployeeState.Idle);
+                    Employee.SetIntent(EmployeeIntent.None);
+                }
+                else CheckWanderArrival();
             }
         }
 
@@ -432,11 +481,13 @@ namespace SilverScreen.Presentation.Employees
 
         public void CancelPresentationMovement()
         {
+            _autonomy?.Interrupt(Employee);
             _hasTaskAnchor = false;
             IsReturningAfterDrop = false;
             if (!IsHeld) AvailabilityChanged?.Invoke(true);
             _hasExplicitTask = false;
             _onArrivalCallback = null;
+            _autonomousRoute = false;
             if (_navAgent != null && _navAgent.isActiveAndEnabled && _navAgent.isOnNavMesh) _navAgent.ResetPath();
         }
 
@@ -493,6 +544,7 @@ namespace SilverScreen.Presentation.Employees
 
         private void UpdateIdleWander()
         {
+            if (_autonomy != null && _autonomy.ShouldDeferIdleWander(Employee)) return;
             _idleWaitTimer -= SilverScreen.Presentation.SimulationTime.LocalPresentationTime.Delta(UnityEngine.Time.unscaledDeltaTime, _timeService);
 
             if (_idleWaitTimer <= 0f)
@@ -554,6 +606,19 @@ namespace SilverScreen.Presentation.Employees
 
         public bool TryAssignTaskDestination(Vector3 destination, EmployeeIntent intent, Action onArrival = null)
         {
+            bool interruptedAutonomy = _autonomy?.Interrupt(Employee, false) == true;
+            bool assigned = TryAssignTaskDestinationCore(destination, intent, onArrival, false);
+            if (!assigned && interruptedAutonomy)
+            {
+                Employee?.SetState(EmployeeState.Idle);
+                Employee?.SetIntent(EmployeeIntent.None);
+            }
+            return assigned;
+        }
+
+        private bool TryAssignTaskDestinationCore(Vector3 destination, EmployeeIntent intent,
+            Action onArrival, bool autonomous)
+        {
             if (_navAgent == null || !_navAgent.isActiveAndEnabled || !_navAgent.isOnNavMesh)
             {
                 return false;
@@ -563,6 +628,7 @@ namespace SilverScreen.Presentation.Employees
                 _departingAssignmentArea = null;
                 _taskDestination = destination; _hasTaskAnchor = true; _hasExplicitTask = true;
                 _onArrivalCallback = onArrival;
+                _autonomousRoute = autonomous;
                 Employee?.SetIntent(intent);
                 return true;
             }
@@ -579,6 +645,7 @@ namespace SilverScreen.Presentation.Employees
             _hasTaskAnchor = true;
             _hasExplicitTask = true;
             _onArrivalCallback = onArrival;
+            _autonomousRoute = autonomous;
 
             if (Employee != null)
             {
@@ -596,6 +663,7 @@ namespace SilverScreen.Presentation.Employees
 
         public void ClearTaskDestination()
         {
+            _autonomy?.Interrupt(Employee, false);
             _hasTaskAnchor = false;
             IsReturningAfterDrop = false;
             if (!IsHeld) AvailabilityChanged?.Invoke(true);
@@ -622,12 +690,96 @@ namespace SilverScreen.Presentation.Employees
                 }
                 var callback = _onArrivalCallback;
                 _onArrivalCallback = null;
-                callback?.Invoke();
+                if (_autonomousRoute)
+                {
+                    _autonomousRoute = false;
+                    if (_autonomousFacingPoint.HasValue)
+                    {
+                        var direction = _autonomousFacingPoint.Value -
+                            (transform.position - Vector3.up * (_navAgent != null ? _navAgent.baseOffset : 0f));
+                        direction.y = 0;
+                        if (direction.sqrMagnitude > .001f)
+                            transform.rotation = Quaternion.LookRotation(direction.normalized, Vector3.up);
+                        _autonomousFacingPoint = null;
+                    }
+                    _autonomy?.NavigationCompleted(Employee, true);
+                }
+                else callback?.Invoke();
             }
+        }
+
+        private void HandleAutonomousActivitySelected(Employee employee, PersonAutonomyDecision decision)
+        {
+            if (Employee != employee || decision == null ||
+                decision.OpportunityId == null && decision.SessionId == null) return;
+            if (decision.SessionId != null)
+            {
+                var position = decision.ParticipationPosition;
+                _autonomousFacingPoint = new Vector3(decision.SessionCenter.X, decision.SessionCenter.Y,
+                    decision.SessionCenter.Z);
+                bool assignedSession = TryAssignTaskDestinationCore(
+                    new Vector3(position.X, position.Y, position.Z),
+                    new EmployeeIntent(EmployeeIntentPurpose.AutonomousActivity,
+                        decision.Activity + ": " + decision.SessionId, decision.SessionId),
+                    null, true);
+                if (!assignedSession)
+                {
+                    _autonomousFacingPoint = null;
+                    _autonomy.NavigationCompleted(employee, false);
+                }
+                return;
+            }
+            var opportunity = _autonomy.Opportunities.Find(decision.OpportunityId);
+            if (opportunity == null)
+            {
+                _autonomy.NavigationCompleted(employee, false);
+                return;
+            }
+
+            var target = opportunity.Position;
+            bool assigned = TryAssignTaskDestinationCore(
+                new Vector3(target.X, target.Y, target.Z),
+                new EmployeeIntent(EmployeeIntentPurpose.AutonomousActivity,
+                    decision.Activity + ": " + decision.OpportunityName, decision.OpportunityId),
+                null, true);
+            if (!assigned) _autonomy.NavigationCompleted(employee, false);
+        }
+
+        private Vector3? _autonomousFacingPoint;
+
+        private static AutonomyPosition AutonomyPositionAt(Vector3 position) =>
+            new AutonomyPosition(position.x, position.y, position.z);
+
+        public void UpdateAutonomyPosition()
+        {
+            if (_autonomy == null || Employee == null) return;
+            _autonomy.UpdatePosition(Employee,
+                AutonomyPositionAt(transform.position - Vector3.up * (_navAgent != null ? _navAgent.baseOffset : 0f)));
+        }
+
+        private void HandleAutonomousActivityCancelled(Employee employee)
+        {
+            if (Employee != employee || !_autonomousRoute) return;
+            _autonomousRoute = false;
+            _autonomousFacingPoint = null;
+            _hasExplicitTask = false;
+            _onArrivalCallback = null;
+            if (_navAgent != null && _navAgent.isActiveAndEnabled && _navAgent.isOnNavMesh)
+                _navAgent.ResetPath();
         }
 
         private void CheckExplicitArrival()
         {
+            if (_autonomousRoute && !_navAgent.pathPending &&
+                (!_navAgent.hasPath || _navAgent.pathStatus == NavMeshPathStatus.PathInvalid))
+            {
+                _hasExplicitTask = false;
+                _autonomousRoute = false;
+                _autonomousFacingPoint = null;
+                _navAgent.ResetPath();
+                _autonomy?.NavigationCompleted(Employee, false);
+                return;
+            }
             if (!IsHeld && _navAgent.isOnNavMesh && !_navAgent.pathPending &&
                 Vector3.Distance(transform.position - Vector3.up * _navAgent.baseOffset, _taskDestination) <= _navAgent.stoppingDistance + 0.25f)
             {
@@ -660,4 +812,3 @@ namespace SilverScreen.Presentation.Employees
         }
     }
 }
-

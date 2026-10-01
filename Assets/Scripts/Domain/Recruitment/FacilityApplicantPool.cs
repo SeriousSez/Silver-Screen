@@ -93,5 +93,7 @@ namespace SilverScreen.Domain.Recruitment
         public bool ProfessionNeutral;
         public bool HasIntakeCategory, IsStarterApplicant;
         public RecruitmentCategory IntakeCategory;
+        public PersonWellbeingSnapshot Wellbeing;
+        public PersonCareerSnapshot Career;
     }
 }
