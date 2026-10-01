@@ -38,6 +38,7 @@ namespace SilverScreen.Presentation.Employees
                 time?.Wellbeing.StartCareerTracking(employee.Person);
                 agent.BindAutonomy(time?.Autonomy);
                 time?.Autonomy.Register(employee);
+                agent.UpdateAutonomyPosition();
                 if (time != null) agent.AvailabilityChanged += available =>
                 { if (!time.Work.IsDisposed) time.Work.SetResourceAvailable(new SilverScreen.Domain.Resources.ResourceKey("person", employee.Id), available); };
                 OnEmployeeAdded?.Invoke(employee);

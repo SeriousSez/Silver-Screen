@@ -324,7 +324,8 @@ namespace SilverScreen.Presentation.Interaction
             var employee = (person as EmployeeAgent)?.Employee;
             var candidate = (person as CandidateAgent)?.Candidate;
             _information.Collect(new PersonInformationContext { Person = employee?.Person ?? candidate?.Person, Employee = employee,
-                Candidate = candidate, Date = _time != null ? _time.Clock.CurrentTime : new SilverScreen.Domain.Time.SimulationDateTime(1930, 1, 1, 0, 0), Practice = _practice }, _cards);
+                Candidate = candidate, Date = _time != null ? _time.Clock.CurrentTime : new SilverScreen.Domain.Time.SimulationDateTime(1930, 1, 1, 0, 0),
+                Practice = _practice, Autonomy = _time?.Autonomy }, _cards);
         }
         private void OnGUI()
         {

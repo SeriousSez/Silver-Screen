@@ -55,7 +55,6 @@ namespace SilverScreen.Tests.EditMode
         {
             var setup = Create();
             SetWellbeing(setup.employee.Person, boredom: 90);
-            setup.registry.Register(Opportunity("social", PersonAutonomousActivity.Socialize));
             setup.registry.Register(Opportunity("recreation", PersonAutonomousActivity.Recreation));
             using (setup.simulation)
             {
@@ -65,17 +64,40 @@ namespace SilverScreen.Tests.EditMode
         }
 
         [Test]
-        public void SocializingCanWinWhenRecreationIsUnavailable()
+        public void SocializingRequiresNearbyPersonAndBeginsOnlyAfterBothArrive()
         {
             var setup = Create();
+            var second = Employee(Person("second-social"));
             SetWellbeing(setup.employee.Person, boredom: 90);
-            setup.registry.Register(Opportunity("social", PersonAutonomousActivity.Socialize));
-            setup.registry.Register(Opportunity("recreation", PersonAutonomousActivity.Recreation));
-            setup.registry.SetAvailable("recreation", false);
             using (setup.simulation)
             {
                 setup.simulation.Register(setup.employee);
-                AssertChoice(setup.simulation, setup.employee, PersonAutonomousActivity.Socialize, "social");
+                Assert.That(setup.simulation.LastDecision(setup.employee).Activity,
+                    Is.EqualTo(PersonAutonomousActivity.IdleWait));
+                setup.simulation.Register(second);
+                setup.simulation.UpdatePosition(setup.employee, new AutonomyPosition(0, 0, 0));
+                setup.simulation.UpdatePosition(second, new AutonomyPosition(2, 0, 0));
+                Assert.That(setup.simulation.EvaluateNow(setup.employee).Activity,
+                    Is.EqualTo(PersonAutonomousActivity.Socialize));
+                var session = setup.simulation.Sessions.FindForPerson(setup.employee.Id);
+                Assert.That(session, Is.Not.Null);
+                Assert.That(session.ParticipantCount, Is.EqualTo(2));
+                Assert.That(session.State, Is.EqualTo(PersonActivitySessionState.Forming));
+                Assert.That(setup.employee.CurrentState, Is.EqualTo(EmployeeState.Idle));
+                Assert.That(second.CurrentState, Is.EqualTo(EmployeeState.Idle));
+                setup.employee.SetState(EmployeeState.Walking);
+                setup.employee.SetIntent(new EmployeeIntent(EmployeeIntentPurpose.AutonomousActivity,
+                    "Socialize: " + session.Id, session.Id));
+                second.SetState(EmployeeState.Walking);
+                second.SetIntent(new EmployeeIntent(EmployeeIntentPurpose.AutonomousActivity,
+                    "Socialize: " + session.Id, session.Id));
+                Assert.That(setup.simulation.Sessions.Count, Is.EqualTo(1));
+                Assert.That(setup.simulation.NavigationCompleted(setup.employee, true), Is.True);
+                Assert.That(setup.employee.CurrentState, Is.EqualTo(EmployeeState.Idle));
+                Assert.That(setup.simulation.NavigationCompleted(second, true), Is.True);
+                Assert.That(session.State, Is.EqualTo(PersonActivitySessionState.Active));
+                Assert.That(setup.employee.CurrentState, Is.EqualTo(EmployeeState.Socializing));
+                Assert.That(second.CurrentState, Is.EqualTo(EmployeeState.Socializing));
             }
         }
 
@@ -238,7 +260,6 @@ namespace SilverScreen.Tests.EditMode
         }
 
         [TestCase(PersonAutonomousActivity.Rest, EmployeeState.Resting, PersonWellbeingActivity.Resting)]
-        [TestCase(PersonAutonomousActivity.Socialize, EmployeeState.Socializing, PersonWellbeingActivity.Socializing)]
         [TestCase(PersonAutonomousActivity.Recreation, EmployeeState.Recreating, PersonWellbeingActivity.Recreation)]
         [TestCase(PersonAutonomousActivity.PracticeProfession, EmployeeState.Practicing, PersonWellbeingActivity.Working)]
         public void ChosenActivityMapsToBroadWellbeingState(PersonAutonomousActivity activity,
@@ -248,7 +269,6 @@ namespace SilverScreen.Tests.EditMode
             switch (activity)
             {
                 case PersonAutonomousActivity.Rest: SetWellbeing(setup.employee.Person, energy: 0); break;
-                case PersonAutonomousActivity.Socialize: SetWellbeing(setup.employee.Person, boredom: 100, mood: 0); break;
                 case PersonAutonomousActivity.Recreation: SetWellbeing(setup.employee.Person, boredom: 100); break;
                 case PersonAutonomousActivity.PracticeProfession:
                     SetWellbeing(setup.employee.Person, boredom: 100);
@@ -264,6 +284,195 @@ namespace SilverScreen.Tests.EditMode
                 Assert.That(setup.simulation.NavigationCompleted(setup.employee, true), Is.True);
                 Assert.That(setup.employee.CurrentState, Is.EqualTo(expectedState));
                 Assert.That(setup.employee.Person.Wellbeing.Activity, Is.EqualTo(expectedActivity));
+            }
+        }
+
+        [Test]
+        public void SocializingProgressesWellbeingOnlyAfterGroupArrival()
+        {
+            var setup = Create();
+            var second = Employee(Person("social-progress-second"));
+            SetWellbeing(setup.employee.Person, boredom: 100, mood: 0);
+            using var wellbeing = new PersonWellbeingSimulation(setup.clock);
+            wellbeing.Register(setup.employee.Person);
+            wellbeing.Register(second.Person);
+            using (setup.simulation)
+            {
+                setup.simulation.Register(setup.employee);
+                setup.simulation.Register(second);
+                setup.simulation.UpdatePosition(setup.employee, new AutonomyPosition(0, 0, 0));
+                setup.simulation.UpdatePosition(second, new AutonomyPosition(2, 0, 0));
+                setup.simulation.EvaluateNow(setup.employee);
+                int boredomAtStart = setup.employee.Person.Wellbeing.Boredom;
+                int moodAtStart = setup.employee.Person.Wellbeing.Mood;
+                string sessionId = setup.simulation.Sessions.FindForPerson(setup.employee.Id).Id;
+                setup.employee.SetState(EmployeeState.Walking);
+                setup.employee.SetIntent(new EmployeeIntent(EmployeeIntentPurpose.AutonomousActivity,
+                    "Socialize: " + sessionId, sessionId));
+                second.SetState(EmployeeState.Walking);
+                second.SetIntent(new EmployeeIntent(EmployeeIntentPurpose.AutonomousActivity,
+                    "Socialize: " + sessionId, sessionId));
+                setup.simulation.NavigationCompleted(setup.employee, true);
+                Advance(setup.clock, 10);
+                Assert.That(setup.employee.Person.Wellbeing.Boredom, Is.EqualTo(boredomAtStart));
+                Assert.That(setup.employee.Person.Wellbeing.Mood, Is.EqualTo(moodAtStart));
+                setup.simulation.NavigationCompleted(second, true);
+                Advance(setup.clock, 60);
+                Assert.That(setup.employee.Person.Wellbeing.Boredom, Is.LessThan(boredomAtStart));
+                Assert.That(setup.employee.Person.Wellbeing.Mood, Is.GreaterThan(moodAtStart));
+            }
+        }
+
+        [Test]
+        public void LeavingSocialGroupReleasesOnlyThatPersonAndTerminatesBelowMinimum()
+        {
+            var setup = Create();
+            var second = Employee(Person("social-leaver"));
+            SetWellbeing(setup.employee.Person, boredom: 100, mood: 0);
+            using (setup.simulation)
+            {
+                setup.simulation.Register(setup.employee);
+                setup.simulation.Register(second);
+                setup.simulation.UpdatePosition(setup.employee, new AutonomyPosition(0, 0, 0));
+                setup.simulation.UpdatePosition(second, new AutonomyPosition(2, 0, 0));
+                setup.simulation.EvaluateNow(setup.employee);
+                setup.simulation.NavigationCompleted(setup.employee, true);
+                setup.simulation.NavigationCompleted(second, true);
+                var session = setup.simulation.Sessions.FindForPerson(setup.employee.Id);
+                Assert.That(session.State, Is.EqualTo(PersonActivitySessionState.Active));
+                setup.simulation.Interrupt(second);
+                Assert.That(setup.simulation.Sessions.FindForPerson(setup.employee.Id), Is.Null);
+                Assert.That(setup.simulation.Sessions.IsReserved(second.Id), Is.False);
+                Assert.That(setup.simulation.Sessions.IsReserved(setup.employee.Id), Is.False);
+                Assert.That(setup.employee.CurrentState, Is.EqualTo(EmployeeState.Idle));
+            }
+        }
+
+        [Test]
+        public void FailedSocialNavigationCancelsGroupAndReleasesBothParticipants()
+        {
+            var setup = Create();
+            var second = Employee(Person("social-failed-navigation"));
+            SetWellbeing(setup.employee.Person, boredom: 100, mood: 0);
+            using (setup.simulation)
+            {
+                setup.simulation.Register(setup.employee);
+                setup.simulation.Register(second);
+                setup.simulation.UpdatePosition(setup.employee, new AutonomyPosition(0, 0, 0));
+                setup.simulation.UpdatePosition(second, new AutonomyPosition(2, 0, 0));
+                setup.simulation.EvaluateNow(setup.employee);
+                Assert.That(setup.simulation.NavigationCompleted(setup.employee, false), Is.False);
+                Assert.That(setup.simulation.Sessions.Count, Is.Zero);
+                Assert.That(setup.simulation.Sessions.IsReserved(setup.employee.Id), Is.False);
+                Assert.That(setup.simulation.Sessions.IsReserved(second.Id), Is.False);
+                Assert.That(second.CurrentState, Is.EqualTo(EmployeeState.Idle));
+            }
+        }
+
+        [Test]
+        public void NearbyEmployeeCanJoinAnActiveSessionUntilCapacityIsReached()
+        {
+            var setup = Create();
+            var second = Employee(Person("social-late-second"));
+            var third = Employee(Person("social-late-third"));
+            SetWellbeing(setup.employee.Person, boredom: 100, mood: 0);
+            SetWellbeing(third.Person, boredom: 100, mood: 0);
+            using (setup.simulation)
+            {
+                setup.simulation.Register(setup.employee);
+                setup.simulation.Register(second);
+                setup.simulation.UpdatePosition(setup.employee, new AutonomyPosition(0, 0, 0));
+                setup.simulation.UpdatePosition(second, new AutonomyPosition(2, 0, 0));
+                setup.simulation.EvaluateNow(setup.employee);
+                setup.simulation.NavigationCompleted(setup.employee, true);
+                setup.simulation.NavigationCompleted(second, true);
+                var session = setup.simulation.Sessions.FindForPerson(setup.employee.Id);
+
+                setup.simulation.Register(third);
+                setup.simulation.UpdatePosition(third, new AutonomyPosition(3, 0, 0));
+                Assert.That(setup.simulation.EvaluateNow(third).SessionId, Is.EqualTo(session.Id));
+                Assert.That(session.ParticipantCount, Is.EqualTo(3));
+                Assert.That(third.CurrentState, Is.EqualTo(EmployeeState.Idle));
+                Assert.That(setup.simulation.NavigationCompleted(third, true), Is.True);
+                Assert.That(third.CurrentState, Is.EqualTo(EmployeeState.Socializing));
+            }
+        }
+
+        [Test]
+        public void SocialSessionCompletionReleasesMembersAndRestoresAutonomyEligibility()
+        {
+            var setup = Create();
+            var second = Employee(Person("social-completion-second"));
+            SetWellbeing(setup.employee.Person, boredom: 100, mood: 0);
+            setup.simulation.Rates.SocializeDurationMinutes = 5;
+            using (setup.simulation)
+            {
+                setup.simulation.Register(setup.employee);
+                setup.simulation.Register(second);
+                setup.simulation.UpdatePosition(setup.employee, new AutonomyPosition(0, 0, 0));
+                setup.simulation.UpdatePosition(second, new AutonomyPosition(2, 0, 0));
+                setup.simulation.EvaluateNow(setup.employee);
+                setup.simulation.NavigationCompleted(setup.employee, true);
+                setup.simulation.NavigationCompleted(second, true);
+                Advance(setup.clock, 5);
+
+                Assert.That(setup.simulation.Sessions.Count, Is.Zero);
+                Assert.That(setup.simulation.Sessions.IsReserved(setup.employee.Id), Is.False);
+                Assert.That(setup.simulation.Sessions.IsReserved(second.Id), Is.False);
+                Assert.That(setup.employee.CurrentState, Is.EqualTo(EmployeeState.Idle));
+                Assert.That(second.CurrentState, Is.EqualTo(EmployeeState.Idle));
+                Assert.That(setup.simulation.IsEligible(setup.employee), Is.True);
+                Assert.That(setup.simulation.IsEligible(second), Is.True);
+            }
+        }
+
+        [Test]
+        public void HigherPriorityWorkInterruptsSocialSessionWithoutOverwritingWork()
+        {
+            var setup = Create();
+            var second = Employee(Person("social-work-second"));
+            SetWellbeing(setup.employee.Person, boredom: 100, mood: 0);
+            using (setup.simulation)
+            {
+                setup.simulation.Register(setup.employee);
+                setup.simulation.Register(second);
+                setup.simulation.UpdatePosition(setup.employee, new AutonomyPosition(0, 0, 0));
+                setup.simulation.UpdatePosition(second, new AutonomyPosition(2, 0, 0));
+                setup.simulation.EvaluateNow(setup.employee);
+                setup.simulation.NavigationCompleted(setup.employee, true);
+                setup.simulation.NavigationCompleted(second, true);
+
+                setup.employee.SetState(EmployeeState.Working);
+                Assert.That(setup.employee.CurrentState, Is.EqualTo(EmployeeState.Working));
+                Assert.That(setup.simulation.Sessions.Count, Is.Zero);
+                Assert.That(setup.simulation.Sessions.IsReserved(second.Id), Is.False);
+                Assert.That(second.CurrentState, Is.EqualTo(EmployeeState.Idle));
+            }
+        }
+
+        [Test]
+        public void UnregisteringGroupMemberReleasesSessionAndRemainingParticipant()
+        {
+            var setup = Create();
+            var second = Employee(Person("social-unregister-second"));
+            SetWellbeing(setup.employee.Person, boredom: 100, mood: 0);
+            using (setup.simulation)
+            {
+                setup.simulation.Register(setup.employee);
+                setup.simulation.Register(second);
+                setup.simulation.UpdatePosition(setup.employee, new AutonomyPosition(0, 0, 0));
+                setup.simulation.UpdatePosition(second, new AutonomyPosition(2, 0, 0));
+                setup.simulation.EvaluateNow(setup.employee);
+                setup.simulation.NavigationCompleted(setup.employee, true);
+                setup.simulation.NavigationCompleted(second, true);
+                Assert.That(setup.simulation.Sessions.Count, Is.EqualTo(1));
+
+                setup.simulation.Unregister(second);
+                Assert.That(setup.simulation.Sessions.Count, Is.Zero);
+                Assert.That(setup.simulation.Sessions.IsReserved(setup.employee.Id), Is.False);
+                Assert.That(setup.simulation.Sessions.IsReserved(second.Id), Is.False);
+                Assert.That(setup.employee.CurrentState, Is.EqualTo(EmployeeState.Idle));
+                Assert.That(setup.simulation.ParticipantCount, Is.EqualTo(1));
             }
         }
 

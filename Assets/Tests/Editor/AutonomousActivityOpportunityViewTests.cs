@@ -222,12 +222,130 @@ namespace SilverScreen.Tests.EditMode
             }
         }
 
+        [UnityTest]
+        public IEnumerator SocializingUsesDistinctArrivalPositionsAndCompletesForBothPeople()
+        {
+            Assert.That(SceneManager.GetActiveScene().isDirty, Is.False,
+                "Save the scene before running this isolated runtime proof.");
+            SessionState.SetString(SceneKey, SceneManager.GetActiveScene().path);
+            EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
+            yield return new EnterPlayMode();
+
+            var center = new Vector3(1000, 0, 1000);
+            var source = new NavMeshBuildSource
+            {
+                shape = NavMeshBuildSourceShape.Box,
+                size = new Vector3(40, .2f, 40),
+                transform = Matrix4x4.TRS(center - Vector3.up * .1f, Quaternion.identity, Vector3.one),
+                area = 0
+            };
+            var data = NavMeshBuilder.BuildNavMeshData(NavMesh.GetSettingsByIndex(0),
+                new List<NavMeshBuildSource> { source }, new Bounds(center, new Vector3(42, 4, 42)),
+                Vector3.zero, Quaternion.identity);
+            var navigation = NavMesh.AddNavMeshData(data);
+            var driverObject = new GameObject("SIM4.2 social proof simulation driver");
+            var driver = driverObject.AddComponent<SimulationTimeDriver>();
+            driver.enabled = false;
+            var first = CreateSocialEmployee("physical-social-first");
+            var second = CreateSocialEmployee("physical-social-second");
+            var firstObject = new GameObject("Physical social employee one");
+            var secondObject = new GameObject("Physical social employee two");
+            firstObject.transform.position = center + Vector3.left * 4 + Vector3.up;
+            secondObject.transform.position = center + Vector3.right * 4 + Vector3.up;
+            var firstNavigation = firstObject.AddComponent<NavMeshAgent>();
+            var secondNavigation = secondObject.AddComponent<NavMeshAgent>();
+            firstNavigation.baseOffset = secondNavigation.baseOffset = 1;
+            firstNavigation.stoppingDistance = secondNavigation.stoppingDistance = .1f;
+            var firstAgent = firstObject.AddComponent<EmployeeAgent>();
+            var secondAgent = secondObject.AddComponent<EmployeeAgent>();
+            firstAgent.BindDomain(first);
+            secondAgent.BindDomain(second);
+            yield return null;
+
+            try
+            {
+                Assert.That(firstNavigation.isOnNavMesh, Is.True);
+                Assert.That(secondNavigation.isOnNavMesh, Is.True);
+                firstAgent.BindAutonomy(driver.Autonomy);
+                secondAgent.BindAutonomy(driver.Autonomy);
+                firstAgent.BindTimeService(driver.TimeService);
+                secondAgent.BindTimeService(driver.TimeService);
+                driver.Wellbeing.Register(first.Person);
+                driver.Wellbeing.Register(second.Person);
+                driver.Autonomy.Register(first);
+                driver.Autonomy.Register(second);
+                driver.Autonomy.UpdatePosition(first, new AutonomyPosition(
+                    firstObject.transform.position.x, 0, firstObject.transform.position.z));
+                driver.Autonomy.UpdatePosition(second, new AutonomyPosition(
+                    secondObject.transform.position.x, 0, secondObject.transform.position.z));
+                Assert.That(driver.Autonomy.EvaluateNow(first).Activity,
+                    Is.EqualTo(PersonAutonomousActivity.Socialize));
+                var session = driver.Autonomy.Sessions.FindForPerson(first.Id);
+                Assert.That(session, Is.Not.Null);
+                Assert.That(session.State, Is.EqualTo(PersonActivitySessionState.Forming));
+
+                float arrivalTimeout = Time.realtimeSinceStartup + 10f;
+                while (session.State != PersonActivitySessionState.Active &&
+                    Time.realtimeSinceStartup < arrivalTimeout)
+                    yield return new WaitForSecondsRealtime(.05f);
+
+                Assert.That(session.State, Is.EqualTo(PersonActivitySessionState.Active),
+                    "first path=" + firstNavigation.pathStatus + ", second path=" + secondNavigation.pathStatus +
+                    ", first position=" + firstObject.transform.position +
+                    ", second position=" + secondObject.transform.position);
+                var firstPosition = session.Participant(first.Id).Position;
+                var secondPosition = session.Participant(second.Id).Position;
+                Assert.That(Vector3.Distance(
+                    firstObject.transform.position - Vector3.up * firstNavigation.baseOffset,
+                    new Vector3(firstPosition.X, firstPosition.Y, firstPosition.Z)),
+                    Is.LessThanOrEqualTo(firstNavigation.stoppingDistance + .25f));
+                Assert.That(Vector3.Distance(
+                    secondObject.transform.position - Vector3.up * secondNavigation.baseOffset,
+                    new Vector3(secondPosition.X, secondPosition.Y, secondPosition.Z)),
+                    Is.LessThanOrEqualTo(secondNavigation.stoppingDistance + .25f));
+                Assert.That(Vector3.Distance(new Vector3(firstPosition.X, firstPosition.Y, firstPosition.Z),
+                    new Vector3(secondPosition.X, secondPosition.Y, secondPosition.Z)), Is.GreaterThan(1f));
+                Assert.That(first.CurrentState, Is.EqualTo(EmployeeState.Socializing));
+                Assert.That(second.CurrentState, Is.EqualTo(EmployeeState.Socializing));
+
+                driver.Clock.AdvanceTo(driver.Clock.Now + SimulationDuration.FromMinutes(30));
+                Assert.That(first.Person.Wellbeing.Boredom, Is.LessThan(60));
+                Assert.That(first.Person.Wellbeing.Mood, Is.GreaterThan(0));
+                Assert.That(session.State, Is.EqualTo(PersonActivitySessionState.Active));
+                driver.Clock.AdvanceTo(driver.Clock.Now + SimulationDuration.FromMinutes(15));
+                Assert.That(driver.Autonomy.Sessions.Count, Is.Zero);
+                Assert.That(first.CurrentState, Is.EqualTo(EmployeeState.Idle));
+                Assert.That(second.CurrentState, Is.EqualTo(EmployeeState.Idle));
+                Assert.That(driver.Autonomy.Sessions.IsReserved(first.Id), Is.False);
+                Assert.That(driver.Autonomy.Sessions.IsReserved(second.Id), Is.False);
+            }
+            finally
+            {
+                Object.DestroyImmediate(firstObject);
+                Object.DestroyImmediate(secondObject);
+                Object.DestroyImmediate(driverObject);
+                navigation.Remove();
+                Object.DestroyImmediate(data);
+            }
+        }
+
         private static Employee CreateLowEnergyEmployee(string id)
         {
             var person = new PersonProfile(id, id, new SimulationDateTime(1900, 1, 1, 0, 0),
                 ProfessionalRole.Actor, new TalentProfile(50, 50));
             var wellbeing = person.CaptureWellbeing();
             wellbeing.Energy = 0;
+            person.RestoreWellbeing(wellbeing);
+            return new Employee(person, EmployeeRole.Actor, 1000);
+        }
+
+        private static Employee CreateSocialEmployee(string id)
+        {
+            var person = new PersonProfile(id, id, new SimulationDateTime(1900, 1, 1, 0, 0),
+                ProfessionalRole.Actor, new TalentProfile(50, 50));
+            var wellbeing = person.CaptureWellbeing();
+            wellbeing.Boredom = 60;
+            wellbeing.Mood = 0;
             person.RestoreWellbeing(wellbeing);
             return new Employee(person, EmployeeRole.Actor, 1000);
         }

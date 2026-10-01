@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using SilverScreen.Domain.Recruitment;
 using SilverScreen.Domain.Time;
 
@@ -22,6 +23,7 @@ namespace SilverScreen.Domain.Interaction
         public Candidate Candidate;
         public SimulationDateTime Date;
         public PersonPracticeService Practice;
+        public PersonAutonomySimulation Autonomy;
     }
     public interface IPersonInformationProvider
     {
@@ -69,9 +71,32 @@ namespace SilverScreen.Domain.Interaction
             if (e != null)
             {
                 string activity = e.CurrentIntent.Purpose == EmployeeIntentPurpose.None ? e.CurrentState.ToString() : e.CurrentIntent.Description;
+                if (e.CurrentIntent.Purpose == EmployeeIntentPurpose.AutonomousActivity)
+                {
+                    var session = c.Autonomy?.Sessions.FindForPerson(e.Id);
+                    var member = session?.Participant(e.Id);
+                    activity += "\nIntention: " + e.CurrentIntent.Description +
+                        "\nOpportunity ID: " + (session == null ? e.CurrentIntent.TargetBuildingId : "none") +
+                        "\nBroad activity: " + e.Person.Wellbeing.Activity;
+                    if (session != null && member != null)
+                    {
+                        activity += "\nSession ID: " + session.Id +
+                            "\nLifecycle: " + (member.HasArrived
+                                ? session.State.ToString().ToLowerInvariant()
+                                : "approaching / " + session.State.ToString().ToLowerInvariant()) +
+                            "\nParticipants: " + session.ParticipantCount + "/" +
+                            session.Rules.MaximumParticipants;
+                        activity += "\nGroup: " + string.Join(", ", session.Participants.Select(
+                            participant => participant.Employee.Name + " (" + participant.Employee.Id + ")"));
+                        activity += "\nPosition: " + member.Position.X.ToString("F1") + ", " +
+                            member.Position.Y.ToString("F1") + ", " + member.Position.Z.ToString("F1");
+                    }
+                }
                 if (c.Practice?.IsPracticing(e) == true) activity += "\nProgress: " + c.Practice.Progress(e).ToString("P0");
                 cards.Add(new PersonInformation("Activity", 0, 90, activity, activity));
-                if (!string.IsNullOrWhiteSpace(e.CurrentIntent.TargetBuildingId) && e.CurrentIntent.Purpose != EmployeeIntentPurpose.Practice)
+                if (!string.IsNullOrWhiteSpace(e.CurrentIntent.TargetBuildingId) &&
+                    e.CurrentIntent.Purpose != EmployeeIntentPurpose.Practice &&
+                    e.CurrentIntent.Purpose != EmployeeIntentPurpose.AutonomousActivity)
                     cards.Add(new PersonInformation("Work", 20, 100, e.CurrentIntent.Description, e.CurrentIntent.Description + "\nLocation: " + e.CurrentIntent.TargetBuildingId));
                 cards.Add(new PersonInformation("Wellbeing", e.Morale < 30 ? 50 : 0, e.Morale < 50 ? 100 : 30, "Morale: " + e.Morale, "Morale: " + e.Morale + "/100"));
                 cards.Add(new PersonInformation("Employment", 0, 40, e.Role.ToString(), e.Role + "\nSalary: $" + e.Salary + "/month"));

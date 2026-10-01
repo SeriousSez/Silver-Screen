@@ -143,9 +143,17 @@ namespace SilverScreen.Domain
 
     public sealed class PersonAutonomyRates
     {
+        public const int DefaultSocializeMinimumParticipants = 2;
+        public const int DefaultSocializeMaximumParticipants = 4;
+        public const int DefaultSocializeDurationMinutes = 45;
         public int ReevaluationMinutes { get; set; } = 20;
         public int RestDurationMinutes { get; set; } = 60;
-        public int SocializeDurationMinutes { get; set; } = 45;
+        public int SocializeDurationMinutes { get; set; } = DefaultSocializeDurationMinutes;
+        public int SocializeMinimumParticipants { get; set; } = DefaultSocializeMinimumParticipants;
+        public int SocializeMaximumParticipants { get; set; } = DefaultSocializeMaximumParticipants;
+        public bool SocializeAllowsJoiningAfterStart { get; set; } = true;
+        public float SocializeInitiationRadius { get; set; } = 10f;
+        public decimal SocializeSessionJoinPreference { get; set; } = 8m;
         public int RecreationDurationMinutes { get; set; } = 60;
         public int PracticeDurationMinutes { get; set; } = 60;
         public decimal IdleBaseline { get; set; } = 20m;
@@ -173,6 +181,11 @@ namespace SilverScreen.Domain
             if (ReevaluationMinutes < 1 || RestDurationMinutes < 1 || SocializeDurationMinutes < 1 ||
                 RecreationDurationMinutes < 1 || PracticeDurationMinutes < 1)
                 throw new ArgumentOutOfRangeException(nameof(ReevaluationMinutes), "Autonomy intervals must be positive.");
+            if (SocializeMinimumParticipants < 2 ||
+                SocializeMaximumParticipants < SocializeMinimumParticipants ||
+                SocializeInitiationRadius <= 0 || SocializeSessionJoinPreference < 0)
+                throw new ArgumentOutOfRangeException(nameof(SocializeMinimumParticipants),
+                    "Socialize session capacity and search settings are invalid.");
             if (IdleBaseline < 0 || RestEnergyWeight < 0 || RestStressWeight < 0 ||
                 SocialBoredomWeight < 0 || SocialLowMoodWeight < 0 || RecreationBoredomWeight < 0 ||
                 RecreationStressWeight < 0 || PracticeBoredomWeight < 0 || PracticeDriveWeight < 0 ||
@@ -201,6 +214,10 @@ namespace SilverScreen.Domain
             PersonAutonomousActivity.PracticeProfession => PracticeDurationMinutes,
             _ => 0
         };
+
+        internal PersonActivitySessionRules SocializeRules => new PersonActivitySessionRules(
+            PersonAutonomousActivity.Socialize, SocializeMinimumParticipants,
+            SocializeMaximumParticipants, SocializeAllowsJoiningAfterStart, SocializeDurationMinutes);
     }
 
     public sealed class PersonAutonomyDecision
@@ -208,15 +225,24 @@ namespace SilverScreen.Domain
         public PersonAutonomousActivity Activity { get; }
         public string OpportunityId { get; }
         public string OpportunityName { get; }
+        public string SessionId { get; }
+        public string PartnerId { get; }
+        public AutonomyPosition ParticipationPosition { get; }
+        public AutonomyPosition SessionCenter { get; }
         public decimal Score { get; }
         public string Reason { get; }
 
         internal PersonAutonomyDecision(PersonAutonomousActivity activity, PersonActivityOpportunity opportunity,
-            decimal score, string reason)
+            decimal score, string reason, string sessionId = null, string partnerId = null,
+            AutonomyPosition participationPosition = default, AutonomyPosition sessionCenter = default)
         {
             Activity = activity;
-            OpportunityId = opportunity?.Id;
+            OpportunityId = sessionId ?? opportunity?.Id;
             OpportunityName = opportunity?.Name;
+            SessionId = sessionId;
+            PartnerId = partnerId;
+            ParticipationPosition = participationPosition;
+            SessionCenter = sessionCenter;
             Score = score;
             Reason = reason;
         }
@@ -227,8 +253,9 @@ namespace SilverScreen.Domain
         private const string OwnerId = "person-autonomy";
         private const string EvaluateEvent = "person-autonomy.evaluate.v1";
         private const string CompleteEvent = "person-autonomy.complete.v1";
+        private const string CompleteSessionEvent = "person-autonomy.session-complete.v1";
 
-        private enum PlanStage { Travelling, Active }
+        private enum PlanStage { Travelling, WaitingForGroup, Active }
 
         private sealed class Participant
         {
@@ -238,6 +265,8 @@ namespace SilverScreen.Domain
             public PersonAutonomyDecision LastDecision;
             public PersonAutonomyDecision CurrentDecision;
             public bool ApplyingActivityState;
+            public AutonomyPosition Position;
+            public bool HasPosition;
 
             public Participant(Employee employee) => Employee = employee;
         }
@@ -246,9 +275,12 @@ namespace SilverScreen.Domain
         private readonly SimulationScheduler _scheduler;
         private readonly Dictionary<string, Participant> _participants =
             new Dictionary<string, Participant>(StringComparer.Ordinal);
+        private readonly Dictionary<string, long> _sessionEventIds =
+            new Dictionary<string, long>(StringComparer.Ordinal);
         private bool _disposed;
 
         public PersonActivityOpportunityRegistry Opportunities { get; }
+        public PersonActivitySessionRegistry Sessions { get; } = new PersonActivitySessionRegistry();
         public PersonAutonomyRates Rates { get; }
         public event Action<Employee, PersonAutonomyDecision> ActivitySelected;
         public event Action<Employee> ActivityCancelled;
@@ -266,6 +298,7 @@ namespace SilverScreen.Domain
             _scheduler.RegisterOwner(OwnerId);
             _scheduler.RegisterHandler(EvaluateEvent, HandleScheduled);
             _scheduler.RegisterHandler(CompleteEvent, HandleScheduled);
+            _scheduler.RegisterHandler(CompleteSessionEvent, HandleScheduled);
             Opportunities.OpportunityUnavailable += HandleOpportunityUnavailable;
         }
 
@@ -279,6 +312,14 @@ namespace SilverScreen.Domain
             employee.OnStateChanged += HandleEmployeeChanged;
             employee.OnDetailsChanged += HandleEmployeeChanged;
             EvaluateNow(employee);
+            return true;
+        }
+
+        public bool UpdatePosition(Employee employee, AutonomyPosition position)
+        {
+            if (employee == null || !_participants.TryGetValue(employee.Id, out var participant)) return false;
+            participant.Position = position;
+            participant.HasPosition = true;
             return true;
         }
 
@@ -303,7 +344,12 @@ namespace SilverScreen.Domain
             var choice = Choose(employee.Person);
             participant.LastDecision = choice;
             DecisionMade?.Invoke(employee, choice);
+            if (choice.Activity == PersonAutonomousActivity.Socialize &&
+                TryStartOrJoinSocialSession(participant, choice))
+                return participant.LastDecision;
+
             if (choice.Activity != PersonAutonomousActivity.IdleWait &&
+                choice.Activity != PersonAutonomousActivity.Socialize &&
                 Opportunities.TryReserve(choice.OpportunityId, employee.Id))
             {
                 participant.CurrentDecision = choice;
@@ -323,6 +369,37 @@ namespace SilverScreen.Domain
         {
             Guard();
             if (!TryGetActive(employee, out var participant) || participant.Stage != PlanStage.Travelling) return false;
+            if (participant.CurrentDecision.SessionId != null)
+            {
+                if (!succeeded ||
+                    !OpportunitiesSessionMemberExists(participant.CurrentDecision.SessionId, employee.Id))
+                {
+                    LeaveSession(employee, true);
+                    return false;
+                }
+                bool becameActive;
+                Sessions.MarkArrived(participant.CurrentDecision.SessionId, employee.Id, out becameActive);
+                var session = Sessions.Find(participant.CurrentDecision.SessionId);
+                if (session == null) return false;
+                if (becameActive)
+                {
+                    ScheduleSessionCompletion(session);
+                    foreach (var member in session.Participants)
+                        if (member.HasArrived) ActivateSessionParticipant(member.Employee, session);
+                }
+                else if (session.State == PersonActivitySessionState.Active)
+                {
+                    ActivateSessionParticipant(employee, session);
+                }
+                else if (session.State == PersonActivitySessionState.Forming)
+                {
+                    participant.Stage = PlanStage.WaitingForGroup;
+                    participant.ApplyingActivityState = true;
+                    try { employee.SetState(EmployeeState.Idle); }
+                    finally { participant.ApplyingActivityState = false; }
+                }
+                return true;
+            }
             if (!succeeded || !Opportunities.IsReservedBy(participant.CurrentDecision.OpportunityId, employee.Id))
             {
                 CancelPlan(participant, true);
@@ -352,6 +429,8 @@ namespace SilverScreen.Domain
         {
             Guard();
             if (!TryGetActive(employee, out var participant)) return false;
+            if (participant.CurrentDecision.SessionId != null)
+                return LeaveSession(employee, resetAutonomousActivity);
             bool wasAutonomous = employee.CurrentIntent.Purpose == EmployeeIntentPurpose.AutonomousActivity;
             CancelPlan(participant, false);
             ActivityCancelled?.Invoke(employee);
@@ -366,8 +445,9 @@ namespace SilverScreen.Domain
 
         public void Unregister(Employee employee)
         {
-            Guard();
+            if (_disposed) return;
             if (employee == null || !_participants.TryGetValue(employee.Id, out var participant)) return;
+            if (participant.CurrentDecision?.SessionId != null) LeaveSession(employee, true);
             if (participant.CurrentDecision != null) ActivityCancelled?.Invoke(employee);
             CancelPlan(participant, false);
             CancelScheduled(participant);
@@ -391,10 +471,18 @@ namespace SilverScreen.Domain
                 Math.Max(0, Rates.RestEnergyThreshold - person.Wellbeing.Energy) * Rates.RestEnergyWeight +
                 Math.Max(0, person.Wellbeing.Stress - Rates.RestStressThreshold) * Rates.RestStressWeight,
                 "Low energy or elevated stress favors rest.", ref best);
-            ScoreCandidate(person, PersonAutonomousActivity.Socialize, Rates.IdleBaseline,
-                person.Wellbeing.Boredom * Rates.SocialBoredomWeight +
-                Math.Max(0, Rates.SocialLowMoodThreshold - person.Wellbeing.Mood) * Rates.SocialLowMoodWeight,
-                "Boredom or low mood favors socializing.", ref best);
+            var socialTarget = FindSocializeTarget(person.Id);
+            if (socialTarget != null)
+            {
+                decimal socialScore = person.Wellbeing.Boredom * Rates.SocialBoredomWeight +
+                    Math.Max(0, Rates.SocialLowMoodThreshold - person.Wellbeing.Mood) * Rates.SocialLowMoodWeight +
+                    (socialTarget.SessionId != null ? Rates.SocializeSessionJoinPreference : 0m);
+                if (socialScore > Rates.IdleBaseline &&
+                    (best.Activity == PersonAutonomousActivity.IdleWait || socialScore > best.Score))
+                    best = new PersonAutonomyDecision(PersonAutonomousActivity.Socialize, null,
+                        socialScore, "Boredom or low mood favors joining or forming a conversation.",
+                        socialTarget.SessionId, socialTarget.PartnerId);
+            }
             ScoreCandidate(person, PersonAutonomousActivity.Recreation, Rates.IdleBaseline,
                 person.Wellbeing.Boredom * Rates.RecreationBoredomWeight +
                 Math.Max(0, person.Wellbeing.Stress - Rates.RecreationStressThreshold) * Rates.RecreationStressWeight,
@@ -407,6 +495,203 @@ namespace SilverScreen.Domain
                 "Boredom and career drive favor practice; fatigue and severe stress reduce it.", ref best);
             return best;
         }
+
+        private sealed class SocializeTarget
+        {
+            public string SessionId;
+            public string PartnerId;
+        }
+
+        private SocializeTarget FindSocializeTarget(string personId)
+        {
+            if (!_participants.TryGetValue(personId, out var seeker) || !seeker.HasPosition) return null;
+            PersonActivitySession nearestSession = null;
+            float nearestSessionDistance = float.MaxValue;
+            foreach (var session in Sessions.Sessions)
+            {
+                if (session.Activity != PersonAutonomousActivity.Socialize || !session.CanJoin) continue;
+                float distance = Distance(seeker.Position, session.Center);
+                if (distance > Rates.SocializeInitiationRadius || distance >= nearestSessionDistance) continue;
+                nearestSession = session;
+                nearestSessionDistance = distance;
+            }
+            if (nearestSession != null) return new SocializeTarget { SessionId = nearestSession.Id };
+
+            Participant nearestPartner = null;
+            float nearestPartnerDistance = float.MaxValue;
+            foreach (var candidate in _participants.Values)
+            {
+                if (candidate.Employee.Id == personId || candidate.CurrentDecision != null ||
+                    !candidate.HasPosition || !IsEligible(candidate.Employee)) continue;
+                float distance = Distance(seeker.Position, candidate.Position);
+                if (distance > Rates.SocializeInitiationRadius || distance >= nearestPartnerDistance) continue;
+                nearestPartner = candidate;
+                nearestPartnerDistance = distance;
+            }
+            return nearestPartner == null ? null : new SocializeTarget { PartnerId = nearestPartner.Employee.Id };
+        }
+
+        private bool TryStartOrJoinSocialSession(Participant seeker, PersonAutonomyDecision choice)
+        {
+            if (!seeker.HasPosition) return false;
+            PersonActivitySession session;
+            if (choice.SessionId != null)
+            {
+                var member = Sessions.TryJoin(choice.SessionId, seeker.Employee);
+                session = Sessions.Find(choice.SessionId);
+                if (member == null || session == null) return false;
+                CancelScheduled(seeker);
+                seeker.CurrentDecision = SessionDecision(session, member);
+                seeker.Stage = PlanStage.Travelling;
+                ActivitySelected?.Invoke(seeker.Employee, seeker.CurrentDecision);
+                return seeker.CurrentDecision != null;
+            }
+
+            if (choice.PartnerId == null ||
+                !_participants.TryGetValue(choice.PartnerId, out var partner) ||
+                partner.CurrentDecision != null || !partner.HasPosition || !IsEligible(partner.Employee))
+                return false;
+
+            var center = Midpoint(seeker.Position, partner.Position);
+            session = Sessions.Create(Rates.SocializeRules, center, seeker.Employee, partner.Employee);
+            if (session == null) return false;
+            CancelScheduled(seeker);
+            CancelScheduled(partner);
+            seeker.CurrentDecision = SessionDecision(session, session.Participant(seeker.Employee.Id));
+            partner.CurrentDecision = SessionDecision(session, session.Participant(partner.Employee.Id));
+            seeker.Stage = partner.Stage = PlanStage.Travelling;
+            partner.LastDecision = partner.CurrentDecision;
+            ActivitySelected?.Invoke(seeker.Employee, seeker.CurrentDecision);
+            if (partner.CurrentDecision?.SessionId == session.Id)
+                ActivitySelected?.Invoke(partner.Employee, partner.CurrentDecision);
+            return true;
+        }
+
+        private static PersonAutonomyDecision SessionDecision(PersonActivitySession session,
+            PersonActivitySessionParticipant participant, decimal score = 0) =>
+            new PersonAutonomyDecision(session.Activity, null, score,
+                "Participating in a group activity", session.Id, null, participant.Position, session.Center);
+
+        private bool OpportunitiesSessionMemberExists(string sessionId, string personId) =>
+            Sessions.Find(sessionId)?.Participant(personId) != null;
+
+        private void ActivateSessionParticipant(Employee employee, PersonActivitySession session)
+        {
+            if (!_participants.TryGetValue(employee.Id, out var participant) ||
+                participant.CurrentDecision?.SessionId != session.Id) return;
+            participant.Stage = PlanStage.Active;
+            participant.ApplyingActivityState = true;
+            try
+            {
+                employee.SetState(StateFor(session.Activity));
+                employee.SetIntent(new EmployeeIntent(EmployeeIntentPurpose.AutonomousActivity,
+                    session.Activity + ": " + session.Id, session.Id));
+            }
+            finally
+            {
+                participant.ApplyingActivityState = false;
+            }
+        }
+
+        private void ScheduleSessionCompletion(PersonActivitySession session)
+        {
+            if (_sessionEventIds.ContainsKey(session.Id)) return;
+            long eventId = _scheduler.Schedule(new ScheduledEventSpec(OwnerId, CompleteSessionEvent,
+                _clock.Now + SimulationDuration.FromMinutes(session.Rules.DurationMinutes), session.Id));
+            _sessionEventIds.Add(session.Id, eventId);
+        }
+
+        private bool LeaveSession(Employee employee, bool resetDepartingParticipant)
+        {
+            if (employee == null || !_participants.TryGetValue(employee.Id, out var departing) ||
+                departing.CurrentDecision?.SessionId == null) return false;
+            string sessionId = departing.CurrentDecision.SessionId;
+            var session = Sessions.Find(sessionId);
+            bool wasAutonomous = employee.CurrentIntent.Purpose == EmployeeIntentPurpose.AutonomousActivity &&
+                employee.CurrentIntent.TargetBuildingId == sessionId &&
+                (employee.CurrentState == EmployeeState.Walking ||
+                 employee.CurrentState == EmployeeState.Idle ||
+                 session != null && employee.CurrentState == StateFor(session.Activity));
+            ActivityCancelled?.Invoke(employee);
+            departing.CurrentDecision = null;
+            departing.Stage = PlanStage.Travelling;
+            var changedSession = Sessions.RemoveParticipant(employee.Id);
+            if (resetDepartingParticipant && wasAutonomous)
+            {
+                if (employee.CurrentState == EmployeeState.Walking ||
+                    employee.CurrentState == EmployeeState.Idle ||
+                    employee.CurrentState == StateFor(session?.Activity ?? PersonAutonomousActivity.Socialize))
+                {
+                    employee.SetState(EmployeeState.Idle);
+                    employee.SetIntent(EmployeeIntent.None);
+                }
+            }
+            if (changedSession == null || changedSession.State == PersonActivitySessionState.Cancelled)
+            {
+                if (session != null) CancelSessionCompletion(sessionId);
+                if (session != null)
+                {
+                    foreach (var member in session.Participants)
+                        ReleaseSessionParticipant(member.Employee, sessionId,
+                            changedSession?.Activity ?? session.Activity);
+                }
+            }
+            ScheduleIfEligible(departing);
+            return true;
+        }
+
+        private void ReleaseSessionParticipant(Employee employee, string sessionId,
+            PersonAutonomousActivity activity)
+        {
+            if (!_participants.TryGetValue(employee.Id, out var participant) ||
+                participant.CurrentDecision?.SessionId != sessionId) return;
+            ActivityCancelled?.Invoke(employee);
+            participant.CurrentDecision = null;
+            participant.Stage = PlanStage.Travelling;
+            if (employee.IsEmployed && employee.CurrentIntent.Purpose == EmployeeIntentPurpose.AutonomousActivity &&
+                employee.CurrentIntent.TargetBuildingId == sessionId &&
+                (employee.CurrentState == EmployeeState.Walking ||
+                 employee.CurrentState == EmployeeState.Idle ||
+                 employee.CurrentState == StateFor(activity)))
+            {
+                employee.SetState(EmployeeState.Idle);
+                employee.SetIntent(EmployeeIntent.None);
+            }
+            ScheduleIfEligible(participant);
+        }
+
+        private void CompleteSession(string sessionId)
+        {
+            var session = Sessions.Complete(sessionId);
+            CancelSessionCompletion(sessionId);
+            if (session == null) return;
+            foreach (var member in session.Participants)
+                ReleaseSessionParticipant(member.Employee, sessionId, session.Activity);
+        }
+
+        private void CancelSessionCompletion(string sessionId)
+        {
+            if (!_sessionEventIds.TryGetValue(sessionId, out var eventId)) return;
+            _scheduler.Cancel(eventId);
+            _sessionEventIds.Remove(sessionId);
+        }
+
+        private void ScheduleIfEligible(Participant participant)
+        {
+            if (participant.Employee.IsEmployed && IsEligible(participant.Employee))
+                Schedule(participant, EvaluateEvent, Rates.ReevaluationMinutes);
+        }
+
+        private static float Distance(AutonomyPosition a, AutonomyPosition b)
+        {
+            float x = a.X - b.X;
+            float y = a.Y - b.Y;
+            float z = a.Z - b.Z;
+            return (float)Math.Sqrt(x * x + y * y + z * z);
+        }
+
+        private static AutonomyPosition Midpoint(AutonomyPosition a, AutonomyPosition b) =>
+            new AutonomyPosition((a.X + b.X) / 2f, (a.Y + b.Y) / 2f, (a.Z + b.Z) / 2f);
 
         private void ScoreCandidate(PersonProfile person, PersonAutonomousActivity activity,
             decimal baseline, decimal desire, string reason, ref PersonAutonomyDecision best)
@@ -421,7 +706,17 @@ namespace SilverScreen.Domain
         private void HandleScheduled(SimulationEvent scheduled)
         {
             if (!_participants.TryGetValue(scheduled.Specification.Payload, out var participant) ||
-                participant.EventId != scheduled.Id) return;
+                scheduled.Specification.TypeKey != CompleteSessionEvent && participant.EventId != scheduled.Id)
+            {
+                if (scheduled.Specification.TypeKey != CompleteSessionEvent ||
+                    !_sessionEventIds.TryGetValue(scheduled.Specification.Payload, out var sessionEventId) ||
+                    sessionEventId != scheduled.Id) return;
+            }
+            if (scheduled.Specification.TypeKey == CompleteSessionEvent)
+            {
+                CompleteSession(scheduled.Specification.Payload);
+                return;
+            }
             participant.EventId = 0;
             if (!participant.Employee.IsEmployed) { Unregister(participant.Employee); return; }
             if (scheduled.Specification.TypeKey == EvaluateEvent)
@@ -450,6 +745,30 @@ namespace SilverScreen.Domain
                 if (IsEligible(employee)) Schedule(participant, EvaluateEvent, Rates.ReevaluationMinutes);
                 return;
             }
+            if (participant.CurrentDecision.SessionId != null)
+            {
+                var session = Sessions.Find(participant.CurrentDecision.SessionId);
+                var member = session?.Participant(employee.Id);
+                bool expectedSessionState = session != null && member != null &&
+                    (participant.Stage == PlanStage.Travelling
+                        ? employee.CurrentState == EmployeeState.Walking &&
+                          (employee.CurrentIntent.Purpose == EmployeeIntentPurpose.AutonomousActivity &&
+                           employee.CurrentIntent.TargetBuildingId == session.Id ||
+                           employee.CurrentIntent.Purpose == EmployeeIntentPurpose.None ||
+                           employee.CurrentIntent.Purpose == EmployeeIntentPurpose.IdleWander)
+                        : participant.Stage == PlanStage.WaitingForGroup
+                            ? session.State == PersonActivitySessionState.Forming &&
+                              member.HasArrived && employee.CurrentState == EmployeeState.Idle &&
+                              employee.CurrentIntent.Purpose == EmployeeIntentPurpose.AutonomousActivity &&
+                              employee.CurrentIntent.TargetBuildingId == session.Id
+                        : session.State == PersonActivitySessionState.Active &&
+                          employee.CurrentIntent.Purpose == EmployeeIntentPurpose.AutonomousActivity &&
+                          employee.CurrentIntent.TargetBuildingId == session.Id &&
+                          employee.CurrentState == StateFor(session.Activity));
+                if (expectedSessionState) return;
+                LeaveSession(employee, true);
+                return;
+            }
             bool expected = employee.CurrentIntent.Purpose == EmployeeIntentPurpose.AutonomousActivity &&
                 (participant.Stage == PlanStage.Travelling
                     ? employee.CurrentState == EmployeeState.Walking
@@ -469,6 +788,7 @@ namespace SilverScreen.Domain
         {
             foreach (var participant in _participants.Values)
             {
+                if (participant.CurrentDecision?.SessionId != null) continue;
                 if (participant.CurrentDecision?.OpportunityId != opportunityId) continue;
                 CancelPlan(participant, false);
                 ActivityCancelled?.Invoke(participant.Employee);
@@ -543,6 +863,8 @@ namespace SilverScreen.Domain
             if (_disposed) return;
             foreach (var participant in _participants.Values)
             {
+                if (participant.CurrentDecision?.SessionId != null)
+                    LeaveSession(participant.Employee, true);
                 CancelPlan(participant, false);
                 CancelScheduled(participant);
                 participant.Employee.OnStateChanged -= HandleEmployeeChanged;
@@ -552,6 +874,7 @@ namespace SilverScreen.Domain
             Opportunities.OpportunityUnavailable -= HandleOpportunityUnavailable;
             _scheduler.UnregisterHandler(EvaluateEvent);
             _scheduler.UnregisterHandler(CompleteEvent);
+            _scheduler.UnregisterHandler(CompleteSessionEvent);
             _disposed = true;
         }
     }
