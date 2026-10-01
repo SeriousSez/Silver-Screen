@@ -47,6 +47,14 @@ namespace SilverScreen.Domain.Interaction
             string personWellbeing = "Energy: " + wellbeing.Energy + "/100; Stress: " + wellbeing.Stress +
                 "/100; Boredom: " + wellbeing.Boredom + "/100; Mood: " + wellbeing.Mood + "/100";
             cards.Add(new PersonInformation("Person wellbeing", 0, 25, personWellbeing, personWellbeing));
+            var career = c.Person.Career;
+            string workload = career.WorkloadState == PersonWorkloadState.InsufficientHistory
+                ? "Insufficient history"
+                : career.WorkloadState.ToString();
+            string careerSummary = "Career satisfaction: " + career.CareerSatisfaction + "/100";
+            string careerDetails = careerSummary + "\nRecent workload: " + career.RecentWorkloadPercent.ToString("F1") +
+                "% (" + career.WorkloadWorkedMinutes + "/" + career.WorkloadObservedMinutes + " observed minutes)\nWorkload: " + workload;
+            cards.Add(new PersonInformation("Career", 0, 24, careerSummary, careerDetails));
             var e = c.Employee;
             if (c.Candidate != null)
                 cards.Add(new PersonInformation("Applicant", 0, 100, "Looking for work", (c.Candidate.IsTalentApplicant ? "Talent applicant; no profession chosen" : "Unemployed; seeking " + c.Candidate.JobSought) + "\nExpected salary: $" + c.Candidate.SalaryExpectation + "/month\nAny available profession may be chosen."));

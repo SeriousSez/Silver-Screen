@@ -4,6 +4,32 @@ using SilverScreen.Domain.Time;
 
 namespace SilverScreen.Domain
 {
+    public sealed class PersonCareerSimulationRates
+    {
+        public const int DefaultEvaluationDays = 7;
+
+        public int EvaluationDays { get; set; } = DefaultEvaluationDays;
+        public int GracePeriodMinutes { get; set; } = 1440;
+        public decimal UnderusedThresholdPercent { get; set; } = 20m;
+        public decimal OverworkedThresholdPercent { get; set; } = 60m;
+        public decimal UnderusedSatisfactionPerDay { get; set; } = -2m;
+        public decimal HealthySatisfactionPerDay { get; set; } = 1m;
+        public decimal HealthySatisfactionCeiling { get; set; } = 80m;
+        public decimal OverworkedSatisfactionPerDay { get; set; } = -1m;
+        public decimal UnderusedBoredomPerDay { get; set; } = 2m;
+        public decimal OverworkedStressPerDay { get; set; } = 2m;
+        public decimal OverworkedEnergyPerDay { get; set; } = -2m;
+
+        internal void Validate()
+        {
+            if (EvaluationDays < 1) throw new ArgumentOutOfRangeException(nameof(EvaluationDays));
+            if (GracePeriodMinutes < 1) throw new ArgumentOutOfRangeException(nameof(GracePeriodMinutes));
+            if (UnderusedThresholdPercent < 0 || OverworkedThresholdPercent > 100 ||
+                UnderusedThresholdPercent >= OverworkedThresholdPercent)
+                throw new ArgumentOutOfRangeException(nameof(UnderusedThresholdPercent), "Workload thresholds must be ordered within 0-100.");
+        }
+    }
+
     public sealed class PersonWellbeingRates
     {
         public decimal IdleEnergyPerHour { get; set; } = -1m;
@@ -100,12 +126,16 @@ namespace SilverScreen.Domain
         private readonly Dictionary<PersonProfile, Participant> _participants = new Dictionary<PersonProfile, Participant>();
 
         public PersonWellbeingRates Rates { get; }
+        public PersonCareerSimulationRates CareerRates { get; }
         public int ParticipantCount => _participants.Count;
 
-        public PersonWellbeingSimulation(ISimulationTimeService time, PersonWellbeingRates rates = null)
+        public PersonWellbeingSimulation(ISimulationTimeService time, PersonWellbeingRates rates = null,
+            PersonCareerSimulationRates careerRates = null)
         {
             _time = time ?? throw new ArgumentNullException(nameof(time));
             Rates = rates ?? new PersonWellbeingRates();
+            CareerRates = careerRates ?? new PersonCareerSimulationRates();
+            CareerRates.Validate();
             _time.OnMinutePassed += AdvanceMinute;
         }
 
@@ -119,8 +149,22 @@ namespace SilverScreen.Domain
 
         public bool Unregister(PersonProfile person) => person != null && _participants.Remove(person);
 
-        private void AdvanceMinute(SimulationDateTime unused)
+        public void StartCareerTracking(PersonProfile person)
         {
+            if (person == null) throw new ArgumentNullException(nameof(person));
+            Register(person);
+            person.Career.SetWorkloadTracking(true, _time.CurrentTime.ToInstant().Seconds / 60, CareerRates);
+        }
+
+        public void StopCareerTracking(PersonProfile person)
+        {
+            if (person == null) return;
+            person.Career.SetWorkloadTracking(false, 0, CareerRates);
+        }
+
+        private void AdvanceMinute(SimulationDateTime time)
+        {
+            long absoluteMinute = time.ToInstant().Seconds / 60;
             foreach (var participant in _participants.Values)
             {
                 var wellbeing = participant.Person.Wellbeing;
@@ -142,6 +186,11 @@ namespace SilverScreen.Domain
                     else if (before == after)
                         participant.Remainders[dimensionIndex] = 0m;
                 }
+
+                var career = participant.Person.Career;
+                if (!career.IsWorkloadTracking) continue;
+                career.RecordWorkMinute(absoluteMinute, activity == PersonWellbeingActivity.Working, CareerRates);
+                career.AdvanceWorkloadEffects(wellbeing, career.WorkloadState, CareerRates);
             }
         }
 

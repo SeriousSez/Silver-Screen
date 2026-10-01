@@ -36,12 +36,14 @@ namespace SilverScreen.Domain
  [Serializable] public sealed class PersonProfile
  {
   private readonly List<string> _traitIds;
-  public string Id{get;} public string Name{get;private set;} public SimulationDateTime BirthDate{get;} public ProfessionalRole ProfessionalRole{get;private set;} public TalentProfile Talent{get;} public PersonWellbeing Wellbeing{get;} public IReadOnlyList<string> TraitIds=>_traitIds; public string AppearanceProfileId{get;} public string VoiceProfileId{get;}
-  public PersonProfile(string id,string name,SimulationDateTime birthDate,ProfessionalRole professionalRole,TalentProfile talent,IEnumerable<string> traitIds=null,string appearanceProfileId=null,string voiceProfileId=null){Id=string.IsNullOrWhiteSpace(id)?Guid.NewGuid().ToString():id;Name=string.IsNullOrWhiteSpace(name)?"Unnamed Talent":name.Trim();BirthDate=birthDate;ProfessionalRole=professionalRole;Talent=talent??new TalentProfile(0,0);_traitIds=traitIds!=null?new List<string>(traitIds):new List<string>();AppearanceProfileId=appearanceProfileId??string.Empty;VoiceProfileId=voiceProfileId??string.Empty;Wellbeing=new PersonWellbeing();}
+  public string Id{get;} public string Name{get;private set;} public SimulationDateTime BirthDate{get;} public ProfessionalRole ProfessionalRole{get;private set;} public TalentProfile Talent{get;} public PersonWellbeing Wellbeing{get;} public PersonCareer Career{get;} public IReadOnlyList<string> TraitIds=>_traitIds; public string AppearanceProfileId{get;} public string VoiceProfileId{get;}
+  public PersonProfile(string id,string name,SimulationDateTime birthDate,ProfessionalRole professionalRole,TalentProfile talent,IEnumerable<string> traitIds=null,string appearanceProfileId=null,string voiceProfileId=null){Id=string.IsNullOrWhiteSpace(id)?Guid.NewGuid().ToString():id;Name=string.IsNullOrWhiteSpace(name)?"Unnamed Talent":name.Trim();BirthDate=birthDate;ProfessionalRole=professionalRole;Talent=talent??new TalentProfile(0,0);_traitIds=traitIds!=null?new List<string>(traitIds):new List<string>();AppearanceProfileId=appearanceProfileId??string.Empty;VoiceProfileId=voiceProfileId??string.Empty;Wellbeing=new PersonWellbeing();Career=new PersonCareer();}
   public int GetAge(SimulationDateTime currentDate){int age=currentDate.Year-BirthDate.Year;if(currentDate.Month<BirthDate.Month||(currentDate.Month==BirthDate.Month&&currentDate.Day<BirthDate.Day))age--;return Math.Max(0,age);}
   public void Rename(string name){if(!string.IsNullOrWhiteSpace(name))Name=name.Trim();}
   public void SetProfessionalRole(ProfessionalRole role)=>ProfessionalRole=role;
   public PersonWellbeingSnapshot CaptureWellbeing()=>Wellbeing.Capture();
   public void RestoreWellbeing(PersonWellbeingSnapshot snapshot)=>Wellbeing.Restore(snapshot);
+  public PersonCareerSnapshot CaptureCareer()=>Career.Capture();
+  public void RestoreCareer(PersonCareerSnapshot snapshot)=>Career.Restore(snapshot);
  }
 }
