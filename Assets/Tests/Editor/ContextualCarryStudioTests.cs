@@ -99,12 +99,23 @@ namespace SilverScreen.Tests.EditMode
             {
                 camera.transform.SetPositionAndRotation(facility.transform.position+new Vector3(-3,21,-8),Quaternion.Euler(75,0,0));camera.orthographic=true;camera.orthographicSize=10;
                 void Pointer(Vector3 p,bool down){InputSystem.QueueStateEvent(mouse,new MouseState{position=camera.WorldToScreenPoint(p),buttons=(ushort)(down?1:0)});InputSystem.Update();controller.HandleInput();}
+                ContextualDropTarget HiringRoom(ProfessionalRole profession)
+                {
+                    var room=facility.GetComponentsInChildren<ContextualDropTarget>().Single(t=>t.Action is WorkforceRoomAction action&&
+                        action.FacilityId==facility.FacilityId&&action.Profession==profession&&!action.Dismissal);
+                    Assert.That(room.isActiveAndEnabled,Is.True);Assert.That(room.Shape,Is.EqualTo(FloorTargetShape.Room));
+                    Assert.That(room.InteriorVisibility,Is.SameAs(cut));
+                    return room;
+                }
+                Assert.That(facility.GetComponentsInChildren<PersonInteractionSpot>().Where(s=>s.Activity==PersonSpotActivity.Hire)
+                    .All(s=>!s.enabled&&!s.GetComponent<ContextualDropTarget>().enabled),Is.True,"Legacy hiring overlays remain disabled.");
                 Physics.SyncTransforms();var pickup=agent.transform.position;
                 Pointer(pickup,true);yield return new WaitForSecondsRealtime(.24f);pickup=agent.transform.position;Pointer(pickup,true);Assert.That(controller.IsHolding,Is.True);
                 var chosen=candidate.JobSought==ProfessionalRole.ConstructionWorker?ProfessionalRole.Groundskeeper:ProfessionalRole.ConstructionWorker;
-                var target=facility.Anchor("Hire"+chosen);Pointer(target.position,false);Assert.That(controller.IsHolding,Is.True,"Original release retains carry");Assert.That(cut.IsRevealed,Is.True);
+                var target=HiringRoom(chosen);Pointer(target.Placement.position,false);Assert.That(controller.IsHolding,Is.True,"Original release retains carry");Assert.That(cut.IsRevealed,Is.True);
                 Assert.That(controller.VisibleTargets.Count,Is.EqualTo(2));
-                Assert.That(controller.MagneticTarget,Is.SameAs(target.GetComponent<ContextualDropTarget>()));
+                Assert.That(controller.MagneticTarget,Is.SameAs(target));
+                Assert.That(target.Action.CanExecute(new PersonDropContext(candidate,null,recruitment.Coordinator,null)),Is.True);
                 Assert.That(controller.MagneticTarget.IsCandidate,Is.True);
                 Assert.That(controller.VisibleTargets.All(t=>t.IsPresented),Is.True);
                 Assert.That(candidate.JobSought,Is.Not.EqualTo(chosen),"Actual carry hiring crosses the applicant's sought profession");
@@ -114,11 +125,13 @@ namespace SilverScreen.Tests.EditMode
                 InputSystem.QueueStateEvent(keyboard,new KeyboardState(Key.Escape));InputSystem.Update();controller.HandleInput();
                 Assert.That(controller.IsHolding,Is.False);Assert.That(cut.IsRevealed,Is.False);Assert.That(Vector3.Distance(agent.transform.position,pickup),Is.LessThan(.01f));
                 InputSystem.QueueStateEvent(keyboard,new KeyboardState());InputSystem.Update();
-                Pointer(pickup,true);yield return new WaitForSecondsRealtime(.24f);Pointer(pickup,true);Pointer(target.position,false);
-                Pointer(target.position,true);Assert.That(controller.IsHolding,Is.False,"Separate valid click places at the authored interior spot");Assert.That(cut.IsRevealed,Is.False);
+                Pointer(pickup,true);yield return new WaitForSecondsRealtime(.24f);Pointer(pickup,true);Pointer(target.Placement.position,false);
+                Pointer(target.Placement.position,true);Assert.That(controller.IsHolding,Is.False,"Separate valid click places in the semantic hiring room");
+                Assert.That(cut.Reasons.HasFlag(BuildingRevealReason.PostInteractionHold),Is.True);
                 Assert.That(employees.AllEmployees.Count,Is.EqualTo(1));Assert.That(employees.AllEmployees[0].Person,Is.SameAs(person));Assert.That(employees.AllEmployees[0].Role,Is.EqualTo((EmployeeRole)(int)chosen));
                 var employee=Object.FindObjectsByType<EmployeeAgent>(FindObjectsSortMode.None).Single(a=>a.Employee?.Id==person.Id);var nav=employee.GetComponent<NavMeshAgent>();
-                Assert.That(Vector3.Distance(employee.transform.position-Vector3.up*nav.baseOffset,target.position),Is.LessThan(.16f));
+                var placed=target.transform.InverseTransformPoint(employee.transform.position-Vector3.up*nav.baseOffset);
+                Assert.That(target.RoomParts.Any(part=>part.Contains(new Vector2(placed.x,placed.z))),Is.True,"Employee is physically placed within the selected hiring room.");
                 pause.Dispose();yield return null;
                 deadline=Time.realtimeSinceStartup+20;while(!recruitment.Coordinator.Candidates.Any(c=>c.Status==CandidateStatus.WaitingForRecruitment)&&Time.realtimeSinceStartup<deadline)yield return null;
                 var second=recruitment.Coordinator.Candidates.FirstOrDefault(c=>c.Status==CandidateStatus.WaitingForRecruitment);Assert.That(second,Is.Not.Null,"The next opening-wave applicant should arrive through normal recruitment.");
@@ -127,8 +140,11 @@ namespace SilverScreen.Tests.EditMode
                 using var secondPause=time.Clock.AcquirePause("services-second-hire","Validate the second authored hiring spot");
                 var secondAgent=recruitment.WorldRouter.GetAgent(second);Assert.That(secondAgent,Is.Not.Null);
                 Pointer(secondAgent.transform.position,false);Pointer(secondAgent.transform.position,true);yield return new WaitForSecondsRealtime(.24f);Pointer(secondAgent.transform.position,true);
-                var other=chosen==ProfessionalRole.ConstructionWorker?ProfessionalRole.Groundskeeper:ProfessionalRole.ConstructionWorker; var grounds=facility.Anchor("Hire"+other);Pointer(grounds.position,false);Assert.That(cut.IsRevealed,Is.True);Pointer(grounds.position,true);
-                Assert.That(controller.IsHolding,Is.False);Assert.That(cut.IsRevealed,Is.False);Assert.That(employees.AllEmployees.Any(e=>e.Person==second.Person&&e.Role==(EmployeeRole)(int)other),Is.True);
+                var other=chosen==ProfessionalRole.ConstructionWorker?ProfessionalRole.Groundskeeper:ProfessionalRole.ConstructionWorker;var otherRoom=HiringRoom(other);
+                Pointer(otherRoom.Placement.position,false);Assert.That(cut.IsRevealed,Is.True);Assert.That(controller.MagneticTarget,Is.SameAs(otherRoom));
+                Assert.That(otherRoom.Action.CanExecute(new PersonDropContext(second,null,recruitment.Coordinator,null)),Is.True);
+                Pointer(otherRoom.Placement.position,true);
+                Assert.That(controller.IsHolding,Is.False);Assert.That(cut.Reasons.HasFlag(BuildingRevealReason.PostInteractionHold),Is.True);Assert.That(employees.AllEmployees.Any(e=>e.Person==second.Person&&e.Role==(EmployeeRole)(int)other),Is.True);
                 secondPause.Dispose();
                 deadline=Time.realtimeSinceStartup+25;while((recruitment.Coordinator.OpeningArrivalsRemaining>0||recruitment.Coordinator.Candidates.Any(c=>c.Status==CandidateStatus.Arriving))&&Time.realtimeSinceStartup<deadline)yield return null;
                 Assert.That(recruitment.Coordinator.OpeningArrivalsRemaining,Is.Zero,"The opening wave runs once to completion.");
@@ -137,10 +153,12 @@ namespace SilverScreen.Tests.EditMode
                 var sought=recruitment.Coordinator.Candidates.Select(c=>c.JobSought).Concat(new[]{candidate.JobSought,second.JobSought}).ToArray();
                 Assert.That(sought.Count(role=>role==ProfessionalRole.ConstructionWorker),Is.EqualTo(4));
                 Assert.That(sought.Count(role=>role==ProfessionalRole.Groundskeeper),Is.EqualTo(2));
+                Pointer(facility.transform.position+new Vector3(0,0,-20),false);yield return new WaitForSecondsRealtime(2.5f);
+                Assert.That(cut.IsRevealed,Is.False,"The post-interaction reveal expires after the pointer leaves the building.");
                 camera.transform.SetPositionAndRotation(facility.transform.position+new Vector3(18,22,-24),Quaternion.Euler(42,-35,0));camera.orthographic=true;camera.orthographicSize=23;
                 ScreenCapture.CaptureScreenshot(Path.Combine(openingReview,"02_applicants_waiting.png"));yield return new WaitForEndOfFrame();
                 StudioServicesProductionReview.Capture(camera,review+"/restored_exterior.png",facility.transform.position+new Vector3(19,14,-23),facility.transform.position+new Vector3(1,1,0),42);
-                File.WriteAllText(review+"/runtime.txt","Unity "+Application.unityVersion+" Play Mode: empty studio; physical applicant arrival; original mouse release retains carry; generic cutaway; Escape restores actual pickup/exterior; separate-click immediate authored hiring into BOTH professions; same Person identities; cross-profession floor hiring; magnetic candidate; both zones and cutaway restoration. Passed.\n");
+                File.WriteAllText(review+"/runtime.txt","Unity "+Application.unityVersion+" Play Mode: empty studio; physical applicant arrival; original mouse release retains carry; generic cutaway; Escape restores actual pickup/exterior; separate-click hiring through BOTH semantic profession rooms; same Person identities; cross-profession floor hiring; magnetic room targeting; disabled legacy overlays; post-interaction cutaway hold and restoration. Passed.\n");
             }
             finally
             {

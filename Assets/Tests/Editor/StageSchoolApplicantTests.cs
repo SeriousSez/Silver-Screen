@@ -15,7 +15,7 @@ namespace SilverScreen.Tests.EditMode
    public bool CompleteArrival=true,CompleteExit=true;
    public CandidateRouteResult ArrivalResult=CandidateRouteResult.Started;
    public Action<CandidateRouteResult,int> Arrival,Exit;
-   public CandidateRouteResult RouteToRecruitmentLocation(Candidate c,Action<CandidateRouteResult,int> done){Arrival=done;if(CompleteArrival&&ArrivalResult==CandidateRouteResult.Started)done(CandidateRouteResult.Started,c.WaitingPositionIndex);return ArrivalResult;}
+   public CandidateRouteResult RouteToRecruitmentLocation(Candidate c,Action<CandidateRouteResult,int> done){Arrival=done;if(CompleteArrival&&ArrivalResult==CandidateRouteResult.Started)done(CandidateRouteResult.Started,Math.Max(0,c.WaitingPositionIndex));return ArrivalResult;}
    public CandidateRouteResult RouteToExit(Candidate c,Action<CandidateRouteResult,int> done){Exit=done;if(CompleteExit)done(CandidateRouteResult.Started,-1);return CandidateRouteResult.Started;}
    public void ReleaseCandidate(Candidate c){}
   }
@@ -27,6 +27,11 @@ namespace SilverScreen.Tests.EditMode
    public Setup(int capacity=6,int firstDelay=1){Service=new RecruitmentCoordinator(Clock,new CandidateGenerator(new SeededRandomSource(1930)),Router);Service.Facilities=Facilities;School("school-1",capacity,firstDelay);}
    public RecruitmentFacility School(string id,int capacity=6,int firstDelay=1){var definition=RecruitmentDefinitions.Talent();definition.StarterInitialDelayMinutes=firstDelay;var f=new RecruitmentFacility(id,RecruitmentDestination.StageSchool,new[]{ProfessionalRole.Actor,ProfessionalRole.Director,ProfessionalRole.Extra},capacity,true,definition){IsAvailable=()=>Operational,IsReachable=()=>Reachable};Facilities.Register(f);return f;}
    public Candidate Arrive()=>Service.TryGenerateTalentArrival();public void Minutes(int n)=>Clock.Advance(n);
+   public RecruitmentFacility OtherFacility(string id,ProfessionalRole profession)
+   {
+    var facility=new RecruitmentFacility(id,RecruitmentDestination.ServiceFacility,new[]{profession});
+    Facilities.Register(facility);return facility;
+   }
    public void Dispose()=>Service.Dispose();
   }
   [Test] public void OperationalActiveReachableSchoolRequiredWithoutHiddenBacklog()
@@ -94,6 +99,118 @@ namespace SilverScreen.Tests.EditMode
     var context=new PersonDropContext(c,null,x.Service,null);Assert.That(action.IsRelevant(context),Is.True);Assert.That(action.CanExecute(context),Is.True);
     action.Configure("future","school-1",ProfessionalRole.Unassigned,true);Assert.That(action.IsRelevant(context),Is.True);Assert.That(action.CanExecute(context),Is.False);StringAssert.Contains("NOT YET AVAILABLE",action.FloorLabel(context));
     Assert.That(action.IsRelevant(new PersonDropContext(null,new Employee(c.Person,EmployeeRole.Actor,600),x.Service,null)),Is.False);
+   }finally{UnityEngine.Object.DestroyImmediate(go);}
+  }
+  [TestCase(ProfessionalRole.Extra,ProfessionalRole.Actor,EmployeeRole.Actor)]
+  [TestCase(ProfessionalRole.Extra,ProfessionalRole.Director,EmployeeRole.Director)]
+  [TestCase(ProfessionalRole.Extra,ProfessionalRole.Extra,EmployeeRole.Extra)]
+  [TestCase(ProfessionalRole.Actor,ProfessionalRole.Director,EmployeeRole.Director)]
+  [TestCase(ProfessionalRole.Director,ProfessionalRole.Extra,EmployeeRole.Extra)]
+  [TestCase(ProfessionalRole.ConstructionWorker,ProfessionalRole.Actor,EmployeeRole.Actor)]
+  public void GeneratedApplicantRoleDoesNotRestrictStageSchoolTargets(ProfessionalRole intended,ProfessionalRole chosen,EmployeeRole expected)
+  {
+   using var x=new Setup();x.OtherFacility("origin",intended);var c=x.Service.TryGenerateArrival();
+   Assert.That(c.JobSought,Is.EqualTo(intended));
+   c.Person.Talent.SetPrimaryAbility(ProfessionalRole.Actor,3);
+   c.Person.Talent.SetPrimaryAbility(ProfessionalRole.Director,2);
+   c.Person.Wellbeing.ApplyDelta(PersonWellbeingDimension.Stress,27);
+   c.Person.Career.SetCareerDrive(83);
+   var targets=new[]{ProfessionalRole.Actor,ProfessionalRole.Director,ProfessionalRole.Extra};
+   var objects=targets.Select(_=>new GameObject()).ToArray();
+   try{
+    var context=new PersonDropContext(c,null,x.Service,null);
+    var actions=targets.Select((role,index)=>{var action=objects[index].AddComponent<ApplicantHiringAction>();action.Configure(role.ToString(),"school-1",role);return action;}).ToArray();
+    Assert.That(actions.All(action=>action.IsRelevant(context)&&action.CanExecute(context)),Is.True,"Every exposed Stage School job remains available for this applicant.");
+    var person=c.Person;var personId=person.Id;var talent=person.Talent;var wellbeing=person.Wellbeing;var career=person.Career;
+    var acting=talent.ActingAbility;var directing=talent.DirectingAbility;var writing=talent.WritingAbility;var genres=talent.GenreExperience.ToArray();var traits=person.TraitIds.ToArray();Employee hired=null;
+    x.Service.OnCandidateHired+=(_,employee)=>hired=employee;
+    var selected=actions.Single(action=>action.Profession==chosen);
+    Assert.That(selected.TryExecute(context),Is.True);
+    Assert.That(hired,Is.Not.Null);
+    Assert.That(hired.Person,Is.SameAs(person));
+    Assert.That(hired.Id,Is.EqualTo(personId));
+    Assert.That(hired.Role,Is.EqualTo(expected));
+    Assert.That(person.ProfessionalRole,Is.EqualTo(chosen));
+    Assert.That(c.JobSought,Is.EqualTo(intended),"The applicant's original role remains descriptive data.");
+    Assert.That(c.Capture().Profession,Is.EqualTo(intended));
+    Assert.That(hired.Person.Talent,Is.SameAs(talent));
+    Assert.That(hired.Person.Wellbeing,Is.SameAs(wellbeing));
+    Assert.That(hired.Person.Career,Is.SameAs(career));
+    Assert.That(person.Talent.ActingAbility,Is.EqualTo(acting));
+    Assert.That(person.Talent.DirectingAbility,Is.EqualTo(directing));
+    Assert.That(person.Talent.WritingAbility,Is.EqualTo(writing));
+    Assert.That(hired.Skill,Is.EqualTo(chosen==ProfessionalRole.Director?directing:acting));
+    CollectionAssert.AreEqual(genres,person.Talent.GenreExperience);
+    Assert.That(wellbeing.Stress,Is.EqualTo(PersonWellbeing.DefaultStress+27));
+    Assert.That(career.CareerDrive,Is.EqualTo(83));
+    CollectionAssert.AreEqual(traits,person.TraitIds);
+   }finally{foreach(var go in objects)UnityEngine.Object.DestroyImmediate(go);}
+  }
+  [Test] public void TalentApplicantCanBeHiredAtAnotherFacilitiesExposedTarget()
+  {
+   using var x=new Setup();var candidate=x.Arrive();x.OtherFacility("services",ProfessionalRole.Groundskeeper);
+   var go=new GameObject();try{
+    var action=go.AddComponent<WorkforceRoomAction>();action.Configure("groundskeeper","services",ProfessionalRole.Groundskeeper,false,null);
+    var context=new PersonDropContext(candidate,null,x.Service,null);var person=candidate.Person;var acting=person.Talent.ActingAbility;Employee hired=null;
+    x.Service.OnCandidateHired+=(_,employee)=>hired=employee;
+    Assert.That(action.CanExecute(context),Is.True);
+    Assert.That(action.TryExecute(context),Is.True);
+    Assert.That(hired.Person,Is.SameAs(person));
+    Assert.That(hired.Role,Is.EqualTo(EmployeeRole.Groundskeeper));
+    Assert.That(person.ProfessionalRole,Is.EqualTo(ProfessionalRole.Groundskeeper));
+    Assert.That(person.Talent.ActingAbility,Is.EqualTo(acting));
+   }finally{UnityEngine.Object.DestroyImmediate(go);}
+  }
+  [TestCase(CandidateStatus.Arriving)]
+  [TestCase(CandidateStatus.Hired)]
+  [TestCase(CandidateStatus.Departing)]
+  [TestCase(CandidateStatus.Gone)]
+  public void ContextualHiringRejectsNonWaitingApplicants(CandidateStatus status)
+  {
+   using var x=new Setup();x.Router.CompleteArrival=status!=CandidateStatus.Arriving;var c=x.Arrive();
+   if(status==CandidateStatus.Hired)Assert.That(x.Service.Hire(c,ProfessionalRole.Actor,"school-1"),Is.Not.Null);
+   if(status==CandidateStatus.Departing)Assert.That(c.BeginDeparture(),Is.True);
+   if(status==CandidateStatus.Gone)Assert.That(x.Service.Reject(c),Is.True);
+   Assert.That(c.Status,Is.EqualTo(status));
+   var go=new GameObject();try{
+    var action=go.AddComponent<ApplicantHiringAction>();action.Configure("actor","school-1",ProfessionalRole.Actor);
+    var context=new PersonDropContext(c,null,x.Service,null);
+    Assert.That(action.IsRelevant(context),Is.False);
+    Assert.That(action.CanExecute(context),Is.False);
+    Assert.That(action.TryExecute(context),Is.False);
+    Assert.That(x.Service.Hire(c,ProfessionalRole.Actor,"school-1"),Is.Null);
+    Assert.That(c.Status,Is.EqualTo(status));
+   }finally{UnityEngine.Object.DestroyImmediate(go);}
+  }
+  [TestCase("unavailable-facility")]
+  [TestCase("missing-facility")]
+  [TestCase("unavailable-origin")]
+  [TestCase("disabled-action")]
+  [TestCase("unexposed-job")]
+  [TestCase("unassigned-job")]
+  [TestCase("undefined-job")]
+  [TestCase("recruitment-unavailable")]
+  public void ContextualHiringRejectsInvalidTargetsWithoutConsumingApplicant(string restriction)
+  {
+   using var x=new Setup();var c=x.Arrive();var facility=x.School("target");var go=new GameObject();try{
+    var action=go.AddComponent<ApplicantHiringAction>();action.Configure("actor","target",ProfessionalRole.Actor);
+    switch(restriction){
+     case "unavailable-facility":facility.IsAvailable=()=>false;break;
+     case "missing-facility":x.Facilities.Remove("target");break;
+     case "unavailable-origin":x.Facilities.Facilities[0].IsAvailable=()=>false;break;
+     case "disabled-action":action.enabled=false;break;
+     case "unexposed-job":action.Configure("writer","target",ProfessionalRole.Writer);break;
+     case "unassigned-job":action.Configure("unassigned","target",ProfessionalRole.Unassigned);break;
+     case "undefined-job":action.Configure("invalid","target",(ProfessionalRole)int.MaxValue);break;
+     case "recruitment-unavailable":x.Service.RecruitmentAvailable=()=>false;break;
+     default:Assert.Fail("Unknown restriction.");break;
+    }
+    var context=new PersonDropContext(c,null,x.Service,null);
+    Assert.That(action.IsRelevant(context),Is.False);
+    Assert.That(action.CanExecute(context),Is.False);
+    Assert.That(action.TryExecute(context),Is.False);
+    Assert.That(c.Status,Is.EqualTo(CandidateStatus.WaitingForRecruitment));
+    CollectionAssert.Contains(x.Service.Candidates,c);
    }finally{UnityEngine.Object.DestroyImmediate(go);}
   }
  }
