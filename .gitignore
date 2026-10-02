@@ -64,6 +64,10 @@
 /Assets/SilverScreen/Art/Characters/ChildFoundationPrototype/
 /Assets/SilverScreen/Art/Characters/ChildFoundationPrototype.meta
 
+# Isolated licensed Boy canonical derivative; source and evidence remain local.
+/Assets/SilverScreen/Art/Characters/BoyFoundationPrototype/
+/Assets/SilverScreen/Art/Characters/BoyFoundationPrototype.meta
+
 # Addressables-generated content
 /ServerData/
 /Assets/StreamingAssets/aa/
