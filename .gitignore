@@ -42,6 +42,18 @@
 /TestResults/
 /[Cc]overageResults/
 
+# Local licensed character evaluation imports; rebuilt by HumanBasePrototypeTools.
+/Assets/SilverScreen/Art/Characters/HumanBasePrototype/
+/Assets/SilverScreen/Art/Characters/HumanBasePrototype.meta
+
+# Isolated licensed adult-female facial feasibility imports/exports.
+/Assets/SilverScreen/Art/Characters/FemaleFacePrototype/
+/Assets/SilverScreen/Art/Characters/FemaleFacePrototype.meta
+
+# Isolated generated licensed bald-base comparison; never production spawns.
+/Assets/SilverScreen/Art/Characters/FemaleBaldPrototype/
+/Assets/SilverScreen/Art/Characters/FemaleBaldPrototype.meta
+
 # Addressables-generated content
 /ServerData/
 /Assets/StreamingAssets/aa/

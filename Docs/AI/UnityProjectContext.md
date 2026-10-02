@@ -145,3 +145,95 @@ study was never integrated as canonical art. Studio and Stage 1 were not changed
 ## Stage School A1 inspection - 2026-09-30
 
 Current configuration: Unity 6000.6.3f1, URP 17.6.0, Input System 1.20.0, Test Framework 1.8.0. Official installed Unity relay verified Edit Mode with Studio.unity active and clean. Earlier version observations are historical. Stage School A1 uses separate source and the established Studio Services semantic mesh-packet workflow, sharing period materials and loose fixtures without changing them. See ArtSource/StageSchoolA1/design.md. No runtime integration.
+
+## Purchased character evaluation - 2026-10-02
+
+The current authorized character milestone supersedes the historical head-only
+gates above for this evaluation. Purchased Male/Female/Boy/Girl sources remain
+external and unchanged. They are four separate canonical mesh families: do not
+unify topology/UVs or morph between them. Child hierarchy/export validation is a
+required later task; no child runtime integration was performed.
+
+One adult female supplied deform-bone FBX is an opt-in local prototype under
+Assets/SilverScreen/Art/Characters/HumanBasePrototype (Git-ignored licensed
+imports). Rebuild through HumanBasePrototypeTools; do not copy the whole pack.
+Production capsules, recruitment prefabs and Studio serialization are unchanged.
+The prototype uses existing EmployeeAgent navigation and HeldPersonPoseAdapter,
+with valid Humanoid mapping and 29 imported mouth/cheek/tongue shapes. Blink,
+brow and gaze are absent in this export. Supplied names differ by family;
+a semantic facial mapping layer is recommended, not implemented as a final system.
+Plain-grey URP captures are technical validation only, never art approval.
+
+See Docs/CharacterBaseAudit.md for results, limitations, reproduction, source
+inventory and next milestone. Unity remains 6000.6.3f1 / URP 17.6.0; the already
+installed official local MCP relay was used. The prototype's actual movement,
+click/hold/drop/cancel/contextual practice, facial deformation and two-person
+Socialize scenarios passed isolated runtime tests.
+
+## Adult Female facial investigation - 2026-10-02
+
+See Docs/FemaleFaceRuntimeInvestigation.md and Docs/FemaleFaceBoneEvidence.md.
+The source supports independent lid controls, gaze and brows, but the supplied
+facial FBXs bind all 708 eye vertices to Head and lose the source gaze mechanism.
+An isolated 95-bone hybrid preserves the 29 lower-face shapes and Humanoid body;
+its reduced binding fails source blink parity and visual closure. It is rejected
+for adoption. Do not replace the lightweight prototype or production capsules.
+Future work must resolve the neutral/bind/deformation gate before choosing reduced
+bones versus baked upper-face shapes plus two eyes. No next milestone is authorized
+by this investigation. Male and child implementations remain separate and deferred.
+
+## Added child shape-key sources - 2026-10-02
+
+The user added 26 Boy/Girl source files; the current inventory is 85 files.
+See Docs/CharacterBaseChildSourceUpdate.md and the corrected CharacterBaseAudit.md.
+Both children now have supplied shape-key Blender/FBX/GLB variants; read-only
+Blender inspection confirms 29 expression keys in both new FBX variants per child.
+The new Boy shape-key files measure about 1.4951 m; the 1.8815 m observation
+applies to the shape mesh inside the original facial-rig Blender file.
+All four canonical families remain separate. Child hierarchy/export/Avatar
+validation and integration remain deferred; no child runtime assets were imported.
+
+## Adult Female baked BlinkBoth gate - 2026-10-02
+
+See Docs/FemaleBakedUpperFaceExperiment.md. A separate generated Blender candidate
+retains the actual lightweight FBX neutral, topology, UVs, normals, skin weights,
+51 bones and 29 supplied shapes, and adds exactly one evaluated-source BlinkBoth.
+Displacement transfer is accurate and neutral restores exactly, but closer matched
+views and geometry ray tests reveal the source endpoint itself leaves about 11%
+of each front-view eyeball exposure. The earlier complete-closure claim was
+overstated and is corrected. The contact gate failed; no candidate Unity import,
+independent blink, eye/gaze or brow expansion followed. Recommendation: continue
+investigation only after separately authorizing an accepted source closure endpoint.
+
+
+## Adult Female bald canonical-base check - 2026-10-02
+
+See Docs/FemaleBaldBaseAudit.md. The separate source hair becomes four disconnected
+islands in the shape-key variant; the underlying body/head is closed and has a
+complete scalp. The isolated FemaleBaldPrototype removes only those islands.
+Blender proves retained data preservation; its exported surface identifies a
+native Unity subset preserving original BlendShape normals, weights and frames,
+after a direct FBX round trip failed normal parity. The final prefab keeps the
+validated 51-bone Humanoid setup and all 29 supplied shape data sets. Two targeted
+Unity tests pass, but six original zero-frame-weight channels produce invalid
+deformation and remain unaccepted. Previous upper-face acceptance failures remain.
+Brow skin and source brow bones are retained; no separate eyebrow hair/texture was
+found. Technical grey views are not art approval. Sources and previous prototypes
+are unchanged; production spawning is untouched. No hairstyle system was added,
+no commit/push was made, and other families/child integration remain deferred.
+
+
+## Adult Female source blink endpoint calibration - 2026-10-02
+
+See Docs/FemaleSourceBlinkCalibration.md. Original complete Blender rig only;
+130 distinct new bilateral endpoints were explored with the established BVH
+cameras, then finalists measured at 0.05 mm spacing. Near-total coverage is
+achievable, but selected lid geometry has 20 exterior triangle crossing pairs
+and a pinched close-up seam; the best tested crossing-free comparison still
+leaves a 1.4 mm oblique opening. Shared left/right inputs suffice geometrically;
+no independent blink was created. Source acceptance failed. Recommend a small
+authored lid corrective; none was authored here. The proven bake implementation
+and previous evidence remain unchanged. No re-bake or Unity investigation was
+performed, no new runtime asset was created, and no further milestone was begun.
+Source neutral resets exactly; all 85 purchased files and 96 preserved prior
+files retain their hashes. Technical grey captures remain non-art-approval.

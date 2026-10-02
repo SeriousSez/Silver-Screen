@@ -73,12 +73,19 @@ namespace SilverScreen.Domain.Recruitment
    if(result!=CandidateRouteResult.Started)HandleArrival(candidate,result,-1);return candidate;
   }
   public Employee Hire(Candidate candidate) => candidate == null ? null : Hire(candidate, candidate.JobSought);
+  public bool CanOfferHiringAt(Candidate candidate, string hiringFacilityId = null)
+  {
+   if (candidate == null || !_candidates.Contains(candidate) || candidate.Status != CandidateStatus.WaitingForRecruitment) return false;
+   if (RecruitmentAvailable != null && !RecruitmentAvailable()) return false;
+   if (Facilities == null) return true;
+   return Facilities.Facilities.Any(f => f.Id == (hiringFacilityId ?? candidate.FacilityId) && f.Available)
+    && CandidateFacilityAvailable(candidate);
+  }
   public bool CanHire(Candidate candidate, ProfessionalRole profession, string hiringFacilityId = null)
   {
-   if (profession == ProfessionalRole.Unassigned || !Enum.IsDefined(typeof(ProfessionalRole), profession) || candidate == null || !_candidates.Contains(candidate) || candidate.Status != CandidateStatus.WaitingForRecruitment) return false;
-   if (RecruitmentAvailable != null && !RecruitmentAvailable()) return false;
-   // Facilities control available hiring interactions, never the person's origin or proficiency.
-   return Facilities == null || Facilities.Facilities.Any(f => f.Id == (hiringFacilityId ?? candidate.FacilityId) && f.Available && f.Professions.Contains(profession) && (!candidate.IsTalentApplicant || f.ProfessionNeutral && CandidateFacilityAvailable(candidate)));
+   if (profession == ProfessionalRole.Unassigned || !Enum.IsDefined(typeof(ProfessionalRole), profession) || !CanOfferHiringAt(candidate, hiringFacilityId)) return false;
+   // The target facility controls available jobs; applicant origin and proficiency do not.
+   return Facilities == null || Facilities.Facilities.Any(f => f.Id == (hiringFacilityId ?? candidate.FacilityId) && f.Available && f.Professions.Contains(profession));
   }
   public Employee Hire(Candidate candidate, ProfessionalRole profession, string hiringFacilityId = null)
   {
