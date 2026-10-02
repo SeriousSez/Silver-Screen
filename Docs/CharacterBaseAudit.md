@@ -167,3 +167,8 @@ No existing production .cs file, recruitment prefab or saved scene was changed. 
 Before global replacement: resolve blink/brow/gaze and usable eye materials; choose a documented facial export contract; normalize source naming through semantic aliases; validate male and child Avatars and repair child hierarchy/scale; establish material/body-part ownership; finish retarget/contact/collision review at gameplay speed; confirm performance with representative dressed crowds. Keep capsules as production fallback.
 
 Recommended next milestone: an **adult runtime-character acceptance pass** on this same representative female, covering locomotion contact tuning, skin/eye/hair material separation, and a decision between facial bones and completed blendshape coverage. Have the user approve its gameplay-scale appearance and motion before expanding to the other body families. This milestone does not authorize Star Maker or a global replacement.
+
+
+## Adult Male foundation follow-up
+
+The later [Adult Male canonical foundation validation](MaleCanonicalFoundationValidation.md) independently verifies the Male bald scalp, native-data preservation, valid 51-bone Humanoid, 29 finite supplied lower-face channels and an isolated source-plus-corner-corrective BlinkBoth. Eight focused Unity tests passed. The report discloses the small oblique corner opening, optional missing bones, existing ground-contact limitation and technical-only visual status. Earlier Male-unvalidated statements in this initial audit describe its original milestone; use the follow-up for current Male evidence. Male work is uncommitted at the Female checkpoint `16b90e90a8d13205f9267996d1e5284123355334`. Boy/Girl hierarchy/export/Avatar validation remains outstanding.

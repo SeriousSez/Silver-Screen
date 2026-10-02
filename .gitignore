@@ -56,6 +56,10 @@
 /Assets/SilverScreen/Art/Characters/FemaleBlinkPrototype/
 /Assets/SilverScreen/Art/Characters/FemaleBlinkPrototype.meta
 
+# Isolated licensed Male canonical-family validation; rebuilt from external sources.
+/Assets/SilverScreen/Art/Characters/MaleFoundationPrototype/
+/Assets/SilverScreen/Art/Characters/MaleFoundationPrototype.meta
+
 # Addressables-generated content
 /ServerData/
 /Assets/StreamingAssets/aa/
