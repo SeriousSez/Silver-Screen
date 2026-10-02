@@ -68,6 +68,10 @@
 /Assets/SilverScreen/Art/Characters/BoyFoundationPrototype/
 /Assets/SilverScreen/Art/Characters/BoyFoundationPrototype.meta
 
+# Isolated licensed Girl canonical derivative; reviewable tools stay tracked.
+/Assets/SilverScreen/Art/Characters/GirlFoundationPrototype/
+/Assets/SilverScreen/Art/Characters/GirlFoundationPrototype.meta
+
 # Addressables-generated content
 /ServerData/
 /Assets/StreamingAssets/aa/
