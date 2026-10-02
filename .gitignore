@@ -60,6 +60,10 @@
 /Assets/SilverScreen/Art/Characters/MaleFoundationPrototype/
 /Assets/SilverScreen/Art/Characters/MaleFoundationPrototype.meta
 
+# Isolated licensed Boy/Girl structural validation; no production child assets.
+/Assets/SilverScreen/Art/Characters/ChildFoundationPrototype/
+/Assets/SilverScreen/Art/Characters/ChildFoundationPrototype.meta
+
 # Addressables-generated content
 /ServerData/
 /Assets/StreamingAssets/aa/
