@@ -40,6 +40,7 @@ namespace SilverScreen.Presentation.Buildings
         private Coroutine _navigationRoutine;
         private bool _navigationDirty;
         private readonly List<Action> _navigationReady = new List<Action>();
+        private readonly Dictionary<string, int> _failedRoutePhases = new Dictionary<string, int>(StringComparer.Ordinal);
         public BuildingConstructionService Service { get; private set; }
         public FacilityApplicantPool ApplicantFacilities { get; } = new FacilityApplicantPool();
         public IReadOnlyList<CandidateWaitingAreaView> ApplicantAreas => _areas;
@@ -152,6 +153,7 @@ namespace SilverScreen.Presentation.Buildings
             bool phaseChanged = site.AuthoritativePhase != b.Phase;
             site.Refresh();
             if (!phaseChanged || b.IsOperational || b.State == BuildingLifecycle.Cancelled) return;
+            _failedRoutePhases.Remove(b.Id);
             // A new kind of ground-level activity means real travel, with zero work capacity
             // until the existing arrival callback admits the worker again.
             foreach (var pair in _workers.Where(p => p.Value != null && p.Value.Employee.CurrentIntent.TargetBuildingId == b.Id).ToArray())
@@ -230,7 +232,8 @@ namespace SilverScreen.Presentation.Buildings
             _dispatching = true;
             try
             {
-                var activeSites = Service.Buildings.Where(b => !b.IsOperational && b.State != BuildingLifecycle.Cancelled).ToArray();
+                var activeSites = Service.Buildings.Where(b => !b.IsOperational && b.State != BuildingLifecycle.Cancelled &&
+                    (!_failedRoutePhases.TryGetValue(b.Id, out int failedPhase) || failedPhase != b.PhaseIndex)).ToArray();
                 foreach (var employee in _employees.AllEmployees)
                 {
                     if (employee.Role != EmployeeRole.ConstructionWorker || Service.HasAssignment(employee.Id)) continue;
@@ -256,12 +259,23 @@ namespace SilverScreen.Presentation.Buildings
                                 employee.SetState(EmployeeState.Working); Service.WorkerArrived(employee.Id);
                             }
                             else ReleaseWorker(employee.Id);
-                        })) { ReleaseWorker(employee.Id); continue; }
+                        }, () => ConstructionRouteFailed(employee, agent, b, phase)))
+                        { ReleaseWorker(employee.Id); continue; }
                         break;
                     }
                 }
             }
             finally { _dispatching = false; }
+        }
+        private void ConstructionRouteFailed(Employee employee, EmployeeAgent agent, PlacedBuilding building, ConstructionPhase phase)
+        {
+            if (Service == null || employee == null || building == null ||
+                building.Phase != phase || !Service.HasAssignment(employee.Id) ||
+                !_workers.TryGetValue(employee.Id, out var assignedAgent) || assignedAgent != agent)
+                return;
+            _failedRoutePhases[building.Id] = building.PhaseIndex;
+            ReleaseWorker(employee.Id);
+            DispatchWorkers();
         }
         private void ReleaseFinishedWorkers()
         {
@@ -321,6 +335,7 @@ namespace SilverScreen.Presentation.Buildings
                 }
             }
             _navigationRoutine = null;
+            _failedRoutePhases.Clear();
             var callbacks = _navigationReady.ToArray();
             _navigationReady.Clear();
             foreach (var callback in callbacks) callback?.Invoke();

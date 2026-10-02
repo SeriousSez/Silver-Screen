@@ -30,7 +30,8 @@ namespace SilverScreen.Domain
         WriteScreenplay,
         DevelopIdea,
         Practice,
-        AutonomousActivity
+        AutonomousActivity,
+        DepartingWorkforceArea
     }
 
     public class EmployeeIntent

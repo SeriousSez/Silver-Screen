@@ -71,17 +71,14 @@ namespace SilverScreen.Presentation.Employees
         private bool ResumeAfterDrop()
         {
             if (!IsReturningAfterDrop) return false;
-            if (_navAgent == null || !_navAgent.isOnNavMesh) return true;
+            if (_navAgent == null) return true;
             var feet = transform.position - Vector3.up * _navAgent.baseOffset;
-            if (Vector3.Distance(feet, _taskDestination) <= _navAgent.stoppingDistance + .25f)
+            if (_navAgent.isOnNavMesh &&
+                Vector3.Distance(feet, _taskDestination) <= _navAgent.stoppingDistance + .25f)
             { IsReturningAfterDrop = false; AvailabilityChanged?.Invoke(true); return false; }
-            if (!_navAgent.hasPath && !_navAgent.pathPending)
-            {
-                var path = new NavMeshPath();
-                if (_navAgent.CalculatePath(_taskDestination, path) && path.status == NavMeshPathStatus.PathComplete)
-                    _navAgent.SetPath(path);
-            }
-            return true;
+            if (!_navAgent.hasPath || _navAgent.pathStatus != NavMeshPathStatus.PathComplete)
+                RecoverExplicitTaskPath();
+            return IsReturningAfterDrop;
         }
 
         private ISimulationTimeService _timeService;
@@ -89,8 +86,17 @@ namespace SilverScreen.Presentation.Employees
         private float _idleWaitTimer;
         private bool _hasExplicitTask;
         private bool _autonomousRoute;
+        private NavMeshPath _taskPath;
+        private float _taskPathRetryTimer;
+        private float _taskPathRetryDelay;
+        private float _taskPathRecoveryElapsed;
         private PersonAutonomySimulation _autonomy;
         private Action _onArrivalCallback;
+        private Action _onNavigationFailed;
+
+        private const float InitialTaskPathRetryDelay = .5f;
+        private const float MaximumTaskPathRetryDelay = 30f;
+        private const float TaskPathRecoveryLimit = 600f;
 
         private float _baseSpeed = 3.5f;
         private float _baseAcceleration = 14f;
@@ -544,7 +550,6 @@ namespace SilverScreen.Presentation.Employees
 
         private void UpdateIdleWander()
         {
-            if (_autonomy != null && _autonomy.ShouldDeferIdleWander(Employee)) return;
             _idleWaitTimer -= SilverScreen.Presentation.SimulationTime.LocalPresentationTime.Delta(UnityEngine.Time.unscaledDeltaTime, _timeService);
 
             if (_idleWaitTimer <= 0f)
@@ -555,6 +560,7 @@ namespace SilverScreen.Presentation.Employees
                     else _idleWaitTimer = .5f; // Retry in simulation time if temporarily crowded.
                     return;
                 }
+                if (_autonomy != null && _autonomy.ShouldDeferIdleWander(Employee)) return;
                 if (TryFindRandomNavMeshPoint(_homeCenter, _wanderRadius, out Vector3 destination))
                 {
                     _navAgent.SetDestination(destination);
@@ -588,7 +594,8 @@ namespace SilverScreen.Presentation.Employees
                 if (Physics.CheckCapsule(point+Vector3.up*(radius+.06f),point+Vector3.up*(_navAgent.height-radius),radius,~0,QueryTriggerInteraction.Ignore)) continue;
                 if (!_navAgent.CalculatePath(point,path) || path.status != NavMeshPathStatus.PathComplete || !_navAgent.SetPath(path)) continue;
                 _homeCenter = point;
-                Employee.SetState(EmployeeState.Walking); Employee.SetIntent(EmployeeIntent.IdleWander);
+                Employee.SetState(EmployeeState.Walking);
+                Employee.SetIntent(new EmployeeIntent(EmployeeIntentPurpose.DepartingWorkforceArea, "Leaving the hiring area"));
                 return true;
             }
             return false;
@@ -604,10 +611,11 @@ namespace SilverScreen.Presentation.Employees
             }
         }
 
-        public bool TryAssignTaskDestination(Vector3 destination, EmployeeIntent intent, Action onArrival = null)
+        public bool TryAssignTaskDestination(Vector3 destination, EmployeeIntent intent, Action onArrival = null,
+            Action onNavigationFailed = null)
         {
             bool interruptedAutonomy = _autonomy?.Interrupt(Employee, false) == true;
-            bool assigned = TryAssignTaskDestinationCore(destination, intent, onArrival, false);
+            bool assigned = TryAssignTaskDestinationCore(destination, intent, onArrival, false, onNavigationFailed);
             if (!assigned && interruptedAutonomy)
             {
                 Employee?.SetState(EmployeeState.Idle);
@@ -617,7 +625,7 @@ namespace SilverScreen.Presentation.Employees
         }
 
         private bool TryAssignTaskDestinationCore(Vector3 destination, EmployeeIntent intent,
-            Action onArrival, bool autonomous)
+            Action onArrival, bool autonomous, Action onNavigationFailed = null)
         {
             if (_navAgent == null || !_navAgent.isActiveAndEnabled || !_navAgent.isOnNavMesh)
             {
@@ -625,32 +633,43 @@ namespace SilverScreen.Presentation.Employees
             }
             if (IsHeld)
             {
+                ResetTaskPathRecovery();
                 _departingAssignmentArea = null;
                 _taskDestination = destination; _hasTaskAnchor = true; _hasExplicitTask = true;
                 _onArrivalCallback = onArrival;
+                _onNavigationFailed = onNavigationFailed;
                 _autonomousRoute = autonomous;
                 Employee?.SetIntent(intent);
                 return true;
             }
-            var path = new NavMeshPath();
-            if (!_navAgent.CalculatePath(destination, path) ||
-                path.status != NavMeshPathStatus.PathComplete ||
-                !_navAgent.SetPath(path))
+            var taskPath = GetTaskPath();
+            bool hasRoute = _navAgent.CalculatePath(destination, taskPath) &&
+                taskPath.status == NavMeshPathStatus.PathComplete &&
+                _navAgent.SetPath(taskPath);
+            if (!hasRoute && (autonomous || onNavigationFailed == null))
             {
                 return false;
             }
 
+            ResetTaskPathRecovery();
             _departingAssignmentArea = null; // Accepted real work takes priority over idle departure.
             _taskDestination = destination;
             _hasTaskAnchor = true;
             _hasExplicitTask = true;
             _onArrivalCallback = onArrival;
+            _onNavigationFailed = onNavigationFailed;
             _autonomousRoute = autonomous;
 
             if (Employee != null)
             {
                 Employee.SetState(EmployeeState.Walking);
                 Employee.SetIntent(intent);
+            }
+
+            if (!hasRoute)
+            {
+                _navAgent.ResetPath();
+                _taskPathRetryTimer = InitialTaskPathRetryDelay;
             }
 
             if (_timeService != null && _timeService.IsPaused)
@@ -669,6 +688,7 @@ namespace SilverScreen.Presentation.Employees
             if (!IsHeld) AvailabilityChanged?.Invoke(true);
             _hasExplicitTask = false;
             _onArrivalCallback = null;
+            _onNavigationFailed = null;
 
             if (Employee != null)
             {
@@ -677,6 +697,19 @@ namespace SilverScreen.Presentation.Employees
             }
 
             _idleWaitTimer = UnityEngine.Random.Range(_minWaitTime, _maxWaitTime);
+        }
+
+        private void ResetTaskPathRecovery()
+        {
+            _taskPathRetryTimer = 0;
+            _taskPathRetryDelay = InitialTaskPathRetryDelay;
+            _taskPathRecoveryElapsed = 0;
+        }
+
+        private NavMeshPath GetTaskPath()
+        {
+            if (_taskPath == null) _taskPath = new NavMeshPath();
+            return _taskPath;
         }
 
         public void ForceCompleteArrival()
@@ -690,6 +723,7 @@ namespace SilverScreen.Presentation.Employees
                 }
                 var callback = _onArrivalCallback;
                 _onArrivalCallback = null;
+                _onNavigationFailed = null;
                 if (_autonomousRoute)
                 {
                     _autonomousRoute = false;
@@ -780,11 +814,72 @@ namespace SilverScreen.Presentation.Employees
                 _autonomy?.NavigationCompleted(Employee, false);
                 return;
             }
+            if (!_autonomousRoute &&
+                (!_navAgent.hasPath || _navAgent.pathStatus != NavMeshPathStatus.PathComplete))
+            {
+                RecoverExplicitTaskPath();
+                if (!_hasExplicitTask) return;
+            }
             if (!IsHeld && _navAgent.isOnNavMesh && !_navAgent.pathPending &&
                 Vector3.Distance(transform.position - Vector3.up * _navAgent.baseOffset, _taskDestination) <= _navAgent.stoppingDistance + 0.25f)
             {
                 ForceCompleteArrival();
             }
+        }
+
+        private void RecoverExplicitTaskPath()
+        {
+            float delta = SilverScreen.Presentation.SimulationTime.LocalPresentationTime.Delta(
+                UnityEngine.Time.unscaledDeltaTime, _timeService);
+            _taskPathRecoveryElapsed += delta;
+            if (_taskPathRecoveryElapsed >= TaskPathRecoveryLimit)
+            {
+                FailExplicitTaskNavigation();
+                return;
+            }
+            if (_navAgent.pathPending) return;
+
+            _taskPathRetryTimer -= delta;
+            if (_taskPathRetryTimer > 0) return;
+
+            bool recovered = false;
+            if (_navAgent.isOnNavMesh)
+            {
+                var taskPath = GetTaskPath();
+                recovered = _navAgent.CalculatePath(_taskDestination, taskPath) &&
+                    taskPath.status == NavMeshPathStatus.PathComplete &&
+                    _navAgent.SetPath(taskPath);
+            }
+            if (recovered)
+            {
+                _taskPathRetryTimer = 0;
+                _taskPathRetryDelay = InitialTaskPathRetryDelay;
+                _taskPathRecoveryElapsed = 0;
+                return;
+            }
+
+            _taskPathRetryTimer = _taskPathRetryDelay;
+            _taskPathRetryDelay = Mathf.Min(_taskPathRetryDelay * 2f, MaximumTaskPathRetryDelay);
+        }
+
+        private void FailExplicitTaskNavigation()
+        {
+            var failedIntent = Employee?.CurrentIntent;
+            var onNavigationFailed = _onNavigationFailed;
+            _hasExplicitTask = false;
+            _hasTaskAnchor = false;
+            IsReturningAfterDrop = false;
+            _autonomousRoute = false;
+            _onArrivalCallback = null;
+            _onNavigationFailed = null;
+            if (_navAgent != null && _navAgent.isActiveAndEnabled && _navAgent.isOnNavMesh)
+                _navAgent.ResetPath();
+            Employee?.SetState(EmployeeState.Idle);
+            Employee?.SetIntent(EmployeeIntent.None);
+            if (onNavigationFailed != null)
+                onNavigationFailed();
+            else
+                Debug.LogWarning("Explicit task navigation remained unreachable for ten simulated minutes; the task was released without an owner failure callback. " + failedIntent, this);
         }
 
         private bool TryFindRandomNavMeshPoint(Vector3 center, float radius, out Vector3 result)
