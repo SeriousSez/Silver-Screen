@@ -2,7 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
 using SilverScreen.Domain;
+using SilverScreen.Domain.Buildings;
+using SilverScreen.Domain.Finance;
+using SilverScreen.Domain.Resources;
 using SilverScreen.Domain.Time;
+using SilverScreen.Domain.Tutorial;
+using SilverScreen.Domain.Work;
 using SilverScreen.Presentation.Employees;
 using SilverScreen.Presentation.Interaction;
 using UnityEditor;
@@ -93,6 +98,268 @@ namespace SilverScreen.Tests.EditMode
                 Assert.That(presentation.State, Is.EqualTo(HeldPersonPresentationState.Normal));
             }
             finally { if (wall != null) UnityEngine.Object.DestroyImmediate(wall); UnityEngine.Object.DestroyImmediate(go); instance.Remove(); UnityEngine.Object.DestroyImmediate(data); }
+        }
+
+        [UnityTest] public IEnumerator ConstructionRouteRecoveryKeepsSemanticAssignmentAfterPathLoss()
+        {
+            EnterIsolatedRuntimeScene();
+            yield return new EnterPlayMode();
+            yield return RunConstructionRouteRecoveryScenario(true);
+        }
+
+        [UnityTest] public IEnumerator PersistentConstructionRouteFailureReleasesItsReservationAfterBoundedRecovery()
+        {
+            EnterIsolatedRuntimeScene();
+            yield return new EnterPlayMode();
+            yield return RunConstructionRouteRecoveryScenario(false);
+        }
+
+        private void EnterIsolatedRuntimeScene()
+        {
+            Assert.That(SceneManager.GetActiveScene().isDirty, Is.False);
+            SessionState.SetString(SceneKey, SceneManager.GetActiveScene().path);
+            EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
+        }
+
+        private IEnumerator RunConstructionRouteRecoveryScenario(bool recoverTemporaryPathFirst)
+        {
+            var fixture = new ConstructionRouteFixture();
+            GameObject barrier = null;
+            try
+            {
+                fixture.Initialize("Temporary route recovery worker");
+                yield return null;
+                fixture.WarpWorker();
+                int slot = fixture.AssignTask(() =>
+                {
+                    fixture.OwnerFailureCalled = true;
+                    fixture.Service.ReleaseWorker(fixture.Employee.Id);
+                    fixture.Agent.ClearTaskDestination();
+                });
+                if (recoverTemporaryPathFirst)
+                {
+                    barrier = CreateRouteBarrier(fixture.Center);
+                    yield return WaitForRouteToBecomeUnavailable(fixture);
+                    fixture.Navigation.ResetPath();
+
+                    float temporaryDeadline = Time.realtimeSinceStartup + 5;
+                    while ((!fixture.Navigation.hasPath ||
+                            fixture.Navigation.pathStatus != NavMeshPathStatus.PathComplete) &&
+                           Time.realtimeSinceStartup < temporaryDeadline)
+                        yield return null;
+
+                    AssertTaskStillOwnsConstruction(fixture, slot);
+                    Assert.That(fixture.Autonomy.IsEligible(fixture.Employee), Is.False);
+                    Assert.That(fixture.Autonomy.EvaluateNow(fixture.Employee), Is.Null);
+
+                    Object.DestroyImmediate(barrier);
+                    barrier = null;
+                    var path = new NavMeshPath();
+                    temporaryDeadline = Time.realtimeSinceStartup + 5;
+                    while ((!fixture.Navigation.hasPath ||
+                            fixture.Navigation.pathStatus != NavMeshPathStatus.PathComplete ||
+                            !NavMesh.CalculatePath(fixture.Navigation.nextPosition, fixture.Destination,
+                                NavMesh.AllAreas, path) || path.status != NavMeshPathStatus.PathComplete) &&
+                           Time.realtimeSinceStartup < temporaryDeadline)
+                        yield return null;
+                    Assert.That(fixture.Navigation.hasPath, Is.True);
+                    Assert.That(fixture.Navigation.pathStatus, Is.EqualTo(NavMeshPathStatus.PathComplete));
+                    Assert.That(fixture.Navigation.pathStatus, Is.EqualTo(NavMeshPathStatus.PathComplete));
+                    Assert.That(fixture.OwnerFailureCalled, Is.False);
+                    AssertTaskStillOwnsConstruction(fixture, slot);
+                    Assert.That(Vector3.Distance(fixture.Navigation.destination, fixture.TaskDestination), Is.LessThan(.1f),
+                        "The reacquired route still targets the assigned construction work position.");
+                    var positionBeforeTravel = fixture.Navigation.transform.position;
+                    float travelDeadline = Time.realtimeSinceStartup + 3;
+                    while (Vector3.Distance(fixture.Navigation.transform.position, positionBeforeTravel) < .05f &&
+                           Time.realtimeSinceStartup < travelDeadline)
+                        yield return null;
+                    Assert.That(Vector3.Distance(fixture.Navigation.transform.position, positionBeforeTravel),
+                        Is.GreaterThanOrEqualTo(.05f), "The worker resumes travelling on the reacquired route.");
+                    yield break;
+                }
+
+                barrier = CreateRouteBarrier(fixture.Center);
+                yield return WaitForRouteToBecomeUnavailable(fixture);
+                fixture.Navigation.ResetPath();
+                AssertTaskStillOwnsConstruction(fixture, slot);
+                Assert.That(fixture.Employee.CurrentIntent.Purpose, Is.EqualTo(EmployeeIntentPurpose.PerformTask));
+                Assert.That(fixture.Autonomy.IsEligible(fixture.Employee), Is.False);
+                Assert.That(fixture.Autonomy.EvaluateNow(fixture.Employee), Is.Null);
+
+                float recoveryStartedAt = Time.realtimeSinceStartup;
+                fixture.TimeService.TimeScaleMultiplier = 60;
+                float deadline = recoveryStartedAt + 20;
+                while (!fixture.OwnerFailureCalled && Time.realtimeSinceStartup < deadline)
+                    yield return null;
+
+                Assert.That(fixture.OwnerFailureCalled, Is.True);
+                Assert.That(Time.realtimeSinceStartup - recoveryStartedAt, Is.GreaterThanOrEqualTo(9),
+                    "Recovery is bounded by ten simulated minutes at the configured 60x simulation rate, not an immediate timeout.");
+                Assert.That(fixture.Service.HasAssignment(fixture.Employee.Id), Is.False);
+                Assert.That(fixture.Reservations.IsReserved(new ResourceKey("person", fixture.Employee.Id)), Is.False);
+                Assert.That(fixture.Service.TryGetWorkSpot(fixture.Employee.Id, out _), Is.False);
+                Assert.That(fixture.Employee.CurrentIntent.Purpose, Is.EqualTo(EmployeeIntentPurpose.None));
+                Assert.That(fixture.Autonomy.IsEligible(fixture.Employee), Is.True);
+            }
+            finally
+            {
+                if (barrier != null) Object.DestroyImmediate(barrier);
+                fixture.Dispose();
+            }
+        }
+
+        private static GameObject CreateRouteBarrier(Vector3 center)
+        {
+            var barrier = new GameObject("NavMesh route barrier");
+            barrier.transform.position = center + Vector3.up * 1.5f;
+            var obstacle = barrier.AddComponent<NavMeshObstacle>();
+            obstacle.shape = NavMeshObstacleShape.Box;
+            obstacle.size = new Vector3(22, 3, .8f);
+            obstacle.carving = true;
+            obstacle.carvingTimeToStationary = 0;
+            return barrier;
+        }
+
+        private static IEnumerator WaitForRouteToBecomeUnavailable(ConstructionRouteFixture fixture)
+        {
+            var path = new NavMeshPath();
+            float deadline = Time.realtimeSinceStartup + 5;
+            while (NavMesh.CalculatePath(fixture.Start, fixture.Destination, NavMesh.AllAreas, path) &&
+                   path.status == NavMeshPathStatus.PathComplete && Time.realtimeSinceStartup < deadline)
+                yield return null;
+            Assert.That(path.status, Is.Not.EqualTo(NavMeshPathStatus.PathComplete),
+                "The carved obstacle must make the construction route genuinely unreachable.");
+        }
+
+        private static void AssertTaskStillOwnsConstruction(ConstructionRouteFixture fixture, int slot)
+        {
+            Assert.That(fixture.Service.HasAssignment(fixture.Employee.Id), Is.True,
+                "Temporary recovery retains semantic construction assignment.");
+            Assert.That(fixture.Service.TryGetWorkSpot(fixture.Employee.Id, out int currentSlot), Is.True);
+            Assert.That(currentSlot, Is.EqualTo(slot));
+            Assert.That(fixture.Reservations.IsReserved(new ResourceKey("person", fixture.Employee.Id)), Is.True);
+            Assert.That(fixture.Employee.CurrentState, Is.EqualTo(EmployeeState.Walking));
+            Assert.That(fixture.Employee.CurrentIntent.Purpose, Is.EqualTo(EmployeeIntentPurpose.PerformTask));
+            Assert.That(fixture.Employee.CurrentIntent.TargetBuildingId, Is.EqualTo(fixture.Site.Id));
+        }
+
+        private sealed class ConstructionRouteFixture : System.IDisposable
+        {
+            public Vector3 Center => new Vector3(1000, 0, 1000);
+            public Vector3 Start => Center + Vector3.back * 5;
+            public Vector3 Destination => Center + Vector3.forward * 5;
+            public NavMeshDataInstance NavMeshInstance { get; private set; }
+            private NavMeshData _navMeshData;
+            private GameObject _workerObject;
+            public NavMeshAgent Navigation { get; private set; }
+            public EmployeeAgent Agent { get; private set; }
+            public Employee Employee { get; private set; }
+            public SimulationClock Clock { get; private set; }
+            public SimulationScheduler Scheduler { get; private set; }
+            public WorkService Work { get; private set; }
+            public ResourceReservationBook Reservations { get; private set; }
+            public BuildingConstructionService Service { get; private set; }
+            public PersonAutonomySimulation Autonomy { get; private set; }
+            public AcceleratedTimeService TimeService { get; private set; }
+            public PlacedBuilding Site { get; private set; }
+            public Vector3 TaskDestination { get; private set; }
+            public bool OwnerFailureCalled { get; set; }
+
+            public void Initialize(string workerName)
+            {
+                TimeService = new AcceleratedTimeService();
+                var source = new NavMeshBuildSource
+                {
+                    shape = NavMeshBuildSourceShape.Box,
+                    size = new Vector3(20, .2f, 20),
+                    transform = Matrix4x4.TRS(Center - Vector3.up * .1f, Quaternion.identity, Vector3.one),
+                    area = 0
+                };
+                _navMeshData = NavMeshBuilder.BuildNavMeshData(NavMesh.GetSettingsByIndex(0),
+                    new List<NavMeshBuildSource> { source }, new Bounds(Center, new Vector3(22, 4, 22)),
+                    Vector3.zero, Quaternion.identity);
+                NavMeshInstance = NavMesh.AddNavMeshData(_navMeshData);
+
+                Clock = new SimulationClock();
+                Scheduler = new SimulationScheduler(Clock);
+                Work = new WorkService(Clock, Scheduler);
+                Reservations = new ResourceReservationBook();
+                Service = new BuildingConstructionService(StudioBuildingDefinitions.Create(),
+                    new PlacementRect(0, 0, 300, 300), null, Clock, Work, new StudioFinances(Clock.CurrentTime), Reservations);
+                Site = Service.Place(StarterFeatureIds.Casting, default, out var error);
+                Assert.That(Site, Is.Not.Null, error);
+
+                Employee = new Employee("route-worker-" + workerName, workerName,
+                    EmployeeRole.ConstructionWorker, 50, 100);
+                Assert.That(Service.AssignWorker(Site, Employee), Is.True);
+                Assert.That(NavMesh.SamplePosition(Start, out var start, .3f, NavMesh.AllAreas), Is.True);
+                _workerObject = new GameObject(workerName);
+                _workerObject.transform.position = start.position;
+                Navigation = _workerObject.AddComponent<NavMeshAgent>();
+                EmployeeNavigationProfile.Configure(Navigation, EmployeeNavigationProfile.Height,
+                    EmployeeNavigationProfile.Height / 2);
+                Navigation.enabled = false;
+                _workerObject.transform.position = start.position + Vector3.up * Navigation.baseOffset;
+                Navigation.enabled = true;
+                Agent = _workerObject.AddComponent<EmployeeAgent>();
+                Agent.BindDomain(Employee);
+                Agent.BindTimeService(TimeService);
+
+                Autonomy = new PersonAutonomySimulation(Clock, Scheduler);
+                Agent.BindAutonomy(Autonomy);
+                Autonomy.Register(Employee);
+            }
+
+            public void WarpWorker()
+            {
+                Assert.That(NavMesh.SamplePosition(Start, out var start, .3f, NavMesh.AllAreas), Is.True);
+                Assert.That(Navigation.Warp(start.position), Is.True);
+            }
+
+            public int AssignTask(System.Action onNavigationFailed)
+            {
+                Assert.That(NavMesh.SamplePosition(Destination, out var target, .3f, NavMesh.AllAreas), Is.True);
+                TaskDestination = target.position;
+                Assert.That(Agent.TryAssignTaskDestination(TaskDestination,
+                    new EmployeeIntent(EmployeeIntentPurpose.PerformTask, "Construction work", Site.Id),
+                    null, onNavigationFailed), Is.True);
+                Assert.That(Service.TryGetWorkSpot(Employee.Id, out int slot), Is.True);
+                return slot;
+            }
+
+            public void Dispose()
+            {
+                Autonomy?.Dispose();
+                Service?.Dispose();
+                Work?.Dispose();
+                if (_workerObject != null) Object.DestroyImmediate(_workerObject);
+                if (NavMeshInstance.valid) NavMeshInstance.Remove();
+                if (_navMeshData != null) Object.DestroyImmediate(_navMeshData);
+            }
+        }
+
+        private sealed class AcceleratedTimeService : ISimulationTimeService
+        {
+            public SimulationDateTime CurrentTime { get; } = new SimulationDateTime(1930, 1, 1, 8, 0);
+            public SimulationSpeed CurrentSpeed { get; private set; } = SimulationSpeed.Normal;
+            public bool IsPaused => CurrentSpeed == SimulationSpeed.Paused;
+            public float TimeScaleMultiplier { get; set; } = 1;
+            public float RealSecondsPerSimulatedMinute { get; set; } = 1;
+            public event System.Action<SimulationDateTime> OnMinutePassed;
+            public event System.Action<SimulationDateTime> OnHourPassed;
+            public event System.Action<SimulationDateTime> OnDayPassed;
+            public event System.Action<SimulationDateTime> OnMonthPassed;
+            public event System.Action<SimulationDateTime> OnYearPassed;
+            public event System.Action<SimulationSpeed> OnSpeedChanged;
+
+            public void SetSpeed(SimulationSpeed speed)
+            {
+                CurrentSpeed = speed;
+                OnSpeedChanged?.Invoke(speed);
+            }
+
+            public void TogglePause() => SetSpeed(IsPaused ? SimulationSpeed.Normal : SimulationSpeed.Paused);
         }
 
         [UnityTest] public IEnumerator CarryRequiresSeparateClickAndInvalidAttemptsKeepPresentation()

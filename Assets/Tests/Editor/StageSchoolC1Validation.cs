@@ -7,6 +7,7 @@ using SilverScreen.Domain;
 using SilverScreen.Domain.Buildings;
 using SilverScreen.Domain.Recruitment;
 using SilverScreen.Domain.Time;
+using SilverScreen.Domain.Tutorial;
 using SilverScreen.Presentation.Bootstrap;
 using SilverScreen.Presentation.Buildings;
 using SilverScreen.Presentation.Employees;
@@ -20,6 +21,7 @@ using UnityEditor.TestTools.TestRunner.Api;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
+using UnityEngine.AI;
 using UnityEngine.TestTools;
 using Object=UnityEngine.Object;
 namespace SilverScreen.Tests.EditMode
@@ -27,8 +29,8 @@ namespace SilverScreen.Tests.EditMode
  public sealed class StageSchoolC1Validation
  {
   const string Out="ArtReview/StageSchoolC1";
-  public static void RunDomain()=>Run(new[]{"SilverScreen.Tests.EditMode.StageSchoolApplicantTests","SilverScreen.Tests.RecruitmentTests","SilverScreen.Tests.EditMode.ContextualCarryTargetTests","SilverScreen.Tests.EditMode.PersonInteractionTests","SilverScreen.Tests.EditMode.SimulationSpeedTests"},"edit-results.xml");
-  public static void RunPlay()=>Run(new[]{"SilverScreen.Tests.EditMode.StageSchoolC1Validation.RealApplicantCarryHiring"},"play-results.xml");
+  public static void RunDomain()=>Run(new[]{"SilverScreen.Tests.EditMode.StageSchoolApplicantTests","SilverScreen.Tests.RecruitmentTests","SilverScreen.Tests.EditMode.PersonAutonomySimulationTests","SilverScreen.Tests.EditMode.ContextualCarryTargetTests","SilverScreen.Tests.EditMode.PersonInteractionTests","SilverScreen.Tests.EditMode.SimulationSpeedTests"},"edit-results.xml");
+  public static void RunPlay()=>Run(new[]{"SilverScreen.Tests.EditMode.StageSchoolC1Validation.RealApplicantCarryHiring","SilverScreen.Tests.EditMode.StageSchoolC1Validation.ConstructionDispatchLifecycle","SilverScreen.Tests.EditMode.PersonManipulationRuntimeTests.ConstructionRouteRecoveryKeepsSemanticAssignmentAfterPathLoss"},"play-results.xml");
   static void Run(string[] tests,string file){var api=ScriptableObject.CreateInstance<TestRunnerApi>();api.RegisterCallbacks(new Results(api,file));api.Execute(new ExecutionSettings(new Filter{testMode=UnityEditor.TestTools.TestRunner.Api.TestMode.EditMode,testNames=tests}));}
   sealed class Results:ICallbacks
   {
@@ -79,9 +81,13 @@ namespace SilverScreen.Tests.EditMode
     while(!time.Clock.IsBoundaryComplete){time.Clock.Advance(0);yield return null;}
     var candidate=recruitment.Coordinator.Candidates.FirstOrDefault(c=>c.IsTalentApplicant);Assert.That(candidate,Is.Not.Null,"Real simulation-clock arrival");
     var agent=recruitment.WorldRouter.GetAgent(candidate);Assert.That(agent,Is.Not.Null);var originalObject=agent.gameObject;var person=candidate.Person;var talent=person.Talent;
-    var source=agent.transform.position;Assert.That(candidate.Status,Is.EqualTo(CandidateStatus.Arriving));Note("Spawned "+person.Id+" at world arrival source "+source);
+    bool wasArriving=candidate.Status==CandidateStatus.Arriving;var source=agent.transform.position;
+    Assert.That(candidate.Status==CandidateStatus.Arriving||candidate.Status==CandidateStatus.WaitingForRecruitment,Is.True);
+    if(wasArriving)Note("Spawned "+person.Id+" at world arrival source "+source);
     deadline=Time.realtimeSinceStartup+90;while(candidate.Status==CandidateStatus.Arriving&&Time.realtimeSinceStartup<deadline)yield return null;
-    Assert.That(candidate.Status,Is.EqualTo(CandidateStatus.WaitingForRecruitment));Assert.That(Vector3.Distance(source,agent.transform.position),Is.GreaterThan(2));Assert.That(candidate.WaitingPositionIndex,Is.GreaterThanOrEqualTo(0));
+    Assert.That(candidate.Status,Is.EqualTo(CandidateStatus.WaitingForRecruitment));
+    if(wasArriving)Assert.That(Vector3.Distance(source,agent.transform.position),Is.GreaterThan(2));
+    Assert.That(candidate.WaitingPositionIndex,Is.GreaterThanOrEqualTo(0));
     Note("Physically reached authored exterior slot "+candidate.WaitingPositionIndex);
     yield return null;
     Capture(camera,"waiting_"+role,root);
@@ -109,12 +115,185 @@ namespace SilverScreen.Tests.EditMode
      }finally{InputSystem.RemoveDevice(mouse);InputSystem.RemoveDevice(keyboard);foreach(var d in muted)InputSystem.EnableDevice(d);InputSystem.settings.updateMode=update;InputSystem.settings.backgroundBehavior=background;InputSystem.settings.editorInputBehaviorInPlayMode=editor;foreach(var e in ui)if(e!=null)e.enabled=true;selection.enabled=enabled;}
     }
     yield return null;var normal=employees.GetAgent(person.Id);Assert.That(normal.enabled,Is.True);Assert.That(normal.IsHeld,Is.False);Assert.That(normal.GetComponent<CandidateAgent>(),Is.Null);
-    deadline=Time.realtimeSinceStartup+12;while(normal.Employee.CurrentState!=EmployeeState.Walking&&Time.realtimeSinceStartup<deadline)yield return null;
-    Assert.That(normal.Employee.CurrentState,Is.EqualTo(EmployeeState.Walking));Note(role+" resumes normal employee locomotion.");
+    var hiringTarget=root.GetComponentsInChildren<ApplicantHiringAction>().Single(a=>a.Profession==role).GetComponent<ContextualDropTarget>();
+    var placementArea=RoomBounds(hiringTarget);
+    Assert.That(time.Autonomy.ParticipantCount,Is.EqualTo(employees.AllEmployees.Count),"Hired employees are registered for autonomy.");
+    Assert.That(time.Autonomy.LastDecision(normal.Employee)?.Activity,Is.EqualTo(PersonAutonomousActivity.IdleWait),
+     "The employee has no worthwhile autonomous activity to perform.");
+    bool sawPurposefulDeparture=false;deadline=Time.realtimeSinceStartup+20;
+    while(placementArea.Contains(normal.transform.position)&&Time.realtimeSinceStartup<deadline)
+    {
+     sawPurposefulDeparture|=normal.Employee.CurrentIntent.Purpose==EmployeeIntentPurpose.DepartingWorkforceArea;
+     yield return null;
+    }
+    sawPurposefulDeparture|=normal.Employee.CurrentIntent.Purpose==EmployeeIntentPurpose.DepartingWorkforceArea;
+    Assert.That(placementArea.Contains(normal.transform.position),Is.False,"Purposeful post-hire departure leaves the workforce placement area.");
+    Assert.That(sawPurposefulDeparture,Is.True,"Departure uses an explicit non-random movement intent.");
+    deadline=Time.realtimeSinceStartup+15;
+    while(normal.Employee.CurrentState!=EmployeeState.Idle&&Time.realtimeSinceStartup<deadline)yield return null;
+    Assert.That(normal.Employee.CurrentState,Is.EqualTo(EmployeeState.Idle),"The employee may settle after the purposeful departure.");
+    Assert.That(normal.Employee.CurrentIntent.Purpose,Is.Not.EqualTo(EmployeeIntentPurpose.IdleWander),
+     "Autonomy-controlled employees do not resume random idle wandering.");
+    var settledPosition=normal.transform.position;
+    yield return new WaitForSecondsRealtime(2f);
+    Assert.That(Vector3.Distance(normal.transform.position,settledPosition),Is.LessThan(.05f),
+     "An idle employee remains stationary when no activity is worthwhile.");
+    Assert.That(time.Autonomy.LastDecision(normal.Employee)?.Activity,Is.EqualTo(PersonAutonomousActivity.IdleWait));
+    Note(role+" completed purposeful workforce-area departure and remained idle without random wandering.");
    }
    Note("PASS: Actor and Director end-to-end input hiring; Extra covered by focused domain tests.");
   }
+  [UnityTest]public IEnumerator ConstructionDispatchLifecycle()
+  {
+   Assert.That(UnityEngine.SceneManagement.SceneManager.GetActiveScene().isDirty,Is.False,"Preserve unsaved scene work");
+   SessionState.SetString("C1.previous",UnityEngine.SceneManagement.SceneManager.GetActiveScene().path);
+   EditorSceneManager.OpenScene("Assets/Scenes/Studio.unity");
+   using(var bootstrap=new SerializedObject(Object.FindAnyObjectByType<StudioBootstrap>()))
+   {
+    bootstrap.FindProperty("_startNewStudio").boolValue=true;
+    bootstrap.FindProperty("_newStudioOptions").FindPropertyRelative("TutorialEnabled").boolValue=false;
+    bootstrap.ApplyModifiedPropertiesWithoutUndo();
+   }
+   yield return new EnterPlayMode();
+   yield return null;
+   yield return null;
+   bool runInBackground=Application.runInBackground;
+   Application.runInBackground=true;
+   try{yield return ConstructionDispatchProof();}
+   finally{Application.runInBackground=runInBackground;}
+  }
+
+  static IEnumerator ConstructionDispatchProof()
+  {
+   var driver=Object.FindAnyObjectByType<StudioConstructionDriver>();
+   var time=Object.FindAnyObjectByType<SimulationTimeDriver>();
+   var employees=Object.FindAnyObjectByType<StudioEmployeeManager>();
+   Assert.That(driver,Is.Not.Null,"New-studio construction driver exists.");
+   Assert.That(driver?.Service,Is.Not.Null,"New-studio construction driver initializes.");
+   Assert.That(time,Is.Not.Null,"New-studio simulation clock initializes.");
+   Assert.That(employees,Is.Not.Null,"New-studio workforce initializes.");
+   yield return null;
+   Assert.That(employees.AllEmployees,Is.Empty);
+   foreach(var recruitment in Object.FindObjectsByType<RecruitmentDriver>(FindObjectsSortMode.None))recruitment.enabled=false;
+   time.Clock.SetSpeed(SimulationSpeed.VeryFast);
+
+   var siteA=PlaceCastingOffice(driver);
+   Assert.That(siteA,Is.Not.Null,"Site A should be legally placeable.");
+   yield return WaitForNavigation(driver);
+   var workers=new EmployeeAgent[4];
+   for(int i=0;i<workers.Length;i++)
+   {
+    int index=i;
+    yield return AddConstructionWorker(driver,time,employees,"dispatch-worker-"+i,agent=>workers[index]=agent);
+    if(i<3)
+    {
+     Assert.That(driver.Service.HasAssignment(workers[i].Employee.Id),Is.True,
+      "Employee-added dispatch should assign each worker to an open Site A position.");
+     Assert.That(AssignedSite(driver,workers[i].Employee.Id),Is.EqualTo(siteA.Id));
+     if(i==0)Assert.That(driver.Service.WorkerArrived(workers[i].Employee.Id),Is.True);
+    }
+   }
+   Assert.That(driver.Service.AssignedCount(siteA.Id),Is.EqualTo(3));
+   Assert.That(driver.Service.ActiveWorkerCount(siteA.Id),Is.EqualTo(1),
+    "Two reserved workers are still travelling while only one has arrived.");
+   Assert.That(driver.Service.HasAssignment(workers[3].Employee.Id),Is.False,
+    "A new worker must not join when all phase capacity is reserved, even with fewer arrived workers.");
+
+   var siteB=PlaceCastingOffice(driver);
+   Assert.That(siteB,Is.Not.Null,"Site B should be legally placeable.");
+   yield return WaitForNavigation(driver);
+   driver.DispatchWorkers();
+   Assert.That(workers.Take(3).All(w=>AssignedSite(driver,w.Employee.Id)==siteA.Id),Is.True,
+    "Creating Site B and running its navigation-ready dispatch must preserve Site A assignments.");
+   Assert.That(AssignedSite(driver,workers[3].Employee.Id),Is.EqualTo(siteB.Id),
+    "The idle worker should fill Site B without taking an assigned Site A worker.");
+
+   var siteBAssignee=workers[3].Employee.Id;
+   foreach(var worker in workers.Take(3))
+    if(!driver.Service.CaptureAssignments().Single(a=>a.EmployeeId==worker.Employee.Id).Arrived)
+     Assert.That(driver.Service.WorkerArrived(worker.Employee.Id),Is.True);
+   var firstPhase=siteA.Phase;
+   for(int tick=0;siteA.Phase==firstPhase&&tick<8;tick++)
+   {
+    time.Clock.Advance(60);
+    while(!time.Clock.IsBoundaryComplete){time.Clock.Advance(0);yield return null;}
+    yield return null;
+   }
+   Assert.That(siteA.Phase,Is.Not.EqualTo(firstPhase),"Site A should progress into its next phase.");
+   Assert.That(AssignedSite(driver,siteBAssignee),Is.EqualTo(siteB.Id),
+    "A Site A phase transition must not clear an unrelated Site B assignment.");
+   Assert.That(workers.Take(3).Any(w=>driver.Service.HasAssignment(w.Employee.Id)),Is.True,
+    "Released Site A workers should be reconsidered after the phase transition.");
+
+   for(int tick=0;!siteA.IsOperational&&tick<40;tick++)
+   {
+    driver.DispatchWorkers();
+    foreach(var assignment in driver.Service.CaptureAssignments().Where(a=>a.BuildingId==siteA.Id&&!a.Arrived).ToArray())
+     Assert.That(driver.Service.WorkerArrived(assignment.EmployeeId),Is.True);
+    time.Clock.Advance(60);
+    while(!time.Clock.IsBoundaryComplete){time.Clock.Advance(0);yield return null;}
+    yield return null;
+   }
+   Assert.That(siteA.IsOperational,Is.True,"Site A should complete through the shared construction work service.");
+   yield return WaitForNavigation(driver);
+   driver.DispatchWorkers();
+   Assert.That(workers.Take(3).Any(w=>AssignedSite(driver,w.Employee.Id)==siteB.Id),Is.True,
+    "Workers released at Site A completion should be available to active Site B.");
+  }
+
+  static PlacedBuilding PlaceCastingOffice(StudioConstructionDriver driver)
+  {
+   var lot=driver.Lot.Buildable;
+   for(float x=lot.X-lot.Width/2+18;x<lot.X+lot.Width/2-18;x+=5)
+    for(float z=lot.Z-lot.Depth/2+18;z<lot.Z+lot.Depth/2-18;z+=5)
+    {
+     var pose=new BuildingPose(x,z,0);
+     if(driver.Service.Validate(StarterFeatureIds.Casting,pose)==null)
+      return driver.Service.Place(StarterFeatureIds.Casting,pose,out _);
+    }
+   return null;
+  }
+
+  static IEnumerator WaitForNavigation(StudioConstructionDriver driver)
+  {
+   float deadline=Time.realtimeSinceStartup+45;
+   while(driver.NavigationUpdatePending&&Time.realtimeSinceStartup<deadline)yield return null;
+   Assert.That(driver.NavigationUpdatePending,Is.False,"Coalesced NavMesh update should complete.");
+  }
+
+  static IEnumerator AddConstructionWorker(StudioConstructionDriver driver,SimulationTimeDriver time,
+   StudioEmployeeManager employees,string id,Action<EmployeeAgent> added)
+  {
+   var go=new GameObject(id);
+   var nav=go.AddComponent<NavMeshAgent>();
+   EmployeeNavigationProfile.Configure(nav,EmployeeNavigationProfile.Height,EmployeeNavigationProfile.Height/2);
+   var requested=driver.Lot.ApplicantArrival+Vector3.right*(employees.AllEmployees.Count*1.25f);
+   Assert.That(NavMesh.SamplePosition(requested,out var start,3f,NavMesh.AllAreas),Is.True,"Construction worker spawn must be on the lot NavMesh.");
+   nav.enabled=false;go.transform.position=start.position+Vector3.up*nav.baseOffset;nav.enabled=true;
+   yield return null;
+   Assert.That(nav.Warp(start.position),Is.True);
+   var agent=go.AddComponent<EmployeeAgent>();
+   var employee=new Employee(id,id,EmployeeRole.ConstructionWorker,50,100);
+   agent.BindDomain(employee);agent.BindTimeService(time.TimeService);
+   employees.RegisterEmployee(employee,agent);
+   added(agent);
+   yield return null;
+  }
+
+  static string AssignedSite(StudioConstructionDriver driver,string employeeId)
+   =>driver.Service.CaptureAssignments().SingleOrDefault(a=>a.EmployeeId==employeeId)?.BuildingId;
+
   static void Capture(UnityEngine.Camera camera,string name,GameObject root)
    =>SilverScreen.Editor.EnvironmentArt.StudioServicesProductionReview.Capture(camera,Out+"/"+name+".png",camera.transform.position,root.transform.TransformPoint(new Vector3(0,0,-5)),40,true,14);
+  static Bounds RoomBounds(ContextualDropTarget target)
+  {
+   var bounds=new Bounds(target.Placement.position,Vector3.zero);
+   foreach(var part in target.RoomParts)
+    foreach(var corner in new[]{new Vector3(part.xMin,0,part.yMin),new Vector3(part.xMax,0,part.yMin),
+     new Vector3(part.xMax,0,part.yMax),new Vector3(part.xMin,0,part.yMax)})
+     bounds.Encapsulate(target.transform.TransformPoint(corner));
+   bounds.Expand(new Vector3(.8f,4f,.8f));
+   return bounds;
+  }
  }
 }
