@@ -36,9 +36,13 @@ namespace SilverScreen.Presentation.Recruitment
   public Candidate Candidate{get;private set;}public bool IsSelected{get;private set;}
   public bool IsHeld { get; private set; }
   private bool _resumeRoute;
+  private SilverScreen.Presentation.Characters.CharacterPresentation _characterPresentation;
+  public void RebindPresentation(){_characterPresentation=GetComponent<SilverScreen.Presentation.Characters.CharacterPresentation>();if(_characterPresentation!=null){_characterPresentation.BindPerson(Candidate.Person);_characterPresentation.BindTimeService(_time);}}
+  public void PreparePresentationReplacement()=>RestoreBody();
   private Transform _waitingVisual;private Renderer _bodyRenderer;private float _idlePhase;
   private void UpdateWaitingIdle()
   {
+   if(_characterPresentation!=null&&_characterPresentation.IsCanonical){_characterPresentation.SetWaiting(!IsHeld&&Candidate?.Status==CandidateStatus.WaitingForRecruitment);return;}
    if(_waitingVisual==null&&!IsHeld&&Candidate?.IsTalentApplicant==true&&Candidate.Status==CandidateStatus.WaitingForRecruitment){
     var held=GetComponent<SilverScreen.Presentation.Interaction.HeldPersonPresentation>();
     if(held!=null&&held.State!=SilverScreen.Presentation.Interaction.HeldPersonPresentationState.Normal)return;
@@ -54,7 +58,7 @@ namespace SilverScreen.Presentation.Recruitment
   }
   private void RestoreBody()
   {
-   if(_bodyRenderer!=null)_bodyRenderer.enabled=true;
+   if(_bodyRenderer!=null&&(_characterPresentation==null||!_characterPresentation.IsCanonical))_bodyRenderer.enabled=true;
    if(_waitingVisual!=null){Destroy(_waitingVisual.gameObject);_waitingVisual=null;}
   }
   public void SetHeld(bool held)
@@ -77,7 +81,7 @@ namespace SilverScreen.Presentation.Recruitment
   private void Update(){UpdateWaitingIdle();if(IsHeld)return;if(_resumeRoute && _nav.isOnNavMesh){_resumeRoute=false;_nav.SetDestination(_destination);}if(_arrival==null||_time!=null&&_time.IsPaused||_nav.pathPending)return;if(!_nav.hasPath||_nav.remainingDistance<=_nav.stoppingDistance+.2f){var callback=_arrival;_arrival=null;callback(_nav.isOnNavMesh && _nav.pathStatus == NavMeshPathStatus.PathComplete && Vector3.Distance(new Vector3(transform.position.x,0,transform.position.z),new Vector3(_destination.x,0,_destination.z)) <= _nav.stoppingDistance+.3f);}}
   private void OnDestroy(){if(_time!=null)_time.OnSpeedChanged-=HandleSpeed;}
   public void Bind(Candidate candidate,ISimulationTimeService time){Candidate=candidate;
-   if(_time!=null)_time.OnSpeedChanged-=HandleSpeed;_time=time;if(_time!=null)_time.OnSpeedChanged+=HandleSpeed;ApplySpeed();}
+   if(_time!=null)_time.OnSpeedChanged-=HandleSpeed;_time=time;if(_time!=null)_time.OnSpeedChanged+=HandleSpeed;RebindPresentation();ApplySpeed();}
   public bool TryMove(Vector3 destination,Action<bool> arrival){if(IsHeld){_destination=destination;_arrival=arrival;return true;}if(_nav==null||!_nav.isActiveAndEnabled||!_nav.isOnNavMesh||!_nav.SetDestination(destination))return false;_destination=destination;_arrival=arrival;if(_time!=null&&_time.IsPaused)_nav.isStopped=true;return true;}
   public void SetSelectionIndicator(GameObject indicator){_selection=indicator;_selection.SetActive(IsSelected);}public void SetSelected(bool value){IsSelected=value;if(_selection!=null)_selection.SetActive(value);}
   private void HandleSpeed(SimulationSpeed unused)=>ApplySpeed();private void ApplySpeed(){if(IsHeld||_nav==null||!_nav.isOnNavMesh)return;bool paused=_time!=null&&_time.IsPaused;_nav.isStopped=paused;if(!paused)_nav.speed=_baseSpeed;}
@@ -94,7 +98,8 @@ namespace SilverScreen.Presentation.Recruitment
   public CandidateRouteResult RouteToExit(Candidate candidate,Action<CandidateRouteResult,int> complete){if(candidate==null)return CandidateRouteResult.CandidateMissing;if(!_candidateAreas.TryGetValue(candidate.Person.Id,out var area)||area==null)return CandidateRouteResult.RecruitmentLocationMissing;if(!_agents.TryGetValue(candidate.Person.Id,out var agent))return CandidateRouteResult.AgentMissing;area.Release(candidate.Person.Id);if(!agent.TryMove(_lot!=null?_lot.ApplicantArrival:area.ExitPoint.position,ok=>complete(ok?CandidateRouteResult.Started:CandidateRouteResult.NavigationRejected,-1)))return CandidateRouteResult.NavigationRejected;return CandidateRouteResult.Started;}
   public void ReleaseCandidate(Candidate candidate){if(candidate==null)return;if(_candidateAreas.TryGetValue(candidate.Person.Id,out var area)){if(area!=null)area.Release(candidate.Person.Id);_candidateAreas.Remove(candidate.Person.Id);}if(_agents.TryGetValue(candidate.Person.Id,out var agent)){_agents.Remove(candidate.Person.Id);if(agent!=null)Destroy(agent.gameObject);}}
   public CandidateAgent GetAgent(Candidate candidate)=>candidate!=null&&_agents.TryGetValue(candidate.Person.Id,out var agent)?agent:null;
-  public EmployeeAgent ConvertToEmployee(Candidate candidate,Employee employee){if(!_agents.TryGetValue(candidate.Person.Id,out var candidateAgent))return null;var go=candidateAgent.gameObject;_agents.Remove(candidate.Person.Id);if(_candidateAreas.TryGetValue(candidate.Person.Id,out var area)){if(area!=null)area.Release(candidate.Person.Id);_candidateAreas.Remove(candidate.Person.Id);}candidateAgent.PrepareConversion();Destroy(candidateAgent);var employeeAgent=go.AddComponent<EmployeeAgent>();employeeAgent.BindDomain(employee);employeeAgent.BindTimeService(_time);var ring=go.transform.Find("SelectionRing")?.gameObject;if(ring!=null)employeeAgent.SetSelectionIndicator(ring);return employeeAgent;}
+  public EmployeeAgent ConvertToEmployee(Candidate candidate,Employee employee){if(!_agents.TryGetValue(candidate.Person.Id,out var candidateAgent))return null;var go=candidateAgent.gameObject;_agents.Remove(candidate.Person.Id);if(_candidateAreas.TryGetValue(candidate.Person.Id,out var area)){if(area!=null)area.Release(candidate.Person.Id);_candidateAreas.Remove(candidate.Person.Id);}bool selected=candidateAgent.IsSelected;bool held=candidateAgent.IsHeld;candidateAgent.PrepareConversion();Destroy(candidateAgent);var employeeAgent=go.AddComponent<EmployeeAgent>();employeeAgent.BindDomain(employee);employeeAgent.BindTimeService(_time);var ring=go.transform.Find("SelectionRing")?.gameObject;if(ring!=null)employeeAgent.SetSelectionIndicator(ring);employeeAgent.SetSelected(selected);if(held)employeeAgent.SetHeld(true);return employeeAgent;}
+  public void RegisterExistingCandidate(CandidateAgent agent){if(agent==null||agent.Candidate==null)throw new ArgumentException("Bound candidate required.");if(_agents.TryGetValue(agent.Candidate.Person.Id,out var prior)&&prior!=agent)throw new InvalidOperationException("Candidate already has a root.");_agents[agent.Candidate.Person.Id]=agent;}
   public void UnregisterArea(string id)=>_facilityAreas.Remove(id);
   public bool CanReceive(CandidateWaitingAreaView area)
   {

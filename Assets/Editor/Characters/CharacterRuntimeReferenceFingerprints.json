@@ -1,0 +1,288 @@
+{
+  "references": [
+    {
+      "family": 1,
+      "referencePrefab": "Assets/SilverScreen/Art/Characters/FemaleBlinkPrototype/SS_FemaleBlinkPrototype.prefab",
+      "recipe": "Docs/FemaleBlinkBothUnityValidation.md",
+      "files": [
+        {
+          "path": "Assets/SilverScreen/Art/Characters/FemaleBlinkPrototype/SS_FemaleBlinkPrototype.prefab",
+          "sha256": "32d1fcd88d36779401c509aa59e6c31a702b63170716bb381639a37205406b88"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/FemaleBlinkPrototype/SS_FemaleBlinkPrototype.prefab.meta",
+          "sha256": "7ad392c55e5b4a137bc52a438081ec527f3c46efb09df862f69f8dadd2fb153c"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Animation/Walk.fbx",
+          "sha256": "55c9d40f0eb15ae9c9aba5b160703e0f7b5d95421c17353844b547e593a618c5"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Animation/Walk.fbx.meta",
+          "sha256": "96d08528ed45268c8ed3ce3a413f85f7bbd2bd028d910df921cfd585d20b63cd"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Animation/Run.fbx",
+          "sha256": "8b8ef4b6c2d3b58fad8c7a4998a687db97e1b3df3836c04e452b56d086287260"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Animation/Run.fbx.meta",
+          "sha256": "47806cfc09ee9f5017b612e18e5db82d8f1c360685339d9d5eb9d86f6a3dd420"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Animation/PrototypeLocomotion.controller",
+          "sha256": "cd70ca9ed2c386a66a5998071f310ef0f29060c999841d27e3e1ab227417ea05"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Animation/PrototypeLocomotion.controller.meta",
+          "sha256": "1fc18721957e177bd16dc352feb9584d3928666b3a111f2c6a8b8ea4871c6b57"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Animation/Idle.fbx",
+          "sha256": "c9429af3ad8ffb682defbaf39f2dee8bf9f6f083ce7820b5695489ab86ddbb3d"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Animation/Idle.fbx.meta",
+          "sha256": "72d878dc341b55438654b4a2159689628fb3a2d7f9fc63f27bc7052708c47d30"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Materials/SuppliedNeutralURP.mat",
+          "sha256": "303c9e32f041cb11aa82ac354c444dafb473cc7ac0e88b405ddff97e65ac15ed"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Materials/SuppliedNeutralURP.mat.meta",
+          "sha256": "88a6b522510f654e1df8dcdf07deb2d3da52ac16641102ab379e5f45d46c6d7f"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Models/AdultFemale.fbx",
+          "sha256": "5891b551d6ad4fb5c4d451c66301c14a27da77ac42e48a2eab82b772fc98e9e0"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Models/AdultFemale.fbx.meta",
+          "sha256": "6c9f786461363d2f0a7691f85bbc3aa51d5357123e67787bde1809fe03143e3f"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/FemaleBlinkPrototype/AdultFemaleBald_BlinkBoth.asset",
+          "sha256": "48d18f2d8ea4e446323d32340ffa24cdd6a09c4ec088cf97bd82d68fc5c71527"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/FemaleBlinkPrototype/AdultFemaleBald_BlinkBoth.asset.meta",
+          "sha256": "023d0bc01ad8d915f5bfa1341342b5c4cddf7a6cef11c0e25ea10736cc743c4f"
+        }
+      ]
+    },
+    {
+      "family": 2,
+      "referencePrefab": "Assets/SilverScreen/Art/Characters/MaleFoundationPrototype/SS_MaleBlinkPrototype.prefab",
+      "recipe": "Docs/MaleCanonicalFoundationValidation.md",
+      "files": [
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Animation/Walk.fbx",
+          "sha256": "55c9d40f0eb15ae9c9aba5b160703e0f7b5d95421c17353844b547e593a618c5"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Animation/Walk.fbx.meta",
+          "sha256": "96d08528ed45268c8ed3ce3a413f85f7bbd2bd028d910df921cfd585d20b63cd"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Animation/Run.fbx",
+          "sha256": "8b8ef4b6c2d3b58fad8c7a4998a687db97e1b3df3836c04e452b56d086287260"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Animation/Run.fbx.meta",
+          "sha256": "47806cfc09ee9f5017b612e18e5db82d8f1c360685339d9d5eb9d86f6a3dd420"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/MaleFoundationPrototype/Models/AdultMale.fbx",
+          "sha256": "220d742edfc2abb6bda9f3ad5a2472d25f90ba8773dbd413e93a2dd06c87c0e3"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/MaleFoundationPrototype/Models/AdultMale.fbx.meta",
+          "sha256": "cc5bfc5edcb6163cb0f9aa3776e9ace7950404f9a4d46c6475be845da83c6e6a"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Animation/PrototypeLocomotion.controller",
+          "sha256": "cd70ca9ed2c386a66a5998071f310ef0f29060c999841d27e3e1ab227417ea05"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Animation/PrototypeLocomotion.controller.meta",
+          "sha256": "1fc18721957e177bd16dc352feb9584d3928666b3a111f2c6a8b8ea4871c6b57"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/MaleFoundationPrototype/SS_MaleBlinkPrototype.prefab",
+          "sha256": "b53af4df2c5b687b60b4415895e827462d8b51110da1096d3fb6f6f9812f6873"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/MaleFoundationPrototype/SS_MaleBlinkPrototype.prefab.meta",
+          "sha256": "5203cc57d629bd3671fdec10a90131675be415dca5ee82e4d94446079bb25ce5"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Animation/Idle.fbx",
+          "sha256": "c9429af3ad8ffb682defbaf39f2dee8bf9f6f083ce7820b5695489ab86ddbb3d"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Animation/Idle.fbx.meta",
+          "sha256": "72d878dc341b55438654b4a2159689628fb3a2d7f9fc63f27bc7052708c47d30"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/MaleFoundationPrototype/AdultMaleBald_BlinkBoth.asset",
+          "sha256": "fa587230634f682591694ed01ea74d3d0d4579b42290b6c0f555369e8f4698a6"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/MaleFoundationPrototype/AdultMaleBald_BlinkBoth.asset.meta",
+          "sha256": "7332a8c9848e9784c0c008942f71a1bb764fb53ff4a238dcc2c4ceb5432b7586"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Materials/SuppliedNeutralURP.mat",
+          "sha256": "303c9e32f041cb11aa82ac354c444dafb473cc7ac0e88b405ddff97e65ac15ed"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Materials/SuppliedNeutralURP.mat.meta",
+          "sha256": "88a6b522510f654e1df8dcdf07deb2d3da52ac16641102ab379e5f45d46c6d7f"
+        }
+      ]
+    },
+    {
+      "family": 3,
+      "referencePrefab": "Assets/SilverScreen/Art/Characters/BoyFoundationPrototype/SS_BoyBlinkPrototype.prefab",
+      "recipe": "Docs/BoyCanonicalReferenceValidation.md",
+      "files": [
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Animation/Walk.fbx",
+          "sha256": "55c9d40f0eb15ae9c9aba5b160703e0f7b5d95421c17353844b547e593a618c5"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Animation/Walk.fbx.meta",
+          "sha256": "96d08528ed45268c8ed3ce3a413f85f7bbd2bd028d910df921cfd585d20b63cd"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/BoyFoundationPrototype/BoyBald_BlinkBoth.asset",
+          "sha256": "6498ae6f8d0b99f58f600851b68ba8b27818f7d15699dd158a301b5c0bd2b0bb"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/BoyFoundationPrototype/BoyBald_BlinkBoth.asset.meta",
+          "sha256": "a30e3dc16f7c606c1ce6aaf8ec9cd119bb5c50c09478dfe7ffd1f7536da20ee5"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/ChildFoundationPrototype/Boy/Boy.fbx",
+          "sha256": "eeb40153409f883104f4dbf29da23bdf7e415546d57fc4893d4a7af317d3c4df"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/ChildFoundationPrototype/Boy/Boy.fbx.meta",
+          "sha256": "ccb597c3f6ba1e431601653f1a95bd61ffa77e1c8f6d824d7f18b79ea00fa9a9"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Animation/Run.fbx",
+          "sha256": "8b8ef4b6c2d3b58fad8c7a4998a687db97e1b3df3836c04e452b56d086287260"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Animation/Run.fbx.meta",
+          "sha256": "47806cfc09ee9f5017b612e18e5db82d8f1c360685339d9d5eb9d86f6a3dd420"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Animation/PrototypeLocomotion.controller",
+          "sha256": "cd70ca9ed2c386a66a5998071f310ef0f29060c999841d27e3e1ab227417ea05"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Animation/PrototypeLocomotion.controller.meta",
+          "sha256": "1fc18721957e177bd16dc352feb9584d3928666b3a111f2c6a8b8ea4871c6b57"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Animation/Idle.fbx",
+          "sha256": "c9429af3ad8ffb682defbaf39f2dee8bf9f6f083ce7820b5695489ab86ddbb3d"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Animation/Idle.fbx.meta",
+          "sha256": "72d878dc341b55438654b4a2159689628fb3a2d7f9fc63f27bc7052708c47d30"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Materials/SuppliedNeutralURP.mat",
+          "sha256": "303c9e32f041cb11aa82ac354c444dafb473cc7ac0e88b405ddff97e65ac15ed"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Materials/SuppliedNeutralURP.mat.meta",
+          "sha256": "88a6b522510f654e1df8dcdf07deb2d3da52ac16641102ab379e5f45d46c6d7f"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/BoyFoundationPrototype/SS_BoyBlinkPrototype.prefab",
+          "sha256": "41e5acd5795846397528632adca12bf338f9889b61cbb234a7d361796bf72bf1"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/BoyFoundationPrototype/SS_BoyBlinkPrototype.prefab.meta",
+          "sha256": "6990631c48c5ab405c53934bee2bfcc8f6e79dc421e65bb13f7444182f5dabc2"
+        }
+      ]
+    },
+    {
+      "family": 4,
+      "referencePrefab": "Assets/SilverScreen/Art/Characters/GirlFoundationPrototype/SS_GirlBlinkPrototype.prefab",
+      "recipe": "Docs/GirlCanonicalReferenceValidation.md",
+      "files": [
+        {
+          "path": "Assets/SilverScreen/Art/Characters/GirlFoundationPrototype/SS_GirlBlinkPrototype.prefab",
+          "sha256": "3af50f9892f6a5cc1f35373d62cf9c066422ca2560bc70cf67c5a18260f2fec3"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/GirlFoundationPrototype/SS_GirlBlinkPrototype.prefab.meta",
+          "sha256": "19f1f0f2cc6bdd8ddceb483e10a1b81bc3071ee81c223af0a440c89c40cf16e7"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Animation/Walk.fbx",
+          "sha256": "55c9d40f0eb15ae9c9aba5b160703e0f7b5d95421c17353844b547e593a618c5"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Animation/Walk.fbx.meta",
+          "sha256": "96d08528ed45268c8ed3ce3a413f85f7bbd2bd028d910df921cfd585d20b63cd"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Animation/Run.fbx",
+          "sha256": "8b8ef4b6c2d3b58fad8c7a4998a687db97e1b3df3836c04e452b56d086287260"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Animation/Run.fbx.meta",
+          "sha256": "47806cfc09ee9f5017b612e18e5db82d8f1c360685339d9d5eb9d86f6a3dd420"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/ChildFoundationPrototype/Girl/Girl.fbx",
+          "sha256": "37986d08d3fc659b48172f2c0026d594a3b570fd6d98a4ba15233221f90b268f"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/ChildFoundationPrototype/Girl/Girl.fbx.meta",
+          "sha256": "dfee3aa81c9ec3f53e23b9e93c1e1f87a0315da7c2e7ffc716ab8747f23dd75c"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Animation/PrototypeLocomotion.controller",
+          "sha256": "cd70ca9ed2c386a66a5998071f310ef0f29060c999841d27e3e1ab227417ea05"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Animation/PrototypeLocomotion.controller.meta",
+          "sha256": "1fc18721957e177bd16dc352feb9584d3928666b3a111f2c6a8b8ea4871c6b57"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Animation/Idle.fbx",
+          "sha256": "c9429af3ad8ffb682defbaf39f2dee8bf9f6f083ce7820b5695489ab86ddbb3d"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Animation/Idle.fbx.meta",
+          "sha256": "72d878dc341b55438654b4a2159689628fb3a2d7f9fc63f27bc7052708c47d30"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Materials/SuppliedNeutralURP.mat",
+          "sha256": "303c9e32f041cb11aa82ac354c444dafb473cc7ac0e88b405ddff97e65ac15ed"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/HumanBasePrototype/Materials/SuppliedNeutralURP.mat.meta",
+          "sha256": "88a6b522510f654e1df8dcdf07deb2d3da52ac16641102ab379e5f45d46c6d7f"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/GirlFoundationPrototype/GirlBald_BlinkBoth.asset",
+          "sha256": "23981f4b596bdb65fca0140d1c823f32488bbe6f676deb27717f34d8672572df"
+        },
+        {
+          "path": "Assets/SilverScreen/Art/Characters/GirlFoundationPrototype/GirlBald_BlinkBoth.asset.meta",
+          "sha256": "f18977490cda60cff37c03f6919d99e4d13c5e07f829d595aa5e0d488171ac71"
+        }
+      ]
+    }
+  ]
+}

@@ -72,6 +72,10 @@
 /Assets/SilverScreen/Art/Characters/GirlFoundationPrototype/
 /Assets/SilverScreen/Art/Characters/GirlFoundationPrototype.meta
 
+# Local licensed visual-only runtime wrappers and optional catalogue.
+/Assets/SilverScreen/Art/Characters/CharacterRuntimeGenerated/
+/Assets/SilverScreen/Art/Characters/CharacterRuntimeGenerated.meta
+
 # Addressables-generated content
 /ServerData/
 /Assets/StreamingAssets/aa/

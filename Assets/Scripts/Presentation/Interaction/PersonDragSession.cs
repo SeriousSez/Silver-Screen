@@ -16,6 +16,7 @@ namespace SilverScreen.Presentation.Interaction
         public CandidateAgent Candidate { get; }
         public bool IsHeld { get; private set; }
         private readonly NavMeshAgent _nav;
+        private readonly float _carryLift;
         private HeldPersonPresentation _presentation;
         private readonly Vector3 _original;
         private readonly Quaternion _rotation;
@@ -29,6 +30,8 @@ namespace SilverScreen.Presentation.Interaction
         private PersonDragSession(Transform root, EmployeeAgent employee, CandidateAgent candidate, NavMeshAgent nav)
         {
             Root = root; Employee = employee; Candidate = candidate; _nav = nav;
+            var character = root.GetComponent<SilverScreen.Presentation.Characters.CharacterPresentation>();
+            _carryLift = character != null && character.IsCanonical ? character.PhysicalProfile.CarryLift : 1.2f;
             _original = root.position; _rotation = root.rotation;
             _updatePosition = nav.updatePosition; _updateRotation = nav.updateRotation;
             _colliders = root.GetComponentsInChildren<Collider>(); _enabled = new bool[_colliders.Length];
@@ -50,7 +53,7 @@ namespace SilverScreen.Presentation.Interaction
             session._presentation.BeginHeld();
             return session;
         }
-        public void Follow(Vector3 ground) { if (IsHeld && Root != null) Root.position = ground + Vector3.up * (_nav.baseOffset + 1.2f); }
+        public void Follow(Vector3 ground) { if (IsHeld && Root != null) Root.position = ground + Vector3.up * (_nav.baseOffset + _carryLift); }
         public bool TryDrop(Vector3 requested, StudioBuildLot lot, Quaternion? facing = null, PersonReleasePresentation presentation = PersonReleasePresentation.Ground)
         {
             if (!IsHeld || Root == null || !TryValidateGround(requested, _nav, Root, lot, out var ground)) return false;
@@ -61,7 +64,7 @@ namespace SilverScreen.Presentation.Interaction
             if (!IsHeld || Root == null || !TryValidateGround(requested, _nav, Root, lot, out var ground)) return false;
             var heldPosition = Root.position; var heldRotation = Root.rotation;
             var navigationPosition = _nav.nextPosition;
-            if (!_nav.Warp(ground)) return false;
+            if (!_nav.isActiveAndEnabled || !_nav.isOnNavMesh || !_nav.Warp(ground)) return false;
             Root.SetPositionAndRotation(ground + Vector3.up * _nav.baseOffset, facing);
             // Domain callbacks see the actual placement (including hiring's replacement view).
             // Failed actions leave the same session held, never silently convert into a ground drop.
@@ -87,7 +90,7 @@ namespace SilverScreen.Presentation.Interaction
         private bool Place(Vector3 ground, Quaternion rotation, PersonReleasePresentation presentation)
         {
             // Warp is a placement, never a route to the cursor. Obligations resume on a later agent update.
-            if (!_nav.Warp(ground)) return false;
+            if (!_nav.isActiveAndEnabled || !_nav.isOnNavMesh || !_nav.Warp(ground)) return false;
             _nav.ResetPath();
             Root.SetPositionAndRotation(ground + Vector3.up * _nav.baseOffset, rotation);
             Restore(presentation);
@@ -103,7 +106,13 @@ namespace SilverScreen.Presentation.Interaction
                 if (_nav.isOnNavMesh) _nav.isStopped = false;
             }
             for (int i = 0; i < _colliders.Length; i++) if (_colliders[i] != null) _colliders[i].enabled = _enabled[i];
-            Employee?.SetHeld(false); Candidate?.SetHeld(false);
+            // A transactional hire may replace the agent while this root/session survives.
+            if (Root != null)
+            {
+                var employee = Root.GetComponent<EmployeeAgent>();
+                if (employee != null) employee.SetHeld(false);
+                else Root.GetComponent<CandidateAgent>()?.SetHeld(false);
+            }
         }
         public static bool TryValidateGround(Vector3 point, NavMeshAgent nav, Transform person, StudioBuildLot lot, out Vector3 ground, Collider[] overlaps = null)
         {
@@ -119,8 +128,10 @@ namespace SilverScreen.Presentation.Interaction
             if (!NavMesh.SamplePosition(point, out var hit, .15f, filter)) return false;
             ground = hit.position;
             float radius = nav.radius;
-            var bottom = ground + Vector3.up * (radius + .06f);
-            var top = ground + Vector3.up * Mathf.Max(radius + .06f, nav.height - radius);
+            var character = person != null ? person.GetComponent<SilverScreen.Presentation.Characters.CharacterPresentation>() : null;
+            float clearance = character != null && character.IsCanonical ? character.PhysicalProfile.PlacementGroundClearance : .06f;
+            var bottom = ground + Vector3.up * (radius + clearance);
+            var top = ground + Vector3.up * Mathf.Max(radius + clearance, nav.height - radius);
             int count;
             if (overlaps == null) { overlaps = Physics.OverlapCapsule(bottom, top, radius, ~0, QueryTriggerInteraction.Ignore); count = overlaps.Length; }
             else

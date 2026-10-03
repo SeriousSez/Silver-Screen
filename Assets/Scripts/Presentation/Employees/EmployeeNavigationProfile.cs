@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using SilverScreen.Presentation.Characters;
 
 namespace SilverScreen.Presentation.Employees
 {
@@ -40,6 +41,9 @@ namespace SilverScreen.Presentation.Employees
 
         public static void Apply(GameObject employee)
         {
+            var presentation = employee.GetComponent<CharacterPresentation>();
+            if (presentation != null && presentation.IsCanonical)
+            { Apply(employee, presentation.PhysicalProfile); return; }
             var nav = employee.GetComponent<NavMeshAgent>();
             if (nav != null) Configure(nav, Height, Height / 2);
             var capsule = employee.GetComponent<CapsuleCollider>();
@@ -52,6 +56,17 @@ namespace SilverScreen.Presentation.Employees
             if (filter != null && filter.sharedMesh != null &&
                 (filter.sharedMesh.name == "Capsule" || filter.sharedMesh.name == "EmployeeBody_060x200"))
                 filter.sharedMesh = BodyMesh;
+        }
+
+        public static void Apply(GameObject person, CharacterPhysicalProfile profile)
+        {
+            if (!profile.TryValidate(out var reason)) throw new System.ArgumentException(reason);
+            var nav = person.GetComponent<NavMeshAgent>();
+            if (nav != null)
+            { Configure(nav, profile.NavigationHeight, profile.BaseOffset); nav.radius = profile.NavigationRadius; }
+            var capsule = person.GetComponent<CapsuleCollider>();
+            if (capsule != null)
+            { capsule.height = profile.CapsuleHeight; capsule.radius = profile.CapsuleRadius; capsule.center = profile.CapsuleCenter; capsule.direction = 1; }
         }
     }
 }

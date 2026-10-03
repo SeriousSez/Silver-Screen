@@ -1,0 +1,215 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b07f8fadbfdbd4458245c20a972d538, type: 3}
+  m_Name: AdultFemale
+  m_EditorClassIdentifier: Assembly-CSharp::SilverScreen.Presentation.Characters.CharacterFamilyDefinition
+  _family: 1
+  _definitionId: silverscreen.canonical.adultfemale.v1
+  _version: 1
+  _defaultPhysicalProfile:
+    _bodyHeight: 1.6753788
+    _navigationHeight: 1.6753788
+    _navigationRadius: 0.2161468
+    _baseOffset: 0.8376894
+    _capsuleHeight: 1.6753788
+    _capsuleRadius: 0.2161468
+    _capsuleCenter: {x: 0, y: 0, z: 0}
+    _suspensionPivot: {x: 0, y: 1.375627, z: -0.0752359}
+    _informationAnchor: {x: 0, y: 1.7553788, z: 0}
+    _carryLift: 1.2
+    _selectionGroundClearance: 0.02
+    _placementGroundClearance: 0.06
+  _facialBinding:
+    _entries:
+    - _semantic: 1
+      _capability: 1
+      _rawChannel: jawForward
+      _reason: Validated canonical-reference channel; foundation technical approval only.
+      _normalizedMinimum: 0
+      _normalizedMaximum: 1
+    - _semantic: 2
+      _capability: 1
+      _rawChannel: jawLeft
+      _reason: Validated canonical-reference channel; foundation technical approval only.
+      _normalizedMinimum: 0
+      _normalizedMaximum: 1
+    - _semantic: 3
+      _capability: 1
+      _rawChannel: jawRight
+      _reason: Validated canonical-reference channel; foundation technical approval only.
+      _normalizedMinimum: 0
+      _normalizedMaximum: 1
+    - _semantic: 4
+      _capability: 1
+      _rawChannel: jawOpen
+      _reason: Validated canonical-reference channel; foundation technical approval only.
+      _normalizedMinimum: 0
+      _normalizedMaximum: 1
+    - _semantic: 5
+      _capability: 1
+      _rawChannel: mouthClose
+      _reason: Validated canonical-reference channel; foundation technical approval only.
+      _normalizedMinimum: 0
+      _normalizedMaximum: 1
+    - _semantic: 6
+      _capability: 1
+      _rawChannel: mouthFunnel
+      _reason: Validated canonical-reference channel; foundation technical approval only.
+      _normalizedMinimum: 0
+      _normalizedMaximum: 1
+    - _semantic: 7
+      _capability: 1
+      _rawChannel: mouthPucker
+      _reason: Validated canonical-reference channel; foundation technical approval only.
+      _normalizedMinimum: 0
+      _normalizedMaximum: 1
+    - _semantic: 8
+      _capability: 1
+      _rawChannel: mouthLeft
+      _reason: Validated canonical-reference channel; foundation technical approval only.
+      _normalizedMinimum: 0
+      _normalizedMaximum: 1
+    - _semantic: 9
+      _capability: 1
+      _rawChannel: mouthRight
+      _reason: Validated canonical-reference channel; foundation technical approval only.
+      _normalizedMinimum: 0
+      _normalizedMaximum: 1
+    - _semantic: 10
+      _capability: 1
+      _rawChannel: mouthSmileLeft
+      _reason: Validated canonical-reference channel; foundation technical approval only.
+      _normalizedMinimum: 0
+      _normalizedMaximum: 1
+    - _semantic: 11
+      _capability: 1
+      _rawChannel: mouthSmileRight
+      _reason: Validated canonical-reference channel; foundation technical approval only.
+      _normalizedMinimum: 0
+      _normalizedMaximum: 1
+    - _semantic: 12
+      _capability: 2
+      _rawChannel: mouthFrownLeft
+      _reason: Supplied non-finite channel; rejected by FemaleBaldBaseAudit. No mirrored substitute.
+      _normalizedMinimum: 0
+      _normalizedMaximum: 1
+    - _semantic: 13
+      _capability: 1
+      _rawChannel: mouthFrownRight
+      _reason: Validated canonical-reference channel; foundation technical approval only.
+      _normalizedMinimum: 0
+      _normalizedMaximum: 1
+    - _semantic: 14
+      _capability: 2
+      _rawChannel: mouthDimpleLeft
+      _reason: Supplied non-finite channel; rejected by FemaleBaldBaseAudit. No mirrored substitute.
+      _normalizedMinimum: 0
+      _normalizedMaximum: 1
+    - _semantic: 15
+      _capability: 1
+      _rawChannel: mouthDimpleRight
+      _reason: Validated canonical-reference channel; foundation technical approval only.
+      _normalizedMinimum: 0
+      _normalizedMaximum: 1
+    - _semantic: 16
+      _capability: 2
+      _rawChannel: mouthStretchLeft
+      _reason: Supplied non-finite channel; rejected by FemaleBaldBaseAudit. No mirrored substitute.
+      _normalizedMinimum: 0
+      _normalizedMaximum: 1
+    - _semantic: 17
+      _capability: 1
+      _rawChannel: mouthStretchRight
+      _reason: Validated canonical-reference channel; foundation technical approval only.
+      _normalizedMinimum: 0
+      _normalizedMaximum: 1
+    - _semantic: 18
+      _capability: 1
+      _rawChannel: mouthRollLower
+      _reason: Validated canonical-reference channel; foundation technical approval only.
+      _normalizedMinimum: 0
+      _normalizedMaximum: 1
+    - _semantic: 19
+      _capability: 1
+      _rawChannel: mouthRollUpper
+      _reason: Validated canonical-reference channel; foundation technical approval only.
+      _normalizedMinimum: 0
+      _normalizedMaximum: 1
+    - _semantic: 20
+      _capability: 2
+      _rawChannel: mouthShrugtLower
+      _reason: Supplied non-finite channel; rejected by FemaleBaldBaseAudit. No mirrored substitute.
+      _normalizedMinimum: 0
+      _normalizedMaximum: 1
+    - _semantic: 21
+      _capability: 2
+      _rawChannel: mouthShrugtUpper
+      _reason: Supplied non-finite channel; rejected by FemaleBaldBaseAudit. No mirrored substitute.
+      _normalizedMinimum: 0
+      _normalizedMaximum: 1
+    - _semantic: 22
+      _capability: 1
+      _rawChannel: mouthPressLeft
+      _reason: Validated canonical-reference channel; foundation technical approval only.
+      _normalizedMinimum: 0
+      _normalizedMaximum: 1
+    - _semantic: 23
+      _capability: 1
+      _rawChannel: mouthPressRight
+      _reason: Validated canonical-reference channel; foundation technical approval only.
+      _normalizedMinimum: 0
+      _normalizedMaximum: 1
+    - _semantic: 24
+      _capability: 2
+      _rawChannel: mouthLowerDownLeft
+      _reason: Supplied non-finite channel; rejected by FemaleBaldBaseAudit. No mirrored substitute.
+      _normalizedMinimum: 0
+      _normalizedMaximum: 1
+    - _semantic: 25
+      _capability: 1
+      _rawChannel: mouthLowerDownRight
+      _reason: Validated canonical-reference channel; foundation technical approval only.
+      _normalizedMinimum: 0
+      _normalizedMaximum: 1
+    - _semantic: 26
+      _capability: 1
+      _rawChannel: mouthUpperUpLeft
+      _reason: Validated canonical-reference channel; foundation technical approval only.
+      _normalizedMinimum: 0
+      _normalizedMaximum: 1
+    - _semantic: 27
+      _capability: 1
+      _rawChannel: mouthUpperUpRight
+      _reason: Validated canonical-reference channel; foundation technical approval only.
+      _normalizedMinimum: 0
+      _normalizedMaximum: 1
+    - _semantic: 28
+      _capability: 1
+      _rawChannel: cheekPuff
+      _reason: Validated canonical-reference channel; foundation technical approval only.
+      _normalizedMinimum: 0
+      _normalizedMaximum: 1
+    - _semantic: 29
+      _capability: 1
+      _rawChannel: tongueOut
+      _reason: Validated canonical-reference channel; foundation technical approval only.
+      _normalizedMinimum: 0
+      _normalizedMaximum: 1
+    - _semantic: 0
+      _capability: 1
+      _rawChannel: BlinkBoth
+      _reason: Validated canonical-reference channel; foundation technical approval only.
+      _normalizedMinimum: 0
+      _normalizedMaximum: 1
+  _requiresHumanoid: 1
+  _minimumBlinkFrames: 20
+  _capabilityNotes: Foundation technical reference; neutral grey is not art approval. Six supplied lower-face channels rejected.

@@ -116,9 +116,11 @@ namespace SilverScreen.Presentation.Employees
         private Action _onBeatCompleted;
         private Quaternion _beatStartRotation;
         private bool _genericFilmingPresentationEnabled = true;
+        private SilverScreen.Presentation.Characters.CharacterPresentation _characterPresentation;
 
         private void Awake()
         {
+            _characterPresentation = GetComponent<SilverScreen.Presentation.Characters.CharacterPresentation>();
             if (_navAgent == null) _navAgent = GetComponent<NavMeshAgent>();
             EmployeeNavigationProfile.Apply(gameObject);
             _homeCenter = transform.position;
@@ -193,6 +195,9 @@ namespace SilverScreen.Presentation.Employees
         public void BindDomain(Employee employee)
         {
             Employee = employee;
+            _characterPresentation = GetComponent<SilverScreen.Presentation.Characters.CharacterPresentation>();
+            if (_characterPresentation != null)
+            { _characterPresentation.BindPerson(employee.Person); _characterPresentation.SetWaiting(false); _characterPresentation.BindTimeService(_timeService); }
         }
 
         public void BindAutonomy(PersonAutonomySimulation autonomy)
@@ -219,6 +224,7 @@ namespace SilverScreen.Presentation.Employees
             }
 
             _timeService = timeService;
+            _characterPresentation?.BindTimeService(timeService);
 
             if (_timeService != null)
             {
@@ -319,6 +325,17 @@ namespace SilverScreen.Presentation.Employees
                 return;
             }
 
+            // Canonical visuals retain beat timing/callbacks without capsule arms. Full film adoption is deferred.
+            if (_characterPresentation != null && _characterPresentation.IsCanonical)
+            {
+                if (_performanceVisual != null) _performanceVisual.SetActive(false);
+                if (_beatPerformanceActive)
+                {
+                    _performanceElapsed += SilverScreen.Presentation.SimulationTime.LocalPresentationTime.Delta(UnityEngine.Time.unscaledDeltaTime, _timeService);
+                    if (_performanceElapsed >= _beatDuration) CompleteBeatPerformance();
+                }
+                return;
+            }
             EnsurePerformanceVisual();
             _performanceVisual.SetActive(true);
 
@@ -360,8 +377,8 @@ namespace SilverScreen.Presentation.Employees
                 return false;
             }
 
-            EnsurePerformanceVisual();
-            _performanceVisual.SetActive(true);
+            if (_characterPresentation == null || !_characterPresentation.IsCanonical)
+            { EnsurePerformanceVisual(); _performanceVisual.SetActive(true); }
             _beatPerformanceActive = true;
             _beatType = beatType;
             _beatEmotion = performance.DeliveredEmotion;

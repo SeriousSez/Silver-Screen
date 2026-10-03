@@ -149,7 +149,7 @@ namespace SilverScreen.Presentation.Interaction
             }
             if (_drag != null)
             {
-                if (_drag.Root == null) { CancelHold(); return true; }
+                if (_drag.Root == null || !_drag.Root.gameObject.activeInHierarchy) { CancelHold(); return true; }
                 UpdateBuildingReveal(ray, !overUi);
                 RaycastHit groundHit = default;
                 _hasGround = !overUi && TryPlacementHit(ray, out groundHit);
@@ -347,7 +347,9 @@ namespace SilverScreen.Presentation.Interaction
             }
             var person = _pinned != null ? _pinned : _hover;
             if (person == null || !person.gameObject.activeInHierarchy) return;
-            var p = _camera.WorldToScreenPoint(person.transform.position + Vector3.up * 1.6f);
+            var character = person.GetComponent<SilverScreen.Presentation.Characters.CharacterPresentation>();
+            var anchor = character != null && character.IsCanonical ? character.InformationAnchorWorld : person.transform.position + Vector3.up * 1.6f;
+            var p = _camera.WorldToScreenPoint(anchor);
             if (p.z <= 0) return;
             var employee = (person as EmployeeAgent)?.Employee;
             var candidate = (person as CandidateAgent)?.Candidate;
